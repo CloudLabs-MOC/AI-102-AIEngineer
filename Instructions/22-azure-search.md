@@ -74,9 +74,7 @@ The solution you will create for Margie's Travel requires the following resource
 
 ### Task 2.1: Create an Azure AI Search resource
 
-1. In a web browser, open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account associated with your Azure subscription.
-
-1. Select the **&#65291;Create a resource** button.
+1. In the azure portal, select the **&#65291;Create a resource** button.
 
     ![Visual Studio Code Icon](./images/a-23.png)
 
@@ -110,9 +108,7 @@ The solution you will create for Margie's Travel requires the following resource
 
 If you don't already have one in your subscription, you'll need to provision an **Azure AI Services** resource. Your search solution will use this to enrich the data in the datastore with AI-generated insights.
 
-1. Return to the home page of the Azure portal, and then select the **&#65291;Create a resource** button.
-
- 1. Search for *Azure AI Services (1)* and then select **Azure AI Services(2)** from the services.
+1. Search for *Azure AI Services (1)* and then select **Azure AI Services (2)** from the services.
  
     ![Visual Studio Code Icon](./images/c-1.png) 
  
@@ -454,11 +450,11 @@ While you can use the portal to create and modify search solutions, it's often d
 
 1. In Visual studio Code, in the **modify-search** folder, open **skillset.json**. This shows a JSON definition for **margies-skillset**.
 
-1. At the top of the skillset definition, note the **cognitiveServices** object, which is used to connect your Azure AI Services resource to the skillset.
+1. At the top of the skillset definition, note the **Azure AI Services** object, which is used to connect your Azure AI Services resource to the skillset.
 
 1. In the Azure portal, open your Azure AI Services resource (<u>not</u> your Azure AI Search resource!) and view its **Keys** page. Then copy **Key 1** to the clipboard.
 
-1. In Visual Studio Code, in **skillset.json**, replace the **YOUR_COGNITIVE_SERVICES_KEY** placeholder with the Azure AI Services key you copied to the clipboard.
+1. In Visual Studio Code, in **skillset.json**, replace the **YOUR_AZURE_AI_SERVICES_KEY** placeholder with the Azure AI Services key you copied to the clipboard.
 
     ![Visual Studio Code Icon](./images/d-36.png) 
  
@@ -535,7 +531,10 @@ While you can use the portal to create and modify search solutions, it's often d
     ```
     {
         "sourceFieldName" : "metadata_storage_path",
-        "targetFieldName" : "url"
+        "targetFieldName": "metadata_storage_path",
+        "mappingFunction": {
+          "name": "base64Encode"
+        }
     }
     
     ```
