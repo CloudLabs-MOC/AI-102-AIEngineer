@@ -49,7 +49,7 @@ In this exercise, you will create a bot that uses the OpenWeather service to ret
 
     Click on all the checkboxes as shown in the below image.
 
-       ![Visual Studio Code Icon](./images/create1.png)
+   ![Visual Studio Code Icon](./images/create1.png)
 
 1. Request a free API key, and create an OpenWeather account (if you do not already have one), using these credentials:
 
