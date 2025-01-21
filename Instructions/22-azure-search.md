@@ -672,7 +672,7 @@ The web app already includes code to process and render the search results.
 
 ### Task 7.5: Run the web app
 
- 1. return to the integrated terminal for the **margies-travel** folder, and enter the following command to run the program:
+ 1. Return to the integrated terminal for the **margies-travel** folder, and enter the following command to run the program:
 
     **C#**
     

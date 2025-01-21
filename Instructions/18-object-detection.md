@@ -28,11 +28,14 @@ To train an object detection model, you need to create a Custom Vision project b
 1. In a new browser tab, open the Custom Vision portal at `https://customvision.ai`, and sign in using the Microsoft account associated with your Azure subscription.
 
 2. Create a new project with the following settings:
-    - **Name**: Detect Fruit
-    - **Description**: Object detection for fruit.
-    - **Resource**: *The Custom Vision resource you created previously*
-    - **Project Types**: Object Detection
-    - **Domains**: General
+    - **Name**: Detect Fruit **(1)**
+    - **Description**: Object detection for fruit. **(2)**
+    - **Resource**: Select **Vision-<inject key="DeploymentID" enableCopy="false"/> (3)**
+    - **Project Types**: Object Detection **(4)**
+    - **Domains**: General **(5)**
+    - Click on **Create Project (6)**
+
+      ![Upload apple with apple tag](./images/l7e1-1.png)
 
 3. Wait for the project to be created and opened in the browser.
 
@@ -42,7 +45,7 @@ To train an object detection model, you need to upload images that contain the c
 
 1. Go to Visual Studio Code, view the training images in the **18-object-detection/training-images** folder where you cloned the repository. This folder contains images of fruit.
 
-2. Download and extract the training images from https://aka.ms/fruit-objects. The extracted folder contains a collection of images of fruit
+2. Download and extract the training images from https://aka.ms/fruit-objects. The extracted folder contains a collection of images of fruit.
 
 3. In the Custom Vision portal, in your object detection project, select **Add images** and upload all of the images in the extracted folder.
 
@@ -78,7 +81,7 @@ You can use the graphical tool in the Custom Vision portal to tag your images, b
 
 2. Under **General** (on the left), note the **Project Id** that uniquely identifies this project.
 
-3. On the right, under **Resources** note that the details for the *training* resource, including its key and endpoint are shown (you can also obtain this information by viewing the resource in the Azure portal).
+3. On the right, under **Resources** note that the details for the *training* resource, including its **key and endpoint** are shown (you can also obtain this information by viewing the resource in the Azure portal).
 
 4. In Visual Studio Code, under the **18-object-detection** folder, expand the **C-Sharp** folder.
 
@@ -132,17 +135,25 @@ Now that you've tagged the images in your project, you're ready to train a model
 
 3. At the top right of the page, click **Quick Test**, and then in the **Image URL** box, enter `https://aka.ms/apple-orange` and view the prediction that is generated. Then close the **Quick Test** window.
 
+   ![Upload apple with apple tag](./images/l7e1-10.png)
+
 ## Task 5: Publish the object detection model
 
 Now you're ready to publish your trained model so that it can be used from a client application.
 
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish** to publish the trained model with the following settings:
-    - **Model name**: fruit-detector
-    - **Prediction Resource**: *The **prediction** resource you created previously (<u>not</u> the training resource)*.
+
+    - **Model name**: fruit-detector **(1)**
+    - **Prediction Resource**: *The **prediction** resource you created previously (<u>not</u> the training resource)*. **(2)**
+    - Click **Publish (3)**
+
+       ![Upload apple with apple tag](./images/l7e1-12.png)
 
 2. At the top left of the **Project Settings** page, click the *Projects Gallery* (&#128065;) icon to return to the Custom Vision portal home page, where your project is now listed.
 
-3. On the Custom Vision portal home page, at the top right, click the *settings* (&#9881;) icon to view the settings for your Custom Vision service. Then, under **Resources**, find your *prediction* (evident by the **-prediction** suffix) resource (<u>not</u> the training resource) to determine its **Key** and **Endpoint** values (you can also obtain this information by viewing the resource in the Azure portal).
+3. On the Custom Vision portal home page, at the top right, click the *settings* (&#9881;) icon to view the settings for your Custom Vision service. Then, under **Resources**, find your *prediction* (evident by the **-prediction** suffix) resource (<u>not</u> the training resource) to determine its **Key (1)** and **Endpoint (2)** values (you can also obtain this information by viewing the resource in the Azure portal).
+
+   ![](./images/l7e1-9.png)
 
 ## Task 6: Use the image classifier from a client application
 
@@ -174,6 +185,8 @@ Now that you've published the image classification model, you can use it from a 
     ```
 
 6. After the program has completed, view the resulting **output.jpg** file to see the detected objects in the image.
+
+   ![](./images/l7e1-11.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 

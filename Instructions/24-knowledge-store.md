@@ -24,7 +24,7 @@ In this lab, you will complete the following tasks:
 
 ![](./images/mod12-ex2-dia.png)
 
-## Task 1: Clone the repository for this course
+## Task 1: Clone the repository for this course (Skip if already done)
 
 If you have already cloned **AI-102-AIEngineer** code repository to the environment where you're working on this lab, open it in Visual Studio Code; otherwise, follow these steps to clone it now.
 
