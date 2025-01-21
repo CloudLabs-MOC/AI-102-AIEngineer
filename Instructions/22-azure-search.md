@@ -172,7 +172,7 @@ If you don't already have one in your subscription, you'll need to provision an 
 
       ![Visual Studio Code Icon](./images/d-13.png) 
      
-1. Click on **create**
+1. Click on **Create**
 
 1. Wait for deployment to complete, and click on **Go yo resources** then go to the deployed resource.
 
