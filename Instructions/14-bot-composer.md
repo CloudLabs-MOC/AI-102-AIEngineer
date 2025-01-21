@@ -34,6 +34,23 @@ In this exercise, you will create a bot that uses the OpenWeather service to ret
 
 1. In a web browser, go to the OpenWeather site at `https://openweathermap.org/price`.
 
+1. In the OpenWeather click on **Sign In**.
+
+1. On the Sign In page click on **Create an Account**.
+
+   ![Visual Studio Code Icon](./images/create2.png)
+
+
+1. On **Create New Account** page enter the below details and click on **Create Account**
+
+    - Username: odl_user<inject key="DeploymentID" enableCopy="false"/>
+    - Email : <inject key="AzureAdUserEmail"></inject>
+    - Password: <inject key="AzureAdUserPassword"></inject>
+
+    Click on all the checkboxes as shown in the below image.
+
+       ![Visual Studio Code Icon](./images/create1.png)
+
 1. Request a free API key, and create an OpenWeather account (if you do not already have one), using these credentials:
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
