@@ -31,9 +31,10 @@ In this lab, you will complete the following tasks:
 
      ![Visual Studio Code Icon](./images/vscode.png)
 
-2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\LabFiles\AI-102-AIEngineer-master**.
+2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\LabFiles\AI-102-AIEngineer-stage**.
 
-
+     ![](./images/8.1.png)
+     
 ## Task 2: Upload a video to Video Analyzer
 
 First, you'll need to sign into the Video Analyzer portal and upload a video.

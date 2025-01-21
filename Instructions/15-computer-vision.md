@@ -54,21 +54,27 @@ If you don't already have one in your subscription, you'll need to provision a *
 
     - **Subscription**: *Your Azure subscription*
     
-    - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false" /></inject>**
+    - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false" /></inject> (1)**
     
-    - **Region**: **<inject key="Region" enableCopy="false"/>**
+    - **Region**: **<inject key="Region" enableCopy="false"/> (2)**
     
-    - **Name**: **AIservice-<inject key="DeploymentID" enableCopy="false" /></inject>**
+    - **Name**: **AIservice-<inject key="DeploymentID" enableCopy="false" /></inject> (3)**
     
-    - **Pricing tier**: Standard S0
+    - **Pricing tier**: Standard S0 **(4)**
     
-    - **By checking this box I acknowledge that I have read and understood all the terms below**: select the checkbox.
+    - **By checking this box I acknowledge that I have read and understood all the terms below (5)**: select the checkbox.
 
-3. Select **Review + create** and **Create**.
+3. Select **Review + create (6)** and **Create**.
+
+   ![](./images/l8-2.png)
 
 4. Wait for the deployment to complete. Once the deployment is successful, click on **Go to resources** to view the deployment details.
 
-5. In the left navigation pane, under the **Resource Management** section, choose **Keys and Endpoint**. Make sure to note down the Keys and Endpoint values in notepad. You'll require the endpoint and one of the keys from this page for the subsequent procedure.
+   ![](./images/l8-3.png)
+
+5. In the left navigation pane, under the **Resource Management** section, choose **Keys(1) and Endpoint (2)**. Make sure to note down the Keys and Endpoint values in notepad. You'll require the endpoint and one of the keys from this page for the subsequent procedure.
+
+   ![](./images/l8-4.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
