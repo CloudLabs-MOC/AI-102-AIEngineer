@@ -597,11 +597,11 @@ Now that you have a useful index, you can use it from a client application. You 
 
 1. In the Azure portal, on the **Overview** page for your Azure AI Search resource, note the **Url** value, which should be similar to **https://*your_resource_name*.search.windows.net**. This is the endpoint for your search resource.
 
-1. On the **Keys (1)** page, note that there are two **admin (2)** keys, and a single **query (3)** key. An *admin* key is used to create and manage search resources; a *query* key is used by client applications that only need to perform search queries.
+1. On the **Keys (1)** page, note that there are two admin keys, and a single **query (2)** key. An *admin* key is used to create and manage search resources; a *query* key is used by client applications that only need to perform search queries.
 
     ![Visual Studio Code Icon](./images/d-39.png) 
  
-    *You will need the endpoint and query key for your client application.*
+    *You will need the **endpoint and query key** for your client application.*
 
 ### Task 7.2: Prepare to use the Azure AI Search SDK
 
