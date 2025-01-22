@@ -51,6 +51,10 @@ In this exercise, you will create a bot that uses the OpenWeather service to ret
 
    ![Visual Studio Code Icon](./images/create1.png)
 
+1. In the **How and where will you use our API?** pop-up, you can either provide your company name and select "Education/Science" as the purpose or simply close the pop-up.
+
+   ![api-option](./images/api-usage.png)
+
 1. Request a free API key, and create an OpenWeather account (if you do not already have one), using these credentials:
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
