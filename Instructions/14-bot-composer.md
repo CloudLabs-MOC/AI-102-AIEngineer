@@ -40,7 +40,6 @@ In this exercise, you will create a bot that uses the OpenWeather service to ret
 
    ![Visual Studio Code Icon](./images/create2.png)
 
-
 1. On **Create New Account** page enter the below details and click on **Create Account**
 
     - Username: odl_user<inject key="DeploymentID" enableCopy="false"/>
@@ -54,14 +53,6 @@ In this exercise, you will create a bot that uses the OpenWeather service to ret
 1. In the **How and where will you use our API?** pop-up, you can either provide your company name and select "Education/Science" as the purpose or simply close the pop-up.
 
    ![api-option](./images/api-usage.png)
-
-1. Request a free API key, and create an OpenWeather account (if you do not already have one), using these credentials:
-
-    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-
-    - **Password:** <inject key="AzureAdUserPassword"></inject>
-
-1. After signing up, view the **API keys** page to save your API key.
 
 ## Task 2: Update Bot Framework Composer
 
