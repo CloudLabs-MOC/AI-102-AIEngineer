@@ -54,13 +54,27 @@ In this exercise, you will create a bot that uses the OpenWeather service to ret
 
    ![api-option](./images/api-usage.png)
 
+1. Select **API Keys** and copy the key to the notepad.
+
+    ![api-option](./images/14.13.png)
+
 ## Task 2: Update Bot Framework Composer
 
 You're going to use the Bot Framework Composer to create your bot. This tools is updated regularly, so let's make sure you have the latest version installed.
 
 > **Note**: Updates may include changes to the user interface that affect the instructions in this exercise.
 
-1. Open a new tab, copy and paste this link, `https://aka.ms/bf-composer-download-win`, download the **Bot Framework Composer**.
+1. Open a new tab, copy and paste this link, `https://github.com/microsoft/BotFramework-Composer/releases/download/v2.1.2/BotFramework-Composer-2.1.2-windows-setup.exe`, download the **Bot Framework Composer**.
+
+1. From the downloads click on **Open file**.
+  
+   ![Visual Studio Code Icon](./images/14.16.png)
+
+1. On the **Choose Installation option** page click on **Next**.
+
+1. On the **Choose Install Location** page click on **Install**.
+
+   ![Visual Studio Code Icon](./images/14.17.png)
 
 1. Start the **Bot Framework Composer** installation, and if you are not automatically prompted to install an update, use the **Check for updates** option on the **Help** menu to check for updates.
 
@@ -90,7 +104,9 @@ Now you're ready to use the Bot Framework Composer to create a bot.
 
 1. On the **Home** screen, select **+ Create new**.
 
-1. On the **Select a template** pop-up, select **Empty Bot** and select **Next**. Name it as **WeatherBot**, select **Location** as **C:\** folder, and select **Create**.
+1. On the **Select a template** pop-up, select **Empty Bot** on **Node (Preview) tab (1)** and select **Next (2)**. Name it as **WeatherBot**, select **Location** as **C:\** folder, and select **Create**.
+
+     ![Visual Studio Code Icon](./images/14.14.png)
 
     >**Note:** If the Node js required pop-up appears, select **Cancel**, and follow these steps:
 
@@ -102,7 +118,9 @@ Now you're ready to use the Bot Framework Composer to create a bot.
 
     ![Visual Studio Code Icon](./images/Greeting.png)
 
-1. In the properties pane on the left, edit the title of **Greeting** by selecting the word **Greeting** at the top of the properties pane on the right and changing it to **WelcomeUsers**.
+1. In the properties pane on the left, edit the title of **Greeting** by selecting the word **Greeting** at the top of the properties pane on the right top corner and changing it to **WelcomeUsers**.
+
+   ![Visual Studio Code Icon](./images/14.15.png)
 
 1. In the authoring canvas, select the **Send a response** action. Then, in the properties pane, change the default text from **Welcome to your bot.**  to `Hi! I'm WeatherBot.`
 
@@ -199,9 +217,11 @@ First, you need to define a dialog flow that will be used to handle questions ab
 
    | Property        | Value                                     |
    |-----------------|-------------------------------------------|
-   | dialog.weather | =dialog.api_response.content.weather[0].description |
+   | dialog.weather **(1)** | =dialog.api_response.content.weather[0].description **(2)** |
    | dialog.temp    | =round(dialog.api_response.content.main.temp)       |
    | dialog.icon    | =dialog.api_response.content.weather[0].icon      |
+
+   ![api-option](./images/14.10.png)
 
 1. Still in the **True** branch, add a **Send a response** action under the **Set a property** action and set its text to:
 

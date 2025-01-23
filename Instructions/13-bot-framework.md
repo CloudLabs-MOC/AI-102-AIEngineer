@@ -30,6 +30,12 @@ You're going to use the Bot Framework SDK to create your bot, and the Bot Framew
 
 1. Open an edge browser, copy and paste this link, `https://github.com/microsoft/BotFramework-Emulator/releases/download/v4.15.1/BotFramework-Emulator-4.15.1-windows-setup.exe`, download the **Bot Framework Emulator**.
 
+1. On the **Choose Installation option** page click on **Next**.
+
+1. On the **Choose Install Location** page click on **Install** then click on **Finish**.
+
+   ![Visual Studio Code Icon](./images/14.18.png)
+
 1. Start the **Bot Framework Emulator**, and if you are prompted to install an update, do so for the currently logged in user. If you are not prompted automatically, use the **Check for update** option on the **Help** menu to check for updates.
 
     >**Note:** If **Help us improve?** pop-ups, select **Not now**.
@@ -40,9 +46,11 @@ You're going to use the Bot Framework SDK to create your bot, and the Bot Framew
 
 1. In the Lab-VM, double click on the **Visual Studio Code**.
 
-1. Select the **Explorer**, select **Open Folder** in Visual Studio Code. Open **C:\AllFiles** and select folder **AI-102-AIEngineer-stage**.
+1. Select the **Explorer**, select **Open Folder** in Visual Studio Code. Open **C:\AllFiles\AI-102-AIEngineer-stage (1)** then click on **Select Folder (2)**
 
     >**Note:** On the **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust the authors**.
+
+    ![Visual Studio Code Icon](./images/d-5.png)
 
 1. Wait while additional files are installed to support the C# code projects in the repo.
 
