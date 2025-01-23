@@ -225,19 +225,25 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
 1. In the properties pane for the selected **WeatherBot** dialog, in the **Language Understanding** section, set the **Recognizer type** to **Regular expression recognizer**.
 
+   ![api-option](./images/14.9.png)
+
     >**Note:** The default recognizer type uses the Language Understanding service to product the user's intent using a natural language understanding model. We're using a regular expression recognizer to simplify this exercise. In a real, application, you should consider using Language Understanding to allow for more sophisticated intent recognition.
 
 1. In the **...** menu for the **WeatherBot** dialog, select **+ Add new Trigger**.
 
+    ![api-option](./images/14.8.png)
+
 1. Then create a trigger with the following settings:
 
-    - **What is the type of this trigger?**: Intent recognized
+    - **What is the type of this trigger?**: Intent recognized **(1)**
     
-    - **What is the name of this trigger (RegEx)**:  `WeatherRequested`
+    - **What is the name of this trigger (RegEx)**:  `WeatherRequested` **(2)**
     
-    - **Please input regex pattern**: `weather`
+    - **Please input regex pattern**: `weather` **(3)**
 
-    - Select **Submit**
+    - Select **Submit (4)**
+
+      ![api-option](./images/14.7.png)
 
     > **Note:** The text entered in the regex pattern text box is a simple regular expression pattern that will cause the bot to look for the word *weather* in any incoming message.  If "weather" is present, the message becomes a **recognized intent** and the trigger is initiated.
 
@@ -248,6 +254,9 @@ Now you need some way for the new dialog to be initiated from the existing welco
     ![A regex trigger begins the GetWeather dialog](./images/weather-regex.png)
 
 1. Start the bot and open the web chat pane.Then restart the conversation, and after entering your name, enter `What is the weather like?`. Then, when prompted, enter a city, such as `Seattle`. The bot will contact the service and should respond with a small weather report statement.
+
+   ![api-option](./images/14.6.png)
+
 7. When you have finished testing, close the web chat pane and stop the bot.
 
 ## Task 5: Handle interruptions
@@ -256,9 +265,12 @@ A well designed bot should allow users to change the flow of the conversation, f
 
 1. In the Bot Composer, in the navigation pane, use the **...** menu for the **WeatherBot** dialog to add a new trigger (in addition to the existing **WelcomeUsers** and **WeatherRequested** triggers). The new trigger should have the following settings:
 
-    - **What is the type of this trigger?**: Intent recognized
-    - **What is the name of this trigger (RegEx)**:  `CancelRequest`
-    - **Please input regex pattern**: `cancel`
+    - **What is the type of this trigger?**: Intent recognized **(1)**
+    - **What is the name of this trigger (RegEx)**:  `CancelRequest` **(2)**
+    - **Please input regex pattern**: `cancel`**(3)**
+    - Click on **Submit** **(4)**
+
+      ![api-option](./images/14.5.png)
 
     > The text entered in the regex pattern text box is a simple regular expression pattern that will cause the bot to look for the word *cancel* in any incoming message.
 
@@ -278,7 +290,11 @@ A well designed bot should allow users to change the flow of the conversation, f
 
 1. In the properties for the action, on the **Other** tab, expand **Prompt Configurations** and set the **Allow Interruptions** property to **true**.
 
+   ![api-option](./images/14.4.png)
+
 1. Start the bot and open the web chat pane. Restart the conversation, and and after entering your name, enter `What is the weather like?`. Then, when prompted, enter `cancel`, and confirm that the request is canceled.
+
+   ![api-option](./images/14.3.png)
 
 1. After canceling the request, enter `What's the weather like?` and note that the appropriate trigger starts a new instance of the **GetWeather** dialog, prompting you once again to enter a city.
 
@@ -303,6 +319,8 @@ The interactions with the weather bot so far has been through text.  Users enter
     ]
     ```
 
+    ![api-option](./images/14.2.png)
+
     >**Note:** This activity will prompt the user for their city as before, but also display a **Cancel** button.
 
 ### Task 6.2: Add a card
@@ -324,7 +342,9 @@ The interactions with the weather bot so far has been through text.  Users enter
 ### Task 6.3: Test the new user interface
 
 1. Restart the bot and open the web chat pane. Restart the conversation, and after entering your name, enter `What is the weather like?`. Then, when prompted, click the **Cancel** button to cancel the request.
-
+   
+      ![api-option](./images/14.1.png)
+  
 1. After canceling, enter `Tell me about the weather` and when prompted, enter a city, such as `London`. The bot will contact the service and should respond with a card indicating the weather conditions.
 
 1. When you have finished testing, close the emulator and stop the bot.
