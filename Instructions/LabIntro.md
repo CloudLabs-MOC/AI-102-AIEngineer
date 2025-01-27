@@ -1,6 +1,6 @@
 # Getting Started with Your AI-102: AI Engineer
  
-Welcome to your AI-102: AI Engineer workshop! Explore our seamless environment designed for mastering the certification exam. Access curated resources, practice materials, and simulated scenarios to enhance your skills in Azure AI services and machine learning techniques. Let's begin by making the most of this experience:
+Welcome to your AI-102: AI Engineer workshop! We've prepared a seamless environment for you to explore and learn about in Azure AI services and machine learning techniques. Let's begin by making the most of this experience:
  
 ## Accessing Your Lab Environment
  
