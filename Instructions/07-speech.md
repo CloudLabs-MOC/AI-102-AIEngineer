@@ -77,7 +77,7 @@ If you don't already have on in your subscription, you'll need to provision a **
 
 ## Task 3: Prepare to use the Azure AI Speech service
 
-In this exercise, you'll complete a partially implemented client application that uses the Azure AI Speech SDK to recognize and synthesize speech.
+In this task, you'll complete a partially implemented client application that uses the Azure AI Speech SDK to recognize and synthesize speech.
 
 1. In Visual Studio Code, in the **Explorer** pane, browse to the **07-speech** folder and expand the **C-Sharp** folder.
 
