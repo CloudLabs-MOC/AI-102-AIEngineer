@@ -29,17 +29,21 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Open the cloned folder in Visual Studio Code
 
-1.  Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
+In this task, you will learn how to **open the cloned folder in Visual Studio Code** to work with the project files for further development or modifications.
+
+1. Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
 
      ![Visual Studio Code Icon](./images/vscode.png)
 
-2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles\AI-102-AIEngineer-prod**.
+2. Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles\AI-102-AIEngineer-prod**.
 
     >**Note:** On the **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust the authors**.
 
     >**Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
 
 ## Task 2: Create a Language resource
+
+In this task, you will learn how to **create a Language resource** in the Azure portal to use the Azure AI Language service for analyzing text and extracting insights.
 
 To create and host a knowledge base for question answering, you need a **Language service** resource in your Azure subscription.
 
@@ -108,6 +112,8 @@ To create and host a knowledge base for question answering, you need a **Languag
 
 ## Task 3: Create a question answering project
 
+In this task, you will learn how to **create a Question Answering project** using the Azure AI Language service, which enables you to build models that can answer questions based on provided documents.
+
 To create a knowledge base for question answering in your Language resource, you can use the Language Studio portal to create a question answering project. In this case, you'll create a knowledge base containing questions and answers about [Microsoft Learn](https://docs.microsoft.com/learn).
 
 1. In a new browser tab, go to the *Language Studio* portal at `https://language.azure.com` and sign in using the Microsoft account associated with your Azure subscription.
@@ -123,6 +129,7 @@ To create a knowledge base for question answering in your Language resource, you
    ![](./images/language3.png)
 
 3. If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
+
     1. On the bar at the top if the page, click the **Settings (&#9881;)** button.
     2. On the **Settings** page, view the **Resources** tab.
     3. At the top of the page, click **Language Studio** to return to the Language Studio home page.
@@ -144,6 +151,8 @@ To create a knowledge base for question answering in your Language resource, you
 11. On the **Review and finish** page, click **Create project**.
 
 ## Task 4: Add a sources to the knowledge base
+
+In this task, you will learn how to **add sources to the knowledge base** in your Question Answering project, providing documents or data that will help the model generate relevant answers.
 
 You can create a knowledge base from scratch, but it's common to start by importing questions and answers from an existing FAQ page or document. In this case, you'll import data from an existing FAQ web page for Microsoft learn, and you'll also import some pre-defined "chit chat" questions and answers to support common conversational exchanges.
 
@@ -167,6 +176,8 @@ You can create a knowledge base from scratch, but it's common to start by import
     ![](./images/language9.png)
 
 ## Task 5: Edit the knowledge base
+
+In this task, you will learn how to **edit the knowledge base** in your Question Answering project, refining the content or adjusting the data to improve the accuracy of answers provided by the model.
 
 Your knowledge base has been populated with question and answer pairs from the Microsoft Learn FAQ, supplemented with a set of conversational *chit-chat* question  and answer pairs. You can extend the knowledge base by adding additional question and answer pairs.
 
@@ -204,6 +215,8 @@ Your knowledge base has been populated with question and answer pairs from the M
 
 ## Task 6: Train and test the knowledge base
 
+In this task, you will learn how to **train and test the knowledge base** to ensure that the question-answering system can provide accurate responses based on the sources you've added.
+
 Now that you have a knowledge base, you can test it in Language Studio.
 
 1. Save the changes to your knowledge base by selecting the **Save** button under the **Question answer pairs** tab on the left.
@@ -229,6 +242,8 @@ Now that you have a knowledge base, you can test it in Language Studio.
 1. When you're done testing the knowledge base, close the test pane.
 
 ## Task 7: Deploy and test the knowledge base
+
+In this task, you will learn how to **deploy and test the knowledge base** to make it accessible for queries and evaluate its performance by asking questions related to the added sources.
 
 The knowledge base provides a back-end service that client applications can use to answer questions. Now you are ready to publish your knowledge base and access its REST interface from a client.
 
@@ -273,6 +288,8 @@ The knowledge base provides a back-end service that client applications can use 
 11. In the terminal pane, enter the command `.\ask-question.cmd` to run the script and view the JSON response that is returned by the service, which should contain an appropriate answer to the question *What is a learning path?*.
 
 ## Task 8: Create a bot for the knowledge base
+
+In this task, you will learn how to **create a bot** that interacts with the knowledge base to respond to user queries using the **Azure Bot Service** and **Language Understanding (LUIS)**.
 
 Most commonly, the client applications used to retrieve answers from a knowledge base are bots.
 

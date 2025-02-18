@@ -19,6 +19,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Configure an alert
 
+In this task, you will learn how to configure an alert in Azure to monitor resources and receive notifications when specific conditions or thresholds are met.
+
 Let's start monitoring by defining an alert rule so you can detect activity in your Azure AI services resource.
 
 1. In the Azure portal, go to your **Azure AI services** resource that you have created in the previous exercise and view its **Alerts** page under the **Monitoring** section.
@@ -68,6 +70,8 @@ Let's start monitoring by defining an alert rule so you can detect activity in y
 
 ## Task 2: Visualize a metric
 
+In this task, you will learn how to visualize a metric in Azure, enabling you to track and analyze resource performance through charts and dashboards.
+
 As well as defining alerts, you can view metrics for your Azure AI services resource to monitor its utilization.
 
 1. In the Azure portal, in the page for your Azure AI services resource, select **Metrics** under the **Monitoring** section, from the left navigation menu.
@@ -106,4 +110,4 @@ In this lab, you have completed:
 - Configured an alert
 - Visualized a metric
 
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed the lab >> Click on Next

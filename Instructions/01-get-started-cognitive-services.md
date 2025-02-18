@@ -21,6 +21,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Open the cloned folder in Visual Studio Code
 
+In this task, you will learn how to **open the cloned folder in Visual Studio Code** to work with the project files for further development or modifications.
+
 1. On the Jump-VM double click on the **Visual Studio Code** shortcut.
 
     ![Visual Studio Code Icon](./images/vscode1.png)
@@ -38,6 +40,8 @@ In this lab, you will complete the following tasks:
     >**Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
 
 ## Task 2: Provision an Azure AI Services resource
+
+In this task, you will learn how to provision an Azure AI Services resource to enable AI-driven capabilities in your applications.
 
 Azure AI Services are cloud-based services that encapsulate artificial intelligence capabilities you can incorporate into your applications. You can provision individual Azure AI services resources for specific APIs (for example, **Language** or **Vision**), or you can provision a single **Azure AI Services** resource that provides access to multiple Azure AI services APIs through a single endpoint and key. In this case, you'll use a single **Azure AI Services** resource.
 
@@ -98,6 +102,8 @@ Azure AI Services are cloud-based services that encapsulate artificial intellige
 
 ## Task 3: Use a REST Interface
 
+In this task, you will learn how to use a REST interface to interact with Azure services by making HTTP requests to manage resources and retrieve data.
+
 The Azure AI services APIs are REST-based, so you can consume them by submitting JSON requests over HTTP. In this example, you'll explore a console application that uses the **Language** REST API to perform language detection; but the basic principle is the same for all of the APIs supported by the Azure AI services resource.
 
 1. Open Visual Studio Code, in the **Explorer (1)** pane, browse to the **01-getting-started (2)** folder and expand the **C-Sharp (3)** folder.
@@ -151,6 +157,8 @@ The Azure AI services APIs are REST-based, so you can consume them by submitting
 1. When you have finished testing the application, enter "**quit**" to stop the program.
 
 ## Task 4: Use an SDK
+
+In this task, you will learn how to use an SDK to interact with Azure services programmatically, simplifying the process of managing resources and performing operations.
 
 You can write code that consumes Azure AI services REST APIs directly, but there are software development kits (SDKs) for many popular programming languages, including Microsoft C#, Python, and Node.js. Using an SDK can greatly simplify development of applications that consume Azure AI services.
 
@@ -214,4 +222,4 @@ In this lab, you have completed:
 - Used a REST Interface
 - Used an SDK
 
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed the lab >> Click on Next

@@ -23,6 +23,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Create a Custom Vision project
 
+In this task, you will learn how to create a Custom Vision project using the Custom Vision portal to train an object detection model based on your training resource.
+
 To train an object detection model, you need to create a Custom Vision project based on your training resource. To do this, you'll use the Custom Vision portal.
 
 1. In a new browser tab, open the Custom Vision portal at `https://customvision.ai`, and sign in using the Microsoft account associated with your Azure subscription.
@@ -40,6 +42,8 @@ To train an object detection model, you need to create a Custom Vision project b
 3. Wait for the project to be created and opened in the browser.
 
 ## Task 2: Add and tag images
+
+In this task, you will learn how to add and tag images for training an object detection model by uploading images and defining bounding boxes for each object instance.
 
 To train an object detection model, you need to upload images that contain the classes you want the model to identify, and tag them to indicate bounding boxes for each object instance.
 
@@ -72,6 +76,8 @@ To train an object detection model, you need to upload images that contain the c
      ![Tagged images in a project](./images/tagged-images.jpg)
 
 ## Task 3: Use the Training API to upload images
+
+In this task, you will learn how to use the Custom Vision *Training API* to upload images with tags and object region data, allowing you to automate the image tagging process and integrate it into your workflow.
 
 You can use the graphical tool in the Custom Vision portal to tag your images, but many AI development teams use other tools that generate files containing information about tags and object regions in images. In scenarios like this, you can use the Custom Vision training API to upload tagged images to the project.
 
@@ -127,6 +133,8 @@ You can use the graphical tool in the Custom Vision portal to tag your images, b
 
 ## Task 4: Train and test a model
 
+In this task, you will learn how to train and test an object detection model in Custom Vision using the tagged images you uploaded, enabling you to evaluate its performance and accuracy.
+
 Now that you've tagged the images in your project, you're ready to train a model.
 
 1. In the Custom Vision project, click **Train** to train an object detection model using the tagged images. Select the **Quick Training** option.
@@ -138,6 +146,8 @@ Now that you've tagged the images in your project, you're ready to train a model
    ![Upload apple with apple tag](./images/l7e1-10.png)
 
 ## Task 5: Publish the object detection model
+
+In this task, you will learn how to publish your trained object detection model, making it accessible for integration into client applications for real-time object detection.
 
 Now you're ready to publish your trained model so that it can be used from a client application.
 
@@ -156,6 +166,8 @@ Now you're ready to publish your trained model so that it can be used from a cli
    ![](./images/l7e1-9.png)
 
 ## Task 6: Use the image classifier from a client application
+
+In this task, you will learn how to use the published object detection model from a client application, enabling it to detect objects in images programmatically using **C#**.
 
 Now that you've published the image classification model, you can use it from a client application. Once again, you can choose to use **C#**.
 

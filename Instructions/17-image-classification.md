@@ -27,7 +27,9 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Open the cloned folder in Visual Studio Code
 
-1.  Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
+In this task, you will learn how to open the cloned folder in **Visual Studio Code**, allowing you to view and edit the project files within the IDE.
+
+1. Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
 
      ![Visual Studio Code Icon](./images/vscode.png)
 
@@ -42,10 +44,11 @@ In this lab, you will complete the following tasks:
 
 ## Task 2: Create Custom Vision resources
 
+In this task, you will learn how to create Custom Vision resources in Azure for training and prediction, allowing you to manage access and costs for these workloads separately.
+
 Before you can train a model, you will need Azure resources for *training* and *prediction*. You can create **Custom Vision** resources for each of these tasks, or you can create a single **Azure AI Services** resource and use it for either (or both).
 
 In this exercise, you'll create **Custom Vision** resources for training and prediction so that you can manage access and costs for these workloads separately.
-
 
 1. In the azure portal, Select the **&#65291;Create a resource** button.
 
@@ -76,6 +79,8 @@ In this exercise, you'll create **Custom Vision** resources for training and pre
 
 ## Task 3: Create a Custom Vision project
 
+In this task, you will learn how to create a Custom Vision project using the Custom Vision portal, which will be used to train an image classification model based on your training resource.
+
 To train an image classification model, you need to create a Custom Vision project based on your training resource. To do this, you'll use the Custom Vision portal.
 
 1. In Visual Studio Code, view the training images in the **17-image-classification/training-images**. This folder contains subfolders of apple, banana, and orange images.
@@ -93,7 +98,6 @@ To train an image classification model, you need to create a Custom Vision proje
 
       ![Upload apple with apple tag](./images/l7e1-6.png)
       
-
 5. In the new project, click **\[+\] Add images**, and select all of the files in the **C:\AllFiles\AI-102-AIEngineer-stage\17-image-classification\training-images\apple** folder you viewed previously. Then upload the image files, specifying the tag *apple*, like this:
 
    ![Upload apple with apple tag](./images/upload_apples.jpg)
@@ -114,6 +118,8 @@ To train an image classification model, you need to create a Custom Vision proje
 
 ## Task 4: Test the model
 
+In this task, you will learn how to test the trained Custom Vision model to evaluate its performance and accuracy in classifying images.
+
 Now that you've trained the model, you can test it.
 
 1. Above the performance metrics, click **Quick Test**.
@@ -128,7 +134,7 @@ Now that you've trained the model, you can test it.
 
 ## Task 5: View the project settings
 
-The project you have created has been assigned a unique identifier, which you will need to specify in any code that interacts with it.
+In this task, you will learn how to view the project settings in Custom Vision.
 
 1. Click the **settings (&#9881;)** icon at the top right of the **Performance** page to view the project settings.
 
@@ -137,6 +143,8 @@ The project you have created has been assigned a unique identifier, which you wi
 3. On the right, under **Resources** note that the **key and endpoint** are shown. These are the details for the *training* resource (you can also obtain this information by viewing the resource in the Azure portal).
 
 ## Task 6: Use the *training* API
+
+In this task, you will learn how to use the Custom Vision *training* API to automate the process of uploading images, tagging them, and training models without relying on the portal's user interface.
 
 The Custom Vision portal provides a convenient user interface that you can use to upload and tag images, and train models. However, in some scenarios you may want to automate model training by using the Custom Vision training API.
 
@@ -179,6 +187,8 @@ The Custom Vision portal provides a convenient user interface that you can use t
 
 ## Task 7: Publish the image classification model
 
+In this task, you will learn how to publish your trained image classification model, making it accessible for use in client applications.
+
 Now you're ready to publish your trained model so that it can be used from a client application.
 
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish** to publish the trained model with the following settings:
@@ -195,6 +205,8 @@ Now you're ready to publish your trained model so that it can be used from a cli
    ![](./images/l7e1-9.png)
 
 ## Task 8: Use the image classifier from a client application
+
+In this task, you will learn how to use the published image classification model from a client application, enabling it to analyze and classify images programmatically.
 
 Now that you've published the image classification model, you can use it from a client application. Once again, you can choose to use **C#**.
 
@@ -241,4 +253,4 @@ In this lab, you have completed:
 + Published the image classification model
 + Used the image classifier from a client application
    
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed the lab >> Click on Next

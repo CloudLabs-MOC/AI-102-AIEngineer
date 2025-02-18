@@ -27,6 +27,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Open the cloned folder in Visual Studio Code
 
+In this task, you will learn how to open the cloned folder in **Visual Studio Code**, allowing you to view and edit the project files within the IDE.
+
 1.  Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
 
      ![Visual Studio Code Icon](./images/vscode.png)
@@ -36,6 +38,8 @@ In this lab, you will complete the following tasks:
      ![](./images/8.1.png)
      
 ## Task 2: Upload a video to Video Analyzer
+
+In this task, you will learn how to **upload a video** to **Azure Video Analyzer** for processing and analysis.
 
 First, you'll need to sign into the Video Analyzer portal and upload a video.
 
@@ -65,6 +69,8 @@ First, you'll need to sign into the Video Analyzer portal and upload a video.
 
 ## Task 3: Review video insights
 
+In this task, you will learn how to **review video insights** provided by **Azure Video Analyzer** after uploading a video for analysis.
+
 The indexing process extracts insights from the video, which you can view in the portal.
 
 1. In the Video Analyzer portal, when the video is indexed, Click middle of the video to play it. You'll see the video player alongside a pane that shows insights extracted from the video.
@@ -83,28 +89,37 @@ The indexing process extracts insights from the video, which you can view in the
     - Transcript of audio narration.
     - Text visible in the video.
     - Indications of speakers who appear in the video. Some well-known people are  automatically recognized by name, others are indicated by number (for example *Speaker #1*).
+
 5. Switch back to the **Insights** pane and view the insights show there. They include:
     - Individual people who appear in the video.
     - Topics discussed in the video.
     - Labels for objects that appear in the video.
     - Named entities, such as people and brands that appear in the video.
     - Key scenes.
+
 6. With the **Insights** pane visible, select the **View** symbol again, and in the list of insights, add **Keywords** and **Sentiments** to the pane.
 
     The insights found can help you determine the main themes in the video. For example, the **topics** for this video show that it is clearly about technology, social responsibility, and ethics.
 
 ## Task 4: Search for insights
 
+In this task, you will learn how to **search for insights** from a video analysis using **Azure Video Analyzer**, allowing you to retrieve valuable metadata such as objects, actions, and text detected within the video.
+
 You can use Video Analyzer to search the video for insights.
 
 1. In the **Insights** pane, in the **Search** box, enter *Bee*. You may need to scroll down in the Insights pane to see results for all types of insight.
+
 2. Observe that one matching *label* is found, with its location in the video indicated beneath.
+
 3. Select the beginning of the section where the presence of a bee is indicated, and view the video at that point (you may need to pause the video and select carefully - the bee only appears briefly!)
+
 4. Clear the **Search** box to show all insights for the video.
 
     ![Video Analyzer search results for Bee](./images/video-indexer-search.png)
 
 ## Task 5: Use Video Analyzer widgets
+
+In this task, you will learn how to **use Video Analyzer widgets** to visually display insights from your video analysis, making it easier to interact with and interpret video metadata such as objects, actions, and scenes.
 
 The Video Analyzer portal is a useful interface to manage video indexing projects. However, there may be occasions when you want to make the video and its insights available to people who don't have access to your Video Analyzer account. Video Analyzer provides widgets that you can embed in a web page for this purpose.
 
@@ -113,6 +128,7 @@ The Video Analyzer portal is a useful interface to manage video indexing project
 2. In the Video Analyzer portal, return to the **Media files** page and open your **Responsible AI** video.
 
 3. Under the video player, select **&lt;/&gt; Embed** to view the HTML iframe code to embed the widgets.
+
      ![Video Analyzer search results for Bee](./images/lab8-image2.png)
 
 4. In the **Share and Embed** dialog box, select the **Player** widget, set the video size to 560 x 315,  and then copy the embed code to the clipboard.
@@ -131,9 +147,13 @@ The Video Analyzer portal is a useful interface to manage video indexing project
 
 ## Task 6: Use the Video Analyzer REST API
 
+In this task, you will learn how to **use the Video Analyzer REST API** to interact with video analysis features via HTTP requests.
+
 Video Analyzer provides a REST API that you can use to upload and manage videos in your account.
 
 ## Task 6.1 : Get your API details
+
+In this task, you will learn how to **get your API details** for the Video Analyzer service, including the endpoint and authentication key needed for API calls.
 
 To use the Video Analyzer API, you need some information to authenticate requests:
 
@@ -148,6 +168,7 @@ To use the Video Analyzer API, you need some information to authenticate request
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
 3. On the **Profile** page, view the **Subscriptions** associated with your profile.
+
 4. On the page with your subscription(s), observe that you have been assigned two keys (primary and secondary) for each subscription. Then select **Show** for any of the keys to see it and copy the Keys You will need this shortly.
 
     ![Video Analyzer search results for Bee](./images/lab8-image4.png)
@@ -155,6 +176,8 @@ To use the Video Analyzer API, you need some information to authenticate request
     ![Video Analyzer search results for Bee](./images/lab8-image(5).png)
 
 ## Task 7: Use the REST API
+
+In this task, you will learn how to **use the REST API** to interact with the Video Analyzer service by sending requests to analyze videos and retrieve insights.
 
 Now that you have the account ID and an API key, you can use the REST API to work with videos in your account. In this procedure, you'll use a PowerShell script to make REST calls; but the same principles apply with HTTP utilities such as cURL or Postman, or any programming language capable of sending and receiving JSON over HTTP.
 
@@ -164,10 +187,15 @@ All interactions with the Video Analyzer REST API follow the same pattern:
 - Subsequent requests use the access token to authenticate when calling REST methods to work with videos.
 
 1. In Visual Studio Code, in the **16-video-indexer** folder, open **get-videos.ps1**.
+
 2. In the PowerShell script, replace the **YOUR_ACCOUNT_ID** and **YOUR_API_KEY** placeholders with the account ID and API key values you identified previously.
+
 3. Observe that the *location* for a free account is "trial". If you have created an unrestricted Video Analyzer account (with an associated Azure resource), you can change this to the location where your Azure resource is provisioned **<inject key="Region" enableCopy="false"/>**.
+
 4. Review the code in the script, noting that invokes two REST methods: one to get an access token, and another to list the videos in your account.
+
 5. Save your changes, and then right click on **16-video-indexer**, click on **open in integrated terminal** and run the script using **.\get-videos.ps1**.
+
 6. View the JSON response from the REST service, which should contain details of the **Responsible AI** video you indexed previously.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:

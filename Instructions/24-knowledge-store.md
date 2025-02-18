@@ -26,6 +26,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Clone the repository for this course (Skip if already done)
 
+In this task, you will learn how to clone the repository for this course.
+
 If you have already cloned **AI-102-AIEngineer** code repository to the environment where you're working on this lab, open it in Visual Studio Code; otherwise, follow these steps to clone it now.
 
 1. Start Visual Studio Code.
@@ -45,6 +47,8 @@ If you have already cloned **AI-102-AIEngineer** code repository to the environm
     > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
 
 ## Task 2: Create Azure resources
+
+In this task, you will learn how to create the necessary Azure resources.
 
 > **Note**: If you have previously completed the **[Create an Azure AI Search solution](22-azure-search.md)** exercise, and still have these Azure resources in your subscription, you can skip this section and start at the **Create a search solution** section. Otherwise, follow the steps below to provision the required Azure resources.
 
@@ -114,6 +118,8 @@ If you have already cloned **AI-102-AIEngineer** code repository to the environm
 
 ## Task 3: Create a search solution
 
+In this task, you will learn how to create a search solution in Azure AI Search, including defining the index, configuring data sources, creating an indexer, and setting up skillsets to enrich your search results.
+
 Now that you have the necessary Azure resources, you can create a search solution that consists of the following components:
 
 - A **data source** that references the documents in your Azure storage container.
@@ -124,6 +130,8 @@ Now that you have the necessary Azure resources, you can create a search solutio
 In this exercise, you'll use the Azure AI Search REST interface to create these components by submitting JSON requests.
 
 ### Task 3.1: Prepare JSON for REST operations
+
+In this task, you will learn how to prepare JSON payloads for REST operations in Azure AI Search, such as creating or updating indexes, skillsets, or data sources, to interact with the Azure Search service programmatically.
 
 You'll use the REST interface to submit JSON definitions for your Azure AI Search components.
 
@@ -177,6 +185,8 @@ You'll use the REST interface to submit JSON definitions for your Azure AI Searc
 
 ### Task 3.2: Submit REST requests
 
+In this task, you will learn how to submit REST requests to interact with Azure AI Search, including creating, updating, or querying indexes, skillsets, and data sources using the prepared JSON payloads.
+
 Now that you've prepared the JSON objects that define your search solution components, you can submit the JSON documents to the REST interface to create them.
 
 1. In the **create-search** folder, open **create-search.cmd**. This batch script uses the cURL utility to submit the JSON definitions to the REST interface for your Azure AI Search resource.
@@ -207,9 +217,13 @@ Now that you've prepared the JSON objects that define your search solution compo
 
 ## Task 4: View the knowledge store
 
+In this task, you will learn how to view the knowledge store, where the enriched data extracted by the indexing process is stored in projections after running an indexer that uses a skillset to process and enhance your data.
+
 After you have run an indexer that uses a skillset to create a knowledge store, the enriched data extracted by the indexing process is persisted in the knowledge store projections.
 
 ### Task 4.1: View object projections
+
+In this task, you will learn how to view object projections, which are JSON files for each indexed document stored in a blob container in the Azure Storage account specified in the skillset definition for your Margie's Travel search solution.
 
 The *object* projections defined in the Margie's Travel skillset consist of a JSON file for each indexed document. These files are stored in a blob container in the Azure Storage account specified in the skillset definition.
 
@@ -263,6 +277,8 @@ The ability to create *object* projections like this enables you to generate enr
 
 ### Task 4.2: View file projections
 
+In this task, you will learn how to view file projections, which are JPEG files created for each image extracted from the documents during the indexing process as part of your skillset definition.
+
 The *file* projections defined in the skillset create JPEG files for each image that was extracted from the documents during the indexing process.
 
 1. In the storage browser interface in the Azure portal, select the **margies-images** blob container. This container contains a folder for each document that contained images.
@@ -280,6 +296,8 @@ The *file* projections defined in the skillset create JPEG files for each image 
 The ability to generate *file* projections like this makes indexing an efficient way to extract embedded images from a large volume of documents.
 
 ### Task 4.3: View table projections
+
+In this task, you will learn how to view table projections, which form a relational schema of enriched data as defined in the skillset. These projections provide a structured view of the extracted and processed content during the indexing process.
 
 The *table* projections defined in the skillset form a relational schema of enriched data.
 

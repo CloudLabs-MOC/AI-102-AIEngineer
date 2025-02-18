@@ -30,7 +30,7 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Get an OpenWeather API key
 
-In this exercise, you will create a bot that uses the OpenWeather service to retrieve weather conditions for the city entered by the user. You will require an API key for the service to work.
+In this task, you will create a bot that uses the OpenWeather service to retrieve weather conditions for the city entered by the user. You will require an API key for the service to work.
 
 1. In a web browser, go to the OpenWeather site at `https://openweathermap.org/price`.
 
@@ -60,7 +60,7 @@ In this exercise, you will create a bot that uses the OpenWeather service to ret
 
 ## Task 2: Update Bot Framework Composer
 
-You're going to use the Bot Framework Composer to create your bot. This tools is updated regularly, so let's make sure you have the latest version installed.
+In this task, you're going to use the Bot Framework Composer to create your bot. This tools is updated regularly, so let's make sure you have the latest version installed.
 
 > **Note**: Updates may include changes to the user interface that affect the instructions in this exercise.
 
@@ -96,7 +96,7 @@ You're going to use the Bot Framework Composer to create your bot. This tools is
 
 ## Task 3: Create a bot
 
-Now you're ready to use the Bot Framework Composer to create a bot.
+In this task, you will learn how to use the Bot Framework Composer to create a bot.
 
 ### Task 3.1: Create a bot and customize the "welcome" dialog flow
 
@@ -138,7 +138,7 @@ Now you're ready to use the Bot Framework Composer to create a bot.
 
 ### Task 3.2: Test the bot
 
-Your basic bot is complete so now let's test it.
+In this task, you will learn how to test your basic bot.
 
 1. Select **Start Bot** in the upper right-hand corner of Composer, and wait while your bot is compiled and started. This may take several minutes.
 
@@ -158,9 +158,13 @@ Your basic bot is complete so now let's test it.
 
 ## Task 4: Add a dialog to get the weather
 
+In this task, you will learn how to add a dialog to your bot that responds when the user mentions "weather."
+
 Now that you have a working bot, you can expand its capabilities by adding dialogs for specific interactions. In this case, you'll add a dialog that is triggered when the user mentions "weather".
 
 ### Task 4.1: Add a dialog
+
+In this task, you will learn how to define a dialog flow to handle questions about the weather.
 
 First, you need to define a dialog flow that will be used to handle questions about the weather.
 
@@ -237,6 +241,8 @@ First, you need to define a dialog flow that will be used to handle questions ab
 
 ### Task 4.2: Add a trigger for the dialog
 
+In this task, you will learn how to add a trigger for the new weather dialog, initiating it from the existing welcome dialog.
+
 Now you need some way for the new dialog to be initiated from the existing welcome dialog.
 
 1. In the navigation pane, select the **WeatherBot** dialog that contains **WelcomeUsers** (this is under the top-level bot node of the same name).
@@ -281,6 +287,8 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
 ## Task 5: Handle interruptions
 
+In this task, you will learn how to handle interruptions in your bot, allowing users to change the flow of the conversation, such as canceling a request.
+
 A well designed bot should allow users to change the flow of the conversation, for example by canceling a request.
 
 1. In the Bot Composer, in the navigation pane, use the **...** menu for the **WeatherBot** dialog to add a new trigger (in addition to the existing **WelcomeUsers** and **WeatherRequested** triggers). The new trigger should have the following settings:
@@ -322,9 +330,13 @@ A well designed bot should allow users to change the flow of the conversation, f
 
 ## Task 6: Enhance the user experience
 
-The interactions with the weather bot so far has been through text.  Users enter text for their intentions and the bot responds with text. While text is often a suitable way to communicate, you can enhance the experience through other forms of user interface element.  For example, you can use buttons to initiate recommended actions, or display a *card* to present information visually.
+In this task, you will learn how to enhance the user experience of your weather bot by using buttons and cards to present information visually and initiate recommended actions.
+
+The interactions with the weather bot so far has been through text. Users enter text for their intentions and the bot responds with text. While text is often a suitable way to communicate, you can enhance the experience through other forms of user interface element.  For example, you can use buttons to initiate recommended actions, or display a *card* to present information visually.
 
 ### Task 6.1: Add a button
+
+In this task, you will learn how to add a button to your bot, allowing users to initiate actions through a simple click.
 
 1. In the Bot Framework Composer, in the navigation pane, under the **GetWeather** action, select **BeginDialog**.
 
@@ -345,6 +357,8 @@ The interactions with the weather bot so far has been through text.  Users enter
 
 ### Task 6.2: Add a card
 
+In this task, you will learn how to add a card to your bot, enabling the presentation of information visually in a structured format.
+
 1. In the **GetWeather** dialog, in the **True** path after checking the response from the HTTP weather service, select the **Send a response** action that displays the weather report.
 
 1. In the properties pane, select **Show code** and replace the existing code with the following code.
@@ -360,6 +374,8 @@ The interactions with the weather bot so far has been through text.  Users enter
     >**Note:** This template will use the same variables as before for the weather condition but also adds a title to the card that will be displayed, along with an image for the weather condition.
 
 ### Task 6.3: Test the new user interface
+
+In this task, you will learn how to test the new user interface of your bot, ensuring that buttons and cards are functioning as intended.
 
 1. Restart the bot and open the web chat pane. Restart the conversation, and after entering your name, enter `What is the weather like?`. Then, when prompted, click the **Cancel** button to cancel the request.
    

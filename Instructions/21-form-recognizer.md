@@ -24,6 +24,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Open the cloned folder in Visual Studio Code
 
+In this task, you will learn how to open the cloned folder in **Visual Studio Code**, allowing you to view and edit the project files within the IDE.
+
 1.  Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
 
      ![Visual Studio Code Icon](./images/vscode.png)
@@ -36,9 +38,11 @@ In this lab, you will complete the following tasks:
 
 ## Task 2: Create a Azure AI Document Intelligence resource
 
+In this task, you will learn how to create an Azure AI Document Intelligence resource in the Azure portal to use the Form Recognizer service.
+
 To use the Form Recognizer service, you need a Form Recognizer resource in your Azure subscription. You'll use the Azure portal to create a resource.
 
-1.  Open the Azure portal.
+1. Open the Azure portal.
 
 2. Select the **&#65291;Create a resource** button, search for *Document intelligence*, select **Document intelligence(form recogniser)** and then select **Create**. Provide the following settings:
     - **Subscription**: *Your Azure subscription*
@@ -62,6 +66,8 @@ To use the Form Recognizer service, you need a Form Recognizer resource in your 
 <validation step="ff4ed6a6-d248-4b89-8b86-5c7ade0b7991" />
 
 ## Task 3: Gather documents for training
+
+In this task, you will learn how to gather and prepare documents for training the Form Recognizer model, ensuring they are in the appropriate format for use in the Azure AI Document Intelligence resource.
 
 ![An image of an invoice.](../21-custom-form/sample-forms/Form_1.jpg)  
 
@@ -127,9 +133,12 @@ Then **save** your changes.
 
 ## Task 4: Train a model using the Document Intelligence SDK
 
+In this task, you will learn how to train a custom model using the Azure AI Document Intelligence SDK by uploading and using **.jpg** image files and corresponding **.json** label files.
+
 Now you will train a model using the **.jpg** and **.json** files.
 
 1. In Visual Studio Code, in the **21-custom-form/sample-forms** folder, open **fields.json** and review the JSON document it contains. This file defines the fields that you will train a model to extract from the forms.
+
 2. Open **Form_1.jpg.labels.json** and review the JSON it contains. This file identifies the location and values for named fields in the **Form_1.jpg** training document.
 3. Open **Form_1.jpg.ocr.json** and review the JSON it contains. This file contains a JSOn representation of the text layout of **Form_1.jpg**, including the location of all text areas found in the form.
 
@@ -180,6 +189,8 @@ Now you will train a model using the **.jpg** and **.json** files.
 
 ## Task 5: Test your custom Document Intelligence model 
 
+In this task, you will learn how to test your custom Document Intelligence model by submitting test documents to the model and analyzing its predictions for accuracy and performance.
+
 1. In the **21-custom-form** folder, in the subfolder for your preferred language (**C-Sharp**), expand the **test-model** folder.
 
 2. Right-click the **test-model** folder and select **open an integrated terminal**.
@@ -210,7 +221,6 @@ Now you will train a model using the **.jpg** and **.json** files.
     - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **Client**.
     - The client is then used to extract form fields and values from the **test1.jpg** image.
     
-
 7. Return the integrated terminal for the **test-model** folder, and enter the following command to run the program:
 
      **C#**
@@ -221,14 +231,13 @@ Now you will train a model using the **.jpg** and **.json** files.
     
 8. View the output and observe how the output for the model provides field names like "CompanyPhoneNumber" and "DatedAs".   
 
-
 ### Review
-In this lab, you have completed:
+In this lab, you have:
 
- + Open the cloned folder in Visual Studio Code.
- + Create a Azure AI Document Intelligence resource
- + Gather documents for training
- + Train a model using the Document Intelligence SDK
- + Test your custom Document Intelligence model 
+- Opened the cloned folder in Visual Studio Code.
+- Created an Azure AI Document Intelligence resource.
+- Gathered documents for training.
+- Trained a model using the Document Intelligence SDK.
+- Tested your custom Document Intelligence model.
 
 ## You have successfully completed the lab

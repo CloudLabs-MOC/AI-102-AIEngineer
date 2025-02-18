@@ -21,6 +21,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Manage authentication keys
 
+In this task, you will learn how to manage authentication keys to securely access and interact with Azure services, ensuring proper authorization and access control.
+
 When you created your Azure AI services resource, two authentication keys were generated. You can manage these in the Azure portal or by using the Azure command line interface (CLI).
 
 1. In Visual Studio Code, right-click the **02-cognitive-security (1)** folder and right click on it then select **Open an integrated terminal (2)**.
@@ -88,9 +90,13 @@ When you created your Azure AI services resource, two authentication keys were g
 
 ## Task 2: Secure key access with Azure Key Vault
 
+In this task, you will learn how to secure key access by using Azure Key Vault to store and manage sensitive information like secrets, keys, and certificates.
+
 You can develop applications that consume Azure AI services by using a key for authentication. However, this means that the application code must be able to obtain the key. One option is to store the key in an environment variable or a configuration file where the application is deployed, but this approach leaves the key vulnerable to unauthorized access. A better approach when developing applications on Azure is to store the key securely in Azure Key Vault, and provide access to the key through a *managed identity* (in other words, a user account used by the application itself).
 
 ### Task 2.1: Create a key vault and add a secret
+
+In this task, you will learn how to create an Azure Key Vault and add a secret to securely store sensitive data for use in your applications.
 
 First, you need to create a key vault and add a *secret* for the Azure AI services key.
 
@@ -162,6 +168,8 @@ First, you need to create a key vault and add a *secret* for the Azure AI servic
     
 ### Task 2.2: Use a service principal
 
+In this task, you will learn how to use a service principal to authenticate and securely access Azure resources, enabling automated and secure interactions with Azure services.
+
 To access the secret in the key vault, your application must use a service principal that has access to the secret. You'll use the Azure command line interface (CLI) to use the service principal, find its object ID, and grant access to the secret in Azure Vault.
 
 1. Return to Visual Studio Code, and open the integrated terminal for the **02-cognitive-security** folder.
@@ -187,6 +195,8 @@ To access the secret in the key vault, your application must use a service princ
     ```
 
 ### Task 2.3: Use the service principal in an application
+
+In this task, you will learn how to use a service principal in an application to authenticate and grant it access to Azure resources, enabling secure, automated operations.
 
 Now you're ready to use the service principal identity in an application, so it can access the secret Azure AI services key in your key vault and use it to connect to your Azure AI services resource.
 
@@ -258,4 +268,4 @@ In this lab, you have completed:
 + Managed authentication keys
 + Secured key access with Azure Key Vault
 
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed the lab >> Click on Next

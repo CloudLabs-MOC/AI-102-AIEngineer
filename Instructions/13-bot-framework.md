@@ -24,6 +24,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Update the Bot Framework Emulator
 
+In this task, you will learn how to update the Bot Framework Emulator to the latest version for improved performance and compatibility.
+
 You're going to use the Bot Framework SDK to create your bot, and the Bot Framework Emulator to test it. The Bot Framework Emulator is updated regularly, so let's make sure you have the latest version installed.
 
 > **Note**: Updates may include changes to the user interface that affect the instructions in this exercise.
@@ -44,6 +46,8 @@ You're going to use the Bot Framework SDK to create your bot, and the Bot Framew
 
 ## Task 2: Open the cloned repository for this course
 
+In this task, you will learn how to open the cloned repository for this course.
+
 1. In the Lab-VM, double click on the **Visual Studio Code**.
 
 1. Select the **Explorer**, select **Open Folder** in Visual Studio Code. Open **C:\AllFiles\AI-102-AIEngineer-stage (1)** then click on **Select Folder (2)**
@@ -58,6 +62,8 @@ You're going to use the Bot Framework SDK to create your bot, and the Bot Framew
 
 
 ## Task 3: Create a bot
+
+In this task, you will learn how to create a bot.
 
 You can use the Bot Framework SDK to create a bot based on a template, and then customize the code to meet your specific requirements.
 
@@ -88,6 +94,8 @@ You can use the Bot Framework SDK to create a bot based on a template, and then 
 
 ## Task 4: Test the bot in the Bot Framework Emulator
 
+In this task, you will learn how to test the bot in the Bot Framework Emulator.
+
 You've created a bot based on the *EchoBot* template. Now you can run it locally and test it by using the Bot Framework Emulator (which should be installed on your system).
 
 1. In the terminal pane, ensure that the current directory is the **TimeBot** folder containing your bot code files, and then enter the following command to start your bot running locally.
@@ -113,6 +121,8 @@ You've created a bot based on the *EchoBot* template. Now you can run it locally
 5. Close the Bot Framework Emulator and return to Visual Studio Code, then in the terminal window, enter **CTRL+C** to stop the bot.
 
 ## Task 5: Modify the bot code
+
+In this task, you will learn how to modify the bot code.
 
 You've created a bot that echoes the user's input back to them. It's not particularly useful, but serves to illustrate the basic flow of a conversational dialog. A conversation with a bot consists of a sequence of *activities*, in which text, graphics, or user interface *cards* are used to exchange information. The bot begins the conversation with a greeting, which is the result of a *conversation update* activity that is triggered when a user initializes a chat session with the bot. Then the conversation consists of a sequence of further activities in which the user and bot take it in turns to send *messages*.
 
@@ -173,8 +183,6 @@ You've created a bot that echoes the user's input back to them. It's not particu
         }
     }
     ```
-
-
 5. Save your changes, and then in the terminal pane, ensure that the current directory is the **TimeBot** folder containing your bot code files, and then enter the following command to start your bot running locally.
 
     ```
@@ -206,4 +214,4 @@ In this lab, you have completed:
 + Tested the bot in the Bot Framework Emulator
 + Modified the bot code
 
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed the lab >> Click on Next

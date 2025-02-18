@@ -23,6 +23,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Open the cloned folder in Visual Studio Code
 
+In this task, you will learn how to open the cloned folder in **Visual Studio Code**, allowing you to view and edit the project files within the IDE.
+
 1.  Start Visual Studio Code (the program icon is pinned to the Desktop).
 
      ![Visual Studio Code Icon](./images/vscode.png) 
@@ -35,6 +37,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 2: Provision Azure AI Services resource
 
+In this task, you will learn how to provision an **Azure AI Services** resource, which will provide AI capabilities for your application, such as language understanding, vision, and more.
+
 1. Navigate to the **Azure Portal**.
 
     ![Visual Studio Code Icon](./images/azureportal.png)
@@ -46,7 +50,6 @@ In this lab, you will complete the following tasks:
 1. On the **Azure AI service** home page, from the left navigation menu, select **Azure AI services multi-service account (1)**, select **+ Create (2)**.
 
     ![Visual Studio Code Icon](./images/a-3.png)
-
 
 2. On the **Azure AI service** home page, from the left navigation menu, select **Azure AI services multi-service account (1)**, select **+ Create (2)**
 
@@ -75,7 +78,7 @@ In this lab, you will complete the following tasks:
 
 ## Task 3: Prepare to use the Azure AI Vision SDK
 
-In this exercise, you'll complete a partially implemented client application that uses the Azure AI Vision SDK to read text.
+In this task, you will learn how to prepare a partially implemented client application that leverages the **Azure AI Vision SDK** to read text from images, setting up the necessary configurations and libraries for text recognition.
 
 > **Note**: You can choose to use the SDK for **C#**. In the steps below, perform the actions appropriate for your preferred language.
 
@@ -120,6 +123,8 @@ In this exercise, you'll complete a partially implemented client application tha
      ```
 
 ## Task 4: Use the Read API to read text from an image
+
+In this task, you will learn how to use the **Read API** from the **Azure AI Vision SDK** to read text from an image, including support for both printed and handwritten text, and how to handle the asynchronous operation model to monitor progress and retrieve results.
 
 The **Read** API uses a newer text recognition model and generally performs better for larger images that contain a lot of text, but will work for any amount of text. It also supports text extraction from *.pdf* files, and can recognize both printed text and handwritten text in multiple languages.
 
@@ -186,7 +191,10 @@ The **Read** API uses an asynchronous operation model, in which a request to sta
 
 ## Task 5: Use the Read API to read text from a document
 
+In this task, you will learn how to use the **Read API** from the **Azure AI Vision SDK** to extract text from a **document**, including the ability to handle text from PDFs and images with multiple languages and various layouts.
+
 1. In the code file for your application, in the **Main** function, examine the code that runs if the user selects menu option **2**. This code calls the **GetTextRead** function, passing the path to a PDF document file.
+
 2. In the **read-text/images** folder, right-click **Rome.pdf** and select **Reveal in File Explorer**. Then in File Explorer, open the PDF file to view it.
 3. Return to the integrated terminal for the **read-text** folder, and enter the following command to run the program:
 
@@ -199,7 +207,9 @@ The **Read** API uses an asynchronous operation model, in which a request to sta
 
 ## Task 6: Read handwritten text
 
-In addition to printed text, the **Read** API can extract handwritten text in English..
+In this task, you will learn how to use the **Read API** from the **Azure AI Vision SDK** to extract **handwritten text** in **English** from images or documents, expanding its capabilities beyond just printed text.
+
+In addition to printed text, the **Read** API can extract handwritten text in English.
 
 1. In the code file for your application, in the **Main** function, examine the code that runs if the user selects menu option **3**. This code calls the **GetTextRead** function, passing the path to an image file.
 2. In the **read-text/images** folder, open **Note.jpg** to view the image that your code will process.
@@ -221,4 +231,4 @@ In this lab, you have completed:
  +  Used the Read API to read text from a document
  +  Readed handwritten text
    
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed the lab >> Click on Next

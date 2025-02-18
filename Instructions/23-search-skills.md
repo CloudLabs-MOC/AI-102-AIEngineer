@@ -25,6 +25,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Clone the repository for this course (Skip if already done)
 
+In this task, you will learn how to clone the repository for this course.
+
 If you have already cloned **AI-102-AIEngineer** code repository to the environment where you're working on this lab, open it in Visual Studio Code; otherwise, follow these steps to clone it now.
 
 1. Start Visual Studio Code.
@@ -44,6 +46,8 @@ If you have already cloned **AI-102-AIEngineer** code repository to the environm
     > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
 
 ## Task 2: Create Azure resources
+
+In this task, you will learn how to create the necessary Azure resources.
 
 > **Note**: If you have previously completed the **[Create an Azure AI Search solution](22-azure-search.md)** exercise, and still have these Azure resources in your subscription, you can skip this section and start at the **Create a search solution** section. Otherwise, follow the steps below to provision the required Azure resources.
 
@@ -120,6 +124,8 @@ If you have already cloned **AI-102-AIEngineer** code repository to the environm
 
 ## Task 3: Create a search solution
 
+In this task, you will learn how to create a search solution using Azure AI Search, which includes configuring indexes, skillsets, data sources, and an indexer to enable efficient searching and querying.
+
 Now that you have the necessary Azure resources, you can create a search solution that consists of the following components:
 
 - A **data source** that references the documents in your Azure storage container.
@@ -189,6 +195,8 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
 
 ## Task 4: Search the index
 
+In this task, you will learn how to search the index in your Azure AI Search solution, allowing you to retrieve relevant results based on specific queries.
+
 Now that you have an index, you can search it.
 
 1. At the top of the blade for your Azure AI Search resource, select **Search explorer**.
@@ -204,6 +212,8 @@ Now that you have an index, you can search it.
     This query retrieves the **url**, **sentiment**, and **keyphrases** for all documents that mention *London* authored by *Reviewer* that have a positive **sentiment** label (in other words, positive reviews that mention London)
 
 ## Task 5: Create an Azure Function for a custom skill
+
+In this task, you will learn how to create an Azure Function to implement a custom skill that can be used within your Azure AI Search solution to enrich data during indexing.
 
 The search solution includes a number of built-in AI skills that enrich the index with information from the documents, such as the sentiment scores and lists of key phrases seen in the previous task.
 
@@ -446,6 +456,8 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
 ## Task 6: Add the custom skill to the search solution
 
+In this task, you will learn how to add the custom skill to your Azure AI Search solution by modifying the skillset and incorporating the Azure Function to enhance data processing during indexing.
+
 Now you need to include your function as a custom skill in the search solution skillset, and map the results it produces to a field in the index. 
 
 1. In Visual Studio Code, in the **23-custom-search-skill/update-search** folder, open the **update-skillset.json** file. This contains the JSON definition of a skillset.
@@ -493,6 +505,8 @@ Now you need to include your function as a custom skill in the search solution s
 
 ## Task 7: Search the index
 
+In this task, you will learn how to search the index in your Azure AI Search solution, enabling you to retrieve relevant and refined search results based on the indexed data.
+
 Now that you have an index, you can search it.
 
 1. At the top of the blade for your Azure AI Search resource, select **Search explorer**.
@@ -528,4 +542,5 @@ In this lab, you have completed:
 + Added the custom skill to the search solution
 + Searched the index
 
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed the lab >> Click on Next
+

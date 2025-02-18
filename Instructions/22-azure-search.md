@@ -19,7 +19,6 @@ In this lab, you will complete the following tasks:
 + Task 6: Explore and modify definitions of search components
 + Task 7: Create a search client application
 
-
 ## Estimated timing: 120 minutes
 
 ## Architecture diagram
@@ -27,6 +26,8 @@ In this lab, you will complete the following tasks:
    ![](./images/arch22.png)
 
 ## Task 1: Clone the repository for this course
+
+In this task, you will learn how to clone the repository for this course.
 
 If you have not already cloned **AI-102-AIEngineer** code repository to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the cloned folder in Visual Studio Code.
 
@@ -64,6 +65,8 @@ If you have not already cloned **AI-102-AIEngineer** code repository to the envi
 
 ## Task 2: Create Azure resources
 
+In this task, you will learn how to create the necessary Azure resources, including an Azure AI Search resource, an Azure AI Services resource, and a Storage account with a blob container.
+
 The solution you will create for Margie's Travel requires the following resources in your Azure subscription:
 
 - An **Azure AI Search** resource, which will manage indexing and querying.
@@ -73,6 +76,8 @@ The solution you will create for Margie's Travel requires the following resource
     > **Important**: Your Azure AI Search and Azure AI Services resources must be in the same location!
 
 ### Task 2.1: Create an Azure AI Search resource
+
+In this task, you will learn how to create an Azure AI Search resource to manage indexing and querying.
 
 1. In the azure portal, select the **&#65291;Create a resource** button.
 
@@ -105,6 +110,8 @@ The solution you will create for Margie's Travel requires the following resource
 >**Important**: Perform the Validation after completing, **Task 4**. Otherwise you may get validation as failed.
 
 ### Task 2.2: Create an Azure AI Services resource
+
+In this task, you will learn how to create an Azure AI Services resource to provide AI capabilities for enriching your data with AI-generated insights.
 
 If you don't already have one in your subscription, you'll need to provision an **Azure AI Services** resource. Your search solution will use this to enrich the data in the datastore with AI-generated insights.
 
@@ -141,6 +148,8 @@ If you don't already have one in your subscription, you'll need to provision an 
 >**Important**: Perform the Validation after completing, **Task 4**. Otherwise you may get validation as failed.
 
 ### Task 2.3: Create a storage account
+
+In this task, you will learn how to create a storage account in Azure to store your documents in a blob container.
 
 1. Return to the home page of the Azure portal, and then select the **&#65291;Create a resource** button.
 
@@ -188,6 +197,8 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 ## Task 3: Upload Documents to Azure Storage
 
+In this task, you will learn how to upload documents to your Azure Storage account, specifically into the blob container.
+
 Now that you have the required resources, you can upload some documents to your Azure Storage account.
 
 1. In Visual Studio Code, in the **Explorer** pane, expand the **22-create-a-search-solution** folder and select **UploadDocs.cmd**.
@@ -231,6 +242,8 @@ Now that you have the required resources, you can upload some documents to your 
 <validation step="6cbaad12-ad3b-48d8-9a96-088e83af5b84" />
 
 ## Task 4: Index the documents
+
+In this task, you will learn how to index the uploaded documents in Azure AI Search to enable efficient searching and querying.
 
 Now that you have the documents in place, you can create a search solution by indexing them.
 
@@ -278,7 +291,6 @@ Now that you have the documents in place, you can create a search solution by in
 
     ![Visual Studio Code Icon](./images/d-24.png) 
  
-
 1. In the **Add enrichments** section:
 
     - Change the **Skillset name** to **margies-skillset (1)**.
@@ -347,6 +359,8 @@ Now that you have the documents in place, you can create a search solution by in
 <validation step="9a5c0568-3ad3-4983-9e42-c9baba1ebb22" />
 
 ## Task 5: Search the index
+
+In this task, you will learn how to search the indexed documents in Azure AI Search to retrieve relevant results based on queries.
 
 Now that you have an index, you can search it.
 
@@ -424,17 +438,20 @@ Now that you have an index, you can search it.
 
 ## Task 6: Explore and modify definitions of search components
 
+In this task, you will learn how to explore and modify the definitions of search components, such as indexes, fields, and data sources, in Azure AI Search to customize search functionality.
+
 The components of the search solution are based on JSON definitions, which you can view and edit in the Azure portal.
 
 While you can use the portal to create and modify search solutions, it's often desirable to define the search objects in JSON and use the Azure AI Service REST interface to create and modify them.
 
 ### Task 6.1: Get the endpoint and key for your Azure AI Search resource
 
+In this task, you will learn how to get the endpoint and key for your Azure AI Search resource to authenticate and interact with the service.
+
 1. In the Azure portal, return to the **Overview** page for your Azure AI Search resource; and in the top section of the page, find the **Url** for your resource (which looks like **https://resource_name.search.windows.net**) and copy it to the clipboard.
 
     ![Visual Studio Code Icon](./images/d-33.png) 
  
-
 1. In Visual Studio Code, in the Explorer pane, expand the **22-create-a-search-solution** folder and its **modify-search** subfolder, and select **modify-search.cmd** to open it. You will use this script file to run *cURL* commands that submit JSON to the Azure AI Service REST interface.
 
 1. In **modify-search.cmd**, replace the **YOUR_SEARCH_URL** placeholder with the URL you copied to the clipboard.
@@ -442,7 +459,6 @@ While you can use the portal to create and modify search solutions, it's often d
 1. In the Azure portal, view the **Keys (1)** page for your Azure AI Search resource, and copy the **Primary admin key (2)** to the clipboard.
 
     ![Visual Studio Code Icon](./images/d-34.png) 
- 
 
 1. In Visual Studio Code, replace the **YOUR_ADMIN_KEY** placeholder with the key you copied to the clipboard.
 
@@ -451,6 +467,8 @@ While you can use the portal to create and modify search solutions, it's often d
 1. Save the changes to **modify-search.cmd** (but don't run it yet!)
 
 ### Task 6.2: Review and modify the skillset
+
+In this task, you will learn how to review and modify the skillset in Azure AI Search to enhance the data enrichment process using AI-generated insights.
 
 1. In Visual studio Code, in the **modify-search** folder, open **skillset.json**. This shows a JSON definition for **margies-skillset**.
 
@@ -496,6 +514,8 @@ While you can use the portal to create and modify search solutions, it's often d
 
 ### Task 6.3: Review and modify the index
 
+In this task, you will learn how to review and modify the index in Azure AI Search to adjust the structure and fields for improved search performance and accuracy.
+
 1. In Visual studio Code, in the **modify-search** folder, open **index.json**. This shows a JSON definition for **margies-index**.
 
 1. Scroll through the index and view the field definitions. Some fields are based on metadata and content in the source document, and others are the results of skills in the skillset.
@@ -528,6 +548,8 @@ While you can use the portal to create and modify search solutions, it's often d
 
 ### Task 6.4: Review and modify the indexer
 
+In this task, you will learn how to review and modify the indexer in Azure AI Search to control how data is crawled and indexed from your data source.
+
 1. In Visual studio Code, in the **modify-search** folder, open **indexer.json**. This shows a JSON definition for **margies-indexer**, which maps fields extracted from document content and metadata (in the **fieldMappings** section), and values extracted by skills in the skillset (in the **outputFieldMappings** section), to fields in the index.
 
 1. In the **fieldMappings** list, note the mapping for the **metadata_storage_path** value to the base-64 encoded key field. This was created when you assigned the **metadata_storage_path** as the key and selected the option to encode the key in the Azure portal. Additionally, a new mapping explicitly maps the same value to the **url** field, but without the Base-64 encoding:
@@ -558,6 +580,8 @@ While you can use the portal to create and modify search solutions, it's often d
 
 ### Task 6.5: Use the REST API to update the search solution
 
+In this task, you will learn how to use the REST API to update your Azure AI Search solution, including modifying indexes, skillsets, and other components programmatically.
+
 1. Right-click the **modify-search** folder and open an integrated terminal.
 
 1. In the terminal pane for the **modify-search** folder, enter the following command to run the **modify-search.cmd** script, which submits the JSON definitions to the REST interface and initiates the indexing.
@@ -571,6 +595,8 @@ While you can use the portal to create and modify search solutions, it's often d
     *There may be some warnings for a few documents that are too large to evaluate sentiment. Often sentiment analysis is performed at the page or sentence level rather than the full document; but in this case scenario, most of the documents - particularly the hotel reviews, are short enough for useful document-level sentiment scores to be evaluated.*
 
 ### Task 6.6: Query the modified index
+
+In this task, you will learn how to query the modified index in Azure AI Search to retrieve updated results based on your changes to the index structure.
 
 1. At the top of the blade for your Azure AI Search resource, select **Search explorer**.
 
@@ -590,10 +616,13 @@ While you can use the portal to create and modify search solutions, it's often d
 
 ## Task 7: Create a search client application
 
+In this task, you will learn how to create a search client application that interacts with your Azure AI Search service to send queries and display results.
+
 Now that you have a useful index, you can use it from a client application. You can do this by consuming the REST interface, submitting requests and receiving responses in JSON format over HTTP; or you can use the software development kit (SDK) for your preferred programming language. In this exercise, we'll use the SDK.
 
-
 ### Task 7.1: Get the endpoint and keys for your search resource
+
+In this task, you will learn how to get the endpoint and keys for your Azure AI Search resource to authenticate and connect your application to the search service.
 
 1. In the Azure portal, on the **Overview** page for your Azure AI Search resource, note the **Url** value, which should be similar to **https://*your_resource_name*.search.windows.net**. This is the endpoint for your search resource.
 
@@ -626,6 +655,8 @@ Now that you have a useful index, you can use it from a client application. You 
 
 ### Task 7.3: Explore code to search an index
 
+In this task, you will learn how to explore the code needed to search an index using the Azure AI Search SDK, including how to send queries and retrieve search results programmatically.
+
 The **margies-travel** folder contains code files for a web application a Microsoft C# *ASP.NET Razor* web application, which includes search functionality.
 
 1. Open the following code file in the web application, depending on your choice of programming language:
@@ -647,6 +678,8 @@ The **margies-travel** folder contains code files for a web application a Micros
     - The results include only the fields specified.
 
 ### Task 7.4: Explore code to render search results
+
+In this task, you will learn how to explore the code to render search results from Azure AI Search, including formatting and displaying the retrieved data in a user-friendly interface.
 
 The web app already includes code to process and render the search results.
 
@@ -671,6 +704,8 @@ The web app already includes code to process and render the search results.
         - Display the first five **imageTags** (if any).
 
 ### Task 7.5: Run the web app
+
+In this task, you will learn how to run the web app that interacts with your Azure AI Search service, allowing users to perform searches and view results in a web-based interface.
 
  1. Return to the integrated terminal for the **margies-travel** folder, and enter the following command to run the program:
 
@@ -719,4 +754,4 @@ In this lab, you have completed:
 + Explored and modify definitions of search components
 + Created a search client application
 
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed the lab >> Click on Next

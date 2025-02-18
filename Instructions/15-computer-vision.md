@@ -28,6 +28,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Open the cloned folder in Visual Studio Code
 
+In this task, you will learn how to open the cloned folder in **Visual Studio Code**, allowing you to view and edit the project files within the IDE.
+
 1.  Start Visual Studio Code (the program icon is pinned to the Desktop).
 
      ![Visual Studio Code Icon](./images/vscode.png) 
@@ -41,6 +43,8 @@ In this lab, you will complete the following tasks:
       **Note:** When **Do you trust the authors of the filesin tjis folder?** prompted select **Yes, I trust the authors**.
 
 ## Task 2: Provision an Azure AI services resource
+
+In this task, you will learn how to create Custom Vision resources in Azure for training and prediction, allowing you to manage access and costs for these workloads separately.
 
 If you don't already have one in your subscription, you'll need to provision a **Azure AI Services** resource.
 
@@ -85,11 +89,13 @@ If you don't already have one in your subscription, you'll need to provision a *
 
 ## Task 3: Prepare to use the Azure AI Vision SDK
 
-In this exercise, you'll complete a partially implemented client application that uses the Azure AI Vision SDK to analyze images.
+In this task, you will learn how to complete a partially implemented client application that utilizes the Azure AI Vision SDK to analyze images, including extracting and processing features like text, objects, and other visual insights from images.
+
 
 > **Note**: You can choose to use the SDK for **C#**. In the steps below, perform the actions appropriate for C# Language.
 
 1. In Visual Studio Code, in the **Explorer** pane, browse to the **15-computer-vision** folder and expand the **C-Sharp**  folder.
+
 2. Right-click the **image-analysis** folder and open an integrated terminal. Then install the Azure AI Vision SDK package by running the appropriate command for your language preference:
 
      **C#**
@@ -115,17 +121,18 @@ In this exercise, you'll complete a partially implemented client application tha
      using Microsoft.Azure.CognitiveServices.Vision.ComputerVision;
      using Microsoft.Azure.CognitiveServices.Vision.ComputerVision.Models;
      ```
-
     
 ## Task 4: View the images you will analyze
 
-In this exercise, you will use the Azure AI Vision service to analyze multiple images.
+In this task, you will learn how to view and analyze multiple images using the **Azure AI Vision** service. 
 
 1. In Visual Studio Code, expand the **image-analysis** folder and the **images** folder it contains.
 
 2. Select each of the image files in turn to view then in Visual Studio Code.
 
 ## Task 5: Analyze an image to suggest a caption
+
+In this task, you will learn how to use the **Azure AI Vision SDK** to analyze an image and generate a suggested caption. 
 
 Now you're ready to use the SDK to call the Vision service and analyze an image.
 
@@ -212,6 +219,8 @@ Now you're ready to use the SDK to call the Vision service and analyze an image.
 
 ## Task 6: Get suggested tags for an image
 
+In this task, you will learn how to use the **Azure AI Vision SDK** to get suggested tags for an image.
+
 It can sometimes be useful to identify relevant *tags* that provide clues about the contents of an image.
 
 1. In the **AnalyzeImage** function, under the comment **Get image tags**, add the following code:
@@ -233,6 +242,8 @@ It can sometimes be useful to identify relevant *tags* that provide clues about 
 2. Save your changes and run the program once for each of the image files in the **images** folder, observing that in addition to the image caption, a list of suggested tags is displayed.
 
 ## Task 7: Get image categories
+
+In this task, you will learn how to use the **Azure AI Vision SDK** to get image categories.
 
 The Vision service can suggest *categories* for images, and within each category it can identify well-known landmarks.
 
@@ -278,6 +289,8 @@ The Vision service can suggest *categories* for images, and within each category
 
 ## Task 8: Get brands in an image
 
+In this task, you will learn how to use the **Azure AI Vision SDK** to detect and identify well-known **brands** from images based on their logos.
+
 Some brands are visually recognizable from logo's, even when the name of the brand is not displayed. The Vision service is trained to identify thousands of well-known brands.
 
 1. In the **AnalyzeImage** function, under the comment **Get brands in the image**, add the following code:
@@ -299,6 +312,8 @@ Some brands are visually recognizable from logo's, even when the name of the bra
 2. Save your changes and run the program once for each of the image files in the **images** folder, observing any brands that are identified (specifically, in the **person.jpg** image).
 
 ## Task 9: Detect and locate objects in an image
+
+In this task, you will learn how to use the **Azure AI Vision SDK** to **detect and locate objects** within an image, identifying their positions and boundaries.
 
 *Object detection* is a specific form of computer vision in which individual objects within an image are identified and their location indicated by a bounding box..
 
@@ -342,6 +357,8 @@ Some brands are visually recognizable from logo's, even when the name of the bra
 
 ## Task 10: Get moderation ratings for an image
 
+In this task, you will learn how to use the **Azure AI Vision SDK** to **get moderation ratings** for an image to detect adult content, violence, or other inappropriate material.
+
 Some images may not be suitable for all audiences, and you may need to apply some moderation to identify images that are adult or violent in nature.
 
 1. In the **AnalyzeImage** function, under the comment **Get moderation ratings**, add the following code:
@@ -359,6 +376,8 @@ Some images may not be suitable for all audiences, and you may need to apply som
     > **Note**: In the preceding tasks, you used a single method to analyze the image, and then incrementally added code to parse and display the results. The SDK also provides individual methods for suggesting captions, identifying tags, detecting objects, and so on - meaning that you can use the most appropriate method to return only the information you need, reducing the size of the data payload that needs to be returned. See the [.NET SDK documentation](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet) for more details.
 
 ## Task 11: Generate a thumbnail image
+
+In this task, you will learn how to use the **Azure AI Vision SDK** to **generate a thumbnail image** for faster viewing or processing.
 
 In some cases, you may need to create a smaller version of an image named a *thumbnail*, cropping it to include the main visual subject within new image dimensions.
 
@@ -393,7 +412,6 @@ In some cases, you may need to create a smaller version of an image named a *thu
      dotnet run images/street.jpg
      ```
 
-  
 3. Opening the **thumbnail.jpg** file that is generated in the same folder as your code file.
 
      **C#**
@@ -420,4 +438,4 @@ In this lab, you have completed:
 + Got moderation ratings for an image
 + Generated a thumbnail image
 
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed the lab >> Click on Next

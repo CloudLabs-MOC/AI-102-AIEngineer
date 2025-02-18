@@ -21,6 +21,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Deploy and run a Text Analytics container
 
+In this task, you will learn how to deploy and run a Text Analytics container in Azure to perform language processing tasks like sentiment analysis, key phrase extraction, and language detection.
+
 Many commonly used Azure AI services APIs are available in container images. For a full list, check out the [Azure AI services documentation](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support#container-availability-in-azure-cognitive-services). In this exercise, you'll use the container image for the Text Analytics *language detection* API; but the principles are the same for all of the available images.
 
 1. In the Azure portal, on the **Home** page, Search for **container instances (1)**, and select **Container Instances (2)** dfrom the services.
@@ -117,6 +119,8 @@ Many commonly used Azure AI services APIs are available in container images. For
       ```
 
 ## Task 2: Use the container
+
+In this task, you will learn how to use the deployed Text Analytics container to send data for processing and retrieve insights such as sentiment scores and detected entities.
 
 1. In Visual Studio Code, in the **04-containers** folder, open **rest-test.cmd** and edit the **curl** command it contains (shown below), replacing *&lt;your_ACI_IP_address_or_FQDN&gt;* with the IP address or FQDN for your container.
 
