@@ -22,7 +22,7 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Provision an Azure AI Speech resource
 
-If you don't already have on in your subscription, you'll need to provision a **Azure AI Speech service** resource.
+In this task, you will provision an Azure AI Speech resource in the Azure portal. You will create a **Speech service** under **Azure AI services**, configure it with your subscription, a resource group, a unique name, a region, and select the **Standard S0** pricing tier. After deployment, you will retrieve the **keys and endpoint** for use in later steps.
 
 1. Open the Azure portal.
 
@@ -46,7 +46,7 @@ If you don't already have on in your subscription, you'll need to provision a **
 
 ## Task 2: Prepare to use the Azure AI Speech Translation service
 
-In this exercise, you'll complete a partially implemented client application that uses the Azure AI Speech SDK to recognize, translate, and synthesize speech.
+In this task, you'll complete a partially implemented client application that uses the Azure AI Speech SDK to recognize, translate, and synthesize speech.
 
 1. In Visual Studio Code, in the **Explorer** pane, browse to the **08-speech-translation** folder and expand the **C-Sharp** folder.
 
@@ -111,7 +111,7 @@ In this exercise, you'll complete a partially implemented client application tha
 
 ## Task 3: Implement speech translation
 
-Now that you have a **SpeechTranslationConfig** for the Azure AI Speech service, you can use the Azure AI Speech translation API to recognize and translate speech.
+In this task, you will implement speech translation using Azure AI Speech. You will modify the program to recognize and translate spoken input from either a microphone or an audio file. The translation will be performed in real-time, supporting multiple target languages. You will then run the program, provide spoken input, and verify the translated output in different languages.
 
 ### Task 3.1: If you have a working microphone
 
@@ -188,7 +188,7 @@ Now that you have a **SpeechTranslationConfig** for the Azure AI Speech service,
 
 ## Task 4: Synthesize the translation to speech
 
-So far, your application translates spoken input to text; which might be sufficient if you need to ask someone for help while traveling. However, it would be better to have the translation spoken aloud in a suitable voice.
+In this task, you will synthesize translated text into speech using neural voices, allowing the program to audibly respond in the selected language.
 
 1. In the **Translate** function, under the comment **Synthesize translation**, add the following code to use a **SpeechSynthesizer** client to synthesize the translation as speech through the default speaker:
 

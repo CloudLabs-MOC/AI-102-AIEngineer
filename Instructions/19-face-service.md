@@ -24,6 +24,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Open the cloned folder in Visual Studio Code
 
+In this task, you will open the cloned project folder in Visual Studio Code to access and modify the necessary files for the lab. This setup ensures you can edit, run, and test the code efficiently.
+
 1.  Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
 
      ![Visual Studio Code Icon](./images/vscode.png)
@@ -38,7 +40,7 @@ In this lab, you will complete the following tasks:
 
 ## Task 2: Provision a Cognitive Services resource
 
-If you don't already have one in your subscription, you'll need to provision a **Azure AI Services** resource.
+In this task, you will provision an Azure AI Services resource in the Azure portal. This resource will provide the necessary cognitive capabilities for your application. You will configure the resource with appropriate settings, retrieve the endpoint and key, and prepare it for integration with your project.
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account associated with your Azure subscription.
 
@@ -60,10 +62,9 @@ If you don't already have one in your subscription, you'll need to provision a *
 
 6. On **Azure AI Services** blade, click on **Keys and Endpoint** under Resource Management. You will need the **endpoint** and one of the **keys** from this page in the next procedure.
 
-
 ## Task 3: Prepare to use the Azure AI Vision SDK
 
-In this exercise, you'll complete a partially implemented client application that uses the Azure AI Vision SDK to analyze faces in an image.
+In this task, you'll complete a partially implemented client application that uses the Azure AI Vision SDK to analyze faces in an image.
 
 1. In Visual Studio Code, in the **Explorer** pane, browse to the **19-face** folder and expand the **C-Sharp** folder depending on your language preference.
 
@@ -105,7 +106,7 @@ In this exercise, you will use the Computer Vision service to analyze an image o
 
 ## Task 5: Detect faces in an image
 
-Now you're ready to use the SDK to call the Computer Vision service and detect faces in an image.
+In this task ,you will use the SDK to call the Computer Vision service and detect faces in an image.
 
 1. In the code file for your client application (**Program.cs**), in the **Main** function, note that the code to load the configuration settings has been provided. Then find the comment **Authenticate Computer Vision client**. Then, under this comment, add the following code to create and authenticate a Computer Vision client object:
 
@@ -188,7 +189,7 @@ Now you're ready to use the SDK to call the Computer Vision service and detect f
 
 ## Task 6: Prepare to use the Face SDK
 
-While the **Azure AI Vision** service offers basic face detection (along with many other image analysis capabilities), the **Face** service provides more comprehensive functionality for facial analysis and recognition.
+In this task, you will prepare to use the Face SDK in your Visual Studio Code project. You will install the required package, update the configuration settings, and authenticate the Face client. Additionally, you will import the necessary namespaces and ensure that your application is ready to interact with the Azure Face service for facial recognition and analysis.
 
 1. In Visual Studio Code, in the **Explorer** pane, browse to the **19-face** folder and expand the **C-Sharp** folder.
 
@@ -237,7 +238,7 @@ While the **Azure AI Vision** service offers basic face detection (along with ma
 
 ## Task 7: Detect and analyze faces
 
-One of the most fundamental capabilities of the Face service is to detect faces in an image, and determine their attributes, such as head pose, blur, the presence of spectacles, and so on.
+In this task, you'll update the **DetectFaces** function to analyze images using the Azure Face SDK. You'll detect faces, retrieve attributes like occlusion, blur, and glasses, and annotate the image with bounding boxes. Finally, you'll run the program and review the detected faces.
 
 1. In the code file for your application, in the **Main** function, examine the code that runs if the user selects menu option **1**. This code calls the **DetectFaces** function, passing the path to an image file.
    
