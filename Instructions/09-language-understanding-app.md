@@ -35,7 +35,7 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Create an Azure AI Language resource
 
-To create a conversational language model, you need a **Azure AI Language service** resource in a supported region.
+In this task, you will create an **Azure AI Language** resource in the Azure portal and configure its settings. Once deployed, you will review the deployment details.
 
 1. On Azure Portal page, in **Search resources, services and docs (G+/)** box at the top of the portal, search **Azure AI services (1)**, and then select **Azure AI services (2)** under services.
 
@@ -62,7 +62,7 @@ To create a conversational language model, you need a **Azure AI Language servic
 
 ## Task 2: Create a conversational language understanding project
 
-Now that you have created an authoring resource, you can use it to create a conversational language understanding project.
+In this task, you will create a **Conversational Language Understanding** project in **Language Studio**. You will configure a language resource, set up a new project, and define its basic settings.
 
 1. In a new browser tab, open the Language Studio portal at `https://language.cognitive.azure.com/` and sign in using the Microsoft account associated with your Azure subscription if prompted to sign in.
 
@@ -112,9 +112,7 @@ Now that you have created an authoring resource, you can use it to create a conv
 
 ## Task 3: Create intents
 
-The first thing we'll do in the new project is to define some intents.
-
-> **Tip**: When working on your project, if some tips are displayed, read them and select **Got it** to dismiss them, or select **Skip all**.
+In this task, you will define **intents** for your Conversational Language Understanding project. You will create three intents—**GetTime**, **GetDay**, and **GetDate**—and add example utterances for each. Finally, you will save and review all intents in the **Schema definition** page.
 
 1. On the **Schema definition** page, on the **Intents (1)** tab, select **&#65291; Add (2)**, and under **Intent name** type **GetTime (3)**, and select **Add intent (4)**.
 
@@ -168,7 +166,7 @@ The first thing we'll do in the new project is to define some intents.
 
 ## Task 4: Train and test the model
 
-Now that you've added some intents, let's train the language model and see if it can correctly predict them from user input.
+In this task, you will train and test the **Clock** model by starting a training job, review performance metrics, and deploy it as **production**. Validate its accuracy by testing sample queries and analyzing intent predictions with confidence scores.
 
 1. In the pane on the left, select **Training jobs (1)**. Then select **+ Start a training job (2)**.
 
@@ -220,7 +218,7 @@ Now that you've added some intents, let's train the language model and see if it
 
 ## Task 5: Add entities
 
-So far you've defined some simple utterances that map to intents. Most real applications include more complex utterances from which specific data entities must be extracted to get more context for the intent.
+In this task, you will add learned, list, and prebuilt entities to enhance model recognition. After training the model with example utterances, you will retrain, deploy, and test it for accuracy.
 
 ### Task 5.1: Add a learned entity
 
@@ -387,7 +385,7 @@ Now that you've modified the schema, you need to retrain and retest the model.
 
 ## Task 6: Use the model from a client app
 
-In a real project, you'd iteratively refine intents and entities, retrain, and retest until you are satisfied with the predictive performance. Then, when you've tested it and are satisfied with its predictive performance, you can use it in a client app by calling its REST interface. In this exercise, you'll use the *curl* utility to call the REST endpoint for your model.
+In this task, you will obtain the prediction URL for your deployed model in Language Studio. You will retrieve the sample request, which includes an HTTP POST request with authentication headers, and save it for use in the next task.
 
 1. In Language Studio, on the **Deploying a model (1)** page, select the **production (2)** deployment. Then select **Get prediction URL (3)**.
 
@@ -399,7 +397,7 @@ In a real project, you'd iteratively refine intents and entities, retrain, and r
 
 ## Task 7: Call the API from the Azure Cloud Shell
 
-Open up a new internet browser tab to work with Cloud Shell.
+In this task, you will use Azure Cloud Shell to call the prediction API. You will set up Cloud Shell, clone a repository, edit a script with your endpoint details, and execute it to retrieve intent predictions from your deployed model. Finally, you will test different queries and analyze the JSON responses.
 
 1. In the [Azure portal](https://portal.azure.com?azure-portal=true), select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. A Cloud Shell pane will open at the bottom of the portal.
 
@@ -521,7 +519,7 @@ Open up a new internet browser tab to work with Cloud Shell.
 
 ## Task 8: Export the project
 
-You can use Language Studio to develop and test your language understanding model, but in a software development process for DevOps, you should maintain a source controlled definition of the project that can be included in continuous integration and delivery (CI/CD) pipelines. While you can use the Azure AI Language REST API in code scripts to create and train the model, a simpler way is to use the portal to create the model schema, and export it as a **.json** file that can be imported and retrained in another Azure AI Language  instance. This approach enables you to make use of the productivity benefits of the Language Studio visual interface while maintaining portability and reproducibility for the model.
+In this task, you will export your project from Azure AI Language Studio. You will select your project, export it as a JSON file, and review its structure in a code editor to understand the model's configuration.
 
 1. In Azure AI | Language Studio, Select the **Projects** tab from the left navigation pane, select the circle icon to select the **Clock (1)** project. and then Select the **&#x2913; Export (2)** button.
 
