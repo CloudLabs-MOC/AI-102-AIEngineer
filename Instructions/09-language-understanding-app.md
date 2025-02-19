@@ -541,4 +541,4 @@ In this lab, you have completed:
 + Called the API from the Azure Cloud Shell
 + Exported the project
 
-## You have successfully completed the lab, proceed with the next exercises.
+## You have successfully completed this exercise, click on Next >> proceed with the next exercises.
