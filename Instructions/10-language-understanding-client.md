@@ -22,6 +22,8 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Open the cloned folder in Visual Studio Code.
 
+In this task, you will open the cloned project folder in **Visual Studio Code** to access and work with the lab files. This setup ensures that all necessary files and dependencies are available for the exercises ahead.
+
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
     ![Visual Studio Code Icon](./images/vscode.png)
@@ -34,6 +36,8 @@ In this lab, you will complete the following tasks:
 1. Wait while additional files are installed to support the C# code projects in the repo.
 
 ## Task 2: Create Language service resources
+
+In this task, you will create an **Azure AI Language service** resource in the Azure portal. This resource will be used for natural language processing tasks in the lab. You will configure the required settings, deploy the resource, and retrieve the **Key** and **Endpoint** for later use.
 
 1. Open the Azure portal.
 
@@ -73,6 +77,8 @@ In this lab, you will complete the following tasks:
       ![](images/c-50.png)
 
 ## Task 3: Import, train, and publish a Conversational language understanding model
+
+In this task, you will import, train, and deploy a **Conversational Language Understanding** model in **Language Studio**. You will begin by importing a predefined JSON file containing the model's structure, train it to recognize intent and entities, and then deploy it for use in applications. Finally, you will retrieve the **Endpoint URL** and **Primary Key**, which are necessary for integrating the model into client applications.
 
 1. In a new browser tab, open the Language Studio - Preview portal at `https://language.cognitive.azure.com`.
 
@@ -124,7 +130,7 @@ In this lab, you will complete the following tasks:
 
 ## Task 4: Prepare to use the Language service SDK
 
-In this exercise, you'll complete a partially implemented client application that uses the Clock model (published Conversational Language Understanding model) to predict intents from user input and respond appropriately.
+In this task, you'll complete a partially implemented client application that uses the Clock model (published Conversational Language Understanding model) to predict intents from user input and respond appropriately.
 
 > **Note**: You can choose to use the SDK for **.NET**. In the steps below, perform the actions appropriate for your preferred language.
 
@@ -169,7 +175,7 @@ In this exercise, you'll complete a partially implemented client application tha
 
 ## Task 5: Get a prediction from the Conversational Language model
 
-Now you're ready to implement code that uses the SDK to get a prediction from your Conversational Language model.
+In this task, you will implement and test a **Conversational Language Understanding** model in a C# application. You'll integrate the Language Service API, send user input for intent and entity recognition, and apply logic to respond appropriately. Finally, you'll run the program and test it with various queries to validate the model's predictions.
 
 1. In the **Main** function, note that code to load the prediction endpoint and key from the configuration file has already been provided. Then find the comment **Create a client for the Language service model** and add the following code to create a prediction client for your Language Service app:
 
@@ -329,7 +335,6 @@ Now you're ready to implement code that uses the SDK to get a prediction from yo
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
 
 <validation step="c04b552b-faf9-49fc-81fb-0c49393a3afa" />    
-
 
 ### Review
 In this lab, you have completed:
