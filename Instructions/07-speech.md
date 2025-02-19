@@ -31,7 +31,7 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Clone the repository for this course
 
-If you have not already cloned **AI-102-AIEngineer** code repository to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the cloned folder in Visual Studio Code.
+In this task, you will clone the AI-102-AIEngineer repository to your local environment using Git. You will then open the cloned folder in Visual Studio Code to access the necessary lab files.
 
 1. Start Visual Studio Code.
 
@@ -51,7 +51,7 @@ If you have not already cloned **AI-102-AIEngineer** code repository to the envi
 
 ## Task 2: Provision an Azure AI Speech resource
 
-If you don't already have on in your subscription, you'll need to provision a **Azure AI Speech service** resource.
+In this task, you will create an Azure AI Speech resource in the Azure portal. You will configure the resource with the required settings, deploy it, and retrieve its Keys and Endpoint for later use.
 
 1. Open the Azure portal.
 
@@ -133,7 +133,7 @@ In this task, you'll complete a partially implemented client application that us
 
 ## Task 4: Recognize speech
 
-Now that you have a **SpeechConfig** for the speech service in your Azure AI Speech resource, you can use the **Speech-to-text** API to recognize speech and transcribe it to text.
+In this task, you will implement speech recognition using Azure AI Speech. You can either use a **microphone** to capture spoken input or process **audio from a file**. The recognized speech will be transcribed and displayed in the console.
 
 ### Task 4.1: If you have a working microphone
 
@@ -224,9 +224,9 @@ Now that you have a **SpeechConfig** for the speech service in your Azure AI Spe
 
     - If the SpeechRecognizer encounters an error, it produces a result of "Cancelled". The code in the application will then display the error message. The most likely cause is an incorrect key or region in the configuration file.
 
-## Task 5: Synthesize speech
+## Task 5: Synthesize Speech  
 
-Your speaking clock application accepts spoken input, but it doesn't actually speak! Let's fix that by adding code to synthesize speech.
+In this task, you will configure **speech synthesis** to generate spoken output using Azure AI Speech. The program will synthesize and vocalize the **current time**, responding to user input with a natural-sounding voice.
 
 1. In the **Main** function for your program, note that the code uses the **TellTime** function to tell the user the current time.
 1. In the **TellTime** function, under the comment **Configure speech synthesis**, add the following code to create a **SpeechSynthesizer** client that can be used to generate spoken output:
@@ -265,6 +265,8 @@ Your speaking clock application accepts spoken input, but it doesn't actually sp
 
 ## Task 6: Use a different voice
 
+In this task, you will modify the speech synthesis configuration to use an alternative voice for the speaking clock. The program will now respond with a different neural voice, enhancing the user experience.
+
 Your speaking clock application uses a default voice, which you can change. The Speech service supports a range of *standard* voices as well as more human-like *neural* voices. You can also create *custom* voices.
 
 > **Note**: For a list of neural and standard voices, see [Language and voice support](/azure/ai-services/speech-service/language-support?tabs=stt#text-to-speech) in the Speech service documentation.
@@ -291,7 +293,7 @@ Your speaking clock application uses a default voice, which you can change. The 
 
 ## Task 7: Use Speech Synthesis Markup Language
 
-Speech Synthesis Markup Language (SSML) enables you to customize the way your speech is synthesized using an XML-based format.
+In this task, you will modify the speech synthesis configuration to use Speech Synthesis Markup Language (SSML) for enhanced control over voice output. The program will now respond with a neural voice and include a pause before announcing the end of the lab.
 
 1. In the **TellTime** function, replace all of the current code under the comment **Synthesize spoken output** with the following code (leave the code under the comment **Print the response**):
 
