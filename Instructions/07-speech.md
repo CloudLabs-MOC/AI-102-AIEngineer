@@ -337,4 +337,4 @@ In this lab, you have completed:
 + Used a different voice
 + Used Speech Synthesis Markup Language
 
-## You have successfully completed this exercise.
+## You have successfully completed this exercise, click on Next >> proceed with the next exercises.
