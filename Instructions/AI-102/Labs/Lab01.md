@@ -2,7 +2,7 @@
 
 In this lab, you use Azure AI Foundry portal to create a project, ready to build an AI solution.
 
-### Task 1: Create a Azure AI Foundry Project
+### Task 1: Create a Azure AI Foundry Project and deploy a model
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
