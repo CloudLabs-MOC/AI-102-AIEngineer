@@ -84,7 +84,6 @@ In this lab, you'll perform the following tasks:
     | Tokens per Minute Rate Limit | **50K (7)**                                                |
     | Content filter               | **DefaultV2 (8)**                                          |
 
-
     ![](../Images/l8t1p8.png)
 
      > **Note**: Reducing the TPM helps avoid over-using the quota available in the subscription you are using. 50,000 TPM should be sufficient for the data used in this exercise. If your available quota is lower than this, you will be able to complete the exercise but you may experience errors if the rate limit is exceeded.
@@ -107,9 +106,9 @@ You'll see that an agent with a default name has been created for you, along wit
 
 
     ```
-   You are an AI assistant for corporate expenses.
-   You answer questions about expenses based on the expenses policy data.
-   If a user wants to submit an expense claim, you get their email address, a description of the claim, and the amount to be claimed and write the claim details to a text file that the user can download.
+    You are an AI assistant for corporate expenses.
+    You answer questions about expenses based on the expenses policy data.
+    If a user wants to submit an expense claim, you get their email address, a description of the claim, and the amount to be claimed and write the claim details to a text file that the user can download.
     ```
 
     ![](../Images/l8t2p2.png)
