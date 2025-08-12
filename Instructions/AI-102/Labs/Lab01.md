@@ -16,7 +16,7 @@ In this lab, you use Azure AI Foundry portal to create a project, ready to build
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. In the home page, in the **Explore models and capabilities** section, search for the `gpt-4.1` model **(1)** and select e `gpt-4.1` **(2)**  which we'll use in our project.    
+1. In the home page, in the **Explore models and capabilities** section, search for the `gpt-4.1` model **(1)** and select `gpt-4.1` **(2)**  which we'll use in our project.    
 
    ![](../Images/aii2.png) 
 
