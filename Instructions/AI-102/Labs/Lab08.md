@@ -104,15 +104,13 @@ You'll see that an agent with a default name has been created for you, along wit
 
 1. Return to the browser tab with the **Foundry Agents playground** and open the **Setup (1)** pane. Set the **Agent name** to **`ExpensesAgent` (2)**, make sure the **gpt-4.1 (3)** model deployment you created earlier is selected in the **Deployment** section, paste the content below into the **Instructions (4)** box, and then click **+ Add (5)** in the **Knowledge** section.
 
-
     ```
     You are an AI assistant for corporate expenses.
     You answer questions about expenses based on the expenses policy data.
     If a user wants to submit an expense claim, you get their email address, a description of the claim, and the amount to be claimed and write the claim details to a text file that the user can download.
     ```
-
     ![](../Images/l8t2p2.png)
-
+    
 1. From the **Add knowledge** window, click on **Files**.
 
     ![](../Images/l8t2p3.png)
