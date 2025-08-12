@@ -62,4 +62,49 @@ You've reviewed two different models, both of which could be used to implement a
 
 1. In the **Models to compare** pane, note that you can select popular tasks, such as **question answering (1)** to automatically select commonly used models for specific tasks.
 
-- 
+   - Use the **Clear all models (🗑) (2)** icon to remove all of the pre-selected models.
+
+     ![](../Images/aii27.png)   
+
+1. Use the **+ Model to compare** button to add the gpt-4.1 model to the list. 
+
+   ![](../Images/aii28.png)
+
+1. Search for `gpt-4.1` **(1)** then select `gpt-4.1` **(2)** and then **Confirm (3)**.  
+
+   ![](../Images/aii29.png)   
+
+1. Then use the same button to add the Phi-4-mini-instruct model to the list.
+
+   ![](../Images/aii30.png) 
+
+1. Seach for `Phi-4-mini-instruct` **(1)** model then select `Phi-4-mini-instruct` **(2)** and then **Confirm (3)**. 
+
+   ![](../Images/aii31.png)
+
+1. Set the models X axis to **Quality Index (1)** and Y axis to **Cost (2)**.  Review the chart, which compares the models based on **Quality Index** (a standardized score indicating model quality) and **Cost**. 
+
+   ![](../Images/aii32.png)
+
+1. You can see the specific values for a model by holding the mouse over the point that represents it in the chart.   
+
+   ![](../Images/aii33.png)
+
+1. In the `X-axis` dropdown menu, under **Quality**, select the **Accuracy** metrics and observe each resulting chart **(2)(3)**.   
+
+   ![](../Images/aii34.png)
+
+1. Based on the benchmarks, the `gpt-4.1` model looks like offering the best overall performance, but at a higher cost.
+
+1. In the list of models to compare, select the `gpt-4.1` model to re-open its benchmarks page.
+
+   ![](../Images/aii35.png)
+
+1. In the page for the `gpt-4.1` model page, select the **Details** tab to view the model details.   
+
+   ![](../Images/aii36.png)
+
+### Task 3: Create an Azure AI Foundry project   
+
+   
+
