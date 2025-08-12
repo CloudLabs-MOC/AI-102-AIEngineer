@@ -17,7 +17,7 @@ In this lab, you'll perform the following tasks:
 
 ## Task 1: Create an Azure AI Foundry project and agent
 
-**Objective:** In this task, you’ll sign in to the Azure AI Foundry portal, create a new project, and deploy the **gpt-4.1** model with the given settings. By completing it, you’ll have a ready-to-use project and model deployment in the Agents playground.
+In this task, you’ll sign in to the Azure AI Foundry portal, create a new project, and deploy the **gpt-4.1** model with the given settings. By completing it, you’ll have a ready-to-use project and model deployment in the Agents playground.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -54,7 +54,7 @@ In this lab, you'll perform the following tasks:
     * Subscription: **Choose Default Subscription (3)**
     * Resource group: **AI-102-RG08 (4)**
     * Azure AI Foundry resource: **Keep as Default (5)**
-    * Region: **East US (6)**
+    * Region: **<inject key="Region"></inject> (6)**
 
         ![](../Images/l8t1p4.png)
         
@@ -80,7 +80,7 @@ In this lab, you'll perform the following tasks:
     | ---------------------------- | ---------------------------------------------------------- |
     | Model version upgrade policy | **Upgrade once new default version becomes available (4)** |
     | Model version                | **2025-04-14 (Default) (5)**                               |
-    | Connected AI resource        | **myproject<inject key="DeploymentID"></inject>-resource (This resource) (6)**                 |
+    | Connected AI resource        | **Keep as Default (6)**               |
     | Tokens per Minute Rate Limit | **50K (7)**                                                |
     | Content filter               | **DefaultV2 (8)**                                          |
 
@@ -96,7 +96,7 @@ You'll see that an agent with a default name has been created for you, along wit
 
 ## Task 2: Create your agent
 
-**Objective:** In this exercise, you'll build a simple agent that answers questions based on a corporate expenses policy. You'll download the expenses policy document, and use it as grounding data for the agent.
+In this exercise, you'll build a simple agent that answers questions based on a corporate expenses policy. You'll download the expenses policy document, and use it as grounding data for the agent.
 
 1. Open a new browser tab and navigate to `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx` to download the **Expenses\_Policy.docx** file and save it locally. This document contains the expenses policy for the fictional Contoso corporation. If a dialog box appears, click **Download** to save the file for later use.
 
@@ -105,7 +105,7 @@ You'll see that an agent with a default name has been created for you, along wit
 1. Return to the browser tab with the **Foundry Agents playground** and open the **Setup (1)** pane. Set the **Agent name** to **`ExpensesAgent` (2)**, make sure the **gpt-4.1 (3)** model deployment you created earlier is selected in the **Deployment** section, paste the content below into the **Instructions (4)** box, and then click **+ Add (5)** in the **Knowledge** section.
 
     ![](../Images/l8t2p2.png)
-    
+
     ```
     You are an AI assistant for corporate expenses.
     You answer questions about expenses based on the expenses policy data.
@@ -142,13 +142,13 @@ Your agent will use the document you uploaded as its knowledge source to ground 
 
 ## Task 3: Test your agent
 
-**Objective:** In this task, you’ll interact with the agent in the Foundry playground to query information from its knowledge base and guide it through creating an expense claim. You’ll provide step-by-step details, including a description, amount, and date, and then download and review the generated expense claim file.
+In this task, you’ll interact with the agent in the Foundry playground to query information from its knowledge base and guide it through creating an expense claim. You’ll provide step-by-step details, including a description, amount, and date, and then download and review the generated expense claim file.
 
 1. In the playground chat box, type the prompt **`What's the maximum I can claim for meals?`(1)** and click on **Add and run (2)** icon.
 
     ![](../Images/l8t3p1(1).png)
 
-    >**Note:** Click on **X** to close the **Thread details** pop up window.
+    >**Note:** If the **Thread details** pop-up window appears. Click on **X** to close.
 
 1. Review the agent’s response, which should be based on the information from the expenses policy document you added to the agent’s knowledge.
 
@@ -171,6 +171,8 @@ Your agent will use the document you uploaded as its knowledge source to ground 
 1. Enter a prompt with the claim date, for example, **`12/12/2025`**. The agent should use the code interpreter to generate the expense claim text file and provide a download link. Click **Download your expense claim** to save the file and open it.
 
     ![](../Images/l8t3p6(1).png)
+
+    > **Note:** You can use any date for this step, it doesn’t have to be the one shown in the example. The agent will generate the expense claim file based on whatever date you provide.
 
 1. A Notepad window will open, displaying the expense claim details.
 
