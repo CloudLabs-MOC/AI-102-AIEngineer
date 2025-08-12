@@ -146,15 +146,17 @@ Your agent will use the document you uploaded as its knowledge source to ground 
 
 **Objective:** In this task, you’ll interact with the agent in the Foundry playground to query information from its knowledge base and guide it through creating an expense claim. You’ll provide step-by-step details, including a description, amount, and date, and then download and review the generated expense claim file.
 
-1. In the playground chat box, type the prompt **`What's the maximum I can claim for meals?`** and review the agent’s response, which should be based on the information from the expenses policy document you added to the agent’s knowledge.
+1. In the playground chat box, type the prompt **`What's the maximum I can claim for meals?`(1)** and click on **Add and run (2)** icon.
+
+    ![](../Images/l8t3p1(1).png)
+
+    >**Note:** Click on **X** to close the **Thread details** pop up window.
+
+1. Review the agent’s response, which should be based on the information from the expenses policy document you added to the agent’s knowledge.
 
     ![](../Images/l8t3p1.png)
 
     > **Note**: If the agent fails to respond because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond. If the problem persists, try to increase the quota for your model on the **Models + endpoints** page.
-
-1. Click on **X** to close the **Thread details** pop up window. 
-
-    ![](../Images/l8t3p2.png)
 
 1. Enter the follow-up prompt **`I'd like to submit a claim for a meal.`** and review the agent’s response. It should prompt you for the necessary details to submit the claim.
 
