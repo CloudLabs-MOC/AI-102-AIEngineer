@@ -107,7 +107,7 @@ Now that you know something about the configuration of your Azure AI Foundry pro
 
     ![](../Images/aii15.png)  
 
-1. Select **Confirm**.
+1. Select **Continue**.
 
    ![](../Images/aii16.png)
 
