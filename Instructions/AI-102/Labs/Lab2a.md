@@ -1,30 +1,24 @@
 # Create a generative AI chat app
 
-### Estimated Duration : Minutes
+### Estimated Duration : 40 Minutes
 
 ## Overview
 
-In this exercise, you use the Azure AI Foundry Python SDK to create a simple chat app that connects to a project and chats with a language model.
-
-> **Note**: This exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages; which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
-
-While this exercise is based on the Azure AI Foundry Python SDK, you can develop AI chat applications using multiple language-specific SDKs; including:
-
-- [Azure AI Projects for Python](https://pypi.org/project/azure-ai-projects)
-- [Azure AI Projects for Microsoft .NET](https://www.nuget.org/packages/Azure.AI.Projects)
-- [Azure AI Projects for JavaScript](https://www.npmjs.com/package/@azure/ai-projects)
-
-This exercise takes approximately **40** minutes.
+In this lab, you configure role-based access for an Azure AI project by assigning the *Cognitive Services OpenAI User* role to a user in a specific resource group. You use the Azure portal and Azure CLI to sign in, navigate to the appropriate resource group, and grant permissions required for interacting with Azure AI Foundry services.
 
 ## Lab Objectives
 
 - **Task 1:** Deploy a model in an Azure AI Foundry project
 
-- **Task 2:** Create a client application to chat with the model
+- **Task 2**: Assign a cognitive service OpenAI role to the user
 
-- **Task 3:** Write code to connect to your project and chat with your model
+- **Task 3:** Create a client application to chat with the model
+
+- **Task 4:** Write code to connect to your project and chat with your model
 
 ## Task 1: Deploy a model in an Azure AI Foundry project
+
+In this task, you’ll sign in to the Azure AI Foundry portal, locate the **gpt-4.1** model, and create a new project using it. You’ll configure the subscription, resource group, AI Foundry resource, and region, then verify the project and model deployment in the portal.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -90,9 +84,60 @@ This exercise takes approximately **40** minutes.
 
     ![](../Images/l2at1p10.png)
 
-## Task 2: Create a client application to chat with the model
+## Task 2: Assign a cognitive service OpenAI role to the user
 
-Now that you have deployed a model, you can use the Azure AI Foundry and Azure OpenAI SDKs to develop an application that chats with it.
+In this task, you’ll assign the **Cognitive Services OpenAI User** role to your account for the specified Azure resource group. This will give you the required permissions to access and use the Azure OpenAI resources in the lab.
+
+
+1. Open a new browser tab (keeping the Azure AI Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+
+1. 1. If prompted, provide the credentials below:
+
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+   - **Password:** <inject key="AzureAdUserPassword"></inject> 
+
+        >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
+
+        ![](../Images/l2at2p2.png)
+
+1. In the search bar, type **Resource groups (1)** and select **Resource groups (2)** from the results.
+
+    ![](../Images/l2at2(1)p1.png)
+
+1. In the Resource groups blade, choose **AI-102-RG2a**.
+
+    ![](../Images/l2at2(1)p2.png)
+
+1. In the left navigation pane, go to **Access control (IAM) (1)**, click the **+ Add (2)** drop-down, and choose **Add role assignment (3)**.
+
+    ![](../Images/l2at2(1)p3.png)
+
+1. On the **Add role assignment** page, under **Job function roles**, type **Cognitive Services OpenAI User (1)** in the search bar, select **Cognitive Services OpenAI User (2)** from the results, and click **Next (3)**.
+
+    ![](../Images/l2at2(1)p4.png)
+
+1. On the **Members** tab, do the following, then click **Select (5)**:
+
+    * **Assign access to**: Choose **Users, group, or service principal (1)**
+    * **Members**: Click **+ Select members (2)**
+    * **Search**: Enter **<inject key="AzureAdUserEmail"></inject> (3)**
+    * **Select members**: Choose **<inject key="AzureAdUserEmail"></inject> (4)**
+
+    ![](../Images/l2at2(1)p5.png)
+
+1. Confirm that **<inject key="AzureAdUserEmail"></inject>** is listed under Members, then click **Review + assign**.
+
+    ![](../Images/l2at2(1)p6.png)
+
+1. Check the details on the **Review + assign** tab, then click **Review + assign**.
+
+    ![](../Images/l2at2(1)p7.png)
+
+
+## Task 3: Create a client application to chat with the model
+
+In this task, you’ll connect your deployed Azure OpenAI model to a Python-based chat application by retrieving the project endpoint, cloning the sample code repository, configuring environment variables, and installing the required SDKs. This will allow you to interact with the model directly from your client application.
 
 1. On the **Overview (1)** page in the Azure AI Foundry portal, locate the **Endpoints and keys** section. Select the **Azure AI Foundry (2)** library, then click **Copy Azure AI Foundry project endpoint (3)**. This endpoint will be used to connect your client application to your project and model.
 
@@ -110,9 +155,9 @@ Now that you have deployed a model, you can use the Azure AI Foundry and Azure O
 
    - **Password:** <inject key="AzureAdUserPassword"></inject> 
 
-    >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
+        >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
 
-    ![](../Images/l2at2p2.png)
+        ![](../Images/l2at2p2.png)
 
 1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
@@ -173,15 +218,15 @@ Now that you have deployed a model, you can use the Azure AI Foundry and Azure O
     * your\_project\_endpoint : **Azure AI Foundry project endpoint (1)**
     * your\_model\_deployment : **gpt-4.1 (2)**
 
-    ![](../Images/l2at2p9.png)
+        ![](../Images/l2at2p9.png)
 
-    > **Note:** Paste the Azure AI Foundry project endpoint you copied in the previous task.
+        > **Note:** Paste the Azure AI Foundry project endpoint you copied in the previous task.
 
 1. After replacing the placeholders, save your changes in the code editor using **CTRL+S** or **Right-click > Save**. Then close the editor with **CTRL+Q** or **Right-click > Quit**, leaving the Cloud Shell command line open.
 
-## Task 3: Write code to connect to your project and chat with your model
+## Task 4: Write code to connect to your project and chat with your model
 
-> **Tip**: As you add code, be sure to maintain the correct indentation.
+In this task, you’ll modify the provided Python chat application to connect to your deployed Azure OpenAI model. You’ll add the necessary SDK imports, initialize the Azure AI Foundry client, set up a system prompt, handle user input in a loop, and return model responses while maintaining conversation history. Finally, you’ll run and test the application by chatting with your model from the Cloud Shell environment.
 
 1. Run the following command to open the provided code file for editing.
 
@@ -258,6 +303,7 @@ Now that you have deployed a model, you can use the Azure AI Foundry and Azure O
             print(completion)
             prompt.append({"role": "assistant", "content": completion})
     ```
+    > **Note:** As you add code, be sure to maintain the correct indentation.
 
 1. Press **CTRL+S** to save the changes you made to the code file.
 
@@ -268,19 +314,24 @@ Now that you have deployed a model, you can use the Azure AI Foundry and Azure O
     ```
     az login
     ```
-    >**Note:** The authentication code for you might from the photo shown above.
-
-    > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
     
-1. When prompted, follow the instructions to open the sign-in page in a new tab and enter the authentication code provided and your Azure credentials. Then complete the sign in process in the command line, selecting the subscription containing your Azure AI Foundry hub if prompted.
+1. In the new browser tab, when the **Enter code to allow access** window appears, paste the copied code and select **Next**.
 
     ![](../Images/l2at3p9.png)
 
+1. In the **Pick an account** dialog box, choose **<inject key="AzureAdUserEmail"></inject>**. 
+
     ![](../Images/l2at3p10.png)
+
+1. In the **Are you trying to sign in to Microsoft Azure CLI?** dialog box, click **Continue**.
 
     ![](../Images/l2at3p11.png)
 
+1. When the **Microsoft Azure Cross-platform Command Line Interface** window pops up, return to the browser tab with Cloud Shell open. 
+
     ![](../Images/l2at3p12.png)
+
+1. In the Cloud Shell console, press **Enter** to select the only available subscription.
 
     ![](../Images/l2at3p13.png)
 
@@ -291,19 +342,29 @@ Now that you have deployed a model, you can use the Azure AI Foundry and Azure O
     ```
 
 1. When prompted, enter a question, such as `What is the fastest animal on Earth?` and review the response from your generative AI model.
+
+    ![](../Images/l2at3p14.png)
+
 1. Try some follow-up questions, like `Where can I see one?` or `Are they endangered?`. The conversation should continue, using the chat history as context for each iteration.
+
+    ![](../Images/l2at3p15.png)
+
+    ![](../Images/l2at3p16.png)
+
 1. When you're finished, enter `quit` to exit the program.
 
-> **Tip**: If the app fails because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond.
+>**Note:** If the app fails because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond.
 
 ## Summary
 
-In this exercise, you used the Azure AI Foundry SDK to create a client application for a generative AI model that you deployed in an Azure AI Foundry project.
+By completing this lab, you learned how to:
 
-## Clean up
+* Sign in to the Azure portal and Azure CLI using your provided credentials.
+* Locate and open the target resource group in the Azure portal.
+* Assign a role to a user through the **Access control (IAM)** blade.
+* Verify the role assignment to ensure the user has the necessary access.
+* Use Azure CLI within Cloud Shell to confirm subscription context and manage access.
 
-If you've finished exploring Azure AI Foundry portal, you should delete the resources you have created in this exercise to avoid incurring unnecessary Azure costs.
 
-1. Open the [Azure portal](https://portal.azure.com) and view the contents of the resource group where you deployed the resources used in this exercise.
-1. On the toolbar, select **Delete resource group**.
-1. Enter the resource group name and confirm that you want to delete it.
+
+### You have successfully completed the Hands-on Lab!
