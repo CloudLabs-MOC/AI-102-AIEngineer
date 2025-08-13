@@ -32,21 +32,58 @@ This exercise takes approximately **45** minutes.
 
 The features of Azure AI Foundry we're going to use in this exercise require a project that is based on an Azure AI Foundry *hub* resource.
 
-1. In a web browser, open the [Azure AI Foundry portal](https://ai.azure.com) at `https://ai.azure.com` and sign in using your Azure credentials. Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the **Azure AI Foundry** logo at the top left to navigate to the home page, which looks similar to the following image (close the **Help** pane if it's open):
+1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
-    ![Screenshot of Azure AI Foundry portal.](./media/ai-foundry-home.png)
+1. Click on **Sign in**.
+ 
+    ![](../Images/l8t1p1.png)
 
-1. In the browser, navigate to `https://ai.azure.com/managementCenter/allResources` and select **Create new**. Then choose the option to create a new **AI hub resource**.
-1. In the **Create a project** wizard, enter a valid name for your project, and select the option to create a new hub. Then use the **Rename hub** link to specify a valid name for your new hub, expand **Advanced options**, and specify the following settings for your project:
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create or select a resource group*
-    - **Region**:  East US 2 or Sweden Central (*In the event of a quota limit being exceeded later in the exercise, you may need to create another resource in a different region.*)
+1. If prompted, provide the credentials below:
+ 
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    
+        ![](../Images/aifoundrysignin1.png)
 
-    > **Note**: If you're working in an Azure subscription in which policies are used to restrict allowable resource names, you may need to use the link at the bottom of the **Create a new project** dialog box to create the hub using the Azure portal.
+   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    
+        ![](../Images/aifoundrysignin2.png)
 
-    > **Tip**: If the **Create** button is still disabled, be sure to rename your hub to a unique alphanumeric value.
+1. When the **Stay signed in?** window appears, select **No**.
+
+    ![](../Images/aifoundrysignin3.png)
+
+1. Click on **X** to close the **Chat with Foundry Agent** popup window.
+
+    ![](../Images/l8t1p2.png)
+
+    >**Note:** Close the **Help** pane if it's open
+
+1. In the browser, navigate to `https://ai.azure.com/managementCenter/allResources` and select **Create new**. 
+
+    ![](../Images/l4t1p1.png)
+
+1. In the **Create Project** window, select the option to create a new **AI hub resource (1)**, then click **Next (2)**.
+
+    ![](../Images/l4t1p2.png)
+
+1. In the **Create a project** wizard, enter **Myproject<inject key="DeploymentID"></inject> (1)** in the Project name field. Under the Hub field, click **Rename hub (2)** and specify **Myhub<inject key="DeploymentID"></inject> (3)** as the hub name. Then, expand the **Advanced options (4)** drop-down.
+
+    ![](../Images/l4t1p2.png)
+
+1. In the Advanced options specify the following settings for your project:
+
+    * Subscription: **Choose Default Subscription (3)**
+    * Resource group: **AI-102-RG04 (4)**
+    * Azure AI Foundry resource: **Keep as Default (5)**
+    * Region: **<inject key="Region"></inject> (6)**
+
+        ![](../Images/l4t1p3.png)
 
 1. Wait for your project to be created, and then navigate to your project.
+
+    ![](../Images/l4t1p4.png)
+
+
 
 ## Task 2: Deploy models
 
