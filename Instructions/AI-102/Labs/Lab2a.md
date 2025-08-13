@@ -75,7 +75,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, locate the **gpt-
 
     ![](../Images/l2at1p9.png)
 
-1. You can verify the model deployemnt by opening the **Models + endpoints (1)** page from the left navigation pane.
+1. You can verify the model deployment by opening the **Models + endpoints (1)** page from the left navigation pane.
 
     ![](../Images/l2at1p9(1).png)
 
@@ -127,9 +127,9 @@ In this task, you’ll assign the **Cognitive Services OpenAI User** role to you
     * **Search**: Enter **<inject key="AzureAdUserEmail"></inject> (3)**
     * **Select members**: Choose **<inject key="AzureAdUserEmail"></inject> (4)**
 
-    ![](../Images/l2at2(1)p5.png)
+        ![](../Images/l2at2(1)p5.png)
 
-1. Confirm that **<inject key="DeploymentID"></inject>** is listed under Members, then click **Review + assign**.
+1. Confirm that **ODL_User<inject key="DeploymentID"></inject>** is listed under Members, then click **Review + assign**.
 
     ![](../Images/l2at2(1)p6.png)
 
@@ -314,7 +314,7 @@ In this task, you’ll modify the provided Python chat application to connect to
 
     ![](../Images/l2at3p9.png)
 
-1. In the **Pick an account** dialog box, choose **<inject key="DeploymentID"></inject>**. 
+1. In the **Pick an account** dialog box, choose **ODL_User<inject key="DeploymentID"></inject>**. 
 
     ![](../Images/l2at3p10.png)
 
