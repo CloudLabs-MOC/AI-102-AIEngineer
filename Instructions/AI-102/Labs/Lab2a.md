@@ -67,7 +67,6 @@ In this task, you’ll sign in to the Azure AI Foundry portal, locate the **gpt-
         
         >**Note:** The creation of project can take few minutes to complete.
 
-
 1. When your project is created, the chat playground will be opened automatically so you can test your model:
 
    ![](../Images/aii6.png)
@@ -76,13 +75,17 @@ In this task, you’ll sign in to the Azure AI Foundry portal, locate the **gpt-
 
     ![](../Images/l2at1p9.png)
 
-1. You can verify the model deployemnt by opening the **Models and endpoints (1)** page from the left navigation pane.
+1. You can verify the model deployemnt by opening the **Models + endpoints (1)** page from the left navigation pane.
 
     ![](../Images/l2at1p9(1).png)
 
-1. In the left navigation pane, click **Overview** to open your project’s main page, which looks like this:
+1. On the **Overview (1)** page in the Azure AI Foundry portal, locate the **Endpoints and keys** section. Select the **Azure AI Foundry (2)** library, then click **Copy Azure AI Foundry project endpoint (3)**. This endpoint will be used to connect your client application to your project and model.
 
-    ![](../Images/l2at1p10.png)
+    ![](../Images/l2at2p1.png)
+
+    > **Note:** Save this endpoint in a notepad for future reference.
+
+    > **Note**: You can also use the Azure OpenAI endpoint!
 
 ## Task 2: Assign a cognitive service OpenAI role to the user
 
@@ -91,11 +94,11 @@ In this task, you’ll assign the **Cognitive Services OpenAI User** role to you
 
 1. Open a new browser tab (keeping the Azure AI Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
-1. 1. If prompted, provide the credentials below:
+1. If prompted, provide the credentials below:
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject> 
+    - **Password:** <inject key="AzureAdUserPassword"></inject> 
 
         >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
 
@@ -126,7 +129,7 @@ In this task, you’ll assign the **Cognitive Services OpenAI User** role to you
 
     ![](../Images/l2at2(1)p5.png)
 
-1. Confirm that **<inject key="AzureAdUserEmail"></inject>** is listed under Members, then click **Review + assign**.
+1. Confirm that **<inject key="DeploymentID"></inject>** is listed under Members, then click **Review + assign**.
 
     ![](../Images/l2at2(1)p6.png)
 
@@ -138,14 +141,6 @@ In this task, you’ll assign the **Cognitive Services OpenAI User** role to you
 ## Task 3: Create a client application to chat with the model
 
 In this task, you’ll connect your deployed Azure OpenAI model to a Python-based chat application by retrieving the project endpoint, cloning the sample code repository, configuring environment variables, and installing the required SDKs. This will allow you to interact with the model directly from your client application.
-
-1. On the **Overview (1)** page in the Azure AI Foundry portal, locate the **Endpoints and keys** section. Select the **Azure AI Foundry (2)** library, then click **Copy Azure AI Foundry project endpoint (3)**. This endpoint will be used to connect your client application to your project and model.
-
-    ![](../Images/l2at2p1.png)
-
-    > **Note:** Save this endpoint in a notepad for reference.
-
-    > **Note**: You can also use the Azure OpenAI endpoint!
 
 1. Open a new browser tab (keeping the Azure AI Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
@@ -163,9 +158,9 @@ In this task, you’ll connect your deployed Azure OpenAI model to a Python-base
 
     ![](../Images/l2at2p3.png)
 
-    The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+    >**Note:** The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, switch it to ***PowerShell***.
+    > **Note:** If you have previously created a cloud shell that uses a **Bash** environment, switch it to **PowerShell**.
 
 1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
@@ -319,7 +314,7 @@ In this task, you’ll modify the provided Python chat application to connect to
 
     ![](../Images/l2at3p9.png)
 
-1. In the **Pick an account** dialog box, choose **<inject key="AzureAdUserEmail"></inject>**. 
+1. In the **Pick an account** dialog box, choose **<inject key="DeploymentID"></inject>**. 
 
     ![](../Images/l2at3p10.png)
 
