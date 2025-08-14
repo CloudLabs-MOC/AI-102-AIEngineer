@@ -32,39 +32,39 @@ In this task, you'll set up the Azure AI Foundry workspace by creating a hub and
 
 1. Click on **Sign in**.
  
-    ![](../Images/l4t3l8t1p1.png)
+    ![](../Images/l8t1p1.png)
 
 1. If prompted, provide the credentials below:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-        ![](../Images/l4t3aifoundrysignin1.png)
+        ![](../Images/aifoundrysignin1.png)
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-        ![](../Images/l4t3aifoundrysignin2.png)
+        ![](../Images/aifoundrysignin2.png)
 
 1. When the **Stay signed in?** window appears, select **No**.
 
-    ![](../Images/l4t3aifoundrysignin3.png)
+    ![](../Images/aifoundrysignin3.png)
 
 1. Click on **X** to close the **Chat with Foundry Agent** popup window.
 
-    ![](../Images/l4t3l8t1p2.png)
+    ![](../Images/l8t1p2.png)
 
     >**Note:** Close the **Help** pane if it's open
 
 1. In the browser, navigate to `https://ai.azure.com/managementCenter/allResources` and select **Create new**. 
 
-    ![](../Images/l4t3l4t1p1.png)
+    ![](../Images/l4t1p1.png)
 
 1. In the **Create Project** window, select the option to create a new **AI hub resource (1)**, then click **Next (2)**.
 
-    ![](../Images/l4t3l4t1p2.png)
+    ![](../Images/l4t1p2.png)
 
 1. In the **Create a project** wizard, enter **Myproject<inject key="DeploymentID"></inject> (1)** in the Project name field. Under the Hub field, click **Rename hub (2)** and specify **Myhub<inject key="DeploymentID"></inject> (3)** as the hub name. Then, expand the **Advanced options (4)** drop-down.
 
-    ![](../Images/l4t3l4t1p3.png)
+    ![](../Images/l4t1p3.png)
 
 1. In the Advanced options specify the following settings for your project and the  click **Create (9)**.
 
@@ -73,11 +73,11 @@ In this task, you'll set up the Azure AI Foundry workspace by creating a hub and
     * Azure AI Foundry resource: **Keep as Default (7)**
     * Region: **<inject key="Region"></inject> (8)**
 
-        ![](../Images/l4t3l4t1p4.png)
+        ![](../Images/l4t1p4.png)
 
 1. Wait for your project to be created, and then navigate to your project.
 
-    ![](../Images/l4t3l4t1p5.png)
+    ![](../Images/l4t1p5.png)
 
 ## Task 2: Deploy models
 
@@ -90,14 +90,14 @@ You need two models to implement your solution:
 
 1. In your Azure AI Foundry project, go to the navigation pane on the left, under **My assets**, open the **Models + endpoints (1)** page. Click **+ Deploy model (2)**, then choose **Deploy base model (3)**.
 
-    ![](../Images/l4t3l4t2p1.png)
+    ![](../Images/l4t2p1.png)
 
 1. In the **Deploy text-embedding-ada-002** window, enter the following details, then select **Customize (3)**.
 
     - Deployment name: **text-embedding-ada-002 (1)**
     - Deployment type: **Global Standard (2)**
     
-        ![](../Images/l4t3l4t2p3.png)
+        ![](../Images/l4t2p3.png)
 
 1. In the **Deployment details** section, fill in the following information, then click **Deploy (8)**.
 
@@ -106,21 +106,21 @@ You need two models to implement your solution:
     - Tokens per Minute Rate Limit (thousands): **50K (6)**
     - Content filter: **DefaultV2 (7)**
 
-        ![](../Images/l4t3l4t2p4.png)
+        ![](../Images/l4t2p4.png)
 
         > **Note:** If your current AI resource location doesn't have quota available for the model you want to deploy, you will be asked to choose a different location where a new AI resource will be created and connected to your project.
 
 1. From the navigation pane on the left, under **My assets**, open the **Models + endpoints (1)** page, click **+ Deploy model (2)**, and select **Deploy base model (3)**.
 
-    ![](../Images/l4t3l4t2p1(1).png) 
+    ![](../Images/l4t2p1(1).png) 
 
 1. In the **Select a model** window, use the search bar to find **gpt-4.1 (1)**, select **gpt-4.1 (2)** from the results, and click **Confirm (3)**.
 
-    ![](../Images/l4t3l4t2p5.png)
+    ![](../Images/l4t2p5.png)
 
 1. In the **Deploy gpt-4.1** window, type **gpt-4.1 (1)** in the **Deployment name** field, select **Global Standard (2)** under **Deployment type**, and click **Customize (3)** to modify the deployment settings.
 
-    ![](../Images/l4t3l4t2p6.png)
+    ![](../Images/l4t2p6.png)
 
 1. Enter the following details, then click **Create (9):**
 
@@ -132,7 +132,7 @@ You need two models to implement your solution:
     | Tokens per Minute Rate Limit | **50K (7)**                                                |
     | Content filter               | **DefaultV2 (8)**                                          |
 
-    ![](../Images/l4t3l4t2p7.png)
+    ![](../Images/l4t2p7.png)
 
     > **Note:** Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 50,000 TPM is sufficient for the data used in this exercise.
 
@@ -169,7 +169,7 @@ The data for your app consists of a set of travel brochures in PDF format from t
 
     ![](../Images/l4t3p6.png)
 
-1. Click **Upload files or folder (1)** and choose **Upload folder** from the drop-down menu.
+1. Click **Upload files or folder (1)** and choose **Upload folder (2)** from the drop-down menu.
 
     ![](../Images/l4t3p7.png)
 
@@ -181,7 +181,7 @@ The data for your app consists of a set of travel brochures in PDF format from t
 
     ![](../Images/l4t3p9.png)
 
-1. In the **Upload list (1)**, confirm that all files from the folder are listed, then click **Next**.
+1. In the **Upload list (1)**, confirm that all files from the folder are listed, then click **Next (2)**.
 
     ![](../Images/l4t3p10.png)
     
@@ -205,7 +205,7 @@ In this task, you'll create a vector index in Azure AI Search from the uploaded 
 
     ![](../Images/l4t4p2.png)
 
-1. In the **Index configuration** section, under **Select Azure AI Search service** click on the **Create a new Azure AI Search resource with the following settings (1)**.
+1. In the **Index configuration** section, under **Select Azure AI Search service** click on **Create a new Azure AI Search resource (1)** link.
 
     ![](../Images/l4t4p3.png)
 
@@ -252,14 +252,6 @@ In this task, you'll create a vector index in Azure AI Search from the uploaded 
 
     ![](../Images/l4t4p11.png)
 
-The index creation operation consists of the following jobs:
-
-- Crack, chunk, and embed the text tokens in your brochures data.
-- Create the Azure AI Search index.
-- Register the index asset.
-
-> **Tip:** While you're waiting for the index to be created, why not take a look at the brochures you downloaded to get familiar with their contents?
-
 ## Task 5: Test the index in the playground
 
 In this task, you'll verify that your index is working by running queries in the Chat Playground, both with and without the index, to compare responses.
@@ -268,7 +260,7 @@ In this task, you'll verify that your index is working by running queries in the
 
     ![](../Images/l4t5p1.png)
 
-1. On the Chat playground page, in the Setup pane, ensure that your **gpt-4.1 (1)** model deployment is selected. Then, in the main chat session panel, submit the prompt **`Where can I stay in New York?` (2)** and press Enter or click on the **> icon (3)**.
+1. On the Chat playground page, in the **Setup** pane, make sure your **gpt-4.1 (1)** model deployment is selected. In the main chat panel, enter the prompt **`Where can I stay in New York?` (2)**, then press **Enter** or click the **> icon (3)** to send it.
 
     ![](../Images/l4t5p2.png)
 
