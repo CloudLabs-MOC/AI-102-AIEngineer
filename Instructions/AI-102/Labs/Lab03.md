@@ -26,4 +26,14 @@
 
    ![](../Images/aii62.png)
 
+1. Expand **Advanced options (1)**, and specify the following settings for your project and leave the rest as their defaults:
+
+    - Resuorce group: Select **AI-102-RG03 (2)**
+    - Region: Select **<inject key="Region" enableCopy="false" /> (3)**
+    - Select **Create (4)**
+
+      ![](../Images/aii63.png)    
+
+1. Wait for your project to be created. It may take around 3-5 minutes.
+
 

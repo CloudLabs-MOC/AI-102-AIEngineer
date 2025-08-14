@@ -36,7 +36,9 @@ In this lab, you use Azure AI Foundry portal to create a project, ready to build
 
       ![](../Images/aii5.png) 
 
-       >**Note**: If prompted, deploy the gpt-4.1 model using the **Global standard** deployment type and customize the deployment details to set a Tokens per minute rate limit of **50K** (or the maximum available if less than 50K).      
+       >**Note**: If prompted, deploy the gpt-4.1 model using the **Global standard** deployment type and customize the deployment details to set a Tokens per minute rate limit of **50K** (or the maximum available if less than 50K).   
+
+1. Wait for your project to be created. It may take around 3-5 minutes.          
 
 1. When your project is created, the chat playground will be opened automatically so you can test your model:
 
