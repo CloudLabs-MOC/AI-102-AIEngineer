@@ -36,4 +36,28 @@
 
 1. Wait for your project to be created. It may take around 3-5 minutes.
 
+### Task 2: Configure resource authorization
+
+The prompt flow tools in Azure AI Foundry create file-based assets that define the prompt flow in a folder in blob storage. Before exploring prompt flow, let's ensure that your Azure AI Foundry resource has the required access to the blob store so it can read them.
+
+1. In a new browser tab, open the [Azure portal](https://portal.azure.com), igning in with your Azure credentials if prompted.
+
+1. On the search bar, search for **Azure AI Foundry (1)** and select **Azure AI Foundry (2)**.
+
+   ![](../Images/aii64.png)
+
+1. Select the **AI Foundry (1)** resource for your hub to open it and then select AI service that start with **ai-myhubxxxxxx (2)**.
+
+   ![](../Images/aii65.png)
+
+1. Then expand its **Resource Management (1)** section, then select the **Identity (2)**. If the status of the system assigned identity is Off, switch it **On (3)** and **Save (4)** your changes.   
+
+   ![](../Images/aii66.png)
+
+1. Select **Yes** to confirm.
+
+   ![](../Images/aii67.png)
+
+
+
 
