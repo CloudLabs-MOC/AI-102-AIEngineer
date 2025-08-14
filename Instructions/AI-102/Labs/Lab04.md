@@ -1,4 +1,4 @@
-# Create a generative AI app that uses your own data
+# Lab 04: Create a generative AI app that uses your own data
 
 ### Estimated Duration : 45 Minutes
 
@@ -448,3 +448,4 @@ By completing this lab, you learned how to:
 * Configure and run a Python-based RAG client application using the Azure OpenAI SDK and Azure AI Search.
 
 ### You have successfully completed the Hands-on Lab!
+
