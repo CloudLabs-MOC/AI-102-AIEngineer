@@ -1,4 +1,4 @@
-# Create a generative AI chat app
+# Lab 2a: Create a generative AI chat app
 
 ### Estimated Duration : 40 Minutes
 
@@ -367,5 +367,6 @@ By completing this lab, you learned how to:
 * Assign a role to a user through the **Access control (IAM)** blade.
 * Verify the role assignment to ensure the user has the necessary access.
 * Use Azure CLI within Cloud Shell to confirm subscription context and manage access.
+
 
 ### You have successfully completed the Hands-on Lab!
