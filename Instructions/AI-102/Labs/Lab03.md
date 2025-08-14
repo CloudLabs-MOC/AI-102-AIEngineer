@@ -58,6 +58,110 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
 
    ![](../Images/aii67.png)
 
+1. On the Azure portal searh bar, search for **AI-102-RG03** **(1)** and then select **AI-102-RG03 (2)** from the results. 
+
+   ![](../Images/aii68.png)
+
+1. Then select the Storage account resource for your hub starts with **sthubxxxxxxxx**.   
+
+   ![](../Images/aii69.png)
+
+1. Navigate to **Access Control (IAM) (1)**, then select **Add (2)** drop down. Then select **Add role assignment (3)**.   
+
+   ![](../Images/aii70.png)
+
+1. Search for **Storage blob data reader (1)** then select **Storage blob data reader (2)** and then **Next (3)**.
+
+   ![](../Images/aii71.png)
+
+1. Select **Managed identity (1)**, click on **+ Select Members (2)**. Then choose **Azure AI Foundry (3)** then select the **ai-myhubxxxx (4)** and then **Next (5)**.
+
+   ![](../Images/aii72.png)
+
+1. Select **Next**.   
+
+1. Click on **Review+assign**.
+
+   ![](../Images/aii73.png)
+
+1. Again click on **Review+assign**.
+
+   ![](../Images/aii74.png)
+
+1. When you've reviewed and assigned the role access to allow the Azure AI Foundry managed identity to read blobs in the storage account, close the Azure portal tab and return to the Azure AI Foundry portal.
+
+### Task 3: Deploy a generative AI model
+
+1. In the pane on the left for your project, in the My assets section, select the **Models + endpoints (1)** page.
+
+   - In the Models + endpoints page, in the Model deployments tab, in the **+ Deploy model (2)** menu, select **Deploy base model (3)**.
+ 
+     ![](../Images/aii75.png)   
+
+1. Search for the **gpt-4.1 (1)** model in the list, and then select **(2)** and confirm it **(3)**.
+
+   ![](../Images/aii76.png)
+
+1. Deploy the model with the following settings by selecting Customize in the deployment details:
+
+   - Deployment name: A valid name for your model deployment
+   - Deployment type: Global Standard
+   - Automatic version update: Enabled
+   - Model version: Select the most recent available version
+   - Connected AI resource: Select your Azure OpenAI resource connection
+   - Tokens per Minute Rate Limit (thousands): 50K (or the maximum available in your subscription if less than 50K)
+   - Content filter: DefaultV2   
+
+
+### Task 4: Create a prompt flow
+
+A prompt flow provides a way to orchestrate prompts and other activities to define an interaction with a generative AI model. In this exercise, you'll use a template to create a basic chat flow for an AI assistant in a travel agency.
+
+1. In the Azure AI Foundry portal navigation bar, in the **Build and customize** section, select **Prompt flow (1)**. Then select **+ Create (2)**.
+
+   ![](../Images/aii77.png)
+
+1. Create a new flow based on the Chat flow template, select **Create** under Chat flow.
+
+   ![](../Images/aii78.png)
+   
+1. Specify the floder name as **Travel-Chat (1)** and then **Create (2)**.
+
+   ![](../Images/aii79.png)
+
+1. If a permissions error occurs like the below,  Specify a different flow name  as **Travel-Chat1234 (1)** and **Create (2)**.
+
+   ![](../Images/aii80.png)
+
+1. Once the flow is created, click on **Edit (1)** icon to rename the folder. Provide the name as  **Travel-Chat (2)** and then **Save (3)**.  
+
+   ![](../Images/aii81.png)
+
+1. To be able to test your flow, you need compute, and it can take a while to start; so select **Start compute session** to get it started while you explore and modify the default flow.
+
+   ![](../Images/aii82.png)
+
+1. View the prompt flow, which consists of a series of inputs, outputs, and tools. You can expand and edit the properties of these objects in the editing panes on the left, and view the overall flow as a graph on the right.
+
+1. View the Inputs pane, and note that there are two inputs (chat history and the user's question)
+
+1. View the **Inputs** pane, and note that there are two inputs (`chat history` and the `user's question`).
+
+   ![](../Images/aii83.png)
+
+1. View the **Outputs** pane and note that there's an output to reflect the model's answer.   
+
+   ![](../Images/aii84.png)
+
+1. View the **Chat** LLM tool pane, which contains the information needed to submit a prompt to the model.
+
+1. In the **Chat** LLM tool pane, for Connection, **select the connection for the Azure OpenAI service resource (1)** in your AI hub. Then configure the following connection properties:
+
+   - Api: chat
+   - deployment_name: The `gpt-4.1` model you deployed **(2)**
+   - response_format: `{"type":"text"}` **(3)**
+
+     ![](../Images/aii85.png)   
 
 
 
