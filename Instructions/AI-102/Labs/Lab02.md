@@ -138,7 +138,7 @@ To use a model, you need to create an Azure AI Foundry project.
  
 ---
 
-### Task 4: Chat with the gpt-4.1 modell
+### Task 4: Chat with the gpt-4.1 model
 
 Now that you have a model deployment, you can use the playground to test it.
 
@@ -148,9 +148,9 @@ Now that you have a model deployment, you can use the playground to test it.
 
 1. In the Give the model instructions and context field, set the system prompt to `You are an AI assistant that helps solve problems` **(1)**.
 
-   - Select **Apply changes (2)** to update the system prompt.  
+    - Select **Apply changes (2)** to update the system prompt.  
 
-     ![](../Images/aii41.png)    
+      ![](../Images/aii41.png)    
 
 1. Select **Continue**.
 
@@ -158,11 +158,11 @@ Now that you have a model deployment, you can use the playground to test it.
 
 1. In the chat window, enter the following query **(1)** and then **Send (2)**.
 
-   ```
-   I have a fox, a chicken, and a bag of grain that I need to take over a river in a boat. I can only take one thing at a time. If I leave the chicken and the grain unattended, the chicken will eat the grain. If I leave the fox and the chicken unattended, the fox will eat the chicken. How can I get all three things across the river without anything being eaten?
-   ```
+    ```
+    I have a fox, a chicken, and a bag of grain that I need to take over a river in a boat. I can only take one thing at a time. If I leave the chicken and the grain unattended, the chicken will eat the grain. If I leave the fox and the chicken unattended, the fox will eat the chicken. How can I get all three things across the river without anything being eaten?
+    ```
 
-    ![](../Images/aii43.png)   
+     ![](../Images/aii43.png)   
 
 1. View the response.
 
@@ -170,11 +170,11 @@ Now that you have a model deployment, you can use the playground to test it.
 
 1. Then, enter the following follow-up query:
 
-   ```
-   Explain your reasoning.
-   ```
+    ```
+    Explain your reasoning.
+    ```
 
-    ![](../Images/aii45.png)   
+     ![](../Images/aii45.png)   
 
 
 ### Task 5: Deploy another model
@@ -219,35 +219,35 @@ When you created your project, the gpt-4.1 model you selected was automatically 
 
 1. In the navigation bar, select **Playgrounds (1)**. Under the Chat playground, select the **Try the  Chat playground (2)**.
 
-   ![](../Images/aii50.png)
+    ![](../Images/aii50.png)
 
 1. In the chat playground, in the Setup pane, ensure that your **Phi-4-mini-instruct** model is selected.    
 
-   ![](../Images/aii51.png)
+    ![](../Images/aii51.png)
 
 1. In the chat box, provide the first line as `System message: You are an AI assistant that helps solve problems` **(1)** and then **Send (2)**.   
 
-   ![](../Images/aii52.png)
+    ![](../Images/aii52.png)
 
-    >**Note**: The same system prompt you used to test the gpt-4.1 model, but since there is no system message setup, we're providing it in the first chat for context.
+     >**Note**: The same system prompt you used to test the gpt-4.1 model, but since there is no system message setup, we're providing it in the first chat for context.
 
 1. On a new line in the chat window (below your system message), enter the following query and then **Send**:
 
-   ```
-   I have a fox, a chicken, and a bag of grain that I need to take over a river in a boat. I can only take one thing at a time. If I leave the chicken and the grain unattended, the chicken will eat the grain. If I leave the fox and the chicken unattended, the fox will eat the chicken. How can I get all three things across the river without anything being eaten?
-   ```
+    ```
+    I have a fox, a chicken, and a bag of grain that I need to take over a river in a boat. I can only take one thing at a time. If I leave the chicken and the grain unattended, the chicken will eat the grain. If I leave the fox and the chicken unattended, the fox will eat the chicken. How can I get all three things across the river without anything being eaten?
+    ```
 
 1. View the response.
 
-   ![](../Images/aii53.png) 
+    ![](../Images/aii53.png) 
 
 1. Then, enter the following follow-up query:
 
-   ```
-   Explain your reasoning.
-   ```    
+    ```
+    Explain your reasoning.
+    ```    
 
-    ![](../Images/aii54.png)    
+     ![](../Images/aii54.png)    
 
 #### Perform a further comparison    
 
@@ -255,25 +255,25 @@ When you created your project, the gpt-4.1 model you selected was automatically 
 
 1. Provide the following puzzle in the **Phi-4 model** chat:
 
-   ```
-   I have 53 socks in my drawer: 21 identical blue, 15 identical black and 17 identical red. The lights are out, and it is completely dark. How many socks must I take out to make 100 percent certain I have at least one pair of black socks?
-   ```   
+    ```
+    I have 53 socks in my drawer: 21 identical blue, 15 identical black and 17 identical red. The lights are out, and it is completely dark. How many socks must I take out to make 100 percent certain I have at least one pair of black socks?
+    ```   
 
-    ![](../Images/aii57.png)    
+     ![](../Images/aii57.png)    
 
 1. Select the `gpt 4.1` model from the drop-down list in the **Setup** pane:
 
-   ![](../Images/aii55.png) 
+    ![](../Images/aii55.png) 
 
 1. Provide the following puzzle in chat:
 
-   ```
-   I have 53 socks in my drawer: 21 identical blue, 15 identical black and 17 identical red. The lights are out, and it is completely dark. How many socks must I take out to make 100 percent certain I have at least one pair of black socks?
-   ```   
+    ```
+    I have 53 socks in my drawer: 21 identical blue, 15 identical black and 17 identical red. The lights are out, and it is completely dark. How many socks must I take out to make 100 percent certain I have at least one pair of black socks?
+    ```   
 
 1. View the result:
 
-   ![](../Images/aii56.png)    
+    ![](../Images/aii56.png)    
 
 #### Reflect on the models
 
