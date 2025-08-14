@@ -183,25 +183,25 @@ When you created your project, the gpt-4.1 model you selected was automatically 
 
 1. In the navigation bar on the left, in the **My assets** section, select **Models + endpoints**.
 
-   - In the Model deployments tab, in the **+ Deploy model (2)** drop-down list, select **Deploy base model (3)**.
+    - In the Model deployments tab, in the **+ Deploy model (2)** drop-down list, select **Deploy base model (3)**.
 
-     ![](../Images/aii46.png)
+      ![](../Images/aii46.png)
 
 1. Then search for **Phi-4-mini-instruct (1)**, then select **Phi-4-mini-instruct (2)** and **Confirm (3)** you selection.    
 
-   ![](../Images/aii47.png)
+    ![](../Images/aii47.png)
 
 1. Click on **Agree and Proceed** to agree to the model license.
 
-   ![](../Images/aii48.png)
+    ![](../Images/aii48.png)
 
 1. Deploy a Phi-4-mini-instruct model with the following settings and then select **Deploy (2)**:
 
-   - Deployment name: Leave the default name
-   - Deployment type: **Global Standard (1)**
-   - Deployment details: Use the default settings
+    - Deployment name: Leave the default name
+    - Deployment type: **Global Standard (1)**
+    - Deployment details: Use the default settings
 
-     ![](../Images/aii49.png)
+      ![](../Images/aii49.png)
 
 1. Wait for the deployment to complete.
 
