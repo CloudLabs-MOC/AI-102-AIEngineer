@@ -138,13 +138,13 @@ To use a model, you need to create an Azure AI Foundry project.
  
 ---
 
-### Task 4: Chat with the gpt-4.1 model
+### Task 4: Chat with the gpt-4.1 modell
 
 Now that you have a model deployment, you can use the playground to test it.
 
 1. In the chat playground, in the Setup pane, ensure that your `gpt-4.1` model is selected
 
-   ![](../Images/aii40.png)
+    ![](../Images/aii40.png)
 
 1. In the Give the model instructions and context field, set the system prompt to `You are an AI assistant that helps solve problems` **(1)**.
 
@@ -154,7 +154,7 @@ Now that you have a model deployment, you can use the playground to test it.
 
 1. Select **Continue**.
 
-   ![](../Images/aii42.png)
+    ![](../Images/aii42.png)
 
 1. In the chat window, enter the following query **(1)** and then **Send (2)**.
 
@@ -166,7 +166,7 @@ Now that you have a model deployment, you can use the playground to test it.
 
 1. View the response.
 
-   ![](../Images/aii44.png)
+    ![](../Images/aii44.png)
 
 1. Then, enter the following follow-up query:
 
