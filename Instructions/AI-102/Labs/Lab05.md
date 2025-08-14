@@ -87,15 +87,22 @@ Let's start by deploying a model in an Azure AI Foundry project.
 
 Because fine-tuning a model takes some time to complete, you'll start the fine-tuning job now and come back to it after exploring the base gpt-4.1 model you already deployed.
 
-1. Download the [training dataset](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl) at `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl`and save it as a JSONL file locally.
+1. Open this link in a new browser tab: [training dataset](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl) (`https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl`). We will use PowerShell to download this file.
 
-    ![](../Images/l5t2p2.png)
+    ![](../Images/l5t4p1.png)
 
-    > **Note**: Your device might default to saving the file as a .txt file. Select all files and remove the .txt suffix to ensure you're saving the file as JSONL.
+1. Type **PowerShell (1)** in the taskbar search bar and select **Windows PowerShell (2)** from the search results.
 
-1. In the **Save as** window, provide the **File name** as **`travel-finetune-hotel.jsonl.jsonl` (1)** and change **Save as type** to **All files (2)** using the drop-down and then click **Save (3)**. 
+    ![](../Images/l5t2p2(1).png)
+
+1. Copy the following command into PowerShell and press Enter to download the file `travel-finetune-hotel.jsonl` to your Downloads folder.
 
     ![](../Images/l5t2p3.png)
+
+    ```
+    cd $env:USERPROFILE\Downloads
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl" -OutFile "$env:USERPROFILE\Downloads\travel-finetune-hotel.jsonl"
+    ```
 
 1. Navigate to the **Fine-tuning (1)** page under the **Build and customize** section, using the menu on the left and then click on **+ Fine-tune model (2)**.
 
@@ -112,15 +119,15 @@ Because fine-tuning a model takes some time to complete, you'll start the fine-t
 
         ![](../Images/l5t2p6.png)
 
-1. In the **Fine-tune gpt-4.1** window, click on the **drop down (1)** from **Training data** and select **Upload files (2)**.
+1. In the **Fine-tune gpt-4.1** window, click on the **drop-down (1)** from **Training data** and select **Upload files (2)**.
 
     ![](../Images/l5t2p7.png)
 
-1. Click **Upload file (1)**, select **`travel-finetune-hotel.jsonl.jsonl` (2)** in the **Open** window, and then click **Open (3)**.
+1. Click **Upload file (1)**, select **`travel-finetune-hotel.jsonl` (2)** in the **Open** window, and then click **Open (3)**.
 
     ![](../Images/l5t2p8.png)
 
-1. In the Fine-tune gpt-4.1 window, verify that the file  **`travel-finetune-hotel.jsonl.jsonl` (1)** has been listed in **Upload list** section and then click **Apply (2)**.
+1. In the Fine-tune gpt-4.1 window, verify that the file  **`travel-finetune-hotel.jsonl` (1)** has been listed in **Upload list** section and then click **Apply (2)**.
 
     ![](../Images/l5t2p9.png)
 
@@ -178,7 +185,7 @@ While you wait for the fine-tuning job to complete, let's chat with a base GPT-4
     You should not provide any hotel, flight, rental car or restaurant recommendations.
     Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
     ```
-.
+
 1. Continue testing your chat application to verify it doesn't provide any information that isn't grounded in retrieved data. For example, ask the following questions and review the model's answers, paying particular attention to the tone and writing style that the model uses to respond:
    
     `Where in Rome should I stay?`
@@ -195,10 +202,10 @@ While you wait for the fine-tuning job to complete, let's chat with a base GPT-4
 
 The base model seems to work well enough, but you may be looking for a particular conversational style from your generative AI app. The training data used for fine-tuning offers you the chance to create explicit examples of the kinds of response you want.
 
-1. Open the browser tab from where you saved the JSONL file
+1. Open the JSONL file you downloaded previously (you can open it in any text editor like Notepad).
 
     ![](../Images/l5t4p1.png)
-    
+
 1. Examine the list of the JSON documents in the training data file. The first one should be similar to this (formatted for readability):
 
     ```json
@@ -253,3 +260,6 @@ Now that you deployed your fine-tuned model, you can test it like you tested you
     `What's the best way to get around the city?`
 
 1. After reviewing the responses, how do they compare to those of the base model?
+
+## Summary
+
