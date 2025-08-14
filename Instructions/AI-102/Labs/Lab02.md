@@ -128,6 +128,16 @@ To use a model, you need to create an Azure AI Foundry project.
 
 1. When your project is created, the chat playground will be opened automatically so you can test your model.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="efe4377d-c93c-4d0d-a5bd-e7f53085f5ed" />
+ 
+---
+
 ### Task 4: Chat with the gpt-4.1 model
 
 Now that you have a model deployment, you can use the playground to test it.
@@ -194,6 +204,16 @@ When you created your project, the gpt-4.1 model you selected was automatically 
      ![](../Images/aii49.png)
 
 1. Wait for the deployment to complete.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="c84cf65d-2739-4748-bdea-7233a75b480b" />
+ 
+---
 
 ### Task 6: Chat with the Phi-4 model
 
