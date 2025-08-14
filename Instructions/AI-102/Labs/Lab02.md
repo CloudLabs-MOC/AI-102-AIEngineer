@@ -1,4 +1,4 @@
-# Choose and deploy a language model
+# Lab 02: Choose and deploy a language model
 
 The Azure AI Foundry model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
 
