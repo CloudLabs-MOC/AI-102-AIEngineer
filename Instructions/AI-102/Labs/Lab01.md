@@ -88,7 +88,7 @@ The Azure AI Foundry project includes a number of endpoints that client applicat
 
 1. In the Management center page, in the navigation pane, under your project, select **Go to project**.
 
-   ![](../Images/aii12.png)
+    ![](../Images/aii12.png)
 
 1. In the project **Overview (1)** page, view the Endpoints and keys section; which contains endpoints and authorization keys that you can use in your application code to access **(2)**:
 
@@ -111,23 +111,23 @@ Now that you know something about the configuration of your Azure AI Foundry pro
 
 1. In the Setup pane, in the **Give the model instructions and context** box, delete the existing content and then enter the following instructions **(1)** and then **Apply changes (2)**:      
 
-   ```
-   You are a history teacher who can answer questions about past events all around the world.
-   ```
+    ```
+    You are a history teacher who can answer questions about past events all around the world.
+    ```
 
-    ![](../Images/aii15.png)  
+     ![](../Images/aii15.png)  
 
 1. Select **Continue**.
 
-   ![](../Images/aii16.png)
+    ![](../Images/aii16.png)
 
 1. In the chat window, enter a query such as `What are the key events in the history of Scotland?` **(1)** and then send **(2)**.    
 
-   ![](../Images/aii17.png)
+    ![](../Images/aii17.png)
 
 1. View the response:   
 
-   ![](../Images/aii18.png)
+    ![](../Images/aii18.png)
 
 ### Summary
 
