@@ -36,39 +36,39 @@ The features of Azure AI Foundry we're going to use in this exercise require a p
 
 1. Click on **Sign in**.
  
-    ![](../Images/l8t1p1.png)
+    ![](../Images/l4t3l8t1p1.png)
 
 1. If prompted, provide the credentials below:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-        ![](../Images/aifoundrysignin1.png)
+        ![](../Images/l4t3aifoundrysignin1.png)
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-        ![](../Images/aifoundrysignin2.png)
+        ![](../Images/l4t3aifoundrysignin2.png)
 
 1. When the **Stay signed in?** window appears, select **No**.
 
-    ![](../Images/aifoundrysignin3.png)
+    ![](../Images/l4t3aifoundrysignin3.png)
 
 1. Click on **X** to close the **Chat with Foundry Agent** popup window.
 
-    ![](../Images/l8t1p2.png)
+    ![](../Images/l4t3l8t1p2.png)
 
     >**Note:** Close the **Help** pane if it's open
 
 1. In the browser, navigate to `https://ai.azure.com/managementCenter/allResources` and select **Create new**. 
 
-    ![](../Images/l4t1p1.png)
+    ![](../Images/l4t3l4t1p1.png)
 
 1. In the **Create Project** window, select the option to create a new **AI hub resource (1)**, then click **Next (2)**.
 
-    ![](../Images/l4t1p2.png)
+    ![](../Images/l4t3l4t1p2.png)
 
 1. In the **Create a project** wizard, enter **Myproject<inject key="DeploymentID"></inject> (1)** in the Project name field. Under the Hub field, click **Rename hub (2)** and specify **Myhub<inject key="DeploymentID"></inject> (3)** as the hub name. Then, expand the **Advanced options (4)** drop-down.
 
-    ![](../Images/l4t1p3.png)
+    ![](../Images/l4t3l4t1p3.png)
 
 1. In the Advanced options specify the following settings for your project and the  click **Create (9)**.
 
@@ -77,11 +77,11 @@ The features of Azure AI Foundry we're going to use in this exercise require a p
     * Azure AI Foundry resource: **Keep as Default (7)**
     * Region: **<inject key="Region"></inject> (8)**
 
-        ![](../Images/l4t1p4.png)
+        ![](../Images/l4t3l4t1p4.png)
 
 1. Wait for your project to be created, and then navigate to your project.
 
-    ![](../Images/l4t1p5.png)
+    ![](../Images/l4t3l4t1p5.png)
 
 ## Task 2: Deploy models
 
@@ -90,22 +90,51 @@ You need two models to implement your solution:
 - An *embedding* model to vectorize text data for efficient indexing and processing.
 - A model that can generate natural language responses to questions based on your data.
 
-1. In the Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Models + endpoints (1)** page and click on **+ Deploy model (2)** and then select **Deploy base model (3)**.
+1. In your Azure AI Foundry project, go to the navigation pane on the left, under **My assets**, open the **Models + endpoints (1)** page. Click **+ Deploy model (2)**, then choose **Deploy base model (3)**.
 
-    ![](../Images/l4t2p1.png)
+    ![](../Images/l4t3l4t2p1.png)
 
-1. Create a new deployment of the **text-embedding-ada-002** model with the following settings by selecting **Customize** in the Deploy model wizard:
+1. In the **Deploy text-embedding-ada-002** window, enter the following details, then select **Customize (3)**.
 
-    - **Deployment name**: *A valid name for your model deployment*
-    - **Deployment type**: Global Standard
-    - **Model version**: *Select the default version*
-    - **Connected AI resource**: *Select the resource created previously*
-    - **Tokens per Minute Rate Limit (thousands)**: 50K *(or the maximum available in your subscription if less than 50K)*
-    - **Content filter**: DefaultV2
+    - Deployment name: **text-embedding-ada-002 (1)**
+    - Deployment type: **Global Standard (2)**
+    
+        ![](../Images/l4t3l4t2p3.png)
 
-    > **Note**: If your current AI resource location doesn't have quota available for the model you want to deploy, you will be asked to choose a different location where a new AI resource will be created and connected to your project.
+1. In the **Deployment details** section, fill in the following information, then click **Deploy (8)**.
 
-1. Return to the **Models + endpoints** page and repeat the previous steps to deploy a **gpt-4o** model using a **Global Standard** deployment of the most recent version with a TPM rate limit of **50K** (or the maximum available in your subscription if less than 50K).
+    - Model version: **Select the default version (4)**
+    - Connected AI resource: **Keep it default (5)**
+    - Tokens per Minute Rate Limit (thousands): **50K (6)**
+    - Content filter: **DefaultV2 (7)**
+
+        ![](../Images/l4t3l4t2p4.png)
+
+        > **Note**: If your current AI resource location doesn't have quota available for the model you want to deploy, you will be asked to choose a different location where a new AI resource will be created and connected to your project.
+
+1. From the navigation pane on the left, under **My assets**, open the **Models + endpoints (1)** page, click **+ Deploy model (2)**, and select **Deploy base model (3)**.
+
+    ![](../Images/l4t3l4t2p1(1).png) 
+
+1. In the **Select a model** window, use the search bar to find **gpt-4.1 (1)**, select **gpt-4.1 (2)** from the results, and click **Confirm (3)**.
+
+    ![](../Images/l4t3l4t2p5.png)
+
+1. In the **Deploy gpt-4.1** window, type **gpt-4.1 (1)** in the **Deployment name** field, select **Global Standard (2)** under **Deployment type**, and click **Customize (3)** to modify the deployment settings.
+
+    ![](../Images/l4t3l4t2p6.png)
+
+1. Enter the following details, then click **Create (9)**:
+
+    | Parameters                   | Values                                                     |
+    | ---------------------------- | ---------------------------------------------------------- |
+    | Model version upgrade policy | **Upgrade once new default version becomes available (4)** |
+    | Model version                | **2025-04-14 (Default) (5)**                               |
+    | Connected AI resource        | **Keep as Default (6)**               |
+    | Tokens per Minute Rate Limit | **50K (7)**                                                |
+    | Content filter               | **DefaultV2 (8)**                                          |
+
+    ![](../Images/l4t3l4t2p7.png)
 
     > **Note**: Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 50,000 TPM is sufficient for the data used in this exercise.
 
@@ -113,13 +142,56 @@ You need two models to implement your solution:
 
 The data for your app consists of a set of travel brochures in PDF format from the fictitious travel agency *Margie's Travel*. Let's add them to the project.
 
-1. In a new browser tab, download the [zipped archive of brochures](https://github.com/MicrosoftLearning/mslearn-ai-studio/raw/main/data/brochures.zip) from `https://github.com/MicrosoftLearning/mslearn-ai-studio/raw/main/data/brochures.zip` and extract it to a folder named **brochures** on your local file system.
-1. In Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Data + indexes** page.
-1. Select **+ New data**.
-1. In the **Add your data** wizard, expand the drop-down menu to select **Upload files/folders**.
-1. Select **Upload folder** and upload the **brochures** folder. Wait until all the files in the folder are listed.
-1. Select **Next** and set the data name to `brochures`.
+1. In a new browser tab, go to [this link](https://github.com/MicrosoftLearning/mslearn-ai-studio/raw/main/data/brochures.zip) to download the zipped brochure archive from `https://github.com/MicrosoftLearning/mslearn-ai-studio/raw/main/data/brochures.zip`, then click **Open** to view it.
+
+    ![](../Images/l4t3p1.png)
+
+1. Press **Ctrl+A (1)** to highlight all the files, then select the **Compressed Folder Tools (2)** tab from the top menu bar.
+
+    ![](../Images/l4t3p2.png)
+
+1. Click **Extract all** to unpack the files. 
+
+    ![](../Images/l4t3p3.png)
+
+1. In the **Select a Destination and Extract Files** window, keep the default destination and click **Extract**.
+
+    ![](../Images/l4t3p4.png)
+
+    >**Note:** Make sure the folder name is  **brochures**.
+
+1. In your Azure AI Foundry project, go to the navigation pane on the left, under **My assets**, open the **Data + indexes (1)** page, and click **+ New data (2)**.
+
+    ![](../Images/l4t3p5.png)
+
+
+1. In the **Add your data** wizard, open the **drop-down (1)** menu under Data source and choose **Upload files/folders (2)**.
+
+    ![](../Images/l4t3p6.png)
+
+1. Click **Upload files or folder (1)** and choose **Upload folder** from the drop-down menu.
+
+    ![](../Images/l4t3p7.png)
+
+1. In the **Select folder to upload** window, click **Downloads (1)** in the left pane, select the **brochures (2)** folder, and then click **Upload (3)**.
+
+    ![](../Images/l4t3p8.png)
+
+1. In the **Upload 6 files to this site?** dialog box, click **Upload**.
+
+    ![](../Images/l4t3p9.png)
+
+1. In the **Upload list (1)**, confirm that all files from the folder are listed, then click **Next**.
+
+    ![](../Images/l4t3p10.png)
+    
+1. Set the **Data name** to **`brochures` (1)**, then click **Create (2)**.
+
+    ![](../Images/l4t3p11.png)
+
 1. Wait for the folder to be uploaded and note that it contains several .pdf files.
+
+    ![](../Images/l4t3p12.png)
 
 ## Task 4: Create an index for your data
 
