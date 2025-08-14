@@ -87,6 +87,14 @@ In this task, you’ll sign in to the Azure AI Foundry portal, locate the **gpt-
 
     > **Note**: You can also use the Azure OpenAI endpoint!
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="c63cb22f-4418-42b9-99d1-b8e2e77ffa79" />
+
 ## Task 2: Assign a cognitive service OpenAI role to the user
 
 In this task, you’ll assign the **Cognitive Services OpenAI User** role to your account for the specified Azure resource group. This will give you the required permissions to access and use the Azure OpenAI resources in the lab.
