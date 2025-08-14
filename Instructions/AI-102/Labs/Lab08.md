@@ -1,4 +1,4 @@
-# Explore AI Agent development
+# Lab 08: Explore AI Agent development
 
 ### Estimated Duration : 30 Minutes
 
