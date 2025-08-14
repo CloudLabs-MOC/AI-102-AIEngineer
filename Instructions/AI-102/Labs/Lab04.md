@@ -8,7 +8,7 @@ Retrieval Augmented Generation (RAG) is a technique used to build applications t
 
 In this exercise, you'll use Azure AI Foundry to integrate custom data into a generative AI solution.
 
-> **Note**: The code in this exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages; which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
+> **Note:** The code in this exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages; which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
 
 While this exercise is based on the Azure OpenAI Python SDK, you can develop AI chat applications using multiple language-specific SDKs; including:
 
@@ -22,7 +22,7 @@ This exercise takes approximately **45** minutes.
 
 - **Task 1:** Create an Azure AI Foundry hub and project
 
-- **Task 2**: Deploy models
+- **Task 2:** Deploy models
 
 - **Task 3:** Add data to your project
 
@@ -110,7 +110,7 @@ You need two models to implement your solution:
 
         ![](../Images/l4t3l4t2p4.png)
 
-        > **Note**: If your current AI resource location doesn't have quota available for the model you want to deploy, you will be asked to choose a different location where a new AI resource will be created and connected to your project.
+        > **Note:** If your current AI resource location doesn't have quota available for the model you want to deploy, you will be asked to choose a different location where a new AI resource will be created and connected to your project.
 
 1. From the navigation pane on the left, under **My assets**, open the **Models + endpoints (1)** page, click **+ Deploy model (2)**, and select **Deploy base model (3)**.
 
@@ -124,7 +124,7 @@ You need two models to implement your solution:
 
     ![](../Images/l4t3l4t2p6.png)
 
-1. Enter the following details, then click **Create (9)**:
+1. Enter the following details, then click **Create (9):**
 
     | Parameters                   | Values                                                     |
     | ---------------------------- | ---------------------------------------------------------- |
@@ -136,7 +136,7 @@ You need two models to implement your solution:
 
     ![](../Images/l4t3l4t2p7.png)
 
-    > **Note**: Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 50,000 TPM is sufficient for the data used in this exercise.
+    > **Note:** Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 50,000 TPM is sufficient for the data used in this exercise.
 
 ## Task 3: Add data to your project
 
@@ -197,52 +197,98 @@ The data for your app consists of a set of travel brochures in PDF format from t
 
 Now that you've added a data source to your project, you can use it to create an index in your Azure AI Search resource.
 
-1. In Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Data + indexes** page.
-1. In the **Indexes** tab, add a new index with the following settings:
-    - **Source location**:
-        - **Data source**: Data in Azure AI Foundry
-            - *Select the **brochures** data source*
-    - **Index configuration**:
-        - **Select Azure AI Search service**: *Create a new Azure AI Search resource with the following settings*:
-            - **Subscription**: *You Azure subscription*
-            - **Resource group**: *The same resource group as your AI hub*
-            - **Service name**: *A valid name for your AI Search Resource*
-            - **Location**: *The same location as your AI hub*
-            - **Pricing tier**: Basic
-            
-            Wait for the AI Search resource to be created. Then return to the Azure AI Foundry and finish configuring the index by selecting **Connect other Azure AI Search resource** and adding a connection to the AI Search resource you just created.
+1. In Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Data + indexes (1)** page and in the **Indexes (2)** tab, click on **+ New index (3)**.
+
+    ![](../Images/l4t4p1.png)
+
+1. In the **Create a vector index** window, under the **Source location** section, open the Data source dropdown, select **Data in Azure AI Foundry (1)**, choose the **brochures (2)** data source, and click **Next (3)**.
+
+    ![](../Images/l4t4p2.png)
+
+1. In the **Index configuration** section, under **Select Azure AI Search service** click on the **Create a new Azure AI Search resource with the following settings (1)**.
+
+    ![](../Images/l4t4p3.png)
+
+1. A new browser tab will open, taking you to the **Create a search service** page in the Azure portal. Enter the following details, then click **Review + create (6):**
+
+    * Subscription: **Default (1)**
+    * Resource group: **AI-102-RG04 (2)**
+    * Service name: **mysearchservice<inject key="DeploymentID"></inject> (3)**
+    * Location: **<inject key="Region"></inject> (4)**
+    * Pricing tier: **Basic (5)**
+
+        ![](../Images/l4t4p4.png)
+
+        > **Note:** You can change the pricing tier by clicking the **Change Pricing Tier** link in the Pricing tier section.
+    
+1. On the **Create a search service** page, click on **Create**.
+
+    ![](../Images/l4t4p5.png)
+
+1. Wait for the AI Search resource to be created, then go back to Azure AI Foundry. To finish configuring the index, open the **dropdown (1)** and select **Connect other Azure AI Search resource (2)**.
+
+    ![](../Images/l4t4p6.png)
+
+1. In the **Connect an existing resource** section, confirm that the displayed resource is the one you created, then click **Add connection**.
+
+    ![](../Images/l4t4p7.png)
+
+1. In the **Index configuration** section, under **Select Azure AI Search service**, choose **mysearchservice (1)**, then enter the following details and click **Next (4)**.
  
-        - **Vector index**: `brochures-index`
-        - **Virtual machine**: Auto select
-    - **Search settings**:
-        - **Vector settings**: Add vector search to this search resource
-        - **Azure OpenAI connection**: *Select the default Azure OpenAI resource for your hub.*
-        - **Embedding model**: text-embedding-ada-002
-        - **Embedding model deployment**: *Your deployment of the* text-embedding-ada-002 *model*
+    - Vector index: **`brochures-index` (2)**
+    - Virtual machine: **Auto select (3)**
+
+        ![](../Images/l4t4p8.png)
+
+1. In the **Search settings** section, review the settings, keep them as default, and click **Next**.
+
+    ![](../Images/l4t4p9.png)
+
+1. In the **Review and finish** section, click **Create vector index**.
+
+    ![](../Images/l4t4p10.png)
 
 1. Create the vector index and wait for the indexing process to be completed, which can take a while depending on available compute resources in your subscription.
 
-    The index creation operation consists of the following jobs:
+    ![](../Images/l4t4p11.png)
 
-    - Crack, chunk, and embed the text tokens in your brochures data.
-    - Create the Azure AI Search index.
-    - Register the index asset.
+The index creation operation consists of the following jobs:
 
-    > **Tip**: While you're waiting for the index to be created, why not take a look at the brochures you downloaded to get familiar with their contents?
+- Crack, chunk, and embed the text tokens in your brochures data.
+- Create the Azure AI Search index.
+- Register the index asset.
+
+> **Tip:** While you're waiting for the index to be created, why not take a look at the brochures you downloaded to get familiar with their contents?
 
 ## Task 5: Test the index in the playground
 
 Before using your index in a RAG-based prompt flow, let's verify that it can be used to affect generative AI responses.
 
-1. In the navigation pane on the left, select the **Playgrounds** page and open the **Chat** playground.
-1. On the Chat playground page, in the Setup pane, ensure that your **gpt-4o** model deployment is selected. Then, in the main chat session panel, submit the prompt `Where can I stay in New York?`
-1. Review the response, which should be a generic answer from the model without any data from the index.
-1. In the Setup pane, expand the **Add your data** field, and then add the **brochures-index** project index and select the **hybrid (vector + keyword)** search type.
+1. In the navigation pane on the left, select the **Playgrounds (1)** page and click **Try the Chat playground (2)**.
 
-   > **Tip**: In some cases, newly created indexes may not be available right away. Refreshing the browser usually helps, but if you're still experiencing the issue where it can't find the index you may need to wait until the index is recognized.
+    ![](../Images/l4t5p1.png)
+
+1. On the Chat playground page, in the Setup pane, ensure that your **gpt-4.1 (1)** model deployment is selected. Then, in the main chat session panel, submit the prompt **`Where can I stay in New York?` (2)** and press Enter or click on the **> icon (3)**.
+
+    ![](../Images/l4t5p2.png)
+
+1. Review the response, which should be a generic answer from the model without any data from the index.
+
+1. In the Setup pane, expand the **Add your data** field, open the **drop-down (1)**, and select the **brochures-index (2)** project index.
+
+    ![](../Images/l4t5p3.png)
+
+1. In the Search type: select the **Hybrid (vector + keyword)**.
+
+    ![](../Images/l4t5p4.png)
+
+   > **Tip:** In some cases, newly created indexes may not be available right away. Refreshing the browser usually helps, but if you're still experiencing the issue where it can't find the index you may need to wait until the index is recognized.
 
 1. After the index has been added and the chat session has restarted, resubmit the prompt `Where can I stay in New York?`
+
 1. Review the response, which should be based on data in the index.
+
+    ![](../Images/l4t5p5.png)
 
 ## Task 6: Create a RAG client app
 
@@ -250,27 +296,48 @@ Now that you have a working index, you can use the Azure OpenAI SDK to implement
 
 ### Prepare the application configuration
 
-1. Return to the browser tab containing the Azure portal (keeping the Azure AI Foundry portal open in the existing tab).
-1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, selecting a ***PowerShell*** environment with no storage in your subscription.
+1. Open a new browser tab (keeping the Azure AI Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
-    The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+1. If prompted, provide the credentials below:
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, switch it to ***PowerShell***.
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-1. In the cloud shell toolbar, in the **Settings** menu, select **Go to Classic version** (this is required to use the code editor).
+   - **Password:** <inject key="AzureAdUserPassword"></inject> 
 
-    **<font color="red">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
+        >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
+
+        ![](../Images/l2at2p2.png)
+
+1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
+
+    ![](../Images/l2at2p3.png)
+
+    >**Note:** The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+
+    > **Note:** If you have previously created a cloud shell that uses a **Bash** environment, switch it to **PowerShell**.
+
+1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
+
+    ![](../Images/l2at2p4.png)
+
+1. In the Cloud Shell toolbar, open the **Settings (1)** menu and choose **Go to Classic version (2)** from the drop-down.
+
+    ![](../Images/l2at2p5.png)
 
 1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text):
+
+    ![](../Images/l4t6p1.png)
 
     ```
     rm -r mslearn-ai-foundry -f
     git clone https://github.com/microsoftlearning/mslearn-ai-studio mslearn-ai-foundry
     ```
 
-    > **Tip**: As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Tip:** As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, navigate to the folder containing the chat application code files:
+
+    ![](../Images/l4t6p2.png)
 
     ```
    cd mslearn-ai-foundry/labfiles/rag-app/python
@@ -286,28 +353,62 @@ Now that you have a working index, you can use the Azure OpenAI SDK to implement
 
 1. Enter the following command to edit the configuration file that has been provided:
 
+    ![](../Images/l4t6p3.png)
+
     ```
-   code .env
+    code .env
     ```
 
-    The file is opened in a code editor.
+    >**Note:** The file is opened in a code editor.
 
 1. In the configuration file, replace the following placeholders: 
-    - **your_openai_endpoint**: The Open AI endpoint from your project's **Overview** page in the Azure AI Foundry portal (be sure to select the **Azure OpenAI** capability tab, not the Azure AI Inference or Azure AI Services capability).
-    - **your_openai_api_key** The Open AI API key from your project's **Overview** page in the Azure AI Foundry portal (be sure to select the **Azure OpenAI** capability tab, not the Azure AI Inference or Azure AI Services capability).
-    - **your_chat_model**: The name you assigned to your **gpt-4o** model deployment, from the **Models + endpoints** page in the Azure AI Foundry portal (the default name is `gpt-4o`).
-    - **your_embedding_model**: The name you assigned to your **text-embedding-ada-002** model deployment, from the **Models + endpoints** page in the Azure AI Foundry portal (the default name is `text-embedding-ada-002`).
-    - **your_search_endpoint**: The URL for your Azure AI Search resource. You'll find this in the **Management center** in the Azure AI Foundry portal.
-    - **your_search_api_key**: The API key for your Azure AI Search resource. You'll find this in the **Management center** in the Azure AI Foundry portal.
-    - **your_index**: Replace with your index name from the **Data + indexes** page for your project in the Azure AI Foundry portal (it should be `brochures-index`).
+
+    - **your_openai_endpoint::** From your project's **Overview** page in the Azure AI Foundry portal, open the **Azure OpenAI (1)** capability tab and click the **Copy Azure OpenAI endpoint (2)** icon.
+
+        ![](../Images/l4t6p4.png)
+
+    - **your_openai_api_key:** From your project's **Overview** page in the Azure AI Foundry portal, go to the **Azure OpenAI (1)** capability tab and click the **Copy API Key (2)** icon.
+
+        ![](../Images/l4t6p5.png)
+
+    - **your_chat_model:** From the **Models + endpoints (1)** page in the Azure AI Foundry portal, copy the name **`gpt-4.1` (2)** of your **gpt-4.1** model deployment.
+
+        ![](../Images/l4t6p6.png)
+
+    - **your_embedding_model:** From the **Models + endpoints (1)** page in the Azure AI Foundry portal, copy the name **`text-embedding-ada-002` (2)** of your **text-embedding-ada-002** model deployment.
+
+        ![](../Images/l4t6p7.png)
+
+    - **your_search_endpoint:** To get the URL for your Azure AI Search resource, go to the **Management center**, select **Connected resources (1)** under Project, and copy the **Azure AI Service endpoint (2)**.
+
+        ![](../Images/l4t6p8.png)
+
+        ![](../Images/l4t6p8(1).png)
+
+    - **your_search_api_key:** To get the API key for your Azure AI Search resource, go to the **Management center**, select **Connected resources (1)** under Project, and click **Copy API keys (2)** for the **Azure AI Service**.
+    
+        ![](../Images/l4t6p8.png)
+
+        ![](../Images/l4t6p9.png)
+
+    - **your_index:** Replace with your index name from **Data + indexes (1)**, and copy **`brochures-index` (2)** from the **Names** column.
+
+        ![](../Images/l4t6p10.png)
+
+1. After entering all these values, your `.env` file should look like this.
+
+    ![](../Images/l4t6p11.png)
+
 1. After you've replaced the placeholders, in the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
 ### Explore code to implement the RAG pattern
 
 1. Enter the following command to edit the code file that has been provided:
 
+    ![](../Images/l4t6p12.png)
+
     ```
-   code rag-app.py
+    code rag-app.py
     ```
 
 1. Review the code in the file, noting that it:
@@ -333,8 +434,16 @@ Now that you have a working index, you can use the Azure OpenAI SDK to implement
 
 1. When prompted, enter a question, such as `Where should I go on vacation to see architecture?` and review the response from your generative AI model.
 
-    Note that the response includes source references to indicate the indexed data in which the answer was found.
+    ![](../Images/l4t6p13.png)
+
+    >**Note:** The response includes source references to indicate the indexed data in which the answer was found.
 
 1. Try a follow-up question, for example `Where can I stay there?`
 
+    ![](../Images/l4t6p14.png)
+
 1. When you're finished, enter `quit` to exit the program. Then close the cloud shell pane.
+
+## Summary
+
+
