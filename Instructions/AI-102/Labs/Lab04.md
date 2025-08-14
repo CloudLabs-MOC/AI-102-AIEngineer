@@ -68,22 +68,20 @@ The features of Azure AI Foundry we're going to use in this exercise require a p
 
 1. In the **Create a project** wizard, enter **Myproject<inject key="DeploymentID"></inject> (1)** in the Project name field. Under the Hub field, click **Rename hub (2)** and specify **Myhub<inject key="DeploymentID"></inject> (3)** as the hub name. Then, expand the **Advanced options (4)** drop-down.
 
-    ![](../Images/l4t1p2.png)
+    ![](../Images/l4t1p3.png)
 
-1. In the Advanced options specify the following settings for your project:
+1. In the Advanced options specify the following settings for your project and the  click **Create (9)**.
 
-    * Subscription: **Choose Default Subscription (3)**
-    * Resource group: **AI-102-RG04 (4)**
-    * Azure AI Foundry resource: **Keep as Default (5)**
-    * Region: **<inject key="Region"></inject> (6)**
+    * Subscription: **Choose Default Subscription (5)**
+    * Resource group: **AI-102-RG04 (6)**
+    * Azure AI Foundry resource: **Keep as Default (7)**
+    * Region: **<inject key="Region"></inject> (8)**
 
-        ![](../Images/l4t1p3.png)
+        ![](../Images/l4t1p4.png)
 
 1. Wait for your project to be created, and then navigate to your project.
 
-    ![](../Images/l4t1p4.png)
-
-
+    ![](../Images/l4t1p5.png)
 
 ## Task 2: Deploy models
 
@@ -92,7 +90,10 @@ You need two models to implement your solution:
 - An *embedding* model to vectorize text data for efficient indexing and processing.
 - A model that can generate natural language responses to questions based on your data.
 
-1. In the Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Models + endpoints** page.
+1. In the Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Models + endpoints (1)** page and click on **+ Deploy model (2)** and then select **Deploy base model (3)**.
+
+    ![](../Images/l4t2p1.png)
+
 1. Create a new deployment of the **text-embedding-ada-002** model with the following settings by selecting **Customize** in the Deploy model wizard:
 
     - **Deployment name**: *A valid name for your model deployment*
