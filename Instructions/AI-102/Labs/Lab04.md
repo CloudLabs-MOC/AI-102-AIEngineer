@@ -10,14 +10,6 @@ In this exercise, you'll use Azure AI Foundry to integrate custom data into a ge
 
 > **Note:** The code in this exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages; which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
 
-While this exercise is based on the Azure OpenAI Python SDK, you can develop AI chat applications using multiple language-specific SDKs; including:
-
-- [OpenAI for Python](https://pypi.org/project/openai/)
-- [Azure Open AI for Microsoft .NET](https://www.nuget.org/packages/Azure.AI.OpenAI)
-- [Azure OpenAI for TypeScript](https://www.npmjs.com/package/@azure/openai)
-
-This exercise takes approximately **45** minutes.
-
 ## Lab Objectives
 
 - **Task 1:** Create an Azure AI Foundry hub and project
@@ -28,9 +20,13 @@ This exercise takes approximately **45** minutes.
 
 - **Task 4:** Create an index for your data
 
+- **Task 5:** Test the index in the playground
+
+- **Task 6:** Create a RAG client app
+
 ## Task 1: Create an Azure AI Foundry hub and project
 
-The features of Azure AI Foundry we're going to use in this exercise require a project that is based on an Azure AI Foundry *hub* resource.
+In this task, you'll set up the Azure AI Foundry workspace by creating a hub and project. This will be the foundation for managing your models, data, and indexes.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -84,6 +80,8 @@ The features of Azure AI Foundry we're going to use in this exercise require a p
     ![](../Images/l4t3l4t1p5.png)
 
 ## Task 2: Deploy models
+
+In this task, you'll deploy two models, an embedding model to convert text into vector format for searching, and a generative model to produce responses based on retrieved data.
 
 You need two models to implement your solution:
 
@@ -140,6 +138,8 @@ You need two models to implement your solution:
 
 ## Task 3: Add data to your project
 
+In this task, you'll upload a set of travel brochures in PDF format to your Azure AI Foundry project so they can be used as a knowledge source.
+
 The data for your app consists of a set of travel brochures in PDF format from the fictitious travel agency *Margie's Travel*. Let's add them to the project.
 
 1. In a new browser tab, go to [this link](https://github.com/MicrosoftLearning/mslearn-ai-studio/raw/main/data/brochures.zip) to download the zipped brochure archive from `https://github.com/MicrosoftLearning/mslearn-ai-studio/raw/main/data/brochures.zip`, then click **Open** to view it.
@@ -195,7 +195,7 @@ The data for your app consists of a set of travel brochures in PDF format from t
 
 ## Task 4: Create an index for your data
 
-Now that you've added a data source to your project, you can use it to create an index in your Azure AI Search resource.
+In this task, you'll create a vector index in Azure AI Search from the uploaded brochures. This index will enable efficient retrieval of relevant content during a query.
 
 1. In Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Data + indexes (1)** page and in the **Indexes (2)** tab, click on **+ New index (3)**.
 
@@ -262,7 +262,7 @@ The index creation operation consists of the following jobs:
 
 ## Task 5: Test the index in the playground
 
-Before using your index in a RAG-based prompt flow, let's verify that it can be used to affect generative AI responses.
+In this task, you'll verify that your index is working by running queries in the Chat Playground, both with and without the index, to compare responses.
 
 1. In the navigation pane on the left, select the **Playgrounds (1)** page and click **Try the Chat playground (2)**.
 
@@ -292,7 +292,7 @@ Before using your index in a RAG-based prompt flow, let's verify that it can be 
 
 ## Task 6: Create a RAG client app
 
-Now that you have a working index, you can use the Azure OpenAI SDK to implement the RAG pattern in a client application. Let's explore the code to accomplish this in a simple example.
+In this task, you'll configure and run a Python-based client application that uses the Azure OpenAI SDK and Azure AI Search to provide grounded responses from your dataset.
 
 ### Prepare the application configuration
 
@@ -446,4 +446,13 @@ Now that you have a working index, you can use the Azure OpenAI SDK to implement
 
 ## Summary
 
+By completing this lab, you learned how to:
 
+* Create an Azure AI Foundry hub and project to organize AI resources.
+* Deploy an embedding model and a generative model in Azure AI Foundry.
+* Upload custom PDF data to your project for use in AI applications.
+* Create a vector index in Azure AI Search to enable semantic and keyword-based retrieval.
+* Test the index in the Chat Playground to compare responses with and without data grounding.
+* Configure and run a Python-based RAG client application using the Azure OpenAI SDK and Azure AI Search.
+
+### You have successfully completed the Hands-on Lab!
