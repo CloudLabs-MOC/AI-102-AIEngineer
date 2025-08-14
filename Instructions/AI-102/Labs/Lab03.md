@@ -1,4 +1,4 @@
-#  Use a prompt flow to manage conversation in a chat app
+# Lab 03: Use a prompt flow to manage conversation in a chat app
 
 ### Task 1: Create an Azure AI Foundry hub and project
 
