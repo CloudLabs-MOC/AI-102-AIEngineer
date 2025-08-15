@@ -187,7 +187,7 @@ Let's have one final chat with the model to see the effect of the custom content
 
      ![](../Images/ai6l27.png)  
 
-    ** The content should be blocked by your content filter**.
+    **The content should be blocked by your content filter**.
 
 1. Try the following prompt:
 
