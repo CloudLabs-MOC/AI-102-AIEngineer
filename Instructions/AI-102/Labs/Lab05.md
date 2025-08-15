@@ -89,7 +89,7 @@ In this task, you'll start the fine-tuning process for the GPT-4.1 model by down
 
 1. Open this link in a new browser tab: [training dataset](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl) (`https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl`). We will use PowerShell to download this file.
 
-    ![](../Images/l5t4p1.png)
+    ![](../Images/l5t4p1(1).png)
 
 1. Type **PowerShell (1)** in the taskbar search bar and select **Windows PowerShell (2)** from the search results.
 
