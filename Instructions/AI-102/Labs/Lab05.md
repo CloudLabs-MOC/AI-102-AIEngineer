@@ -83,7 +83,7 @@ In this task, you'll sign in to the Azure AI Foundry portal, create a new projec
 
     ![](../Images/l2at1p9(1).png)
 
-## Task 2:Fine-tune a model
+## Task 2: Fine-tune a model
 
 In this task, you'll start the fine-tuning process for the GPT-4.1 model by downloading a training dataset, uploading it to Azure AI Foundry, and configuring a fine-tuned model. This sets up your model to learn a specific conversational style and behavior for your custom chat application while you continue exploring the base model.
 
@@ -238,7 +238,7 @@ In this task, you'll deploy your completed fine-tuned model in Azure AI Foundry.
 
 1. Now provide the following configurations and click on **Deploy (5)** :
 
-    - Deployment name: **Keep as Default (1)**
+    - Deployment name: **gpt-4-04-14 (1)**
     - Deployment type: **Global Standard (2)**
     - Tokens per Minute Rate Limit (thousands): **50K (3)**
     - Content filter: **DefaultV2 (4)**
