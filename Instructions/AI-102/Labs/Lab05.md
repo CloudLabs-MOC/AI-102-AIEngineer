@@ -26,7 +26,7 @@ Imagine you work for a travel agency and you're developing a chat application to
 
 ## Task 1: Deploy a model in an Azure AI Foundry project
 
-Let's start by deploying a model in an Azure AI Foundry project.
+In this task, you'll sign in to the Azure AI Foundry portal, create a new project, and deploy the GPT-4.1 model to set up your workspace for building and testing a custom chat application. You’ll also verify that the model deployment is successful and accessible through the **Models + endpoints** page.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -85,7 +85,7 @@ Let's start by deploying a model in an Azure AI Foundry project.
 
 ## Task 2:Fine-tune a model
 
-Because fine-tuning a model takes some time to complete, you'll start the fine-tuning job now and come back to it after exploring the base gpt-4.1 model you already deployed.
+In this task, you'll start the fine-tuning process for the GPT-4.1 model by downloading a training dataset, uploading it to Azure AI Foundry, and configuring a fine-tuned model. This sets up your model to learn a specific conversational style and behavior for your custom chat application while you continue exploring the base model.
 
 1. Open this link in a new browser tab: [training dataset](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl) (`https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl`). We will use PowerShell to download this file.
 
@@ -144,7 +144,7 @@ Because fine-tuning a model takes some time to complete, you'll start the fine-t
 
 ## Task 3: Chat with a base model
 
-While you wait for the fine-tuning job to complete, let's chat with a base GPT-4.1 model to assess how it performs.
+In this task, you'll interact with the base GPT-4.1 model in the chat playground to evaluate its responses. You'll test how it answers travel-related queries, adjust the system message to guide its behavior, and observe how well it aligns with your desired conversational style before the fine-tuned model is ready.
 
 1. In the navigation pane on the left, select the **Playgrounds (1)** page and click **Try the Chat playground (2)**.
 
@@ -200,7 +200,7 @@ While you wait for the fine-tuning job to complete, let's chat with a base GPT-4
 
 ## Task 4: Review the training file
 
-The base model seems to work well enough, but you may be looking for a particular conversational style from your generative AI app. The training data used for fine-tuning offers you the chance to create explicit examples of the kinds of response you want.
+In this task, you'll review the JSONL training file to understand how the fine-tuned model will learn your desired conversational style. You'll examine example interactions that define the system message, user prompts, and assistant responses, which will guide the model to respond consistently in the style you want.
 
 1. Open the JSONL file you downloaded previously (you can open it in any text editor like Notepad).
 
@@ -220,32 +220,60 @@ The base model seems to work well enough, but you may be looking for a particula
 
 ## Task 5: Deploy the fine-tuned model
 
-When fine-tuning has successfully completed, you can deploy the fine-tuned model.
+In this task, you'll deploy your completed fine-tuned model in Azure AI Foundry. You'll check the status of your fine-tuning job, review its metrics, and configure the deployment settings. Finally, you'll wait for the deployment to complete so the model is ready for testing and use.
 
 1. Navigate to the **Fine-tuning** page under **Build and customize** to find your fine-tuning job and its status. If it's still running, you can opt to continue chatting with your deployed base model or take a break. If it's completed, you can continue.
 
-    > **Tip**: Use the **Refresh** button in the fine-tuning page to refresh the view. If the fine-tuning job disappears entirely, refresh the page in the browser.
+    ![](../Images/l5t5p1.png)
+
+    > **Note:** Use the **Refresh** button in the fine-tuning page to refresh the view. If the fine-tuning job disappears entirely, refresh the page in the browser.
 
 1. Select the fine-tuning job link to open its details page. Then, select the **Metrics** tab and explore the fine-tune metrics.
-1. Deploy the fine-tuned model with the following configurations:
-    - **Deployment name**: *A valid name for your model deployment*
-    - **Deployment type**: Standard
-    - **Tokens per Minute Rate Limit (thousands)**: 50K *(or the maximum available in your subscription if less than 50K)*
-    - **Content filter**: Default
-1. Wait for the deployment to be complete before you can test it, this might take a while. Check the **Provisioning state** until it has succeeded (you may need to refresh the browser to see the updated status).
+
+    ![](../Images/l5t5p2.png)
+
+1. To deploy the fine-tuned model, click on **Use this model**.
+
+    ![](../Images/l5t5p3.png)
+
+1. Now provide the following configurations and click on **Deploy (5)** :
+
+    - Deployment name: **Keep as Default (1)**
+    - Deployment type: **Global Standard (2)**
+    - Tokens per Minute Rate Limit (thousands): **50K (3)**
+    - Content filter: **DefaultV2 (4)**
+
+        ![](../Images/l5t5p4.png)
+
+1. Wait until the deployment is complete before testing, as this may take some time. You can monitor the **Provisioning state** by navigating to **Models + endpoints** in the left-hand menu. Refresh the browser as needed until the status shows **Succeeded**.
+
+    ![](../Images/l5t5p5.png)
 
 ## Task 6: Test the fine-tuned model
 
-Now that you deployed your fine-tuned model, you can test it like you tested your deployed base model.
+In this task, you'll test your deployed fine-tuned model in the playground. You'll verify that the system message is correctly applied, interact with the model using sample queries, and assess whether its responses are more consistent and aligned with the desired conversational style compared to the base model.
 
-1. When the deployment is ready, navigate to the fine-tuned model and select **Open in playground**.
-1. Ensure the system message includes these instructions:
+1. When the deployment is ready, navigate to the fine-tuned model from the **Models + endpoints (1)**, and click on the **gpt-4-04-14 (2)**.
+
+    ![](../Images/l5t6p1.png)
+
+1. In **gpt-4-04-14** blade and click **Open in playground**.
+
+    ![](../Images/l5t6p2.png)
+
+1. Make sure the system message contains these instructions. **Copy (1)** the text below and then click **Apply Changes (2)**.
+
+    ![](../Images/l5t6p3.png)
 
     ```
     You are an AI travel assistant that helps people plan their trips. Your objective is to offer support for travel-related inquiries, such as visa requirements, weather forecasts, local attractions, and cultural norms.
     You should not provide any hotel, flight, rental car or restaurant recommendations.
     Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
     ```
+
+1. In the Update system message? dialogue, click **Continue**.
+
+    ![](../Images/l5t3p4.png)
 
 1. Test your fine-tuned model to assess whether its behavior is more consistent now. For example, ask the following questions again and explore the model's answers:
 
@@ -259,7 +287,11 @@ Now that you deployed your fine-tuned model, you can test it like you tested you
 
     `What's the best way to get around the city?`
 
-1. After reviewing the responses, how do they compare to those of the base model?
+1. After reviewing the responses, observe how they compare with those of the base model.
 
 ## Summary
+
+In this lab, you learned how to fine-tune a GPT-4.1 model using Azure AI Foundry. You deployed a base model, prepared and uploaded a training dataset, and initiated a fine-tuning job. After the fine-tuned model was deployed, you tested it against the base model to compare performance, observing improvements in response style, consistency, and relevance for a travel chat application. The lab provided practical experience in customizing AI behavior and deploying models tailored to specific conversational scenarios.
+
+### You have successfully completed the Hands-on Lab!
 
