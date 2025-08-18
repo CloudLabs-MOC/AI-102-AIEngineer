@@ -10,7 +10,7 @@ In this lab, you create and configure an Azure AI Foundry project, deploy a mode
 
 - **Task 1:** Create an Azure AI Foundry project
 
-- **Task 2:** Create an agent client app
+- **Task 2:** Create an Agent Client App
 
 - **Task 3:** Build and Run Your Agent App
 
@@ -97,7 +97,7 @@ Let's start by creating an Azure AI Foundry project.
 
     ![](../Images/l9t1p4.png)
 
-## Task 2: Create an agent client app
+## Task 2: Create an Agent Client App
 
 In this task, you’ll set up a client application that connects to the agent you created in Azure AI Foundry. You’ll clone the provided GitHub repository, configure the application with your project details, and install the necessary dependencies so the app can communicate with your deployed model.
 
@@ -168,8 +168,6 @@ In this task, you’ll set up a client application that connects to the agent yo
     ```
     code .env
     ```
-
-    The file is opened in a code editor.
 
 1. In the code file, replace the placeholder values with the correct details for your project:
 
