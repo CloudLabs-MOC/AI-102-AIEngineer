@@ -102,16 +102,21 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
 
    ![](../Images/aii76.png)
 
+1. On the Deploy `gpt-4.1` page, select **Customize**.
+
+   ![](../Images/aii97.png)
+
 1. Deploy the model with the following settings by selecting Customize in the deployment details:
 
-   - Deployment name: A valid name for your model deployment
-   - Deployment type: Global Standard
-   - Automatic version update: Enabled
-   - Model version: Select the most recent available version
-   - Connected AI resource: Select your Azure OpenAI resource connection
-   - Tokens per Minute Rate Limit (thousands): 50K (or the maximum available in your subscription if less than 50K)
-   - Content filter: DefaultV2   
+   - Deployment name: Leave the default name
+   - Deployment type: **Global Standard**
+   - Model version: Select **2025-04-14(Default) (1)**
+   - Connected AI resource: Select your Azure OpenAI resource connection that starts with **ai-myhubxxxxxxx** **(2)**
+   - Tokens per Minute Rate Limit (thousands): `60K` **(3)** (or the maximum available in your subscription if less than 50K)
+   - Content filter: **DefaultV2 (4)**   
+   - Then select **Deploy (5)**
 
+     ![](../Images/aii98.png)
 
 ### Task 4: Create a prompt flow
 
@@ -237,8 +242,6 @@ When you're satisfied with the behavior of the flow you created, you can deploy 
       - Virtual machine: **Standard_DS3_v2 (3)**
       - Instance count: `1` **(4)**
       - Inferencing data collection: **Disabled (5)**
-   - Advanced settings:
-      - Use the default settings  
 
         ![](../Images/aii91.png)
 
@@ -246,20 +249,26 @@ When you're satisfied with the behavior of the flow you created, you can deploy 
 
    ![](../Images/aii92.png)
 
-1. Deployment may take some time. Please wait until it completes. You can track the progress in the Notifications panel.
+1. Deployment may take aroud 12-15 minutes. Please wait until it completes. You can track the progress in the Notifications panel.
 
    ![](../Images/aii93.png)
 
-1. Once the deployemnt is completed, In Azure AI Foundry portal, in the navigation pane, in the My assets section, select the **Models + endpoints (1)** page. Refresh the page. Make sure the **myendpointxxxxx** endopint is listed and in the **Succeeded (2)** state. Then select it **(3)**.
+1. Once the deployemnt is completed, In Azure AI Foundry portal, in the navigation pane, in the My assets section, click on the **Models + endpoints (1)** twice. Refresh the page. Make sure the **myendpointxxxxx** endopint is listed and in the **Succeeded (2)** state. Then select it **(3)**.
 
    ![](../Images/aii94.png)
 
 1. Navigate to the `Test` page.
 
+   ![](../Images/aii99.png)
+
 1. Enter the prompt `What is there to do in San Francisco?` and review the response.
+
+   ![](../Images/aii100.png)
 
 1. Enter the prompt `Tell me something about the history of the city.` and review the response.
 
-1. The test pane should look similar to this:
+   ![](../Images/aii101.png)
 
 1. View the **Consume** page for the endpoint, and note that it contains connection information and sample code that you can use to build a client application for your endpoint - enabling you to integrate the prompt flow solution into an application as a generative AI application.
+
+   ![](../Images/aii102.png)
