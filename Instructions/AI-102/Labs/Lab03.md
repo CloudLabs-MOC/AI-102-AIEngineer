@@ -58,13 +58,13 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
 
    ![](../Images/aii67.png)
 
-1. On the Azure portal searh bar, search for **AI-102-RG03** **(1)** and then select **AI-102-RG03 (2)** from the results. 
+1. On the Azure portal searh bar, search for **Storage account** **(1)** and then select **Storage account (2)** from the results. 
 
-   ![](../Images/aii68.png)
+   ![](../Images/aii95.png)
 
 1. Then select the Storage account resource for your hub starts with **sthubxxxxxxxx**.   
 
-   ![](../Images/aii69.png)
+   ![](../Images/aii96.png)
 
 1. Navigate to **Access Control (IAM) (1)**, then select **Add (2)** drop down. Then select **Add role assignment (3)**.   
 
@@ -74,7 +74,7 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
 
    ![](../Images/aii71.png)
 
-1. Select **Managed identity (1)**, click on **+ Select Members (2)**. Then choose **Azure AI Foundry (3)** then select the **ai-myhubxxxx (4)** and then **Next (5)**.
+1. Select **Managed identity (1)**, click on **+ Select Members (2)**. Then choose **Azure AI Foundry (3)** then select the **ai-myhubxxxx (4)** and then **Select (5)**.
 
    ![](../Images/aii72.png)
 
@@ -129,7 +129,7 @@ A prompt flow provides a way to orchestrate prompts and other activities to defi
 
    ![](../Images/aii79.png)
 
-1. If a permissions error occurs like the below,  Specify a different flow name  as **Travel-Chat1234 (1)** and **Create (2)**.
+1. If a permissions error occurs like the below,  Specify a different flow name  as **Travel-Chat<inject key="DeploymentID" enableCopy="false"/> (1)** and **Create (2)**.
 
    ![](../Images/aii80.png)
 
