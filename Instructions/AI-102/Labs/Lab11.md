@@ -25,16 +25,36 @@ In this lab, you'll use Azure AI Agent Service and Semantic Kernel to create an 
 
 1. Then at the top of the page for the model, select **Use this model**.
 
-    ![](../Images/ai6l2.png) 
+    ![](../Images/ai11l1.png) 
 
-1. When prompted to create a project, enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** and expand **Advanced options (2)**.
+1. When prompted to create a project, enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/>**.
 
-    ![](../Images/ai6l3.png) 
+    ![](../Images/ai11l-2.png) 
 
-1. Under **Advanced options**, provide the below details and leave the rest to deafult:
+1. Exapand **Advanced options (1)**, provide the below details and leave the rest to deafult:
 
-    - Resource group: Select **AI-102-RG11 (1)**
-    - Region: Select **Region**: Select **<inject key="Region" enableCopy="false" /> (2)**
-    - Select **Create (3)**
+    - Resource group: Select **AI-102-RG11 (2)**
+    - Region: Select **Region**: Select **<inject key="Region" enableCopy="false" /> (3)**
+    - Select **Create (4)**
 
-      ![](../Images/ai6l4.png)
+      ![](../Images/ai11l3.png) 
+
+1. Wait for your project to be created.  
+
+1. On the **Deploy gpt-4.1** page, select **Customize**.
+
+    ![](../Images/ai11l8.png) 
+
+1. On the **Deploy gpt-4.1** page, make the following changes and then **Deploy (2)**
+
+   - Tokens per Minute Rate Limit (thousands): `50K` **(1)** (or the maximum available in your subscription if less than 50K)
+
+     ![](../Images/ai11l9.png) 
+
+1. In the Setup pane, note the name of your model deployment; which should be **gpt-4.1**.
+
+    ![](../Images/ai11l10.png) 
+
+1. In the navigation pane on the left, select **Overview (1)** to see the main page for your project. Then copy ad past the Project endpoint **(2)**.
+
+    ![](../Images/ai11l11.png) 
