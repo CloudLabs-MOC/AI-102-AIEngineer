@@ -65,7 +65,11 @@ Let's start by creating an Azure AI Foundry project.
 
         >**Note:** In some cases, Azure AI Foundry will automatically deploy a default model (usually gpt-4o). If this happens, you can skip directly to the next step.
 
-1. If the **Deploy a model** window appears, use the search bar to look for **gpt-4.1 (1)**. From the results, select **gpt-4.1 (2)** and then click **Confirm (3)** to proceed.
+1. If the **Select or deploy a model** window appears, open the **Model deployments (1)** drop-down, choose **Deploy a model (2)**, and then click **Next (3)**.
+
+    ![](../Images/l8t1p5.png)
+
+1. In the **Deploy a model** window, use the search bar to look for **gpt-4.1 (1)**. From the results, select **gpt-4.1 (2)** and then click **Confirm (3)** to proceed.
 
     ![](../Images/l8t1p6.png)
 

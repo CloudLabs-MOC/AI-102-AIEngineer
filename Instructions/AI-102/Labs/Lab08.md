@@ -62,7 +62,9 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
         
         >**Note:** The creation of project can take few minutes to complete.
 
-1. In the **Select or deploy a model** window, open the **Model deployments (1)** drop-down, choose **Deploy a model (2)**, and then click **Next (3)**.
+        >**Note:** In some cases, Azure AI Foundry will automatically deploy a default model (usually gpt-4o). If this happens, you can skip directly to the next step.
+
+1. If the **Select or deploy a model** window appears, open the **Model deployments (1)** drop-down, choose **Deploy a model (2)**, and then click **Next (3)**.
 
     ![](../Images/l8t1p5.png)
 
