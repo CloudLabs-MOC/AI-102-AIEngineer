@@ -2,6 +2,8 @@
 
 ### Estimated Duration : 30 Minutes
 
+## Overview
+
 In this lab, you use Azure AI Foundry portal to create a project, ready to build an AI solution.
 
 ### Task 1: Create a Azure AI Foundry Project and deploy a model
