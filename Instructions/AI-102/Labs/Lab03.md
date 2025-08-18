@@ -1,5 +1,7 @@
 # Lab 03: Use a prompt flow to manage conversation in a chat app
 
+In this lab, you'll use Azure AI Foundry portal's prompt flow to create a custom chat app that uses a user prompt and chat history as inputs, and uses a GPT model from Azure OpenAI to generate an output.
+
 ### Task 1: Create an Azure AI Foundry hub and project
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
