@@ -1,4 +1,4 @@
-# Develop an AI agent
+# Lab 09: Develop an AI agent
 
 ### Estimated Duration : 30 Minutes
 
@@ -172,7 +172,7 @@ In this task, you’ll set up a client application that connects to the agent yo
 1. In the code file, replace the placeholder values with the correct details for your project:
 
     * PROJECT\_ENDPOINT : **Azure AI Foundry project endpoint (1)**
-    * DEPLOYEMNT\_MODEL\_NAME : **gpt-4.1 (2)**
+    * MODEL\_DEPLOYEMNT\_NAME : **gpt-4.1 (2)**
 
         ![](../Images/l9t2p4.png)
 
