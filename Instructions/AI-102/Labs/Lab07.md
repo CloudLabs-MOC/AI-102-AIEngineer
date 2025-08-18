@@ -197,7 +197,7 @@ Automated evaluation is an approach that attempts to address these shortcomings 
     - Select **Next (4)** to move to the next page.
 
    
-       ![](../Images/ai7l-25.png)   
+      ![](../Images/ai7l-25.png)   
 
 1. On the **Configure evaluators** page, use the **+Add (1)** button to add the following evaluators, configuring each one as follows:
 
