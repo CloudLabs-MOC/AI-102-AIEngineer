@@ -53,7 +53,7 @@ Let's start by creating an Azure AI Foundry project.
 1. In the **Create a new project** window, enter **Myproject<inject key="DeploymentID"></inject> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (7)**:
 
     * Subscription: **Choose Default Subscription (3)**
-    * Resource group: **AI-102-RG09 (4)**
+    * Resource group: **AI-102-RG10 (4)**
     * Azure AI Foundry resource: **Keep as Default (5)**
     * Region: **<inject key="Region"></inject> (6)**
 
@@ -176,7 +176,7 @@ In this task, you’ll build the foundation of your agent app by adding custom f
 1. In the code file, replace the placeholder values with the correct details for your project:
 
     * PROJECT\_ENDPOINT : **Azure AI Foundry project endpoint (1)**
-    * MODEL\_DEPLOYEMNT\_NAME : **gpt-4o (2)**
+    * MODEL\_DEPLOYEMNT\_NAME : **Name of the deployed model (for example, gpt-4o or gpt-4.1) (2)**
 
         ![](../Images/l10t2p4.png)
 
@@ -432,6 +432,8 @@ In this task, you’ll extend your Azure AI agent by integrating your own custom
     ![](../Images/l10t3p12.png)
 
 1. The tool should have saved support tickets in the app folder. You can use the `ls` command to check, and then use the `cat` command to view the file contents, like this:
+
+    ![](../Images/l10t3p13(1).png)
 
     ![](../Images/l10t3p13.png)
 
