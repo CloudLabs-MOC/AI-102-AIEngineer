@@ -193,10 +193,11 @@ Automated evaluation is an approach that attempts to address these shortcomings 
       Assist users with travel-related inquiries, offering tips, advice, and recommendations as a knowledgeable travel agent.
       ```
     - For the **query** field, select **\{\{item.question\}\}** **(3)**
+
     - Select **Next (4)** to move to the next page.
 
    
-      ![](../Images/ai7l-25.png)   
+       ![](../Images/ai7l-25.png)   
 
 1. On the **Configure evaluators** page, use the **+Add (1)** button to add the following evaluators, configuring each one as follows:
 
@@ -211,12 +212,11 @@ Automated evaluation is an approach that attempts to address these shortcomings 
 
     - **User** settings (at the bottom): Delete the existing setting and the following **(1)** and the **Add (2)**:
 
+      Output: \{\{sample.output_text\}\}<br>
+      Ground Truth: \{\{item.ExpectedResponse\}\}<br>
+      <br>
 
-        Output: \{\{sample.output_text\}\}<br>
-        Ground Truth: \{\{item.ExpectedResponse\}\}<br>
-        <br>
-
-        ![](../Images/ai7l28.png)       
+      ![](../Images/ai7l28.png)       
 
 1. On the **Configure evaluators** page, use the **+Add (1)** button, select  **Likert-scale evaluator**:
 
