@@ -22,11 +22,11 @@ In this lab, you'll explore the effect of the default content filters in Azure A
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. In the home page, in the Explore models and capabilities section, search for the **Phi-4 (1)** model and then select **Phi-4 (2)** which we'll use in our project
+1. In the home page, in the **Explore models and capabilities** section, search for the **Phi-4 (1)** model and then select **Phi-4 (2)** which we'll use in our project
 
     ![](../Images/ai6l1.png) 
 
-1. Then at the top of the page for the model, select Use this model.
+1. Then at the top of the page for the model, select **Use this mode**l.
 
     ![](../Images/ai6l2.png) 
 
