@@ -63,7 +63,9 @@ Let's start by creating an Azure AI Foundry project.
         
         >**Note:** The creation of project can take few minutes to complete.
 
-1. In the **Deploy a model** window, use the search bar to find **gpt-4.1 (1)**, select **gpt-4.1 (2)** from the results, and click **Confirm (3)**.
+        >**Note:** In some cases, Azure AI Foundry will automatically deploy a default model (usually gpt-4o). If this happens, you can skip directly to the next step.
+
+1. If the **Deploy a model** window appears, use the search bar to look for **gpt-4.1 (1)**. From the results, select **gpt-4.1 (2)** and then click **Confirm (3)** to proceed.
 
     ![](../Images/l8t1p6.png)
 
@@ -177,6 +179,8 @@ In this task, you’ll set up a client application that connects to the agent yo
         ![](../Images/l9t2p4.png)
 
         > **Note:** Paste the Azure AI Foundry project endpoint you copied in the previous task.
+
+        > **Note:** To find the **Model Deployment Name**, go to your project in the **Azure AI Foundry portal**, select **Management center** → **Deployments**, and copy the **Name** of the deployed model (for example, *gpt-4o* or *gpt-4.1*).
 
 1. After replacing the placeholders, save your changes in the code editor using **CTRL+S** or **Right-click > Save**. Then close the editor with **CTRL+Q** or **Right-click > Quit**, leaving the Cloud Shell command line open.
 
