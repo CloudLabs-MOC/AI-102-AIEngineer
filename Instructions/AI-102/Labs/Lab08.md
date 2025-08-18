@@ -107,7 +107,7 @@ You'll see that an agent with a default name has been created for you, along wit
 In this exercise, you'll build a simple agent that answers questions based on a corporate expenses policy. You'll download the expenses policy document, and use it as grounding data for the agent.
 
 1. Open a new browser tab and navigate to `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx` to download the **Expenses\_Policy.docx** file and save it locally. This document contains the expenses policy for the fictional Contoso corporation. If a dialog box appears, click **Download** to save the file for later use.
-
+   
     ![](../Images/l8t2p1.png)
 
 1. Return to the browser tab with the **Foundry Agents playground** and open the **Setup (1)** pane. Set the **Agent name** to **`ExpensesAgent` (2)**, make sure the **gpt-4.1 (3)** model deployment you created earlier is selected in the **Deployment** section, paste the content below into the **Instructions (4)** box, and then click **+ Add (5)** in the **Knowledge** section.
