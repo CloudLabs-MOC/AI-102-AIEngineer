@@ -83,6 +83,14 @@ In this task, you'll sign in to the Azure AI Foundry portal, create a new projec
 
     ![](../Images/l2at1p9(1).png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="7cab8ca6-05e0-488a-82af-331940937e54" />
+
 ## Task 2: Fine-tune a model
 
 In this task, you'll start the fine-tuning process for the GPT-4.1 model by downloading a training dataset, uploading it to Azure AI Foundry, and configuring a fine-tuned model. This sets up your model to learn a specific conversational style and behavior for your custom chat application while you continue exploring the base model.
@@ -248,6 +256,14 @@ In this task, you'll deploy your completed fine-tuned model in Azure AI Foundry.
 1. Wait until the deployment is complete before testing, as this may take some time. You can monitor the **Provisioning state** by navigating to **Models + endpoints** in the left-hand menu. Refresh the browser as needed until the status shows **Succeeded**.
 
     ![](../Images/l5t5p5.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="e774c379-d0d6-4ccf-8d52-8d75d763cadf" />
 
 ## Task 6: Test the fine-tuned model
 
