@@ -60,6 +60,16 @@ In this lab, you'll explore the effect of the default content filters in Azure A
 
     ![](../Images/ai6l8.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="ba68f1de-d83d-4a2b-93ad-8d9a2d1437f4" />
+ 
+---    
+
 ### Task 2: Chat using the content filter  
 
 The Phi-4 model you deployed has a default content filter applied, which has a balanced set of filters that will disallow most harmful content while allowing input and output language considered reasonable safe.
