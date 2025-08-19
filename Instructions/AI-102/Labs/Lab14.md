@@ -21,11 +21,11 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 1. If prompted, provide the credentials below:
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
         ![](../Images/l14t1p1.png)
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
         ![](../Images/l14t1p2.png)
 
@@ -55,12 +55,12 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 1. Provision the resource with the following settings, then select **Review + create**:
 
-    * Subscription: **Default Subscription**
-    * Resource group: **AI-102-RG14 (1)**
-    * Region: **<inject key="Region"></inject> (2)**
-    * Name: **learningservice<inject key="DeploymentID"></inject> (3)**
-    * Pricing tier: **F0 (4)** (*free*) (**S** (*standard*) if F0 isn’t available)
-    * Responsible AI Notice: **Agree (5)**
+    * Subscription: **Default Subscription (1)**
+    * Resource group: **AI-102-RG14 (2)**
+    * Region: **<inject key="Region"></inject> (3)**
+    * Name: **languageservice<inject key="DeploymentID"></inject> (4)**
+    * Pricing tier: **F0 (5)** (*free*) (**S** (*standard*) if F0 isn’t available)
+    * Responsible AI Notice: **Agree (6)**
 
         ![](../Images/l14t1p9.png)
 
