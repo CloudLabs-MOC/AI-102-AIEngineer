@@ -162,6 +162,189 @@ Now you're ready to create a client app that uses an agent. Some code has been p
 
 1. After you've replaced the placeholder, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
+### Task 2.3: Create a discoverable agent
+
+In this task, you create the title agent that helps writers create trendy headlines for their articles. You also define the agent's skills and card required by the A2A protocol to make the agent discoverable.
+
+1. Navigate to the `title_agent` directory:
+
+    ```
+   cd title_agent
+    ```
+
+     >**Tip**: As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
+
+1. Enter the following command to edit the code file that has been provided:
+
+    ```
+   code agent.py
+    ```
+
+     ![](../Images/ai13l13.png) 
+
+1. Find the comment **Create the agents client** and add the following code to connect to the Azure AI project:
+
+    ```python
+   # Create the agents client
+   self.client = AgentsClient(
+       endpoint=os.environ['PROJECT_ENDPOINT'],
+       credential=DefaultAzureCredential(
+           exclude_environment_credential=True,
+           exclude_managed_identity_credential=True
+       )
+   )
+    ```
+
+     ![](../Images/ai13l14.png)     
+
+      >**Note**: Be careful to maintain the correct indentation level.  
+
+1. Find the comment **Create the title agent** and add the following code to create the agent:
+
+    ```python
+   # Create the title agent
+   self.agent = self.client.create_agent(
+       model=os.environ['MODEL_DEPLOYMENT_NAME'],
+       name='title-agent',
+       instructions="""
+       You are a helpful writing assistant.
+       Given a topic the user wants to write about, suggest a single clear and catchy blog post title.
+       """,
+   )
+    ```
+
+     ![](../Images/ai13l15.png)     
+
+      >**Note**: Be careful to maintain the correct indentation level.    
+
+1. Find the comment **Create a thread for the chat session** and add the following code to create the chat thread:
+
+    ```python
+   # Create a thread for the chat session
+   thread = self.client.threads.create()
+    ```
+
+     ![](../Images/ai13l16.png)   
+
+1. Locate the comment **Send user message** and add this code to submit the user's prompt:
+
+    ```python
+   # Send user message
+   self.client.messages.create(thread_id=thread.id, role=MessageRole.USER, content=user_message)
+    ```
+
+     ![](../Images/ai13l17.png)  
+
+1. Under the comment **Create and run the agent**, add the following code to initiate the agent's response generation:
+
+    ```python
+   # Create and run the agent
+   run = self.client.runs.create_and_process(thread_id=thread.id, agent_id=self.agent.id)
+    ```
+
+     ![](../Images/ai13l18.png)  
+
+     The code provided in the rest of the file will process and return the agent's response. 
+
+1. Save the code file (**CTRL+S**). Now you're ready to share the agent's skills and card with the A2A protocol. 
+
+1. Enter the following command to edit the title agent's `server.py` file  
+
+    ```
+   code server.py
+    ```
+
+     ![](../Images/ai13l19.png)  
+
+1. Find the comment **Define agent skills** and add the following code to specify the agent’s functionality:
+
+    ```python
+   # Define agent skills
+   skills = [
+       AgentSkill(
+           id='generate_blog_title',
+           name='Generate Blog Title',
+           description='Generates a blog title based on a topic',
+           tags=['title'],
+           examples=[
+               'Can you give me a title for this article?',
+           ],
+       ),
+   ]
+    ```
+
+     ![](../Images/ai13l20.png)     
+
+1. Find the comment **Create agent card** and add this code to define the metadata that makes the agent discoverable:
+
+    ```python
+   # Create agent card
+   agent_card = AgentCard(
+       name='AI Foundry Title Agent',
+       description='An intelligent title generator agent powered by Azure AI Foundry. '
+       'I can help you generate catchy titles for your articles.',
+       url=f'http://{host}:{port}/',
+       version='1.0.0',
+       default_input_modes=['text'],
+       default_output_modes=['text'],
+       capabilities=AgentCapabilities(),
+       skills=skills,
+   )
+    ```
+
+1. Locate the comment **Create agent executor** and add the following code to initialize the agent executor using the agent card:
+
+    ```python
+   # Create agent executor
+   agent_executor = create_foundry_agent_executor(agent_card)
+    ```
+
+    The agent executor will act as a wrapper for the title agent you created.
+
+1. Find the comment **Create request handler** and add the following to handle incoming requests using the executor:
+
+    ```python
+   # Create request handler
+   request_handler = DefaultRequestHandler(
+       agent_executor=agent_executor, task_store=InMemoryTaskStore()
+   )
+    ```
+
+1. Under the comment **Create A2A application**, add this code to create the A2A-compatible application instance:
+
+    ```python
+   # Create A2A application
+   a2a_app = A2AStarletteApplication(
+       agent_card=agent_card, http_handler=request_handler
+   )
+    ```
+    
+    This code creates an A2A server that will share the title agent's information and handle incoming requests for this agent using the title agent executor.
+
+1. Save the code file (**CTRL+S**) when you have finished.
+
+
+### Task 2.4: Task Enable messages between the agents
+
+In this task, you use the A2A protocol to enable the routing agent to send messages to the other agents. You also allow the title agent to receive messages by implementing the agent executor class.
+
+1. Navigate to the `routing_agent` directory:
+
+    ```
+   cd ../routing_agent
+    ```
+
+1. Enter the following command to edit the code file that has been provided:
+
+    ```
+   code agent.py
+    ```
+
+     ![](../Images/ai13l21.png) 
+
+
+
+
    
 
 
