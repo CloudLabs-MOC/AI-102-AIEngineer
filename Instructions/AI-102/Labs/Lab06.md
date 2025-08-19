@@ -108,7 +108,7 @@ The Phi-4 model you deployed has a default content filter applied, which has a b
 
      **The model may "self-censor" its response based on its training, but the content filter may not block the response**.
 
-### Task 3:  Create and apply a custom content filter
+### Task 3:  Create and apply a custom content filterr
 
 When the default content filter doesn't meet your needs, you can create custom content filters to take greater control over the prevention of potentially harmful or offensive content generation.
 
