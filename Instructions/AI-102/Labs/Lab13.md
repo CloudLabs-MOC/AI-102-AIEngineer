@@ -514,4 +514,47 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
      ![](../Images/ai11l28.png)
 
+1. After signing in, navigate back to the parent directory by running the following command:
+
+    ```
+    cd ..
+    ```
+    
+1. Install and upgrade all required Python dependencies (web framework, async server, and A2A SDK) by running the following commands:
+
+    ```
+    python -m pip install --upgrade pip
+    pip install starlette fastapi uvicorn aiohttp httpx
+    pip install starlette fastapi
+    pip install "a2a-sdk[http-server]"
+    pip install starlette sse-starlette
+    ```
+
+1. Finally enter the following command to run the application:    
+
+    ```
+    python run_all.py
+    ```
+
+     ![](../Images/ai13l32.png)    
+
+     You should see some output from each server as it starts.
+
+1. Wait until the prompt for input appears, then enter a prompt such as:
+
+    ```
+   Create a title and outline for an article about React programming.
+    ```
+
+     ![](../Images/ai13l33.png)  
+
+1. After a few moments, you should see a response from the agent with the results.
+
+     ![](../Images/ai13l34.png)  
+
+1. Enter `quit` to exit the program and stop the servers.
+
+## Summary
+
+In this lab, you used the Azure AI Agent Service SDK and the A2A Python SDK to create a remote multi-agent solution. You created a discoverable A2A-compatible agent and set up a routing agent to access the agent's skills. You also implemented an agent executor to process incoming A2A messages and manage tasks. Great work!
 
