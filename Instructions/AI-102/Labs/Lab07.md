@@ -150,7 +150,7 @@ You can manually review model responses based on test data. Manually reviewing a
 
 1. Select **Upload file**.
 
-   ![](../Images/ai7l13.png)
+    ![](../Images/ai7l13.png)
 
 1. Navigate to `C:\LabFiles` **(1)**, then select **travel_evaluation_data.jsonl (2)** file you downloaded previously and the **Open (3)**.
 
