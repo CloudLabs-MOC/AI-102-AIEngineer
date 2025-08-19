@@ -103,4 +103,65 @@ Now you're ready to create a client app that uses an agent. Some code has been p
    git clone https://github.com/MicrosoftLearning/mslearn-ai-agents ai-agents
     ```
 
+     ![](../Images/ai13l9.png)  
+
+1. Enter the following command to change the working directory to the folder containing the code files and list them all.
+
+    ```
+   cd ai-agents/Labfiles/06-build-remote-agents-with-a2a/python
+   ls -a -l
+    ```
+
+     ![](../Images/ai13l10.png)      
+
+    The provided files include:
+
+    ```output
+    python
+    ├── outline_agent/
+    │   ├── agent.py
+    │   ├── agent_executor.py
+    │   └── server.py
+    ├── routing_agent/
+    │   ├── agent.py
+    │   └── server.py
+    ├── title_agent/
+    │   ├── agent.py
+    |   ├── agent_executor.py
+    │   └── server.py
+    ├── client.py
+    └── run_all.py
+    ```
+
+    Each agent folder contains the Azure AI agent code and a server to host the agent. The **routing agen**t is responsible for discovering and communicating with the **title** and **outline** agents. The **client** allows users to submit prompts to the routing agent. `run_all.py` launches all the servers and runs the client.
+
+
+### Task 2.2: Configure the application settings
+
+1. In the cloud shell command-line pane, enter the following command to install the libraries you'll use:
+
+    ```
+   python -m venv labenv
+   ./labenv/bin/Activate.ps1
+   pip install -r requirements.txt azure-ai-projects a2a-sdk
+    ```
+
+1. Enter the following command to edit the configuration file that has been provided:
+
+    ```
+   code .env
+    ```
+
+     ![](../Images/ai13l11.png)  
+
+     The file is opened in a code editor.
+   
+1. In the code file, replace the **your_project_endpoint (1)** placeholder with the endpoint for your project (copied from the project **Overview** page in the Azure AI Foundry portal in **Task 1**) and change the **MODEL_DEPLOYMENT_NAME** variable to your model deployment name `gpt-4.1` **(2)**.
+
+    ![](../Images/ai13l12.png) 
+
+1. After you've replaced the placeholder, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
+
+   
+
 
