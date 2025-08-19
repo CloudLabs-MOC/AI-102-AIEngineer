@@ -4,9 +4,7 @@
 
 # Overview
 
-In this exercise, you'll create a project that orchestrates two AI agents using the Semantic Kernel SDK. An *Incident Manager* agent will analyze service log files for issues. If an issue is found, the Incident Manager will recommend a resolution action, and a *DevOps Assistant* agent will receive the recommendation and invoke the corrective function and perform the resolution. The Incident Manager agent will then review the updated logs to make sure the resolution was successful.
-
-For this exercise, four sample log files are provided. The DevOps Assistant agent code only updates the sample log files with some example log messages.
+In this lab, you’ll build a project that orchestrates two AI agents using the **Semantic Kernel SDK**. The first agent, the *Incident Manager*, will analyze provided service log files to detect potential issues. When an issue is identified, the Incident Manager will recommend a resolution action. The second agent, the *DevOps Assistant*, will take this recommendation, invoke the corrective function, and apply the resolution by updating the logs with example messages. Afterward, the Incident Manager will recheck the updated log files to verify whether the resolution was successful. For this exercise, you’ll work with four sample log files, with the DevOps Assistant simulating updates by appending diagnostic and resolution messages.
 
 ## Lab Objectives
 
@@ -25,6 +23,8 @@ For this exercise, four sample log files are provided. The DevOps Assistant agen
 - **Task 7:** Sign into Azure and run the app
 
 ### Task 1: Deploy a model in an Azure AI Foundry project
+
+In this task, you’ll sign in to the Azure AI Foundry portal, create a new project using the gpt-4.1 model, configure its deployment settings (including rate limits), and capture the project endpoint for later use in connecting your client application.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -96,6 +96,8 @@ For this exercise, four sample log files are provided. The DevOps Assistant agen
 
 ### Task 2: Create an AI Agent client app
 
+In this task, you’ll use Azure Cloud Shell to clone a GitHub repository that contains the code and configuration files for your client application. You’ll explore the project folder, which includes the agent definition, a custom function, and supporting configuration needed to run the app.
+
 Now you're ready to create a client app that defines an agent and a custom function. Some code is provided for you in a GitHub repository.
 
 1. Open a new browser tab (keeping the Azure AI Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
@@ -152,6 +154,8 @@ Now you're ready to create a client app that defines an agent and a custom funct
 
 ### Task 3: Configure the application settings
 
+In this task, you’ll set up a Python virtual environment in Azure Cloud Shell, install the required libraries, and configure the application by updating the provided .env file with your project endpoint and model deployment details.
+
 1. In the cloud shell command-line pane, enter the following command to install the libraries you'll use:
 
     ```
@@ -184,6 +188,8 @@ Now you're ready to create a client app that defines an agent and a custom funct
 1. After replacing the placeholders, save your changes in the code editor using **CTRL+S** or **Right-click > Save**. Then close the editor with **CTRL+Q** or **Right-click > Quit**, leaving the Cloud Shell command line open.
 
 ### Task 4: Create AI agents
+
+In this task, you’ll set up two agents for your multi-agent solution. The first agent, Incident Manager, analyzes service log files, detects issues, and recommends or escalates resolutions. The second agent, DevOps Assistant, handles responses and executes DevOps operations to address the issues.
 
 Now you're ready to create the  agents for your multi-agent solution! Let's get started!
 
@@ -275,7 +281,7 @@ Now you're ready to create the  agents for your multi-agent solution! Let's get 
 
 ### Task 5: Define group chat strategies
 
-Now you need to provide the logic used to determine which agent should be selected to take the next turn in a conversation, and when the conversation should be ended.
+In this task, you’ll implement the conversation flow control between agents. Specifically, you’ll define the selection logic to determine which agent should take the next turn based on the chat history, and the termination logic to decide when the conversation should end once the goal has been achieved.
 
 Let's start with the **SelectionStrategy**, which identifies which agent should take the next turn.
 
@@ -316,7 +322,7 @@ Let's start with the **SelectionStrategy**, which identifies which agent should 
 
 ### Task 6: Implement the group chat
 
-Now that you have two agents, and strategies to help them take turns and end a chat, you can implement the group chat.
+In this task, you’ll implement the group chat that brings both agents together with defined strategies. You’ll configure the incident manager and DevOps assistant agents to collaborate, apply a termination strategy (to let the incident manager decide when the chat ends), and set up a selection strategy (to control turn-taking). You’ll then append log file data to the chat, invoke responses from the agents, and run the conversation until the defined termination conditions are met.
 
 1. Back up in the main function, find the comment **Add the agents to a group chat with a custom termination and selection strategy**, and add the following code to create the group chat:
 
@@ -367,7 +373,7 @@ Now that you have two agents, and strategies to help them take turns and end a c
 
 ### Task 7: Sign into Azure and run the app
 
-Now you're ready to run your code and watch your AI agents collaborate.
+In this task, you’ll sign in to Azure Cloud Shell, run the agent_chat.py application, and observe how the AI agents collaborate. You’ll verify that the agents process the log files, update them with resolution messages from the DevOps assistant, and confirm that the system runs as expected.
 
 1. In the cloud shell command-line pane, enter the following command to sign into Azure. Click on the **Link (1)** and copy the **code (2)** provided.
 
@@ -423,4 +429,14 @@ Now you're ready to run your code and watch your AI agents collaborate.
 
 ## Summary
 
-In this exercise, you used the Azure AI Agent Service and Semantic Kernel SDK to create AI incident and devops agents that can automatically detect issues and apply resolutions. Great work!
+By completing this lab, you learned how to:
+
+* Create an Azure AI Foundry project integrated with the **Semantic Kernel SDK**.
+* Set up two collaborating agents: an *Incident Manager* to analyze log files and a *DevOps Assistant* to apply corrective actions.
+* Provide and work with sample log files for issue detection and resolution.
+* Implement function calls where the DevOps Assistant updates logs with resolution messages.
+* Re-run analysis with the Incident Manager to verify that issues were resolved successfully.
+* Test the end-to-end agent workflow within Azure Cloud Shell.
+* Review conversation and log history to confirm agent collaboration.
+
+### You have successfully completed the Hands-on Lab!
