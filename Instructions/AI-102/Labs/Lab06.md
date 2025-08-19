@@ -137,7 +137,7 @@ When the default content filter doesn't meet your needs, you can create custom c
 
     Filters are applied for each of these categories to prompts and completions, based on blocking thresholds of **Block few, Block some, and Block all** that are used to determine what specific kinds of language are intercepted and prevented by the filter.
 
-   Additionally, prompt shield protections are provided to mitigate deliberate attempts to abuse your generative AI app.
+    Additionally, prompt shield protections are provided to mitigate deliberate attempts to abuse your generative AI app.
 
 1. Change the threshold for each category of input filter to **Block all (1)** and then **Next (2)**.
 
