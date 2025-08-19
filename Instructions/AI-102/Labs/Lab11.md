@@ -208,7 +208,6 @@ Now you're ready to create a client app that defines an agent and a custom funct
 
       >**Note**: The function *simulates* sending an email by printing it to the console. In a real application, you'd use an SMTP service or similar to actually send the email!
 
-
 1. Find the comment **Get configuration settings**, and add the following code to load the configuration file and create an **AzureAIAgentSettings** object (which will automatically include the Azure AI Agent settings from the configuration).
 
     ```python
