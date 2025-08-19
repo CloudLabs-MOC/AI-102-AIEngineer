@@ -172,7 +172,6 @@ The data for your app consists of a set of travel brochures in PDF format from t
 
     ![](../Images/l4t3p5.png)
 
-
 1. In the **Add your data** wizard, open the **drop-down (1)** menu under Data source and choose **Upload files/folders (2)**.
 
     ![](../Images/l4t3p6.png)
@@ -282,7 +281,7 @@ In this task, you'll verify that your index is working by running queries in the
 
     ![](../Images/l4t5p4.png)
 
-   > **Tip:** In some cases, newly created indexes may not be available right away. Refreshing the browser usually helps, but if you're still experiencing the issue where it can't find the index you may need to wait until the index is recognized.
+    > **Note:** In some cases, newly created indexes may not be available right away. Refreshing the browser usually helps, but if you're still experiencing the issue where it can't find the index you may need to wait until the index is recognized.
 
 1. After the index has been added and the chat session has restarted, resubmit the prompt `Where can I stay in New York?`
 
@@ -333,7 +332,7 @@ In this task, you'll configure and run a Python-based client application that us
     git clone https://github.com/microsoftlearning/mslearn-ai-studio mslearn-ai-foundry
     ```
 
-    > **Tip:** As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Note:** As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, navigate to the folder containing the chat application code files:
 
