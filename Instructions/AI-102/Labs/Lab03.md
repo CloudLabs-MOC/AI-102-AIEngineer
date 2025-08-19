@@ -110,27 +110,27 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
 
 1. In the pane on the left for your project, in the My assets section, select the **Models + endpoints (1)** page.
 
-   - In the Models + endpoints page, in the Model deployments tab, in the **+ Deploy model (2)** menu, select **Deploy base model (3)**.
+    - In the Models + endpoints page, in the Model deployments tab, in the **+ Deploy model (2)** menu, select **Deploy base model (3)**.
  
-     ![](../Images/aii75.png)   
+      ![](../Images/aii75.png)   
 
 1. Search for the **gpt-4.1 (1)** model in the list, and then select **(2)** and confirm it **(3)**.
 
-   ![](../Images/aii76.png)
+    ![](../Images/aii76.png)
 
 1. On the Deploy `gpt-4.1` page, select **Customize**.
 
-   ![](../Images/aii97.png)
+    ![](../Images/aii97.png)
 
 1. Deploy the model with the following settings by selecting Customize in the deployment details:
 
-   - Deployment name: Leave the default name
-   - Deployment type: **Global Standard**
-   - Model version: Select **2025-04-14(Default) (1)**
-   - Connected AI resource: Select your Azure OpenAI resource connection that starts with **ai-myhubxxxxxxx** **(2)**
-   - Tokens per Minute Rate Limit (thousands): `60K` **(3)** (or the maximum available in your subscription if less than 50K)
-   - Content filter: **DefaultV2 (4)**   
-   - Then select **Deploy (5)**
+    - Deployment name: Leave the default name
+    - Deployment type: **Global Standard**
+    - Model version: Select **2025-04-14(Default) (1)**
+    - Connected AI resource: Select your Azure OpenAI resource connection that starts with **ai-myhubxxxxxxx** **(2)**
+    - Tokens per Minute Rate Limit (thousands): `60K` **(3)** (or the maximum available in your subscription if less than 50K)
+    - Content filter: **DefaultV2 (4)**   
+    - Then select **Deploy (5)**
 
      ![](../Images/aii98.png)
 
@@ -244,13 +244,13 @@ A prompt flow provides a way to orchestrate prompts and other activities to defi
 
 1. Ensure the **compute session is running (1)**. If not, wait for it to start.
 
-   - On the toolbar, select **Chat (2)** to open the Chat pane, and wait for the chat to initialize.
+    - On the toolbar, select **Chat (2)** to open the Chat pane, and wait for the chat to initialize.
 
-     ![](../Images/aii88.png)   
+      ![](../Images/aii88.png)   
 
 1. Enter the query: `I have one day in London, what should I do?` and review the output. The Chat pane should look similar to this:     
 
-   ![](../Images/aii89.png)
+    ![](../Images/aii89.png)
 
 ### Task 6: Deploy the flow
 
@@ -258,44 +258,44 @@ When you're satisfied with the behavior of the flow you created, you can deploy 
 
 1. On the toolbar, select **Deploy** and deploy the flow with the following settings:
 
-   ![](../Images/aii90.png)
+    ![](../Images/aii90.png)
 
 1. Deploy the flow with the following settings and then **Review+Create (6)**:
 
-   - Basic settings:
-      - Endpoint: **New (1)**
-      - Endpoint name: **myendpoint<inject key="DeploymentID" enableCopy="false"/> (2)**
-      - Deployment name: Leave the default one
-      - Virtual machine: **Standard_DS3_v2 (3)**
-      - Instance count: `1` **(4)**
-      - Inferencing data collection: **Disabled (5)**
+    - Basic settings:
+       - Endpoint: **New (1)**
+       - Endpoint name: **myendpoint<inject key="DeploymentID" enableCopy="false"/> (2)**
+       - Deployment name: Leave the default one
+       - Virtual machine: **Standard_DS3_v2 (3)**
+       - Instance count: `1` **(4)**
+       - Inferencing data collection: **Disabled (5)**
 
-        ![](../Images/aii91.png)
+         ![](../Images/aii91.png)
 
 1. Select **Create**.
 
-   ![](../Images/aii92.png)
+    ![](../Images/aii92.png)
 
 1. Deployment may take aroud 12-15 minutes. Please wait until it completes. You can track the progress in the Notifications panel.
 
-   ![](../Images/aii93.png)
+    ![](../Images/aii93.png)
 
 1. Once the deployemnt is completed, In Azure AI Foundry portal, in the navigation pane, in the My assets section, click on the **Models + endpoints (1)** twice. Refresh the page. Make sure the **myendpointxxxxx** endopint is listed and in the **Succeeded (2)** state. Then select it **(3)**.
 
-   ![](../Images/aii94.png)
+    ![](../Images/aii94.png)
 
 1. Navigate to the `Test` page.
 
-   ![](../Images/aii99.png)
+    ![](../Images/aii99.png)
 
 1. Enter the prompt `What is there to do in San Francisco?` and review the response.
 
-   ![](../Images/aii100.png)
+    ![](../Images/aii100.png)
 
 1. Enter the prompt `Tell me something about the history of the city.` and review the response.
 
-   ![](../Images/aii101.png)
+    ![](../Images/aii101.png)
 
 1. View the **Consume** page for the endpoint, and note that it contains connection information and sample code that you can use to build a client application for your endpoint - enabling you to integrate the prompt flow solution into an application as a generative AI application.
 
-   ![](../Images/aii102.png)
+    ![](../Images/aii102.png)
