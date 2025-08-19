@@ -42,6 +42,16 @@ In this lab, you'll use Azure AI Foundry portal's prompt flow to create a custom
 
 1. Wait for your project to be created. It may take around 3-5 minutes.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="8172439b-dce6-4629-a63a-b07cc04adcd3" />
+ 
+---
+
 ### Task 2: Configure resource authorization
 
 The prompt flow tools in Azure AI Foundry create file-based assets that define the prompt flow in a folder in blob storage. Before exploring prompt flow, let's ensure that your Azure AI Foundry resource has the required access to the blob store so it can read them.
@@ -50,49 +60,49 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
 
 1. On the search bar, search for **Azure AI Foundry (1)** and select **Azure AI Foundry (2)**.
 
-   ![](../Images/aii64.png)
+    ![](../Images/aii64.png)
 
 1. Select the **AI Foundry (1)** resource for your hub to open it and then select AI service that start with **ai-myhubxxxxxx (2)**.
 
-   ![](../Images/aii65.png)
+    ![](../Images/aii65.png)
 
 1. Then expand its **Resource Management (1)** section, then select the **Identity (2)**. If the status of the system assigned identity is Off, switch it **On (3)** and **Save (4)** your changes.   
 
-   ![](../Images/aii66.png)
+    ![](../Images/aii66.png)
 
 1. Select **Yes** to confirm.
 
-   ![](../Images/aii67.png)
+    ![](../Images/aii67.png)
 
 1. On the Azure portal searh bar, search for **Storage account** **(1)** and then select **Storage account (2)** from the results. 
 
-   ![](../Images/aii95.png)
+    ![](../Images/aii95.png)
 
 1. Then select the Storage account resource for your hub starts with **sthubxxxxxxxx**.   
 
-   ![](../Images/aii96.png)
+    ![](../Images/aii96.png)
 
 1. Navigate to **Access Control (IAM) (1)**, then select **Add (2)** drop down. Then select **Add role assignment (3)**.   
 
-   ![](../Images/aii70.png)
+    ![](../Images/aii70.png)
 
 1. Search for **Storage blob data reader (1)** then select **Storage blob data reader (2)** and then **Next (3)**.
 
-   ![](../Images/aii71.png)
+    ![](../Images/aii71.png)
 
 1. Select **Managed identity (1)**, click on **+ Select Members (2)**. Then choose **Azure AI Foundry (3)** then select the **ai-myhubxxxx (4)** and then **Select (5)**.
 
-   ![](../Images/aii72.png)
+    ![](../Images/aii72.png)
 
 1. Select **Next**.   
 
 1. Click on **Review+assign**.
 
-   ![](../Images/aii73.png)
+    ![](../Images/aii73.png)
 
 1. Again click on **Review+assign**.
 
-   ![](../Images/aii74.png)
+    ![](../Images/aii74.png)
 
 1. When you've reviewed and assigned the role access to allow the Azure AI Foundry managed identity to read blobs in the storage account, close the Azure portal tab and return to the Azure AI Foundry portal.
 
@@ -124,33 +134,44 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
 
      ![](../Images/aii98.png)
 
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="29de5376-d8c3-4209-8779-deb6056af0c2" />
+ 
+---
+
 ### Task 4: Create a prompt flow
 
 A prompt flow provides a way to orchestrate prompts and other activities to define an interaction with a generative AI model. In this exercise, you'll use a template to create a basic chat flow for an AI assistant in a travel agency.
 
 1. In the Azure AI Foundry portal navigation bar, in the **Build and customize** section, select **Prompt flow (1)**. Then select **+ Create (2)**.
 
-   ![](../Images/aii77.png)
+    ![](../Images/aii77.png)
 
 1. Create a new flow based on the Chat flow template, select **Create** under Chat flow.
 
-   ![](../Images/aii78.png)
+    ![](../Images/aii78.png)
    
 1. Specify the floder name as **Travel-Chat (1)** and then **Create (2)**.
 
-   ![](../Images/aii79.png)
+    ![](../Images/aii79.png)
 
 1. If a permissions error occurs like the below,  Specify a different flow name  as **Travel-Chat<inject key="DeploymentID" enableCopy="false"/> (1)** and **Create (2)**.
 
-   ![](../Images/aii80.png)
+    ![](../Images/aii80.png)
 
 1. Once the flow is created, click on **Edit (1)** icon to rename the folder. Provide the name as  **Travel-Chat (2)** and then **Save (3)**.  
 
-   ![](../Images/aii81.png)
+    ![](../Images/aii81.png)
 
 1. To be able to test your flow, you need compute, and it can take a while to start; so select **Start compute session** to get it started while you explore and modify the default flow.
 
-   ![](../Images/aii82.png)
+    ![](../Images/aii82.png)
 
 1. View the prompt flow, which consists of a series of inputs, outputs, and tools. You can expand and edit the properties of these objects in the editing panes on the left, and view the overall flow as a graph on the right.
 
@@ -158,21 +179,21 @@ A prompt flow provides a way to orchestrate prompts and other activities to defi
 
 1. View the **Inputs** pane, and note that there are two inputs (`chat history` and the `user's question`).
 
-   ![](../Images/aii83.png)
+    ![](../Images/aii83.png)
 
 1. View the **Outputs** pane and note that there's an output to reflect the model's answer.   
 
-   ![](../Images/aii84.png)
+    ![](../Images/aii84.png)
 
 1. View the **Chat** LLM tool pane, which contains the information needed to submit a prompt to the model.
 
 1. In the **Chat** LLM tool pane, for Connection, **select the connection for the Azure OpenAI service resource (1)** in your AI hub. Then configure the following connection properties:
 
-   - Api: chat
-   - deployment_name: The `gpt-4.1` model you deployed **(2)**
-   - response_format: `{"type":"text"}` **(3)**
+    - Api: chat
+    - deployment_name: The `gpt-4.1` model you deployed **(2)**
+    - response_format: `{"type":"text"}` **(3)**
 
-     ![](../Images/aii-85.png)   
+      ![](../Images/aii-85.png)   
 
 1. Delete the existing prompt. Copy and paste the following the **Prompt**.
 
@@ -211,12 +232,12 @@ A prompt flow provides a way to orchestrate prompts and other activities to defi
 
 1. In the **Inputs** section for the Chat LLM tool (under the prompt), ensure the following variables are set **(1)**:
 
-   - question (string): ${inputs.question}
-   - chat_history (string): ${inputs.chat_history}
+    - question (string): ${inputs.question}
+    - chat_history (string): ${inputs.chat_history}
 
 1. Save the changes to the flow **(2)**.   
 
-   ![](../Images/aii87.png)
+    ![](../Images/aii87.png)
 
 
 ### Task 5: Test the flow
