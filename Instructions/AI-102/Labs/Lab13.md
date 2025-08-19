@@ -342,6 +342,50 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
      ![](../Images/ai13l21.png) 
 
+    The routing agent acts as an orchestrator that handles user messages and determines which remote agent should process the request.
+
+    When a user message is received, the routing agent:
+    - Starts a conversation thread.
+    - Uses the `create_and_process` method to evaluate the best-matching agent for the user's message.
+    - The message is routed to the appropriate agent over HTTP using the `send_message` function.
+    - The remote agent processes the message and returns a response.
+
+    The routing agent finally captures the response and returns it to the user through the thread.
+
+    Notice that the `send_message` method is async and must be awaited for the agent run to complete successfully.
+
+1. Add the following code under the comment **Retrieve the remote agent's A2A client using the agent name**:
+
+    ```python
+   # Retrieve the remote agent's A2A client using the agent name 
+   client = self.remote_agent_connections[agent_name]
+    ```
+
+     ![](../Images/ai13l22.png)     
+
+1. Locate the comment **Construct the payload to send to the remote agent** and add the following code:
+
+    ```python
+   # Construct the payload to send to the remote agent
+   payload: dict[str, Any] = {
+       'message': {
+           'role': 'user',
+           'parts': [{'kind': 'text', 'text': task}],
+           'messageId': message_id,
+       },
+   }
+    ```
+
+     ![](../Images/ai13l23.png)  
+
+1. Find the comment **Wrap the payload in a SendMessageRequest object** and add the following code:
+
+    ```python
+   # Wrap the payload in a SendMessageRequest object
+   message_request = SendMessageRequest(id=message_id, params=MessageSendParams.model_validate(payload))
+    ```
+
+
 
 
 
