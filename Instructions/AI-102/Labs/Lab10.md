@@ -119,9 +119,9 @@ In this task, you’ll build the foundation of your agent app by adding custom f
 
 1. If prompted, provide the credentials below:
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject> 
+    - **Password:** <inject key="AzureAdUserPassword"></inject> 
 
         >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
 
