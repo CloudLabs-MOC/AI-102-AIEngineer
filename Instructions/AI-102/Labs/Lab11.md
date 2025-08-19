@@ -59,6 +59,16 @@ In this lab, you'll use Azure AI Agent Service and Semantic Kernel to create an 
 
     ![](../Images/ai11l11.png) 
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="412da72d-9077-4bed-899e-d2e2c021cd43" />
+ 
+---  
+
 ### Task 2: Create an agent client app
 
 Now you're ready to create a client app that defines an agent and a custom function. Some code has been provided for you in a GitHub repository.
