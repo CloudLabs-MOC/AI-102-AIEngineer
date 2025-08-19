@@ -385,10 +385,103 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
    message_request = SendMessageRequest(id=message_id, params=MessageSendParams.model_validate(payload))
     ```
 
+     ![](../Images/ai13l24.png)  
 
+1. Add the following code under the comment **Send the message to the remote agent client and await the response**:
 
+    ```python
+   # Send the message to the remote agent client and await the response
+   send_response: SendMessageResponse = await client.send_message(message_request=message_request)
+    ```
 
+     ![](../Images/ai13l25.png) 
 
+1. Save the code file (**CTRL+S**) when you have finished. Now the routing agent is able to discover and send messages to the title agent. Let's create the agent executor code to handle those incoming messages from the routing agent.
+
+1. Navigate to the `title_agent` directory:
+
+    ```
+   cd ../title_agent
+    ```
+
+1. Enter the following command to edit the code file that has been provided:
+
+    ```
+   code agent_executor.py
+    ```
+
+     ![](../Images/ai13l26.png)     
+
+     The `AgentExecutor` class implemenation must contain the methods `execute` and `cancel`. The cancel method has been provided for you. The `execute` method includes a `TaskUpdater` object that manages events and signals to the caller when the task is complete. Let's add the logic for task execution.
+
+1. In the `execute` method, add the following code under the comment **Process the request**:
+
+    ```python
+   # Process the request
+   await self._process_request(context.message.parts, context.context_id, updater)
+    ```
+
+     ![](../Images/ai13l27.png)  
+
+1. In the `_process_request` method, add the following code under the comment **Get the title agent**:
+
+    ```python
+   # Get the title agent
+   agent = await self._get_or_create_agent()
+    ```
+
+     ![](../Images/ai13l28.png) 
+
+1. Add the following code under the comment **Update the task status**:
+
+    ```python
+   # Update the task status
+   await task_updater.update_status(
+       TaskState.working,
+       message=new_agent_text_message('Title Agent is processing your request...', context_id=context_id),
+   )
+    ```
+
+     ![](../Images/ai13l29.png) 
+
+      >**Note**: As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
+
+1. Find the comment **Run the agent conversation** and add the following code:
+
+    ```python
+   # Run the agent conversation
+   responses = await agent.run_conversation(user_message)
+    ```
+
+1. Find the comment **Update the task with the responses** and add the following code:
+
+    ```python
+   # Update the task with the responses
+   for response in responses:
+       await task_updater.update_status(
+           TaskState.working,
+           message=new_agent_text_message(response, context_id=context_id),
+       )
+    ```
+
+     ![](../Images/ai13l30.png) 
+
+      >**Note**: As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
    
+1. Find the comment **Mark the task as complete** and add the following code:
+
+    ```python
+   # Mark the task as complete
+   final_message = responses[-1] if responses else 'Task completed.'
+   await task_updater.complete(
+       message=new_agent_text_message(final_message, context_id=context_id)
+   )
+    ```
+
+     ![](../Images/ai13l31.png) 
+
+      >**Note**: As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.    
+
+    Now your title agent has been wrapped with an agent executor that the A2A protocol will use to handle messages. Great work!
 
 
