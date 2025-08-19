@@ -103,6 +103,14 @@ Let's start by creating an Azure AI Foundry project.
 
     ![](../Images/l9t1p4.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="b046143b-76f6-49ca-ad60-fef1518f2bf9" />
+
 ## Task 2: Develop function tools for your agent
 
 In this task, you’ll build the foundation of your agent app by adding custom function tools. You’ll configure the project settings, implement a function to generate support tickets, and make it available for your agent to call when handling user requests.
