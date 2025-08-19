@@ -39,6 +39,16 @@ In this lab, you'll use manual and automated evaluations to assess the performan
 
 1. Wait for your project to be created. It may take around 3-5 minutes.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="30dc4c88-21eb-4fac-bc26-932d1eb6a867" />
+ 
+---    
+
 
 ### Task 2: Deploy models
 
@@ -46,52 +56,62 @@ In this lab, you'll evaluate the performance of a gpt-4o-mini model. You'll also
 
 1. In the pane on the left for your project, in the My assets section, select the **Models + endpoints (1)** page.
 
-   - In the Models + endpoints page, in the Model deployments tab, in the **+ Deploy model (2)** menu, select **Deploy base model (3)**.
+    - In the Models + endpoints page, in the Model deployments tab, in the **+ Deploy model (2)** menu, select **Deploy base model (3)**.
  
-     ![](../Images/aii75.png)   
+      ![](../Images/aii75.png)   
 
 1. Search for the **gpt-4.1 (1)** model in the list, and then select **(2)** and confirm it **(3)**.
 
-   ![](../Images/aii76.png)
+    ![](../Images/aii76.png)
 
 1. On the Deploy `gpt-4.1` page, select **Customize**.
 
-   ![](../Images/aii97.png)
+    ![](../Images/aii97.png)
 
 1. Deploy the model with the following settings in the deployment details:
 
-   - Deployment name: Leave the default name
-   - Deployment type: **Global Standard**
-   - Model version: Select **2025-04-14(Default) (1)**
-   - Connected AI resource: Select your Azure OpenAI resource connection that starts with **ai-myhubxxxxxxx** **(2)**
-   - Tokens per Minute Rate Limit (thousands): `60K` **(3)** (or the maximum available in your subscription if less than 50K)
-   - Content filter: **DefaultV2 (4)**   
-   - Then select **Deploy (5)**
+    - Deployment name: Leave the default name
+    - Deployment type: **Global Standard**
+    - Model version: Select **2025-04-14(Default) (1)**
+    - Connected AI resource: Select your Azure OpenAI resource connection that starts with **ai-myhubxxxxxxx** **(2)**
+    - Tokens per Minute Rate Limit (thousands): `60K` **(3)** (or the maximum available in your subscription if less than 50K)
+    - Content filter: **DefaultV2 (4)**   
+    - Then select **Deploy (5)**
 
-     ![](../Images/aii98.png)
+      ![](../Images/aii98.png)
 
 1. Return to the **Models + endpoints (1)** page, then use the back arrow (←) next to the **gpt-4.1** page title to return to the Model deployment page **(2)**.
 
-   ![](../Images/ai7l2.png)
+    ![](../Images/ai7l2.png)
 
 1. In the Models + endpoints page, in the Model deployments tab, in the **+ Deploy model (2)** menu, select **Deploy base model (3)**.
 
-   ![](../Images/ai7l4.png)
+    ![](../Images/ai7l4.png)
 
 1. Search for the **gpt-4.1-mini (1)** model in the list, and then select **(2)** and confirm it **(3)**.
 
-   ![](../Images/ai7l5.png)
+    ![](../Images/ai7l5.png)
 
 1. On the Deploy `gpt-4.1-mini` page, select **Customize**.
 
-   ![](../Images/ai7l6.png)
+    ![](../Images/ai7l6.png)
 
 1. Deploy the model with the following settings in the deployment details and leave the other settings to its defaults:
 
-   - Tokens per Minute Rate Limit (thousands): `56K` **(1)** (or the maximum available in your subscription if less than 50K)
-   - Then select **Deploy (2)**
+    - Tokens per Minute Rate Limit (thousands): `56K` **(1)** (or the maximum available in your subscription if less than 50K)
+    - Then select **Deploy (2)**
 
-     ![](../Images/ai7l7.png)
+      ![](../Images/ai7l7.png)
+     
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="fc8a5d2f-ebc4-4442-b5d0-f546af53bdbb" />
+ 
+---   
 
 
 ### Task 3: Manually evaluate a model
@@ -104,17 +124,17 @@ You can manually review model responses based on test data. Manually reviewing a
 
 1. Navigate to `C:\LabFiles` **(1)**, select **All files (2)** as Save as type. Then name the fil as **travel_evaluation_data.jsonl (3)** and then select **Save (4)**. (be sure to save it as a .jsonl file, not a .txt file).
 
-   ![](../Images/ai7l8.png)
+    ![](../Images/ai7l8.png)
 
 1. Back on the Azure AI Foundry portal tab, in the navigation pane, in the **Protect and govern** section, select **Evaluation (1)**. In the Evaluation page, navigate to the **Manual evaluations (2)** tab and select **+ New manual evaluation (3)**.
 
-   ![](../Images/ai7l9.png)
+    ![](../Images/ai7l9.png)
 
-    >**Note**: If the **Create a new evaluation** pane opens automatically, select **Cancel** to close it.
+     >**Note**: If the **Create a new evaluation** pane opens automatically, select **Cancel** to close it.
 
 1. In the Configurations section, in the Model list, select your `gpt-4.1` model deployment.    
 
-   ![](../Images/ai7l10.png)
+    ![](../Images/ai7l10.png)
 
 1. Change the **System message** to the following instructions for an AI travel assistant:
 
@@ -126,7 +146,7 @@ You can manually review model responses based on test data. Manually reviewing a
 
 1. In the **Manual evaluation result** section, select **Import test data**.
 
-   ![](../Images/ai7l12.png)
+    ![](../Images/ai7l12.png)
 
 1. Select **Upload file**.
 
@@ -134,34 +154,34 @@ You can manually review model responses based on test data. Manually reviewing a
 
 1. Navigate to `C:\LabFiles` **(1)**, then select **travel_evaluation_data.jsonl (2)** file you downloaded previously and the **Open (3)**.
 
-   ![](../Images/ai7l14.png)
+    ![](../Images/ai7l14.png)
 
 1. Once the file is uploaded, click on **Next**.
 
-   ![](../Images/ai7l15.png)
+    ![](../Images/ai7l15.png)
 
 1. **Scroll down** to map the dataset fields as follows and the **Add (3)**:
 
-    - **Input**: `Question` **(1)**
-    - **Expected response**: `ExpectedResponse` **(2)** 
+     - **Input**: `Question` **(1)**
+     - **Expected response**: `ExpectedResponse` **(2)** 
 
-      ![](../Images/ai7l16.png)    
+       ![](../Images/ai7l16.png)    
 
 1. Review the questions and expected answers in the test file - you'll use these to evaluate the responses that the model generates.
 
 1. Select **Run** from the top bar to generate outputs for all questions you added as inputs. After a few minutes, the responses from the model should be shown in a new **Output** column, like this:
 
-   ![](../Images/ai7l17.png)
+    ![](../Images/ai7l17.png)
 
 1. Review the outputs for each question, comparing the output from the model to the expected answer and "scoring" the results by selecting the thumbs up or down icon at the bottom right of each response.
 
 1. After you've scored the responses, review the summary tiles above the list. Then in the toolbar, select **Save results**.
 
-   ![](../Images/ai7l18.png)
+    ![](../Images/ai7l18.png)
 
 1. Assign a suitable name as **Manualevaluation<inject key="DeploymentID" enableCopy="false"/> (1)** and then **Save (2)**. Saving results enables you to retrieve them later for further evaluation or comparison with a different model.   
 
-   ![](../Images/ai7l20.png)
+    ![](../Images/ai7l20.png)
 
 ### Task 4: Use automated evaluation
 
@@ -171,19 +191,19 @@ Automated evaluation is an approach that attempts to address these shortcomings 
 
 1. Use the back arrow **(←)** next to the Manual evaluation page title to return to the Evaluation page.
 
-   ![](../Images/ai7l21.png)
+    ![](../Images/ai7l21.png)
 
 1. Navigate to the **Automated evaluations (1)** tab. Select **Create a new evaluation (2)**.
 
-   ![](../Images/ai7l22.png)
+    ![](../Images/ai7l22.png)
 
 1. When prompted, select the option to **evaluate a Evaluate a model (1)** and select **Next (2)**.
 
-   ![](../Images/ai7l23.png)
+    ![](../Images/ai7l23.png)
 
 1. On the Select data source page, select **Use your dataset (1)** and select the **travel_evaluation_data_jsonl_xxxx... (2)** dataset based on the file you uploaded previously, and select **Next (3)**.   
 
-   ![](../Images/ai7l24.png)
+    ![](../Images/ai7l24.png)
 
 1. On the **Test your model** page,
 
