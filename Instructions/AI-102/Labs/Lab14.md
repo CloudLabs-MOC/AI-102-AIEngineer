@@ -5,7 +5,7 @@
 
 For example, suppose a travel agency wants to process hotel reviews that have been submitted to the company's web site. By using the Azure AI Language, they can determine the language each review is written in, the sentiment (positive, neutral, or negative) of the reviews, key phrases that might indicate the main topics discussed in the review, and named entities, such as places, landmarks, or people mentioned in the reviews. In this exercise, you'll use the Azure AI Language Python SDK for text analytics to implement a simple hotel review application based on this example.
 
-While this exercise is based on Python, you can develop text analytics applications using multiple language-specific SDKs; including:
+While this exercise is based on Python, you can develop text analytics applications using mulNote:le language-specific SDKs; including:
 
 - [Azure AI Text Analytics client library for Python](https://pypi.org/project/azure-ai-textanalytics/)
 - [Azure AI Text Analytics client library for .NET](https://www.nuget.org/packages/Azure.AI.TextAnalytics)
@@ -53,16 +53,28 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     ![](../Images/l14t1p8.png)
 
-1. Provision the resource using the following settings:
-    - **Subscription**: *Your Azure subscription*.
-    - **Resource group**: *Choose or create a resource group*.
-    - **Region**:*Choose any available region*
-    - **Name**: *Enter a unique name*.
-    - **Pricing tier**: Select **F0** (*free*), or **S** (*standard*) if F is not available.
-    - **Responsible AI Notice**: Agree.
-1. Select **Review + create**, then select **Create** to provision the resource.
-1. Wait for deployment to complete, and then go to the deployed resource.
-1. View the **Keys and Endpoint** page in the **Resource Management** section. You will need the information on this page later in the exercise.
+1. Provision the resource with the following settings, then select **Review + create**:
+
+    * Subscription: **Default Subscription**
+    * Resource group: **AI-102-RG14 (1)**
+    * Region: **<inject key="Region"></inject> (2)**
+    * Name: **learningservice<inject key="DeploymentID"></inject> (3)**
+    * Pricing tier: **F0 (4)** (*free*) (**S** (*standard*) if F0 isn’t available)
+    * Responsible AI Notice: **Agree (5)**
+
+        ![](../Images/l14t1p9.png)
+
+1. On the **Review + create** tab, click **Create** to provision the resource.
+
+    ![](../Images/l14t1p10.png)
+
+1. Wait for deployment to complete, and then click on **Go to resource**.
+
+    ![](../Images/l14t1p11.png)
+
+1. From the left navigation pane, go to **Resource Management (1)** and select **Keys and Endpoint (2)**. Copy the **Endpoint (3)** and **Key (4)**, then save them in a notepad file, you’ll need these details later in the exercise.
+
+    ![](../Images/l14t1p12.png)
 
 ## Task 2: Clone the repository for this course
 
@@ -95,7 +107,7 @@ You'll develop your code using Cloud Shell from the Azure Portal. The code files
     git clone https://github.com/microsoftlearning/mslearn-ai-language
     ```
 
-    > **Tip**: As you enter commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Note:** As you enter commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, navigate to the folder containing the application code files:  
 
@@ -151,7 +163,7 @@ You'll develop your code using Cloud Shell from the Azure Portal. The code files
 
 1. Review the existing code. You will add code to work with the AI Language Text Analytics SDK.
 
-    > **Tip**: As you add code to the code file, be sure to maintain the correct indentation.
+    > **Note:** As you add code to the code file, be sure to maintain the correct indentation.
 
 1. At the top of the code file, under the existing namespace references, find the comment **Import namespaces** and add the following code to import the namespaces you will need to use the Text Analytics SDK:
 
@@ -250,7 +262,7 @@ It can be useful to identify key phrases in a body of text to help determine the
 
 ## Task 8: Add code to extract entities
 
-Often, documents or other bodies of text mention people, places, time periods, or other entities. The text Analytics API can detect multiple categories (and subcategories) of entity in your text.
+Often, documents or other bodies of text mention people, places, time periods, or other entities. The text Analytics API can detect mulNote:le categories (and subcategories) of entity in your text.
 
 1. In the code editor, find the comment **Get entities**. Then, add the code necessary to identify entities that are mentioned in each review:
 
