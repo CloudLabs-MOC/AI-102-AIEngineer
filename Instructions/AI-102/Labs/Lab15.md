@@ -53,7 +53,7 @@ Azure AI Language includes a question answering capability that enables you to c
    ![](../Images/ai15l9.png) 
 
 
-## Create a question answering project
+### Task 2: Create a question answering project
 
 To create a knowledge base for question answering in your Azure AI Language resource, you can use the Language Studio portal to create a question answering project. In this case, you'll create a knowledge base containing questions and answers about [Microsoft Learn](https://docs.microsoft.com/learn).
 
