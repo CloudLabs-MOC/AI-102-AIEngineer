@@ -60,4 +60,47 @@ In this lab, you'll use Azure AI Agent Service with the A2A protocol to create s
 
 ### Task 2: Create an A2A application
 
+Now you're ready to create a client app that uses an agent. Some code has been provided for you in a GitHub repository.
+
+### Task 2.1: Clone the repo containing the application code
+
+1. Navigate to [Azure portal](https://portal.azure.com/).
+
+1. If prompted, provide the credentials below:
+
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+
+    ![](../Images/ai11l4.png) 
+
+1. Selecting a **PowerShell** environment.
+
+    ![](../Images/ai11l5.png) 
+
+1. On the **Getting started** page,
+
+    - Select **No storage account required (1)** 
+    - Select your subscription **(2)**
+    - Click on **Apply (3)**
+
+      ![](../Images/ai11l6.png) 
+
+1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
+
+    ![](../Images/ai11l7.png)
+
+     >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+
+     >**Note**: Ensure you've switched to the classic version of the cloud shell before continuing.
+
+1. In the cloud shell pane, copy and paste the following commands to clone the GitHub repo containing the code files for this exercise.
+
+    ```
+   rm -r ai-agents -f
+   git clone https://github.com/MicrosoftLearning/mslearn-ai-agents ai-agents
+    ```
+
 
