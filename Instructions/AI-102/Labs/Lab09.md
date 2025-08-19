@@ -119,9 +119,9 @@ In this task, you’ll set up a client application that connects to the agent yo
 
 1. If prompted, provide the credentials below:
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject> 
+    - **Password:** <inject key="AzureAdUserPassword"></inject> 
 
         >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
 
@@ -205,11 +205,13 @@ In this task, you’ll complete and run the code for your agent application. You
 1. Enter the following command to edit the code file that has been provided:
 
     ![](../Images/l9t2p5.png)
+
     ```
     code agent.py
     ```
 
 1. Review the existing code, which retrieves the application configuration settings and loads data from **data.txt** to be analyzed. The rest of the file includes comments where you'll add the necessary code to implement your data analysis agent.
+
 1. Find the comment **Add references** and add the following code to import the classes you'll need to build an Azure AI agent that uses the built-in code interpreter tool:
 
     ![](../Images/l9t2p6.png)
@@ -245,13 +247,13 @@ In this task, you’ll complete and run the code for your agent application. You
     ![](../Images/l9t2p8.png)
 
     ```python
-   # Upload the data file and create a CodeInterpreterTool
-   file = agent_client.files.upload_and_poll(
-        file_path=file_path, purpose=FilePurpose.AGENTS
-   )
-   print(f"Uploaded {file.filename}")
+    # Upload the data file and create a CodeInterpreterTool
+    file = agent_client.files.upload_and_poll(
+            file_path=file_path, purpose=FilePurpose.AGENTS
+    )
+    print(f"Uploaded {file.filename}")
 
-   code_interpreter = CodeInterpreterTool(file_ids=[file.id])
+    code_interpreter = CodeInterpreterTool(file_ids=[file.id])
     ```
     
 1. Find the comment **Define an agent that uses the CodeInterpreterTool** and add the following code to define an AI agent that analyzes data and can use the code interpreter tool you defined previously:
@@ -259,15 +261,15 @@ In this task, you’ll complete and run the code for your agent application. You
     ![](../Images/l9t2p9.png)
 
     ```python
-   # Define an agent that uses the CodeInterpreterTool
-   agent = agent_client.create_agent(
-        model=model_deployment,
-        name="data-agent",
-        instructions="You are an AI agent that analyzes the data in the file that has been uploaded. Use Python to calculate statistical metrics as necessary.",
-        tools=code_interpreter.definitions,
-        tool_resources=code_interpreter.resources,
-   )
-   print(f"Using agent: {agent.name}")
+    # Define an agent that uses the CodeInterpreterTool
+    agent = agent_client.create_agent(
+            model=model_deployment,
+            name="data-agent",
+            instructions="You are an AI agent that analyzes the data in the file that has been uploaded. Use Python to calculate statistical metrics as necessary.",
+            tools=code_interpreter.definitions,
+            tool_resources=code_interpreter.resources,
+    )
+    print(f"Using agent: {agent.name}")
     ```
 
 1. Find the comment **Create a thread for the conversation** and add the following code to start a thread on which the chat session with the agent will run:
@@ -275,8 +277,8 @@ In this task, you’ll complete and run the code for your agent application. You
     ![](../Images/l9t2p10.png)
 
     ```python
-   # Create a thread for the conversation
-   thread = agent_client.threads.create()
+    # Create a thread for the conversation
+    thread = agent_client.threads.create()
     ```
     
 1. Note that the next section of code sets up a loop for a user to enter a prompt, ending when the user enters "quit".
@@ -286,14 +288,14 @@ In this task, you’ll complete and run the code for your agent application. You
     ![](../Images/l9t2p11.png)
 
     ```python
-   # Send a prompt to the agent
-   message = agent_client.messages.create(
-        thread_id=thread.id,
-        role="user",
-        content=user_prompt,
-    )
+    # Send a prompt to the agent
+    message = agent_client.messages.create(
+            thread_id=thread.id,
+            role="user",
+            content=user_prompt,
+        )
 
-   run = agent_client.runs.create_and_process(thread_id=thread.id, agent_id=agent.id)
+    run = agent_client.runs.create_and_process(thread_id=thread.id, agent_id=agent.id)
     ```
 
 1. Find the comment **Check the run status for failures** and add the following code to check for any errors.
