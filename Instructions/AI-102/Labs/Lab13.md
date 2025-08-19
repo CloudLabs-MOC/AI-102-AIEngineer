@@ -484,4 +484,34 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
     Now your title agent has been wrapped with an agent executor that the A2A protocol will use to handle messages. Great work!
 
+### Task 2.5: Sign into Azure and run the app
+
+1. In the cloud shell command-line pane beneath the code editor, enter the following command to sign into Azure **(1)**. Copy and paste the Sign in URL in the web browser **(2)**. Copy the device code as well to authenticate **(3)**.
+
+    ```
+    az login
+    ```
+
+     ![](../Images/ai11l23.png)     
+
+    >**Note**: You must sign into Azure - even though the cloud shell session is already authenticated
+
+    > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
+    
+1. Paste the copied device code **(1)** and then select **Next (2)**.
+
+    ![](../Images/ai11l25.png) 
+
+1. Select your account **<inject key="AzureAdUserEmail"></inject>** to sign in.
+
+     ![](../Images/ai11l26.png) 
+
+1. Click on **Continue** to sign in to Azure CLI.
+
+     ![](../Images/ai11l27.png) 
+
+1. Press **Enter** to accept the default the subscription.
+
+     ![](../Images/ai11l28.png)
+
 
