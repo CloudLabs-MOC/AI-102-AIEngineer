@@ -114,11 +114,11 @@ When the default content filter doesn't meet your needs, you can create custom c
 
 1. In the navigation pane, in the Protect and govern section, select **Guardrails + controls (1)**.
 
-   - Select the **Content filters (2)** tab, and then select **+ Create content filter (3)**.
+    - Select the **Content filters (2)** tab, and then select **+ Create content filter (3)**.
 
-     ![](../Images/ai6l13.png)
+      ![](../Images/ai6l13.png)
 
-     You create and apply a content filter by providing details in a series of pages.
+      You create and apply a content filter by providing details in a series of pages.
 
 1. On the Basic information page, provide a content filter name as **ContentFilters<inject key="DeploymentID" enableCopy="false"/> (1)** and then **Create (2)**.
 
@@ -126,16 +126,16 @@ When the default content filter doesn't meet your needs, you can create custom c
 
 1. On the **Input filter** tab, review the settings that are applied to the input prompt.
 
-   Content filters are based on restrictions for four categories of potentially harmful content:
+    Content filters are based on restrictions for four categories of potentially harmful content:
 
     ![](../Images/ai6l15.png)
 
-   - **Violence**: Language that describes, advocates, or glorifies violence.
-   - **Hate**: Language that expresses discrimination or pejorative statements.
-   - **Sexual**: Sexually explicit or abusive language.
-   - S**elf-harm**: Language that describes or encourages self-harm.    
+    - **Violence**: Language that describes, advocates, or glorifies violence.
+    - **Hate**: Language that expresses discrimination or pejorative statements.
+    - **Sexual**: Sexually explicit or abusive language.
+    - **Self-harm**: Language that describes or encourages self-harm.    
 
-   Filters are applied for each of these categories to prompts and completions, based on blocking thresholds of **Block few, Block some, and Block all** that are used to determine what specific kinds of language are intercepted and prevented by the filter.
+    Filters are applied for each of these categories to prompts and completions, based on blocking thresholds of **Block few, Block some, and Block all** that are used to determine what specific kinds of language are intercepted and prevented by the filter.
 
    Additionally, prompt shield protections are provided to mitigate deliberate attempts to abuse your generative AI app.
 
