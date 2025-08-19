@@ -136,6 +136,14 @@ You need two models to implement your solution:
 
     > **Note:** Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 50,000 TPM is sufficient for the data used in this exercise.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="c2ea45e9-f613-4bb8-afc5-ad28823e291d" />
+
 ## Task 3: Add data to your project
 
 In this task, you'll upload a set of travel brochures in PDF format to your Azure AI Foundry project so they can be used as a knowledge source.
