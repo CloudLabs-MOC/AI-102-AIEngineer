@@ -48,9 +48,9 @@ Azure AI Language includes a question answering capability that enables you to c
 
    ![](../Images/ai15l8.png) 
 
-1. View the **Keys and Endpoint** page in the **Resource Management** section. You will need the information on this page later in the lab.
+1. Navigate to the **Keys and Endpoint (1)** page in the **Resource Management** section. Copy and paste the **KEY 1 (2)** and **Endpoint (3)**. You will need the information on this page later in the lab.
 
-   ![](../Images/ai15l9.png) 
+   ![](../Images/ai15l-9.png) 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
