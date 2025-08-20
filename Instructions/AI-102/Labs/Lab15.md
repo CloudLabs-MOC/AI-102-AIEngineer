@@ -69,7 +69,6 @@ To create a knowledge base for question answering in your Azure AI Language reso
 
 1. In a new browser tab, go to the Language Studio portal at [https://language.cognitive.azure.com/](https://language.cognitive.azure.com/).
 
-
 1. Selelect **Sign in**.
 
     ![](../Images/ai15l10.png) 
@@ -101,7 +100,7 @@ To create a knowledge base for question answering in your Azure AI Language reso
 
    ![](../Images/ai15l12.png) 
 
-1. In the ***Create a project** wizard, on the **Choose language setting** page,
+1. In the **Create a project** wizard, on the **Choose language setting** page,
 
     - Select the option to **Select the language for all projects (1)**
     - Select **English (2)** as the language. 
