@@ -1,9 +1,31 @@
 # Lab 16: Create a language understanding model with the Language service
 
-The Azure AI Language service enables you to define a **conversational language understanding** model that applications can use to interpret natural language *utterances* from users (text or spoken input),  predict the users *intent* (what they want to achieve), and identify any *entities* to which the intent should be applied.
+### Estimated Duration: 35 Minutes
+
+## Overview
+
+In this lab, you will use the Azure AI Language service to build a conversational language understanding model and integrate it with a simple Python client application. By completing this lab, you will gain hands-on experience in creating, training, and deploying a natural language model that can predict user intent and extract entities.
+
+## Lab Objectives
+
+- **Task 1:** Provision an Azure AI Language resource
+
+- **Task 2:** Create a conversational language understanding project
+
+- **Task 3:** Create intents
+
+- **Task 4:** Label each intent with sample utterances
+
+- **Task 5:** Train and test the model
+
+- **Task 6:** Add entities
+
+- **Task 7:** Retrain the model
+
+- **Task 8:** Use the model from a client app
 
 > **NOTE**
-> The task of a conversational language model is to predict the user's intent and identify any entities to which the intent applies. It is <u>not</u> the job of a conversational language model to actually perform the actions required to satisfy the intent. For example, a clock application can use a conversational language model to discern that the user wants to know the time in London; but the client application itself must then implement the logic to determine the correct time and present it to the user.
+> The task of a conversational language model is to predict the user's intent and identify any entities to which the intent applies. It is <u>not</u> the job of a conversational language model to actually perform the actions required to satisfy the intent. For example, a clock application can use a conversational language model to discern that the user wants to know the time in London, but the client application itself must then implement the logic to determine the correct time and present it to the user.
 
 In this exercise, you'll use the Azure AI Language service to create a conversational language understand model, and use the Python SDK to implement a client app that uses it.
 
@@ -13,15 +35,13 @@ While this exercise is based on Python, you can develop conversational understan
 - [Azure AI Conversations client library for .NET](https://www.nuget.org/packages/Azure.AI.Language.Conversations)
 - [Azure AI Conversations client library for JavaScript](https://www.npmjs.com/package/@azure/ai-language-conversations)
 
-This exercise takes approximately **35** minutes.
+### Task 1: Provision an Azure AI Language resource
 
-## Task 1: Provision an Azure AI Language resource
-
-If you don't already have one in your subscription, you'll need to provision an **Azure AI Language service** resource in your Azure subscription.
+In this task, you will provision an Azure AI Language service resource in your subscription and collect the keys and endpoint required to use it
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
-1. If prompted, provide the credentials below:
+1. If prompted with a sign-in window, kindly sign in using the provided Azure credentials
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -31,11 +51,11 @@ If you don't already have one in your subscription, you'll need to provision an 
 
         ![](../Images/l14t1p2.png)
 
-1. When the **Stay signed in?** window appears, select **No**.
+1. If prompted to **Stay signed in?**, you can click **No**.
 
     ![](../Images/aifoundrysignin3.png)
 
-    >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
 
     ![](../Images/l2at2p2.png)
 
@@ -55,13 +75,13 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     ![](../Images/AI-l16-4.png)
 
-1. Provision the resource with the following settings, then select **Review + create (7)**:
+1. In the Basics tab of **Create Language**, follow these instructions to fill out the properties, then select **Review + create (7)**:
 
     * Subscription: **Default Subscription (1)**
     * Resource group: **AI-102-RG16 (2)**
     * Region: **<inject key="Region"></inject> (3)**
     * Name: **languageservice<inject key="DeploymentID"></inject> (4)**
-    * Pricing tier: **Select **F0** (*free*), or **S** (*standard*) if F is not available.
+    * Pricing tier: Select **F0** (free), or **S** (standard) if F is not available **(5)**.
     * Responsible AI Notice: **Agree (6)**
 
        ![](../Images/AI-l16-5.png)
@@ -74,13 +94,15 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     ![](../Images/AI-l16-7.png)
 
-1. From the left navigation pane, go to **Resource Management (1)** and select **Keys and Endpoint (2)**. Copy the **Endpoint (3)** and **Key (4)**, then save them in a notepad file, you’ll need these details later in the exercise.
+1. On the **Languageservice** page, in the left navigation pane, select **Resource Management (1)** > **Keys and Endpoint (2)**. Copy the **Endpoint (3)** and **Key (4)** values, and save them in a notepad file. You will need these details later in the exercise.
 
     ![](../Images/AI-l16-8.png)
 
-## Task 2: Create a conversational language understanding project
+### Task 2: Create a conversational language understanding project
 
-1. In a new browser tab, open the Azure AI Language Studio portal at `https://language.cognitive.azure.com/` and Select **Sign in**.
+In this task, you will create a new project in Language Studio and define the basic information for your model.
+
+1. In a new browser tab, open the Azure AI Language Studio portal at `https://language.cognitive.azure.com/` and select **Sign in**.
    
     ![](../Images/AI-l16-9.png)
 
@@ -100,21 +122,21 @@ If you don't already have one in your subscription, you'll need to provision an 
 
       ![](../Images/AI-l16-10.png)
 
-    If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
+       >**Note:** If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
+    
+        1. On the bar at the top of the page, select the **Settings (&#9881;)** button.
+        2. On the **Settings** page, view the **Resources** tab.
+        3. Select the language resource you just created, and click **Switch resource**.
+        4. At the top of the page, click **Language Studio** to return to the Language Studio home page
 
-    1. On the bar at the top of the page, select the **Settings (&#9881;)** button.
-    2. On the **Settings** page, view the **Resources** tab.
-    3. Select the language resource you just created, and click **Switch resource**.
-    4. At the top of the page, click **Language Studio** to return to the Language Studio home page
-
-1. At the top of the portal, in the **Create new (1)** menu, select **Conversational language understanding (2)**.
+1. At the top of the **Language Studio** portal, click **Create new (1)** and select **Conversational language understanding (2)**.  
 
    ![](../Images/AI-l16-11.png)
 
 1. In the **Create a project** dialog box, on the **Enter basic information** page, enter the following details and then select **Next**:
     - **Name**: `Clock` **(1)**
     - **Utterances primary language**: English **(2)**
-    - **Enable multiple languages in project?**: *Unselected* **(3)**
+    - **Enable multiple languages in project?**: Unselect **(3)**
     - **Description**: `Natural language clock` **(4)**
       
       ![](../Images/AI-l16-12.png)
@@ -123,21 +145,21 @@ If you don't already have one in your subscription, you'll need to provision an 
 
       ![](../Images/AI-l16-13.png)
 
-## Task 3: Create intents
+### Task 3: Create intents
 
-The first thing we'll do in the new project is to define some intents. The model will ultimately predict which of these intents a user is requesting when submitting a natural language utterance.
+In this task, you will define intents (such as GetTime, GetDay, and GetDate) that represent the user’s goals when submitting utterances.
 
 > **Tip**: When working on your project, if some tips are displayed, read them and select **Got it** to dismiss them, or select **Skip all**.
 
-1. On the **Schema definition** page, on the **Intents** tab, select **&#65291; Add** to add a new intent named `GetTime`.
+1. On the **Schema definition** page, under the **Intents** tab, click **Add (1)** to create a new intent.  
 
     ![](../Images/AI-l16-14.png)
 
-1. On Add a intent page enter intent name as `GetTime` **(1)** and click on **Add intent (2)**.
+1. On the **Add an intent** page, enter **intent name** as `GetTime` **(1)** and click on **Add intent (2)**.
 
     ![](../Images/AI-l16-15.png)
 
-1. Verify that the **GetTime** intent is listed (along with the default **None** intent). Then add the following additional intents:
+1. Verify that the **GetTime** intent is listed (along with the default **None** intent). Then add the following additional intents: 
     - `GetDay`
     - `GetDate`
      
@@ -145,18 +167,19 @@ The first thing we'll do in the new project is to define some intents. The model
 
 ## Task 4: Label each intent with sample utterances
 
-To help the model predict which intent a user is requesting, you must label each intent with some sample utterances.
+In this task, you will add example utterances to each intent to help the model learn how to predict the correct intent from user input.
 
-1. In the pane on the left, select the **Data Labeling (1)** page. Click on **Select intent (2)**, select  the new **GetTime (3)** intent from list and enter the utterance `what is the time?` **(4)**. This adds the utterance as sample input for the intent.
+1. On the **Data labeling (1)** page, click **Select intent (2)**, then choose **GetTime (3)** from the list and enter the utterance `what is the time?` **(4)**.
 
     ![](../Images/AI-l16-17.png)
 
     ![](../Images/AI-l16-17.1.png)
+    
     > **Tip**: You can expand the pane with the **>>** icon to see the page names, and hide it again with the **<<** icon.
 
     ![](../Images/AI-l16-note.png)
 
-1. Add the following additional utterances for the **GetTime** intent:
+1. Add the following additional utterances for the **GetTime** intent:  
     - `what's the time?`
     - `what time is it?`
     - `tell me the time`
@@ -190,31 +213,36 @@ To help the model predict which intent a user is requesting, you must label each
 
 ## Task 5: Train and test the model
 
-Now that you've added some intents, let's train the language model and see if it can correctly predict them from user input.
+In this task, you will train the language model on the defined intents and utterances, then test it by submitting sample queries to check prediction accuracy.
 
-1. In the pane on the left, select **Training jobs**. Then select **+ Start a training job**.
+1. In the left pane, select **Training jobs (1)** and then click **+ Start a training job (2)**.  
 
     ![](../Images/AI-l16-21.png)
 
-1. On the **Start a training job** dialog, select the option to **train a new model (1)**, name it `Clock (2)`. Select **Standard training (3)** mode and the default **Data splitting** options.
+1. On the **Start a training job** tab, select the following detais and click **Train (4)**
+   - Select **Train a new model (1)**  
+   - Enter the name **Clock (2)**  
+   - Choose **Standard training (3)** mode  
+   - Keep the default **Data splitting** options 
 
-1. To begin the process of training your model, select **Train (4)**.
+       ![](../Images/AI-l16-22.png)
 
-   ![](../Images/AI-l16-22.png)
-
-1. When training is complete (which may take several minutes) the job **Status** will change to **Training succeeded**.
+1. Wait for the training process to complete (this may take several minutes). When finished, the job **Status** will change to **Training succeeded**.  
 
     ![](../Images/AI-l16-23.png)
 
-1. Select the **Model performance (1)** page, and then select the **Clock (2)** model. Review the overall and per-intent evaluation metrics (*precision*, *recall*, and *F1 score*) and the *confusion matrix* generated by the evaluation that was performed when training (note that due to the small number of sample utterances, not all intents may be included in the results).
-
+1. Select the **Model performance (1)** page, and then select the **Clock (2)** model.
+   
     ![](../Images/AI-l16-24.png)
 
-    ![](../Images/AI-l16-25.png)
-    > **NOTE**
+1. Review the overall and per-intent evaluation metrics (*precision*, *recall*, and *F1 score*) and the *confusion matrix* generated by the evaluation that was performed when training (note that due to the small number of sample utterances, not all intents may be included in the results).
+
+   ![](../Images/AI-l16-25.png)
+
+   > **NOTE**
     > To learn more about the evaluation metrics, refer to the [documentation](https://learn.microsoft.com/azure/ai-services/language-service/conversational-language-understanding/concepts/evaluation-metrics)
 
-1. Go to the **Deploying a model (1)** page, then select **Add deployment (2)**.
+1. Navigate to the **Deploying a model (1)** page and select **Add deployment (2)**.  
 
    ![](../Images/AI-l16-26.png)
 
@@ -224,15 +252,15 @@ Now that you've added some intents, let's train the language model and see if it
 
    ![](../Images/AI-l16-27.png)
 
-1. When the model has been deployed, select the **Testing deployments (1)** page, then select the **production (2)** deployment in the **Deployment name** field.
-
-   ![](../Images/AI-l16-28.png)
+1. After deployment is complete, go to the **Testing deployments (1)** page and select **production (2)** from the **Deployment name** field.  
 
 1. Enter the following text in the empty textbox **(3)**, and then select **Run the test**:
 
     `what's the time now?`
 
-    Review the result that is returned, noting that it includes the predicted intent (which should be **GetTime**) and a confidence score that indicates the probability the model calculated for the predicted intent. The JSON tab shows the comparative confidence for each potential intent (the one with the highest confidence score is the predicted intent)
+    ![](../Images/AI-l16-28.png)
+
+1. Review the result that is returned, noting that it includes the predicted intent (which should be **GetTime**) and a confidence score that indicates the probability the model calculated for the predicted intent. The JSON tab shows the comparative confidence for each potential intent (the one with the highest confidence score is the predicted intent)
 
    ![](../Images/AI-l16-29.png)
 
