@@ -1,21 +1,35 @@
 
-# Analyze Text
+# Lab 14: Analyze Text
 
-**Azure AI Language** supports analysis of text, including language detection, sentiment analysis, key phrase extraction, and entity recognition.
+### Estimated Duration : 30 Minutes
 
-For example, suppose a travel agency wants to process hotel reviews that have been submitted to the company's web site. By using the Azure AI Language, they can determine the language each review is written in, the sentiment (positive, neutral, or negative) of the reviews, key phrases that might indicate the main topics discussed in the review, and named entities, such as places, landmarks, or people mentioned in the reviews. In this exercise, you'll use the Azure AI Language Python SDK for text analytics to implement a simple hotel review application based on this example.
+## Overview
 
-While this exercise is based on Python, you can develop text analytics applications using mulNote:le language-specific SDKs; including:
+Azure AI Language provides powerful text analysis capabilities, including language detection, sentiment analysis, key phrase extraction, and entity recognition. In this lab, you’ll apply these features to a real-world scenario by analyzing hotel reviews submitted to a travel agency’s website. Using the Azure AI Language Python SDK for text analytics, you’ll build a simple application that identifies the language of each review, determines whether the sentiment is positive, neutral, or negative, and extracts meaningful insights such as main topics, places, or people mentioned. While this exercise uses Python, you can develop similar text analytics solutions in multiple languages using the SDKs provided by Azure AI Language.
 
-- [Azure AI Text Analytics client library for Python](https://pypi.org/project/azure-ai-textanalytics/)
-- [Azure AI Text Analytics client library for .NET](https://www.nuget.org/packages/Azure.AI.TextAnalytics)
-- [Azure AI Text Analytics client library for JavaScript](https://www.npmjs.com/package/@azure/ai-text-analytics)
+## Lab Objectives
 
-This exercise takes approximately **30** minutes.
+- **Task 1:** Provision an Azure AI Language resource
 
-## Task 1: Provision an Azure AI Language resource
+- **Task 2:** Clone the repository for this course
 
-If you don't already have one in your subscription, you'll need to provision an **Azure AI Language service** resource in your Azure subscription.
+- **Task 3:** Configure your application
+
+- **Task 4:** Add code to connect to your Azure AI Language resource
+
+- **Task 5:** Add code to detect language
+
+- **Task 6:** Add code to evaluate sentiment
+
+- **Task 7:** Add code to identify key phrases
+
+- **Task 8:** Add code to extract entities
+
+- **Task 9:** Add code to extract linked entities
+
+### Task 1: Provision an Azure AI Language resource
+
+In this task, you’ll provision an Azure AI Language resource in your subscription. This will give you the necessary endpoint and authentication key, which you’ll use later to build and test language capabilities in your AI solution.
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
@@ -84,10 +98,9 @@ If you don't already have one in your subscription, you'll need to provision an 
  
 <validation step="90093be2-2083-4839-b324-37164c3651c9" />
 
+### Task 2: Clone the repository for this course
 
-## Task 2: Clone the repository for this course
-
-You'll develop your code using Cloud Shell from the Azure Portal. The code files for your app have been provided in a GitHub repo.
+In this task, you’ll set up your development environment by cloning the course repository into Azure Cloud Shell. This will give you access to the application code files needed for building and running the lab exercises.
 
 1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
@@ -124,7 +137,9 @@ You'll develop your code using Cloud Shell from the Azure Portal. The code files
     cd mslearn-ai-language/Labfiles/01-analyze-text/Python/text-analysis
     ```
 
-## Task 3: Configure your application
+### Task 3: Configure your application
+
+In this task, you’ll configure the application by setting up a Python virtual environment, installing the required SDK packages, and updating the configuration file with your Azure AI Language resource details. This ensures the app can securely connect to the service and run the text analysis code.
 
 1. In the command line pane, run the following command to view the code files in the **text-analysis** folder:
 
@@ -160,7 +175,9 @@ You'll develop your code using Cloud Shell from the Azure Portal. The code files
 
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
-## Task 4: Add code to connect to your Azure AI Language resource
+### Task 4: Add code to connect to your Azure AI Language resource
+
+In this task, you’ll update the application code to import the required namespaces and create a client object that connects to your Azure AI Language resource, enabling the app to interact with the Text Analytics API.
 
 1. Enter the following command to edit the application code file:
 
@@ -204,9 +221,9 @@ You'll develop your code using Cloud Shell from the Azure Portal. The code files
 
     ![](../Images/l14t4p4.png)
 
-## Task 5: Add code to detect language
+### Task 5: Add code to detect language
 
-Now that you have created a client for the API, let's use it to detect the language in which each review is written.
+In this task, you’ll extend the application to use the Text Analytics client to detect the language of each review document and display the identified language in the output.
 
 1. In the code editor, find the comment **Get language**. Then add the code necessary to detect the language in each review document:
 
@@ -226,9 +243,9 @@ Now that you have created a client for the API, let's use it to detect the langu
 
     ![](../Images/l14t5p2.png)
 
-## Task 6: Add code to evaluate sentiment
+### Task 6: Add code to evaluate sentiment
 
-*Sentiment analysis* is a commonly used technique to classify text as *positive* or *negative* (or possible *neutral* or *mixed*). It's commonly used to analyze social media posts, product reviews, and other items where the sentiment of the text may provide useful insights.
+In this task, you'll add code to evaluate the sentiment of each review. By doing this, you'll classify the text as positive, negative, neutral, or mixed, which helps in understanding the general tone of the feedback.
 
 1. In the code editor, find the comment **Get sentiment**. Then add the code necessary to detect the sentiment of each review document:
 
@@ -246,9 +263,9 @@ Now that you have created a client for the API, let's use it to detect the langu
 
     ![](../Images/l14t6p2.png)
 
-## Task 7: Add code to identify key phrases
+### Task 7: Add code to identify key phrases
 
-It can be useful to identify key phrases in a body of text to help determine the main topics that it discusses.
+In this task, you'll add code to extract key phrases from the reviews. This will help you identify the main topics or themes discussed in the text, giving deeper insights into what the review is about.
 
 1. In the code editor, find the comment **Get key phrases**. Then add the code necessary to detect the key phrases in each review document:
 
@@ -269,9 +286,9 @@ It can be useful to identify key phrases in a body of text to help determine the
 
     ![](../Images/l14t7p2.png)
 
-## Task 8: Add code to extract entities
+### Task 8: Add code to extract entities
 
-Often, documents or other bodies of text mention people, places, time periods, or other entities. The text Analytics API can detect mulNote:le categories (and subcategories) of entity in your text.
+In this task, you'll add code to detect entities such as people, places, and organizations mentioned in the text. Identifying these entities helps categorize and organize the information contained within the reviews.
 
 1. In the code editor, find the comment **Get entities**. Then, add the code necessary to identify entities that are mentioned in each review:
 
@@ -292,9 +309,9 @@ Often, documents or other bodies of text mention people, places, time periods, o
 
     ![](../Images/l14t8p2.png)
 
-## Task 9: Add code to extract linked entities
+### Task 9: Add code to extract linked entities
 
-In addition to categorized entities, the Text Analytics API can detect entities for which there are known links to data sources, such as Wikipedia.
+In this task, you'll add code to recognize linked entities, entities with references to external data sources like Wikipedia. This will provide additional context and allow you to connect the extracted information with authoritative resources.
 
 1. In the code editor, find the comment **Get linked entities**. Then, add the code necessary to identify linked entities that are mentioned in each review:
 
@@ -317,5 +334,6 @@ In addition to categorized entities, the Text Analytics API can detect entities 
 
 ## Summary
 
+In this lab, you connected to the Azure AI Language service and progressively added code to analyze customer reviews. You successfully detected the language of each review, evaluated the sentiment expressed, and extracted meaningful insights including key phrases, entities, and linked entities. By completing these tasks, you gained practical experience in using Azure AI to transform unstructured text into structured data that can drive decision-making and improve understanding of customer feedback.
 
-
+### You have successfully completed the Hands-on Lab!

@@ -2,7 +2,7 @@
 
 ### Estimated Duration : 30 Minutes
 
-# Overview
+## Overview
 
 In this lab, you’ll build a project that orchestrates two AI agents using the **Semantic Kernel SDK**. The first agent, the *Incident Manager*, will analyze provided service log files to detect potential issues. When an issue is identified, the Incident Manager will recommend a resolution action. The second agent, the *DevOps Assistant*, will take this recommendation, invoke the corrective function, and apply the resolution by updating the logs with example messages. Afterward, the Incident Manager will recheck the updated log files to verify whether the resolution was successful. For this exercise, you’ll work with four sample log files, with the DevOps Assistant simulating updates by appending diagnostic and resolution messages.
 
