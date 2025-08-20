@@ -1,6 +1,6 @@
 # Lab 16: Create a language understanding model with the Language service
 
-The Azure AI Language service enables you to define a *conversational language understanding* model that applications can use to interpret natural language *utterances* from users (text or spoken input),  predict the users *intent* (what they want to achieve), and identify any *entities* to which the intent should be applied.
+The Azure AI Language service enables you to define a **conversational language understanding** model that applications can use to interpret natural language *utterances* from users (text or spoken input),  predict the users *intent* (what they want to achieve), and identify any *entities* to which the intent should be applied.
 
 > **NOTE**
 > The task of a conversational language model is to predict the user's intent and identify any entities to which the intent applies. It is <u>not</u> the job of a conversational language model to actually perform the actions required to satisfy the intent. For example, a clock application can use a conversational language model to discern that the user wants to know the time in London; but the client application itself must then implement the logic to determine the correct time and present it to the user.
@@ -98,7 +98,7 @@ If you don't already have one in your subscription, you'll need to provision an 
     - **Resource name**: Select **languageservice<inject key="DeploymentID" enableCopy="false"/> (4)**
     - Then select **Done (5)**
 
-      ![](../Images/AI-l16-9.png)
+      ![](../Images/AI-l16-10.png)
 
     If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
 
@@ -109,7 +109,7 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 1. At the top of the portal, in the **Create new (1)** menu, select **Conversational language understanding (2)**.
 
-  ![](../Images/AI-l16-11.png)
+   ![](../Images/AI-l16-11.png)
 
 1. In the **Create a project** dialog box, on the **Enter basic information** page, enter the following details and then select **Next**:
     - **Name**: `Clock` **(1)**
@@ -117,7 +117,7 @@ If you don't already have one in your subscription, you'll need to provision an 
     - **Enable multiple languages in project?**: *Unselected* **(3)**
     - **Description**: `Natural language clock` **(4)**
       
-     ![](../Images/AI-l16-12.png)
+      ![](../Images/AI-l16-12.png)
 
 1. On the **Review and finish** page, select **Create**.
 
@@ -141,7 +141,7 @@ The first thing we'll do in the new project is to define some intents. The model
     - `GetDay`
     - `GetDate`
      
-    ![](../Images/AI-l16-16.png)
+      ![](../Images/AI-l16-16-new.png)
 
 ## Task 4: Label each intent with sample utterances
 
@@ -154,17 +154,19 @@ To help the model predict which intent a user is requesting, you must label each
     ![](../Images/AI-l16-17.1.png)
     > **Tip**: You can expand the pane with the **>>** icon to see the page names, and hide it again with the **<<** icon.
 
+    ![](../Images/AI-l16-note.png)
+
 1. Add the following additional utterances for the **GetTime** intent:
     - `what's the time?`
     - `what time is it?`
     - `tell me the time`
 
-    > **NOTE**
-    > To add a new utterance, write the utterance in the textbox next to the intent and then press ENTER. 
+        > **NOTE**
+        > To add a new utterance, write the utterance in the textbox next to the intent and then press ENTER. 
 
 1. Select the **GetDay (1)** intent and enter the utterance `what day is it?` **(2)**.
 
-  ![](../Images/AI-l16-18.png)
+   ![](../Images/AI-l16-18.png)
 
 1. Add the following additional utterances for the **GetDay** intent:
     - `what's the day?`
@@ -180,7 +182,7 @@ To help the model predict which intent a user is requesting, you must label each
     - `what is the date today?`
     - `what's today's date?`
 
-    ![](../Images/AI-l16-18.png)
+      ![](../Images/AI-l16-18.png)
 
 1. After you've added utterances for each of your intents, select **Save changes**.
 
@@ -214,17 +216,17 @@ Now that you've added some intents, let's train the language model and see if it
 
 1. Go to the **Deploying a model (1)** page, then select **Add deployment (2)**.
 
-  ![](../Images/AI-l16-26.png)
+   ![](../Images/AI-l16-26.png)
 
 1. On the **Add deployment** dialog, select **Create a new deployment name (1)**, and then enter `production` **(2)**.
 
 1. Select the **Clock (3)** model in the **Model** field then select **Deploy (4)**. The deployment may take some time.
 
-  ![](../Images/AI-l16-27.png)
+   ![](../Images/AI-l16-27.png)
 
 1. When the model has been deployed, select the **Testing deployments (1)** page, then select the **production (2)** deployment in the **Deployment name** field.
 
-  ![](../Images/AI-l16-28.png)
+   ![](../Images/AI-l16-28.png)
 
 1. Enter the following text in the empty textbox **(3)**, and then select **Run the test**:
 
@@ -232,7 +234,7 @@ Now that you've added some intents, let's train the language model and see if it
 
     Review the result that is returned, noting that it includes the predicted intent (which should be **GetTime**) and a confidence score that indicates the probability the model calculated for the predicted intent. The JSON tab shows the comparative confidence for each potential intent (the one with the highest confidence score is the predicted intent)
 
-  ![](../Images/AI-l16-29.png)
+   ![](../Images/AI-l16-29.png)
 
 1. Clear the text box, and then run another test with the following text:
 
@@ -268,9 +270,9 @@ The most common kind of entity is a *learned* entity, in which the model learns 
 
 1. After the **Location** entity has been created, return to the **Data labeling** page.
 
-  ![](../Images/AI-l16-35.png)
+   ![](../Images/AI-l16-35.png)
 
-1. Select the **GetTime *(1)** intent and enter the following new example utterance **(2)**:
+1. Select the **GetTime (1)** intent and enter the following new example utterance **(2)**:
 
     `what time is it in London?`
 
@@ -278,7 +280,7 @@ The most common kind of entity is a *learned* entity, in which the model learns 
 
 1. When the utterance has been added, select the word **London (1)**, and in the drop-down list that appears, select **Location (2)** to indicate that "London" is an example of a location.
 
-  ![](../Images/AI-l16-37.png)
+   ![](../Images/AI-l16-37.png)
 
 1. Add another example utterance for the **GetTime** intent:
 
@@ -294,7 +296,7 @@ The most common kind of entity is a *learned* entity, in which the model learns 
 
 1. When the utterance has been added, select the words **New York (1)**, and map them to the **Location (2)** entity.
 
-  ![](../Images/AI-l16-39.png)
+   ![](../Images/AI-l16-39.png)
 
 1. Select **Save changes** to save the new utterances.
 
@@ -348,9 +350,9 @@ In some cases, valid values for an entity can be restricted to a list of specifi
 
     ![](../Images/AI-l16-46.png)
 
-1. When the utterance has been added, select the word ***Saturday (1)***, and in the drop-down list that appears, select **Weekday (2)**.
+1. When the utterance has been added, select the word **Saturday (1)**, and in the drop-down list that appears, select **Weekday (2)**.
 
-  ![](../Images/AI-l16-47.png)
+   ![](../Images/AI-l16-47.png)
 
 1. Add another example utterance for the **GetDate** intent:
 
@@ -372,13 +374,13 @@ In some cases, valid values for an entity can be restricted to a list of specifi
 
     ![](../Images/AI-l16-50.png)
 
-## task 6.3 Add a *prebuilt* entity
+## Task 6.3 Add a *prebuilt* entity
 
-The Azure AI Language service provides a set of *prebuilt* entities that are commonly used in conversational applications.
+The Azure AI Language service provides a set of **prebuilt** entities that are commonly used in conversational applications.
 
 1. In Language Studio, return to the **Schema definition (1)** page and then on the **Entities (2)** tab, select **&#65291; Add (3)** to add a new entity.
 
-  ![](../Images/AI-l16-51.png)
+   ![](../Images/AI-l16-51.png)
 
 1. In the **Add an entity** dialog box, enter the entity name `Date` **(1)** and select the **Prebuilt (2)** entity tab. Then select **Add entity (3)**.
 
@@ -404,9 +406,9 @@ The Azure AI Language service provides a set of *prebuilt* entities that are com
 
     ![](../Images/AI-l16-56.png)
 
-1. When the utterance has been added, select ***01/01/1901 (1)***, and in the drop-down list that appears, select **Date (2)**.
+1. When the utterance has been added, select **01/01/1901 (1)**, and in the drop-down list that appears, select **Date (2)**.
 
-  ![](../Images/AI-l16-57.png)
+   ![](../Images/AI-l16-57.png)
 
 1. Add another example utterance for the **GetDay** intent:
 
@@ -440,7 +442,7 @@ Now that you've modified the schema, you need to retrain and retest the model.
 
     ![](../Images/AI-l16-63.png)
 
-1. Select the **Model performance** page and then select the **Clock** model. Review the evaluation metrics (*precision*, *recall*, and *F1 score*) and the *confusion matrix* generated by the evaluation that was performed when training (note that due to the small number of sample utterances, not all intents may be included in the results).
+1. Select the **Model performance (1)** page and then select the **Clock (2)** model. Review the evaluation metrics (*precision*, *recall*, and *F1 score*) and the *confusion matrix* generated by the evaluation that was performed when training (note that due to the small number of sample utterances, not all intents may be included in the results).
 
     ![](../Images/AI-l16-64.png)
 
@@ -490,7 +492,7 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
 
     ![](../Images/AI-l16-70.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, switch it to ***PowerShell***.
+    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, switch it to **PowerShell**.
 
 1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
@@ -500,7 +502,7 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
 
     ![](../Images/AI-l16-72.png)
 
-    **<font color="red">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
+    **<font color="black">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
 
 1. In the PowerShell pane, enter the following commands to clone the GitHub repo for this exercise:
 
