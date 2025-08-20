@@ -120,3 +120,69 @@ Once you've created the Azure AI Language service and storage account, you'll ne
 
    ![](../Images/ai17l20.png)
 
+### Task 3: Create a custom text classification project
+
+After configuration is complete, create a custom text classification project. This project provides a working place to build, train, and deploy your model.
+
+> **NOTE**: This lab utilizes **Language Studio**, but you can also create, build, train, and deploy your model through the REST API.
+
+1. In a new browser tab, open the Azure AI Language Studio portal at `https://language.cognitive.azure.com/`.
+
+1. Selelect **Sign in**.
+
+    ![](../Images/ai15l10.png) 
+
+1. If prompted, provide the credentials below:
+
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+1. Close the pop ups.
+
+    ![](../Images/ai17l21.png) 
+
+1. If prompted to choose a Language resource, select the following settings:
+
+    - **Azure Directory**: Default Azure directory containing your subscription **(1)**
+    - **Azure subscription**: Your Azure subscription **(2)**
+    - **Resource type**: Language **(3)**
+    - **Language resource**: The Azure AI Language resource you created previously **textclassification<inject key="DeploymentID" enableCopy="false"/> (4)**
+    - Select **Done (5)**
+
+      ![](../Images/ai17l22.png)     
+
+    If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
+
+    1. On the bar at the top if the page, select the **Settings (&#9881;)** button.
+    2. On the **Settings** page, view the **Resources** tab.
+    3. Select the language resource you just created, and click **Switch resource**.
+    4. At the top of the page, click **Language Studio** to return to the Language Studio home page
+
+1. At the top of the portal, in the **Create new (1)** menu, select **Custom text classification (2)**.
+
+    ![](../Images/ai17l23.png) 
+
+1. The **Connect storage** page appears. All values will already have been filled. So select **Next**.
+
+    ![](../Images/ai17l24.png) 
+
+1. On the **Select project type** page, select **Single label classification (1)**. Then select **Next (2)**.
+
+    ![](../Images/ai17l25.png) 
+
+1. On the **Enter basic information** pane, set the following and then **Next (4)**:
+
+    - Name: `ClassifyLab` **(1)** 
+    - Text primary language: English (US) **(2)**
+    - Description: `Custom text lab`
+
+      ![](../Images/ai17l26.png)   
+
+1. On the **Choose container** page, set the **Blob store container** dropdown to your **articles (1)** container.
+    - Select the  **No, I need to label my files as part of this project (2)** option. 
+    - Then select **Next (3)**.
+
+      ![](../Images/ai17l27.png) 
+
+1. Select **Create project**.       
