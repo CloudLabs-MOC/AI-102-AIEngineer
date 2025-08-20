@@ -94,6 +94,14 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
 
     ![](../Images/l12t1p5.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="5067f59b-415f-4007-9926-ff36dcc942d8" />
+
 ### Task 2: Create an AI Agent client app
 
 In this task, you’ll use Azure Cloud Shell to clone a GitHub repository that contains the code and configuration files for your client application. You’ll explore the project folder, which includes the agent definition, a custom function, and supporting configuration needed to run the app.

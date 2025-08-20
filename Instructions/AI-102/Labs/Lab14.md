@@ -76,6 +76,15 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     ![](../Images/l14t1p12.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="90093be2-2083-4839-b324-37164c3651c9" />
+
+
 ## Task 2: Clone the repository for this course
 
 You'll develop your code using Cloud Shell from the Azure Portal. The code files for your app have been provided in a GitHub repo.
