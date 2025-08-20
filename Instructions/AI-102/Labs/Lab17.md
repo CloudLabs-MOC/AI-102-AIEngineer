@@ -66,3 +66,4 @@ If you don't already have one in your subscription, you'll need to provision an 
 
    ![](../Images/ai17l5.png)
 
+1. Navigate to the **Keys and Endpoint (1)** page in the **Resource Management** section. Copy and paste the **KEY 1 (2)** and **Endpoint (3)**. You will need the information on this page later in the lab. 
