@@ -52,6 +52,16 @@ Azure AI Language includes a question answering capability that enables you to c
 
    ![](../Images/ai15l9.png) 
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="2200df38-ce0c-418c-98e4-cdb808b3c3e2" />
+ 
+---   
+
 
 ### Task 2: Create a question answering project
 
@@ -62,15 +72,16 @@ To create a knowledge base for question answering in your Azure AI Language reso
 
 1. Selelect **Sign in**.
 
-   ![](../Images/ai15l10.png) 
+    ![](../Images/ai15l10.png) 
 
 1. If prompted, provide the credentials below:
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
 1. If you're prompted to choose a Language resource, select the following settings:
+
     - **Azure Directory**: The Azure directory containing your subscription **(1)**
     - **Azure subscription**: Your Azure subscription **(2)**
     - **Resource type**: Language **(3)**
@@ -99,6 +110,7 @@ To create a knowledge base for question answering in your Azure AI Language reso
       ![](../Images/ai15l13.png) 
 
 1. On the **Enter basic information** page, enter the following details:
+
     - **Name** `LearnFAQ` **(1)**
     - **Description**: `FAQ for Microsoft Learn` **(2)**
     - **Default answer when no answer is returned**: `Sorry, I don't understand the question` **(3)**
@@ -110,3 +122,12 @@ To create a knowledge base for question answering in your Azure AI Language reso
 
    ![](../Images/ai15l15.png) 
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="43774b71-1947-43ce-901e-6a3f7009419c" />
+ 
+---   
