@@ -130,3 +130,104 @@ To create a knowledge base for question answering in your Azure AI Language reso
 <validation step="43774b71-1947-43ce-901e-6a3f7009419c" />
  
 ---   
+
+### Task 3: Add sources to the knowledge base
+
+You can create a knowledge base from scratch, but it's common to start by importing questions and answers from an existing FAQ page or document. In this case, you'll import data from an existing FAQ web page for Microsoft Learn, and you'll also import some pre-defined "chit chat" questions and answers to support common conversational exchanges.
+
+1. On the **Manage sources (1)** page for your question answering project, in the **&#9547; Add source (2)** list, select **URLs (3)**.
+
+    ![](../Images/ai15l16.png) 
+    
+1. Then in the **Add URLs** dialog box, select **&#9547; Add url (1)**. Set the following name and URL  before you select **Add all (4)** to add it to the knowledge base:
+
+    - **Name**: `Learn FAQ Page` **(2)**
+    - **URL**: `https://docs.microsoft.com/en-us/learn/support/faq` **(3)**
+
+      ![](../Images/ai15l17.png) 
+
+1. On the **Manage sources** page for your question answering project, in the **&#9547; Add source (1)** list, select **Chitchat (2)**.
+
+    ![](../Images/ai15l18.png) 
+
+1. The in the **Add chit chat** dialog box, select **Friendly (1)** and select **Add chit chat (2)**.
+
+    ![](../Images/ai15l19.png) 
+
+### Task 4:  Edit the knowledge base
+
+Your knowledge base has been populated with question and answer pairs from the Microsoft Learn FAQ, supplemented with a set of conversational *chit-chat* question  and answer pairs. You can extend the knowledge base by adding additional question and answer pairs.
+
+1. In your **LearnFAQ** project in Language Studio, select the **Edit knowledge base** page to see the existing question and answer pairs (if some tips are displayed, read them and choose **Got it** to dismiss them, or select **Skip all**)
+
+    ![](../Images/ai15l20.png) 
+    ![](../Images/ai15l21.png) 
+
+1. In the knowledge base, on the **Question answer pairs** tab, select **&#65291; (1)**.
+
+    ![](../Images/ai15l22.png) 
+
+1. Create a new question answer pair with the following settings and then select **Done (4)**.
+
+    - **Source**: `https://docs.microsoft.com/en-us/learn/support/faq` **(1)**
+    - **Question**: `What are Microsoft credentials?` **(2)**
+    - **Answer**: `Microsoft credentials enable you to validate and prove your skills with Microsoft technologies.` **(3)**
+
+      ![](../Images/ai15l23.png)
+
+1. In the page for the **What are Microsoft credentials?** question that is created, expand **Alternate questions (1)**. Click on **+ Add the alternate question (2)** and the add the alternate question `How can I demonstrate my Microsoft technology skills?`. **(3)**
+
+    ![](../Images/ai15l24.png) 
+
+    In some cases, it makes sense to enable the user to follow up on an answer by creating a *multi-turn* conversation that enables the user to iteratively refine the question to get to the answer they need.
+
+1. Under the answer you entered for the certification question, expand **Follow-up prompts (1)** and then click on **+ Add follow up prompt (2)**.
+
+    ![](../Images/ai15l25.png) 
+
+1. Add  the following follow-up prompt:
+
+    - Text displayed in the prompt to the user: Enter `Learn more about credentials`. **(1)**
+    - Select the **Create link to new pair (2)** tab
+    - Enter this text: `You can learn more about credentials on the [Microsoft credentials page](https://docs.microsoft.com/learn/credentials/).` **(3)**
+    - Select **Show in contextual flow only (3)**. This option ensures that the answer is only ever returned in the context of a follow-up question from the original certification question.
+    - Select **Add prompt**.
+
+      ![](../Images/ai15l26.png) 
+
+### Task 5: Train and test the knowledge base
+
+Now that you have a knowledge base, you can test it in Language Studio.
+
+1. Save the changes to your knowledge base by selecting the **Save** button under the **Question answer pairs** tab on the left.
+
+    ![](../Images/ai15l27.png) 
+
+1. After the changes have been saved, select the **Test (1)** button to open the test pane.
+
+    - In the test pane, at the top, deselect **Include short answer response (2)** (if not already unselected).
+    
+      ![](../Images/ai15l28.png)     
+    
+1. Then at the bottom enter the message `Hello`. A suitable response should be returned.
+
+    ![](../Images/ai15l29.png) 
+
+1. In the test pane, at the bottom enter the message `What is Microsoft Learn?`. An appropriate response from the FAQ should be returned.
+
+    ![](../Images/ai15l30.png) 
+
+1. Enter the message `Thanks!` An appropriate chit-chat response should be returned.
+
+    ![](../Images/ai15l31.png) 
+
+1. Enter the message `Tell me about Microsoft credentials`. The answer you created should be returned along with a follow-up prompt link.
+
+    ![](../Images/ai15l32.png) 
+
+1. Select the **Credentials** follow-up link. The follow-up answer with a link to the Credentials page should be returned.
+
+1. When you're done testing the knowledge base, close the test pane.
+
+
+
