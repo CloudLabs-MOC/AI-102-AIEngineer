@@ -98,7 +98,7 @@ To create a knowledge base for question answering in your Azure AI Language reso
 
 1. At the top of the portal, in the **Create new (1)** menu, select **Custom question answering (2)**.
 
-   ![](../Images/ai15l12.png) 
+    ![](../Images/ai15l12.png) 
 
 1. In the **Create a project** wizard, on the **Choose language setting** page,
 
@@ -119,7 +119,7 @@ To create a knowledge base for question answering in your Azure AI Language reso
 
 1. On the **Review and finish** page, select **Create project**.
 
-   ![](../Images/ai15l15.png) 
+    ![](../Images/ai15l15.png) 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
