@@ -229,5 +229,26 @@ Now that you have a knowledge base, you can test it in Language Studio.
 
 1. When you're done testing the knowledge base, close the test pane.
 
+### Task 6: Deploy the knowledge base
+
+The knowledge base provides a back-end service that client applications can use to answer questions. Now you are ready to publish your knowledge base and access its REST interface from a client.
+
+1. In the **LearnFAQ** project in Language Studio, select the **Deploy knowledge base (1)** page from the navigation menu on the left.
+    - At the top of the page, select **Deploy (2)**. Then select **Deploy (3)** to confirm you want to deploy the knowledge base.
+
+      ![](../Images/ai15l33.png) 
+
+1. When deployment is complete, select **Get prediction URL (1)** to view the REST endpoint for your knowledge base and note that the sample request includes parameters for:
+
+    - **projectName**: The name of your project (which should be `LearnFAQ`) **(2)**
+    - **deploymentName**: The name of your deployment (which should be `production`) **(3)**
+
+      ![](../Images/ai15l34.png)
+
+1. Close the prediction URL dialog box.
+
+
+
+
 
 
