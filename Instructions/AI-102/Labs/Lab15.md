@@ -247,6 +247,173 @@ The knowledge base provides a back-end service that client applications can use 
 
 1. Close the prediction URL dialog box.
 
+### Task 7: Prepare to develop an app in Cloud Shell
+
+You'll develop your question answering app using Cloud Shell in the Azure portal. The code files for your app have been provided in a GitHub repo.
+
+1. Navigate to [Azure portal](https://portal.azure.com/).
+
+1. If prompted, provide the credentials below:
+    
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+
+    ![](../Images/ai11l4.png) 
+
+1. Selecting a **PowerShell** environment.
+
+    ![](../Images/ai11l5.png) 
+
+1. On the **Getting started** page,
+
+    - Select **No storage account required (1)** 
+    - Select your subscription **(2)**
+    - Click on **Apply (3)**
+
+      ![](../Images/ai11l6.png) 
+
+1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
+
+    ![](../Images/ai11l7.png)
+
+     >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+
+     >**Note**: Ensure you've switched to the classic version of the cloud shell before continuing.
+
+1. In the PowerShell pane, enter the following commands to clone the GitHub repo for this exercise:
+
+    ```
+    rm -r mslearn-ai-language -f
+    git clone https://github.com/microsoftlearning/mslearn-ai-language
+    ```
+
+     ![](../Images/ai15l35.png)
+
+      >**Tip**: As you enter commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+
+1. After the repo has been cloned, navigate to the folder containing the application code files:  
+
+    ```
+    cd mslearn-ai-language/Labfiles/02-qna/Python/qna-app
+    ```
+### Task 8: Configure your application
+
+1. In the command line pane, run the following command to view the code files in the **qna-app** folder:
+
+    ```
+   ls -a -l
+    ```
+
+     ![](../Images/ai15l36.png)    
+
+     The files include a configuration file (**.env**) and a code file (**qna-app.py**).
+
+1. Create a Python virtual environment and install the Azure AI Language Question Answering SDK package and other required packages by running the following command:
+
+    ```
+   python -m venv labenv
+   ./labenv/bin/Activate.ps1
+   pip install -r requirements.txt azure-ai-language-questionanswering
+    ```
+    >**Note**: Make sure to hit **Enter** after the last command.
+
+1. Enter the following command to edit the configuration file:
+
+    ```
+    code .env
+    ```
+
+     ![](../Images/ai15l37.png)      
+
+     The file is opened in a code editor.
+
+1. In the code file, update the configuration values it contains to reflect the **endpoint (1)** and an authentication **key (2)** for the Azure Language resource you created (available on the **Keys and Endpoint** page for your Azure AI Language resource in the Azure portal that you have copied in **Task 1**). The project name and deployment name for your deployed knowledge base should also be in this file.
+
+    ![](../Images/ai15l38.png)
+
+1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
+
+
+### Task 9: Add code to user your knowledge base
+
+1. Enter the following command to edit the application code file:
+
+    ```
+    code qna-app.py
+    ```
+
+1. Review the existing code. You will add code to work with your knowledge base.
+
+    ![](../Images/ai15l39.png)  
+
+     >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.
+
+1. In the code file, find the comment **Import namespaces**. Then, under this comment, add the following language-specific code to import the namespaces you will need to use the Question Answering SDK:
+
+    ```python
+   # import namespaces
+   from azure.core.credentials import AzureKeyCredential
+   from azure.ai.language.questionanswering import QuestionAnsweringClient
+    ```
+     
+     ![](../Images/ai15l40.png)      
+
+      >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.      
+
+1. In the **main** function, note that code to load the Azure AI Language service endpoint and key from the configuration file has already been provided. Then find the comment **Create client using endpoint and key**, and add the following code to create a question answering client:
+
+    ```Python
+   # Create client using endpoint and key
+   credential = AzureKeyCredential(ai_key)
+   ai_client = QuestionAnsweringClient(endpoint=ai_endpoint, credential=credential)
+    ```
+
+     ![](../Images/ai15l41.png)      
+
+      >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.
+
+1. In the code file, find the comment **Submit a question and display the answer**, and add the following code to repeatedly read questions from the command line, submit them to the service, and display details of the answers:
+
+    ```Python
+   # Submit a question and display the answer
+   user_question = ''
+   while True:
+        user_question = input('\nQuestion:\n')
+        if user_question.lower() == "quit":                
+            break
+        response = ai_client.get_answers(question=user_question,
+                                        project_name=ai_project_name,
+                                        deployment_name=ai_deployment_name)
+        for candidate in response.answers:
+            print(candidate.answer)
+            print("Confidence: {}".format(candidate.confidence))
+            print("Source: {}".format(candidate.source))
+    ```
+
+     ![](../Images/ai15l42.png)      
+
+      >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.    
+
+1. Save your changes using (**CTRL+S**).
+
+1. Then enter the following command to run the program **(1)** (you maximize the cloud shell pane and resize the panels to see more text in the command line pane):
+
+    ```
+   python qna-app.py
+    ```
+
+    - When prompted, enter a question to be submitted to your question answering project; for example `What is a learning path?`. **(2)**
+
+    - Review the answer that is returned.    
+
+      ![](../Images/ai15l44.png)  
+
+1. Ask more questions. When you're done, enter `quit`.
+
+
 
 
 

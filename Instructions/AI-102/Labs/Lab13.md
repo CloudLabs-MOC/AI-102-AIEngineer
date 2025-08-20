@@ -564,7 +564,7 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
 1. Enter `quit` to exit the program and stop the servers.
 
-## Summary
+### Summary
 
 In this lab, you used the Azure AI Agent Service SDK and the A2A Python SDK to create a remote multi-agent solution. You created a discoverable A2A-compatible agent and set up a routing agent to access the agent's skills. You also implemented an agent executor to process incoming A2A messages and manage tasks. Great work!
 
