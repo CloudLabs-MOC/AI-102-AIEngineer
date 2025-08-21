@@ -86,49 +86,49 @@ Once you've created the Azure AI Language service and storage account, you'll ne
 
 1. Select the **folder** icon.
 
-   ![](../Images/ai17l10.png)
+    ![](../Images/ai17l10.png)
 
 1. Right click on **articles** folder **(1)** and then select **Extract (2)**.  
 
-   ![](../Images/ai17l11.png)
+    ![](../Images/ai17l11.png)
 
 1. Change the destination path to `C:\LabFiles` **(1)** and then click **Extract (2)**.
 
-   ![](../Images/ai17l12.png)
+    ![](../Images/ai17l12.png)
 
 1. In the **Azure portal**, search for **storage account (1)**and select it **(2)**.
 
-   ![](../Images/ai17l13.png)
+    ![](../Images/ai17l13.png)
 
 1. Select the storage account **storage<inject key="DeploymentID" enableCopy="false"/>** you created.
 
-   ![](../Images/ai17l14.png)
+    ![](../Images/ai17l14.png)
 
 1. In your storage account select **Configuration (1)**, located below **Settings**. In the Configuration screen enable the option to **Allow Blob anonymous access (2)** then select **Save (3)**.
 
-   ![](../Images/ai17l15.png)
+    ![](../Images/ai17l15.png)
 
 1. Select **Containers (1)** in the left menu, located below **Data storage**. On the screen that appears, select **+ Container (2)**. Give the container the name `articles` **(3)**, and set **Anonymous access level** to **Container (anonymous read access for containers and blobs) (4)** and then **Create (5)**.
 
-   ![](../Images/ai17l16.png)
+    ![](../Images/ai17l16.png)
 
-    >**NOTE**: When you configure a storage account for a real solution, be careful to assign the appropriate access level. To learn more about each access level, see the [Azure Storage documentation](https://learn.microsoft.com/azure/storage/blobs/anonymous-read-access-configure).
+     >**NOTE**: When you configure a storage account for a real solution, be careful to assign the appropriate access level. To learn more about each access level, see the [Azure Storage documentation](https://learn.microsoft.com/azure/storage/blobs/anonymous-read-access-configure).
 
 1. After you've created the container, select **articles** container.
 
-   ![](../Images/ai17l17.png)
+    ![](../Images/ai17l17.png)
 
 1. Select the **Upload (1)** button. Select **Browse for files (2)** to browse for the sample articles you downloaded. 
 
-   ![](../Images/ai17l18.png)
+    ![](../Images/ai17l18.png)
 
 1. Navigate to `C:\LabFiles` **(1)**, click on **Ctrl+A** to select all the files **(2)** and then **Open (3)**.  
 
-   ![](../Images/ai17l19.png)
+    ![](../Images/ai17l19.png)
 
 1. Select **Upload**.
 
-   ![](../Images/ai17l20.png)
+    ![](../Images/ai17l20.png)
 
 ### Task 3: Create a custom text classification project
 
