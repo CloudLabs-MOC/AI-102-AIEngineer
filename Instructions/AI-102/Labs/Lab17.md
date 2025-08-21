@@ -437,7 +437,7 @@ When you're satisfied with the training of your model, it's time to deploy it, w
 
      ![](../Images/ai17l48.png) 
 
-1. Note that the existing code reads all of the files in the **articles** folder and creates a list containing their contents. Then find the comment **Get Classifications** and add the following code:
+1. Note that the existing code reads all of the files in the **articles** folder and creates a list containing their contents. Then find the comment **Get Classifications** and add the following code::
 
     ```Python
    # Get Classifications
