@@ -14,7 +14,7 @@ While this exercise is based on Python, you can develop text classification appl
 
 This exercise takes approximately **35** minutes.
 
-## Task 1: Provision an *Azure AI Language* resource
+## Task 1: Provision an Azure AI Language resource
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
@@ -222,15 +222,15 @@ Now that your project is created, you need to label your data to train your mode
 
     ![](../Images/l18t4p4.png)
 
-1. In *Ad 1.txt*, highlight the text **face cord of firewood** and select the **ItemForSale** entity.
+1. In *Ad 1.txt*, highlight the text **face cord of firewood (1)** and select the **ItemForSale (2)** entity.
 
     ![](../Images/l18t4p5.png)
 
-1. Then highlight the text **Denver, CO** and select the **Location** entity.
+1. Then highlight the text **Denver, CO (1)** and select the **Location (2)** entity.
 
     ![](../Images/l18t4p6.png)
 
-1. Then highlight the text **$90** and select the **Price** entity.
+1. Then highlight the text **$90 (1)** and select the **Price (2)** entity.
 
     ![](../Images/l18t4p7.png)
 
