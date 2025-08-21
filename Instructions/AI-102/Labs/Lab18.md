@@ -54,7 +54,7 @@ This exercise takes approximately **35** minutes.
 
 1.  Provision the resource with the following settings, then select **Review + create**:
 
-    - Subscription: *Your Azure subscription* **(1)**
+    - Subscription: **Default Subscription** **(1)**
     - Resource group: **AI-102-RG18 (2)**
     - Region: **<inject key="Region" enableCopy="false" /> (3)**
     - Name: **entityrecognition<inject key="DeploymentID" enableCopy="false"/> (4)**
@@ -66,36 +66,69 @@ This exercise takes approximately **35** minutes.
 
         ![](../Images/l18t1p2.png)
 
-1. Select **Review + create**, then select **Create** to provision the resource.
-1. Wait for deployment to complete, and then go to the deployed resource.
-1. View the **Keys and Endpoint** page. You will need the information on this page later in the exercise.
+1. On the **Review + create** tab, click **Create** to provision the resource.
 
-## Configure role-based access for your user
+    ![](../Images/l18t1p3.png)
 
-> **NOTE**: If you skip this step, you'll have a 403 error when trying to connect to your custom project. It's important that your current user has this role to access storage account blob data, even if you're the owner of the storage account.
+1. Wait for deployment to complete, and then click on **Go to resource**.
 
-1. Go to your storage account page in the Azure portal.
-2. Select **Access Control (IAM)** in the left navigation menu.
-3. Select **Add** to Add Role Assignments, and choose the **Storage Blob Data Contributor** role on the storage account.
-4. Within **Assign access to**, select **User, group, or service principal**.
-5. Select **Select members**.
-6. Select your User. You can search for user names in the **Select** field.
+    ![](../Images/l18t1p4.png)
 
-## Upload sample ads
+1. From the left navigation pane, go to **Resource Management (1)** and select **Keys and Endpoint (2)**. Copy the **Endpoint (3)** and **Key (4)**, then save them in a notepad file, you’ll need these details later in the exercise.
+
+    ![](../Images/l18t1p5.png)
+
+## Task 2: Upload sample ads
 
 After you've created the Azure AI Language Service and storage account, you'll need to upload example ads to train your model later.
 
-1. In a new browser tab, download sample classified ads from `https://aka.ms/entity-extraction-ads` and extract the files to a folder of your choice.
+1. Within the JumpVM, in a new browser tab, download sample classified ads from `https://aka.ms/entity-extraction-ads`.
 
-2. In the Azure portal, navigate to the storage account you created, and select it.
+1. Select the **folder** icon.
 
-3. In your storage account select **Configuration**, located below **Settings**, and screen enable the option to **Allow Blob anonymous access** then select **Save**.
+   ![](../Images/l18t2p1.png)
 
-4. Select **Containers** from the left menu, located below **Data storage**. On the screen that appears, select **+ Container**. Give the container the name `classifieds`, and set **Anonymous access level** to **Container (anonymous read access for containers and blobs)**.
+1. Right click on **ads** folder **(1)** and then select **Extract (2)**.  
 
-    > **NOTE**: When you configure a storage account for a real solution, be careful to assign the appropriate access level. To learn more about each access level, see the [Azure Storage documentation](https://learn.microsoft.com/azure/storage/blobs/anonymous-read-access-configure).
+   ![](../Images/l18t2p2.png)
 
-5. After creating the container, select it and click the **Upload** button and upload the sample ads you downloaded.
+1. Change the destination path to `C:\LabFiles` **(1)** and then click **Extract all (2)**.
+
+   ![](../Images/l18t2p3.png)
+
+1. In the **Azure portal**, search for **storage account (1)**and select it **(2)**.
+
+   ![](../Images/ai17l13.png)
+
+1. Select the storage account **storage<inject key="DeploymentID" enableCopy="false"/>** you created.
+
+   ![](../Images/ai17l14.png)
+
+1. In your storage account select **Configuration (1)**, located below **Settings**. In the Configuration screen enable the option to **Allow Blob anonymous access (2)** then select **Save (3)**.
+
+   ![](../Images/ai17l15.png)
+
+1. Select **Containers (1)** in the left menu, located below **Data storage**. On the screen that appears, select **+ Container (2)**. Give the container the name `classifieds` **(3)**, and set **Anonymous access level** to **Container (anonymous read access for containers and blobs) (4)** and then **Create (5)**.
+
+   ![](../Images/l18t2p4.png)
+
+    >**NOTE**: When you configure a storage account for a real solution, be careful to assign the appropriate access level. To learn more about each access level, see the [Azure Storage documentation](https://learn.microsoft.com/azure/storage/blobs/anonymous-read-access-configure).
+
+1. After you've created the container, select **classifieds** container.
+
+   ![](../Images/l18t2p5(1).png)
+
+1. Select the **Upload (1)** button. Select **Browse for files (2)** to browse for the sample classified ads you downloaded. 
+
+   ![](../Images/l18t2p5.png)
+
+1. Navigate to `C:\LabFiles` **(1)**, select all the files from `Ad 1 - Ad 12` **(2)** and then click **Open (3)**.  
+
+   ![](../Images/l18t2p6.png)
+
+1. Click on **Upload** to upload the sample classified ads you downloaded.
+
+   ![](../Images/l18t2p7.png)
 
 ## Create a custom named entity recognition project
 
@@ -103,13 +136,30 @@ Now you're ready to create a custom named entity recognition project. This proje
 
 > **NOTE**: You can also create, build, train, and deploy your model through the REST API.
 
-1. In a new browser tab, open the Azure AI Language Studio portal at `https://language.cognitive.azure.com/` and sign in using the Microsoft account associated with your Azure subscription.
-1. If prompted to choose a Language resource, select the following settings:
+1. In a new browser tab, open the Azure AI Language Studio portal at `https://language.cognitive.azure.com/`.
 
-    - **Azure Directory**: The Azure directory containing your subscription.
-    - **Azure subscription**: Your Azure subscription.
-    - **Resource type**: Language.
-    - **Language resource**: The Azure AI Language resource you created previously.
+1. Selelect **Sign in**.
+
+    ![](../Images/ai15l10.png) 
+
+1. If prompted, provide the credentials below:
+
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+1. Close the pop ups.
+
+    ![](../Images/ai17l21.png) 
+
+1. If prompted to choose a Language resource, select the following settings and click **Done (5)**:
+
+    - Azure Directory: **Default Azure directory containing your subscription** **(1)**
+    - Azure subscription: **Default Azure subscription (2)**
+    - Resource type: Language.
+    - Language resource: **entityrecoginition<inject key="DeploymentID" enableCopy="false"/> (4)**
+
+        ![](../Images/l18t3p1.png)
 
     If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
 
@@ -120,77 +170,150 @@ Now you're ready to create a custom named entity recognition project. This proje
 
 1. At the top of the portal, in the **Create new** menu, select **Custom named entity recognition**.
 
-1. Create a new project with the following settings:
-    - **Connect storage**: *This  value is likely already filled. Change it to your storage account if it isn't already*
-    - **Basic information**:
-    - **Name**: `CustomEntityLab`
-        - **Text primary language**: English (US)
-        - **Does your dataset include documents that are not in the same language?** : *No*
-        - **Description**: `Custom entities in classified ads`
-    - **Container**:
-        - **Blob store container**: classifieds
-        - **Are your files labeled with classes?**: No, I need to label my files as part of this project
+    ![](../Images/l18t3p2.png)
 
-> **Tip**: If you get an error about not being authorized to perform this operation, you'll need to add a role assignment. To fix this, we add the role "Storage Blob Data Contributor" on the storage account for the user running the lab. More details can be found [on the documentation page](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource)
+1. The **Connect storage** page appears. All values will already have been filled. So select **Next**.
 
-## Label your data
+    ![](../Images/l18t3p3.png)
+
+1. In the **Enter Basic information** section, provide the follwoing information:
+
+    - Name: **`CustomEntityLab` (1)**
+    - **Text primary language**: **English (US) (2)**
+    - Does your dataset include documents that are not in the same language?: **No (3)**
+    - Description: **`Custom entities in classified ads` (4)**
+    - Click **Next (5)**
+
+    ![](../Images/l18t3p4.png)
+
+1. In the **Choose Container** section, provide the follwoing information:
+
+    - Blob store container: **classifieds (1)**
+    - Are your files labeled with classes?: **No, I need to label my files as part of this project (2)**
+    - Click **Next (3)**
+
+        ![](../Images/l18t3p5.png)
+
+        > **Tip**: If you get an error about not being authorized to perform this operation, you'll need to add a role assignment. To fix this, we add the role "Storage Blob Data Contributor" on the storage account for the user running the lab. More details can be found [on the documentation page](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource)
+
+1. In the Review and finish section, click **Create Project**.
+
+    ![](../Images/l18t3p6.png)
+
+## Task 4: Label your data
 
 Now that your project is created, you need to label your data to train your model how to identity entities.
 
-1. If the **Data labeling** page is not already open, in the pane on the left, select **Data labeling**. You'll see a list of the files you uploaded to your storage account.
+1. On the **Data labeling** page, you’ll find a list of the files uploaded to your storage account.
+
+    ![](../Images/l18t4p1.png)
+
 1. On the right side, in the **Activity** pane, select **Add entity** and add a new entity named `ItemForSale`.
+
+    ![](../Images/l18t4p2.png)
+
 1.  Repeat the previous step to create the following entities:
     - `Price`
     - `Location`
-1. After you've created your three entities, select **Ad 1.txt** so you can read it.
-1. In *Ad 1.txt*: 
-    1. Highlight the text *face cord of firewood* and select the **ItemForSale** entity.
-    1. Highlight the text *Denver, CO* and select the **Location** entity.
-    1. Highlight the text *$90* and select the **Price** entity.
-1. In the **Activity** pane, note that this document will be added to the dataset for training the model.
-1. Use the **Next document** button to move to the next document, and continue assigning text to appropriate entities for the entire set of documents, adding them all to the training dataset.
-1. When you have labeled the last document (*Ad 9.txt*), save the labels.
 
-## Train your model
+    ![](../Images/l18t4p3.png)
+
+1. After you've created your three entities, select **Ad 1.txt** so you can read it.
+
+    ![](../Images/l18t4p4.png)
+
+1. In *Ad 1.txt*: 
+    1. Highlight the text **face cord of firewood** and select the **ItemForSale** entity.
+
+        ![](../Images/l18t4p5.png)
+
+    1. Highlight the text **Denver, CO** and select the **Location** entity.
+
+        ![](../Images/l18t4p6.png)
+
+    1. Highlight the text **$90** and select the **Price** entity.
+
+        ![](../Images/l18t4p7.png)
+
+1. In the **Activity** pane, note that this document will be added to the dataset for training the model.
+
+1. Use the **Next document** button to move to the next document, and continue assigning text to appropriate entities for the entire set of documents, adding them all to the training dataset.
+
+    ![](../Images/l18t4p8.png)
+
+1. When you have labeled the last document (*Ad 12.txt*), click **Save labels**.
+
+    ![](../Images/l18t4p9.png)
+
+## Task 5: Train your model
 
 After you've labeled your data, you need to train your model.
 
 1. Select **Training jobs** in the pane on the left.
-2. Select **Start a training job**
-3. Train a new model named `ExtractAds`
-4. Choose **Automatically split the testing set from training data**
 
-    > **TIP**: In your own extraction projects, use the testing split that best suits your data. For more consistent data and larger datasets, the Azure AI Language Service will automatically split the testing set by percentage. With smaller datasets, it's important to train with the right variety of possible input documents.
+    ![](../Images/l18t5p1.png)
 
-5. Click **Train**
+2. Click **Start a training job**.
 
-    > **IMPORTANT**: Training your model can sometimes take several minutes. You'll get a notification when it's complete.
+    ![](../Images/l18t5p2.png)
 
-## Evaluate your model
+3. In the Start a  Training section, provide the following details:
+
+    - Train a new model named **`ExtractAds` (1)**.
+    - Choose **Automatically split the testing set from training data (2)**
+    - Click **Train (3)**
+
+        ![](../Images/l18t5p3.png)
+
+        > **TIP**: In your own extraction projects, use the testing split that best suits your data. For more consistent data and larger datasets, the Azure AI Language Service will automatically split the testing set by percentage. With smaller datasets, it's important to train with the right variety of possible input documents.
+
+        > **IMPORTANT**: Training your model can sometimes take several minutes. You'll get a notification when it's complete.
+
+## Task 6: Evaluate your model
 
 In real world applications, it's important to evaluate and improve your model to verify it's performing as you expect. Two pages on the left show you the details of your trained model, and any testing that failed.
 
-Select **Model performance** on the left side menu, and select your `ExtractAds` model. There you can see the scoring of your model, performance metrics, and when it was trained. You'll be able to see if any testing documents failed, and these failures help you understand where to improve.
+1. Select **Model performance** on the left side menu, and select your `ExtractAds` model. There you can see the scoring of your model, performance metrics, and when it was trained. You'll be able to see if any testing documents failed, and these failures help you understand where to improve.
 
-## Deploy your model
+    ![](../Images/l18t6p1.png)
+
+## Task 7: Deploy your model
 
 When you're satisfied with the training of your model, it's time to deploy it, which allows you to start extracting entities through the API.
 
 1. In the left pane, select **Deploying a model**.
+
+    ![](../Images/l18t7p1.png)
+
 2. Select **Add deployment**, then enter the name `AdEntities` and select the **ExtractAds** model.
+
+    ![](../Images/l18t7p2.png)
+
 3. Click **Deploy** to deploy your model.
 
-## Prepare to develop an app in Cloud Shell
+    ![](../Images/l18t7p3.png)
+
+## Task 8:  Prepare to develop an app in Cloud Shell
 
 To test the custom entity extraction capabilities of the Azure AI Language service, you'll develop a simple console application in the Azure Cloud Shell.
 
-1. In the Azure Portal, use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, selecting a ***PowerShell*** environment. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal.
+1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, switch it to ***PowerShell***.
+    ![](../Images/l2at2p3.png)
 
-1. In the cloud shell toolbar, in the **Settings** menu, select **Go to Classic version** (this is required to use the code editor).
+    >**Note:** The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
-    **<font color="red">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
+    > **Note:** If you have previously created a cloud shell that uses a **Bash** environment, switch it to **PowerShell**.
+
+1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
+
+    ![](../Images/l2at2p4.png)
+
+1. In the Cloud Shell toolbar, open the **Settings (1)** menu and choose **Go to Classic version (2)** from the drop-down.
+
+    ![](../Images/l2at2p5.png)
+
+    >**Note:** Ensure you've switched to the classic version of the cloud shell before continuing.
 
 1. In the PowerShell pane, enter the following commands to clone the GitHub repo for this exercise:
 
@@ -208,7 +331,7 @@ To test the custom entity extraction capabilities of the Azure AI Language servi
     cd mslearn-ai-language/Labfiles/05-custom-entity-recognition/Python/custom-entities
     ```
 
-## Configure your application
+## Task 9: Configure your application
 
 1. In the command line pane, run the following command to view the code files in the **custom-entities** folder:
 
@@ -237,7 +360,7 @@ To test the custom entity extraction capabilities of the Azure AI Language servi
 1. Update the configuration values to include the  **endpoint** and a **key** from the Azure Language resource you created (available on the **Keys and Endpoint** page for your Azure AI Language resource in the Azure portal).The file should already contain the project and deployment names for your custom entity extraction model.
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
-## Add code to extract entities
+## Task 10: Add code to extract entities
 
 1. Enter the following command to edit the application code file:
 
