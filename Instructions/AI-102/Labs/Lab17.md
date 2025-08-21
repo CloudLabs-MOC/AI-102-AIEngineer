@@ -68,6 +68,8 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 1. Navigate to the **Keys and Endpoint (1)** page in the **Resource Management** section. Copy and paste the **KEY 1 (2)** and **Endpoint (3)**. You will need the information on this page later in the lab.
 
+    ![](../Images/ai17l44.png) 
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
@@ -282,3 +284,215 @@ After you've labeled your data, you need to train your model.
 1. Training your model can sometimes take several minutes. You'll get a notification when it's complete.
 
     ![](../Images/ai17l36.png)
+
+
+### Task 6: Evaluate your model
+
+In real world applications of text classification, it's important to evaluate and improve your model to verify it's performing as you expect.
+
+1. Select **Model performance**, and select your **ClassifyArticles** model. 
+
+    ![](../Images/ai17l37.png)
+
+1. There you can see the scoring of your model, performance metrics, and when it was trained. If the scoring of your model isn't 100%, it means that one of the documents used for testing didn't evaluate to what it was labeled. These failures can help you understand where to improve.
+
+    ![](../Images/ai17l38.png)
+
+1. Select **Test set details** tab. If there are any errors, this tab allows you to see the articles you indicated for testing and what the model predicted them as and whether that conflicts with their test label. The tab defaults to show incorrect predictions only. You can toggle the **Show mismatches only** option to see all the articles you indicated for testing and what they each of them predicted as.
+
+    ![](../Images/ai17l39.png)
+
+### Task 7: Deploy your model
+
+When you're satisfied with the training of your model, it's time to deploy it, which allows you to start classifying text through the API.
+
+1. On the left panel, select **Deploying model (1)**.
+    - Select **Add deployment (2)**
+    - Then enter `articles` **(3)** in the **Create a new deployment name** field
+    - Select **ClassifyArticles (4)** in the **Model** field.
+    - Select **Deploy (5)** to deploy your model.
+
+      ![](../Images/ai17l40.png)
+
+1. Once your model is deployed, leave that page open. You'll need your `project and deployment name` in the next step.
+
+### Task 8: Prepare to develop an app in Cloud Shell
+
+1. Navigate to [Azure portal](https://portal.azure.com/).
+
+1. If prompted, provide the credentials below:
+    
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+
+    ![](../Images/ai11l4.png) 
+
+1. Selecting a **PowerShell** environment.
+
+    ![](../Images/ai11l5.png) 
+
+1. On the **Getting started** page,
+
+    - Select **No storage account required (1)** 
+    - Select your subscription **(2)**
+    - Click on **Apply (3)**
+
+      ![](../Images/ai11l6.png) 
+
+1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
+
+    ![](../Images/ai11l7.png)
+
+     >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+
+     >**Note**: Ensure you've switched to the classic version of the cloud shell before continuing.
+
+1. In the PowerShell pane, enter the following commands to clone the GitHub repo for this exercise:
+
+    ```
+   rm -r mslearn-ai-language -f
+   git clone https://github.com/microsoftlearning/mslearn-ai-language
+    ```
+
+     ![](../Images/ai17l41.png)    
+
+      >**Tip**: As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+
+1. After the repo has been cloned, navigate to the folder containing the application code files:  
+
+    ```
+   cd mslearn-ai-language/Labfiles/04-text-classification/Python/classify-text
+    ```
+
+### Task 9: Configure your application
+
+1. In the command line pane, run the following command to view the code files in the **classify-text** folder:
+
+    ```
+   ls -a -l
+    ```
+
+     ![](../Images/ai17l42.png)        
+
+     The files include a configuration file (**.env**) and a code file (**classify-text.py**). The text your application will analyze is in the **articles** subfolder.
+
+1. Create a Python virtual environment and install the Azure AI Language Text Analytics SDK package and other required packages by running the following command:
+
+    ```
+   python -m venv labenv
+   ./labenv/bin/Activate.ps1
+   pip install -r requirements.txt azure-ai-textanalytics==5.3.0
+    ```
+
+1. Enter the following command to edit the application configuration file:
+
+    ```
+   code .env
+    ```
+
+     ![](../Images/ai17l43.png)      
+
+     The file is opened in a code editor.
+
+1. Update the configuration values to include the  **endpoint (1)** and a **key (2)** from the Azure Language resource you created (available on the **Keys and Endpoint** page for your Azure AI Language resource in the Azure portal that you have copied in `Task 1`).The file should already contain the `project and deployment names` for your text classification model.
+
+     ![](../Images/ai17l45.png) 
+
+1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
+
+### Task 10: Add code to classify documents
+
+1. Enter the following command to edit the application code file:
+
+    ```
+    code classify-text.py
+    ```
+
+1. Review the existing code. You will add code to work with the AI Language Text Analytics SDK.
+
+    ![](../Images/ai17l46.png)   
+     
+     >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.
+
+1. At the top of the code file, under the existing namespace references, find the comment **Import namespaces** and add the following code to import the namespaces you will need to use the Text Analytics SDK:
+
+    ```python
+   # import namespaces
+   from azure.core.credentials import AzureKeyCredential
+   from azure.ai.textanalytics import TextAnalyticsClient
+    ```
+
+     ![](../Images/ai17l47.png)   
+
+1. In the **main** function, note that code to load the Azure AI Language service endpoint and key and the project and deployment names from the configuration file has already been provided. Then find the comment **Create client using endpoint and key**, and add the following code to create a text analysis client:
+
+    ```Python
+   # Create client using endpoint and key
+   credential = AzureKeyCredential(ai_key)
+   ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
+    ```
+
+     ![](../Images/ai17l48.png) 
+
+1. Note that the existing code reads all of the files in the **articles** folder and creates a list containing their contents. Then find the comment **Get Classifications** and add the following code:
+
+     ```Python
+   # Get Classifications
+   operation = ai_client.begin_single_label_classify(
+        batchedDocuments,
+        project_name=project_name,
+        deployment_name=deployment_name
+   )
+
+   document_results = operation.result()
+
+   for doc, classification_result in zip(files, document_results):
+        if classification_result.kind == "CustomDocumentClassification":
+            classification = classification_result.classifications[0]
+            print("{} was classified as '{}' with confidence score {}.".format(
+                doc, classification.category, classification.confidence_score)
+            )
+        elif classification_result.is_error is True:
+            print("{} has an error with code '{}' and message '{}'".format(
+                doc, classification_result.error.code, classification_result.error.message)
+            )
+    ```
+
+     ![](../Images/ai17l49.png)   
+     
+      >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.    
+
+1. Save your changes using (**CTRL+S**).
+
+1. Then enter the following command to run the program (you maximize the cloud shell pane and resize the panels to see more text in the command line pane):
+
+    ```
+   python classify-text.py
+    ```
+
+1. Observe the output. The application should list a `classification and confidence` score for each text file.
+
+     ![](../Images/ai17l50.png)  
+
+1. This output shows:
+
+    - The contents of `test1.txt` looked most like the **Entertainment** category to the model.
+
+    - The contents of `test2.txt` looked most like the **Sports** category to the model.       
+
+1. If you want, you can open them yourself in Cloud Shell by running the following commands:
+
+    ```
+   code articles/test1.txt
+    ```
+
+     ![](../Images/ai17l51.png)  
+
+    ```
+   code articles/test2.txt
+    ```    
+
+     ![](../Images/ai17l52.png)       
