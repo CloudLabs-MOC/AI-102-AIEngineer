@@ -27,7 +27,7 @@ In this lab you create an agent in the Azure AI Foundry and explore the Voice Li
 1. Under **Advanced options**, provide the below details and leave the rest to deafult:
 
     - Resource group: Select **AI-102-RG23 (1)**
-    - Region: Select **Region**: Select **<inject key="Region" enableCopy="false" /> (2)**
+    - Region: Select **<inject key="Region" enableCopy="false" /> (2)**
     - Select **Create (3)**
 
       ![](../Images/ai23l1.png)    
