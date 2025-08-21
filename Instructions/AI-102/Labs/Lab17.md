@@ -420,6 +420,57 @@ When you're satisfied with the training of your model, it's time to deploy it, w
 1. At the top of the code file, under the existing namespace references, find the comment **Import namespaces** and add the following code to import the namespaces you will need to use the Text Analytics SDK:
 
     ```python
+    # import namespaces
+    from azure.core.credentials import AzureKeyCredential
+    from azure.ai.textanalytics import TextAnalyticsClient
+    ```
+
+    ![](../Images/ai17l47.png)
+
+---
+
+1. In the **main** function, note that code to load the Azure AI Language service endpoint and key and the project and deployment names from the configuration file has already been provided. Then find the comment **Create client using endpoint and key**, and add the following code to create a text analysis client:
+
+    ```python
+    # Create client using endpoint and key
+    credential = AzureKeyCredential(ai_key)
+    ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
+    ```
+
+    ![](../Images/ai17l48.png)
+
+---
+
+1. Note that the existing code reads all of the files in the **articles** folder and creates a list containing their contents. Then find the comment **Get Classifications** and add the following code:
+
+    ```python
+    # Get Classifications
+    operation = ai_client.begin_single_label_classify(
+        batchedDocuments,
+        project_name=project_name,
+        deployment_name=deployment_name
+    )
+
+    document_results = operation.result()
+
+    for doc, classification_result in zip(files, document_results):
+        if classification_result.kind == "CustomDocumentClassification":
+            classification = classification_result.classifications[0]
+            print("{} was classified as '{}' with confidence score {}.".format(
+                doc, classification.category, classification.confidence_score)
+            )
+        elif classification_result.is_error is True:
+            print("{} has an error with code '{}' and message '{}'".format(
+                doc, classification_result.error.code, classification_result.error.message)
+            )
+    ```
+
+    ![](../Images/ai17l49.png)
+
+
+1. At the top of the code file, under the existing namespace references, find the comment **Import namespaces** and add the following code to import the namespaces you will need to use the Text Analytics SDK:
+
+    ```python
    # import namespaces
    from azure.core.credentials import AzureKeyCredential
    from azure.ai.textanalytics import TextAnalyticsClient
