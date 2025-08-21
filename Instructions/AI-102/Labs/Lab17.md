@@ -66,7 +66,17 @@ If you don't already have one in your subscription, you'll need to provision an 
 
    ![](../Images/ai17l5.png)
 
-1. Navigate to the **Keys and Endpoint (1)** page in the **Resource Management** section. Copy and paste the **KEY 1 (2)** and **Endpoint (3)**. You will need the information on this page later in the lab. 
+1. Navigate to the **Keys and Endpoint (1)** page in the **Resource Management** section. Copy and paste the **KEY 1 (2)** and **Endpoint (3)**. You will need the information on this page later in the lab.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="ec3cf71e-8167-42bb-95ed-136627c4cccf" />
+ 
+---     
 
 ### Task 2: Upload sample articles
 
@@ -185,4 +195,14 @@ After configuration is complete, create a custom text classification project. Th
 
       ![](../Images/ai17l27.png) 
 
-1. Select **Create project**.       
+1. Select **Create project**.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="eb96f194-63da-4e73-b572-5026853ad24f" />
+ 
+---     
