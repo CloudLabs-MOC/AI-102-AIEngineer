@@ -45,19 +45,19 @@ In this task, you will provision an Azure AI Language service resource in your s
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-        ![](../Images/l14t1p1.png)
+        ![](../Images/AI-l16-0.png)
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/l14t1p2.png)
+        ![](../Images/AIl16-1.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 
-    ![](../Images/aifoundrysignin3.png)
+    ![](../Images/AIl16-2.png)
 
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
 
-    ![](../Images/l2at2p2.png)
+    ![](../Images/AIl16-3.png)
 
 1. On the Azure Portal home page, select **Create a resource**.
 
@@ -94,9 +94,19 @@ In this task, you will provision an Azure AI Language service resource in your s
 
     ![](../Images/AI-l16-7.png)
 
-1. On the **Languageservice** page, in the left navigation pane, select **Resource Management (1)** > **Keys and Endpoint (2)**. Copy the **Endpoint (3)** and **Key (4)** values, and save them in a notepad file. You will need these details later in the exercise.
+1. On the **Languageservice** page, in the left navigation pane, select **Resource Management (1)** > **Keys and Endpoint (2)**. Copy the **Endpoint (3)** and **Key (4)** values, and save them in a notepad. You will need these details later in the exercise.
 
     ![](../Images/AI-l16-8.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="2cf79756-7bf7-41df-bbd8-9263fb99e315" />
+ 
+---   
 
 ### Task 2: Create a conversational language understanding project
 
@@ -144,6 +154,16 @@ In this task, you will create a new project in Language Studio and define the ba
 1. On the **Review and finish** page, select **Create**.
 
       ![](../Images/AI-l16-13.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="747d32ba-5d02-48d1-a454-c22c17bd3d53" />
+ 
+---
 
 ### Task 3: Create intents
 
@@ -282,11 +302,11 @@ In this task, you will train the language model on the defined intents and utter
 
 ## Task 6 Add entities
 
-So far you've defined some simple utterances that map to intents. Most real applications include more complex utterances from which specific data entities must be extracted to get more context for the intent.
+In this task, you will enrich the model by adding different types of entities (learned, list, and prebuilt) so it can extract specific details such as locations, weekdays, and dates
 
 ## Task 6.1: Add a learned entity
 
-The most common kind of entity is a *learned* entity, in which the model learns to identify entity values based on examples.
+The most common kind of entity is a **learned** entity, in which the model learns to identify entity values based on examples.
 
 1. In Language Studio, return to the **Schema definition (1)** page and then on the **Entities (2)** tab, select **&#65291; Add (3)** to add a new entity.
 
@@ -346,7 +366,7 @@ In some cases, valid values for an entity can be restricted to a list of specifi
 
      ![](../Images/AI-l16-43.png)
 
-1. Then, in the **List (1)** section, select **&#65291; Add new list (2)**. Then enter the following value **(3)** and synonym and select **Save (4)**:
+1. Then, in the **List (1)** section, select **&#65291; Add new list (2)**. Then enter the following **value and synonym** **(3)** and select **Save (4)**:
 
     | List key | synonyms|
     |-------------------|---------|
@@ -372,7 +392,7 @@ In some cases, valid values for an entity can be restricted to a list of specifi
 
 1. After adding and saving the list values, return to the **Data labeling (1)** page.
 
-1. Select the **GetDate (2)** intent and enter the following new example utterance **(2)**:
+1. Select the **GetDate (2)** intent and enter the following new example utterance **(2)** and press enter:
 
     `what date was it on Saturday?`
 
@@ -452,13 +472,13 @@ The Azure AI Language service provides a set of **prebuilt** entities that are c
 
 ## Task 7: Retrain the model
 
-Now that you've modified the schema, you need to retrain and retest the model.
+In this task, you will retrain and redeploy the model after adding entities, and review its performance metrics.
 
 1. On the **Training jobs (1)** page, select **Start a training job (2)**.
 
     ![](../Images/AI-l16-60.png)
 
-1. On the **Start a training job** dialog,  select  **overwrite an existing model (1)** and specify the **Clock (2)** model. Select **Train (3)** to train the model. If prompted, confirm you want to overwrite the existing model.
+1. On the **Start a training job** dialog, select **Overwrite an existing model (1)** and choose the **Clock (2)** model from the drop-down list, then  click **Train (3)** to begin training the model.  
 
     ![](../Images/AI-l16-61.png)
 
@@ -474,17 +494,17 @@ Now that you've modified the schema, you need to retrain and retest the model.
 
     ![](../Images/AI-l16-64.png)
 
-1. On the **Deploying a model (1)** page, select **Add deployment (2)**.
+1. Navigate to the **Deploying a model (1)** page and select **Add deployment (2)**.  
 
     ![](../Images/AI-l16-65.png)
 
-1. On the **Add deployment** dialog, select **Override an existing deployment name (1)**, and then select **production (2)**.
+1. On the **Add deployment** dialog, select **Override an existing deployment name (1)**, and then select **production (2)** under **Deployment name** field.
 
 1. Select the **Clock (3)** model in the **Model** field and then select **Deploy (4)** to deploy it. This may take some time.
 
     ![](../Images/AI-l16-66.png)
 
-1. When the model is deployed, on the **Testing deployments (1)** page, select the **production (2)** deployment under the **Deployment name** field, enter the  following text **(3)** and click on **Run the test (4)** :
+1. When the model is deployed, navigate to the **Testing deployments (1)** page, select the **production (2)** deployment under the **Deployment name** field, enter the  following text **(3)** and click on **Run the test (4)** :
 
     `what's the time in Edinburgh?`
 
@@ -508,7 +528,7 @@ Now that you've modified the schema, you need to retrain and retest the model.
 
 ## Task 8: Use the model from a client app
 
-In a real project, you'd iteratively refine intents and entities, retrain, and retest until you are satisfied with the predictive performance. Then, when you've tested it and are satisfied with its predictive performance, you can use it in a client app by calling its REST interface or a runtime-specific SDK.
+In this task, you will configure and extend a Python client application that connects to your deployed model, submits user utterances, and responds based on the predicted intent and entities.
 
 ## Task 8.1: Prepare to develop an app in Cloud Shell
 
@@ -520,7 +540,7 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
 
     ![](../Images/AI-l16-70.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, switch it to **PowerShell**.
+    > **Note**: If you have previously created a cloud shell that uses a **Bash** environment, switch it to **PowerShell**.
 
 1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
@@ -530,7 +550,7 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
 
     ![](../Images/AI-l16-72.png)
 
-    **<font color="black">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
+    >**Note:** **<font color="black">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
 
 1. In the PowerShell pane, enter the following commands to clone the GitHub repo for this exercise:
 
@@ -559,7 +579,7 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
 
     ![](../Images/AI-l16-74.png)
 
-    The files include a configuration file (**.env**) and a code file (**clock-client.py**).
+    >**Note:** The files include a configuration file (**.env**) and a code file (**clock-client.py**).
 
 1. Create a Python virtual environment and install the Azure AI Language Conversations SDK package and other required packages by running the following command:
 
@@ -724,26 +744,26 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
 
 1. When prompted, enter utterances to test the application. For example, try:
 
-    *Hello*
+    `Hello`
 
-    *What time is it?*
+    `What time is it?`
 
-    *What's the time in London?*
+    `What's the time in London?`
 
-    *What's the date?*
+    `What's the date?`
 
-    *What date is Sunday?*
+    `What date is Sunday?`
 
-    *What day is it?*
+    `What day is it?`
 
-    *What day is 01/01/2025?*
+    `What day is 01/01/2025?`
 
     > **Note**: The logic in the application is deliberately simple, and has a number of limitations. For example, when getting the time, only a restricted set of cities is supported and daylight savings time is ignored. The goal is to see an example of a typical pattern for using Language Service in which your application must:
     >   1. Connect to a prediction endpoint.
     >   2. Submit an utterance to get a prediction.
     >   3. Implement logic to respond appropriately to the predicted intent and entities.
 
-1. When you have finished testing, enter *quit*.
+1. When you have finished testing, enter **quit**.
 
     ![](../Images/AI-l16-83.png)
 
