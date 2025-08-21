@@ -36,9 +36,20 @@ If you don't already have one in your subscription, you'll need to provision an 
 
    ![](../Images/ai19l5.png) 
 
-1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Location (3)**. You will need the information on this page later in the exercise.
+1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Location (3)**. You will need the information on this page later in the lab.
 
    ![](../Images/ai19l6.png) 
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="4549feb5-4ca4-4e67-8263-f994108c704e" />
+ 
+---   
+
 
 ### Task 2: Prepare to develop an app in Cloud Shell
 
