@@ -194,7 +194,7 @@ Now you're ready to create a custom named entity recognition project. This proje
 
         ![](../Images/l18t3p5.png)
 
-        > **Tip**: If you get an error about not being authorized to perform this operation, you'll need to add a role assignment. To fix this, we add the role "Storage Blob Data Contributor" on the storage account for the user running the lab. More details can be found [on the documentation page](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource)
+        > **Note:** If you get an error about not being authorized to perform this operation, you'll need to add a role assignment. To fix this, we add the role "Storage Blob Data Contributor" on the storage account for the user running the lab. More details can be found [on the documentation page](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource)
 
 1. In the Review and finish section, click **Create Project**.
 
@@ -265,9 +265,13 @@ After you've labeled your data, you need to train your model.
 
         ![](../Images/l18t5p3.png)
 
-        > **TIP**: In your own extraction projects, use the testing split that best suits your data. For more consistent data and larger datasets, the Azure AI Language Service will automatically split the testing set by percentage. With smaller datasets, it's important to train with the right variety of possible input documents.
+        > **Note:** In your own extraction projects, use the testing split that best suits your data. For more consistent data and larger datasets, the Azure AI Language Service will automatically split the testing set by percentage. With smaller datasets, it's important to train with the right variety of possible input documents.
 
         > **IMPORTANT**: Training your model can sometimes take several minutes. You'll get a notification when it's complete.
+
+4. Once the training job is successful, its status will be updated accordingly.
+
+    ![](../Images/l18t5p4.png)
 
 ## Task 6: Evaluate your model
 
@@ -281,17 +285,13 @@ In real world applications, it's important to evaluate and improve your model to
 
 When you're satisfied with the training of your model, it's time to deploy it, which allows you to start extracting entities through the API.
 
-1. In the left pane, select **Deploying a model**.
+1. In the left pane, select **Deploying a model (1)** and then click **Add deployment (2)**.
 
     ![](../Images/l18t7p1.png)
 
-2. Select **Add deployment**, then enter the name `AdEntities` and select the **ExtractAds** model.
+2. Enter the name **`AdEntities` (1)** and select the **ExtractAds (2)** model and then click **Deploy (3)** to deploy the model.
 
     ![](../Images/l18t7p2.png)
-
-3. Click **Deploy** to deploy your model.
-
-    ![](../Images/l18t7p3.png)
 
 ## Task 8:  Prepare to develop an app in Cloud Shell
 
@@ -318,12 +318,14 @@ To test the custom entity extraction capabilities of the Azure AI Language servi
 1. In the PowerShell pane, enter the following commands to clone the GitHub repo for this exercise:
 
     ```
-   rm -r mslearn-ai-language -f
-   git clone https://github.com/microsoftlearning/mslearn-ai-language
+    rm -r mslearn-ai-language -f
+    git clone https://github.com/microsoftlearning/mslearn-ai-language
     ```
 
-    > **Tip**: As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
-    ```
+    ![](../Images/l18t8p1.png)
+
+    > **Note:** As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+
 
 1. After the repo has been cloned, navigate to the folder containing the application code files:  
 
@@ -331,33 +333,43 @@ To test the custom entity extraction capabilities of the Azure AI Language servi
     cd mslearn-ai-language/Labfiles/05-custom-entity-recognition/Python/custom-entities
     ```
 
+    ![](../Images/l18t8p2.png)
+
 ## Task 9: Configure your application
 
 1. In the command line pane, run the following command to view the code files in the **custom-entities** folder:
 
     ```
-   ls -a -l
+    ls -a -l
     ```
 
+    ![](../Images/l18t9p1.png)
+    
     The files include a configuration file (**.env**) and a code file (**custom-entities.py**). The text your application will analyze is in the **ads** subfolder.
 
 1. Create a Python virtual environment and install the Azure AI Language Text Analytics SDK package and other required packages by running the following command:
 
     ```
-   python -m venv labenv
-   ./labenv/bin/Activate.ps1
-   pip install -r requirements.txt azure-ai-textanalytics==5.3.0
+    python -m venv labenv
+    ./labenv/bin/Activate.ps1
+    pip install -r requirements.txt azure-ai-textanalytics==5.3.0
     ```
 
-1. Enter the following command to edit the application configuration file:
+1. Enter the following command to edit the application configuration file. The file is opened in a code editor.
 
     ```
-   code .env
+    code .env
     ```
 
-    The file is opened in a code editor.
+    ![](../Images/l18t9p2.png)
 
-1. Update the configuration values to include the  **endpoint** and a **key** from the Azure Language resource you created (available on the **Keys and Endpoint** page for your Azure AI Language resource in the Azure portal).The file should already contain the project and deployment names for your custom entity extraction model.
+1. In the code file, replace the placeholder values with the correct details for your project:
+
+    * your_ai_service_endpoint : **Azure Language Service endpoint (1)**
+    * your_ai_service_key : **Azure Language Service Key (2)**
+
+        ![](../Images/l18t9p3.png)
+
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
 ## Task 10: Add code to extract entities
@@ -367,60 +379,75 @@ To test the custom entity extraction capabilities of the Azure AI Language servi
     ```
     code custom-entities.py
     ```
+    
+    ![](../Images/l18t10p1.png)
+
 
 1. Review the existing code. You will add code to work with the AI Language Text Analytics SDK.
 
-    > **Tip**: As you add code to the code file, be sure to maintain the correct indentation.
+    > **Note:** As you add code to the code file, be sure to maintain the correct indentation.
 
 1. At the top of the code file, under the existing namespace references, find the comment **Import namespaces** and add the following code to import the namespaces you will need to use the Text Analytics SDK:
 
     ```python
-   # import namespaces
-   from azure.core.credentials import AzureKeyCredential
-   from azure.ai.textanalytics import TextAnalyticsClient
+    # import namespaces
+    from azure.core.credentials import AzureKeyCredential
+    from azure.ai.textanalytics import TextAnalyticsClient
     ```
+
+    ![](../Images/l18t10p2.png)
 
 1. In the **main** function, note that code to load the Azure AI Language service endpoint and key and the project and deployment names from the configuration file has already been provided. Then find the comment **Create client using endpoint and key**, and add the following code to create a text analytics client:
 
     ```Python
-   # Create client using endpoint and key
-   credential = AzureKeyCredential(ai_key)
-   ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
+    # Create client using endpoint and key
+    credential = AzureKeyCredential(ai_key)
+    ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
     ```
+
+    ![](../Images/l18t10p3.png)
 
 1. Note that the existing code reads all of the files in the **ads** folder and creates a list containing their contents. Then find the comment **Extract entities** and add the following code:
 
     ```Python
-   # Extract entities
-   operation = ai_client.begin_recognize_custom_entities(
-        batchedDocuments,
-        project_name=project_name,
-        deployment_name=deployment_name
-   )
+    # Extract entities
+    operation = ai_client.begin_recognize_custom_entities(
+            batchedDocuments,
+            project_name=project_name,
+            deployment_name=deployment_name
+    )
 
-   document_results = operation.result()
+    document_results = operation.result()
 
-   for doc, custom_entities_result in zip(files, document_results):
-        print(doc)
-        if custom_entities_result.kind == "CustomEntityRecognition":
-            for entity in custom_entities_result.entities:
-                print(
-                    "\tEntity '{}' has category '{}' with confidence score of '{}'".format(
-                        entity.text, entity.category, entity.confidence_score
+    for doc, custom_entities_result in zip(files, document_results):
+            print(doc)
+            if custom_entities_result.kind == "CustomEntityRecognition":
+                for entity in custom_entities_result.entities:
+                    print(
+                        "\tEntity '{}' has category '{}' with confidence score of '{}'".format(
+                            entity.text, entity.category, entity.confidence_score
+                        )
+                    )
+            elif custom_entities_result.is_error is True:
+                print("\tError with code '{}' and message '{}'".format(
+                    custom_entities_result.error.code, custom_entities_result.error.message
                     )
                 )
-        elif custom_entities_result.is_error is True:
-            print("\tError with code '{}' and message '{}'".format(
-                custom_entities_result.error.code, custom_entities_result.error.message
-                )
-            )
     ```
+
+    ![](../Images/l18t10p4.png)
 
 1. Save your changes (CTRL+S), then enter the following command to run the program (you maximize the cloud shell pane and resize the panels to see more text in the command line pane):
 
     ```
-   python custom-entities.py
+    python custom-entities.py
     ```
 
+    ![](../Images/l18t10p5.png)
+
 1. Observe the output. The application should list details of the entities found in each text file.
+
+## Summary
+
+
 

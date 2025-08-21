@@ -169,7 +169,7 @@ In this task, you’ll configure the application by setting up a Python virtual 
 
     The file is opened in a code editor.
 
-1. Update the configuration values to include the  **endpoint** and a **key** from the Azure Language resource you created (available on the **Keys and Endpoint** page for your Azure AI Language resource in the Azure portal).
+1. Update the configuration values to include the  **endpointc (1)** and a **key (2)** from the Azure Language resource you created (available on the **Keys and Endpoint** page for your Azure AI Language resource in the Azure portal).
 
     ![](../Images/l14t3p3.png)
 
