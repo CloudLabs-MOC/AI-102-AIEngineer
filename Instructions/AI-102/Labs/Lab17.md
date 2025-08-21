@@ -206,3 +206,79 @@ After configuration is complete, create a custom text classification project. Th
 <validation step="eb96f194-63da-4e73-b572-5026853ad24f" />
  
 ---     
+
+### Task 4: Label your data
+
+Now that your project is created, you need to label, or tag, your data to train your model how to classify text.
+
+1. On the left, select **Data labeling (1)**, if not already selected. You'll see a list of the files you uploaded to your storage account.
+
+1. On the right side, in the **Activity** pane, select **+ Add class (2)**.
+
+    ![](../Images/ai17l28.png) 
+
+1. The articles in this lab fall into four classes you'll need to create: `Classifieds`, `Sports`, `News`, and `Entertainment`.
+
+1. Provide the class name as `Classifieds` **(1)** and then **Done (2)**.
+
+    ![](../Images/ai17l29.png) 
+
+    - Repeat the same for `Sports`, `News`, and `Entertainment`.   
+
+1. After you've created your four classes, select **Article 1 (1)** to start. *Here you can read the article, define which class this file is, and which dataset (`training` or `testing`) to assign it to*.
+
+1. For the purposes of this lab, we'll define which are to be used for training the model and testing the model. `Please refer this table and` `assign the class and Dataset for each Article`.
+
+    | Article  | Class  | Dataset  |
+    |---------|---------|---------|
+    | Article 1 | Sports | Training |
+    | Article 10 | News | Training |
+    | Article 11 | Entertainment | Testing |
+    | Article 12 | News | Testing |
+    | Article 13 | Sports | Testing |
+    | Article 2 | Sports | Training |
+    | Article 3 | Classifieds | Training |
+    | Article 4 | Classifieds | Training |
+    | Article 5 | Entertainment | Training |
+    | Article 6 | Entertainment | Training |
+    | Article 7 | News | Training |
+    | Article 8 | News | Training |
+    | Article 9 | Entertainment | Training |
+
+1. Select **Article 1 (1)** to start Assign each article the appropriate class and dataset (training or testing) using the **Activity** pane on the right **(2)**.
+
+    ![](../Images/ai17l30.png) 
+
+1. To change the Articles dataset from **Training** to **Testing**. follow the below steps:
+
+    - Select **Article 11.txt** **(1)**, select the label as **Entertainment (2)**. Click on **Training (3)** from the dataset and then select **Testing the models performance (4)**
+
+      ![](../Images/ai17l31.png)    
+ 
+1. You  select **Next** to move to the next document.
+  
+    ![](../Images/ai17l32.png)         
+
+     >**NOTE**: Files in Language Studio are listed alphabetically, which is why the above list is not in sequential order. Make sure you visit both pages of documents when labeling your articles.
+
+1. Select **Save labels** to save your labels.
+
+    ![](../Images/ai17l33.png)    
+
+### Task 5: Train your model
+
+After you've labeled your data, you need to train your model.
+
+1. Select **Training jobs (1)** on the left side menu. Select **Start a training job (2)**.
+
+    ![](../Images/ai17l34.png)
+
+1. Train a new model named `ClassifyArticles` **(1)**. Select **Use a manual split of training and testing data (2)**. and then select **Train (3)**
+
+    ![](../Images/ai17l35.png)
+
+     >**TIP**: In your own classification projects, the Azure AI Language service will automatically split the testing set by percentage which is useful with a large dataset. With smaller datasets, it's important to train with the right class distribution.
+
+1. Training your model can sometimes take several minutes. You'll get a notification when it's complete.
+
+    ![](../Images/ai17l36.png)
