@@ -124,7 +124,69 @@ In this section you change the voice of the agent, and add an avatar to the **Ca
     
     - Then **Start** to launch the agent. Notice the avatar's animation and synchronization to the audio.
 
-      ![](../Images/ai2312.png)         
+      ![](../Images/ai2312.png)   
+
+1. Expand the **> GenAI** section and set the **Proactive engagement** toggle to the `off` position ***(1)**. Next, select **Apply (2)** to save your changes.
+
+    ![](../Images/ai2313.png)  
+
+1. Then **Start** to launch the agent.
+
+    With the **Proactive engagement** turned off, the agent doesn't initiate the conversation. Ask the agent "Can you tell me what you do?" to start the conversation.
+
+1. You can select **Reset to default** and then **Apply** to return the agent to its default behavior.
+
+    ![](../Images/ai2314.png)  
+
+1. When you're finished, proceed to the next section.
+
+### Task 4: Create a voice agent
+
+In this section you create your own voice agent from scratch.
+
+1. Select **Start from blank (1)** in the **Try with your own** section of the panel. 
+
+    - Expand the **> GenAI** section of the **Configuration** panel.
+
+    - Select the **Generative AI model** drop-down menu and choose the **GPT-4.1 Mini (2)** model.
+
+    - Add the following text in the **Response instruction (3)** section.
+
+      ```
+      You are a voice agent named "Ava" who acts as a friendly car rental agent. 
+      ```
+
+    - Set the **Response temperature** slider to a value of `0.8` **(4)** 
+
+    - Set the **Proactive engagement** toggle to the **on** position **(5)**
+
+    - Select **Apply (6)** to save your changes
+
+      ![](../Images/ai2315.png)  
+
+1. Then **Start** to launch the agent.
+
+    The agent will introduce itself and ask how it can help you today. Ask the agent "Do you have any sedans available for rent on Thursday?" Notice how long it takes the agent to respond. Ask the agent other questions to see how it responds. When you're finished, proceed to the next step.
+
+1. Expand the **Speech input (1)** section of the **Configuration** panel.
+
+    - Set the **End of utterance (EOU)** toggle button to the **on (2)** position.
+
+    - Set the **Audio enhancement** toggle button to the **on (3)** position.
+
+    - Select **Apply (4)** to save your changes.
+
+      ![](../Images/ai2316.png)  
+
+1. Then **Start** to launch the agent.
+
+    After the agent introduces itself, ask it `Do you have any planes for rent?`. Notice the agent responds more quickly than it did earlier after finishing your question. The **End of utterance (EOU)** setting configures the agent to detect pauses and your end of speech based on context and semantics. This enables it to have a more natural conversation.
+
+
+
+
+
+
 
 
 
