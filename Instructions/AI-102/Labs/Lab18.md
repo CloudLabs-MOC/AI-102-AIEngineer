@@ -130,7 +130,7 @@ After you've created the Azure AI Language Service and storage account, you'll n
 
    ![](../Images/l18t2p7.png)
 
-## Create a custom named entity recognition project
+## Task 3: Create a custom named entity recognition project
 
 Now you're ready to create a custom named entity recognition project. This project provides a working place to build, train, and deploy your model.
 
@@ -161,12 +161,12 @@ Now you're ready to create a custom named entity recognition project. This proje
 
         ![](../Images/l18t3p1.png)
 
-    If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
+        >**Note:** If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
 
-    1. On the bar at the top of the page, select the **Settings (&#9881;)** button.
-    2. On the **Settings** page, view the **Resources** tab.
-    3. Select the language resource you just created, and click **Switch resource**.
-    4. At the top of the page, click **Language Studio** to return to the Language Studio home page.
+        - On the bar at the top of the page, select the **Settings (&#9881;)** button.
+        - On the **Settings** page, view the **Resources** tab.
+        - Select the language resource you just created, and click **Switch resource**.
+        - At the top of the page, click **Language Studio** to return to the Language Studio home page.
 
 1. At the top of the portal, in the **Create new** menu, select **Custom named entity recognition**.
 
@@ -184,7 +184,7 @@ Now you're ready to create a custom named entity recognition project. This proje
     - Description: **`Custom entities in classified ads` (4)**
     - Click **Next (5)**
 
-    ![](../Images/l18t3p4.png)
+        ![](../Images/l18t3p4.png)
 
 1. In the **Choose Container** section, provide the follwoing information:
 
@@ -222,18 +222,17 @@ Now that your project is created, you need to label your data to train your mode
 
     ![](../Images/l18t4p4.png)
 
-1. In *Ad 1.txt*: 
-    1. Highlight the text **face cord of firewood** and select the **ItemForSale** entity.
+1. In *Ad 1.txt*, highlight the text **face cord of firewood** and select the **ItemForSale** entity.
 
-        ![](../Images/l18t4p5.png)
+    ![](../Images/l18t4p5.png)
 
-    1. Highlight the text **Denver, CO** and select the **Location** entity.
+1. Then highlight the text **Denver, CO** and select the **Location** entity.
 
-        ![](../Images/l18t4p6.png)
+    ![](../Images/l18t4p6.png)
 
-    1. Highlight the text **$90** and select the **Price** entity.
+1. Then highlight the text **$90** and select the **Price** entity.
 
-        ![](../Images/l18t4p7.png)
+    ![](../Images/l18t4p7.png)
 
 1. In the **Activity** pane, note that this document will be added to the dataset for training the model.
 
@@ -442,10 +441,10 @@ To test the custom entity extraction capabilities of the Azure AI Language servi
     ```
     python custom-entities.py
     ```
+    
+1. Observe the output. The application should list details of the entities found in each text file.
 
     ![](../Images/l18t10p5.png)
-
-1. Observe the output. The application should list details of the entities found in each text file.
 
 ## Summary
 

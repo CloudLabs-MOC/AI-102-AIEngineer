@@ -27,7 +27,7 @@ Azure AI Language provides powerful text analysis capabilities, including langua
 
 - **Task 9:** Add code to extract linked entities
 
-### Task 1: Provision an Azure AI Language resource
+## Task 1: Provision an Azure AI Language resource
 
 In this task, you’ll provision an Azure AI Language resource in your subscription. This will give you the necessary endpoint and authentication key, which you’ll use later to build and test language capabilities in your AI solution.
 
@@ -98,7 +98,7 @@ In this task, you’ll provision an Azure AI Language resource in your subscript
  
 <validation step="90093be2-2083-4839-b324-37164c3651c9" />
 
-### Task 2: Clone the repository for this course
+## Task 2: Clone the repository for this course
 
 In this task, you’ll set up your development environment by cloning the course repository into Azure Cloud Shell. This will give you access to the application code files needed for building and running the lab exercises.
 
@@ -137,7 +137,7 @@ In this task, you’ll set up your development environment by cloning the course
     cd mslearn-ai-language/Labfiles/01-analyze-text/Python/text-analysis
     ```
 
-### Task 3: Configure your application
+## Task 3: Configure your application
 
 In this task, you’ll configure the application by setting up a Python virtual environment, installing the required SDK packages, and updating the configuration file with your Azure AI Language resource details. This ensures the app can securely connect to the service and run the text analysis code.
 
@@ -175,7 +175,7 @@ In this task, you’ll configure the application by setting up a Python virtual 
 
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
-### Task 4: Add code to connect to your Azure AI Language resource
+## Task 4: Add code to connect to your Azure AI Language resource
 
 In this task, you’ll update the application code to import the required namespaces and create a client object that connects to your Azure AI Language resource, enabling the app to interact with the Text Analytics API.
 
@@ -221,7 +221,7 @@ In this task, you’ll update the application code to import the required namesp
 
     ![](../Images/l14t4p4.png)
 
-### Task 5: Add code to detect language
+## Task 5: Add code to detect language
 
 In this task, you’ll extend the application to use the Text Analytics client to detect the language of each review document and display the identified language in the output.
 
@@ -243,7 +243,7 @@ In this task, you’ll extend the application to use the Text Analytics client t
 
     ![](../Images/l14t5p2.png)
 
-### Task 6: Add code to evaluate sentiment
+## Task 6: Add code to evaluate sentiment
 
 In this task, you'll add code to evaluate the sentiment of each review. By doing this, you'll classify the text as positive, negative, neutral, or mixed, which helps in understanding the general tone of the feedback.
 
@@ -263,7 +263,7 @@ In this task, you'll add code to evaluate the sentiment of each review. By doing
 
     ![](../Images/l14t6p2.png)
 
-### Task 7: Add code to identify key phrases
+## Task 7: Add code to identify key phrases
 
 In this task, you'll add code to extract key phrases from the reviews. This will help you identify the main topics or themes discussed in the text, giving deeper insights into what the review is about.
 
@@ -286,7 +286,7 @@ In this task, you'll add code to extract key phrases from the reviews. This will
 
     ![](../Images/l14t7p2.png)
 
-### Task 8: Add code to extract entities
+## Task 8: Add code to extract entities
 
 In this task, you'll add code to detect entities such as people, places, and organizations mentioned in the text. Identifying these entities helps categorize and organize the information contained within the reviews.
 
@@ -309,7 +309,7 @@ In this task, you'll add code to detect entities such as people, places, and org
 
     ![](../Images/l14t8p2.png)
 
-### Task 9: Add code to extract linked entities
+## Task 9: Add code to extract linked entities
 
 In this task, you'll add code to recognize linked entities, entities with references to external data sources like Wikipedia. This will provide additional context and allow you to connect the extracted information with authoritative resources.
 

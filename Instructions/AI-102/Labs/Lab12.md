@@ -22,7 +22,7 @@ In this lab, you’ll build a project that orchestrates two AI agents using the 
 
 - **Task 7:** Sign into Azure and run the app
 
-### Task 1: Deploy a model in an Azure AI Foundry project
+## Task 1: Deploy a model in an Azure AI Foundry project
 
 In this task, you’ll sign in to the Azure AI Foundry portal, create a new project using the gpt-4.1 model, configure its deployment settings (including rate limits), and capture the project endpoint for later use in connecting your client application.
 
@@ -102,7 +102,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
  
 <validation step="5067f59b-415f-4007-9926-ff36dcc942d8" />
 
-### Task 2: Create an AI Agent client app
+## Task 2: Create an AI Agent client app
 
 In this task, you’ll use Azure Cloud Shell to clone a GitHub repository that contains the code and configuration files for your client application. You’ll explore the project folder, which includes the agent definition, a custom function, and supporting configuration needed to run the app.
 
@@ -160,7 +160,7 @@ Now you're ready to create a client app that defines an agent and a custom funct
 
 1. The folder contains a code file as well as a configuration file for application settings and a file defining the project runtime and package requrirements.
 
-### Task 3: Configure the application settings
+## Task 3: Configure the application settings
 
 In this task, you’ll set up a Python virtual environment in Azure Cloud Shell, install the required libraries, and configure the application by updating the provided .env file with your project endpoint and model deployment details.
 
@@ -195,7 +195,7 @@ In this task, you’ll set up a Python virtual environment in Azure Cloud Shell,
 
 1. After replacing the placeholders, save your changes in the code editor using **CTRL+S** or **Right-click > Save**. Then close the editor with **CTRL+Q** or **Right-click > Quit**, leaving the Cloud Shell command line open.
 
-### Task 4: Create AI agents
+## Task 4: Create AI agents
 
 In this task, you’ll set up two agents for your multi-agent solution. The first agent, Incident Manager, analyzes service log files, detects issues, and recommends or escalates resolutions. The second agent, DevOps Assistant, handles responses and executes DevOps operations to address the issues.
 
@@ -287,7 +287,7 @@ Now you're ready to create the  agents for your multi-agent solution! Let's get 
 
     The **DevopsPlugin** allows the agent to simulate devops tasks, such as restarting the service or rolling back a transaction.
 
-### Task 5: Define group chat strategies
+## Task 5: Define group chat strategies
 
 In this task, you’ll implement the conversation flow control between agents. Specifically, you’ll define the selection logic to determine which agent should take the next turn based on the chat history, and the termination logic to decide when the conversation should end once the goal has been achieved.
 
@@ -328,7 +328,7 @@ Let's start with the **SelectionStrategy**, which identifies which agent should 
 
     The kernel invokes this function after the agent's response to determine if the completion criteria are met. In this case, the goal is met when the incident manager responds with "No action needed." This phrase is defined in the incident manager agent instructions.
 
-### Task 6: Implement the group chat
+## Task 6: Implement the group chat
 
 In this task, you’ll implement the group chat that brings both agents together with defined strategies. You’ll configure the incident manager and DevOps assistant agents to collaborate, apply a termination strategy (to let the incident manager decide when the chat ends), and set up a selection strategy (to control turn-taking). You’ll then append log file data to the chat, invoke responses from the agents, and run the conversation until the defined termination conditions are met.
 
@@ -379,7 +379,7 @@ In this task, you’ll implement the group chat that brings both agents together
 
 1. Use the **CTRL+S** command to save your changes to the code file. You can keep it open (in case you need to edit the code to fix any errors) or use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
-### Task 7: Sign into Azure and run the app
+## Task 7: Sign into Azure and run the app
 
 In this task, you’ll sign in to Azure Cloud Shell, run the agent_chat.py application, and observe how the AI agents collaborate. You’ll verify that the agents process the log files, update them with resolution messages from the DevOps assistant, and confirm that the system runs as expected.
 
