@@ -79,6 +79,10 @@ To create a knowledge base for question answering in your Azure AI Language reso
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
+1. Close the pop ups.
+
+    ![](../Images/ai17l21.png) 
+
 1. If you're prompted to choose a Language resource, select the following settings:
 
     - **Azure Directory**: The Azure directory containing your subscription **(1)**
