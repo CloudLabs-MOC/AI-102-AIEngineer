@@ -327,49 +327,53 @@ In this exercise, you used audio files for the speech input and output. Let's se
 
 ### Using speech recognition with a microphone
 
-If you have a mic, you can use the following code to capture spoken input for speech recognition:
+1. If you have a mic, you can use the following code to capture spoken input for speech recognition:
 
-```python
-# Configure speech recognition
-audio_config = speech_sdk.AudioConfig(use_default_microphone=True)
-speech_recognizer = speech_sdk.SpeechRecognizer(speech_config, audio_config)
-print('Speak now...')
+    ```python
+    # Configure speech recognition
+    audio_config = speech_sdk.AudioConfig(use_default_microphone=True)
+    speech_recognizer = speech_sdk.SpeechRecognizer(speech_config, audio_config)
+    print('Speak now...')
 
-# Process speech input
-speech = speech_recognizer.recognize_once_async().get()
-if speech.reason == speech_sdk.ResultReason.RecognizedSpeech:
-    command = speech.text
-    print(command)
-else:
-    print(speech.reason)
-    if speech.reason == speech_sdk.ResultReason.Canceled:
-        cancellation = speech.cancellation_details
-        print(cancellation.reason)
-        print(cancellation.error_details)
+    # Process speech input
+    speech = speech_recognizer.recognize_once_async().get()
+    if speech.reason == speech_sdk.ResultReason.RecognizedSpeech:
+        command = speech.text
+        print(command)
+    else:
+        print(speech.reason)
+        if speech.reason == speech_sdk.ResultReason.Canceled:
+            cancellation = speech.cancellation_details
+            print(cancellation.reason)
+            print(cancellation.error_details)
 
-```
+    ```
 
-> **Note**: The system default microphone is the default audio input, so you could also just omit the AudioConfig altogether!
+    ![](../Images/AI-l20-21.png)
+
+    > **Note**: The system default microphone is the default audio input, so you could also just omit the AudioConfig altogether!
 
 ### Using speech synthesis with a speaker
 
-If you have a speaker, you can use the following code to synthesize speech.
+1. If you have a speaker, you can use the following code to synthesize speech.
 
-```python
-response_text = 'The time is {}:{:02d}'.format(now.hour,now.minute)
+    ```python
+    response_text = 'The time is {}:{:02d}'.format(now.hour,now.minute)
 
-# Configure speech synthesis
-speech_config.speech_synthesis_voice_name = "en-GB-RyanNeural"
-audio_config = speech_sdk.audio.AudioOutputConfig(use_default_speaker=True)
-speech_synthesizer = speech_sdk.SpeechSynthesizer(speech_config, audio_config)
+    # Configure speech synthesis
+    speech_config.speech_synthesis_voice_name = "en-GB-RyanNeural"
+    audio_config = speech_sdk.audio.AudioOutputConfig(use_default_speaker=True)
+    speech_synthesizer = speech_sdk.SpeechSynthesizer(speech_config, audio_config)
 
-# Synthesize spoken output
-speak = speech_synthesizer.speak_text_async(response_text).get()
-if speak.reason != speech_sdk.ResultReason.SynthesizingAudioCompleted:
-    print(speak.reason)
-```
+    # Synthesize spoken output
+    speak = speech_synthesizer.speak_text_async(response_text).get()
+    if speak.reason != speech_sdk.ResultReason.SynthesizingAudioCompleted:
+        print(speak.reason)
+    ```
 
-> **Note**: The system default speaker is the default audio output, so you could also just omit the AudioConfig altogether!
+    ![](../Images/AI-l20-22.png)
+
+    > **Note**: The system default speaker is the default audio output, so you could also just omit the AudioConfig altogether!
 
 
 ## More information
