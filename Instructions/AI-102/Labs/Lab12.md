@@ -52,7 +52,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
 
     >**Note:** Close the **Help** pane if it's open
 
-1. In the home page, in the **Explore models and capabilities** section, search for the **gpt-4.1 (1)** model and then select **gpt-4.1 (2)** which we'll use in our project
+1. In the home page, in the **Explore models and capabilities** section, search for the **gpt-4.1 (1)** model and then select **gpt-4.1 (2)** which we'll use in our project.
 
     ![](../Images/aii2.png) 
 
