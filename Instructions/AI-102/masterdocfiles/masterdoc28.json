@@ -1,0 +1,16 @@
+[
+    {
+      "Name": "AI-102-AIEngineer",
+      "Language": "English",
+      "Files": [
+          {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/mslearn-ai-fundamentals/refs/heads/prod/Instructions/Labs/AI900-Gettingstarted/M2a-Gettingstarted.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/new-AI102/Instructions/AI-102/Labs/Lab28.md",
+          "Order": 2
+        }
+      ]
+    }
+  ]

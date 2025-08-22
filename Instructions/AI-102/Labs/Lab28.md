@@ -226,7 +226,7 @@ You can use the UI in the Custom Vision portal to tag your images, but many AI d
     git clone https://github.com/MicrosoftLearning/mslearn-ai-vision
     ```
 
-    [](../Images/AI-l28-23.png)
+    ![](../Images/AI-l28-23.png)
 
     > **Tip**: As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
@@ -236,7 +236,7 @@ You can use the UI in the Custom Vision portal to tag your images, but many AI d
    cd mslearn-ai-vision/Labfiles/object-detection/python/train-detector
    ls -a -l
     ```
-    [](../Images/AI-l28-24.png)
+    ![](../Images/AI-l28-24.png)
 
     > **Note:** The folder contains application configuration and code files for your app. It also contains a **tagged-images.json** file which contains bounding box coordinates for objects in multiple images, and an **/images** subfolder, which contains the images.
 
@@ -254,11 +254,11 @@ You can use the UI in the Custom Vision portal to tag your images, but many AI d
    code .env
     ```
 
-    [](../Images/AI-l28-25.png)
+    ![](../Images/AI-l28-25.png)
 
 1. In the code file, update the configuration values it contains to reflect the **Endpoint** and an authentication **Key** for your Custom Vision **training** resource, and the **Project ID** for the custom vision project you created previously.
 
-    [](../Images/AI-l28-26.png)
+    ![](../Images/AI-l28-26.png)
 
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
@@ -268,7 +268,7 @@ You can use the UI in the Custom Vision portal to tag your images, but many AI d
    code tagged-images.json
     ```
 
-    [](../Images/AI-l28-27.png)
+    ![](../Images/AI-l28-27.png)
 
     JSON defines a list of images, each containing one or more tagged regions. Each tagged region includes a tag name, and the top and left coordinates and width and height dimensions of the bounding box containing the tagged object.
 
@@ -282,7 +282,7 @@ You can use the UI in the Custom Vision portal to tag your images, but many AI d
    code add-tagged-images.py
     ```
 
-     [](../Images/AI-l28-28.png)
+     ![](../Images/AI-l28-28.png)
 
 1. Note the following details in the code file:
     - The namespaces for the Azure AI Custom Vision SDK are imported.
@@ -297,11 +297,11 @@ You can use the UI in the Custom Vision portal to tag your images, but many AI d
 
 1. Wait for the program to end.
 
-    [](../Images/AI-l28-29.png)
+    ![](../Images/AI-l28-29.png)
 
 1. Switch back to the browser tab containing the Custom Vision portal (keeping the Azure portal cloud shell tab open), and view the **Training Images** page for your project (refreshing the browser if necessary). Verify that some new tagged images have been added to the project.
 
-    [](../Images/AI-l28-30.png)
+    ![](../Images/AI-l28-30.png)
 
 ## Task 5: Train and test a model
 
@@ -309,25 +309,25 @@ Now that you've tagged the images in your project, you're ready to train a model
 
 1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. Select the **Quick Training** option and then wait for the training iteration to complete (this may take a minute or so).
 
-   [](../Images/AI-l28-31.png)
+   ![](../Images/AI-l28-31.png)
 
-   [](../Images/AI-l28-32.png)
+   ![](../Images/AI-l28-32.png)
 
     > **Tip**: The Azure cloud shell has a 20-minute inactivity timeout, after which the session is abandoned. While you wait for training to finish, occassionally return to the cloud shell and enter a colland like `ls` to keep the session active.
 
 1. In the Custom Vision portal, when training has finished, review the *Precision*, *Recall*, and *mAP* performance metrics - these measure the prediction accuracy of the object detection model, and should all be high.
 
-     [](../Images/AI-l28-33.png)
+     ![](../Images/AI-l28-33.png)
 
 1. At the top right of the page, click **Quick Test**, and then in the **Image URL** box, type `https://aka.ms/test-fruit` **(1)** and click the **quick test image** (&#10132;) **(2)** button.
 
-     [](../Images/AI-l28-34.png)
+     ![](../Images/AI-l28-34.png)
 
-     [](../Images/AI-l28-35.png)
+     ![](../Images/AI-l28-35.png)
 
 1. View the prediction that is generated.
 
-    [](../Images/AI-l28-36.png)
+    ![](../Images/AI-l28-36.png)
 
 1. Close the **Quick Test** window.
 
@@ -339,30 +339,30 @@ Now you're ready to publish your trained model and use it in a client applicatio
 
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish** to publish the trained model.
  
-    [](../Images/AI-l28-37.png)
+    ![](../Images/AI-l28-37.png)
     
 1. On the **Publish Model** window, enter the following details:     
     - **Model name**: `fruit-detector` **(1)**
     - **Prediction Resource**: **customvision<inject key="DeploymentID"></inject>-Prediction (2)**
     - Click **Publish (3)**
 
-       [](../Images/AI-l28-38.png)
+       ![](../Images/AI-l28-38.png)
 
 1. At the top left of the **Project Settings** page, click the **Projects Gallery** (&#128065;) icon to return to the Custom Vision portal home page, where your project is now listed.
 
-    [](../Images/AI-l28-39.png)
+    ![](../Images/AI-l28-39.png)
 
 1. On the Custom Vision portal home page, at the top right, click the **settings** (&#9881;) icon to view the settings for your Custom Vision service.  
 
-    [](../Images/AI-l28-40.png)
+    ![](../Images/AI-l28-40.png)
 
 1. Under **Resources**, click on **customvision<inject key="DeploymentID"></inject>-Prediction (1)**, then copy the **Key (2)** and **Endpoint (3)** values to a Notepad file for later use.  
 
-   [](../Images/AI-l28-41.png)
+   ![](../Images/AI-l28-41.png)
 
    > **Note:** You can also obtain this information by viewing the resource in the Azure portal. Navigate to **Keys and Endpoint (1)**, then copy **Key 1 (2)**, and the **Endpoint (3)**.  
 
-    [](../Images/AI-l28-18-key2.png)
+    ![](../Images/AI-l28-18-key2.png)
 
 ## Task 7: Use the image classifier from a client application
 
@@ -377,11 +377,11 @@ Now that you've published the image classification model, you can use it from a 
    ls -a -l
     ```
 
-    [](../Images/AI-l28-42.png)
+    ![](../Images/AI-l28-42.png)
 
     > **Note:** The folder contains application configuration and code files for your app. It also contains the following **produce.jpg** image file, which you'll use to test your model.
 
-     [](../Images/AI-l28-49.png)
+     ![](../Images/AI-l28-49.png)
 
 1. Install the Azure AI Custom Vision SDK package for prediction and any other required packages by running the following commands:
 
@@ -397,11 +397,11 @@ Now that you've published the image classification model, you can use it from a 
    code .env
     ```
  
-    [](../Images/AI-l28-43.png)
+    ![](../Images/AI-l28-43.png)
 
 1. Update the configuration values with the **Endpoint** and **Key** you recently copied for your Custom Vision **prediction** resource, along with the **Project ID** for the object detection project and the name of your published model (which should be **fruit-detector**)  
 
-     [](../Images/AI-l28-44.png)
+     ![](../Images/AI-l28-44.png)
 
 1. Save your changes using **CTRL+S** and close the code editor using **CTRL+Q**.  
 
@@ -411,7 +411,7 @@ Now that you've published the image classification model, you can use it from a 
    code test-detector.py
     ```
 
-    [](../Images/AI-l28-45.png)
+    ![](../Images/AI-l28-45.png)
 
 1. Review the code, noting the following details:
     - The namespaces for the Azure AI Custom Vision SDK are imported.
@@ -423,7 +423,7 @@ Now that you've published the image classification model, you can use it from a 
     ```
    python test-detector.py
     ```
-    [](../Images/AI-l28-46.png)
+    ![](../Images/AI-l28-46.png)
   
 1. Review the program output, which lists each object detected in the image.
 
@@ -434,7 +434,7 @@ Now that you've published the image classification model, you can use it from a 
     ```
 1. The download command creates a popup link at the bottom right of your browser, click **Click here to download your file (2)** to download and open it. 
 
-    [](../Images/AI-l28-47.png)
+    ![](../Images/AI-l28-47.png)
 
 1. The downloaded image should display the detected objects, similar to the example shown below: 
 
