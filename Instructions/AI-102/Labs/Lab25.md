@@ -57,7 +57,7 @@ In this task, you’ll provision an Azure AI Vision resource in the Azure portal
     - Subscription: **Choose Default Subscription (1)**
     - Resource group: **AI-102-RG25 (2)**
     - Region: **<inject key="Region" enableCopy="false" /> (3)**
-    - Name: **speechservice<inject key="DeploymentID" enableCopy="false"/> (4)**
+    - Name: **computervision<inject key="DeploymentID" enableCopy="false"/> (4)**
     - Pricing tier: **F0 (5)** (*free*), or **S** (*standard*) if F is not available.
     - Responsible AI notice: **Selected (6)**
 
