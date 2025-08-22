@@ -193,6 +193,45 @@ To use the Video Indexer API, you need some information to authenticate requests
       ![](../Images/ai29l21.png)     
 
 
+### Task 6: Use the REST API
+
+Now that you have the account ID and an API key, you can use the REST API to work with videos in your account. In this procedure, you'll use a PowerShell script to make REST calls; but the same principles apply with HTTP utilities such as cURL or Postman, or any programming language capable of sending and receiving JSON over HTTP.
+
+All interactions with the Video Indexer REST API follow the same pattern:
+
+- An initial request to the **AccessToken** method with the API key in the header is used to obtain an access token.
+- Subsequent requests use the access token to authenticate when calling REST methods to work with videos.
+
+1. In the cloud shell, use the following command to open the PowerShell script:
+
+    ```
+   code get-videos.ps1
+    ```
+    
+     ![](../Images/ai29l22.png)  
+
+1. In the PowerShell script, replace the **YOUR_ACCOUNT_ID (1)** and **YOUR_API_KEY (2)** placeholders with the account ID and API key values you identified previously.
+
+    ![](../Images/ai29l23.png)
+
+1. Observe that the *location* for a free account is "trial". If you have created an unrestricted Video Indexer account (with an associated Azure resource), you can change this to the location where your Azure resource is provisioned (for example "eastus").
+
+1. Review the code in the script, noting that invokes two REST methods: one to get an access token, and another to list the videos in your account.
+
+1. Save your changes (press *CTRL+S*), close the code editor (press *CTRL+Q*).
+
+1. Then run the following command to execute the script:
+
+    ```
+   ./get-videos.ps1
+    ```
+    
+1. View the JSON response from the REST service, which should contain details of the **Responsible AI** video you indexed previously.
+
+    ![](../Images/ai29l24.png)
+
+    
+
 
 
 
