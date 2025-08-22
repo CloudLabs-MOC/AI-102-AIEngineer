@@ -4,20 +4,11 @@
 
 ## Overview
 
-The **Azure AI Custom Vision** service enables you to create computer vision models that are trained on your own images. You can use it to train *image classification* and *object detection* models; which you can then publish and consume from applications.
+The Azure AI Custom Vision service lets you build computer vision models tailored to your own dataset. It supports both image classification and object detection, and once trained, models can be published to a prediction endpoint for use in applications.
 
-In this exercise, you will use the Custom Vision service to train an image classification model that can identify three classes of fruit (apple, banana, and orange).
+In this lab, you’ll train an image classification model to distinguish between apples, bananas, and oranges using the Custom Vision service.
 
-While this exercise is based on the Azure Custom Vision Python SDK, you can develop vision applications using multiple language-specific SDKs; including:
-
-* [Azure Custom Vision for JavaScript (training)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-training)
-* [Azure Custom Vision for JavaScript (prediction)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction)
-* [Azure Custom Vision for Microsoft .NET (training)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training/)
-* [Azure Custom Vision for Microsoft .NET (prediction)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction/)
-* [Azure Custom Vision for Java (training)](https://search.maven.org/artifact/com.azure/azure-cognitiveservices-customvision-training/1.1.0-preview.2/jar)
-* [Azure Custom Vision for Java (prediction)](https://search.maven.org/artifact/com.azure/azure-cognitiveservices-customvision-prediction/1.1.0-preview.2/jar)
-
-This exercise takes approximately **45** minutes.
+Although the lab demonstrates the process with the Python SDK in Azure Cloud Shell, you can also use other language-specific SDKs to build and integrate Custom Vision applications.
 
 ## Lab Objectives 
 
@@ -43,7 +34,7 @@ This exercise takes approximately **45** minutes.
 
 ## Task 1: Create Custom Vision resources
 
-Before you can train a model, you will need Azure resources for *training* and *prediction*. You can create **Custom Vision** resources for each of these tasks, or you can create a single resource and use it for both. In this exercise, you'll create **Custom Vision** resources for training and prediction.
+In this task, you’ll create the required Custom Vision resources in Azure to support both training and prediction. You’ll provision two separate resources, one for training and one for prediction, so that you can build and later use your image classification model.
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
@@ -73,7 +64,7 @@ Before you can train a model, you will need Azure resources for *training* and *
 
     ![](../Images/l27t1p2.png)
 
-1. Provision the resource using the following settings and the click on **Review + create**:
+1. Provision the resource using the following settings and then click on **Review + create**:
 
     - Create options: **Both (1)**
     - Subscription: **Choose Default Subscription (2)**
@@ -103,7 +94,7 @@ Before you can train a model, you will need Azure resources for *training* and *
 
 ## Task 2: Create a Custom Vision project in the Custom Vision portal
 
-To train an image classification model, you need to create a Custom Vision project based on your training resource. To do this, you'll use the Custom Vision portal.
+In this task, you’ll create a Custom Vision project in the Custom Vision portal using your training resource. This project will serve as the foundation for building and training your image classification model.
 
 1. Open a new browser tab (keeping the Azure portal tab open - you'll return to it later).
 
@@ -138,6 +129,8 @@ To train an image classification model, you need to create a Custom Vision proje
         ![](../Images/l27t2p4.png)
 
 ## Task 3: Upload and tag images
+
+In this task, you’ll upload training images of apples, bananas, and oranges into your Custom Vision project and tag them appropriately so that the model can learn to classify each fruit.
 
 1. In a new browser tab, download the [training images](https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/main/Labfiles/image-classification/training-images.zip) from `https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/main/Labfiles/image-classification/training-images.zip` 
 
@@ -179,6 +172,8 @@ To train an image classification model, you need to create a Custom Vision proje
 
 ## Task 4: Train a model
 
+In this task, you’ll train a classification model using your tagged images, then review performance metrics like Precision, Recall, and Average Precision (AP) to understand how accurately the model can classify fruit images.
+
 1. In the Custom Vision project, above the images, click **Train** (&#9881;<sub>&#9881;</sub>) to train a classification model using the tagged images. Select the **Quick Training** option, and then wait for the training iteration to complete (this may take a minute or so).
 
     ![](../Images/l27t4p1.png)
@@ -189,9 +184,11 @@ To train an image classification model, you need to create a Custom Vision proje
 
     ![](../Images/l27t4p3.png)
 
-> **Note**: The performance metrics are based on a probability threshold of 50% for each prediction (in other words, if the model calculates a 50% or higher probability that an image is of a particular class, then that class is predicted). You can adjust this at the top-left of the page.
+    > **Note**: The performance metrics are based on a probability threshold of 50% for each prediction (in other words, if the model calculates a 50% or higher probability that an image is of a particular class, then that class is predicted). You can adjust this at the top-left of the page.
 
 ## Task 5: Test the model
+
+In this task, you’ll test your trained model by submitting sample images through the Quick Test feature. You’ll use the Prediction resource endpoint and key to send images and review the probability scores returned, validating how well the model identifies apples, bananas, and oranges.
 
 1. Above the performance metrics, click **Quick Test**.
 
@@ -218,7 +215,7 @@ To train an image classification model, you need to create a Custom Vision proje
 
 ## Task 6: View the project settings
 
-The project you have created has been assigned a unique identifier, which you will need to specify in any code that interacts with it.
+In this task, you’ll review your project’s settings to identify key details required for integration. You’ll locate the unique Project ID along with the training resource Key and Endpoint, which are necessary when connecting applications or code to your Custom Vision project.
 
 1. Click the **settings** (&#9881;) icon at the top right of the **Performance** page to view the project settings.
 
@@ -234,7 +231,7 @@ The project you have created has been assigned a unique identifier, which you wi
 
 ## Task 7: Use the training API
 
-The Custom Vision portal provides a convenient user interface that you can use to upload and tag images, and train models. However, in some scenarios you may want to automate model training by using the Custom Vision training API.
+In this task, you’ll use the Custom Vision training API to automate model training. This involves setting up your environment in Cloud Shell, installing the required SDKs, configuring authentication, and running code that connects to your project. By doing this, you’ll learn how to programmatically retrain your model with new images, making the process more efficient and repeatable.
 
 1. Return to the browser tab containing the Azure portal (keeping the Custom Vision portal tab open - you'll return to it later).
 
@@ -308,6 +305,8 @@ The Custom Vision portal provides a convenient user interface that you can use t
 
 ## Task 8: Write code to perform model training
 
+In this task, you’ll write and run Python code to train your Custom Vision model. You’ll review how the code authenticates using your project settings, uploads tagged images from local folders, and starts a new training iteration. By the end, you’ll see the newly added images and confirm that a fresh training iteration has been created in the Custom Vision portal.
+
 1. In the cloud shell command line, enter the following command to open the code file for the client application:
 
     ```
@@ -341,7 +340,7 @@ The Custom Vision portal provides a convenient user interface that you can use t
 
 ## Task 9:  Use the image classifier in a client application
 
-Now you're ready to publish your trained model and use it in a client application.
+In this task, you’ll publish your trained Custom Vision model and set it up for use in a client application. You’ll configure the model with a name, link it to the prediction resource, and then retrieve the endpoint and key values needed for prediction. By the end, you’ll have a published model ready to integrate into applications for image classification.
 
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish (1)** to publish the trained model with the following settings:
 
@@ -364,6 +363,8 @@ Now you're ready to publish your trained model and use it in a client applicatio
     ![](../Images/l27t9p4.png)
 
 ## Task 10: Use the image classifier from a client application
+
+In this task, you’ll use the trained image classification model from a client application. You’ll configure the app with your prediction resource details, project ID, and published model name, then review how the code uses the Azure AI Custom Vision SDK to classify images. Finally, you’ll run the app to test images and see the predicted labels with their probability scores.
 
 1. Return to the browser tab containing the Azure portal and the cloud shell pane.
 1. In cloud shell, run the following commands to switch to the folder for your client application and view the files it contains:
@@ -403,7 +404,7 @@ Now you're ready to publish your trained model and use it in a client applicatio
 
         ![](../Images/l27t10p4.png)
 
-1.Save your changes (*CTRL+S*) and close the code editor (*CTRL+Q*).
+1. Save your changes (*CTRL+S*) and close the code editor (*CTRL+Q*).
 
 1. In the cloud shell command line, enter the following command to open the code file for the client application:
 
@@ -430,13 +431,9 @@ Now you're ready to publish your trained model and use it in a client applicatio
 
     **IMG_TEST_1.jpg**
 
-    <br/><br/>
-
     ![Image of a banana](../Images/banana.png)
 
     **IMG_TEST_2.jpg**
-
-    <br/><br/>
 
     ![Image of an orange](../Images/orange.png)
 
@@ -449,3 +446,8 @@ Now you're ready to publish your trained model and use it in a client applicatio
 
 ## Summary
 
+In this lab, you created an image classification solution with Azure AI Custom Vision. You provisioned training and prediction resources, set up your environment in Cloud Shell, and configured the sample application with your endpoint and keys. You then built a Custom Vision project, uploaded and labeled images, trained a model, and published it to the prediction resource. Finally, you ran a Python client app to test the model on sample images and view classification results with confidence scores.
+
+Through these steps, you learned how to train, deploy, and consume a Custom Vision model, and integrate it into a client application for real-world image classification tasks.
+
+### You have successfully completed the Hands-on Lab!
