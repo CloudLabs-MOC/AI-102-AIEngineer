@@ -1,20 +1,36 @@
 # Lab 18: Extract custom entities
 
-### Estimated Duration : Minutes
+### Estimated Duration : 35 Minutes
 
-In addition to other natural language processing capabilities, Azure AI Language Service enables you to define custom entities, and extract instances of them from text.
+## Overview
 
-To test the custom entity extraction, we'll create a model and train it through Azure AI Language Studio, then use a Python application to test it.
+Azure AI Language makes it possible to go beyond prebuilt text analysis by creating custom models that recognize entities specific to your needs. In this lab, you’ll work with a set of sample classified ads and use Azure AI Language Studio to build a custom named entity recognition model. You’ll label the data with entities such as items for sale, prices, and locations, train and evaluate your model, and then deploy it as an endpoint. Finally, you’ll use a Python application in Azure Cloud Shell to test the deployed model and extract entities from new text. While this exercise uses Python, you can integrate the service into applications built in other languages using the Azure AI Language SDKs.
 
-While this exercise is based on Python, you can develop text classification applications using multiple language-specific SDKs; including:
+## Lab Objectives
 
-- [Azure AI Text Analytics client library for Python](https://pypi.org/project/azure-ai-textanalytics/)
-- [Azure AI Text Analytics client library for .NET](https://www.nuget.org/packages/Azure.AI.TextAnalytics)
-- [Azure AI Text Analytics client library for JavaScript](https://www.npmjs.com/package/@azure/ai-text-analytics)
+- **Task 1:** Provision an Azure AI Language resource
 
-This exercise takes approximately **35** minutes.
+- **Task 2:** Upload sample ads
+
+- **Task 3:** Create a custom named entity recognition project
+
+- **Task 4:** Label your data
+
+- **Task 5:** Train your model
+
+- **Task 6:** Evaluate your model
+
+- **Task 7:** Deploy your model
+
+- **Task 8:**  Prepare to develop an app in Cloud Shell
+
+- **Task 9:** Configure your application
+
+- **Task 10:** Add code to extract entities
 
 ## Task 1: Provision an Azure AI Language resource
+
+In this task, you’ll sign in to the Azure portal, create a new Language service resource with custom named entity recognition enabled, configure it with the required settings, and then retrieve the endpoint and access key for later use in exercises.
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
@@ -78,9 +94,17 @@ This exercise takes approximately **35** minutes.
 
     ![](../Images/l18t1p5.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="45e2dfb8-1764-425a-bd3a-a58b71baa3f3" />
+
 ## Task 2: Upload sample ads
 
-After you've created the Azure AI Language Service and storage account, you'll need to upload example ads to train your model later.
+In this task, you’ll download sample classified ads, configure your Azure Storage account for anonymous blob access, create a new container, and then upload the sample ads to the container. These files will later be used to train your custom entity recognition model.
 
 1. Within the JumpVM, in a new browser tab, download sample classified ads from `https://aka.ms/entity-extraction-ads`.
 
@@ -132,7 +156,7 @@ After you've created the Azure AI Language Service and storage account, you'll n
 
 ## Task 3: Create a custom named entity recognition project
 
-Now you're ready to create a custom named entity recognition project. This project provides a working place to build, train, and deploy your model.
+In this task, you’ll use Azure AI Language Studio to create a new custom named entity recognition project. You’ll connect it to your storage container, configure the project with basic details, and set it up as the workspace where you’ll label data, train, and eventually deploy your model.
 
 > **NOTE**: You can also create, build, train, and deploy your model through the REST API.
 
@@ -200,9 +224,17 @@ Now you're ready to create a custom named entity recognition project. This proje
 
     ![](../Images/l18t3p6.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="d1d8585a-ac12-4413-9755-926b0aaf609d" />
+
 ## Task 4: Label your data
 
-Now that your project is created, you need to label your data to train your model how to identity entities.
+In this task, you’ll label the sample ads in your project by defining entities such as ItemForSale, Price, and Location, and tagging the corresponding text in each document. This labeling process prepares your dataset so the model can learn how to identify these entities during training.
 
 1. On the **Data labeling** page, you’ll find a list of the files uploaded to your storage account.
 
@@ -246,7 +278,7 @@ Now that your project is created, you need to label your data to train your mode
 
 ## Task 5: Train your model
 
-After you've labeled your data, you need to train your model.
+In this task, you’ll train your custom named entity recognition model by starting a new training job, configuring it with a name and data split, and running the process to generate a model that can later be tested and deployed.
 
 1. Select **Training jobs** in the pane on the left.
 
@@ -274,6 +306,8 @@ After you've labeled your data, you need to train your model.
 
 ## Task 6: Evaluate your model
 
+In this task, you’ll review the performance of your trained model by examining its metrics, scores, and any failed test documents. This evaluation helps you understand how well the model recognizes entities and where it may need improvement.
+
 In real world applications, it's important to evaluate and improve your model to verify it's performing as you expect. Two pages on the left show you the details of your trained model, and any testing that failed.
 
 1. Select **Model performance** on the left side menu, and select your `ExtractAds` model. There you can see the scoring of your model, performance metrics, and when it was trained. You'll be able to see if any testing documents failed, and these failures help you understand where to improve.
@@ -282,7 +316,7 @@ In real world applications, it's important to evaluate and improve your model to
 
 ## Task 7: Deploy your model
 
-When you're satisfied with the training of your model, it's time to deploy it, which allows you to start extracting entities through the API.
+In this task, you’ll deploy your trained model by creating a deployment named AdEntities, making it available for use through the API to extract entities from new data.
 
 1. In the left pane, select **Deploying a model (1)** and then click **Add deployment (2)**.
 
@@ -294,7 +328,7 @@ When you're satisfied with the training of your model, it's time to deploy it, w
 
 ## Task 8:  Prepare to develop an app in Cloud Shell
 
-To test the custom entity extraction capabilities of the Azure AI Language service, you'll develop a simple console application in the Azure Cloud Shell.
+In this task, you’ll set up an Azure Cloud Shell environment, clone the lab repository, and prepare the console application code that will be used to test your custom entity extraction model.
 
 1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
@@ -336,6 +370,8 @@ To test the custom entity extraction capabilities of the Azure AI Language servi
 
 ## Task 9: Configure your application
 
+In this task, you’ll set up a Python environment in Cloud Shell, install the required SDK packages, and configure your application by adding the Azure Language Service endpoint and key to the environment file. This prepares the app to connect to your deployed model.
+
 1. In the command line pane, run the following command to view the code files in the **custom-entities** folder:
 
     ```
@@ -372,6 +408,8 @@ To test the custom entity extraction capabilities of the Azure AI Language servi
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
 ## Task 10: Add code to extract entities
+
+In this task, you’ll update the Python application to use the Azure AI Language Text Analytics SDK, add code to create a client and extract custom entities from the sample ads, and then run the program to view the recognized entities and their details.
 
 1. Enter the following command to edit the application code file:
 
@@ -448,5 +486,8 @@ To test the custom entity extraction capabilities of the Azure AI Language servi
 
 ## Summary
 
+In this lab, you created and configured an Azure AI Language Service resource, uploaded training data, and built a custom named entity recognition project in Language Studio. You labeled entities in sample ads, trained and evaluated your model, and deployed it as an endpoint. Finally, you modified and ran a Python application in Azure Cloud Shell to test the model and extract custom entities such as items for sale, prices, and locations. By completing these tasks, you gained practical experience in designing, training, and deploying a custom NER solution with Azure AI Language.
+
+### You have successfully completed the Hands-on Lab!
 
 

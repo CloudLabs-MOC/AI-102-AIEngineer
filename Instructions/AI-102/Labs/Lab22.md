@@ -4,22 +4,29 @@
 
 ## Overview
 
-In this exercise, you use the *Phi-4-multimodal-instruct* generative AI model to generate responses to prompts that include audio files. You'll develop an app that provides AI assistance for a produce supplier company by using Azure AI Foundry and the Python OpenAI SDK to summarize voice messages left by customers.
+This lab demonstrates how to deploy and interact with a multimodal AI model using Azure AI Foundry. You’ll start by creating a new Azure AI Foundry project and deploying the Phi-4-multimodal-instruct model, giving you a dedicated workspace and a project endpoint for client applications. Next, you’ll configure and build a Python client application that connects to the deployed model using the Azure AI Foundry and Azure AI Model Inference SDKs.
 
-While this exercise is based on Python, you can develop similar applications using multiple language-specific SDKs; including:
+You’ll then write code to initialize the project client, obtain a chat client, and handle user interactions. The lab focuses on audio input processing, showing how to encode audio files, submit them along with user prompts to the model, and receive responses. Through iterative steps, you’ll run the application, test it with different audio files, and observe how the model responds to prompts, demonstrating real-time audio-to-text interactions and summarization capabilities.
 
-- [Azure AI Projects for Python](https://pypi.org/project/azure-ai-projects)
-- [OpenAI library for Python](https://pypi.org/project/openai/)
-- [Azure AI Projects for Microsoft .NET](https://www.nuget.org/packages/Azure.AI.Projects)
-- [Azure OpenAI client library for Microsoft .NET](https://www.nuget.org/packages/Azure.AI.OpenAI)
-- [Azure AI Projects for JavaScript](https://www.npmjs.com/package/@azure/ai-projects)
-- [Azure OpenAI library for TypeScript](https://www.npmjs.com/package/@azure/openai)
+By the end of this lab, you’ll have hands-on experience in deploying a multimodal model in Azure AI Foundry, building a client application to communicate with it, and leveraging audio and text inputs to interact with a sophisticated AI model.
 
-This exercise takes approximately **30** minutes.
+## Lab Objectives
+
+- **Task 1:** Create an Azure AI Foundry project
+
+- **Task 2:** Create a client application
+
+- **Task 3:** Write code to connect to your project and get a chat client for your model
+
+- **Task 4:** Write code to submit an audio-based prompt
+
+- **Task 5:** Sign into Azure and run the app
+
+- **Task 6:** Use a different audio file
 
 ## Task 1: Create an Azure AI Foundry project
 
-Let's start by deploying a model in an Azure AI Foundry project.
+In this task, you’ll create an Azure AI Foundry project and deploy the Phi-4-multimodal-instruct model to it. This will give us a dedicated project workspace in Azure AI Foundry with a deployed model, along with the project endpoint that client applications can use to connect and interact with the model.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -84,13 +91,17 @@ Let's start by deploying a model in an Azure AI Foundry project.
 
     ![](../Images/l22t1p7.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="390501fa-de0f-43ee-8719-39358a3b52b6" />
+
 ## Task 2: Create a client application
 
-Now that you deployed a model, you can use the Azure AI Foundry and Azure AI Model Inference SDKs to develop an application that chats with it.
-
-> **Tip**: You can choose to develop your solution using Python or Microsoft C#. Follow the instructions in the appropriate section for your chosen language.
-
-### Prepare the application configuration
+In this task, you’ll configure and build a client application that interacts with your deployed Azure AI model. You’ll set up the Azure Cloud Shell environment, clone the code repository, install the required SDKs and libraries, and configure the application with your project details so it can connect to the Azure AI Foundry model deployment and initiate chat interactions.
 
 1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
@@ -157,6 +168,8 @@ Now that you deployed a model, you can use the Azure AI Foundry and Azure AI Mod
 
 ## Task 3: Write code to connect to your project and get a chat client for your model
 
+In this task, you’ll write the code to connect your application to the Azure AI Foundry project and get a chat client for your deployed model. You’ll import the required SDK namespaces, initialize the project client with secure credentials, and then create a chat client that enables your application to communicate with the model.
+
 1. Enter the following command to edit the code file:
 
     ```
@@ -206,7 +219,7 @@ Now that you deployed a model, you can use the Azure AI Foundry and Azure AI Mod
 
 ## Task 4: Write code to submit an audio-based prompt
 
-Before submitting the prompt, we need to encode the audio file for the request. Then we can attach the audio data to the user's message with a prompt for the LLM. Note that the code includes a loop to allow the user to input a prompt until they enter "quit". 
+In this task, you’ll update your application to handle audio input by encoding an audio file and attaching it to a user prompt. You’ll write code to submit the audio data along with a text message to the deployed model and receive a response, enabling the application to interact with the model using both audio and text inputs.
 
 1. Under the comment **Encode the audio file**, enter the following code to prepare the following audio file:
 
@@ -257,6 +270,8 @@ Before submitting the prompt, we need to encode the audio file for the request. 
 
 ## Task 5: Sign into Azure and run the app
 
+In this task, you’ll sign into Azure from the Cloud Shell, run the audio chat application, and submit a user prompt. You’ll observe how the deployed model processes the input, including audio content, and returns a response, allowing you to verify the application’s interaction with the Azure AI Foundry model.
+
 1. In the cloud shell command-line pane, enter the following command to sign into Azure. Click on the **Link (1)** and copy the **code (2)** provided.
 
     ```
@@ -304,6 +319,8 @@ Before submitting the prompt, we need to encode the audio file for the request. 
 
 ## Task 6: Use a different audio file
 
+In this task, you’ll modify your application to use a different audio file for processing and then run the app to submit a prompt. You’ll observe how the model analyzes the new audio input, generates a response, and provides a summary, allowing you to test the application with different scenarios and user queries.
+
 1. In the code editor for your app code, find the code you added previously under the comment **Encode the audio file**. Then modify the file path url as follows to use a different audio file for the request (leaving the existing code after the file path):
 
     ```python
@@ -347,4 +364,6 @@ Before submitting the prompt, we need to encode the audio file for the request. 
 
 ## Summary
 
-In this exercise, you used Azure AI Foundry and the Azure AI Inference SDK to create a client application uses a multimodal model to generate responses to audio.
+In this lab, you deployed the Phi-4-multimodal-instruct model in Azure AI Foundry and created a client application to interact with it. You configured the Azure Cloud Shell environment, cloned the necessary repository, and set up the application with your project details. You then wrote code to connect to your project, obtain a chat client, and handle user prompts with audio input. By encoding audio files and submitting them along with text prompts, you tested the model’s ability to process multimodal input and generate responses. Through these tasks, you gained practical experience in deploying a multimodal AI model, building a client application, and using Azure AI Foundry to interact with AI models that understand both audio and text.
+
+### You have successfully completed the Hands-on Lab!
