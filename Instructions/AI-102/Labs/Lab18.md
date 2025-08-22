@@ -110,49 +110,49 @@ In this task, you’ll download sample classified ads, configure your Azure Stor
 
 1. Select the **folder** icon.
 
-   ![](../Images/l18t2p1.png)
+    ![](../Images/l18t2p1.png)
 
 1. Right click on **ads** folder **(1)** and then select **Extract (2)**.  
 
-   ![](../Images/l18t2p2.png)
+    ![](../Images/l18t2p2.png)
 
 1. Change the destination path to `C:\LabFiles` **(1)** and then click **Extract all (2)**.
 
-   ![](../Images/l18t2p3.png)
+    ![](../Images/l18t2p3.png)
 
 1. In the **Azure portal**, search for **storage account (1)**and select it **(2)**.
 
-   ![](../Images/ai17l13.png)
+    ![](../Images/ai17l13.png)
 
 1. Select the storage account **storage<inject key="DeploymentID" enableCopy="false"/>** you created.
 
-   ![](../Images/ai17l14.png)
+    ![](../Images/ai17l14.png)
 
 1. In your storage account select **Configuration (1)**, located below **Settings**. In the Configuration screen enable the option to **Allow Blob anonymous access (2)** then select **Save (3)**.
 
-   ![](../Images/ai17l15.png)
+    ![](../Images/ai17l15.png)
 
 1. Select **Containers (1)** in the left menu, located below **Data storage**. On the screen that appears, select **+ Container (2)**. Give the container the name `classifieds` **(3)**, and set **Anonymous access level** to **Container (anonymous read access for containers and blobs) (4)** and then **Create (5)**.
 
-   ![](../Images/l18t2p4.png)
+    ![](../Images/l18t2p4.png)
 
     >**NOTE**: When you configure a storage account for a real solution, be careful to assign the appropriate access level. To learn more about each access level, see the [Azure Storage documentation](https://learn.microsoft.com/azure/storage/blobs/anonymous-read-access-configure).
 
 1. After you've created the container, select **classifieds** container.
 
-   ![](../Images/l18t2p5(1).png)
+    ![](../Images/l18t2p5(1).png)
 
 1. Select the **Upload (1)** button. Select **Browse for files (2)** to browse for the sample classified ads you downloaded. 
 
-   ![](../Images/l18t2p5.png)
+    ![](../Images/l18t2p5.png)
 
 1. Navigate to `C:\LabFiles` **(1)**, select all the files from `Ad 1 - Ad 12` **(2)** and then click **Open (3)**.  
 
-   ![](../Images/l18t2p6.png)
+    ![](../Images/l18t2p6.png)
 
 1. Click on **Upload** to upload the sample classified ads you downloaded.
 
-   ![](../Images/l18t2p7.png)
+    ![](../Images/l18t2p7.png)
 
 ## Task 3: Create a custom named entity recognition project
 
@@ -248,7 +248,7 @@ In this task, you’ll label the sample ads in your project by defining entities
     - `Price`
     - `Location`
 
-    ![](../Images/l18t4p3.png)
+        ![](../Images/l18t4p3.png)
 
 1. After you've created your three entities, select **Ad 1.txt** so you can read it.
 
