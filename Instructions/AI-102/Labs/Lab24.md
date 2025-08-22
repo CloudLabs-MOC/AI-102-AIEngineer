@@ -27,7 +27,7 @@ Azure AI Vision is an artificial intelligence capability that enables software s
     
 1. Then select **Create** to provision the resource.
 
-1. Wait for deployment to complete, and select **Go to resource group** to go to the resource group.
+1. Wait for deployment to complete, and select **Go to resource** to go to the resource group.
 
    ![](../Images/ai24l5.png)
 
@@ -306,7 +306,7 @@ It can sometimes be useful to identify relevant *tags* that provide clues about 
 1. Rerun the program for the **images/building.jpg** and **images/person.jpg** files, downloading the generated objects.jpg file after each run.
 
 
-### Add code to detect and locate people
+### Task 2.5: Add code to detect and locate people
 
 1. In the code editor, in the **AnalyzeImage** function, find the comment **Get people in the image** and add the following code to list any detected people with a confidence level of 20% or more, and call a provided function to annotate them in an image:
 
