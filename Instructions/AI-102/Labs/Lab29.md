@@ -230,8 +230,78 @@ All interactions with the Video Indexer REST API follow the same pattern:
 
     ![](../Images/ai29l24.png)
 
-    
 
+### Task 7: Use Video Indexer widgets
+
+The Video Indexer portal is a useful interface to manage video indexing projects. However, there may be occasions when you want to make the video and its insights available to people who don't have access to your Video Indexer account. Video Indexer provides widgets that you can embed in a web page for this purpose.
+
+1. Use the `ls` **(1)** command,to view the contents of the **video-indexer** folder. Note that it contains a **analyze-video.html (2)** file.
+
+    ![](../Images/ai29l25.png)
+
+1. This is a basic HTML page to which you will add the Video Indexer **Player** and **Insights** widgets.
+
+1. Enter the following command to edit the file:
+
+    ```
+   code analyze-video.html
+    ```
+
+     ![](../Images/ai29l26.png)    
+
+     The file is opened in a code editor.
+
+1. Note the reference to the **vb.widgets.mediator.js** script in the header - this script enables multiple Video Indexer widgets on the page to interact with one another.
+
+    ![](../Images/ai29l27.png) 
+
+1. In the **Video Indexer portal**, return to the **Media files (1)** page and open your **Responsible AI** video **(2)**.
+
+    ![](../Images/ai29l28.png)
+
+1. Under the video player, select **&lt;/&gt; Embed** to view the HTML iframe code to embed the widgets.
+
+    ![](../Images/ai29l29.png)
+
+1. In the **Share and Embed** dialog box, select the **Player (1)** widget, set the video size to `560 x 315` **(2)**, and then copy the embed code to the clipboard **(2)**.
+
+    ![](../Images/ai29l31.png)
+
+1. In the Azure portal cloud shell, in the code editor for the **analyze-video.html** file, paste the copied code under the comment **&lt;-- Player widget goes here -- &gt;**.
+
+    ![](../Images/ai29l32.png)
+    ![](../Images/ai29l34.png)    
+
+1. Back in the Video Indexer portal, in the **Share and Embed** dialog box, select the **Insights (1)** widget and then copy the embed code to the clipboard **(2)**.
+
+    ![](../Images/ai29l35.png)  
+
+1. Then close the **Share and Embed** dialog box, switch back to **Azure portal**, and paste the copied code under the comment **&lt;-- Insights widget goes here -- &gt;**.
+
+    ![](../Images/ai29l36.png)
+
+1. After editing the file, within the code editor, save your changes using **CTRL+S** and then close the code editor (*CTRL+Q*) while keeping the cloud shell command line open.
+
+1. In the cloud shell toolbar, enter the following (Cloud shell-specific) command to download the HTML file you edited **(1)**:
+
+    ```
+    download analyze-video.html
+    ```
+
+    - The download command creates a popup link at the bottom right of your browser, which you can select to download and open the file
+
+      ![](../Images/ai29l37.png)
+
+1. Select **Open file**.
+
+    ![](../Images/ai29l38.png)
+
+1. The file, which should look like this: 
+
+    ![](../Images/ai29l39.png)
+
+1. Experiment with the widgets, using the **Insights** widget to search for insights and jump to them in the video.     
+   
 
 
 
