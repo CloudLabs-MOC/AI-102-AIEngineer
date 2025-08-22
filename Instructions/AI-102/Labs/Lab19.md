@@ -7,7 +7,7 @@ While this lab is based on Python, you can develop text translation applications
 
 If you don't already have one in your subscription, you'll need to provision an **Azure AI Translator** resource.
 
-1. On the Azure portal, search for **Translators (1)** then select **Translators (2)** in the results.
+1. On the Azure portal, search for **Translators (1)** then select **Translators (2)** from the results.
 
    ![](../Images/ai19l1.png) 
 
