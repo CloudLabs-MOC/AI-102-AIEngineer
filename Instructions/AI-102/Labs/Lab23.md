@@ -53,29 +53,40 @@ In this lab you create an agent in the Azure AI Foundry and explore the Voice Li
 
    ![](../Images/ai23l2.png)
 
+ > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="7ec72051-552a-4473-a323-c93d7ce96b49" />
+ 
+---   
+  
+
 ### Task 2: Start a Voice Live sample
 
 In this section of the exercise you interact with one of the agents. 
 
 1. Select **Playgrounds (1)** in the navigation pane. Locate the **Speech playground** group, and select the **Try the Speech playground (2)** button.
 
-   ![](../Images/ai23l3.png)
+    ![](../Images/ai23l3.png)
 
 1. The Speech Playground offers many pre-built options. Use the horizontal scroll bar to navigate to the end of the list and select the **Voice Live** tile. 
 
-   ![](../Images/ai23l4.png)
+    ![](../Images/ai23l4.png)
 
 1. Select the **Casual chat** agent sample in **Try with samples** panel.
 
-   ![](../Images/ai23l5.png)
+    ![](../Images/ai23l5.png)
    
 1. Ensure your microphone and speakers are working and select the **Start** button at the bottom of the page. 
 
-   ![](../Images/ai23l6.png)
+    ![](../Images/ai23l6.png)
 
-    >**Note**: Select **Allow** to use microphones.
+     >**Note**: Select **Allow** to use microphones.
 
-     ![](../Images/ai23l7.png)
+      ![](../Images/ai23l7.png)
 
 1. As you interact with the agent, notice you can interrupt the agent and it will pause to listen. Try speaking with different lengths of pauses between words and sentences. Notice how quickly the agent recognizes the pauses and fills in the conversation.
 
