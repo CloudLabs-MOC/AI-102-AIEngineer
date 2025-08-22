@@ -71,6 +71,16 @@ This exercise takes approximately **30** minutes.
 
     ![](../Images/AI-l20-6.png) 
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="1fba2b1e-45d8-460c-97fe-b18ef620d286" />
+ 
+---   
+
 ## Task 2: Prepare and configure the speaking clock app
 
 1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
@@ -379,3 +389,4 @@ In this exercise, you used audio files for the speech input and output. Let's se
 ## More information
 
 For more information about using the **Speech-to-text** and **Text-to-speech** APIs, see the [Speech-to-text documentation](https://learn.microsoft.com/azure/ai-services/speech-service/index-speech-to-text) and [Text-to-speech documentation](https://learn.microsoft.com/azure/ai-services/speech-service/index-text-to-speech).
+
