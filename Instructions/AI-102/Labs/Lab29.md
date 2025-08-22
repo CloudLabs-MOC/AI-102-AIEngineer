@@ -1,2 +1,200 @@
 # Lab 29: Analyze video
+
 A large proportion of the data created and consumed today is in the format of video. Azure AI Video Indexer is an AI-powered service that you can use to index videos and extract insights from them.
+
+### Task 1: Upload a video to Video Indexer
+
+First, you'll need to sign into the Video Indexer portal and upload a video.
+
+1. Right click on the following link [Video Indexer portal](https://www.videoindexer.ai), then select **Copy link**. Then paste the link on your JumpVM;s browser tab.
+
+1. On the **Choose an account to continue** page, select **Microsoft Entra ID (formely Azure AD)**.
+
+   ![](../Images/ai29l1.png)
+
+    >**Note**: If this is your first time signing in you might see a pop-up form asking you to verify how you're going to use the service. 
+
+1. Click on **No, thanks** for Sign in pop up.
+
+   ![](../Images/ai29l2.png)
+
+1. You can see the **Video Indexer portal** as below. 
+
+   ![](../Images/ai29l3.png)
+
+1. In a new tab, download the Responsible AI video by visiting `https://aka.ms/responsible-ai-video`.
+
+1. In **Video Indexer**, select the **Upload** option.
+
+   ![](../Images/ai29l4.png)
+
+1. Then select the option to **Browse for files**.
+
+   ![](../Images/ai29l5.png)
+
+1. Navigate to `C:\Users\azureuser\Downloads` **(1)**, select the downloaded video **(2)**, and click **Open**.
+
+   ![](../Images/ai29l6.png)
+
+1. Change the text in the **File  name** field to **Responsible AI (1)**. Select **Review + upload (2)**.
+
+   ![](../Images/ai29l7.png)
+
+1. Review the summary overview, select the checkbox to verify compliance with Microsoft's policies for facial recognition **(1)** and then select **Review+index (2)** to upload the file.
+
+   ![](../Images/ai29l8.png)
+
+1. Once the Upload is done, close it.
+
+   ![](../Images/ai29l9.png)
+
+1. After the file is uploaded, wait a few minutes for Video Indexer to complete processing. Allow the indexing to reach **100%**.
+
+    >**Note**: In this lab, we're using this video to explore Video Indexer functionality; but you should take the time to watch it in full when you've finished the lab as it contains useful information and guidance for developing AI-enabled applications responsibly! 
+
+
+### Task 2: Review video insights
+
+The indexing process extracts insights from the video, which you can view in the portal.
+
+1. In the **Video Indexer portal**, when the video is indexed, select it to view it.
+
+1. You'll see the video player alongside a pane that shows **insights** extracted from the video.
+
+   ![](../Images/ai29l10.png)
+
+    >**Note**: Due to the limited access policy to protect individuals identities, you may not see names when you index the video.
+
+1. As the video plays, select the **Timeline** tab to view a transcript of the video audio.
+
+    ![](../Images/ai29l11.png)
+
+1. At the top right of the portal, select the **View (1)** symbol (which looks similar to &#128455;), and in the list of insights, in addition to **Transcript**, select **OCR** and **Speakers** **(2)**.
+
+    ![](../Images/ai29l12.png)
+
+1. Observe that the **Timeline** pane now includes:
+
+    - Transcript of audio narration.
+    - Text visible in the video.
+    - Indications of speakers who appear in the video. Some well-known people are  automatically recognized by name, others are indicated by number (for example *Speaker #1*).
+
+      ![](../Images/ai29l13.png)
+
+1. Switch back to the **Insights** pane and view the insights show there. They include:
+
+    - Individual people who appear in the video.
+    - Topics discussed in the video.
+    - Labels for objects that appear in the video.
+    - Named entities, such as people and brands that appear in the video.
+    - Key scenes.
+
+      ![](../Images/ai29l14.png)
+
+1. With the **Insights** pane visible, select the **View (1)** symbol again, and in the list of insights, add **Keywords (2)** and **Sentiments (3)** to the pane.
+
+    ![](../Images/ai29l15.png)
+
+    The insights found can help you determine the main themes in the video. For example, the **topics** for this video show that it is clearly about technology, social responsibility, and ethics.
+
+### Task 3: Search for insights
+
+You can use Video Indexer to search the video for insights.
+
+1. In the **Insights** pane, in the **Search** box, enter `Bee` **(1)**.
+
+    - You may need to scroll down in the Insights pane to see results for all types of insight.
+    - Observe that one matching *label* is found, with its location in the video indicated beneath. Select that point **(2)**
+
+      ![](../Images/ai29l16.png)
+
+1. Clear the **Search** box to show all insights for the video.
+
+
+### Task 4: Use the Video Indexer REST API
+
+1. Navigate to [Azure portal](https://portal.azure.com/).
+
+1. If prompted, provide the credentials below:
+    
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+
+    ![](../Images/ai11l4.png) 
+
+1. Selecting a **PowerShell** environment.
+
+    ![](../Images/ai11l5.png) 
+
+1. On the **Getting started** page,
+
+    - Select **No storage account required (1)** 
+    - Select your subscription **(2)**
+    - Click on **Apply (3)**
+
+      ![](../Images/ai11l6.png) 
+
+1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
+
+    ![](../Images/ai11l7.png)
+
+     >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+
+     >**Note**: Ensure you've switched to the classic version of the cloud shell before continuing.
+
+1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text):
+
+    ```
+    rm -r mslearn-ai-vision -f
+    git clone https://github.com/MicrosoftLearning/mslearn-ai-vision
+    ```
+
+     ![](../Images/ai29l17.png)    
+
+      >**Tip**: As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+
+1. After the repo has been cloned, navigate to the folder containing the application code file for this exercise:  
+
+    ```
+   cd mslearn-ai-vision/Labfiles/video-indexer
+    ```
+
+### Task 5: Get your API details
+
+To use the Video Indexer API, you need some information to authenticate requests:
+
+1. In the **Video Indexer portal**, expand the left pane and select the **Account settings (1)** page. Copy and paste the **Account ID (2)** on this page - you will need it later.
+
+    ![](../Images/ai29l18.png) 
+
+1. Open a new browser tab and go to the [Video Indexer developer portal](https://api-portal.videoindexer.ai) at `https://api-portal.videoindexer.ai.
+
+1. Sign in  with your Azure credentials.
+
+    ![](../Images/ai29l19.png)
+
+1. If prompted, provide the credentials below:
+    
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+1. Select **Profile** tab.
+
+    ![](../Images/ai29l20.png) 
+
+1. On the **Profile** page view the **Subscriptions** associated with your profile.
+
+    - On the page with your subscription(s), observe that you have been assigned two keys (primary and secondary) for each subscription. Then select **Show (1)** for any of the keys to see it. Copy and paste one of the Keys **(2)**. You will need this key shortly.
+
+      ![](../Images/ai29l21.png)     
+
+
+
+
+
+
+
