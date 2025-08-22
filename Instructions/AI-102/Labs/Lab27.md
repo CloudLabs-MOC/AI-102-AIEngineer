@@ -84,11 +84,11 @@ In this task, you’ll create the required Custom Vision resources in Azure to s
 
     > **Note**: Each resource has its own *endpoint* and *keys*, which are used to manage access from your code. To train an image classification model, your code must use the *training* resource (with its endpoint and key); and to use the trained model to predict image classes, your code must use the *prediction* resource (with its endpoint and key).
 
-1. When the resources have been deployed, **Go to resource group** to view them.
+1. When the resources have been deployed, click on **Go to resource group** to view them.
 
     ![](../Images/l27t1p5.png)
 
-1. You should see two custom vision resources, one with the suffix ***-Prediction***.
+1. You should see two custom vision resources, one with the suffix **-Prediction**.
 
     ![](../Images/l27t1p6.png)
 
@@ -102,7 +102,7 @@ In this task, you’ll create a Custom Vision project in the Custom Vision porta
 
     ![](../Images/l27t2p1.png)
 
-1. If prompted, sign in using your Azure credentials and agree to the terms of service.
+1. If prompted, sign in using your Azure credentials.
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -112,7 +112,7 @@ In this task, you’ll create a Custom Vision project in the Custom Vision porta
 
     ![](../Images/l27t2p2.png)
 
-1. Under the **Project** section, click on **+ NEW PROJECT**, to create a project.
+1. Under the **Projects** section, click on **+ NEW PROJECT**, to create a project.
 
     ![](../Images/l27t2p3.png)
 
@@ -120,7 +120,7 @@ In this task, you’ll create a Custom Vision project in the Custom Vision porta
     
     - Name: **`Classify Fruit` (1)**
     - Description: **`Image classification for fruit` (2)**
-    - Resource: **Your Custom Vision resource (3)**
+    - Resource: **customvision<inject key="DeploymentID" enableCopy="false"/> (3)**
     - Project Types: **Classification (4)**
     - Classification Types: **Multiclass (Single tag per image) (5)**
     - Domains: **Food (6)**
@@ -174,9 +174,11 @@ In this task, you’ll upload training images of apples, bananas, and oranges in
 
 In this task, you’ll train a classification model using your tagged images, then review performance metrics like Precision, Recall, and Average Precision (AP) to understand how accurately the model can classify fruit images.
 
-1. In the Custom Vision project, above the images, click **Train** (&#9881;<sub>&#9881;</sub>) to train a classification model using the tagged images. Select the **Quick Training** option, and then wait for the training iteration to complete (this may take a minute or so).
+1. In the Custom Vision project, above the images, click **Train** (&#9881;<sub>&#9881;</sub>) to train a classification model using the tagged images.
 
     ![](../Images/l27t4p1.png)
+
+1. Select the **Quick Training (1)** option, and click **Train (2)**. Then wait for the training iteration to complete (this may take a minute or so).
 
     ![](../Images/l27t4p2.png)
 
@@ -194,7 +196,7 @@ In this task, you’ll test your trained model by submitting sample images throu
 
     ![](../Images/l27t5p1.png)
 
-1. In the **Image URL** box, type **`https://aka.ms/test-apple`** and click the **Quick test image** (&#10132;) button.
+1. In the **Image URL** box, type **`https://aka.ms/test-apple` (1)** and click the **Quick test image (2)** (&#10132;) button.
 
     ![](../Images/l27t5p2.png)
 
@@ -345,7 +347,7 @@ In this task, you’ll publish your trained Custom Vision model and set it up fo
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish (1)** to publish the trained model with the following settings:
 
     - Model name: **`fruit-classifier` (2)**
-    - Prediction Resource: **customvision<inject key="Region" enableCopy="false" />-Prediction (3)**
+    - Prediction Resource: **customvision<inject key="DeploymentID" enableCopy="false" />-Prediction (3)**
     - Click **Publish (4)**
 
         ![](../Images/l27t9p1.png)
@@ -354,11 +356,11 @@ In this task, you’ll publish your trained Custom Vision model and set it up fo
 
     ![](../Images/l27t9p2.png)
 
-1. On the Custom Vision portal home page, at the top right, click the *settings* (&#9881;) icon to view the settings for your Custom Vision service.
+1. On the Custom Vision portal home page, at the top right, click the **Settings** (&#9881;) icon to view the settings for your Custom Vision service.
 
     ![](../Images/l27t9p3.png)
 
-1. Then, under **Resources**, find your *prediction* resource which ends with **customvision<inject key="Region" enableCopy="false" />-Prediction (1)** (<u>not</u> the training resource) to determine its **Key (2)** and **Endpoint (3)** values (you can also obtain this information by viewing the resource in the Azure portal).
+1. Then, under **Resources**, find your *prediction* resource which ends with **customvision<inject key="Deployment" enableCopy="false" />-Prediction (1)** (<u>not</u> the training resource) to determine its **Key (2)** and **Endpoint (3)** values (you can also obtain this information by viewing the resource in the Azure portal).
 
     ![](../Images/l27t9p4.png)
 
