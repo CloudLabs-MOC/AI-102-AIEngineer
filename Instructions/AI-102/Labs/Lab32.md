@@ -62,7 +62,7 @@ The content you're going to analyze is in a .zip archive. Download it and extrac
 
 You are going to build an Azure AI Content Understanding analyzer that can extract information from invoices. You'll start by defining a schema based on a sample invoice.
 
-### Task 4: Define a schema for invoice analysis
+### Task 3.1: Define a schema for invoice analysis
 
 1. In the browser tab containing the home page for your Azure AI Foundry project; in the navigation pane on the left, select **Content Understanding (1)**.
 
@@ -167,7 +167,7 @@ You are going to build an Azure AI Content Understanding analyzer that can extra
 
 1. View the details of the fields that were identified in the **Fields** pane.
 
-#### Task 5: Task  Build and test an analyzer for invoices
+### Task 3.2: Task  Build and test an analyzer for invoices
 
 Now that you have trained a model to extract fields from invoices, you can build an analyzer to use with similar documents.
 
@@ -188,18 +188,112 @@ Now that you have trained a model to extract fields from invoices, you can build
 
     ![](../Images/ai32l21.png)
 
-1. In the **invoice-analyzer** page, select the **Test** tab.
+1. In the **invoice-analyzer** page, select the **Test (1)** tab and then use the **+ Upload test files (2)** button to upload files.
 
-1. Use the **+ Upload test files** button to upload **invoice-1235.pdf** from the folder where you extracted the content files, and click on **Run analysis** to extract field data from the invoice.
+    ![](../Images/ai32l22.png)
+
+1. Navigate to `C:\LabFiles` **(1)** then select the **invoice-1235.pdf (2)** from the folder where you extracted the content files and then **Open (3)**.
+
+    ![](../Images/ai32l23.png)
+
+1. Click on **Run analysis** to extract field data from the invoice.
+
+    ![](../Images/ai32l24.png)
 
     The invoice being analyzed looks like this:
 
-    ![Image of an invoice number 1235.](./media/invoice-1235.png)
+    ![](../Images/ai32l31.png)
 
 1. Review the **Fields** pane, and verify that the analyzer extracted the correct fields from the test invoice.
+
+    ![](../Images/ai32l25.png)
+
 1. Review the **Results** pane to see the JSON response that the analyzer would return to a client application.
+
+    ![](../Images/ai32l26.png)
+
 1. On the **Code example** tab, view the sample code that you could use to develop a client application that uses the Content Understanding REST interface to call your analyzer.
+
+    ![](../Images/ai32l27.png)
+
 1. Close the **invoice-analyzer** page.
+
+### Task 4: Extract information from a slide image
+
+You are going to build an Azure AI Content Understanding analyzer that can extract information from a slide containing charts.
+
+### Task 4.1: Define a schema for image analysis
+
+1. In the browser tab containing the home page for your Azure AI Foundry project; in the navigation pane on the left, select **Content Understanding (1)**.
+   - On the **Content Understanding** page, select the **Custom task (2)** tab at the top.
+   - On the Content Understanding custom task page, select **+ Create (3)**.
+
+     ![](../Images/ai32l28.png)
+
+1. Create a task with the following settings:
+    - **Task name**: `Slide analysis` **(1)**
+    - **Description**: `Extract data from an image of a slide` **(2)**
+    - **Single file content analysis**: *Selected* **(3)**
+    - **Advanced settings**:
+        - **Azure AI services connection**: *The Azure AI Services resource in your Azure AI Foundry hub* **(4)**
+        - **Azure Blob Storage account**: *The default storage account in your Azure AI Foundry hub* **(5)**
+
+          ![](../Images/ai32l29.png)
+
+1. Wait for the task to be created.
+
+    >**Note**: If an error accessing storage occurs, wait a minute and try again. Permissions for a new hub may take a few minutes to propagate.
+
+1. On the **Define schema** page, select **Browse file**.
+
+    ![](../Images/ai32l7.png)
+
+1. Navigate to `C:\LabFiles` **(1)**, upload the **slide-1.jpg (2)** file from the folder where you extracted content files and then **Open (3)**.
+
+    ![](../Images/ai32l33.png)
+
+1. Then select the **Image analysis (1)** template and select **Create (2)**.
+
+    ![](../Images/ai32l30.png)
+
+    The *Image analysis* template doesn't include any predefined fields. You must define fields to describe the information you want to extract.
+
+1. Use **+ Add new field** button to add the following fields, selecting **Save changes** (**&#10003;**) for each new field:
+
+    | Field name | Field description | Value type | Method |
+    |--|--|--|--|
+    | `Title` | `Slide title` | String | Generate |
+    | `Summary` | `Summary of the slide` | String | Generate |
+    | `Charts` | `Number of charts on the slide` | Integer | Generate |
+
+1. Use **+ Add new field** button to add a new field named `QuarterlyRevenue` with the description `Revenue per quarter` with the value type **Table** **(1)**, and save the new field (**&#10003; (2)**).
+
+    ![](../Images/ai32l35.png)
+
+1. Then, in the new page for the table subfields that opens, add the following **subfields (1)** and then **Ok (2)**:
+
+    | Field name | Field description | Value type | Method |
+    |--|--|--|--|
+    | `Quarter` | `Which quarter?` | String | Generate |
+    | `Revenue` | `Revenue for the quarter` | Number | Generate |
+
+    ![](../Images/ai32l36.png) 
+
+1. Use **+ Add new field** button to add a new field named `ProductCategories` with the description `Product categories` with the value type **Table**, and save the new field (**&#10003;**).
+
+1. Then, in the new page for the table subfields that opens, add the following subfields **(1)** and then **Ok (2)** to return to the top level of your schema:
+
+    | Field name | Field description | Value type | Method |
+    |--|--|--|--|
+    | `ProductCategory` | `Product category name` | String | Generate |
+    | `RevenuePercentage` | `Percentage of revenue` | Number | Generate |
+
+    ![](../Images/ai32l37.png)     
+
+1. Verify that it looks like this. Then select **Save**.
+
+    ![](../Images/ai32l38.png) 
+
 
 
 
