@@ -181,7 +181,7 @@ In this task, you'll complete a partially implemented client application that us
                 FaceAttributeTypeDetection01.ACCESSORIES]
     ```
 
-     ![](../Images/ai26l16.png)    
+    ![](../Images/ai26l16.png)    
 
 1. In the **Main** function, under the code you just added, find the comment **Get faces** and add the following code to print the facial feature information and call a function that annotates the image with the bounding box for each detected face (based on the **face_rectangle** property of each face):
 
