@@ -160,7 +160,7 @@ In this task, you'll complete a partially implemented client application that us
 
     ![](../Images/ai24l16.png)    
 
-1. In the **Main** function, under the code you just added, find the comment **Analyze image** and add the following code:
+1. In the **Main** function, under the code you just added, find the comment **Analyze image** and add the following codee:
 
     ```python
     # Analyze image
