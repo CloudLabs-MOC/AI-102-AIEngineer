@@ -493,14 +493,19 @@ You are going to build an Azure AI Content Understanding analyzer that can extra
 
 1. Navigate to `C:\LabFiles` **(1)** then select the **meeting-1.mp4 (2)** file from the folder where you extracted content files and then **Open (3)**.
 
+    ![](../Images/ai32l67.png)
 
+1. Then select the **Video analysis (1)** template and select **Create (2)**.
 
-1. Then select the **Video analysis** template and select **Create**.
+    ![](../Images/ai32l68.png)
+
 1. In the **Content** pane on the right, select **Get transcription preview** to see a transcription of the recorded message.
+
+    ![](../Images/ai32l69.png)
 
     The *Video analysis* template extracts data for the video. It doesn't include any predefined fields. You must define fields to describe the information you want to extract.
 
-1. Use **+ Add new field** button to add the following fields, selecting **Save changes** (**&#10003;**) for each new field:
+1. Use **+ Add new field** button to add the following fields **(1)**, selecting **Save changes (2)** (**&#10003;**) for each new field:
 
     | Field name | Field description | Value type | Method |
     |--|--|--|--|
@@ -510,13 +515,27 @@ You are going to build an Azure AI Content Understanding analyzer that can extra
     | `SharedSlides` | `Descriptions of any PowerPoint slides presented` | List of Strings | Generate |
     | `AssignedActions` | `Tasks assigned to participants` | Table |  |
 
-1. When you enter the **AssignedActions** field, in the table of subfields that appears, create the following subfields:
+    ![](../Images/ai32l70.png)    
+
+1. When you enter the **AssignedActions** field, in the table of subfields that appears, create the following subfields **(1)** and then **&#10003; OK (2)** to return to the top level of your schema:
 
     | Field name | Field description | Value type | Method |
     |--|--|--|--|
     | `Task` | `Description of the task` | String | Generate |
     | `AssignedTo` | `Who the task is assigned to` | String | Generate |
 
+    ![](../Images/ai32l71.png)     
 
+1. Verify that it looks like this. Then select **Save**.
+
+    ![](../Images/ai32l72.png) 
+
+1. On the **Test Analyzer** page, if analysis does not begin automatically, select **Run analysis**. Then wait for analysis to complete. 
+
+    ![](../Images/ai32l73.png)
+
+1. When analysis is complete, review the results.
+
+1. In the **Fields** pane, view the extracted data for the video, including the fields you added. View the field values that were generated, expanding list and table fields as necessary.
 
 
