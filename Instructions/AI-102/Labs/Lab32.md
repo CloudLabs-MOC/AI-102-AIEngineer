@@ -302,6 +302,55 @@ You are going to build an Azure AI Content Understanding analyzer that can extra
 
 1. View the details of the fields that were identified in the **Fields** pane, expanding the **QuarterlyRevenue** and **ProductCategories** fields to see the subfield values.
 
+    ![](../Images/ai32l41.png) 
+
+### Task 4.2: Build and test an analyzer
+
+Now that you have trained a model to extract fields from slides, you can build an analyzer to use with similar slide images.
+
+1. Select the **Analyzer list (1)** page, and then select **+ Build analyzer (2)** and build a new analyzer with the following properties (typed exactly as shown here):
+    - **Name**: `slide-analyzer` **(3)**
+    - **Description**: `Slide image analyzer` **(4)**
+    - Select **Build (5)**
+
+      ![](../Images/ai32l42.png) 
+
+1. Wait for the new analyzer to be ready (use the **Refresh** button to check).
+
+1. When the analyzer has been built, select the **slide-analyzer** link. The fields defined in the analyzer's schema will be displayed.
+
+    ![](../Images/ai32l43.png) 
+
+1. In the **slide-analyzer** page, select the **Test (1)** tab and then use **+ Upload test files (2)** button.
+
+    ![](../Images/ai32l44.png) 
+
+1. Navigate to `C:\LabFiles` **(1)** then select the **slide-2.jpg (2)** from the folder where you extracted the content files and the **Open (3)**.
+
+    ![](../Images/ai32l45.png) 
+
+1. Click on **Run analysis** to extract field data from the image.
+
+    The slide being analyzed looks like this:
+
+    ![](../Images/ai32l46.png) 
+
+1. Review the **Fields** pane, and verify that the analyzer extracted the correct fields from the slide image.
+
+    ![](../Images/ai32l47.png) 
+
+     >**Note**: Slide 2 doesn't include a breakfown by product category, so the product category revenue data is not found.
+
+1. Review the **Results** pane to see the JSON response that the analyzer would return to a client application.
+
+    ![](../Images/ai32l48.png) 
+
+1. On the **Code example** tab, view the sample code that you could use to develop a client application that uses the Content understanding REST interface to call your analyzer.
+
+    ![](../Images/ai32l49.png) 
+
+1. Close the **slide-analyzer** page.
+
 
 
 
