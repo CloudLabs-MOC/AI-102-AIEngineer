@@ -1,4 +1,4 @@
-# Lab 25: Detect objects in images
+# Lab 28: Detect objects in images
 
 ### Estimated Duration : 45 Minutes
 
@@ -89,6 +89,16 @@ Before you can train a model, you will need Azure resources for *training* and *
 
     > **Note**: Each resource has its own **endpoint** and **keys**, which are used to manage access from your code. To train an image classification model, your code must use the **training** resource (with its endpoint and key); and to use the trained model to predict image classes, your code must use the **prediction** resource (with its endpoint and key).
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="c703c52b-8e9e-4e0a-95b9-07f98b9fb113" />
+ 
+---      
+
 ## Task 2: Create a Custom Vision project in the Custom Vision portal
 
 To train an object detection model, you need to create a Custom Vision project based on your training resource. To do this, you'll use the Custom Vision portal.
@@ -125,6 +135,16 @@ To train an object detection model, you need to create a Custom Vision project b
       ![](../Images/AI-l28-12.png)
 
 1. Wait for the project to be created and opened in the browser.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="0380cecc-5633-467a-97b1-0d12993e7228" />
+ 
+---      
 
 ## Task 3: Upload and tag images in the Custom Vision portal
 
