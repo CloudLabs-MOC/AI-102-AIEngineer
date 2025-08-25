@@ -411,6 +411,112 @@ You are going to build an Azure AI Content Understanding analyzer that can extra
 
     ![](../Images/ai32l55.png)
 
+1. On the **Test Analyzer** page, if analysis does not begin automatically, select **Run analysis**. Then wait for analysis to complete. 
+
+    ![](../Images/ai32l56.png)
+
+1. Review the analysis results.
+
+1. View the details of the fields that were identified in the **Fields** pane, expanding the **AlternativeContacts** field to see the listed values.
+
+### Task 5.2: Build and test an analyzer
+
+Now that you have trained a model to extract fields from voice messages, you can build an analyzer to use with similar audio recordings.
+
+1. Select the **Analyzer list (1)** page, and then select **+ Build analyzer (2)** and build a new analyzer with the following properties (typed exactly as shown here):
+    - **Name**: `voicemail-analyzer` **(3)**
+    - **Description**: `Voicemail audio analyzer` **(4)**
+    - Then select **Build (6)**
+
+      ![](../Images/ai32l57.png)
+
+1. Wait for the new analyzer to be ready (use the **Refresh** button to check).
+
+1. When the analyzer has been built, select the **voicemail-analyzer** link. The fields defined in the analyzer's schema will be displayed.
+
+    ![](../Images/ai32l58.png)
+
+1. In the **voicemail-analyzer** page, select the **Test (1)** tab and then use **+ Upload test files (2)** button.
+
+    ![](../Images/ai32l60.png)
+
+1. Navigate to `C:\LabFiles` **(1)** then select the **call-2.mp3 (2)** from the folder where you extracted the content files and the **Open (3)**.
+
+    ![](../Images/ai32l61.png)
+
+1. Click on **Run analysis** to extract field data from the audio file.
+
+    ![](../Images/ai32l62.png)
+
+    Audio analysis can take some time. While you're waiting, you can play the audio file below:
+
+1. Review the **Fields** pane, and verify that the analyzer extracted the correct fields from the voice message.
+
+    ![](../Images/ai32l63.png)
+
+1. Review the **Results** pane to see the JSON response that the analyzer would return to a client application.
+
+1. On the **Code example** tab, view the sample code that you could use to develop a client application that uses the Content understanding REST interface to call your analyzer.
+
+1. Close the **voicemail-analyzer** page.
+
+### Task 6: Extract information from a video conference recording
+
+You are going to build an Azure AI Content Understanding analyzer that can extract information from an video recording of a conference call.
+
+### Task 6.1: Define a schema for video analysis
+
+1. In the browser tab containing the home page for your Azure AI Foundry project; in the navigation pane on the left, select **Content Understanding (1)**.
+    - On the **Content Understanding** page, select the **Custom task** tab at the top.
+    - On the Content Understanding custom task page, select **+ Create (3)**
+    
+      ![](../Images/ai32l64.png)    
+    
+1. Create a task with the following settings:
+    - **Task name**: `Conference call video analysis` **(1)**
+    - **Description**: `Extract data from a video conference recording` **(2)**
+    - **Single file content analysis**: *Selected* **(3)**
+    - **Advanced settings**:
+        - **Azure AI services connection**: *The Azure AI Services resource in your Azure AI Foundry hub* **(4)**
+        - **Azure Blob Storage account**: *The default storage account in your Azure AI Foundry hub* **(5)**
+        - Select **Create (6)**
+
+          ![](../Images/ai32l65.png) 
+
+1. Wait for the task to be created.
+
+    > **Note**:If an error accessing storage occurs, wait a minute and try again. Permissions for a new hub may take a few minutes to propagate.
+
+1. On the **Define schema** page, select **Browse for files**.
+
+    ![](../Images/ai32l66.png)
+
+1. Navigate to `C:\LabFiles` **(1)** then select the **meeting-1.mp4 (2)** file from the folder where you extracted content files and then **Open (3)**.
+
+
+
+1. Then select the **Video analysis** template and select **Create**.
+1. In the **Content** pane on the right, select **Get transcription preview** to see a transcription of the recorded message.
+
+    The *Video analysis* template extracts data for the video. It doesn't include any predefined fields. You must define fields to describe the information you want to extract.
+
+1. Use **+ Add new field** button to add the following fields, selecting **Save changes** (**&#10003;**) for each new field:
+
+    | Field name | Field description | Value type | Method |
+    |--|--|--|--|
+    | `Summary` | `Summary of the discussion` | String | Generate |
+    | `Participants` | `Count of meeting participants` | Integer | Generate |
+    | `ParticipantNames` | `Names of meeting participants` | List of Strings | Generate |
+    | `SharedSlides` | `Descriptions of any PowerPoint slides presented` | List of Strings | Generate |
+    | `AssignedActions` | `Tasks assigned to participants` | Table |  |
+
+1. When you enter the **AssignedActions** field, in the table of subfields that appears, create the following subfields:
+
+    | Field name | Field description | Value type | Method |
+    |--|--|--|--|
+    | `Task` | `Description of the task` | String | Generate |
+    | `AssignedTo` | `Who the task is assigned to` | String | Generate |
+
 
 
 
