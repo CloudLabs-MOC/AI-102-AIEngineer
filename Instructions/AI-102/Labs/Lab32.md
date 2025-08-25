@@ -553,22 +553,24 @@ Now that you have trained a model to extract fields from conference call recordi
 
 1. When the analyzer has been built, select the **conference-call-analyzer** link. The fields defined in the analyzer's schema will be displayed.
 
+    ![](../Images/ai32l75.png) 
 
 1. In the **conference-call-analyzer** page, select the **Test** tab. Select **Upload test files** button.
 
+1. Navigate to `C:\LabFiles` **(1)**  upload **meeting-2.mp4 (2)** from the folder where you extracted the content files and then **Open (3)**.
 
-1. Navigate to `C:\LabFiles` **(1)**  upload **meeting-2.mp4** from the folder where you extracted the content files, and run the analysis to extract field data from the audio file.
+    ![](../Images/ai32l76.png) 
 
-    Video analysis can take some time. While you're waiting, you can view the video below:
+1. Select **Run analysis** to run the analysis to extract field data from the audio file.
 
-    <video controls src="https://github.com/MicrosoftLearning/mslearn-ai-information-extraction/raw/refs/heads/main/Instructions/Labs/media/meeting-2.mp4" title="Meeting 2" width="480">
-        <track src="https://github.com/MicrosoftLearning/mslearn-ai-information-extraction/raw/refs/heads/main/Instructions/Labs/media/meeting-2.vtt" kind="captions" srclang="en" label="English">
-    </video>
+    ![](../Images/ai32l77.png) 
 
-    **Note**: This video was generated using AI.
+1. Review the results:
 
-1. Review the **Fields** pane, and view the fields that the analyzer extracted for the conference call video.
-1. Review the **Results** pane to see the JSON response that the analyzer would return to a client application.
+    ![](../Images/ai32l78.png) 
+
+    - Review the **Fields** pane, and view the fields that the analyzer extracted for the conference call video.
+    - Review the **Results** pane to see the JSON response that the analyzer would return to a client application.
 1. Close the **conference-call-analyzer** page.
 
 
