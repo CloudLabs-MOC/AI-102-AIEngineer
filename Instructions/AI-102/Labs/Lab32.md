@@ -538,4 +538,37 @@ You are going to build an Azure AI Content Understanding analyzer that can extra
 
 1. In the **Fields** pane, view the extracted data for the video, including the fields you added. View the field values that were generated, expanding list and table fields as necessary.
 
+### Task 6.2: Build and test an analyzer
+
+Now that you have trained a model to extract fields from conference call recordings, you can build an analyzer to use with similar videos.
+
+1. Select the **Analyzer list (1)** page, and then select **+ Build analyzer (2)** and build a new analyzer with the following properties (typed exactly as shown here):
+    - **Name**: `conference-call-analyzer` **(3)**
+    - **Description**: `Conference call video analyzer` **(4)**
+    - Select **Build (5)**
+
+      ![](../Images/ai32l74.png)    
+
+1. Wait for the new analyzer to be ready (use the **Refresh** button to check).
+
+1. When the analyzer has been built, select the **conference-call-analyzer** link. The fields defined in the analyzer's schema will be displayed.
+
+
+1. In the **conference-call-analyzer** page, select the **Test** tab. Select **Upload test files** button.
+
+
+1. Navigate to `C:\LabFiles` **(1)**  upload **meeting-2.mp4** from the folder where you extracted the content files, and run the analysis to extract field data from the audio file.
+
+    Video analysis can take some time. While you're waiting, you can view the video below:
+
+    <video controls src="https://github.com/MicrosoftLearning/mslearn-ai-information-extraction/raw/refs/heads/main/Instructions/Labs/media/meeting-2.mp4" title="Meeting 2" width="480">
+        <track src="https://github.com/MicrosoftLearning/mslearn-ai-information-extraction/raw/refs/heads/main/Instructions/Labs/media/meeting-2.vtt" kind="captions" srclang="en" label="English">
+    </video>
+
+    **Note**: This video was generated using AI.
+
+1. Review the **Fields** pane, and view the fields that the analyzer extracted for the conference call video.
+1. Review the **Results** pane to see the JSON response that the analyzer would return to a client application.
+1. Close the **conference-call-analyzer** page.
+
 
