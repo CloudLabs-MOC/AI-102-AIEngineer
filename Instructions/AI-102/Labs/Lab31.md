@@ -42,7 +42,15 @@ An Azure AI *project* provides a collaborative workspace for AI development. Let
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
+        ![](../Images/AI-l16-0.png)
+
    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+        ![](../Images/AIl16-1.png)
+
+1. If prompted to **Stay signed in?**, you can click **No**.
+
+     ![](../Images/AIl16-1.png)
 
 1. In the home page, in the **Explore models and capabilities** section, search for the `dall-e-3` **(1)** model and select `dall-e-3` **(2)** from the results.
 
@@ -247,11 +255,10 @@ The model seems to work in the playground. Now you can use the OpenAI SDK to use
 
 1. In the Cloud Shell command-line pane, enter the following command **(1)** to sign into Azure. Click the **link (2)** displayed in the output and Copy the **code (3)** provided to authenticate.  
 
-
     ```
     az login
     ```
-
+    
     ![](../Images/AI-l31-22.png)
    
     >**Note:** **<font color="red">You must sign into Azure - even though the cloud shell session is already authenticated.</font>**
@@ -299,7 +306,7 @@ The model seems to work in the playground. Now you can use the OpenAI SDK to use
     ```
    download ./images/image_1.png
     ```
-1. The download command creates a popup link at the bottom right of your browser, which you can select to download **(2)**and open the file.
+1. The download command creates a popup link at the bottom right of your browser, which you can select to download **(2)** and open the file.
 
     ![](../Images/AI-l31-30.png)
 
