@@ -58,4 +58,148 @@ The content you're going to analyze is in a .zip archive. Download it and extrac
 
 1. View the files it contains. You'll use these files to build various Content Understanding analyzers in this lab.
 
+### Task 3: Extract information from invoice documents
+
+You are going to build an Azure AI Content Understanding analyzer that can extract information from invoices. You'll start by defining a schema based on a sample invoice.
+
+### Task 4: Define a schema for invoice analysis
+
+1. In the browser tab containing the home page for your Azure AI Foundry project; in the navigation pane on the left, select **Content Understanding (1)**.
+
+   - On the **Content Understanding** page, select the **Custom task (2)** tab at the top.
+   - On the Content Understanding custom task page, select **+ Create (3)**
+
+     ![](../Images/ai32l5.png)   
+
+1. Create a task with the following settings:
+    - Task name: `Invoice analysis` **(1)**
+    - Description: `Extract data from an invoice` **(2)**
+    - Single file content analysis: *Selected* **(3)**
+    - Advanced settings:
+        - **Azure AI services connection**: *The Azure AI Services resource in your Azure AI Foundry hub* **(4)**
+        - **Azure Blob Storage account**: *The default storage account in your Azure AI Foundry hub* **(5)**
+        - Select **Create (6)**
+
+          ![](../Images/ai32l6.png) 
+
+1. Wait for the task to be created.
+
+    >**Note**: **If an error accessing storage occurs, wait a minute and try again. Permissions for a new hub may take a few minutes to propagate**.
+
+1. On the **Define schema** page, select **Browse file**.
+
+      ![](../Images/ai32l7.png)
+
+1. Navigate to `C:\LabFiles` **(1)** then select **invoice-1234.pdf (2)** file from the folder where you extracted content files and then **Open (3)**.
+
+      ![](../Images/ai32l8.png)
+
+1. This file contains the following invoice:
+
+    ![](../Images/ai32l11.png)
+
+1. After uploading the invoice file, select the **Invoice data extraction (1)** template and select **Create (2)**.
+
+    ![](../Images/ai32l9.png)
+
+    The **Invoice analysis** template includes common fields that are found in invoices. You can use the schema editor to delete any of the suggested fields that you don't need, and add any custom fields that you do.
+
+1. In the list of suggested fields, select **BillingAddress**. This field is not needed for the invoice format you have uploaded, so use the **Delete field** (**&#128465;**) icon that appears in the selected field row to delete it.
+
+    ![](../Images/ai32l10.png)
+
+1. Now delete the following suggested fields, which aren't needed for your invoice schema:
+    - BillingAddressRecipient
+    - CustomerAddressRecipient
+    - CustomerId
+    - CustomerTaxId
+    - DueDate
+    - InvoiceTotal
+    - PaymentTerm
+    - PreviousUnpaidBalance
+    - PurchaseOrder
+    - RemittanceAddress
+    - RemittanceAddressRecipient
+    - ServiceAddress
+    - ServiceAddressRecipient
+    - ShippingAddress
+    - ShippingAddressRecipient
+    - TotalDiscount
+    - VendorAddressRecipient
+    - VendorTaxId
+    - TaxDetails
+
+1. Select **+ Add new field**.
+
+    ![](../Images/ai32l12.png)
+
+1. Use **+ Add new field** button to add the following fields, selecting **Save changes** (**&#10003;**) for each new field:
+
+    | Field name | Field description | Value type | Method |
+    |--|--|--|--|
+    | `VendorPhone` | `Vendor telephone number` | String | Extract |
+    | `ShippingFee` | `Fee for shipping` | Number | Extract |
+
+    ![](../Images/ai32l13.png)    
+
+1. In the row for the **Items (1)** field, note that this field is a *table* (it contains the collection of items in the invoice). Select it's **Edit** (&#9638;) **(2)** icon to open a new page with its subfields.
+
+    ![](../Images/ai32l15.png)
+
+1. Remove the following subfields from the **Items** table:
+    - Date
+    - ProductCode
+    - Unit
+    - TaxAmount
+    - TaxRate
+
+1. Use the **OK** button to confirm the changes and return to the top-level of the invoice schema.
+
+    ![](../Images/ai32l16.png)
+
+1. Verify that your completed schema looks like this, and select **Save**.
+
+    ![](../Images/ai32l17.png)
+
+1. On the **Test Analyzer** page, if analysis does not begin automatically, select **Run analysis**. Then wait for analysis to complete. Review the analysis results, which should look similar to this.
+
+    ![](../Images/ai32l18.png)
+
+1. View the details of the fields that were identified in the **Fields** pane.
+
+#### Task 5: Task  Build and test an analyzer for invoices
+
+Now that you have trained a model to extract fields from invoices, you can build an analyzer to use with similar documents.
+
+1. Select the **Analyzer list** page, and then select **+ Build analyzer**.
+
+    ![](../Images/ai32l19.png)
+
+1. Build a new analyzer with the following properties (typed exactly as shown here):
+    - **Name**: `invoice-analyzer` **(1)**
+    - **Description**: `Invoice analyzer` **(2)**
+    - Select **Build (3)**
+
+      ![](../Images/ai32l20.png)   
+
+1. Wait for the new analyzer to be ready (use the **Refresh** button to check).
+
+1. When the analyzer has been built, select the **invoice-analyzer** link. The fields defined in the analyzer's schema will be displayed.
+
+    ![](../Images/ai32l21.png)
+
+1. In the **invoice-analyzer** page, select the **Test** tab.
+
+1. Use the **+ Upload test files** button to upload **invoice-1235.pdf** from the folder where you extracted the content files, and click on **Run analysis** to extract field data from the invoice.
+
+    The invoice being analyzed looks like this:
+
+    ![Image of an invoice number 1235.](./media/invoice-1235.png)
+
+1. Review the **Fields** pane, and verify that the analyzer extracted the correct fields from the test invoice.
+1. Review the **Results** pane to see the JSON response that the analyzer would return to a client application.
+1. On the **Code example** tab, view the sample code that you could use to develop a client application that uses the Content Understanding REST interface to call your analyzer.
+1. Close the **invoice-analyzer** page.
+
+
 
