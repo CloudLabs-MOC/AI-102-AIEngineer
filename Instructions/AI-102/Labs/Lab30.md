@@ -129,7 +129,7 @@ In this task, you’ll test your Phi-4-multimodal-instruct model deployment in t
 
     ![](../Images/l30t2p5.png)
 
-1.  Then add the text **`What desserts could I make with this fruit?`** and press **Enter** to submit the prompt.
+1. Then add the text **`What desserts could I make with this fruit?`** and press **Enter** to submit the prompt.
 
     ![](../Images/l30t2p6.png)
 
