@@ -83,7 +83,7 @@ In this task, you’ll provision an Azure AI Vision resource in the Azure portal
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
  
-<validation step="" />
+<validation step="5e948647-4de2-4c59-8f0a-ace91a4d0450" />
 
 ## Task 2: Develop a text extraction app with the Azure AI Vision SDK
 

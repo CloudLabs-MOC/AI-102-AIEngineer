@@ -92,6 +92,15 @@ In this task, you’ll create the required Custom Vision resources in Azure to s
 
     ![](../Images/l27t1p6.png)
 
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="4d0bd307-cf2d-45b5-b54f-88114e03af00" />
+
 ## Task 2: Create a Custom Vision project in the Custom Vision portal
 
 In this task, you’ll create a Custom Vision project in the Custom Vision portal using your training resource. This project will serve as the foundation for building and training your image classification model.
@@ -127,6 +136,16 @@ In this task, you’ll create a Custom Vision project in the Custom Vision porta
     - Click **Create Project (7)**
 
         ![](../Images/l27t2p4.png)
+
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="fb368b52-d1e7-4436-8c85-1914140be38c" />
+
 
 ## Task 3: Upload and tag images
 
