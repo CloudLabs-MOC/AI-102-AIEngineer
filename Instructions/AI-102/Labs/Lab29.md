@@ -52,6 +52,16 @@ First, you'll need to sign into the Video Indexer portal and upload a video.
 
     >**Note**: In this lab, we're using this video to explore Video Indexer functionality; but you should take the time to watch it in full when you've finished the lab as it contains useful information and guidance for developing AI-enabled applications responsibly! 
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="aff1dc2b-575b-4abd-b1a1-e5e92fc6c59f" />
+ 
+---    
+
 
 ### Task 2: Review video insights
 
@@ -61,9 +71,9 @@ The indexing process extracts insights from the video, which you can view in the
 
 1. You'll see the video player alongside a pane that shows **insights** extracted from the video.
 
-   ![](../Images/ai29l10.png)
+    ![](../Images/ai29l10.png)
 
-    >**Note**: Due to the limited access policy to protect individuals identities, you may not see names when you index the video.
+     >**Note**: Due to the limited access policy to protect individuals identities, you may not see names when you index the video.
 
 1. As the video plays, select the **Timeline** tab to view a transcript of the video audio.
 
