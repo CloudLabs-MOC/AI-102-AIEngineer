@@ -175,19 +175,21 @@ In this task, you'll complete a partially implemented client application that us
 1. In the code file for your application, in the **Main** function, find the comment **Specify facial features to be retrieved** and add the following code:
 
     ```python
-   # Specify facial features to be retrieved
-   features = [FaceAttributeTypeDetection01.HEAD_POSE,
-                FaceAttributeTypeDetection01.OCCLUSION,
-                FaceAttributeTypeDetection01.ACCESSORIES]
+    # Specify facial features to be retrieved
+    features = [
+        FaceAttributeTypeDetection01.HEAD_POSE,
+        FaceAttributeTypeDetection01.OCCLUSION,
+        FaceAttributeTypeDetection01.ACCESSORIES
+    ]
     ```
 
     ![](../Images/ai26l16.png)    
 
-1. In the **Main** function, under the code you just added, find the comment **Get faces** and add the following code to print the facial feature information and call a function that annotates the image with the bounding box for each detected face (based on the **face_rectangle** property of each face):
+2. In the **Main** function, under the code you just added, find the comment **Get faces** and add the following code to print the facial feature information and call a function that annotates the image with the bounding box for each detected face (based on the **face_rectangle** property of each face):
 
-    ```Python
-   # Get faces
-   with open(image_file, mode="rb") as image_data:
+    ```python
+    # Get faces
+    with open(image_file, mode="rb") as image_data:
         detected_faces = face_client.detect(
             image_content=image_data.read(),
             detection_model=FaceDetectionModel.DETECTION01,
@@ -196,11 +198,11 @@ In this task, you'll complete a partially implemented client application that us
             return_face_attributes=features,
         )
 
-   face_count = 0
-   if len(detected_faces) > 0:
+    face_count = 0
+    if len(detected_faces) > 0:
         print(len(detected_faces), 'faces detected.')
         for face in detected_faces:
-    
+
             # Get face properties
             face_count += 1
             print('\nFace number {}'.format(face_count))
@@ -213,13 +215,14 @@ In this task, you'll complete a partially implemented client application that us
             print(' - Accessories:')
             for accessory in face.face_attributes.accessories:
                 print('   - {}'.format(accessory.type))
-            # Annotate faces in the image
-            annotate_faces(image_file, detected_faces)
+
+        # Annotate faces in the image
+        annotate_faces(image_file, detected_faces)
     ```
 
-     ![](../Images/ai26l17.png)       
+    ![](../Images/ai26l17.png)       
 
-1. Examine the code you added to the **Main** function. It analyzes an image file and detects any faces it contains, including attributes for head pose, occlusion, and the presence of accessories such as glasses. Additionally, a function is called to annotate the original image with a bounding box for each detected face.
+3. Examine the code you added to the **Main** function. It analyzes an image file and detects any faces it contains, including attributes for head pose, occlusion, and the presence of accessories such as glasses. Additionally, a function is called to annotate the original image with a bounding box for each detected face.
 
 1. Save your changes using ***CTRL+S*** but keep the code editor open in case you need to fix any typo's.
 
