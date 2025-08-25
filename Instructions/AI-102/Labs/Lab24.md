@@ -148,53 +148,55 @@ In this task, you'll complete a partially implemented client application that us
 
      ![](../Images/ai24l15.png)       
 
-1. In the **Main** function, note that the code to load the configuration settings and determine the image file to be analyzed has been provided. Then find the comment **Authenticate Azure AI Vision client** and add the following code to create and authenticate a Azure AI Vision client object (be sure to maintain the correct indentation levels):
+1. In the **Main** function, note that the code to load the configuration settings and determine the image file to be analyzed has been provided. Then find the comment **Authenticate Azure AI Vision client** and add the following code to create and authenticate an Azure AI Vision client object (be sure to maintain the correct indentation levels):
 
     ```python
-   # Authenticate Azure AI Vision client
-   cv_client = ImageAnalysisClient(
+    # Authenticate Azure AI Vision client
+    cv_client = ImageAnalysisClient(
         endpoint=ai_endpoint,
-        credential=AzureKeyCredential(ai_key))
+        credential=AzureKeyCredential(ai_key)
+    )
     ```
 
-     ![](../Images/ai24l16.png)    
+    ![](../Images/ai24l16.png)    
 
 1. In the **Main** function, under the code you just added, find the comment **Analyze image** and add the following code:
 
     ```python
-   # Analyze image
-   with open(image_file, "rb") as f:
+    # Analyze image
+    with open(image_file, "rb") as f:
         image_data = f.read()
-   print(f'\nAnalyzing {image_file}\n')
+    print(f'\nAnalyzing {image_file}\n')
 
-   result = cv_client.analyze(
+    result = cv_client.analyze(
         image_data=image_data,
         visual_features=[
             VisualFeatures.CAPTION,
             VisualFeatures.DENSE_CAPTIONS,
             VisualFeatures.TAGS,
             VisualFeatures.OBJECTS,
-            VisualFeatures.PEOPLE],
-   )
+            VisualFeatures.PEOPLE
+        ],
+    )
     ```
 
-     ![](../Images/ai24l17.png)   
+    ![](../Images/ai24l17.png)   
 
 1. Find the comment **Get image captions**, add the following code to display image captions and dense captions:
 
     ```python
-   # Get image captions
-   if result.caption is not None:
+    # Get image captions
+    if result.caption is not None:
         print("\nCaption:")
         print(" Caption: '{}' (confidence: {:.2f}%)".format(result.caption.text, result.caption.confidence * 100))
     
-   if result.dense_captions is not None:
+    if result.dense_captions is not None:
         print("\nDense Captions:")
         for caption in result.dense_captions.list:
             print(" Caption: '{}' (confidence: {:.2f}%)".format(caption.text, caption.confidence * 100))
     ```
 
-     ![](../Images/ai24l18.png)       
+    ![](../Images/ai24l18.png)       
 
 1. Save your changes using **CTRL+S** and resize the panes so you can clearly see the command line console while keeping the code editor open.
 
