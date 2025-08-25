@@ -68,11 +68,7 @@ In this task, you’ll create an Azure AI Foundry hub and project. You’ll sign
 
         ![](../Images/l33t1p1.png)
 
-1. Wait for your project to be created, and then navigate to your project.
-
-    ![](../Images/l4t1p5.png)
-
-1. Click **Overview (1)** in the left navigation pane, select **Azure AI Services (2)** under **Included capabilities**, then copy the endpoint using **Copy Azure AI Services endpoint (3)** and the key using **Copy API key (4)**, and save both for the next task.
+1. Wait for your project to be created, and then navigate to **Overview (1)** in the left navigation pane, select **Azure AI Services (2)** under **Included capabilities**, then copy the endpoint using **Copy Azure AI Services endpoint (3)** and the key using **Copy API key (4)**, and save both for the next task.
 
     ![](../Images/l33t1p2.png)
 
@@ -88,7 +84,7 @@ In this task, you’ll create an Azure AI Foundry hub and project. You’ll sign
 
 In this task, you’ll use the Content Understanding REST API to create a business card analyzer. You’ll configure your environment in Cloud Shell, edit the provided Python code to implement the `create_analyzer` function, and submit REST requests to delete any existing analyzer and create a new one. Finally, you’ll run the script and verify that the analyzer is successfully created and ready for use.
 
-1. On the **[Azure portal](https://portal.azure.com/)** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
+1. On the **[Azure portal](https://portal.azure.com/)** [`https://portal.azure.com`] homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
     ![](../Images/l2at2p3.png)
 
