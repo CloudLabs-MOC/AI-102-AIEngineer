@@ -107,7 +107,7 @@ An Azure AI *project* provides a collaborative workspace for AI development. Let
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
  
-<validation step="" />
+<validation step="4f6932c2-0e42-401c-a086-f9a534a63f9c" />
 
 ## Task 2: Test the model in the playground
 
