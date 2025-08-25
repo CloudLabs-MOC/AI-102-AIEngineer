@@ -352,6 +352,65 @@ Now that you have trained a model to extract fields from slides, you can build a
 1. Close the **slide-analyzer** page.
 
 
+### Task 5: Extract information from a voicemail audio recording
+
+You are going to build an Azure AI Content Understanding analyzer that can extract information from an audio recording of a voicemail message.
+
+### Task 5.1: Define a schema for audio analysis
+
+1. In the browser tab containing the home page for your Azure AI Foundry project; in the navigation pane on the left, select **Content Understanding (1)**.
+    - On the **Content Understanding** page, select the **Custom task (2)** tab at the top.
+    - On the Content Understanding custom task page, select **+ Create (3)**
+    
+      ![](../Images/ai32l5.png)   
+    
+1. Create a task with the following settings:
+    - **Task name**: `Voicemail analysis` **(1)**
+    - **Description**: `Extract data from a voicemail recording` **(2)**
+    - **Single file content analysis**: *Selected* **(3)**
+    - **Advanced settings**:
+        - **Azure AI services connection**: *The Azure AI Services resource in your Azure AI Foundry hub* **(4)**
+        - **Azure Blob Storage account**: *The default storage account in your Azure AI Foundry hub* **(5)**
+        - Then **Create (6)**
+
+          ![](../Images/ai32l50.png) 
+
+1. Wait for the task to be created.
+
+    >**Note**: If an error accessing storage occurs, wait a minute and try again. Permissions for a new hub may take a few minutes to propagate.
+
+1. On the **Define schema** page, select **Browse file**.
+
+    ![](../Images/ai32l7.png)
+
+1. Navigate to `C:\LabFiles` **(1)**, upload the **call-1.mp3 (2)** file from the folder where you extracted content files and then **Open (3)**.
+
+    ![](../Images/ai32l52.png)    
+
+1. Then select the **Speech transcript analysis (1)** template and select **Create (2)**.
+
+    ![](../Images/ai32l53.png) 
+
+1. In the **Content** pane on the right, select **Get transcription preview** to see a transcription of the recorded message.
+
+    ![](../Images/ai32l54.png) 
+
+    The *Speech transcript analysis* template doesn't include any predefined fields. You must define fields to describe the information you want to extract.
+
+1. Use **+ Add new field** button to add the following fields, selecting **Save changes** (**&#10003;**) for each new field:
+
+    | Field name | Field description | Value type | Method |
+    |--|--|--|--|
+    | `Caller` | `Person who left the message` | String | Generate |
+    | `Summary` | `Summary of the message` | String | Generate |
+    | `Actions` | `Requested actions` | String | Generate |
+    | `CallbackNumber` | `Telephone number to return the call` | String | Generate |
+    | `AlternativeContacts` | `Alternative contact details` | List of Strings | Generate |
+
+1. Verify that your schema looks like this. Then select **Save**.
+
+    ![](../Images/ai32l55.png)
+
 
 
 
