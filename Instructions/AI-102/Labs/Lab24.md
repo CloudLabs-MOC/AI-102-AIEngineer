@@ -39,6 +39,16 @@ Azure AI Vision is an artificial intelligence capability that enables software s
 
    ![](../Images/ai24l7.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="246734d3-04f3-4237-8726-f692b285716a" />
+ 
+---     
+
 ### Task 2: Develop an image analysis app with the Azure AI Vision SDK
 
 In this task, you'll complete a partially implemented client application that uses the Azure AI Vision SDK to analyze images.   
