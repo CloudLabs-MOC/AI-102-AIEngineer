@@ -4,17 +4,11 @@
 
 ## Overview
 
-In this exercise, you use the *Phi-4-multimodal-instruct* generative AI model to generate responses to prompts that include images. You'll develop an app that provides AI assistance with fresh produce in a grocery store by using Azure AI Foundry and the Azure AI Model Inference service.
+The Azure AI Foundry platform enables you to create, deploy, and test multimodal AI solutions that combine text and image understanding. By working with a deployed model inside an Azure AI project, you can build client applications that interact with the model through natural prompts.
 
-> **Note**: This exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages; which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
+In this lab, you’ll create an **Azure AI project** and deploy the **Phi-4-multimodal-instruct** model. You’ll then test the model in the playground, build a Python client app in Azure Cloud Shell, and extend the app to handle different types of image prompts. Along the way, you’ll try URL-based images, authenticate with Azure to run the app, and finally modify the code to upload and process local image files.
 
-While this exercise is based on the Azure AI Foundry Python SDK, you can develop AI chat applications using multiple language-specific SDKs; including:
-
-- [Azure AI Projects for Python](https://pypi.org/project/azure-ai-projects)
-- [Azure AI Projects for Microsoft .NET](https://www.nuget.org/packages/Azure.AI.Projects)
-- [Azure AI Projects for JavaScript](https://www.npmjs.com/package/@azure/ai-projects)
-
-This exercise takes approximately **30** minutes.
+Although the lab steps are shown with **Python in Azure Cloud Shell**, the same approach can be adapted with other SDKs and environments to build multimodal AI applications.
 
 ## Lab Objectives
 
@@ -22,19 +16,19 @@ This exercise takes approximately **30** minutes.
 
 - **Task 2:** Test the model in the playground
 
-- **Task 4:** Create a client application
+- **Task 3:** Create a client application
 
-- **Task 5:** Write code to connect to your project and get a chat client for your model
+- **Task 4:** Write code to connect to your project and get a chat client for your model
 
-- **Task 6:** Write code to submit a URL-based image prompt
+- **Task 5:** Write code to submit a URL-based image prompt
 
-- **Task 7:** Sign into Azure and run the app
+- **Task 6:** Sign into Azure and run the app
 
-- **Task 8:** Modify the code to upload a local image file
+- **Task 7:** Modify the code to upload a local image file
 
 ## Task 1: Choose a model to start a project
 
-An Azure AI *project* provides a collaborative workspace for AI development. Let's start by choosing a model that we want to work with and creating a project to use it in.
+In this task, you’ll create an Azure AI project in the Azure AI Foundry portal. You’ll start by selecting the Phi-4-multimodal-instruct model, then set up a new project that uses it. By the end, you’ll have a deployed model inside a project with an endpoint that you can use later to connect your client application.
 
 > **Note**: AI Foundry projects can be based on an *Azure AI Foundry* resource, which provides access to AI models (including Azure OpenAI), Azure AI services, and other resources for developing AI agents and chat solutions. Alternatively, projects can be based on *AI hub* resources; which include connections to Azure resources for secure storage, compute, and specialized tools. Azure AI Foundry based projects are great for developers who want to manage resources for AI agent or chat app development. AI hub based projects are more suitable for enterprise development teams working on complex AI solutions.
 
@@ -97,7 +91,9 @@ An Azure AI *project* provides a collaborative workspace for AI development. Let
 
     ![](../Images/l22t1p6.png)
 
-1. On the left navigation pane, select **Overview (1)** to open your project’s main page. In the **Project details** section, find the **Azure AI Foundry project endpoint (2)**, this is the endpoint you’ll use to connect your client application to the project.
+1. Here’s a corrected and smoother version:
+
+On the left navigation pane, click **Overview (1)** to open your project’s main page. In the **Libraries** section, locate the **Azure AI Foundry project endpoint**, then copy it by selecting the **Copy Azure AI Foundry project endpoint (2)** icon. Paste the copied value into a notepad, as you’ll need it in a later task. This endpoint will be used to connect your client application to the project.
 
     ![](../Images/l22t1p7.png)
 
@@ -111,25 +107,32 @@ An Azure AI *project* provides a collaborative workspace for AI development. Let
 
 ## Task 2: Test the model in the playground
 
-Now you can test your multimodal model deployment with an image-based prompt in the chat playground.
+In this task, you’ll test your Phi-4-multimodal-instruct model deployment in the chat playground. You’ll upload an image of a mango, combine it with a text prompt, and review the model’s response to see how it interprets and reasons over both image and text inputs.
 
-1. Click on **Open in playground** on the model deployment page.
+1. Go to **Models + endpoints (1)** under My Assets,click on **Open in playground (2)** on the model deployment page.
 
     ![](../Images/l30t2p1.png)
 
-1. In a new browser tab, download [mango.jpeg](https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg) from `https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg` and save it to a folder on your local file system.
+1. In a new browser tab, open [mango.jpeg](https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg) from `https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg`. Right click on the image and select **Save image as**, to save the image to a folder on your local file system.
 
     ![](../Images/l30t2p2.png)
 
+1. In the **Save As** window, enter **mango (1)** as the file name and then click **Save (2)**. 
+
     ![](../Images/l30t2p3.png)
+
+    > **Note:** Ensure that you save the file in the Downloads folder.
 
 1. On the chat playground page, in the **Setup** pane, ensure that your **Phi-4-multimodal-instruct** model deployment is selected.
 
     ![](../Images/l30t2p4.png)
 
-1. In the main chat session panel, under the chat input box, use the attach button (**&#128206;**) to upload the **mango.jpeg** image file, and then add the text **`What desserts could I make with this fruit?`** and submit the prompt.
+1. In the main chat panel, below the input box, click the **attach button (1)** (**📎**). In the **Open** window, select **Downloads (2)** from the left panel, choose the **mango.jpeg (3)** file, and then click **Open (4)**.
+
 
     ![](../Images/l30t2p5.png)
+
+1.  Then add the text **`What desserts could I make with this fruit?`** and press **Enter** to submit the prompt.
 
     ![](../Images/l30t2p6.png)
 
@@ -139,11 +142,9 @@ Now you can test your multimodal model deployment with an image-based prompt in 
 
 ## Task 3: Create a client application
 
-Now that you've deployed the model, you can use the deployment in a client application.
+In this task, you’ll create a client application that connects to your Azure AI project. You’ll clone the provided GitHub repo, set up a Python environment in Azure Cloud Shell, install the required libraries, and configure the app with your project’s endpoint and model deployment details. This prepares the client app to interact with your deployed model.
 
-### Prepare the application configuration
-
-1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
+1. On the **[Azure portal](https://portal.azure.com/)** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
     ![](../Images/l2at2p3.png)
 
@@ -170,7 +171,7 @@ Now that you've deployed the model, you can use the deployment in a client appli
 
     ![](../Images/l30t3p1.png)
 
-    > **Tip**: As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Note:** As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, navigate to the folder containing the application code files:  
 
@@ -201,13 +202,15 @@ Now that you've deployed the model, you can use the deployment in a client appli
     - your_project_endpoint: **Azure AI Foundry project endpoint (1)**
     - your_model_deployment: **Phi-4-multimodal-instruct (2)**
 
-        ![](../Images/l303p4.png)
+        ![](../Images/l30t3p4.png)
+
+        > **Note:** Paste the **AI Foundry project endpoint** that you copied in the earlier task.
 
 1. After you've replaced the placeholders, in the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
 ## Task 4: Write code to connect to your project and get a chat client for your model
 
-> **Tip**: As you add code, be sure to maintain the correct indentation.
+In this task, you’ll extend your client application by writing code to connect it to your Azure AI project. You’ll import the required SDK libraries, load your configuration settings, initialize the AIProjectClient, and create a chat client for your deployed model. This sets up the foundation for sending prompts and receiving responses from the model in later tasks.
 
 1. Enter the following command to edit the code file that has been provided:
 
@@ -228,6 +231,8 @@ Now that you've deployed the model, you can use the deployment in a client appli
 
     ![](../Images/l30t4p2.png)
 
+    > **Note:** As you add code, be sure to maintain the correct indentation.
+
 1. In the **main** function, under the comment **Get configuration settings**, note that the code loads the project connection string and model deployment name values you defined in the configuration file.
 
     ![](../Images/l30t4p3.png)
@@ -237,8 +242,6 @@ Now that you've deployed the model, you can use the deployment in a client appli
     ![](../Images/l30t4p3.png)
 
 1. Find the comment **Initialize the project client**, and add the following code to connect to your Azure AI Foundry project:
-
-    > **Tip**: Be careful to maintain the correct indentation level for your code.
 
     ```python
     # Initialize the project client
@@ -253,6 +256,8 @@ Now that you've deployed the model, you can use the deployment in a client appli
 
     ![](../Images/l30t4p4.png)
 
+    > **Note:** Be careful to maintain the correct indentation level for your code.
+
 1. Find the comment **Get a chat client**, and add the following code to create a client object for chatting with a model:
 
     ```python
@@ -263,6 +268,8 @@ Now that you've deployed the model, you can use the deployment in a client appli
     ![](../Images/l30t4p5.png)
 
 ## Task 5: Write code to submit a URL-based image prompt
+
+In this task, you’ll enhance your client application to handle URL-based image prompts. You’ll add code that retrieves an image from the web, encodes it in base64, and submits it along with a user’s text prompt to the model. This allows the application to combine both image and text inputs for richer, multimodal interactions.
 
 1. Note that the code includes a loop to allow a user to input a prompt until they enter "quit". Then in the loop section, find the comment **Get a response to image input**, add the following code to submit a prompt that includes the following image:
 
@@ -294,6 +301,8 @@ Now that you've deployed the model, you can use the deployment in a client appli
 1. Use the **CTRL+S** command to save your changes to the code file - don't close it yet though.
 
 ## Task 6: Sign into Azure and run the app
+
+In this task, you’ll sign into Azure from Cloud Shell and run your client application. You’ll authenticate using the Azure CLI, select the correct subscription, and then execute the Python app to test your deployed model. By the end, you’ll be able to send a text-and-image prompt to the model and review its response directly from your application.
 
 1. In the cloud shell command-line pane, enter the following command to sign into Azure. Click on the **Link (1)** and copy the **code (2)** provided.
 
@@ -329,21 +338,19 @@ Now that you've deployed the model, you can use the deployment in a client appli
     python chat-app.py
     ```
 
-    ![](../Images/l30t6p1.png)
-
 1. When prompted, enter the following prompt:
 
     ```
     Suggest some recipes that include this fruit
     ```
 
-    ![](../Images/l30t6p1.png)
-
 1. Review the response. Then enter `quit` to exit the program.
 
-    ![](../Images/l30t6p2.png)
+    ![](../Images/l30t6p1.png)
 
 ## Task 7: Modify the code to upload a local image file
+
+In this task, you’ll modify your client application to handle local image files instead of relying on URLs. You’ll update the code to load and encode an image from your project folder, send it along with a text prompt to the model, and review the response. This demonstrates how to work with images stored locally on your machine in a multimodal app.
 
 1. In the code editor for your app code, in the loop section, find the code you added previously under the comment **Get a response to image input**. Then modify the code as follows, to upload this local image file:
 
@@ -390,12 +397,16 @@ Now that you've deployed the model, you can use the deployment in a client appli
     What is this fruit? What recipes could I use it in?
     ```
 
-    ![](../Images/l30t7p2.png)
-
 15. Review the response. Then enter `quit` to exit the program.
 
-    ![](../Images/l30t7p3.png)
+    ![](../Images/l30t7p2.png)
 
     > **Note**: In this simple app, we haven't implemented logic to retain conversation history; so the model will treat each prompt as a new request with no context of the previous prompt.
 
 ## Summary
+
+In this lab, you created a multimodal AI solution using **Azure AI Foundry**. You provisioned an Azure AI project and deployed the **Phi-4-multimodal-instruct** model. You set up your environment in **Azure Cloud Shell**, cloned the sample Python client app, and configured it with your project endpoint and model deployment. You then tested the model in the playground with image-based prompts, extended the app to submit URL-based images, and finally modified it to process local image files.
+
+Through these steps, you learned how to create an Azure AI project, deploy a multimodal model, connect a client application, and interact with the model using both text and image inputs. This lab demonstrates the end-to-end process of building, deploying, and consuming a multimodal AI model in a real-world scenario.
+
+### You have successfully completed the Hands-on Lab!
