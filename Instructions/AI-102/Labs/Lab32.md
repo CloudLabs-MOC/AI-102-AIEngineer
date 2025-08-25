@@ -294,6 +294,15 @@ You are going to build an Azure AI Content Understanding analyzer that can extra
 
     ![](../Images/ai32l38.png) 
 
+1. On the **Test Analyzer** page, if analysis does not begin automatically, select **Run analysis**. Then wait for analysis to complete. Review the analysis results, which should look similar to this.
+
+    The slide being analyzed looks like this:
+
+    ![](../Images/ai32l39.png) 
+
+1. View the details of the fields that were identified in the **Fields** pane, expanding the **QuarterlyRevenue** and **ProductCategories** fields to see the subfield values.
+
+
 
 
 
