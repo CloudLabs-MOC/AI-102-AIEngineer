@@ -251,7 +251,6 @@ Now you're ready to use the SDK to evaluate the pdf file.
         if customer_name:
             print(f"Customer Name: '{customer_name.value}, with confidence {customer_name.confidence}.")
 
-
         invoice_total = receipt.fields.get("InvoiceTotal")
         if invoice_total:
             print(f"Invoice Total: '{invoice_total.value.symbol}{invoice_total.value.amount}, with confidence {invoice_total.confidence}.")
