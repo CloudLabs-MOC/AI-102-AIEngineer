@@ -1,6 +1,6 @@
 # Lab 30: Develop a vision-enabled chat app
 
-### Estimated Duration : Minutes
+### Estimated Duration : 30 Minutes
 
 ## Overview
 
@@ -91,9 +91,7 @@ In this task, you’ll create an Azure AI project in the Azure AI Foundry portal
 
     ![](../Images/l22t1p6.png)
 
-1. Here’s a corrected and smoother version:
-
-On the left navigation pane, click **Overview (1)** to open your project’s main page. In the **Libraries** section, locate the **Azure AI Foundry project endpoint**, then copy it by selecting the **Copy Azure AI Foundry project endpoint (2)** icon. Paste the copied value into a notepad, as you’ll need it in a later task. This endpoint will be used to connect your client application to the project.
+1. On the left navigation pane, click **Overview (1)** to open your project’s main page. In the **Libraries** section, locate the **Azure AI Foundry project endpoint**, then copy it by selecting the **Copy Azure AI Foundry project endpoint (2)** icon. Paste the copied value into a notepad, as you’ll need it in a later task. This endpoint will be used to connect your client application to the project.
 
     ![](../Images/l22t1p7.png)
 
@@ -128,7 +126,6 @@ In this task, you’ll test your Phi-4-multimodal-instruct model deployment in t
     ![](../Images/l30t2p4.png)
 
 1. In the main chat panel, below the input box, click the **attach button (1)** (**📎**). In the **Open** window, select **Downloads (2)** from the left panel, choose the **mango.jpeg (3)** file, and then click **Open (4)**.
-
 
     ![](../Images/l30t2p5.png)
 
@@ -397,7 +394,7 @@ In this task, you’ll modify your client application to handle local image file
     What is this fruit? What recipes could I use it in?
     ```
 
-15. Review the response. Then enter `quit` to exit the program.
+1. Review the response. Then enter `quit` to exit the program.
 
     ![](../Images/l30t7p2.png)
 
