@@ -37,3 +37,25 @@ In this lab, you use Azure Content Understanding to extract information from a v
       ![](../Images/ai32l1.png)    
 
 1. Wait for your project to be created. It may take around 3-5 minutes.
+
+### Task 2: Download content
+
+The content you're going to analyze is in a .zip archive. Download it and extract it in a local folder.
+
+1. In a new browser tab, copy and paste the [content.zip](https://github.com/microsoftlearning/mslearn-ai-information-extraction/raw/main/Labfiles/content/content.zip) from `https://github.com/microsoftlearning/mslearn-ai-information-extraction/raw/main/Labfiles/content/content.zip`.
+
+1. Click on the **folder** icon.
+
+    ![](../Images/ai32l2.png)
+
+1. Right click on **Content** folder **(1)** and then select **Extract All (2)** to extract the downloaded *content.zip* file.
+
+      ![](../Images/ai32l3.png)
+
+1. Enter `C:\LabFiles` **(1)** as destination folder and then select **Extract (2)**.
+
+      ![](../Images/ai32l4.png)
+
+1. View the files it contains. You'll use these files to build various Content Understanding analyzers in this lab.
+
+
