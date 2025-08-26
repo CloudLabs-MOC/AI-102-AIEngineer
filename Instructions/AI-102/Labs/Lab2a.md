@@ -4,17 +4,15 @@
 
 ## Overview
 
-In this lab, you configure role-based access for an Azure AI project by assigning the Cognitive Services OpenAI User role to a user in a specific resource group. You use the Azure portal and Azure CLI to sign in, navigate to the appropriate resource group, and grant permissions required for interacting with Azure AI Foundry services.
+In this lab, you will build a generative AI chat application using Azure AI Foundry. You’ll start by deploying the gpt-4.1 model in a new project, then set up a client application in Cloud Shell to interact with the deployed model. Next, you’ll configure environment variables and update Python code to connect to your project and maintain chat history. Finally, you’ll run the application to test real-time conversations with the model, gaining hands-on experience in integrating Azure AI into custom apps.
 
 ## Lab Objectives
 
 - **Task 1:** Deploy a model in an Azure AI Foundry project
 
-- **Task 2**: Assign a cognitive service OpenAI role to the user
+- **Task 2:** Create a client application to chat with the model
 
-- **Task 3:** Create a client application to chat with the model
-
-- **Task 4:** Write code to connect to your project and chat with your model
+- **Task 3:** Write code to connect to your project and chat with your model
 
 ## Task 1: Deploy a model in an Azure AI Foundry project
 
@@ -79,7 +77,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, locate the **gpt-
 
     ![](../Images/l2at1p9(1).png)
 
-1. On the **Overview (1)** page in the Azure AI Foundry portal, locate the **Endpoints and keys** section. Select the **Azure AI Foundry (2)** library, then click **Copy Azure AI Foundry project endpoint (3)**. This endpoint will be used to connect your client application to your project and model.
+1. On the **Overview (1)** page in the Azure AI Foundry portal, locate the **Endpoints and keys** section. Select the **Azure AI Foundry (2)** library, then **Copy Azure AI Foundry project endpoint (3)**. This endpoint will be used to connect your client application to your project and model.
 
     ![](../Images/l2at2p1.png)
 
@@ -95,58 +93,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, locate the **gpt-
  
 <validation step="c63cb22f-4418-42b9-99d1-b8e2e77ffa79" />
 
-## Task 2: Assign a cognitive service OpenAI role to the user
-
-In this task, you’ll assign the **Cognitive Services OpenAI User** role to your account for the specified Azure resource group. This will give you the required permissions to access and use the Azure OpenAI resources in the lab.
-
-
-1. Open a new browser tab (keeping the Azure AI Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-
-1. If prompted, provide the credentials below:
-
-    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-
-    - **Password:** <inject key="AzureAdUserPassword"></inject> 
-
-        >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
-
-        ![](../Images/l2at2p2.png)
-
-1. In the search bar, type **Resource groups (1)** and select **Resource groups (2)** from the results.
-
-    ![](../Images/l2at2(1)p1.png)
-
-1. In the Resource groups blade, choose **AI-102-RG2a**.
-
-    ![](../Images/l2at2(1)p2.png)
-
-1. In the left navigation pane, go to **Access control (IAM) (1)**, click the **+ Add (2)** drop-down, and choose **Add role assignment (3)**.
-
-    ![](../Images/l2at2(1)p3.png)
-
-1. On the **Add role assignment** page, under **Job function roles**, type **Cognitive Services OpenAI User (1)** in the search bar, select **Cognitive Services OpenAI User (2)** from the results, and click **Next (3)**.
-
-    ![](../Images/l2at2(1)p4.png)
-
-1. On the **Members** tab, do the following, then click **Select (5)**:
-
-    * **Assign access to**: Choose **Users, group, or service principal (1)**
-    * **Members**: Click **+ Select members (2)**
-    * **Search**: Enter **<inject key="AzureAdUserEmail"></inject> (3)**
-    * **Select members**: Choose **<inject key="AzureAdUserEmail"></inject> (4)**
-
-        ![](../Images/l2at2(1)p5.png)
-
-1. Confirm that **ODL_User<inject key="DeploymentID"></inject>** is listed under Members, then click **Review + assign**.
-
-    ![](../Images/l2at2(1)p6.png)
-
-1. Check the details on the **Review + assign** tab, then click **Review + assign**.
-
-    ![](../Images/l2at2(1)p7.png)
-
-
-## Task 3: Create a client application to chat with the model
+## Task 2: Create a client application to chat with the model
 
 In this task, you’ll connect your deployed Azure OpenAI model to a Python-based chat application by retrieving the project endpoint, cloning the sample code repository, configuring environment variables, and installing the required SDKs. This will allow you to interact with the model directly from your client application.
 
@@ -227,7 +174,7 @@ In this task, you’ll connect your deployed Azure OpenAI model to a Python-base
 
 1. After replacing the placeholders, save your changes in the code editor using **CTRL+S** or **Right-click > Save**. Then close the editor with **CTRL+Q** or **Right-click > Quit**, leaving the Cloud Shell command line open.
 
-## Task 4: Write code to connect to your project and chat with your model
+## Task 3: Write code to connect to your project and chat with your model
 
 In this task, you’ll modify the provided Python chat application to connect to your deployed Azure OpenAI model. You’ll add the necessary SDK imports, initialize the Azure AI Foundry client, set up a system prompt, handle user input in a loop, and return model responses while maintaining conversation history. Finally, you’ll run and test the application by chatting with your model from the Cloud Shell environment.
 
@@ -360,12 +307,6 @@ In this task, you’ll modify the provided Python chat application to connect to
 
 ## Summary
 
-By completing this lab, you learned how to:
-
-* Sign in to the Azure portal and Azure CLI using your provided credentials.
-* Locate and open the target resource group in the Azure portal.
-* Assign a role to a user through the **Access control (IAM)** blade.
-* Verify the role assignment to ensure the user has the necessary access.
-* Use Azure CLI within Cloud Shell to confirm subscription context and manage access.
+In this lab, you deployed the gpt-4.1 model in Azure AI Foundry and created a project to manage it. You then set up a Python-based chat application in Cloud Shell, configured environment variables, and installed the required SDKs. After updating the code to connect with your project, you tested the app by sending queries and reviewing responses. By the end, you gained hands-on experience in deploying models, integrating them into applications, and building a working generative AI chat solution.
 
 ### You have successfully completed the Hands-on Lab!

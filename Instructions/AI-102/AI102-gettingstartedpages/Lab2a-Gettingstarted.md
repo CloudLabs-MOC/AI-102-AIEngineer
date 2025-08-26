@@ -14,7 +14,7 @@ In this lab, you will build a generative AI chat application using Azure AI Foun
 
 By the end of this lab, you will be able to:
 
-1. **Create and deploy a project in Azure AI Foundry**: Set up a new project, deploy models such as gpt-4.1 and Phi-4-mini-instruct, and configure project-level settings.
+1. **Create and deploy a project in Azure AI Foundry**: Set up a new project, deploy models such as gpt-4.1 for use in a chat application.
 
 2. **Create a client application:** Clone and configure a Python-based chat app to connect with your deployed model.
 
@@ -30,15 +30,16 @@ By the end of this lab, you will be able to:
 
 The lab architecture demonstrates how Azure AI Foundry supports generative AI model exploration, deployment, and testing:
 
-1. **Azure AI Foundry Resource**: Provisioned through the Azure portal, this resource connects to Azure AI services and hosts deployed models such as gpt-4.1 and Phi-4-mini-instruct.
+1. **Azure AI Foundry Resource**: Provisioned in Azure, this resource hosts the deployed gpt-4.1 model and provides connectivity through project endpoints and keys.
 
 2. **Azure AI Foundry Project**: A workspace where models are deployed and managed, project settings are configured, and endpoints and authorization keys are accessed for application integration.
 
-3. **Azure Cloud Shell:** A command-line environment used to clone the sample code, configure environment variables, and run the Python chat application against the deployed model.
+3. **Azure Cloud Shell:** A browser-based command-line tool for cloning code, setting up environment variables, and running the Python chat app with the deployed model.
+
 
 ## Architecture Diagram
 
-![](../Images/lab01archdiagram.png)
+![](../Images/AI-102-arch-lab2a.png)
 
 ## Explanation of Components
 
@@ -46,9 +47,9 @@ The lab architecture demonstrates how Azure AI Foundry supports generative AI mo
 
 2. **Azure AI Foundry Project**: A workspace within the Foundry resource where you deploy and manage models, configure project-level settings, and access endpoints and authorization keys for integrating AI capabilities into applications.
 
-3. **Client Application (Python Chat App):** A sample Python-based application configured with the project endpoint and model deployment to send user prompts and receive model responses.
+3. **Azure Cloud Shell:** A command-line environment used to clone the sample code, configure environment variables, and run the Python chat application against the deployed model.
 
-4. **Azure Cloud Shell:** A command-line environment used to clone the sample code, configure environment variables, and run the Python chat application against the deployed model.
+4. **Client Application (Python Chat App):** A sample Python-based application configured with the project endpoint and model deployment to send user prompts and receive model responses.
 
 # Getting Started with lab
 
@@ -58,7 +59,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab02labvm.png)
+![Access Your VM and Lab Guide](../Images/AI-102-2a-1.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -70,6 +71,21 @@ To get a better understanding of your lab resources and credentials, navigate to
  
 ![Explore Lab Resources](../Images/envtab.png)
 
+<<<<<<< HEAD
+## Lab Guide Zoom In/Zoom Out
+ 
+To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
+
+![](../Images/AI-102-2a-2.png)
+
+## Utilizing the Split Window Feature
+ 
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+ 
+![Use the Split Window Feature](../Images/splitwindow.png)
+
+=======
+>>>>>>> cb0662222ebcf84311580788d96f8195a74028d2
 ## Managing Your Virtual Machine
  
 Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
