@@ -147,7 +147,10 @@ In this task, you’ll use the chat playground in Azure AI Foundry to test your 
 
 ### Summary
 
-In this lab, you've explored Azure AI Foundry, and seen how to create and manage projects and their related resources.   
+In this lab, you created an Azure AI Foundry project and deployed the gpt-4.1 model. You explored the project’s endpoints and keys to understand how applications connect to deployed models and Azure AI services. Finally, you tested the generative AI model in the chat playground by configuring system instructions, sending queries, and reviewing the model’s responses, gaining hands-on experience in managing and using generative AI in Azure.
+
+### You have successfully completed the Hands-on Lab!
+
 
 
 

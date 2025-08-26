@@ -368,5 +368,4 @@ By completing this lab, you learned how to:
 * Verify the role assignment to ensure the user has the necessary access.
 * Use Azure CLI within Cloud Shell to confirm subscription context and manage access.
 
-
 ### You have successfully completed the Hands-on Lab!
