@@ -2,23 +2,23 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 01: Prepare for an AI development project
+# Lab 02: Choose and deploy a language model
 
 ### Overall Estimated Timing: 60 Minutes
 
 ## Overview
 
-In this lab, you will explore Azure AI Foundry by creating a project and deploying the gpt-4.1 model. You’ll review the project’s endpoints and keys to understand how applications connect to deployed models and AI services. Finally, you’ll test the generative AI model in the chat playground by configuring system instructions, sending queries, and reviewing responses to see how the model can be applied in real scenarios.
+In this lab, you will explore Azure AI Foundry by reviewing and comparing AI models, creating a project, and deploying models such as gpt-4.1 and Phi-4-mini-instruct. You’ll examine model details and benchmarks to understand their capabilities and performance, then test the models in the chat playground by providing system instructions, sending queries, and analyzing responses. Finally, you’ll compare the models to determine their suitability for different tasks and scenarios.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create and deploy a project in Azure AI Foundry**: Set up a new project, deploy the gpt-4.1 model, and explore resource and project-level settings.
+1. **Explore and compare AI models**: Review model details, benchmarks, and performance metrics to understand their capabilities and select appropriate models for specific tasks.
 
-2. **Review project endpoints and keys**: Understand how applications connect to your Azure AI Foundry project, deployed models, and integrated AI services.
+2. **Create and deploy a project in Azure AI Foundry**: Set up a new project, deploy models such as gpt-4.1 and Phi-4-mini-instruct, and configure project-level settings.
 
-3. **Test a generative AI model in the chat playground**: Configure system instructions, send queries, and analyze responses from the deployed model.
+3. **Test and interact with deployed models**: Use the chat playground to provide system instructions, submit queries, review responses, and compare model performance to determine suitability for various scenarios.
 
 ## Pre-requisites
 
@@ -28,13 +28,13 @@ By the end of this lab, you will be able to:
 
 ## Architecture
 
-The lab architecture demonstrates how an Azure AI Foundry project supports generative AI development and integration:
+The lab architecture demonstrates how Azure AI Foundry supports generative AI model exploration, deployment, and testing:
 
-1. **Azure AI Foundry Resource**: Created in the Azure portal, this resource connects to Azure AI services and hosts deployed models such as gpt-4.1.
+1. **Azure AI Foundry Resource**: Provisioned through the Azure portal, this resource connects to Azure AI services and hosts deployed models such as gpt-4.1 and Phi-4-mini-instruct.
 
-2. **Azure AI Foundry Project**: A workspace where you deploy and manage the gpt-4.1 model, configure project settings, and access endpoints and keys for application integration.
+2. **Azure AI Foundry Project**: A workspace where models are deployed and managed, project settings are configured, and endpoints and authorization keys are accessed for application integration.
 
-3. **Chat Playground Interface**: A built-in tool within Azure AI Foundry that allows you to test your deployed model, provide custom instructions, send queries, and analyze responses before integrating the model into applications.
+3. **Chat Playground Interface**: An interactive environment within the project that allows you to test deployed models, provide system instructions, submit queries, analyze responses, and compare model performance.
 
 ## Architecture Diagram
 
@@ -42,11 +42,11 @@ The lab architecture demonstrates how an Azure AI Foundry project supports gener
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project**: The main workspace where you organize your AI solutions. It acts as a hub for managing deployed models, configuring project settings, and controlling access to resources.
+1. **Azure AI Foundry Resource**: A cloud-based resource created in the Azure portal that connects to Azure AI services and hosts deployed models such as gpt-4.1, providing the foundation for AI project development.
 
-2. **Models and Endpoints**: Deployed AI models, like gpt-4.1, are accessible via endpoints and secured with authorization keys. These endpoints allow client applications to interact with the models programmatically.
+2. **Azure AI Foundry Project**: A workspace within the Foundry resource where you deploy and manage models, configure project-level settings, and access endpoints and authorization keys for integrating AI capabilities into applications.
 
-3. **Chat Playground**: An interactive interface within the Foundry project that lets you experiment with your models. You can provide instructions, run queries, and observe model responses, which helps in testing and refining AI behavior before integration.
+3. **Chat Playground Interface**: A built-in tool in Azure AI Foundry that allows you to test deployed models, provide custom system instructions, send queries, and analyze responses before integrating the model into real-world applications.
 
 # Getting Started with lab
 

@@ -45,7 +45,7 @@ In this task, you’ll create a new Azure AI Foundry project, deploy the **gpt-4
 1. Under **Advanced options**, provide the below details and leave the rest to deafult:
 
     - Resource group: Select **AI-102-RG01 (1)**
-    - Region: Select **Region**: Select **<inject key="Region" enableCopy="false" /> (2)**
+    - Region: **<inject key="Region" enableCopy="false" /> (2)**
     - Select **Create (3)**
 
       ![](../Images/aii5.png) 

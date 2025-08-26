@@ -4,11 +4,25 @@
 
 ## Overview
 
-The Azure AI Foundry model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
+In this lab, you will work with Azure AI Foundry to explore, compare, and deploy generative AI models. You’ll review model details and benchmarks, create a project, deploy models like gpt-4.1 and Phi-4-mini-instruct, and test them in the chat playground. The lab provides hands-on experience in evaluating model performance, configuring system prompts, and understanding how to integrate AI models into applications effectively.
 
-In this lab, you'll explore the model catalog in Azure AI Foundry portal, and compare potential models for a generative AI application that assists in solving problems.
+## Lab Objectives
 
-### Task 1: Explore models
+- **Task 1:** Explore models
+
+- **Task 2:** Compare models
+
+- **Task 3:** Create an Azure AI Foundry project and deploy a model
+
+- **Task 4:** Chat with the gpt-4.1 model
+
+- **Task 5:** Deploy another model
+
+- **Task 6:** Chat with the Phi-4 model
+
+## Task 1: Explore models
+
+In this task, you’ll explore the model catalog in Azure AI Foundry. You will locate and review the **gpt-4.1** and **Phi-4-mini-instruct** models, examine their details and capabilities, and compare their performance using benchmark data. This will help you understand the characteristics of different models before using them in your projects.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -22,7 +36,7 @@ In this lab, you'll explore the model catalog in Azure AI Foundry portal, and co
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. In the home page, in the **Explore models and capabilities** section, search for the `gpt-4.1` model **(1)** and select `gpt-4.1` **(2)**  which we'll use in our project.    
+1. In the home page, in the **Explore models and capabilities** section, search for the `gpt-4.1`**(1)** model and select `gpt-4.1` **(2)**  which we'll use in our project.    
 
    ![](../Images/aii2.png) 
 
@@ -50,9 +64,9 @@ In this lab, you'll explore the model catalog in Azure AI Foundry portal, and co
 
    ![](../Images/aii24.png)
 
-### Task 2: Compare models
+## Task 2: Compare models
 
-You've reviewed two different models, both of which could be used to implement a generative AI chat application. Now let's compare the metrics for these two models visually.
+In this task, you’ll compare different AI models in Azure AI Foundry. You will add models like **gpt-4.1** and **Phi-4-mini-instruct** to a comparison chart, analyze them based on metrics such as quality, accuracy, and cost, and interpret the benchmark results to determine which model best suits specific tasks.
 
 1. Use the back arrow **(←)** to return to the model catalog.
 
@@ -94,7 +108,7 @@ You've reviewed two different models, both of which could be used to implement a
 
    ![](../Images/aii33.png)
 
-1. In the `X-axis` dropdown menu, under **Quality**, select the **Accuracy** metrics and observe each resulting chart **(2)(3)**.   
+1. In the `X-axis` dropdown menu, under **Quality**, select the **Accuracy (1)** metrics and observe each resulting chart **(2)** and **(3)**.   
 
    ![](../Images/aii34.png)
 
@@ -108,7 +122,9 @@ You've reviewed two different models, both of which could be used to implement a
 
    ![](../Images/aii36.png)
 
-### Task 3: Create an Azure AI Foundry project and deploy a model
+## Task 3: Create an Azure AI Foundry project and deploy a model
+
+In this task, you’ll create a new Azure AI Foundry project and deploy the **gpt-4.1** model. You will configure project settings such as the resource group and region, set deployment options, and then access the chat playground to test and interact with the deployed model.
 
 To use a model, you need to create an Azure AI Foundry project.
 
@@ -123,7 +139,7 @@ To use a model, you need to create an Azure AI Foundry project.
 1. Under **Advanced options**, provide the below details and leave the rest to deafult:
 
     - Resource group: Select **AI-102-RG02 (1)**
-    - Region: Select **Region**: Select **<inject key="Region" enableCopy="false" /> (2)**
+    - Region: **<inject key="Region" enableCopy="false" /> (2)**
     - Select **Create (3)**
 
       ![](../Images/aii39.png) 
@@ -142,23 +158,21 @@ To use a model, you need to create an Azure AI Foundry project.
  
 ---
 
-### Task 4: Chat with the gpt-4.1 model
+## Task 4: Chat with the gpt-4.1 model
 
-Now that you have a model deployment, you can use the playground to test it.
+In this task, you’ll interact with the deployed **gpt-4.1** model using the chat playground. You will configure the system prompt, submit queries, and review the model’s responses to understand how it solves problems and explains its reasoning.
 
-1. In the chat playground, in the Setup pane, ensure that your `gpt-4.1` model is selected
+1. In the chat playground, in the Setup pane, ensure that your `gpt-4.1` model is selected.
 
     ![](../Images/aii40.png)
 
-1. In the Give the model instructions and context field, set the system prompt to `You are an AI assistant that helps solve problems` **(1)**.
+1. In the Give the model instructions and context field, set the system prompt to `You are an AI assistant that helps solve problems` **(1)** and select **Apply changes (2)** to update the system prompt.  
 
-    - Select **Apply changes (2)** to update the system prompt.  
+   ![](../Images/aii41.png)    
 
-      ![](../Images/aii41.png)    
+1. In the **Update system message?**, click **Continue**.
 
-1. Select **Continue**.
-
-    ![](../Images/aii42.png)
+   ![](../Images/aii42.png)
 
 1. In the chat window, enter the following query **(1)** and then **Send (2)**.
 
@@ -180,12 +194,11 @@ Now that you have a model deployment, you can use the playground to test it.
 
      ![](../Images/aii45.png)   
 
+## Task 5: Deploy another model
 
-### Task 5: Deploy another model
+In this task, you’ll deploy an additional model, **Phi-4-mini-instruct**, to your existing Azure AI Foundry project. You will configure deployment settings, accept the model license, and complete the deployment to make the model available for testing and integration alongside the previously deployed gpt-4.1 model.
 
-When you created your project, the gpt-4.1 model you selected was automatically deployed. Let's deploy the Phi-4-mini-instruct model you also considered.
-
-1. In the navigation bar on the left, in the **My assets** section, select **Models + endpoints**.
+1. In the navigation bar on the left, in the **My assets** section, select **Models + endpoints (1)**.
 
     - In the Model deployments tab, in the **+ Deploy model (2)** drop-down list, select **Deploy base model (3)**.
 
@@ -219,7 +232,9 @@ When you created your project, the gpt-4.1 model you selected was automatically 
  
 ---
 
-### Task 6: Chat with the Phi-4 model
+## Task 6: Chat with the Phi-4 model
+
+In this task, you’ll interact with the **Phi-4-mini-instruct** model in the chat playground. You will provide system instructions, submit queries, and review responses to test the model’s problem-solving capabilities. Additionally, you’ll compare its performance against the gpt-4.1 model to understand differences in response quality, reasoning, and suitability for specific tasks.
 
 1. In the navigation bar, select **Playgrounds (1)**. Under the Chat playground, select the **Try the  Chat playground (2)**.
 
@@ -285,7 +300,11 @@ You've compared two models, which may vary in terms of both their ability to gen
 
 The details and benchmarks provided in the model catalog, along with the ability to visually compare models provides a useful starting point when identifying candidate models for a generative AI solution. You can then test candidate models with a variety of system and user prompts in the chat playground.
 
+## Summary 
 
+In this lab, you explored the Azure AI Foundry model catalog, reviewing details and benchmarks for models such as **gpt-4.1** and **Phi-4-mini-instruct**. You compared models based on quality, accuracy, and cost, then created an Azure AI Foundry project and deployed the gpt-4.1 model. You tested the model in the chat playground, providing system instructions and queries, and later deployed the Phi-4-mini-instruct model to compare its performance. By the end, you gained hands-on experience in managing AI projects, deploying models, testing their responses, and evaluating models to select the most suitable one for a given task.
+
+### You have successfully completed the Hands-on Lab!
 
 
 
