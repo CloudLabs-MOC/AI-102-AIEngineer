@@ -8,33 +8,38 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will explore Azure AI Foundry by reviewing and comparing AI models, creating a project, and deploying models such as gpt-4.1 and Phi-4-mini-instruct. You’ll examine model details and benchmarks to understand their capabilities and performance, then test the models in the chat playground by providing system instructions, sending queries, and analyzing responses. Finally, you’ll compare the models to determine their suitability for different tasks and scenarios.
+In this lab, you will work with **Azure AI Foundry** to design, build, and deploy a prompt flow solution. You’ll begin by creating a project, then construct and configure a flow with system instructions and connect it to a model. You will test the flow in the chat pane using sample prompts to validate its responses and make adjustments as needed. Finally, you’ll deploy the flow as an endpoint, test it directly in the Azure AI Foundry portal, and review connection details that enable integration into client applications. This lab provides practical experience in creating, testing, and deploying prompt flows to deliver generative AI capabilities.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Explore and compare AI models**: Review model details, benchmarks, and performance metrics to understand their capabilities and select appropriate models for specific tasks.
-
-2. **Create and deploy a project in Azure AI Foundry**: Set up a new project, deploy models such as gpt-4.1 and Phi-4-mini-instruct, and configure project-level settings.
-
-3. **Test and interact with deployed models**: Use the chat playground to provide system instructions, submit queries, review responses, and compare model performance to determine suitability for various scenarios.
+1. **Create an Azure AI Foundry project**: Set up a new project environment to build and manage prompt flows.
+2. **Design and configure a prompt flow**: Add system instructions, connect to a model, and adjust flow components.
+3. **Test flows in the chat pane**: Run sample queries, review outputs, and refine prompts to improve responses.
+4. **Deploy a prompt flow as an endpoint**: Publish your flow, enabling it to be accessed outside the design environment.
+5. **Validate the deployed endpoint**: Interact with the deployed flow directly in Azure AI Foundry to confirm functionality.
+6. **Retrieve endpoint connection details**: Access deployment information required to integrate the flow into client applications.
 
 ## Pre-requisites
 
-* Basic knowledge of the Azure portal.
-* Familiarity with core AI concepts such as generative AI and language models.
-* An active Azure subscription with access to Azure AI Foundry.
+- Basic knowledge of navigating the Azure portal.
+
+- Familiarity with AI concepts such as generative AI, language models, and benchmarks.
+
+- An active Azure subscription with access to Azure AI Foundry.
+
+- Permission to create and manage resources (including enabling managed identities).
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Foundry supports generative AI model exploration, deployment, and testing:
+1. **Azure AI Foundry Resource**: Provisioned via the Azure portal, this resource connects to Azure AI services, manages access via system-assigned identities, and hosts deployed models such as **gpt-4.1** and **Phi-4-mini-instruct**.
 
-1. **Azure AI Foundry Resource**: Provisioned through the Azure portal, this resource connects to Azure AI services and hosts deployed models such as gpt-4.1 and Phi-4-mini-instruct.
+2. **Azure AI Foundry Project**: A workspace for deploying and managing models, configuring project settings, creating prompt flows, and accessing endpoints and authorization keys for applications.
 
-2. **Azure AI Foundry Project**: A workspace where models are deployed and managed, project settings are configured, and endpoints and authorization keys are accessed for application integration.
+3. **Prompt Flow and Chat Playground**: Interactive tools within the project to build, test, and deploy prompt flows, configure system instructions, submit queries to models, analyze responses, and compare model performance for different scenarios.
 
-3. **Chat Playground Interface**: An interactive environment within the project that allows you to test deployed models, provide system instructions, submit queries, analyze responses, and compare model performance.
+4. **Storage and Authorization**: Blob storage integrated with managed identities ensures the project and prompt flows have secure access to necessary data and assets.
 
 ## Architecture Diagram
 
@@ -42,11 +47,17 @@ The lab architecture demonstrates how Azure AI Foundry supports generative AI mo
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project**: The main workspace where you organize your AI solutions. It acts as a hub for managing deployed models, configuring project settings, and controlling access to resources.
+1. **Azure AI Foundry Resource**: The core service provisioned in the Azure portal that connects to Azure AI services, hosts deployed models, and manages secure access via system-assigned identities. It serves as the foundation for creating projects, deploying models, and integrating AI capabilities.
 
-2. **Models and Endpoints**: Deployed AI models, like gpt-4.1, are accessible via endpoints and secured with authorization keys. These endpoints allow client applications to interact with the models programmatically.
+2. **Azure AI Foundry Project**: The workspace where you deploy and manage models, configure project-level settings, create prompt flows, and access endpoints and authorization keys. This is where all model-related operations, including deployment, testing, and orchestration, occur.
 
-3. **Chat Playground**: An interactive interface within the Foundry project that lets you experiment with your models. You can provide instructions, run queries, and observe model responses, which helps in testing and refining AI behavior before integration.
+3. **Models and Endpoints**: AI models such as **gpt-4.1** and **Phi-4-mini-instruct** are deployed within the project and exposed through endpoints. Endpoints enable applications or prompt flows to interact with the models programmatically while ensuring secure access via keys.
+
+4. **Prompt Flow**: A configurable workflow that orchestrates prompts, inputs, and outputs for a generative AI model. It allows you to define interactions, integrate system instructions, and process user queries to automate AI-assisted tasks.
+
+5. **Chat Playground**: An interactive interface for testing deployed models and prompt flows. Users can input queries, provide system instructions, observe responses, and iteratively refine model behavior before integrating it into applications.
+
+6. **Storage Integration and Authorization**: Blob storage connected via managed identities ensures that prompt flows and projects can securely read and store assets required for AI operations, maintaining controlled access to sensitive data.
 
 # Getting Started with lab
 

@@ -4,9 +4,25 @@
 
 ## Overview
 
-In this lab, you'll use Azure AI Foundry portal's prompt flow to create a custom chat app that uses a user prompt and chat history as inputs, and uses a GPT model from Azure OpenAI to generate an output.
+In this lab, you will use **Azure AI Foundry** to create and deploy a prompt flow solution. You’ll start by setting up a project, building and configuring a flow with system instructions, and connecting it to a model. You will then test the flow in the chat pane with sample queries to validate its performance. Finally, you’ll deploy the flow as an endpoint, test it through the Azure AI Foundry portal, and review connection details for application integration. This lab provides hands-on experience in designing, testing, and deploying prompt flows to enable generative AI solutions.
 
-### Task 1: Create an Azure AI Foundry hub and project
+## Lab Objectives
+
+- **Task 1:** Create an Azure AI Foundry hub and project
+
+- **Task 2:** Configure resource authorization
+
+- **Task 3:** Deploy a generative AI model
+
+- **Task 4:** Create a prompt flow
+
+- **Task 5:** Test the flow
+
+- **Task 6:** Deploy the flow
+
+## Task 1: Create an Azure AI Foundry hub and project
+
+In this task, you’ll create an **Azure AI Foundry hub and project**. You’ll sign in to the Azure AI Foundry portal, set up a new project with a hub, configure its name and region, and finalize the creation. This setup provides the workspace where you’ll manage AI resources and build solutions in later tasks.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -24,9 +40,9 @@ In this lab, you'll use Azure AI Foundry portal's prompt flow to create a custom
 
    ![](../Images/aii60.png) 
 
-1. In the Create a project wizard, select **AI hub resource**.
+1. In the **Create project** wizard, select **AI hub resource (1)** and then click **Next (2)**.
 
-   ![](../Images/aii61.png)
+   ![](../Images/aii61(1).png)
 
 1. Enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)**, then select **Rename hub (2)**. Then rename the hub as  **Myhub<inject key="DeploymentID" enableCopy="false"/> (3)** and then **Next (4)**.
 
@@ -52,11 +68,11 @@ In this lab, you'll use Azure AI Foundry portal's prompt flow to create a custom
  
 ---
 
-### Task 2: Configure resource authorization
+## Task 2: Configure resource authorization
 
-The prompt flow tools in Azure AI Foundry create file-based assets that define the prompt flow in a folder in blob storage. Before exploring prompt flow, let's ensure that your Azure AI Foundry resource has the required access to the blob store so it can read them.
+In this task, you’ll configure resource authorization so that your Azure AI Foundry hub can securely access the associated storage account. You’ll enable the system-assigned managed identity for the AI Foundry resource and assign it the **Storage Blob Data Reader** role, ensuring the hub has permission to read prompt flow assets stored in blob storage.
 
-1. In a new browser tab, open the [Azure portal](https://portal.azure.com), igning in with your Azure credentials if prompted.
+1. In a new browser tab, open the [Azure portal](https://portal.azure.com), signing in with your Azure credentials if prompted.
 
 1. On the search bar, search for **Azure AI Foundry (1)** and select **Azure AI Foundry (2)**.
 
@@ -66,7 +82,7 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
 
     ![](../Images/aii65.png)
 
-1. Then expand its **Resource Management (1)** section, then select the **Identity (2)**. If the status of the system assigned identity is Off, switch it **On (3)** and **Save (4)** your changes.   
+1. Expand the **Resource Management (1)** section, select **Identity (2)**, and if the system-assigned identity is set to Off, switch it to **On (3)**. Finally, click **Save (4)** to apply the change.
 
     ![](../Images/aii66.png)
 
@@ -106,7 +122,9 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
 
 1. When you've reviewed and assigned the role access to allow the Azure AI Foundry managed identity to read blobs in the storage account, close the Azure portal tab and return to the Azure AI Foundry portal.
 
-### Task 3: Deploy a generative AI model
+## Task 3: Deploy a generative AI model
+
+In this task, you’ll deploy a generative AI base model to your Azure AI Foundry project. Specifically, you’ll select and configure the **gpt-4.1** model with the required deployment settings, connect it to your Azure OpenAI resource, and enable it for use in building and testing prompt flows.
 
 1. In the pane on the left for your project, in the My assets section, select the **Models + endpoints (1)** page.
 
@@ -114,7 +132,7 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
  
       ![](../Images/aii75.png)   
 
-1. Search for the **gpt-4.1 (1)** model in the list, and then select **(2)** and confirm it **(3)**.
+1. Search for the **gpt-4.1 (1)** model in the list, and then select it **(2)** and click **Confirm** **(3)**.
 
     ![](../Images/aii76.png)
 
@@ -132,7 +150,7 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
     - Content filter: **DefaultV2 (4)**   
     - Then select **Deploy (5)**
 
-     ![](../Images/aii98.png)
+        ![](../Images/aii98.png)
 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
@@ -145,9 +163,9 @@ The prompt flow tools in Azure AI Foundry create file-based assets that define t
  
 ---
 
-### Task 4: Create a prompt flow
+## Task 4: Create a prompt flow
 
-A prompt flow provides a way to orchestrate prompts and other activities to define an interaction with a generative AI model. In this exercise, you'll use a template to create a basic chat flow for an AI assistant in a travel agency.
+In this task, you’ll create a basic AI assistant for a travel agency using a prompt flow. The assistant will handle travel-related queries, give personalized recommendations, share tips, and help with itinerary planning while keeping responses professional, safe, and relevant.
 
 1. In the Azure AI Foundry portal navigation bar, in the **Build and customize** section, select **Prompt flow (1)**. Then select **+ Create (2)**.
 
@@ -175,8 +193,6 @@ A prompt flow provides a way to orchestrate prompts and other activities to defi
 
 1. View the prompt flow, which consists of a series of inputs, outputs, and tools. You can expand and edit the properties of these objects in the editing panes on the left, and view the overall flow as a graph on the right.
 
-1. View the Inputs pane, and note that there are two inputs (chat history and the user's question)
-
 1. View the **Inputs** pane, and note that there are two inputs (`chat history` and the `user's question`).
 
     ![](../Images/aii83.png)
@@ -189,11 +205,11 @@ A prompt flow provides a way to orchestrate prompts and other activities to defi
 
 1. In the **Chat** LLM tool pane, for Connection, **select the connection for the Azure OpenAI service resource (1)** in your AI hub. Then configure the following connection properties:
 
-    - Api: chat
-    - deployment_name: The `gpt-4.1` model you deployed **(2)**
-    - response_format: `{"type":"text"}` **(3)**
+    - Api: chat **(2)**
+    - deployment_name: The `gpt-4.1` model you deployed **(3)**
+    - response_format: `{"type":"text"}` **(4)**
 
-      ![](../Images/aii-85.png)   
+      ![](../Images/aii-85(1).png)   
 
 1. Delete the existing prompt. Copy and paste the following the **Prompt**.
 
@@ -240,7 +256,9 @@ A prompt flow provides a way to orchestrate prompts and other activities to defi
     ![](../Images/aii87.png)
 
 
-### Task 5: Test the flow
+## Task 5: Test the flow
+
+In this task you’ll test the deployed flow by running a compute session, sending a sample query, and verifying that the chat responds with appropriate travel recommendations.
 
 1. Ensure the **compute session is running (1)**. If not, wait for it to start.
 
@@ -252,9 +270,9 @@ A prompt flow provides a way to orchestrate prompts and other activities to defi
 
     ![](../Images/aii89.png)
 
-### Task 6: Deploy the flow
+## Task 6: Deploy the flow
 
-When you're satisfied with the behavior of the flow you created, you can deploy the flow.
+In this task you’ll deploy your flow as an endpoint, verify it is running successfully, test it with sample prompts, and review the connection details to understand how it can be integrated into an application.
 
 1. On the toolbar, select **Deploy** and deploy the flow with the following settings:
 
@@ -284,7 +302,7 @@ When you're satisfied with the behavior of the flow you created, you can deploy 
 
     ![](../Images/aii94.png)
 
-1. Navigate to the `Test` page.
+1. Navigate to the **Test** page.
 
     ![](../Images/aii99.png)
 
@@ -299,3 +317,9 @@ When you're satisfied with the behavior of the flow you created, you can deploy 
 1. View the **Consume** page for the endpoint, and note that it contains connection information and sample code that you can use to build a client application for your endpoint - enabling you to integrate the prompt flow solution into an application as a generative AI application.
 
     ![](../Images/aii102.png)
+
+## Summary
+
+In this lab, you created a project in **Azure AI Foundry** and explored prompt flow capabilities. You built a flow, configured system instructions, and connected it to a model to generate responses. You then tested the flow in the chat pane, refining it with prompts to validate its behavior. Finally, you deployed the flow as an endpoint, confirmed it was running, and tested it with sample queries. You also reviewed the endpoint’s connection details to see how it could be integrated into applications.
+
+### You have successfully completed the Hands-on Lab!
