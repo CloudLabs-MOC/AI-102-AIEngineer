@@ -51,7 +51,7 @@ By the end of this lab, you will be able to:
 
 2. **Azure AI Foundry Project**: The workspace where you deploy and manage models, configure project-level settings, create prompt flows, and access endpoints and authorization keys. This is where all model-related operations, including deployment, testing, and orchestration, occur.
 
-3. **Models and Endpoints**: AI models such as **gpt-4.1** and **Phi-4-mini-instruct** are deployed within the project and exposed through endpoints. Endpoints enable applications or prompt flows to interact with the models programmatically while ensuring secure access via keys.
+3. **Models and Endpoints**: AI models such as **gpt-4.1**, are deployed within the project and exposed through endpoints. Endpoints enable applications or prompt flows to interact with the models programmatically while ensuring secure access via keys.
 
 4. **Prompt Flow**: A configurable workflow that orchestrates prompts, inputs, and outputs for a generative AI model. It allows you to define interactions, integrate system instructions, and process user queries to automate AI-assisted tasks.
 
