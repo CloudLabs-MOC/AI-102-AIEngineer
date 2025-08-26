@@ -4,7 +4,7 @@
 
 ## Overview
 
-In this lab, you configure role-based access for an Azure AI project by assigning the *Cognitive Services OpenAI User* role to a user in a specific resource group. You use the Azure portal and Azure CLI to sign in, navigate to the appropriate resource group, and grant permissions required for interacting with Azure AI Foundry services.
+In this lab, you configure role-based access for an Azure AI project by assigning the Cognitive Services OpenAI User role to a user in a specific resource group. You use the Azure portal and Azure CLI to sign in, navigate to the appropriate resource group, and grant permissions required for interacting with Azure AI Foundry services.
 
 ## Lab Objectives
 
@@ -261,12 +261,12 @@ In this task, you’ll modify the provided Python chat application to connect to
     ```python
    # Initialize the project client
    project_client = AIProjectClient(            
-            credential=DefaultAzureCredential(
-                exclude_environment_credential=True,
-                exclude_managed_identity_credential=True
-            ),
-            endpoint=project_endpoint,
-        )
+        credential=DefaultAzureCredential(
+            exclude_environment_credential=True,
+            exclude_managed_identity_credential=True
+        ),
+        endpoint=project_endpoint,
+    )
     ```
 
     > **Note:** Be careful to maintain the correct indentation level for your code.
@@ -298,13 +298,13 @@ In this task, you’ll modify the provided Python chat application to connect to
     ```python
    # Get a chat completion
    prompt.append({"role": "user", "content": input_text})
-            response = openai_client.chat.completions.create(
-                model=model_deployment,
-                messages=prompt
-                )
-            completion = response.choices[0].message.content
-            print(completion)
-            prompt.append({"role": "assistant", "content": completion})
+   response = openai_client.chat.completions.create(
+        model=model_deployment,
+        messages=prompt
+        )
+   completion = response.choices[0].message.content
+   print(completion)
+   prompt.append({"role": "assistant", "content": completion})
     ```
     > **Note:** As you add code, be sure to maintain the correct indentation.
 
