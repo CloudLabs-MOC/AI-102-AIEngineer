@@ -70,18 +70,6 @@ To get a better understanding of your lab resources and credentials, navigate to
  
 ![Explore Lab Resources](../Images/envtab.png)
 
-## Lab Guide Zoom In/Zoom Out
- 
-To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
-
-![](../Images/zoominai102.png)
-
-## Utilizing the Split Window Feature
- 
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
- 
-![Use the Split Window Feature](../Images/splitwindow.png)
-
 ## Managing Your Virtual Machine
  
 Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
@@ -93,6 +81,18 @@ Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from
 You can use the **Progress** tab to track your progress while working on the lab. A score will be provided after successful validation.
 
 ![](../Images/progresstab.png)
+
+## Utilizing the Split Window Feature
+ 
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
+ 
+![Use the Split Window Feature](../Images/splitwindow.png)
+
+## Lab Guide Zoom In/Zoom Out
+ 
+To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
+
+![](../Images/zoominai102.png)
 
 ## Let's Get Started with Azure Portal
  
