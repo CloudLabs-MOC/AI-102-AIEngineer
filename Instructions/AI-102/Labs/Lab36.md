@@ -129,20 +129,31 @@ Now that you have the documents in place, you can create an indexer to extract i
 
 1. Then, on its **Overview** page, select **Import data**.
 
-
+   ![](../Images/ai36l119.png)
 
 1. On the **Connect to your data** page, in the **Data Source** list, select **Azure Blob Storage**. Then complete the data store details with the following values:
-    - **Data Source**: Azure Blob Storage
-    - **Data source name**: `margies-documents`
-    - **Data to extract**: Content and metadata
-    - **Parsing mode**: Default
-    - **Subscription**: *Your Azure subscription*
-    - **Connection string**: 
-        - Select **Choose an existing connection**
-        - Select your storage account
-        - Select the **documents** container
-    - **Managed identity authentication**: None
-    - **Container name**: documents
-    - **Blob folder**: *Leave this blank*
-    - **Description**: `Travel brochures`
-1. Proceed to the next step (**Add cognitive skills**), which has three expandable sections to complete.
+    - Data Source: Azure Blob Storage **(1)**
+    - Data source name: `margies-documents` **(2)**
+    - Data to extract: **Content and metadata (3)**
+    - Parsing mode: Default
+    - Subscription: *Your Azure subscription* **(4)**
+    - **Connection string**: Select **Choose an existing connection (5)**
+
+      ![](../Images/ai36l120.png)    
+
+      - Select your storage account **Storage<inject key="DeploymentID" enableCopy="false"/>**.
+
+        ![](../Images/ai36l121.png)   
+
+      - Select the **documents (1)** container and then **Select (2)**
+
+        ![](../Images/ai36l122.png)   
+
+    - Managed identity authentication: **None (6)**
+    - Container name: **documents (7)**
+    - Blob folder: *Leave this blank* **(8)**
+    - Description: `Travel brochures` **(9)**
+    - Proceed to the next step (**Add cognitive skills (10)**), which has three expandable sections to complete.
+
+      ![](../Images/ai36l123.png)    
+
