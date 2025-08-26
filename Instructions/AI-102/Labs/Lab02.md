@@ -168,11 +168,11 @@ In this task, you’ll interact with the deployed **gpt-4.1** model using the ch
 
 1. In the Give the model instructions and context field, set the system prompt to `You are an AI assistant that helps solve problems` **(1)** and select **Apply changes (2)** to update the system prompt.  
 
-   ![](../Images/aii41.png)    
+      ![](../Images/aii41.png)    
 
 1. In the **Update system message?**, click **Continue**.
 
-   ![](../Images/aii42.png)
+      ![](../Images/aii42.png)
 
 1. In the chat window, enter the following query **(1)** and then **Send (2)**.
 
