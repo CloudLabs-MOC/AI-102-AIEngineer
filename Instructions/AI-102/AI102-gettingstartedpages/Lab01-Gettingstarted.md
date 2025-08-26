@@ -38,15 +38,15 @@ The lab architecture demonstrates how an Azure AI Foundry project supports gener
 
 ## Architecture Diagram
 
-![](../media/Module2a_Architecture.png)
+![](../Images/lab01archdiagram.png)
 
 ## Explanation of Components
 
-1. **Azure AI Content Safety Text Moderation**: An AI-powered service that scans text inputs for harmful or inappropriate content, enabling developers to protect users and comply with content policies.
+1. **Azure AI Foundry Resource**: A cloud-based resource created in the Azure portal that connects to Azure AI services and hosts deployed models such as gpt-4.1, providing the foundation for AI project development.
 
-2. **Severity Scoring**: The system rates each category (e.g., hate, violence, sexual content) on a severity scale to help prioritize moderation efforts.
+2. **Azure AI Foundry Project**: A workspace within the Foundry resource where you deploy and manage models, configure project-level settings, and access endpoints and authorization keys for integrating AI capabilities into applications.
 
-3. **Content Safety Studio**: Provides a hands-on environment for testing text moderation capabilities and understanding how the service works before 
+3. **Chat Playground Interface**: A built-in tool in Azure AI Foundry that allows you to test deployed models, provide custom system instructions, send queries, and analyze responses before integrating the model into real-world applications.
 
 # Getting Started with lab
 
