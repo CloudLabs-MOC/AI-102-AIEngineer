@@ -36,7 +36,6 @@ The lab architecture demonstrates how Azure AI Foundry supports generative AI mo
 
 3. **Azure Cloud Shell:** A browser-based command-line tool for cloning code, setting up environment variables, and running the Python chat app with the deployed model.
 
-
 ## Architecture Diagram
 
 ![](../Images/AI-102-arch-lab2a.png)
@@ -71,21 +70,6 @@ To get a better understanding of your lab resources and credentials, navigate to
  
 ![Explore Lab Resources](../Images/envtab.png)
 
-<<<<<<< HEAD
-## Lab Guide Zoom In/Zoom Out
- 
-To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
-
-![](../Images/AI-102-2a-2.png)
-
-## Utilizing the Split Window Feature
- 
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
- 
-![Use the Split Window Feature](../Images/splitwindow.png)
-
-=======
->>>>>>> cb0662222ebcf84311580788d96f8195a74028d2
 ## Managing Your Virtual Machine
  
 Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
@@ -116,7 +100,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
    ![Launch Azure Portal](../Images/azureportalicon.png)
 
-1. In sign-in window, kindly sign in using the provided Azure credentials
+1. In the sign-in window, kindly sign in using the provided Azure credentials
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -134,7 +118,6 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
     ![](../Images/AIl16-3.png)
 
-
 ## Support Contact
  
 The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels explicitly tailored for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
@@ -149,4 +132,3 @@ Click on **Next** from the lower right corner to move on to the next page.
    ![Start Your Azure Journey](../Images/nextpage.png)
 
 ## Happy Learning !!
-
