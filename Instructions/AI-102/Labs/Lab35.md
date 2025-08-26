@@ -113,7 +113,7 @@ In this task, you'll set up your development environment in Azure Cloud Shell. Y
 
     ![](../Images/l35t2p1.png)
 
-    > **Tip**: As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Note:** As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, navigate to the folder containing the application code files:  
 
