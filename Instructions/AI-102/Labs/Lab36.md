@@ -48,7 +48,7 @@ In this lab, you use AI Search to index a set of documents maintained by Margie'
 1. Then create a **Storage account** resource with the following settings:
     - Subscription: *Your Azure subscription* **(1)**
     - Resource group: Select **AI-102-RG24 (2)**
-    - Storage account name: Enter **Storage<inject key="DeploymentID" enableCopy="false"/> (3)**
+    - Storage account name: Enter **storage<inject key="DeploymentID" enableCopy="false"/> (3)**
     - Region: Select **<inject key="Region" enableCopy="false" /> (4)**
     - Primary service: Select **Azure Blob Storage or Azure Data Lake Storage Gen 2 (5)**
     - Performance: **Standard (6)**
