@@ -157,3 +157,103 @@ Now that you have the documents in place, you can create an indexer to extract i
 
       ![](../Images/ai36l123.png)    
 
+1. In the **Attach Azure AI Services (1)** section, select **Free (limited enrichments (2)**).
+
+   ![](../Images/ai36l124.png)
+
+    > **Note**:The free Azure AI Services resource for Azure AI Search can be used to index a maximum of 20 documents. In a real solution, you should create an Azure AI Services resource in your subscription to enable AI enrichment for a larger number of documents.
+
+1. In the **Add enrichments (1)** section:
+
+    - Change the **Skillset name** to `margies-skillset` **(2)**
+    - Select the option **Enable OCR and merge all text into merged_content field** **(3)**
+    - Ensure that the **Source data field** is set to **merged_content (4)**.
+    - Leave the **Enrichment granularity level** as **Source field (5)**, which is set the entire contents of the document being indexed; but note that you can change this to extract information at more granular levels, like pages or sentences.
+
+      ![](../Images/ai36l125.png) 
+
+    - Select the following enriched fields:
+
+        | Cognitive Skill | Parameter | Field name |
+        | --------------- | ---------- | ---------- |
+        | **Text Cognitive Skills** | |  |
+        | Extract people names | | people |
+        | Extract location names | | locations |
+        | Extract key phrases | | keyphrases |
+        | **Image Cognitive Skills** | |  |
+        | Generate tags from images | | imageTags |
+        | Generate captions from images | | imageCaption |
+
+        ![](../Images/ai36l127.png)          
+
+        Double-check your selections (it can be difficult to change them later).
+
+1. In the **Save enrichments to a knowledge store** section:
+    - Select only the following checkboxes (an <font color="red">error</font> will be displayed, you'll resolve that shortly):
+        - **Azure file projections**:
+            - Image projections
+        - **Azure table projections**:
+            - Documents
+                - Key phrases
+        - **Azure blob projections**:
+            - Document
+
+          ![](../Images/ai36l128.png)
+
+    - Under **Storage account connection string** (beneath the <font color="red">error messages</font>):
+        - Select **Choose an existing connection**
+
+          ![](../Images/ai36l129.png) 
+
+        - Select your storage account
+
+          ![](../Images/ai36l121.png)         
+
+        - Select the **documents (1)** container and then **Select (2)** (*this is only required to select the storage account in the browse interface - you'll specify a different container name for the extracted knowledge assets!*)
+
+          ![](../Images/ai36l122.png)         
+
+    - Change the **Container name** to `knowledge-store` **(1)**. 
+
+    - Proceed to the next step (**Customize target index (2)**), where you'll specify the fields for your index.    
+
+      ![](../Images/ai36l130.png)                        
+
+1. Change the **Index name** to `margies-index` **(1)**.
+    - Ensure that the **Key** is set to **metadata_storage_path (2)**
+    - Leave the **Suggester name** blank
+    - Ensure **Search mode** is **analyzingInfixMatching (3)**
+
+      ![](../Images/ai36l126.png)      
+       
+1. Make the following changes to the index fields, leaving all other fields with their default settings **(1)** (**IMPORTANT**: you may need to scroll to the right to see the entire table) and then proceed to the next step (**Create an indexer (2)**), where you'll create and schedule the indexer.
+
+    | Field name | Retrievable | Filterable | Sortable | Facetable | Searchable |
+    | ---------- | ----------- | ---------- | -------- | --------- | ---------- |
+    | metadata_storage_size | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | |
+    | metadata_storage_last_modified | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | |
+    | metadata_storage_name | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+    | locations | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+    | people | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+    | keyphrases | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+
+    ![](../Images/ai36l131.png)      
+
+    Double-check your selections, paying particular attention to ensure that the correct **Retrievable**, **Filterable**, **Sortable**, **Facetable**, and **Searchable** options are selected correctly for each field  (it can be difficult to change them later).
+
+1. On the **Import data** page,
+
+    - Change the **Indexer name** to `margies-indexer` **(1)**.
+    - Leave the **Schedule** set to **Once (2)**.
+    - Select **Submit (3)** to create the data source, skillset, index, and indexer.
+
+      ![](../Images/ai36l132.png)  
+
+    The indexer is run automatically and runs the indexing pipeline, which:
+     - Extracts the document metadata fields and content from the data source
+     - Runs the skillset of cognitive skills to generate additional enriched fields
+     - Maps the extracted fields to the index.
+     - Saves the extracted data assets to the knowledge store.
+     
+1. In the navigation pane on the left, under **Search management** view the **Indexers** page, which should show the newly created **margies-indexer**. Wait a few minutes, and click **&orarr; Refresh** until the **Status** indicates **Success**.
+     
