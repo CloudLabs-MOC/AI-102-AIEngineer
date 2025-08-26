@@ -294,7 +294,7 @@ In this task, you’ll interact with the **Phi-4-mini-instruct** model in the ch
 
     ![](../Images/aii56.png)    
 
-#### Reflect on the models
+### Reflect on the models
 
 You've compared two models, which may vary in terms of both their ability to generate appropriate responses and in their cost. In any generative scenario, you need to find a model with the right balance of suitability for the task you need it to perform and the cost of using the model for the number of requests you expect it to have to handle.
 
