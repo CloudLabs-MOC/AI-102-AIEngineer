@@ -42,11 +42,11 @@ The lab architecture demonstrates how Azure AI Foundry supports generative AI mo
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Resource**: A cloud-based resource created in the Azure portal that connects to Azure AI services and hosts deployed models such as gpt-4.1, providing the foundation for AI project development.
+1. **Azure AI Foundry Project**: The main workspace where you organize your AI solutions. It acts as a hub for managing deployed models, configuring project settings, and controlling access to resources.
 
-2. **Azure AI Foundry Project**: A workspace within the Foundry resource where you deploy and manage models, configure project-level settings, and access endpoints and authorization keys for integrating AI capabilities into applications.
+2. **Models and Endpoints**: Deployed AI models, like gpt-4.1, are accessible via endpoints and secured with authorization keys. These endpoints allow client applications to interact with the models programmatically.
 
-3. **Chat Playground Interface**: A built-in tool in Azure AI Foundry that allows you to test deployed models, provide custom system instructions, send queries, and analyze responses before integrating the model into real-world applications.
+3. **Chat Playground**: An interactive interface within the Foundry project that lets you experiment with your models. You can provide instructions, run queries, and observe model responses, which helps in testing and refining AI behavior before integration.
 
 # Getting Started with lab
 
