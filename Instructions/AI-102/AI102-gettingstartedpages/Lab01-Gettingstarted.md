@@ -76,7 +76,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
 ## Utilizing the Split Window Feature
  
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
  
 ![Use the Split Window Feature](../Images/splitwindow.png)
 
