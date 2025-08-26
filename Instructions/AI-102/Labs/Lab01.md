@@ -4,9 +4,19 @@
 
 ## Overview
 
-In this lab, you use Azure AI Foundry portal to create a project, ready to build an AI solution.
+In this hands-on lab, you’ll work with **Azure AI Foundry** to create and explore a generative AI project. You’ll start by creating a new project and deploying the **gpt-4.1** model. Then, you’ll review the project’s endpoints and keys that client applications use to connect with deployed models and AI services. Finally, you’ll test your deployed model in the chat playground by configuring system instructions and sending queries to see the model’s responses.
 
-### Task 1: Create a Azure AI Foundry Project and deploy a model
+## Lab Objectives
+
+- **Task 1:** Create a Azure AI Foundry Project and deploy a model
+
+- **Task 2:** Review project endpoints
+
+- **Task 3:** Test a generative AI model
+
+## Task 1: Create a Azure AI Foundry Project and deploy a model
+
+In this task, you’ll create a new Azure AI Foundry project, deploy the **gpt-4.1** model into it, and explore the management settings at both the project and resource levels. You’ll also verify the Azure resources created to support the deployment in the Azure portal.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -20,7 +30,7 @@ In this lab, you use Azure AI Foundry portal to create a project, ready to build
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. In the home page, in the **Explore models and capabilities** section, search for the `gpt-4.1` model **(1)** and select `gpt-4.1` **(2)**  which we'll use in our project.    
+1. In the home page, in the **Explore models and capabilities** section, search for the `gpt-4.1` **(1)** model  and select `gpt-4.1` **(2)**  which we'll use in our project.    
 
    ![](../Images/aii2.png) 
 
@@ -44,11 +54,11 @@ In this lab, you use Azure AI Foundry portal to create a project, ready to build
 
 1. Wait for your project to be created. It may take around 3-5 minutes.          
 
-1. When your project is created, the chat playground will be opened automatically so you can test your model:
+1. When your project is created, the **Chat playground** will be opened automatically so you can test your model.
 
    ![](../Images/aii6.png)
 
-1. In the navigation pane on the left, select **Overview** to see the main page for your project; which looks like this.
+1. In the navigation pane on the left, select **Overview** to see the main page for your project, which looks like this:
 
    ![](../Images/aii7.png)
 
@@ -88,9 +98,9 @@ In this lab, you use Azure AI Foundry portal to create a project, ready to build
  
 ---
 
-### Task 2: Review project endpoints
+## Task 2: Review project endpoints
 
-The Azure AI Foundry project includes a number of endpoints that client applications can use to connect to the project and the models and AI services it includes.
+In this task, you’ll review the endpoints and authorization keys available in your Azure AI Foundry project. These endpoints are what client applications use to connect to the project, deployed models, and integrated Azure AI services.
 
 1. In the Management center page, in the navigation pane, under your project, select **Go to project**.
 
@@ -100,14 +110,14 @@ The Azure AI Foundry project includes a number of endpoints that client applicat
 
     - The **Azure AI Foundry project** and any models deployed in it.
     - **Azure OpenAI** in Azure AI Foundry models.
-    - **Azure AI services**   
+    - **Azure AI Services**   
 
       ![](../Images/aii13.png)    
 
 
-### Task 3: Test a generative AI model      
+## Task 3: Test a generative AI model      
 
-Now that you know something about the configuration of your Azure AI Foundry project, you can return to the chat playground to explore the model you deployed.
+In this task, you’ll use the chat playground in Azure AI Foundry to test your deployed **gpt-4.1** model. You’ll configure the system message to provide context, send queries, and review the model’s generative responses.
 
 1. In the navigation pane on the left for your project, select **Playgrounds (1)**.
 
@@ -123,13 +133,13 @@ Now that you know something about the configuration of your Azure AI Foundry pro
 
      ![](../Images/aii15.png)  
 
-1. Select **Continue**.
+1. In the **Update system message?**, click **Continue**.
 
     ![](../Images/aii16.png)
 
 1. In the chat window, enter a query such as `What are the key events in the history of Scotland?` **(1)** and then send **(2)**.    
 
-    ![](../Images/aii17.png)
+    ![](../Images/aii17(1).png)
 
 1. View the response:   
 
