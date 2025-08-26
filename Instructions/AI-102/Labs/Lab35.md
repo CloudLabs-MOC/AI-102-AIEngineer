@@ -4,11 +4,11 @@
 
 ## Overview
 
-Suppose a company currently requires employees to manually purchase order sheets and enter the data into a database. They would like you to utilize AI services to improve the data entry process. You decide to build a machine learning model that will read the form and produce structured data that can be used to automatically update a database.
+Organizations often deal with large volumes of documents like invoices, forms, or receipts that require manual data entry into business systems. This process is time-consuming, error-prone, and costly. To address this, you can use AI services to automatically extract structured information from documents and streamline workflows.
 
-**Azure AI Document Intelligence** is an Azure AI service that enables users to build automated data processing software. This software can extract text, key/value pairs, and tables from form documents using optical character recognition (OCR). Azure AI Document Intelligence has pre-built models for recognizing invoices, receipts, and business cards. The service also provides the capability to train custom models. In this exercise, we will focus on building custom models.
+**Azure AI Document Intelligence** provides tools to analyze and process documents by extracting text, tables, and key-value pairs using OCR. Along with prebuilt models for common scenarios such as invoices and business cards, it also allows you to train **custom models** tailored to your own documents.
 
-While this exercise is based on Python, you can develop similar applications using multiple language-specific SDKs; including:
+In this lab, you’ll walk through creating a Document Intelligence resource, preparing training data, training a custom model, and then testing it with a Python client application.
 
 ## Lab Objectives
 
@@ -22,7 +22,7 @@ While this exercise is based on Python, you can develop similar applications usi
 
 ## Task 1: Create a Azure AI Document Intelligence resource
 
-To use the Azure AI Document Intelligence service, you need a Azure AI Document Intelligence or Azure AI Services resource in your Azure subscription. You'll use the Azure portal to create a resource.
+In this task, you'll create an **Azure AI Document Intelligence** resource in your Azure subscription using the Azure portal. This resource will provide the service endpoint and key that your applications will use to analyze and process documents.
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
@@ -84,7 +84,7 @@ To use the Azure AI Document Intelligence service, you need a Azure AI Document 
 
 ## Task 2: Prepare to develop an app in Cloud Shell
 
-You'll develop your text translation app using Cloud Shell. The code files for your app have been provided in a GitHub repo.
+In this task, you'll set up your development environment in Azure Cloud Shell. You’ll configure it to use PowerShell, switch to the classic version, and clone the provided GitHub repository so you can access the code files needed to build your text translation app.
 
 1. On the **[Azure portal](https://portal.azure.com/)** [`https://portal.azure.com`] homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
@@ -124,6 +124,8 @@ You'll develop your text translation app using Cloud Shell. The code files for y
     ![](../Images/l35t2p2.png)
 
 ## Task 3: Gather documents for training
+
+In this task, you'll prepare the training data for your custom Document Intelligence model. You’ll review the provided sample forms, configure a setup script with your subscription details, create a storage account, and upload the form images and labels into a blob container so they can be used to train the model.
 
 1. You'll use the sample forms such as this one to train a test a model: 
 
@@ -201,7 +203,7 @@ You'll develop your text translation app using Cloud Shell. The code files for y
 
 ## Task 4: Train the model using Document Intelligence Studio
 
-Now you will train the model using the files uploaded to the storage account.
+In this task, you'll use **Document Intelligence Studio** to create a custom extraction project and train your model with the sample forms you uploaded to Azure Storage. By connecting your storage container as the training data source, you’ll build a model that can recognize and extract structured information from similar documents.
 
 1. Open a new browser tab, and navigate to the **Document Intelligence Studio** at `https://documentintelligence.ai.azure.com/studio`.
 
@@ -285,6 +287,8 @@ Now you will train the model using the files uploaded to the storage account.
 
 ## Task 5: Test your custom Document Intelligence model
 
+In this task, you'll test your custom Document Intelligence model by configuring the client application with your resource credentials and model ID. You’ll run the provided Python code to submit a sample form to your trained model and review the extracted results to verify that the model is working as expected.
+
 1. Return to the browser tab containing the Azure Portal and cloud shell. In the command line, run the following command to change to the folder containing the application code files:
 
     ```
@@ -336,4 +340,8 @@ Now you will train the model using the files uploaded to the storage account.
 
 ## Summary
 
+In this lab, you worked with **Azure AI Document Intelligence** to build and test a custom model that can extract structured information from documents. You began by creating a Document Intelligence resource in the Azure portal and preparing your development environment in Cloud Shell. Next, you gathered sample forms, uploaded them to Azure Storage, and connected this data source to train a custom extraction model in Document Intelligence Studio. Finally, you configured a Python client application with your model credentials, tested it against sample documents, and reviewed the extracted results.  
 
+Through these steps, you learned how to provision and configure an Azure AI Document Intelligence resource, train a custom model with labeled documents, and develop a client application to test and validate the model’s output.  
+
+### You have successfully completed the Hands-on Lab! ✅  
