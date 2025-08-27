@@ -141,7 +141,7 @@ In this exercise, you'll complete a partially implemented client application tha
 
      ![](./images/a-52.png)
 
-     >**Note:** If you encounter an error stating that .NET 8.0 is missing or not installed, it is because your system only has .NET 9.0 installed. To resolve this, open the project file located at `C-Sharp/text-translation/translate_text.csproj` and update the <TargetFramework> element from net8.0 to net9.0. Now re-run `dotnet run`.
+     >**Note:** If you encounter an error stating that .NET 8.0 is missing or not installed, it is because your system only has .NET 9.0 installed. To resolve this, open the project file located at `C-Sharp/text-translation/translate_text.csproj` and update the <TargetFramework> element from net8.0 to net9.0 and press `Ctrl+S` to save the changes. Now re-run `dotnet run`.
 
     ![](./images/error2.png)
 
