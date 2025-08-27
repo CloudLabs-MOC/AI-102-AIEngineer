@@ -1,6 +1,8 @@
-# Exercise 01: Get Started with Azure AI Services
+# Lab 01: Get Started with Azure AI Services
 
-## Lab scenario
+### Estimated Duration : 45 Minutes
+
+## Overview
 
 In this exercise, you'll get started with Azure AI Services by creating an **Azure AI Services** resource in your Azure subscription and using it from a client application. The goal of the exercise is not to gain expertise in any particular service, but rather to become familiar with a general pattern for provisioning and working with Azure AI services as a developer.
 
@@ -8,12 +10,10 @@ In this exercise, you'll get started with Azure AI Services by creating an **Azu
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Open the cloned folder in Visual Studio Code
-+ Task 2: Provision an Azure AI Services resource
-+ Task 3: Use a REST Interface
-+ Task 4: Use an SDK
-
-## Estimated timing: 45 minutes
++ **Task 1:** Open the cloned folder in Visual Studio Code
++ **Task 2:** Provision an Azure AI Services resource
++ **Task 3:** Use a REST Interface
++ **Task 4:** Use an SDK
 
 ## Architecture diagram
 
@@ -23,15 +23,15 @@ In this lab, you will complete the following tasks:
 
 In this task, you will learn how to **open the cloned folder in Visual Studio Code** to work with the project files for further development or modifications.
 
-1. On the Jump-VM double click on the **Visual Studio Code** shortcut.
+1. Double-click the **Visual Studio Code** shortcut on the desktop.
 
-    ![Visual Studio Code Icon](./images/vscode1.png)
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open **Explorer (1)**, select **Open Folder (2)**.
+1. Click on **Explorer (1)** from the left navigation bar, then select **Open Folder (2)**.
 
     ![Visual Studio Code Icon](./images/a-7.png)
 
-1. Open **C:\AllFiles\AI-102-AIEngineer-stage (1)** and then click on **Select Folder (2)**.
+1. Open **`C:\AllFiles\AI-102-AIEngineer-stage` (1)** and then click on **Select Folder (2)**.
 
     ![Visual Studio Code Icon](./images/a-8.png)
 
@@ -45,17 +45,17 @@ In this task, you will learn how to provision an Azure AI Services resource to e
 
 Azure AI Services are cloud-based services that encapsulate artificial intelligence capabilities you can incorporate into your applications. You can provision individual Azure AI services resources for specific APIs (for example, **Language** or **Vision**), or you can provision a single **Azure AI Services** resource that provides access to multiple Azure AI services APIs through a single endpoint and key. In this case, you'll use a single **Azure AI Services** resource.
 
-1. Navigate to the **Azure Portal**.
+1. Double-click the **Azure Portal** icon on the desktop.
 
-    ![Visual Studio Code Icon](./images/azureportal.png)
+    ![Visual Studio Code Icon](./images/azportal(1).png)
 
-1. In the top search bar, search for **Azure AI services (1)**, select **Azure AI Services (2)**.
+1. In the top search bar, search for **Azure AI Foundry (1)**, select **Azure AI Foundry (2)** from the result.
 
-    ![Visual Studio Code Icon](./images/a-2.png)
+    ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
 
-1. On the **Azure AI service** home page, from the left navigation menu, select **Azure AI services multi-service account (1)**, select **+ Create (2)**.
+1. On the **AI Foundry** home page, from the left navigation menu, under **Classic AI services (1)**, select **Azure AI services multi-service account (classic) (2)**, and then click **+ Create (3)**.
 
-    ![Visual Studio Code Icon](./images/a-3.png)
+    ![Visual Studio Code Icon](./images/a-3(1).png)
 
 1. Create the resource with the following settings, then click on **Review+Create (7)**
     
@@ -73,32 +73,35 @@ Azure AI Services are cloud-based services that encapsulate artificial intellige
 
       ![Visual Studio Code Icon](./images/a-4.png)    
 
-1. Once the validation passed, select **Create**.
+1. Once the validation passed, click **Create**.
+
+    ![](./images/a-4(1).png) 
 
 1. Wait for deployment to complete, and then view the deployment details.
 
-1. Select **Go to resource**.
+1. Click on **Go to resource**.
 
-    ![Visual Studio Code Icon](./images/a-5.png)
+    ![Visual Studio Code Icon](./images/a-34(1).png)
 
-1. From the left navigation menu, select **Keys and Endpoint (1)** under **Resource management**. This page contains the information that you will need to connect to your resource and use it from applications you develop. Specifically:
+1. From the left navigation menu, select **Resource management (1)** and then click **Keys and Endpoint (2)** under . This page contains the information that you will need to connect to your resource and use it from applications you develop. Specifically:
     
     - An HTTP **Endpoint** to which client applications can send requests.
     
     - Two **Keys** that can be used for authentication (client applications can use either key to authenticate).
     
-    - The *location* where the resource is hosted. This is required for requests to some (but not all) APIs.
+    - The **location** where the resource is hosted. This is required for requests to some (but not all) APIs.
 
-      >**Note:** Copy the values of **Endpoint (3)** and **Key 1 (2)**, in a notepad. You will use this in the next task.
+      >**Note:** Copy the values of **Endpoint (3)** and **Key 1 (4)**, in a notepad. You will use this in the next task.
 
-      ![Visual Studio Code Icon](./images/a-6.png)        
+      ![Visual Studio Code Icon](./images/a-6(1).png)        
 
-<validation step="fe4194bf-9530-4184-8b85-c29e2532b9b6" />
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+
+<validation step="fe4194bf-9530-4184-8b85-c29e2532b9b6" />
 
 ## Task 3: Use a REST Interface
 
@@ -140,7 +143,7 @@ The Azure AI services APIs are REST-based, so you can consume them by submitting
     
     - The response from the service is a JSON object, which the client application can parse.
 
-1. Right-click on the **rest-client (1)** folder and **Open an integrated terminal (2)**. Then enter the following language-specific command to run the program:
+1. Right-click on the **rest-client (1)** folder and **Open in Integrated Terminal (2)**. Then enter the following language-specific command to run the program:
 
     ![Visual Studio Code Icon](./images/a-13.png)
 
@@ -154,7 +157,7 @@ The Azure AI services APIs are REST-based, so you can consume them by submitting
 
     ![Visual Studio Code Icon](./images/a-14.png)
 
-1. When you have finished testing the application, enter "**quit**" to stop the program.
+1. When you have finished testing the application, enter **`quit`** to stop the program.
 
 ## Task 4: Use an SDK
 
@@ -162,7 +165,7 @@ In this task, you will learn how to use an SDK to interact with Azure services p
 
 You can write code that consumes Azure AI services REST APIs directly, but there are software development kits (SDKs) for many popular programming languages, including Microsoft C#, Python, and Node.js. Using an SDK can greatly simplify development of applications that consume Azure AI services.
 
-1. In Visual Studio Code, in the **Explorer (1)** pane, in the **01-getting-started (2)** folder, expand the **C-Sharp (3)** folder. Right-click the **sdk-client (4)** folder and then select **Open an integrated terminal (5)**.
+1. In Visual Studio Code, in the **Explorer (1)** pane, in the **01-getting-started (2)** folder, expand the **C-Sharp (3)** folder. Right-click the **sdk-client (4)** folder and then select **Open in Integrated Terminal (5)**.
 
     ![Visual Studio Code Icon](./images/a-15.png)
 
@@ -178,7 +181,7 @@ You can write code that consumes Azure AI services REST APIs directly, but there
     
     - **C#**: **appsettings.json (1)**
 
-1. Open the configuration file and update the configuration values it contains to reflect the **endpoint (2)** and an authentication **key (3)** for your Azure AI services resource that you had copied earlier. **Save your changes**.
+1. Open the configuration file and update the configuration values it contains to reflect the **endpoint (2)** and an authentication **key (3)** for your Azure AI services resource that you had copied earlier. **Save your changes** by pressing **Ctrl+S**.
 
     ![Visual Studio Code Icon](./images/a-16.png)
     
@@ -210,11 +213,11 @@ You can write code that consumes Azure AI services REST APIs directly, but there
 
     ![Visual Studio Code Icon](./images/a-19.png)
 
-1. When you have finished testing the application, enter "**quit**" to stop the program.
+1. When you have finished testing the application, enter **`quit`** to stop the program.
 
     > **Note**: Some languages that require Unicode character sets may not be recognized in this simple console application.
 
-### Review
+## Summary
 In this lab, you have completed:
 
 - Opened the cloned folder in Visual Studio Code
@@ -222,4 +225,6 @@ In this lab, you have completed:
 - Used a REST Interface
 - Used an SDK
 
-## You have successfully completed the lab >> Click on Next
+### You have successfully completed the lab >> Click on Next
+
+![](./images/nextpage(1).png)

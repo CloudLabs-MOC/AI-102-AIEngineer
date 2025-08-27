@@ -1,6 +1,8 @@
-# Exercise 04: Use an Azure AI Services Container
+# Lab 04: Use an Azure AI Services Container
 
-## Lab scenario
+### Estimated Duration : 20 Minutes
+
+## Overview
 
 Using Azure AI services hosted in Azure enables application developers to focus on the infrastructure for their own code while benefiting from scalable services that are managed by Microsoft. However, in many scenarios, organizations require more control over their service infrastructure and the data that is passed between services.
 
@@ -10,10 +12,8 @@ Many of the Azure AI services APIs can be packaged and deployed in a container, 
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Deploy and run a Text Analytics container
-+ Task 2: Use the container
-
-## Estimated timing: 20 minutes
++ **Task 1:** Deploy and run a Text Analytics container
++ **Task 2:** Use the container
 
 ## Architecture diagram
 
@@ -25,11 +25,13 @@ In this task, you will learn how to deploy and run a Text Analytics container in
 
 Many commonly used Azure AI services APIs are available in container images. For a full list, check out the [Azure AI services documentation](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support#container-availability-in-azure-cognitive-services). In this exercise, you'll use the container image for the Text Analytics *language detection* API; but the principles are the same for all of the available images.
 
-1. In the Azure portal, on the **Home** page, Search for **container instances (1)**, and select **Container Instances (2)** dfrom the services.
+1. In the Azure portal, on the **Home** page, search for **Container instances (1)**, and select **Container instances (2)** from the services.
 
-    ![Visual Studio Code Icon](./images/a-45.png)
+    ![Visual Studio Code Icon](./images/a-45(1).png)
 
-1. Click on **+ Create**.
+1. In the **Container instances** blade, Click on **+ Create**.
+
+    ![Visual Studio Code Icon](./images/a-45(2).png)
 
 1. On the **Create container instance** page, provide the following settings:
 
@@ -53,11 +55,13 @@ Many commonly used Azure AI services APIs are available in container images. For
         
         - **Size**: Click on **Change size** then set **4 vcpu (1), 16 GB memory (2)** and then **Ok (3)**. **(9)**
 
+        - Click **Next : Networking > (10)**
+
           ![Visual Studio Code Icon](./images/a-49.png)        
 
           ![Visual Studio Code Icon](./images/a-38.png)        
     
-          ![Visual Studio Code Icon](./images/a-39.png)       
+          ![Visual Studio Code Icon](./images/a-39(1).png)       
 
     - On the **Networking** tab:
         
@@ -67,13 +71,17 @@ Many commonly used Azure AI services APIs are available in container images. For
         
         - **Ports**: Change the TCP port from 80 to **5000 (3)**
 
-          ![Visual Studio Code Icon](./images/a-40.png)      
+        - Click **Next : Monitoring > (4)**
+
+          ![Visual Studio Code Icon](./images/a-40(1).png)      
 
     - On the **Monitoring** tab:
 
-        - Disable the **Enable contianer instance logs**   
+        - Disable the **Enable contianer instance logs**
 
-          ![Visual Studio Code Icon](./images/a-41.png)                          
+        - Click **Next : Advanced > (2)**   
+
+          ![Visual Studio Code Icon](./images/a-41(1).png)                          
    
     - On the **Advanced** tab:
         
@@ -94,6 +102,8 @@ Many commonly used Azure AI services APIs are available in container images. For
           ![Visual Studio Code Icon](./images/a-44.png)               
 
 1. Click on **Create**.        
+
+    ![Visual Studio Code Icon](./images/a-44(1).png)
 
 1. Wait for deployment to complete, and select **Go to resource**.
     
@@ -122,6 +132,10 @@ Many commonly used Azure AI services APIs are available in container images. For
 
 In this task, you will learn how to use the deployed Text Analytics container to send data for processing and retrieve insights such as sentiment scores and detected entities.
 
+1. In Visual Studio Code, right-click the **04-containers (1)** folder and then select **Open in Integrated Terminal (2)**.
+
+    ![Visual Studio Code Icon](./images/a-50(1).png)
+
 1. In Visual Studio Code, in the **04-containers** folder, open **rest-test.cmd** and edit the **curl** command it contains (shown below), replacing *&lt;your_ACI_IP_address_or_FQDN&gt;* with the IP address or FQDN for your container.
 
     ```
@@ -142,17 +156,19 @@ In this task, you will learn how to use the deployed Text Analytics container to
 
     ![Visual Studio Code Icon](./images/a-51.png)
 
-<validation step="3df31d12-06bc-4ed4-b1dc-acdbdb892ae1" />
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
 
-### Review
+<validation step="3df31d12-06bc-4ed4-b1dc-acdbdb892ae1" />
+
+## Summary
+
 In this lab, you have completed:
 
 + Deployed and run a Text Analytics container
 + Used the container
 
-## You have successfully completed the lab
+### You have successfully completed the Hands-on Lab!

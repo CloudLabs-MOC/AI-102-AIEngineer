@@ -6,7 +6,7 @@ Welcome to your AI-102: AI Engineer workshop! We've prepared a seamless environm
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![](./images/vmguide(1).png)
+![](./images/vmguide(2).png)
 
 ### Virtual Machine & Lab Guide
  

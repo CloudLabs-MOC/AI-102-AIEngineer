@@ -1,6 +1,8 @@
-# Exercise 02: Manage Azure AI Services Security
+# Lab 02: Manage Azure AI Services Security
 
-## Lab scenario
+### Estimated Duration: 45 Minutes
+
+## Overview
 
 Security is a critical consideration for any application, and as a developer you should ensure that access to resources such as Azure AI services is restricted to only those who require it.
 
@@ -10,10 +12,8 @@ Access to Azure AI services is typically controlled through authentication keys,
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Manage authentication keys
-+ Task 2: Secure key access with Azure Key Vault
-
-## Estimated timing: 45 minutes
++ **Task 1:** Manage authentication keys
++ **Task 2:** Secure key access with Azure Key Vault
 
 ## Architecture diagram
 
@@ -25,9 +25,9 @@ In this task, you will learn how to manage authentication keys to securely acces
 
 When you created your Azure AI services resource, two authentication keys were generated. You can manage these in the Azure portal or by using the Azure command line interface (CLI).
 
-1. In Visual Studio Code, right-click the **02-cognitive-security (1)** folder and right click on it then select **Open an integrated terminal (2)**.
+1. In Visual Studio Code, right-click the **02-cognitive-security (1)** folder and right click on it then select **Open in Integrated Terminal (2)**.
 
-    ![Visual Studio Code Icon](./images/a-20.png)
+    ![Visual Studio Code Icon](./images/a-20(1).png)
 
 1. Then enter the following command to sign into your Azure subscription by using the Azure CLI.
 
@@ -42,7 +42,9 @@ When you created your Azure AI services resource, two authentication keys were g
 
     - Enter the Email address and Password provided in the **Environment** tab.
 
-    - Click on **No, sign in to this app only** to **Stay signed in ti all your apps**.
+    - Click on **No, this app only**.
+
+        ![](./images/a-21(1).png)
 
 1. Navigate back to the VS code, If prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.                   
 
@@ -54,7 +56,7 @@ When you created your Azure AI services resource, two authentication keys were g
 
     >**Note:** The command returns a list of the keys for your Azure AI services resource - there are two keys, named **key1** and **key2**.
 
-    ![Visual Studio Code Icon](./images/output(1).png)
+    ![Visual Studio Code Icon](./images/output2(1).png)
 
 1. To test your cognitive service, you can use **curl** - a command line tool for HTTP requests. In the **02-cognitive-security** folder, open **rest-test.cmd** and edit the **curl** command it contains (shown below), replacing *&lt;yourEndpoint&gt;* and *&lt;yourKey&gt;* with your endpoint URI and **Key1** key to use the Text Analytics API in your Azure AI services resource.
 
@@ -110,7 +112,7 @@ First, you need to create a key vault and add a *secret* for the Azure AI servic
 
     ![Visual Studio Code Icon](./images/a-24.png)
 
-1. Click on **Create (1)** drop down and then **Key Vault (2)**.
+1. Click on **Create (1)** drop-down and then click on **Key Vault (2)**.
 
     ![Visual Studio Code Icon](./images/a-25.png)
 
@@ -128,22 +130,22 @@ First, you need to create a key vault and add a *secret* for the Azure AI servic
 
     - Select **Next (6)**
 
-        ![Visual Studio Code Icon](./images/a-26.png)
+        ![Visual Studio Code Icon](./images/a-26(1).png)
 
     - **Access configuration** tab
         -  **Permission model**: **Vault access policy (1)**
         
         - Scroll down to the **Access policies** section and select your user using the checkbox on the left **(2)**. Then click on **Review + create (3)**
 
-            ![Visual Studio Code Icon](./images/keyvaulteaccess.png)
+            ![Visual Studio Code Icon](./images/keyvaulteaccess(1).png)
 
-    - Select **Review + create**, and **Create**.
+    - In the **Review + create** tab, click **Create**.
 
 1. Wait for deployment to complete and select **Go to resource**.
 
-1. From the left navigation pane, select **Secrets (1)** under the **Objects** section. Select **+ Generate/Import (2)** 
+1. In the left navigation pane, under **Objects (1)**, select **Secrets (2)**, then click **+ Generate/Import (3)**. 
 
-    ![Visual Studio Code Icon](./images/a-28.png)
+    ![Visual Studio Code Icon](./images/a-28(1).png)
 
 1. Add a new secret with the following settings :
     
@@ -155,17 +157,18 @@ First, you need to create a key vault and add a *secret* for the Azure AI servic
 
         >**Note:** The same key1 that you copied in the earlier step.
 
-    - Select **Create (4)**.
+    - Click **Create (4)**.
 
-      ![Visual Studio Code Icon](./images/a-29.png)
+      ![Visual Studio Code Icon](./images/a-29(1).png)
 
-<validation step="1e07fa06-8bcb-427e-910d-af8818d625e5" />
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
-    
+
+<validation step="1e07fa06-8bcb-427e-910d-af8818d625e5" />
+
 ### Task 2.2: Use a service principal
 
 In this task, you will learn how to use a service principal to authenticate and securely access Azure resources, enabling automated and secure interactions with Azure services.
@@ -204,7 +207,7 @@ Now you're ready to use the service principal identity in an application, so it 
 
 1. In Visual Studio Code, expand the **02-cognitive-security** folder and the **C-Sharp** folder.
 
-1. Right-click the **keyvault-client** folder and open an integrated terminal. Then install the packages you will need to use Azure Key Vault and the Text Analytics API in your Azure AI services resource by running the appropriate command for your language preference:
+1. Right-click the **keyvault-client** folder and **Open in Integrated Terminal**. Then install the packages you will need to use Azure Key Vault and the Text Analytics API in your Azure AI services resource by running the appropriate command for your language preference:
 
     **C#**
 
@@ -262,10 +265,13 @@ Now you're ready to use the service principal identity in an application, so it 
 
 1. When you have finished testing the application, enter "**quit**" to stop the program.
 
-### Review
+## Summary 
+
 In this lab, you have completed:
 
 + Managed authentication keys
 + Secured key access with Azure Key Vault
 
-## You have successfully completed the lab >> Click on Next
+### You have successfully completed the lab >> Click on Next
+
+![](./images/nextpage(1).png)
