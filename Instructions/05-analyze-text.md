@@ -1,6 +1,9 @@
-# Exercise 01: Analyze Text
+# Lab 01: Analyze Text
 
-## Lab scenario
+### Estimated Duration : 120 Minutes
+
+## Overview
+
 **Azure Language** supports analysis of text, including language detection, sentiment analysis, key phrase extraction, and entity recognition.
 
 For example, suppose a travel agency wants to process hotel reviews that have been submitted to the company's web site. By using the Azure AI Language, they can determine the language each review is written in, the sentiment (positive, neutral, or negative) of the reviews, key phrases that might indicate the main topics discussed in the review, and named entities, such as places, landmarks, or people mentioned in the reviews.
@@ -9,16 +12,14 @@ For example, suppose a travel agency wants to process hotel reviews that have be
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Provision an Azure AI Language resource
-+ Task 2: Clone the repository for this course in Cloud Shell
-+ Task 3: Prepare to use the Azure AI Language SDK for text analytics
-+ Task 4: Detect language
-+ Task 5: Evaluate sentiment
-+ Task 6: Identify key phrases
-+ Task 7: Extract entities
-+ Task 8: Extract linked entities
-
-## Estimated timing: 120 minutes
++ **Task 1:** Provision an Azure AI Language resource
++ **Task 2:** Clone the repository for this course in Cloud Shell
++ **Task 3:** Prepare to use the Azure AI Language SDK for text analytics
++ **Task 4:** Detect language
++ **Task 5:** Evaluate sentiment
++ **Task 6:** Identify key phrases
++ **Task 7:** Extract entities
++ **Task 8:** Extract linked entities
 
 ## Architecture diagram
 
@@ -28,11 +29,11 @@ In this lab, you will complete the following tasks:
 
 If you don't already have one in your subscription, you'll need to provision an **Azure AI Language service** resource in a supported region.
 
-1. On Azure Portal page, in **Search resources, services and docs (G+/)**, enter **Azure AI services (1)**, and then select **Azure AI Services (2)** under services.
+1. On Azure Portal page, in **Search resources, services and docs (G+/)**, enter **Azure AI Foundry (1)**, and then select **Azure AI Foundry (2)** under services.
 
-    ![Visual Studio Code Icon](./images/a-2.png)
+    ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
 
-1. Select **Language Service (1)** from the left navigation pane. Then click on **Create (2)**.
+1. Under **More services** in the the left navigation pane, select **Language Service (1)** from . Then click on **Create (2)**.
 
     ![Visual Studio Code Icon](./images/mod03-ai-102-image1.png)
 
@@ -46,7 +47,7 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**.
 
-    - **Region**: **Choose any available region (3)**.
+    - **Region**: **<inject key="Region" enableCopy="false"/> (3)**.
 
     - **Name**: **aisearch<inject key="DeploymentID" enableCopy="false"/> (4)**.
 
@@ -54,9 +55,9 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     - **Responsible AI Notice**: Check the checkbox **(6)**
 
-      ![Visual Studio Code Icon](./images/mod03-ai-102-image3.png)    
+      ![Visual Studio Code Icon](./images/mod03-ai-102-image3(1).png)    
     .
-1. Click on **create**.
+1. In the Review + create tab, click on **Create**.
 
 1. Wait for deployment to complete, and then view the deployment details.
 
@@ -64,7 +65,7 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     ![Visual Studio Code Icon](./images/mod03-ai-102-image4.png)
 
-1. From the left navigation menu, select **Keys and Endpoint (1)** under Resource management. Copy the values of **Key 1 (2)** and **Endpoint (3)** , in a notepad. You will use this in the next task.
+1. From the left navigation menu, go to **Resource management** and select **Keys and Endpoint (1)**. Copy the values of **Key 1 (2)** and **Endpoint (3)** into a notepad, as you’ll need them in the next task.
 
     ![Visual Studio Code Icon](./images/b-4.png)
 
@@ -80,15 +81,15 @@ Open up a new browser tab to work with Cloud Shell. If you haven't cloned this r
 
      ![Visual Studio Code Icon](./images/mod03-ai-102-image6.png)
    
-1. If you're prompted to create storage for your Cloud Shell, select **Mount storage account** and select your default **Subscription** , and then click on **Apply**.
+1. If you're prompted to create storage for your Cloud Shell, select **Mount storage account (1)** and select your default **Subscription (2)** , and then click on **Apply (3)**.
 
-      ![Visual Studio Code Icon](./images/mod03-ai-102-image7.png)
+      ![Visual Studio Code Icon](./images/mod03-ai-102-image7(1).png)
    
-1. Select **I want to create a storage account**, click on **Next**.
+1. In the **Mount storage account** dialogue,select **I want to create a storage account (1)**, click on **Next (2)**.
 
       ![Visual Studio Code Icon](./images/mod03-ai-102-image8.png)
    
-1. On the **Create Storage account** page, provid the following details and then click on **Create (6)**.
+1. On the **Create Storage account** page, provide the following details and then click on **Create (6)**.
 
     - **Subscription**: **Choose the deafult Subscription (1)**
 
@@ -100,7 +101,7 @@ Open up a new browser tab to work with Cloud Shell. If you haven't cloned this r
 
     - **File share:** Enter **blobfileshare<inject key="DeploymentID" enableCopy="false"/> (5)**
 
-      ![Visual Studio Code Icon](./images/b-3.png)
+      ![Visual Studio Code Icon](./images/b-3(1).png)
 
       > **Note**: If you face any issues with respect to regions while creating storage account. please select the east us region.
    
@@ -167,8 +168,7 @@ In this exercise, you'll complete a partially implemented client application tha
     **Python**
 
     ```bash
-    pip install azure-ai-textanalytics==5.3.0
-    pip install python-dotenv
+    pip install --user azure-ai-textanalytics==5.3.0 python-dotenv
    ```
 
 1. View the contents of the **text-analysis** folder in the code window, and note that it contains a file for configuration settings:
@@ -177,11 +177,11 @@ In this exercise, you'll complete a partially implemented client application tha
 
     - **Python**: .env
 
-1. Open the configuration file and update the configuration values with **Key1** and **Endpoint** that you had copied previously, to reflect the **endpoint** and an authentication **key** for your Azure AI Language service resource. Save your changes by clicking **Ctrl+S** in your keyboard.
+1. Open the configuration file and update the configuration values with **Key1** and **Endpoint** that you had copied previously, to reflect the **endpoint** and an authentication **key** for your Azure AI Language service resource. Save your changes by pressing **Ctrl+S** in your keyboard.
 
     - This is how it looks for **C#**: appsettings.json file.
 
-      ![Visual Studio Code Icon](./images/b-5.png)       
+      ![Visual Studio Code Icon](./images/b-5(1).png)       
 
 1. Note that the **text-analysis** folder contains a code file for the client application:
 
@@ -233,7 +233,13 @@ In this exercise, you'll complete a partially implemented client application tha
     dotnet run
     ```
 
-    ![Visual Studio Code Icon](./images/a-53.png)     
+    ![Visual Studio Code Icon](./images/a-53.png)
+
+    >**Note:** If you encounter an error stating that .NET 8.0 is missing or not installed, it is because your system only has .NET 9.0 installed. To resolve this, open the project file located at `C-Sharp/text-analysis/text-analysis.csproj` and update the <TargetFramework> element from net8.0 to net9.0. Then re-run `dotnet run`.
+
+    ![](./images/error1.png)
+
+    ![](./images/solution1.png)    
 
     **Python**
 
@@ -275,7 +281,7 @@ Now that you have created a client for the API, let's use it to detect the langu
     dotnet run
     ```
 
-    ![Visual Studio Code Icon](./images/a-55.png) 
+    ![Visual Studio Code Icon](./images/a-55(1).png) 
 
     **Python**
 
@@ -415,6 +421,8 @@ Often, documents or other bodies of text mention people, places, time periods, o
     dotnet run
     ```
 
+    ![Visual Studio Code Icon](./images/a-57(1).png) 
+
     **Python**
 
     ```bash
@@ -475,7 +483,8 @@ In addition to categorized entities, the Text Analytics API can detect entities 
 
 1. Observe the output, noting the linked entities that are identified.
 
-### Review
+## Summary
+
 In this lab, you have completed:
 
 + Provisioned Azure AI Language resource
@@ -485,4 +494,6 @@ In this lab, you have completed:
 + Extracted entities
 + Extracted linked entities
 
-## You have successfully completed the lab, click on Next >> proceed with the next exercises.
+### You have successfully completed the lab, click on Next >>.
+
+![](./images/nextpage(3pages).png)

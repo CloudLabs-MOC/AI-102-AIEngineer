@@ -63,7 +63,7 @@ Azure AI Services are cloud-based services that encapsulate artificial intellige
     
     - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
     
-    - **Region**: **Choose any available region (3)**
+    - **Region**: **<inject key="Region" enableCopy="false"/> (3)**
     
     - **Name**: **azureai<inject key="DeploymentID" enableCopy="false"/> (4)**
     
@@ -225,6 +225,6 @@ In this lab, you have completed:
 - Used a REST Interface
 - Used an SDK
 
-### You have successfully completed the lab >> Click on Next
+### You have successfully completed the lab, click on Next >>.
 
 ![](./images/nextpage(1).png)

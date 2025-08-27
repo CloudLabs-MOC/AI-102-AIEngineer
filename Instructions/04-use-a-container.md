@@ -43,7 +43,7 @@ Many commonly used Azure AI services APIs are available in container images. For
         
         - **Container name**: **aicontainer<inject key="DeploymentID" enableCopy="false"/> (3)**
 
-        - **Region**: **Choose any available region (4)**
+        - **Region**: **<inject key="Region" enableCopy="false"/> (4)**
         
         - **Image source**: Choose **Other Registry (5)**
         

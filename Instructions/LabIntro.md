@@ -74,15 +74,11 @@ Feel free to **start, stop, or restart (2)** your virtual machine as needed from
  
         ![](./images/sc900-image-2.png)
 
-4. If a **Action Required** window appears, click on **Ask later**.
-
-    ![](./images/AI102(9).png)
-
-5. If prompted to **Stay signed in?**, click **No**.
+4. If prompted to **Stay signed in?**, click **No**.
 
     ![](./images/staysignedin(1).png)
  
-6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
 
     ![](./images/welcomeazure(1).png)
  

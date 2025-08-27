@@ -114,6 +114,6 @@ In this lab, you have completed:
 - Configured an alert
 - Visualized a metric
 
-### You have successfully completed the lab >> Click on Next
+### You have successfully completed the lab, click on Next >>.
 
 ![](./images/nextpage(1).png)

@@ -1,6 +1,9 @@
-# Exercise 02: Translate Text
+# Lab 02: Translate Text
 
-## Lab scenario
+### Estimated Duration : 120 Minutes
+
+## Overview
+
 **Azure AI Translator** is a service that enables you to translate text between languages.
 
 For example, suppose a travel agency wants to examine hotel reviews that have been submitted to the company's web site, standardizing on English as the language that is used for analysis. By using Azure AI Translator, they can determine the language each review is written in, and if it is not already English, translate it from whatever source language it was written in into English.
@@ -9,13 +12,11 @@ For example, suppose a travel agency wants to examine hotel reviews that have be
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Clone the repo into your Azure Cloud Shell
-+ Task 2: Provision an Azure AI Translator resource
-+ Task 3: Prepare to use Azure AI Translator
-+ Task 4: Detect language
-+ Task 5: Translate text
-
-## Estimated timing: 120 minutes
++ **Task 1:** Clone the repo into your Azure Cloud Shell
++ **Task 2:** Provision an Azure AI Translator resource
++ **Task 3:** Prepare to use Azure AI Translator
++ **Task 4:** Detect language
++ **Task 5:** Translate text
 
 ## Architecture diagram
 
@@ -23,11 +24,11 @@ In this lab, you will complete the following tasks:
 
 ## Task 1: Clone the repo into your Azure Cloud Shell
 
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal. if you are not already in the **Cloud Shell**.
+1. In the [Azure portal](https://portal.azure.com?azure-portal=true), select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal, if you are not already in the **Cloud Shell**.
 
     ![Visual Studio Code Icon](./images/mod03-ai-102-image5.png)
 
-1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to *PowerShell*. If it is *Bash*, switch to *PowerShell* by using the drop-down menu.
+1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to **PowerShell**. If it is **Bash**, switch to **PowerShell** by using the drop-down menu.
 
     ![](./images/18.png)
 
@@ -42,7 +43,7 @@ In this lab, you will complete the following tasks:
     git clone https://github.com/CloudLabs-MOC/AI-102-AIEngineer azure-ai-eng
     ```
 
-     ![](./images/20.png)
+     ![](./images/20(1).png)
 
 1. The files have been downloaded into a folder called **azure-ai-eng**. Let's use the Cloud Shell Code editor to open the appropriate folder by running:
 
@@ -54,7 +55,7 @@ In this lab, you will complete the following tasks:
     ```bash
     code .
     ```
-     ![](./images/21.png)
+     ![](./images/21(1).png)
 
     > **Note**: If you asked for switch to classic shell please click on confirm.     
 
@@ -68,38 +69,32 @@ In this lab, you will complete the following tasks:
 
      ![](images/a-23.png)
    
-1. In the Marketplace page search for **Azure ai Services (1)** then press Enter and then Select **Azure ai Services (2)**. 
+1. In the Marketplace page search for **Azure ai Services (1)**,and press Enter. Then click on **Create (2)** drop-down and select **Azure AI services (3)**. 
    
-   ![](images/b-10.png)
+   ![](images/b-10(1).png)
      
-1. On Cognitive Services Page Click on **Create**. 
-     
-     ![](images/b-11.png)
+1. Create a resource with the following settings and then click on **Review + create (7)**.
 
-1. Create a resource with the following settings and then click on **Review_Create (7)**.
+    - **Subscription**: **Use default Subscription (1)**
+    - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Region**: **<inject key="Region" enableCopy="false"/> (3)**
+    - **Name**: **aiservices-<inject key="DeploymentID" enableCopy="false"/> (4)**
+    - **Pricing tier**: **Standard S0 (5)**
+    - By checking this box I acknowledge that I have read and understood all the terms below: **Selected (6)**.
 
-    - **Subscription (1)**: **Use default Subscription (1)**
-    - **Resource group (2)**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
-    - **Region (3)**: **<inject key="Region" enableCopy="false"/> (3)**
-    - **Name (4)**: **aiservices-<inject key="DeploymentID" enableCopy="false"/> (4)**
-    - **Pricing tier (5)**: **Standard S0 (5)**
-    - By checking this box I acknowledge that I have read and understood all the terms below: **Selected (6)**
+      ![Visual Studio Code Icon](./images/b-12(1).png)       
 
-      ![Visual Studio Code Icon](./images/b-12.png)       
+1. From the **Review + create** tab and click **Create**.
 
-1. Select **Create**.
+   ![](images/26(1).png)
 
-   ![](images/26.png)
+1. Wait for the deployment to finish, then click **Go to resource**.
 
-1. Wait for deployment to complete, and once deployment completed click on **Go to resource**.
+   ![](images/27(1).png)
 
-   ![](images/27.png)
+1. After the resource is deployed, navigate to it, open **Resource Management (1)** from the left pane, and select **Keys and Endpoint (2)**. From this page, copy the value of **KEY 1 (3)** and the **Location/Region (4)** where the service is provisioned, as you will use these values in the next task.
 
-1. When the resource has been deployed, go to it and view its **Keys and Endpoint (1)** page. You will need one of the **keys** and the **location** in which the service is provisioned from this page in the next procedure.
-
-   >**Note:** Copy the value of **KEY 1 (2)** and **Location (3)**, paste it inside the Notepad, you will use these values in next task.
-
-   ![](images/b-13.png)
+   ![](images/b-13(1).png)
 
 ## Task 3: Prepare to use Azure AI Translator
 
@@ -114,7 +109,9 @@ In this exercise, you'll complete a partially implemented client application tha
     
     - **Python**: .env
 
- 1. Open the notepad, where you pasted the values for **key1** and **Location** and update the configuration values it contains to include an authentication **key** for your Azure AI Translator resource, and the **location** where it is deployed (<u>not</u> the endpoint). Update the values in the file.
+ 1. Open the notepad, where you pasted the values for **KEY 1** and **Location** and update the configuration values it contains to include an authentication **key** for your Azure AI Translator resource, and the **location** where it is deployed (<u>not</u> the endpoint). Update the values in the file.
+
+    ![](./images/loc-key.png)
 
 1. Save your changes by pressing **CTRL + S**.
 
@@ -144,6 +141,12 @@ In this exercise, you'll complete a partially implemented client application tha
 
      ![](./images/a-52.png)
 
+     >**Note:** If you encounter an error stating that .NET 8.0 is missing or not installed, it is because your system only has .NET 9.0 installed. To resolve this, open the project file located at `C-Sharp/text-translation/translate_text.csproj` and update the <TargetFramework> element from net8.0 to net9.0. Now re-run `dotnet run`.
+
+    ![](./images/error2.png)
+
+    ![](./images/solution2.png)
+
     **Python**
 
     ```bash
@@ -153,9 +156,9 @@ In this exercise, you'll complete a partially implemented client application tha
     **Python**
 
     ```bash
-    pip install python-dotenv
+    pip install --user python-dotenv
     ```
-    ![](./images/13.png)
+    ![](./images/13(1).png)
 
     **Python**
 
@@ -206,7 +209,7 @@ Azure AI Translator can automatically detect the source language of text to be t
     }
     ```
 
-   ![](./images/8.png)
+   ![](./images/8(1).png)
 
     **Python**
 
@@ -239,7 +242,7 @@ Azure AI Translator can automatically detect the source language of text to be t
 
     ```
     
-   ![](./images/9.png)
+   ![](./images/9(1).png)
     
 1. Save your changes by pressing **CTRL+S** and  and enter the following command in the terminal to run the program:
 
@@ -248,7 +251,7 @@ Azure AI Translator can automatically detect the source language of text to be t
     ```bash
     dotnet run
     ```
-   ![](./images/7.png)
+   ![](./images/7(1).png)
 
     **Python**
 
@@ -265,6 +268,7 @@ Azure AI Translator can automatically detect the source language of text to be t
 Now that your application can determine the language in which reviews are written, you can use Azure AI Translator to translate any non-English reviews into English.
 
 1. In your code file, find the **Translate** function, which currently returns and empty string for all text values.
+
 1. In the **Translate** function, under the comment **Use the Azure AI Translator translate function**, replace the following code to use the Azure AI Translator's REST API to translate the specified text from its source language into English, being careful not to replace the code at the end of the function that returns the translation:
 
    **C#**
@@ -296,7 +300,7 @@ Now that your application can determine the language in which reviews are writte
             }
         }
      ```
-     ![](./images/5.png)
+     ![](./images/5(1).png)
 
    **Python**
  
@@ -330,7 +334,7 @@ Now that your application can determine the language in which reviews are writte
     translation = response[0]["translations"][0]["text"]
    ```
 
-   ![](./images/4.png)
+   ![](./images/4(1).png)
 
 1. Save your changes and enter the following command to run the program:
 
@@ -339,14 +343,14 @@ Now that your application can determine the language in which reviews are writte
     ```bash
     dotnet run
     ```
-    ![](./images/1.png)
+    ![](./images/1(1).png)
 
     **Python**
 
     ```bash
     python text-translation.py
     ```
-   ![](./images/1.1.png)
+   ![](./images/1-1(1).png)
 
 1. Observe the output, noting that non-English reviews are translated into English.
 
@@ -357,7 +361,7 @@ Now that your application can determine the language in which reviews are writte
 
 <validation step="c6c79fc2-befa-4bec-a292-6982d769df0c" />
 
-### Review
+## Summary
 In this lab, you have completed:
 
 + Cloned the repo into your Azure Cloud Shell
@@ -366,4 +370,4 @@ In this lab, you have completed:
 + Detected language
 + Translated text
 
-## You have successfully completed the lab
+### You have successfully completed the Hands-on lab!

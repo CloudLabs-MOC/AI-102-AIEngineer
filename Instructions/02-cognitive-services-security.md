@@ -272,6 +272,6 @@ In this lab, you have completed:
 + Managed authentication keys
 + Secured key access with Azure Key Vault
 
-### You have successfully completed the lab >> Click on Next
+### You have successfully completed the lab, click on Next >>.
 
 ![](./images/nextpage(1).png)
