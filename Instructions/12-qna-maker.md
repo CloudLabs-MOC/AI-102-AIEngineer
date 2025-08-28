@@ -36,12 +36,12 @@ In this task, you will learn how to **open the cloned folder in Visual Studio Co
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
 
-1. Open a file, From the top-left options, Click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)** choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
+1. Open a file, From the top-left options, Click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)** choose **AI-102-AIEngineer-stage (4)** folder and click on **Select Folder (5)**.
 
     ![](./images/vscqna(1).png)
 
-    **Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
-    **Note:** In the Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**
+    >**Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
+    >**Note:** In the Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
 
 ## Task 2: Create a Language resource
 
@@ -93,11 +93,11 @@ To create and host a knowledge base for question answering, you need a **Languag
 
 1. Provision the resource using the following settings then click on **Review + Create (6)**:
 
-    - **Subscription**:  Select Your Azure subscription **1**.
-    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**.
+    - **Subscription**:  Select Your Azure subscription **(1)**
+    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
     - **Region**: **<inject key="Region" enableCopy="false"/> (3)**
-    - **Name**: **ai-search-<inject key="DeploymentID" enableCopy="false"/> (4)**.
-    - **Pricing tier**: Free (F) (*If this tier is not available, select Basic (B)*).**(5)**
+    - **Name**: **ai-search-<inject key="DeploymentID" enableCopy="false"/> (4)**
+    - **Pricing tier**: Free (F) (*If this tier is not available, select Basic (B)*) **(5)**
 
         ![](./images/aisearch(2).png)
       
@@ -122,10 +122,10 @@ To create a knowledge base for question answering in your Language resource, you
 
 2. If prompted to choose a Language resource else click on **Sign in** and  select the following settings:
 
-    - **Azure Directory**: The Azure directory containing your subscription **(1)**
+    - **Azure directory**: The Azure directory containing your subscription **(1)**
     - **Azure subscription**: Your Azure subscription **(2)**
     - **Resource type** : Language **(3)**
-    - **Language resource**: **AI-Language-<inject key="DeploymentID" enableCopy="false"/> (4)**.
+    - **Resource name**: **AI-Language-<inject key="DeploymentID" enableCopy="false"/> (4)**.
     -  Select **Done (5)**.
 
         ![](./images/language3(1).png)
@@ -136,7 +136,7 @@ To create a knowledge base for question answering in your Language resource, you
     2. On the **Settings** page, view the **Resources** tab.
     3. At the top of the page, click **Language Studio** to return to the Language Studio home page.
 
-4. At the top of the portal, in the **Create new** menu, select **Custom question answering**.
+4. At the top of the portal, in the **+ Create new** menu, select **Custom question answering**.
 
    ![](./images/language4.png)
 
@@ -146,7 +146,7 @@ To create a knowledge base for question answering in your Language resource, you
 
 10. On the **Enter basic information** page, enter the following details and then click **Next (4)**:
 
-    - **Name** **LearnFAQ (1)**
+    - **Name**: **LearnFAQ (1)**
     - **Description**: **FAQ for Microsoft Learn (2)**
     - **Default answer when no answer is returned**: **Sorry, I don't understand the question (3)**
 
@@ -164,7 +164,7 @@ You can create a knowledge base from scratch, but it's common to start by import
 
    ![](./images/language6.png)
 
-1. Then in the **Add URLs** dialog box, select **&#9547; Add url** and set the following name and URL  before you select **Add all (3)** to add it to the knowledge base:
+1. Then in the **Add URLs** dialog box, select **&#9547; Add url** and set the following name and URL and then click **Add all (3)** to add it to the knowledge base:
 
     - **Name**: `Learn FAQ Page` **(1)**
     - **URL**: `https://docs.microsoft.com/en-us/learn/support/faq` **(2)**
@@ -175,7 +175,7 @@ You can create a knowledge base from scratch, but it's common to start by import
 
     ![](./images/language8.png)
 
-1. In the **Add chit chat** dialog box, select **Friendly (1)** and select **Add chit chat (2)**.
+1. In the **Add chit chat** dialog box, select **Friendly (1)** and click **Add chit chat (2)**.
 
     ![](./images/language9(1).png)
 
@@ -255,7 +255,7 @@ The knowledge base provides a back-end service that client applications can use 
 
      ![](./images/language18.png)
 
-2. At the top of the page, click **Deploy (1)**. Then click **Deploy (2)** to confirm you want to deploy the knowledge base.
+2. At the top of the page, click **Deploy (1)**. Then again click **Deploy (2)** on the **Deploy this project?** dialogue.
 
     ![](./images/language17(2).png)
 
@@ -336,7 +336,7 @@ Most commonly, the client applications used to retrieve answers from a knowledge
 
     ![](./images/bot3(1).png)
 
-1. To open the  bot, select the Azure Bot resource in the resources list.
+1. To open the  bot, select the **Azure Bot** resource in the resources list.
 
     ![](./images/bot4(1).png)
 
