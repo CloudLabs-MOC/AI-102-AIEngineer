@@ -1,6 +1,8 @@
 # Exercise 02: Create a Language Service Client Application
 
-## Lab scenario
+## Estimated Duration : 45 Minutes
+
+## Overview
 
 The Conversational Language Understanding feature of the Azure AI Service for Language enables you to define a conversational language model that client apps can use to interpret natural language input from users, predict the users *intent* (what they want to achieve), and identify any *entities* to which the intent should be applied. You can create client applications that consume conversational language understanding models directly through REST interfaces, or by using language-specific software development kits (SDKs).
 
@@ -8,13 +10,11 @@ The Conversational Language Understanding feature of the Azure AI Service for La
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Open the cloned folder in Visual Studio Code
-+ Task 2: Create Language service resources
-+ Task 3: Import, train, and publish a Conversational language understanding model
-+ Task 4: Prepare to use the Language service SDK
-+ Task 5: Get a prediction from the Conversational Language model
-
-## Estimated timing: 45 minutes
++ **Task 1:** Open the cloned folder in Visual Studio Code
++ **Task 2:** Create Language service resources
++ **Task 3:** Import, train, and publish a Conversational language understanding model
++ **Task 4:** Prepare to use the Language service SDK
++ **Task 5:** Get a prediction from the Conversational Language model
 
 ## Architecture diagram
 
@@ -24,11 +24,13 @@ In this lab, you will complete the following tasks:
 
 In this task, you will open the cloned project folder in **Visual Studio Code** to access and work with the lab files. This setup ensures that all necessary files and dependencies are available for the exercises ahead.
 
-1. Start Visual Studio Code (the program icon is pinned to the Desktop).
+1. Double-click the **Visual Studio Code** shortcut on the desktop.
 
-    ![Visual Studio Code Icon](./images/vscode.png)
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\LabFiles** choose **AI-102-AIEngineer-stage** folder and select **select folder**
+1. Open a file, From the top-left options, Click on **Ecplorer (1)-> Open Folder (2)** and navigate to **C:\LabFiles (3)** choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
+
+    ![](./images/vsclangund(1).png)
 
     **Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
     **Note:** In the Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**
@@ -51,7 +53,7 @@ In this task, you will create an **Azure AI Language service** resource in the A
 
 1. Select **Create** button 
 
-      ![](images/c-42.png)
+      ![](images/c-42(1).png)
 
 1. Scroll down and select **Continue to create your resource** 
 
@@ -61,7 +63,7 @@ In this task, you will create an **Azure AI Language service** resource in the A
     - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false" /></inject> (2)**.
     - **Region**: **<inject key="Region" enableCopy="false" /></inject> (3)**
     - **Name**: **languageservice-<inject key="DeploymentID" enableCopy="false" /></inject> (4)**
-    - **Pricing tier**: **S (5)**
+    - **Pricing tier**: **S (1K Calls per minute) (5)**
     - **Responsible AI Notice**: **Select check box to confirm(6)**
 
       ![](images/c-43.png)
@@ -72,7 +74,7 @@ In this task, you will create an **Azure AI Language service** resource in the A
 
 1. Wait for the resources to be created, click on **Go to resource**.
 
-1. Navigate to the **Keys and Enpoint** under **Resource Management**. Make a copy of **Key1 (2)** and **Endpoint (3)** and then paste it in notepad. You will be using it in the upcoming tasks.
+1. Navigate to the **Keys and Enpoint (1)** under **Resource Management**. Make a copy of **KEY 1 (2)** and **Endpoint (3)** and then paste it in notepad. You will be using it in the upcoming tasks.
 
       ![](images/c-50.png)
 
@@ -84,7 +86,7 @@ In this task, you will import, train, and deploy a **Conversational Language Und
 
 1. Select the user icon from the top right corner, under **Current resource** choose **Select**.
 
-      ![](images/mod-5-60.png)
+      ![](images/mod-5-60(1).png)
 
 1. In the Select an Azure resource tab, keep the Active directory and Azure subscription as default. Under Resource type select **Language (1)** and under resource name select **languageservice-<inject key="DeploymentID" enableCopy="false" /></inject> (2)**.  Click **Done (3)**.
 
@@ -92,7 +94,7 @@ In this task, you will import, train, and deploy a **Conversational Language Und
       
 1. Sign in using the Microsoft account associated with your Azure subscription. If this is the first time you have signed into the Language Service portal, you may need to grant the app some permissions to access your account details. Then complete the *Welcome* steps by selecting your Azure subscription and the authoring resource you just created.
 
-1. Open the **Conversational Language Understanding** page.
+1. Click on **Create new** and open the **Conversational language understanding** page.
 
     ![](images/c-46.png)
 
@@ -108,7 +110,9 @@ In this task, you will import, train, and deploy a **Conversational Language Und
 
 1. If a panel with tips for creating an effective Language service app is displayed, close it.
 
-1. At the left of the Language Studio portal, select **Training jobs** to train the app. Click **Start a training job**, name the model **Clock** and keep default training mode (Standard) and data splitting. Select **Train**. Training may take several minutes to complete.
+1. At the left of the Language Studio portal, select **Training jobs (1)** to train the app. Click **Start a training job**, name the model **Clock (2)** and keep default training mode (Standard) and data splitting. Select **Train (3)**. Training may take several minutes to complete.
+
+    ![](./images/langtrainingjobs(1).png)
 
     >**Note**: Select **>>** to open the left explorer if not opened. Because the model name **Clock** is hard-coded in the clock-client code (used later in the lab), capitalize and spell the name exactly as described.    
 
@@ -336,7 +340,7 @@ In this task, you will implement and test a **Conversational Language Understand
 
 <validation step="c04b552b-faf9-49fc-81fb-0c49393a3afa" />    
 
-### Review
+## Summary
 In this lab, you have completed:
 
 + Opened the cloned folder in Visual Studio Code
@@ -345,4 +349,4 @@ In this lab, you have completed:
 + Prepared to use the Language service SDK
 + Got a prediction from the Conversational Language model
 
-## You have successfully completed the lab.
+### You have successfully completed the Hands-on lab!

@@ -1,6 +1,8 @@
 # Exercise 01: Create a language understanding model with the Language service
 
-## Lab scenario
+### Estimated Duration: 60 Minutes
+
+## Overview
 
 The conversational language understanding feature of the Azure AI Language service is currently in preview, and subject to change. In some cases, model training may fail - if this happens, try again.  
 
@@ -18,16 +20,14 @@ This kind of input is an example of an *utterance* (something a user might say o
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Create an Azure AI Language resource
-+ Task 2: Create a conversational language understanding project
-+ Task 3: Create intents
-+ Task 4: Train and test the model
-+ Task 5: Add entities
-+ Task 6: Use the model from a client app
-+ Task 7: Call the API from the Azure Cloud Shell
-+ Task 8: Export the project
-
-## Estimated timing: 60 minutes
++ **Task 1:** Create an Azure AI Language resource
++ **Task 2:** Create a conversational language understanding project
++ **Task 3:** Create intents
++ **Task 4:** Train and test the model
++ **Task 5:** Add entities
++ **Task 6:** Use the model from a client app
++ **Task 7:** Call the API from the Azure Cloud Shell
++ **Task 8:** Export the project
 
 ## Architecture diagram
 
@@ -37,13 +37,17 @@ In this lab, you will complete the following tasks:
 
 In this task, you will create an **Azure AI Language** resource in the Azure portal and configure its settings. Once deployed, you will review the deployment details.
 
-1. On Azure Portal page, in **Search resources, services and docs (G+/)** box at the top of the portal, search **Azure AI services (1)**, and then select **Azure AI services (2)** under services.
+1. On Azure Portal page, in **Search resources, services and docs (G+/)** box at the top of the portal, search **Azure AI Foundry (1)**, and then select **Azure AI Foundry (2)** under services.
 
-      ![](images/c-1.png)
+      ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
 
-1. Then, in the Azure AI services tab, select **Language Service (1)** and select **+ Create (2)**.
+1. Then, in the **AI Foudnry** tab, from the left navigation pane, click on **More services (1)**, then select **Language Service (2)** and click on **+ Create (3)**.
 
-1. Scroll down to the bottom and select **Continue to create your resource**.
+      ![](./images/langsrv(1).png)
+
+1. On the **Select additional features** page, scroll down to the bottom and select **Continue to create your resource**.
+
+      ![](./images/langsrv(2).png)
 
 1. Provision the resource using the following settings and then click on **Review + create (7)**. 
     
@@ -56,7 +60,7 @@ In this task, you will create an **Azure AI Language** resource in the Azure por
 
       ![](images/c-2.png)    
 
-1. Click on **Create**.
+1. On the **Review + create** tab, click on **Create**.
 
 1. Wait for deployment to complete, and then view the deployment details.
 
@@ -64,9 +68,11 @@ In this task, you will create an **Azure AI Language** resource in the Azure por
 
 In this task, you will create a **Conversational Language Understanding** project in **Language Studio**. You will configure a language resource, set up a new project, and define its basic settings.
 
-1. In a new browser tab, open the Language Studio portal at `https://language.cognitive.azure.com/` and sign in using the Microsoft account associated with your Azure subscription if prompted to sign in.
+1. In a new browser tab, open the Language Studio portal at `https://language.cognitive.azure.com/`.
 
 1. If you're not signed in yet, click **Sign in** located at the top-right corner.
+
+      ![](./images/langsrv(3).png)
 
 1. If prompted to choose a Language resource, select the following settings, and select **Done (5)**:
 
@@ -106,7 +112,7 @@ In this task, you will create a **Conversational Language Understanding** projec
        
     - Select **Next (5)**
 
-      ![](images/c-7.png)    
+      ![](images/c-7(1).png)    
 
 1. On the **Review and finish** page, select **Create**.
 
@@ -132,7 +138,7 @@ In this task, you will define **intents** for your Conversational Language Under
 
     `tell me the time`
 
-    ![](images/c-10.png)    
+    ![](images/c-10(1).png)    
    
 1. On the **Schema definition** page, on the **Intents** tab, select **&#65291; Add**, and under **Intent name** type **GetDay**, and select **Add intent**.
 
@@ -148,7 +154,7 @@ In this task, you will define **intents** for your Conversational Language Under
 
 1. After you've added these utterances, select **Save changes** and go back to the **Schema definition** page.
 
-      ![](images/c-26.png)
+      ![](images/c-26(1).png)
 
 1. After you've added these utterances and saved them, go back to the **Schema definition** page and add another new intent named **GetDate** with the following utterances:
 
@@ -174,7 +180,7 @@ In this task, you will train and test the **Clock** model by starting a training
 
 1. On the **Start a training job** dialog, select the option to **Train a new model (1)**, name it **Clock (2)**. To begin the process of training your model, select **Train (3)**.
 
-      ![](images/c-13.png)
+      ![](images/c-13(1).png)
 
 1. When training is complete (which may take several minutes) the job **Status** will change to **Training succeeded**.
 
@@ -182,7 +188,7 @@ In this task, you will train and test the **Clock** model by starting a training
 
 1. From the left navigation menu, select the **Model performance** page, and then select the **Clock** model. Review the overall and per-intent evaluation metrics (*precision*, *recall*, and *F1 score*) and the *confusion matrix* generated by the evaluation that was performed when training (note that due to the small number of sample utterances, not all intents may be included in the results).
 
-      ![](images/c-15.png)
+      ![](images/c-15(1).png)
 
     > **Note**: To learn more about the evaluation metrics, refer to the [documentation](https://learn.microsoft.com/azure/ai-services/language-service/conversational-language-understanding/concepts/evaluation-metrics)
 
@@ -198,7 +204,7 @@ In this task, you will train and test the **Clock** model by starting a training
 
     `what's the time now?` **(3)**
 
-      ![](images/c-18.png)    
+      ![](images/c-18(1).png)    
 
 1. Review the result that is returned, noting that it includes the predicted intent (which should be **GetTime**) and a confidence score that indicates the probability the model calculated for the predicted intent. The JSON tab shows the comparative confidence for each potential intent (the one with the highest confidence score is the predicted intent)
 
@@ -226,11 +232,11 @@ The most common kind of entity is a *learned* entity, in which the model learns 
 
 1. In Language Studio, return to the **Schema definition (1)** page and then on the **Entities (2)** tab, select **&#65291; Add (3)** to add a new entity.
 
-      ![](images/c-20.png)
+      ![](images/c-20(1).png)
 
 1. In the **Add an entity** dialog box, enter the entity name **Location (1)** and ensure that the **Learned (2)** tab is selected. Then select **Add entity (3)**.
 
-      ![](images/c-21.png)
+      ![](images/c-21(1).png)
 
 1. After the **Location** entity has been created, return to the **Schema definition** page and then on the **Intents** tab, select the **GetTime** intent.
 
@@ -272,7 +278,7 @@ In some cases, valid values for an entity can be restricted to a list of specifi
     |-------------------|---------|
     | Sunday **(3)** | Sun **(4)** |
 
-      ![](images/c-24.png)
+      ![](images/c-24(1).png)
 
       >**Note**: Type the synonyms and press enter.
 
@@ -309,7 +315,7 @@ In some cases, valid values for an entity can be restricted to a list of specifi
 
 1. When the utterance has been added, map **Thurs** to the **Weekday** entity.
 
-1. select **Save changes** to save the new utterances.
+1. Select **Save changes** to save the new utterances.
 
 ### Task 5.3: Add a *prebuilt* entity
 
@@ -319,7 +325,7 @@ The Azure AI Language service provides a set of *prebuilt* entities that are com
 
 1. In the **Add an entity** dialog box, enter the entity name **Date (1)** and select the **Prebuilt (2)** entity tab. Then select **Add entity (3)**.
 
-      ![](images/c-27.png)
+      ![](images/c-27(1).png)
 
 1. On the page for the **Date** entity, in the **Prebuilt (1)** section, select **&#65291; Add new prebuilt (2)**. In the **Select prebuilt** list, select **DateTime (3)** and then select **Save (4)**.
 
@@ -347,9 +353,9 @@ Now that you've modified the schema, you need to retrain and retest the model.
 
 1. On the **Training jobs** page, select **+ Start a training job**.
 
-1. On the **Start a training job** dialog,  select  **overwrite an existing model (1)** and specify the **Clock (2)** model. Select **Train (3)** to train the model. If prompted, confirm you want to **overwrite and train**.
+1. On the **Start a training job** dialog,  select  **Overwrite an existing model (1)** and specify the **Clock (2)** model. Select **Train (3)** to train the model. If prompted, confirm you want to **Overwrite and train**.
 
-      ![](images/c-29.png)
+      ![](images/c-29(1).png)
 
 1. When training is completed the job **Status** will update to **Training succeeded**.
 
@@ -359,13 +365,13 @@ Now that you've modified the schema, you need to retrain and retest the model.
 
 1. On the **Add deployment** dialog, select **Overwrite an existing deployment name (1)**, and then select **production (2)**. Select the **Clock (3)** model in the **Model** field and then select **Deploy (4)** to deploy it. This may take some time.
 
-      ![](images/c-30.png)
+      ![](images/c-30(1).png)
 
 1. When the model is deployed, on the **Testing deployments (1)** page, select the **production (2)** deployment under the **Deployment name** field, and then test it with the following text and then click on **Run the test (4)**
 
     `what's the time in Edinburgh?` **(3)**
 
-      ![](images/c-31.png)    
+      ![](images/c-31(1).png)    
 
 1. Review the result that is returned, which should hopefully predict the **GetTime (1)** intent and a **Location** entity with the text value `Edinburgh` **(2)**.
 
@@ -405,9 +411,15 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **Bash**. If you don't see this option, skip the step.  
 
+      ![](./images/csazure(1).png)
+
 1. If you're prompted to create storage for your Cloud Shell, select **Mount storage account** and select your default **Subscription** , and then click on **Apply**.
+
+      ![](./images/csazure(2).png)
    
 1. Select **I want to create a storage account**, click on **Apply**.
+
+      ![](./images/csazure(3).png)
 
 1. On the **Create Storage account** page, provid the following details and then click on **Create (6)**.
 
@@ -421,7 +433,7 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
     
     - **File share**: Enter **fs<inject key="DeploymentID" enableCopy="false"/> (5)**
     
-      ![](images/c-35.png)
+      ![](./images/csazure(4).png)
     
       >**Note:** Wait a minute or so for the storage to be created.
 
@@ -442,9 +454,11 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
 
 1. Then run `code send-call.sh` to open the file in the Cloud Shell editor. This file contains a script that will call the service with the question: **What's the time in Sydney?**.
 
-    > **Note**: If you asked for switch to classic shell please click on confirm.
+      ![](./images/csazure(5).png)
 
-    > **Note**: If you don't see the built-in code editor, please repeat steps 8 and 9 accordingly. 
+      > **Note**: If you asked for switch to classic shell please click on confirm.
+
+      > **Note**: If you don't see the built-in code editor, please repeat steps 8 and 9 accordingly. 
 
 1. Replace the following values from the corresponding values in the **Sample request** that you have copied earlier from Language Studio:
 
@@ -454,7 +468,7 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
     - **<Apim-Subscription-Key>**: Your key looks like: `b11bcsbd50a149dfb6626791d20f514b` **(2)**
     - **<Apim-Request-Id>**: Your request ID looks like: `4vfdad1c-b2fc-48ba-bd7d-b59d2242395b` **(3)**
 
-      ![](images/c-54.png)    
+      ![](images/csazure(6).png)    
 
 1. Press **CTRL + Save** to save your changes.
 
@@ -503,7 +517,7 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
 
 1. Review the JSON response returned by your model to ensure that the top scoring intent predicted is **GetTime**.
 
-      ![](images/c-38.png)
+      ![](images/csazure(7).png)
 
 1. Change the query in the curl command to `What's today's date?` and then run it and review the resulting JSON.
 
@@ -529,7 +543,7 @@ In this task, you will export your project from Azure AI Language Studio. You wi
 
 1. Open the downloaded file in your favorite code editor (for example, Visual Studio Code) to review the JSON definition of your project.
 
-### Review
+## Summary
 In this lab, you have completed:
 
 + Created an Azure AI Language resource
@@ -541,4 +555,6 @@ In this lab, you have completed:
 + Called the API from the Azure Cloud Shell
 + Exported the project
 
-## You have successfully completed this exercise, click on Next >> proceed with the next exercises.
+### You have successfully completed the lab, click on Next >>.
+
+![](./images/nextpage(3pages).png)
