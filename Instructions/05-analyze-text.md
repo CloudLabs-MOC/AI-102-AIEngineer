@@ -183,6 +183,10 @@ In this exercise, you'll complete a partially implemented client application tha
 
       ![Visual Studio Code Icon](./images/b-5(1).png)       
 
+1. Now go to **C-Sharp → text-analysis → text-analysis.csproj**, update the `<TargetFramework>` value from `net8.0` to `net9.0` and save the file by pressing **(`Ctrl+S`)**.
+
+    ![](./images/solution1.png)    
+
 1. Note that the **text-analysis** folder contains a code file for the client application:
 
     - **C#**: Program.cs
@@ -233,13 +237,7 @@ In this exercise, you'll complete a partially implemented client application tha
     dotnet run
     ```
 
-    ![Visual Studio Code Icon](./images/a-53.png)
-
-    >**Note:** If you encounter an error stating that .NET 8.0 is missing or not installed, it is because your system only has .NET 9.0 installed. To resolve this, open the project file located at `C-Sharp/text-analysis/text-analysis.csproj` and update the <TargetFramework> element from net8.0 to net9.0 and press `Ctrl+S` to save the changes. Then re-run `dotnet run`.
-
-    ![](./images/error1.png)
-
-    ![](./images/solution1.png)    
+    ![Visual Studio Code Icon](./images/a-53.png) 
 
     **Python**
 

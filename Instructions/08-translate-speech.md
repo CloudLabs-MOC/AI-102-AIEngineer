@@ -1,6 +1,8 @@
-# Exercise 02: Translate Speech
+# Lab 02: Translate Speech
 
-## Lab scenario
+### Estimated Duration : 120 Minutes
+
+## Overview
 Azure AI Speech includes a speech translation API that you can use to translate spoken language. For example, suppose you want to develop a translator application that people can use when traveling in places where they don't speak the local language. They would be able to say phrases such as "Where is the station?" or "I need to find a pharmacy" in their own language, and have it translate them to the local language.
 
 > **Note:** This exercise requires that you are using a computer with speakers/headphones. For the best experience, a microphone is also required. Some hosted virtual environments may be able to capture audio from your local microphone, but if this doesn't work (or you don't have a microphone at all), you can use a provided audio file for speech input. Follow the instructions carefully, as you'll need to choose different options depending on whether you are using a microphone or the audio file.
@@ -9,12 +11,10 @@ Azure AI Speech includes a speech translation API that you can use to translate 
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Provision an Azure AI Speech resource
-+ Task 2: Prepare to use the Azure AI Speech Translation service
-+ Task 3: Implement speech translation
-+ Task 4: Synthesize the translation to speech
-
-## Estimated timing: 120 minutes
++ **Task 1:** Provision an Azure AI Speech resource
++ **Task 2:** Prepare to use the Azure AI Speech Translation service
++ **Task 3:** Implement speech translation
++ **Task 4:** Synthesize the translation to speech
 
 ## Architecture diagram
 
@@ -24,33 +24,48 @@ In this lab, you will complete the following tasks:
 
 In this task, you will provision an Azure AI Speech resource in the Azure portal. You will create a **Speech service** under **Azure AI services**, configure it with your subscription, a resource group, a unique name, a region, and select the **Standard S0** pricing tier. After deployment, you will retrieve the **keys and endpoint** for use in later steps.
 
-1. Open the Azure portal.
+1. Double-click the **Azure Portal** icon on the desktop.
 
-1. Enter **Azure AI** in the search field at the top of the portal. Then select **Azure AI services** in the suggestions dropdown that appears.
+    ![Visual Studio Code Icon](./images/azportal(1).png)
 
-1. Select **Create** under **Speech service** in the results page.
+1. In the top search bar, search for **Azure AI Foundry (1)**, select **Azure AI Foundry (2)** from the result.
+
+    ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
+
+1. On the **AI Foundry** blade, from the left navigation pane click **More services (1)** → select **Speech service (2)** → click **+ Create (3)**.
+
+    ![](./images/speechservice2(1).png)   
 
 1. Create a resource with the following settings:
    
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/>**
-    - **Region**: *Choose any available region*
-    - **Name**: **aiseeech1<inject key="DeploymentID" enableCopy="false"/>**
-    - **Pricing tier**: Standard S0
+    - **Subscription**: **Your Azure subscription (1)**
+    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Region**: **<inject key="Region" enableCopy="false"/> (3)**
+    - **Name**: **aiseech1<inject key="DeploymentID" enableCopy="false"/> (4)**
+    - **Pricing tier**: **Standard S0 (5)**
+    - Click **Review + create (6)**
 
-1. Select **Review + Create,** then select **Create**.
+        ![](./images/speechservice2(2).png) 
 
-1. Wait for deployment to complete, and then view the deployment details.
+1. In the **Review + create** tab, click **Create**.
 
-1. When the resource has been deployed, go to it and view its **Keys and Endpoint** page. You will need one of the keys and the location in which the service is provisioned from this page in the next procedure.
+1. Wait for deployment to complete, and then view the deployment details and click **Go to resource**.
+
+    ![](./images/azureaiservice2(3).png)
+
+1. After the resource is deployed, navigate to it, open **Resource Management (1)** from the left pane, and select **Keys and Endpoint (2)**. From this page, copy the value of **KEY 1 (3)** and the **Location/Region (4)** where the service is provisioned, as you will use these values in the next task.
+
+    ![](./images/azureaiservice2(4)(1).png)
 
 ## Task 2: Prepare to use the Azure AI Speech Translation service
 
 In this task, you'll complete a partially implemented client application that uses the Azure AI Speech SDK to recognize, translate, and synthesize speech.
 
-1. In Visual Studio Code, in the **Explorer** pane, browse to the **08-speech-translation** folder and expand the **C-Sharp** folder.
+1. In Visual Studio Code, in the **Explorer** pane, browse to the **07-speech (1)** folder and expand the **C-Sharp (2)** folder. Right-click the **speaking-clock (3)** folder and **Open in Integrated Terminal (4)**.
 
-1. Right-click the **translator** folder and open an integrated terminal. Then install the Speech SDK package by running the appropriate command for your language preference:
+    ![](./images/vsctranslator(1).png)
+
+1. Then install the Speech SDK package by running the appropriate command for your language preference:
 
    **C#**
 
@@ -62,7 +77,9 @@ In this task, you'll complete a partially implemented client application that us
    
     - **C#**: appsettings.json
 
-1. Open the configuration file and update the configuration values it contains to include an authentication **key** for your Azure AI Speech resource, and the **location** where it is deployed. **Save your changes**.
+1. Open the configuration file and update the configuration values it contains to include an authentication **key** for your Azure AI Speech resource, and the **location** where it is deployed. **Save your changes** by pressing **Ctrl+S**.
+
+    ![](./images/vsctranslator(2).png)
 
 1. Note that the **translator** folder contains a code file for the client application:
 
@@ -79,6 +96,8 @@ In this task, you'll complete a partially implemented client application that us
     using Microsoft.CognitiveServices.Speech.Translation;
     ```
 
+    ![](./images/vsctranslator(3).png)
+
 5. In the **Main** function, note that code to load the Azure AI Speech service key and region from the configuration file has already been provided. You must use these variables to create a **SpeechTranslationConfig** for your Azure AI Speech resource, which you will use to translate spoken input. Add the following code under the comment **Configure translation**:
 
     **C#**
@@ -92,6 +111,9 @@ In this task, you'll complete a partially implemented client application that us
     translationConfig.AddTargetLanguage("hi");
     Console.WriteLine("Ready to translate from " + translationConfig.SpeechRecognitionLanguage);
     ```
+
+    ![](./images/vsctranslator(4).png)
+
 6. You will use the **SpeechTranslationConfig** to translate speech into text, but you will also use a **SpeechConfig** to synthesize translations into speech. Add the following code under the comment **Configure speech**:
 
     **C#**
@@ -132,6 +154,9 @@ In this task, you will implement speech translation using Azure AI Speech. You w
     Console.OutputEncoding = Encoding.UTF8;
     Console.WriteLine(translation);
     ```
+
+    ![](./images/vsctranslator(6).png)
+
     > **Note:** The code in your application translates the input to all three languages in a single call. Only the translation for the specific language is displayed, but you could retrieve any of the translations by specifying the target language code in the **translations** collection of the result.
 
 1. Now skip ahead to the **Run the program** section below.
@@ -170,6 +195,9 @@ In this task, you will implement speech translation using Azure AI Speech. You w
     Console.OutputEncoding = Encoding.UTF8;
     Console.WriteLine(translation);
     ```
+
+    ![](./images/vsctranslator(7).png)
+
    > **Note:** The code in your application translates the input to all three languages in a single call. Only the translation for the specific language is displayed, but you could retrieve any of the translations by specifying the target language code in the **translations** collection of the result.
 
 
@@ -183,6 +211,8 @@ In this task, you will implement speech translation using Azure AI Speech. You w
     dotnet run
     ```
 1. When prompted, enter a valid language code (*fr*, *es*, or *hi*), and then, if using a microphone, speak clearly and say "where is the station?" or some other phrase you might use when traveling abroad. The program should transcribe your spoken input and translate it to the language you specified (French, Spanish, or Hindi). Repeat this process, trying each language supported by the application. When you're finished, press ENTER to end the program.
+
+    ![](./images/vsctranslator(8).png)
 
     > **Note:** The TranslationRecognizer gives you around 5 seconds to speak. If it detects no spoken input, it produces a "No match" result. The translation to Hindi may not always be displayed correctly in the Console window due to character encoding issues.
 
@@ -210,6 +240,9 @@ In this task, you will synthesize translated text into speech using neural voice
         Console.WriteLine(speak.Reason);
     }
     ```
+
+    ![](./images/vsctranslator(9).png)
+
 2. Save your changes and return to the integrated terminal for the **translator** folder, and enter the following command to run the program:
 
     **C#**
@@ -218,6 +251,8 @@ In this task, you will synthesize translated text into speech using neural voice
     dotnet run
     ```
 3. When prompted, enter a valid language code (*fr*, *es*, or *hi*), and then speak clearly into the microphone and say a phrase you might use when traveling abroad. The program should transcribe your spoken input and respond with a spoken translation. Repeat this process, trying each language supported by the application. When you're finished, press **ENTER** to end the program.
+
+    ![](./images/vsctranslator(10).png)
 
     > **Note:** In this example, you've used a **SpeechTranslationConfig** to translate speech to text, and then used a **SpeechConfig** to synthesize the translation as speech. You can in fact use the **SpeechTranslationConfig** to synthesize the translation directly, but this only works when translating to a single language, and results in an audio stream that is typically saved as a file rather than sent directly to a speaker.
 
@@ -228,7 +263,7 @@ In this task, you will synthesize translated text into speech using neural voice
 
 <validation step="ec7c2642-6d9e-45f0-b3b3-be16a1efc5a4" />
 
-### Review
+## Summary
 In this lab, you have completed:
 
 + Provisioned an Azure AI Speech resource
@@ -236,4 +271,4 @@ In this lab, you have completed:
 + Implemented speech translation
 + Synthesized speech
 
-## You have successfully completed the lab.
+## You have successfully completed the Hands-on lab!

@@ -1,6 +1,8 @@
-# Exercise 01: Recognize and Synthesize Speech
+# Lab 01: Recognize and Synthesize Speech
 
-## Lab scenario
+### Estimated Duration: 120 Minutes
+
+## Overview
 
 **Azure AI Speech** is a service that provides speech-related functionality, including:
 
@@ -15,15 +17,13 @@ In this exercise, you'll use both of these APIs to implement a speaking clock ap
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Clone the repo into your Azure Cloud Shell
-+ Task 2: Provision an Azure AI Speech resource
-+ Task 3: Prepare to use Azure AI speech
-+ Task 4: Recognize speech
-+ Task 5: Synthesize speech
-+ Task 6: Use a different voice
-+ Task 7: Use Speech Synthesis Markup Language
-
-## Estimated timing: 120 minutes
++ **Task 1:** Clone the repo into your Azure Cloud Shell
++ **Task 2:** Provision an Azure AI Speech resource
++ **Task 3:** Prepare to use Azure AI speech
++ **Task 4:** Recognize speech
++ **Task 5:** Synthesize speech
++ **Task 6:** Use a different voice
++ **Task 7:** Use Speech Synthesis Markup Language
 
 ## Architecture diagram
 
@@ -33,17 +33,27 @@ In this lab, you will complete the following tasks:
 
 In this task, you will clone the AI-102-AIEngineer repository to your local environment using Git. You will then open the cloned folder in Visual Studio Code to access the necessary lab files.
 
-1. Start Visual Studio Code.
+1. Double-click the **Visual Studio Code** shortcut on the desktop.
 
-1. Open the New Terminal  and run a **git clone** command to clone the`https://github.com/MicrosoftLearning/AI-102-AIEngineer` repository to a local folder (it doesn't matter which folder).
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-   ![](./images/Terminal_new_vs_1.png)
+1. From the top menu bar, click on the **ellipsis (...) (1)**, then choose **Terminal (2)** from the dropdown menu, and finally select **New Terminal (3)** to open a new terminal window.
+
+    ![](./images/Terminal_new_vs_1(1).png)
+
+1. In the Terminal run a **git clone** command to clone the`https://github.com/MicrosoftLearning/AI-102-AIEngineer` repository to a local folder (it doesn't matter which folder).
+
+    ![](./images/Terminal_new_vs_1(2).png)
    
 1. When the repository has been cloned, open the folder in Visual Studio Code.
 
-   > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
+    ![](./images/Terminal_new_vs_1(3).png)
 
-1.  Open Explorer, select **File** > **Open Folder** and open **C:\Users\azureuser\AI-102-AIEngineer**.
+    > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
+
+1.  Open Explorer, select **File (1)** > **Open Folder (3)** and open **C:\Users\azureuser\AI-102-AIEngineer (3)** and then click **Select Folder (4)**.
+
+    ![](./images/Terminal_new_vs_1(4).png)
 
     >**Note:** On the **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust the authors**.
 
@@ -53,35 +63,49 @@ In this task, you will clone the AI-102-AIEngineer repository to your local envi
 
 In this task, you will create an Azure AI Speech resource in the Azure portal. You will configure the resource with the required settings, deploy it, and retrieve its Keys and Endpoint for later use.
 
-1. Open the Azure portal.
+1. Double-click the **Azure Portal** icon on the desktop.
 
-1. Enter **Azure AI** in the search field at the top of the portal. Then select **Azure AI services** in the suggestions dropdown that appears.
+    ![Visual Studio Code Icon](./images/azportal(1).png)
 
-   ![](./images/azureaiservice1.png)
+1. In the top search bar, search for **Azure AI Foundry (1)**, select **Azure AI Foundry (2)** from the result.
 
-1. Select **Create** under **Speech service** in the results page.
+    ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
 
-1. Create a resource using the provided settings. Once completed, click **Review + Create** to validate the configuration, and then click **Create** to deploy the resource.
+1. On the **AI Foundry** blade, from the left navigation pane click **More services (1)** → select **Speech service (2)** → click **+ Create (3)**.
 
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/>**
-    - **Region**: *Choose any available region*
-    - **Name**: **aispeech<inject key="DeploymentID" enableCopy="false"/>**.
-    - **Pricing tier**: Standard S0 or S1 based on Availability of the Tier
+    ![](./images/speechservice.png)    
 
-      ![](./images/azureaiservice2.png)
+1. Create a resource using the provided settings. Once completed, click **Review + Create (6)** to validate the configuration.
 
-1. Wait for deployment to complete, and then view the deployment details.
+    - **Subscription**: **Your Azure subscription (1)**
+    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Region**: **<inject key="Region" enableCopy="false"/> (3)**
+    - **Name**: **aispeech<inject key="DeploymentID" enableCopy="false"/> (4)**.
+    - **Pricing tier**: Standard S0 or F0 based on Availability of the Tier **(5)**
 
-1. When the resource has been deployed, go to it and view its **Keys and Endpoint** page. You will need one of the keys and the location in which the service is provisioned from this page in the next procedure.
+      ![](./images/azureaiservice2(1).png)
+
+1. Click **Create** to deploy the resource.
+
+    ![](./images/azureaiservice2(2).png)
+
+1. Wait for deployment to complete, and then view the deployment details and click on **Go to resource**.
+
+    ![](./images/azureaiservice2(3).png)
+
+1. After the resource is deployed, navigate to it, open **Resource Management (1)** from the left pane, and select **Keys and Endpoint (2)**. From this page, copy the value of **KEY 1 (3)** and the **Location/Region (4)** where the service is provisioned, as you will use these values in the next task.
+
+    ![](./images/azureaiservice2(4).png)
 
 ## Task 3: Prepare to use the Azure AI Speech service
 
 In this task, you'll complete a partially implemented client application that uses the Azure AI Speech SDK to recognize and synthesize speech.
 
-1. In Visual Studio Code, in the **Explorer** pane, browse to the **07-speech** folder and expand the **C-Sharp** folder.
+1. In Visual Studio Code, in the **Explorer** pane, browse to the **07-speech (1)** folder and expand the **C-Sharp (2)** folder. Right-click the **speaking-clock (3)** folder and **Open in Integrated Terminal (4)**.
 
-1. Right-click the **speaking-clock** folder and open an integrated terminal. Then install the Speech SDK package by running the appropriate command for your language preference:
+    ![](./images/07-speechvsc(1).png)
+
+1. Now install the Speech SDK package by running the appropriate command for your language preference:
 
    **C#**
 
@@ -94,6 +118,8 @@ In this task, you'll complete a partially implemented client application that us
      - **C#**: appsettings.json
 
 1. Open the configuration file and update the configuration values it contains to include an authentication **key** for Azure AI Speech resource, and the **location** where it is deployed. Save your changes.
+
+    ![](./images/07-speechvsc(2).png)
 
 1. Note that the **speaking-clock** folder contains a code file for the client application:
 
@@ -108,6 +134,8 @@ In this task, you'll complete a partially implemented client application that us
     using Microsoft.CognitiveServices.Speech;
     using Microsoft.CognitiveServices.Speech.Audio;
     ```
+
+    ![](./images/07-speechvsc(3).png)
 
 5. In the **Main** function, note that code to load the service key and region from the configuration file has already been provided. You must use these variables to create a **SpeechConfig** for your Azure AI Speech resource. Add the following code under the comment **Configure speech service**:
 
@@ -130,6 +158,8 @@ In this task, you'll complete a partially implemented client application that us
     ```
 
 7. If you are using C#, you can ignore any warnings about using the **await** operator in asynchronous methods - we'll fix that later. The code should display the region of the speech service resource the application will use.
+
+    ![](./images/07-speechvsc(4).png)
 
 ## Task 4: Recognize speech
 
@@ -169,6 +199,8 @@ In this task, you will implement speech recognition using Azure AI Speech. You c
     using System.Media;
     ````
 
+    ![](./images/07-speechvsc(5).png)
+
 1. In the **Main** function, note that the code uses the **TranscribeCommand** function to accept spoken input. Then in the **TranscribeCommand** function, under the comment **Configure speech recognition**, add the appropriate code below to create a **SpeechRecognizer** client that can be used to recognize and transcribe speech from an audio file:
 
     **C#**
@@ -181,6 +213,8 @@ In this task, you will implement speech recognition using Azure AI Speech. You c
     using AudioConfig audioConfig = AudioConfig.FromWavFileInput(audioFile);
     using SpeechRecognizer speechRecognizer = new SpeechRecognizer(speechConfig, audioConfig);
     ```
+
+    ![](./images/07-speechvsc(6).png)
 
 ### Task 4.3: Add code to process the transcribed command
 
@@ -215,6 +249,8 @@ In this task, you will implement speech recognition using Azure AI Speech. You c
     ```bash
     dotnet run
     ```
+
+    ![](./images/07-speechvsc(7).png)
 
     >**Note:** You may be prompted to speak the question, but we are using a virtual environment where voice communication from your laptop or desktop to the virtual environment is not supported
 
@@ -252,6 +288,8 @@ In this task, you will configure **speech synthesis** to generate spoken output 
         Console.WriteLine(speak.Reason);
     }
     ```
+
+    ![](./images/07-speechvsc(8).png)
 
 1. **Save your changes** and return to the integrated terminal for the **speaking-clock** folder, and enter the following command to run the program:
 
@@ -316,6 +354,8 @@ In this task, you will modify the speech synthesis configuration to use Speech S
     }
     ```
 
+    ![](./images/07-speechvsc(9).png)
+
 1. **Save your changes** and return to the integrated terminal for the **speaking-clock** folder, and enter the following command to run the program:
 
     **C#**
@@ -324,11 +364,13 @@ In this task, you will modify the speech synthesis configuration to use Speech S
     dotnet run
     ```
 
+    ![](./images/07-speechvsc(10).png)
+
 1. When prompted, speak clearly into the microphone and say "**what time is it?**". The program should speak in the voice that is specified in the SSML (overriding the voice specified in the SpeechConfig), telling you the time, and then after a pause telling you it's time to end this lab - which it is!
 
     >**Note:** You may be prompted to speak the question, but we are using a virtual environment where voice communication from your laptop or desktop to the virtual environment is not supported
 
-### Review
+## Summary
 In this lab, you have completed:
 
 + Cloned the repo into your Azure Cloud Shell
@@ -339,4 +381,6 @@ In this lab, you have completed:
 + Used a different voice
 + Used Speech Synthesis Markup Language
 
-## You have successfully completed this exercise, click on Next >> proceed with the next exercises.
+### You have successfully completed the lab, click on Next >>.
+
+![](./images/nextpage(3pages).png)
