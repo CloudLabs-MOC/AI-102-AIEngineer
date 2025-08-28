@@ -1,4 +1,4 @@
-# Exercise 02: Create a Language Service Client Application
+# Lab 02: Create a Language Service Client Application
 
 ## Estimated Duration : 45 Minutes
 
@@ -28,7 +28,7 @@ In this task, you will open the cloned project folder in **Visual Studio Code** 
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open a file, From the top-left options, Click on **Ecplorer (1)-> Open Folder (2)** and navigate to **C:\LabFiles (3)** choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
+1. Open a file, From the top-left options, Click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\LabFiles (3)** choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
 
     ![](./images/vsclangund(1).png)
 
@@ -51,7 +51,7 @@ In this task, you will create an **Azure AI Language service** resource in the A
 
       ![](images/c-41.png)
 
-1. Select **Create** button 
+1. Click **Create** button. 
 
       ![](images/c-42(1).png)
 

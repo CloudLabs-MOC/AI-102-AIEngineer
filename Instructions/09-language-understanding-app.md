@@ -1,4 +1,4 @@
-# Exercise 01: Create a language understanding model with the Language service
+# Lab 01: Create a language understanding model with the Language service
 
 ### Estimated Duration: 60 Minutes
 
