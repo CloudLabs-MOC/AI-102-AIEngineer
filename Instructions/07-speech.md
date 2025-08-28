@@ -51,7 +51,7 @@ In this task, you will clone the AI-102-AIEngineer repository to your local envi
 
     > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
 
-1.  Open Explorer, select **File (1)** > **Open Folder (3)** and open **C:\Users\azureuser\AI-102-AIEngineer (3)** and then click **Select Folder (4)**.
+1.  Open Explorer, select **Explorer (1)** > **Open Folder (3)** and open **C:\Users\azureuser\AI-102-AIEngineer (3)** and then click **Select Folder (4)**.
 
     ![](./images/Terminal_new_vs_1(4).png)
 
@@ -67,7 +67,7 @@ In this task, you will create an Azure AI Speech resource in the Azure portal. Y
 
     ![Visual Studio Code Icon](./images/azportal(1).png)
 
-1. In the top search bar, search for **Azure AI Foundry (1)**, select **Azure AI Foundry (2)** from the result.
+1. On the Azure Portal home page, use the top search bar to look for **Azure AI Foundry (1)**, then select **Azure AI Foundry (2)** from the results.
 
     ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
 
