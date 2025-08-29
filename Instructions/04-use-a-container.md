@@ -1,12 +1,12 @@
 # Lab 04: Use an Azure AI Services Container
 
-### Estimated Duration : 20 Minutes
+### Estimated Duration: 20 Minutes
 
 ## Overview
 
 Using Azure AI services hosted in Azure enables application developers to focus on the infrastructure for their own code while benefiting from scalable services that are managed by Microsoft. However, in many scenarios, organizations require more control over their service infrastructure and the data that is passed between services.
 
-Many of the Azure AI services APIs can be packaged and deployed in a container, enabling organizations to host Azure AI services in their own infrastructure; for example in local Docker servers, Azure Container Instances, or Azure Kubernetes Services clusters. Containerized Azure AI services need to communicate with an Azure-based Azure AI services account to support billing; but application data is not passed to the back-end service, and organizations have greater control over the deployment configuration of their containers, enabling custom solutions for authentication, scalability, and other considerations.
+Many of the Azure AI services APIs can be packaged and deployed in a container, enabling organizations to host Azure AI services in their own infrastructure; for example, in local Docker servers, Azure Container Instances, or Azure Kubernetes Services clusters. Containerized Azure AI services need to communicate with an Azure-based Azure AI services account to support billing, but application data is not passed to the back-end service, and organizations have greater control over the deployment configuration of their containers, enabling custom solutions for authentication, scalability, and other considerations.
 
 ## Objectives
 
@@ -23,7 +23,7 @@ In this lab, you will complete the following tasks:
 
 In this task, you will learn how to deploy and run a Text Analytics container in Azure to perform language processing tasks like sentiment analysis, key phrase extraction, and language detection.
 
-Many commonly used Azure AI services APIs are available in container images. For a full list, check out the [Azure AI services documentation](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support#container-availability-in-azure-cognitive-services). In this exercise, you'll use the container image for the Text Analytics *language detection* API; but the principles are the same for all of the available images.
+Many commonly used Azure AI services APIs are available in container images. For a full list, check out the [Azure AI services documentation](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-container-support#container-availability-in-azure-cognitive-services). In this exercise, you'll use the container image for the Text Analytics *language detection* API, but the principles are the same for all of the available images.
 
 1. In the Azure portal, on the **Home** page, search for **Container instances (1)**, and select **Container instances (2)** from the services.
 
@@ -53,7 +53,7 @@ Many commonly used Azure AI services APIs are available in container images. For
         
         - **OS type**: **Linux (8)**
         
-        - **Size**: Click on **Change size** then set **4 vcpu (1), 16 GB memory (2)** and then **Ok (3)**. **(9)**
+        - **Size**: Click on **Change size**, then set **4 vcpu (1), 16 GB memory (2)** and then **Ok (3)**. **(9)**
 
         - Click **Next : Networking > (10)**
 
@@ -122,7 +122,7 @@ Many commonly used Azure AI services APIs are available in container images. For
       >**Note:** You don't need to execute the command in the note section below; simply read it.          
 
       > **Note**: In this exercise, you've deployed the Azure AI services container image for text translation to an Azure Container Instances (ACI) resource. You can use a similar approach to deploy it to a *[Docker](https://www.docker.com/products/docker-desktop)* host on your own computer or network by running the following command (on a single line) to deploy the language detection container to your local Docker instance, replacing *&lt;yourEndpoint&gt;* and *&lt;yourKey&gt;* with your endpoint URI and either of the keys for your Azure AI services resource.
-      > The command will look for the image on your local machine, and if it doesn't find it there it will pull it from the *mcr.microsoft.com* image registry and deploy it to your Docker instance. When deployment is complete, the container will start and listen for incoming requests on port 5000.
+      > The command will look for the image on your local machine, and if it doesn't find it there, it will pull it from the *mcr.microsoft.com* image registry and deploy it to your Docker instance. When deployment is complete, the container will start and listen for incoming requests on port 5000.
 
       ```
       docker run --rm -it -p 5000:5000 --memory 12g --cpus 1 mcr.microsoft.com/azure-cognitive-services/textanalytics/language:latest Eula=accept Billing=<yourEndpoint> ApiKey=<yourKey>
@@ -142,7 +142,7 @@ In this task, you will learn how to use the deployed Text Analytics container to
     curl -X POST "http://<your_ACI_IP_address_or_FQDN>:5000/text/analytics/v3.0/languages?" -H "Content-Type: application/json" --data-ascii "{'documents':[{'id':1,'text':'Hello world.'},{'id':2,'text':'Salut tout le monde.'}]}"
     ```
 
-1. Save your changes to the script. Note that you do not need to specify the Azure AI services endpoint or key - the request is processed by the containerized service. The container in turn communicates periodically with the service in Azure to report usage for billing, but does not send request data.
+1. Save your changes to the script. Note that you do not need to specify the Azure AI services endpoint or key - the request is processed by the containerized service. The container, in turn, communicates periodically with the service in Azure to report usage for billing, but does not send request data.
 
     ![Visual Studio Code Icon](./images/a-50.png)
 
@@ -158,9 +158,10 @@ In this task, you will learn how to use the deployed Text Analytics container to
 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="3df31d12-06bc-4ed4-b1dc-acdbdb892ae1" />
 
