@@ -4,9 +4,9 @@
 
 ## Overview
 
-The conversational language understanding feature of the Azure AI Language service is currently in preview, and subject to change. In some cases, model training may fail - if this happens, try again.  
+The conversational language understanding feature of the Azure AI Language service is currently in preview and subject to change. In some cases, model training may fail - if this happens, try again.  
 
-The Azure AI Language service enables you to define a *conversational language understanding* model that applications can use to interpret natural language input from users,  predict the users *intent* (what they want to achieve), and identify any *entities* to which the intent should be applied.
+The Azure AI Language service enables you to define a *conversational language understanding* model that applications can use to interpret natural language input from users,  predict the users' *intent* (what they want to achieve), and identify any *entities* to which the intent should be applied.
 
 For example, a conversational language model for a clock application might be expected to process input such as:
 
@@ -14,7 +14,7 @@ For example, a conversational language model for a clock application might be ex
 
 This kind of input is an example of an *utterance* (something a user might say or type), for which the desired *intent* is to get the time in a specific location (an *entity*); in this case, London.
 
-> **Note**: The task of a conversational language model is to predict the user's intent and identify any entities to which the intent applies. It is <u>not</u> the job of a conversational language model to actually perform the actions required to satisfy the intent. For example, a clock application can use a conversational language model to discern that the user wants to know the time in London; but the client application itself must then implement the logic to determine the correct time and present it to the user.
+> **Note**: The task of a conversational language model is to predict the user's intent and identify any entities to which the intent applies. It is <u>not</u> the job of a conversational language model to actually perform the actions required to satisfy the intent. For example, a clock application can use a conversational language model to discern that the user wants to know the time in London, but the client application itself must then implement the logic to determine the correct time and present it to the user.
 
 ## Objectives
 
@@ -62,7 +62,7 @@ In this task, you will create an **Azure AI Language** resource in the Azure por
 
 1. On the **Review + create** tab, click on **Create**.
 
-1. Wait for deployment to complete, and then view the deployment details.
+1. Wait for the deployment to complete, and then view the deployment details.
 
 ## Task 2: Create a conversational language understanding project
 
@@ -88,7 +88,7 @@ In this task, you will create a **Conversational Language Understanding** projec
 
 1. If you are <u>not</u> prompted to choose a language resource, it may be because you have already assigned a different Azure AI Language resource; in which case:
 
-1. On the bar at the top if the page, select the **Settings (&#9881;)** button.
+1. On the bar at the top of the page, select the **Settings (&#9881;)** button.
 
       ![](images/c-3.png)
     
@@ -128,7 +128,7 @@ In this task, you will define **intents** for your Conversational Language Under
 
       ![](images/c-9.png)
 
-1. Under **Training set**. Select the **GetTime (1)** from the **intent** drop-down, add the following utterances as example user input **(2)** and press **enter**.  After you've added these utterances, select **Save changes (3)** and go back to the **Schema definition** page.
+1. Under **Training set**. Select the **GetTime (1)** from the **intent** drop-down, add the following utterances as example user input **(2)**, and press **enter**.  After you've added these utterances, select **Save changes (3)** and go back to the **Schema definition** page.
 
     `what is the time?`
 
@@ -142,7 +142,7 @@ In this task, you will define **intents** for your Conversational Language Under
    
 1. On the **Schema definition** page, on the **Intents** tab, select **&#65291; Add**, and under **Intent name** type **GetDay**, and select **Add intent**.
 
-1. Under **Training set**. Select the **GetDay** from the **intent** drop-down, add the following utterances as example user input and press **enter**:
+1. Under **Training set**. Select the **GetDay** from the **intent** drop-down, add the following utterances as example user input, and press **enter**:
 
     `what day is it?`
 
@@ -166,13 +166,13 @@ In this task, you will define **intents** for your Conversational Language Under
 
     `what's today's date?`
 
-1. After you've added these utterances, save them and clear the **GetDate** filter on the utterances page so you can see all of the utterances for all of the intents. To do this select the **Filter (1)** button on the top right of the Training set tab then **unselect** *GetDate*. **(2)**.
+1. After you've added these utterances, save them and clear the **GetDate** filter on the utterances page so you can see all of the utterances for all of the intents. To do this, select the **Filter (1)** button on the top right of the Training set tab, then **unselect** *GetDate*. **(2)**.
 
       ![](images/c-11.png)
 
 ## Task 4: Train and test the model
 
-In this task, you will train and test the **Clock** model by starting a training job, review performance metrics, and deploy it as **production**. Validate its accuracy by testing sample queries and analyzing intent predictions with confidence scores.
+In this task, you will train and test the **Clock** model by starting a training job, reviewing performance metrics, and deploying it as **production**. Validate its accuracy by testing sample queries and analyzing intent predictions with confidence scores.
 
 1. In the pane on the left, select **Training jobs (1)**. Then select **+ Start a training job (2)**.
 
@@ -182,7 +182,7 @@ In this task, you will train and test the **Clock** model by starting a training
 
       ![](images/c-13(1).png)
 
-1. When training is complete (which may take several minutes) the job **Status** will change to **Training succeeded**.
+1. When training is complete (which may take several minutes), the job **Status** will change to **Training succeeded**.
 
       ![](images/c-14.png)
 
@@ -196,7 +196,7 @@ In this task, you will train and test the **Clock** model by starting a training
 
       ![](images/c-16.png)
 
-1. On the **Add deployment** dialog, select **Create a new deployment name (1)**, and then enter **production (2)**. Select the **Clock (3)** model in the **Model** field then select **Deploy (4)**. The deployment may take some time.
+1. On the **Add deployment** dialog, select **Create a new deployment name (1)**, and then enter **production (2)**. Select the **Clock (3)** model in the **Model** field, then select **Deploy (4)**. The deployment may take some time.
 
       ![](images/c-17.png)
 
@@ -264,7 +264,7 @@ The most common kind of entity is a *learned* entity, in which the model learns 
 
 ### Task 5.2: Add a *list* entity
 
-In some cases, valid values for an entity can be restricted to a list of specific terms and synonyms; which can help the app identify instances of the entity in utterances.
+In some cases, valid values for an entity can be restricted to a list of specific terms and synonyms, which can help the app identify instances of the entity in utterances.
 
 1. In Language Studio, return to the **Schema definition** page and then on the **Entities** tab, select **&#65291; Add** to add a new entity.
 
@@ -367,7 +367,7 @@ Now that you've modified the schema, you need to retrain and retest the model.
 
       ![](images/c-30(1).png)
 
-1. When the model is deployed, on the **Testing deployments (1)** page, select the **production (2)** deployment under the **Deployment name** field, and then test it with the following text and then click on **Run the test (4)**
+1. When the model is deployed, on the **Testing deployments (1)** page, select the **production (2)** deployment under the **Deployment name** field, and then test it with the following text, and then click on **Run the test (4)**
 
     `what's the time in Edinburgh?` **(3)**
 
@@ -397,7 +397,7 @@ In this task, you will obtain the prediction URL for your deployed model in Lang
 
       ![](images/c-33.png)
 
-1. In the **Get prediction URL** dialog box, note that the URL for the prediction endpoint is shown along with a sample request, which consists of a **curl** command that submits an HTTP POST request to the endpoint, specifying the key for your Azure AI Language resource in the header and including a query and language in the request data. Paste the sample request in a notepad, we will be needing it in next task of lab. **(2)**
+1. In the **Get prediction URL** dialog box, note that the URL for the prediction endpoint is shown along with a sample request, which consists of a **curl** command that submits an HTTP POST request to the endpoint, specifying the key for your Azure AI Language resource in the header and including a query and language in the request data. Paste the sample request in a notepad, we will be needing it in the next task of the lab. **(2)**
 
       ![](images/c-34.png)
 
@@ -413,7 +413,7 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
 
       ![](./images/csazure(1).png)
 
-1. If you're prompted to create storage for your Cloud Shell, select **Mount storage account** and select your default **Subscription** , and then click on **Apply**.
+1. If you're prompted to create storage for your Cloud Shell, select **Mount storage account** and select your default **Subscription**, and then click on **Apply**.
 
       ![](./images/csazure(2).png)
    
@@ -456,11 +456,11 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
 
       ![](./images/csazure(5).png)
 
-      > **Note**: If you asked for switch to classic shell please click on confirm.
+      > **Note**: If you asked for a switch to classic shell, please click on confirm.
 
       > **Note**: If you don't see the built-in code editor, please repeat steps 8 and 9 accordingly. 
 
-1. Replace the following values from the corresponding values in the **Sample request** that you have copied earlier from Language Studio:
+1. Replace the following values with the corresponding values in the **Sample request** that you have copied earlier from Language Studio:
 
     ![](images/c-37.png)
 
@@ -535,7 +535,7 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
 
 In this task, you will export your project from Azure AI Language Studio. You will select your project, export it as a JSON file, and review its structure in a code editor to understand the model's configuration.
 
-1. In Azure AI | Language Studio, Select the **Projects** tab from the left navigation pane, select the circle icon to select the **Clock (1)** project. and then Select the **&#x2913; Export (2)** button.
+1. In Azure AI | Language Studio, select the **Projects** tab from the left navigation pane, select the circle icon to select the **Clock (1)** project. and then Select the **&#x2913; Export (2)** button.
 
       ![](images/c-40.png)
 
@@ -549,7 +549,7 @@ In this lab, you have completed:
 + Created an Azure AI Language resource
 + Created a conversational language understanding project
 + Created intents
-+ Trained and test the model
++ Trained and tested the model
 + Added entities
 + Used the model from a client app
 + Called the API from the Azure Cloud Shell
