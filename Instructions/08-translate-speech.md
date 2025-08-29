@@ -1,6 +1,6 @@
 # Lab 02: Translate Speech
 
-### Estimated Duration : 120 Minutes
+### Estimated Duration: 120 Minutes
 
 ## Overview
 Azure AI Speech includes a speech translation API that you can use to translate spoken language. For example, suppose you want to develop a translator application that people can use when traveling in places where they don't speak the local language. They would be able to say phrases such as "Where is the station?" or "I need to find a pharmacy" in their own language, and have it translate them to the local language.
@@ -49,7 +49,7 @@ In this task, you will provision an Azure AI Speech resource in the Azure portal
 
 1. In the **Review + create** tab, click **Create**.
 
-1. Wait for deployment to complete, and then view the deployment details and click **Go to resource**.
+1. Wait for the deployment to complete, and then view the deployment details and click **Go to resource**.
 
     ![](./images/azureaiservice2(3).png)
 
@@ -177,7 +177,7 @@ In this task, you will implement speech translation using Azure AI Speech. You w
     ```csharp
     using System.Media;
     ```
-3. In the **Main** function for your program, note that the code uses the **Translate** function to translate spoken input. Then in the **Translate** function, under the comment **Translate speech**, add the following code to create a **TranslationRecognizer** client that can be used to recognize and translate speech from a file.
+3. In the **Main** function for your program, note that the code uses the **Translate** function to translate spoken input. Then, in the **Translate** function, under the comment **Translate speech**, add the following code to create a **TranslationRecognizer** client that can be used to recognize and translate speech from a file.
 
     **C#**
 
@@ -254,12 +254,13 @@ In this task, you will synthesize translated text into speech using neural voice
 
     ![](./images/vsctranslator(10).png)
 
-    > **Note:** In this example, you've used a **SpeechTranslationConfig** to translate speech to text, and then used a **SpeechConfig** to synthesize the translation as speech. You can in fact use the **SpeechTranslationConfig** to synthesize the translation directly, but this only works when translating to a single language, and results in an audio stream that is typically saved as a file rather than sent directly to a speaker.
+    > **Note:** In this example, you've used a **SpeechTranslationConfig** to translate speech to text, and then used a **SpeechConfig** to synthesize the translation as speech. You can, in fact, use the **SpeechTranslationConfig** to synthesize the translation directly, but this only works when translating to a single language, and results in an audio stream that is typically saved as a file rather than sent directly to a speaker.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="ec7c2642-6d9e-45f0-b3b3-be16a1efc5a4" />
 
