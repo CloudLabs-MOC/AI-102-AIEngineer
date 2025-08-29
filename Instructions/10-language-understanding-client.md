@@ -1,6 +1,6 @@
 # Lab 02: Create a Language Service Client Application
 
-## Estimated Duration : 45 Minutes
+## Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -28,12 +28,12 @@ In this task, you will open the cloned project folder in **Visual Studio Code** 
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open a file, From the top-left options, Click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\LabFiles (3)** choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\LabFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
 
     ![](./images/vsclangund(1).png)
 
     **Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
-    **Note:** In the Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**
+    **Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**
 
 1. Wait while additional files are installed to support the C# code projects in the repo.
 
@@ -57,7 +57,7 @@ In this task, you will create an **Azure AI Language service** resource in the A
 
 1. Scroll down and select **Continue to create your resource** 
 
-1. Create resource with the following settings and then click on **Review + Create (7)**.
+1. Create a resource with the following settings and then click on **Review + Create (7)**.
 
     - **Subscription**: **Keep it as default (1)**
     - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false" /></inject> (2)**.
@@ -72,9 +72,9 @@ In this task, you will create an **Azure AI Language service** resource in the A
 
 1. Click on **Create**.
 
-1. Wait for the resources to be created, click on **Go to resource**.
+1. Wait for the resources to be created, and click on **Go to resource**.
 
-1. Navigate to the **Keys and Enpoint (1)** under **Resource Management**. Make a copy of **KEY 1 (2)** and **Endpoint (3)** and then paste it in notepad. You will be using it in the upcoming tasks.
+1. Navigate to the **Keys and Enpoint (1)** under **Resource Management**. Make a copy of **KEY 1 (2)** and **Endpoint (3)** and then paste it into Notepad. You will be using it in the upcoming tasks.
 
       ![](images/c-50.png)
 
@@ -84,11 +84,11 @@ In this task, you will import, train, and deploy a **Conversational Language Und
 
 1. In a new browser tab, open the Language Studio - Preview portal at `https://language.cognitive.azure.com`.
 
-1. Select the user icon from the top right corner, under **Current resource** choose **Select**.
+1. Select the user icon from the top right corner, under **Current resource**, choose **Select**.
 
       ![](images/mod-5-60(1).png)
 
-1. In the Select an Azure resource tab, keep the Active directory and Azure subscription as default. Under Resource type select **Language (1)** and under resource name select **languageservice-<inject key="DeploymentID" enableCopy="false" /></inject> (2)**.  Click **Done (3)**.
+1. In the Select an Azure resource tab, keep the Active Directory and Azure subscription as the default. Under Resource type select **Language (1)** and under resource name select **languageservice-<inject key="DeploymentID" enableCopy="false" /></inject> (2)**.  Click **Done (3)**.
 
     ![](images/c-45.png)
       
@@ -110,21 +110,21 @@ In this task, you will import, train, and deploy a **Conversational Language Und
 
 1. If a panel with tips for creating an effective Language service app is displayed, close it.
 
-1. At the left of the Language Studio portal, select **Training jobs (1)** to train the app. Click **Start a training job**, name the model **Clock (2)** and keep default training mode (Standard) and data splitting. Select **Train (3)**. Training may take several minutes to complete.
+1. At the left of the Language Studio portal, select **Training jobs (1)** to train the app. Click **Start a training job**, name the model **Clock (2)**, and keep the default training mode (Standard) and data splitting. Select **Train (3)**. Training may take several minutes to complete.
 
     ![](./images/langtrainingjobs(1).png)
 
     >**Note**: Select **>>** to open the left explorer if not opened. Because the model name **Clock** is hard-coded in the clock-client code (used later in the lab), capitalize and spell the name exactly as described.    
 
-1. Once the training is succeeded, at the left of the Language Studio portal, select **Deploying a model** and use **Add deployment** to create deployment for the **Clock (2)** model that's named **production (1)**. Click on **Deploy (3)**.
+1. Once the training is successful, on the left of the Language Studio portal, select **Deploying a model** and use **Add deployment** to create a deployment for the **Clock (2)** model that's named **production (1)**. Click on **Deploy (3)**.
 
     >**Note**: Because the deployment name **production** is hard-coded in the clock-client code (used later in the lab), capitalize and spell the name exactly as described.
 
      ![](images/c-49.png)     
 
-1. The client applications needs the **Endpoint URL** and **Primary key** to use your deployed model. You had already copied it in the **Task 1**. If not please follow the given steps. After the deployment is complete, to get those parameters, open the Azure portal at [https://portal.azure.com](https://portal.azure.com/?azure-portal=true), and sign in using the Microsoft account associated with your Azure subscription. On the Search bar, search for **Language** and select it to choose the *Azure AI Services|Language service*.
+1. The client applications needs the **Endpoint URL** and **Primary key** to use your deployed model. You had already copied it in **Task 1**. If not, please follow the given steps. After the deployment is complete, to get those parameters, open the Azure portal at [https://portal.azure.com](https://portal.azure.com/?azure-portal=true), and sign in using the Microsoft account associated with your Azure subscription. On the Search bar, search for **Language** and select it to choose the *Azure AI Services|Language service*.
 
-1. Your Language service resource should be listed, select that resource.
+1. Your Language service resource should be listed; select that resource.
 
 1. On the left hand menu, under the *Resource Management* section, select **Keys and Endpoint (1)**. Make a copy of your **KEY 1 (1)** and your **Endpoint (2)**.
 
@@ -325,7 +325,7 @@ In this task, you will implement and test a **Conversational Language Understand
 
     ![](images/c-53.png)    
 
-    > **Note**: The logic in the application is deliberately simple, and has a number of limitations. For example, when getting the time, only a restricted set of cities is supported and daylight savings time is ignored. The goal is to see an example of a typical pattern for using Language Service in which your application must:
+    > **Note:** The logic in the application is deliberately simple and has a number of limitations. For example, when getting the time, only a restricted set of cities is supported and daylight savings time is ignored. The goal is to see an example of a typical pattern for using Language Service in which your application must:
     >
     >   1. Connect to a prediction endpoint.
     >   2. Submit an utterance to get a prediction.
@@ -334,9 +334,10 @@ In this task, you will implement and test a **Conversational Language Understand
 1. When you have finished testing, enter **quit**.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="c04b552b-faf9-49fc-81fb-0c49393a3afa" />    
 
