@@ -1,6 +1,6 @@
 # Lab 2: Create a Bot with Bot Framework Composer
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 60 Minutes
 
 ## Overview
 
@@ -27,7 +27,7 @@ In this task, you will create a bot that uses the OpenWeather service to retriev
 
 1. In a web browser, go to the OpenWeather site at `https://openweathermap.org/price`.
 
-1. In the OpenWeather click on **Sign In**.
+1. In the OpenWeather page, click on **Sign In**.
 
     ![](./images/botcomp(1).png)
 
@@ -91,6 +91,8 @@ In this task, you're going to use the Bot Framework Composer to create your bot.
     setx path1 "%PATH%;C:\Program Files\nodejs;"
     ```
 
+    ![](./images/botcomp(7).png)
+
 1. Close the **Command Prompt**.
 
 ## Task 3: Create a bot
@@ -131,7 +133,7 @@ In this task, you will learn how to use the Bot Framework Composer to create a b
 
     ![](./images/botcomp(11).png)
 
-1. In the authoring canvas, select the final **+** symbol (just above the circle that marks the <u>end</u> of the dialog flow), and add a new **Ask a question** action for a **Text** response.
+1. In the authoring canvas, select the final **+** symbol (just above the circle that marks the <u>end</u> of the dialog flow), and add a new **Ask a question (1)** action for a **Text (2)** response.
 
     ![](./images/botcomp(12).png)
 
@@ -211,7 +213,7 @@ First, you need to define a dialog flow that will be used to handle questions ab
 
 1. On the authoring canvas, directly under the **User input** action for the city entry, select the **+** symbol to add a new action.
 
-1. From the list of actions, select **Access external resources** and then **Send an HTTP request**.
+1. From the list of actions, select **Access external resources (1)** and then **Send an HTTP request (2)**.
 
     ![](./images/botcomp(22).png)
 
