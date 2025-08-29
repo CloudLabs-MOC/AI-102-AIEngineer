@@ -1,14 +1,14 @@
 # Lab 01: Create a Question Answering Solution
 
-### Estimated Duration : 60 Minutes
+### Estimated Duration: 60 Minutes
 
 ## Overview
 
 One of the most common conversational scenarios is providing support through a knowledge base of frequently asked questions (FAQs). Many organizations publish FAQs as documents or web pages, which works well for a small set of question and answer pairs, but large documents can be difficult and time-consuming to search.
 
-The **Language** service includes a *question answering* capability that enables you to create a knowledge base of question and answer pairs that can be queried using natural language input, and is most commonly used as a resource that a bot can use to look up answers to questions submitted by users.
+The **Language** service includes a *question answering* capability that enables you to create a knowledge base of questions and answer pairs that can be queried using natural language input, and is most commonly used as a resource that a bot can use to look up answers to questions submitted by users.
 
-> **Note**: The question answering capability in the Language service is a newer version of the QnA Maker service - which is still available as a separate service.
+> **Note:** The question answering capability in the Language service is a newer version of the QnA Maker service, which is still available as a separate service.
 
 ## Objectives
 
@@ -17,7 +17,7 @@ In this lab, you will complete the following tasks:
 + **Task 1:** Open the cloned folder in Visual Studio Code
 + **Task 2:** Create a Language resource
 + **Task 3:** Create a question answering project
-+ **Task 4:** Add a sources to the knowledge base
++ **Task 4:** Add a source to the knowledge base
 + **Task 5:** Edit the knowledge base
 + **Task 6:** Train and test the knowledge base
 + **Task 7:** Deploy and test the knowledge base
@@ -36,7 +36,7 @@ In this task, you will learn how to **open the cloned folder in Visual Studio Co
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
 
-1. Open a file, From the top-left options, Click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)** choose **AI-102-AIEngineer-stage (4)** folder and click on **Select Folder (5)**.
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click on **Select Folder (5)**.
 
     ![](./images/vscqna(1).png)
 
@@ -75,13 +75,13 @@ To create and host a knowledge base for question answering, you need a **Languag
 
     - **Azure Search pricing tier**: Free (F) (*If this tier is not available, select Basic (B)*) **(6)**
 
-    - **By checking this box I acknowledge that I have read and understood all the terms below**: Select the checkbox **(7)**.
+    - **By checking this box, I acknowledge that I have read and understood all the terms below**: Select the checkbox **(7)**.
 
       ![](./images/lan1(1).png)
     
 1. In the **Review + Create** tab, and then select **Create**.
 
-1. Wait for deployment to complete, and then view the deployment details.
+1. Wait for the deployment to complete, and then view the deployment details.
 
 1. In the top search bar, search for **Azure AI Foundry (1)**, select **Azure AI Foundry (2)** from the result.
 
@@ -91,7 +91,7 @@ To create and host a knowledge base for question answering, you need a **Languag
 
     ![](./images/aisearch(1).png)
 
-1. Provision the resource using the following settings then click on **Review + Create (6)**:
+1. Provision the resource using the following settings, then click on **Review + Create (6)**:
 
     - **Subscription**:  Select Your Azure subscription **(1)**
     - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
@@ -103,12 +103,13 @@ To create and host a knowledge base for question answering, you need a **Languag
       
 1. In the **Review + create** tab, after the validation is complete, click **Create**.
 
-1. Wait for deployment to complete, and then view the deployment details.
+1. Wait for the deployment to complete, and then view the deployment details.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="b2ea815a-f69c-4ce2-9be7-9fff27b6fca1" />
 
@@ -120,7 +121,7 @@ To create a knowledge base for question answering in your Language resource, you
 
 1. In a new browser tab, go to the *Language Studio* portal at `https://language.azure.com` and sign in using the Microsoft account associated with your Azure subscription.
 
-2. If prompted to choose a Language resource else click on **Sign in** and  select the following settings:
+2. If prompted to choose a Language resource, else click on **Sign in** and  select the following settings:
 
     - **Azure directory**: The Azure directory containing your subscription **(1)**
     - **Azure subscription**: Your Azure subscription **(2)**
@@ -132,7 +133,7 @@ To create a knowledge base for question answering in your Language resource, you
 
 3. If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
 
-    1. On the bar at the top if the page, click the **Settings (&#9881;)** button.
+    1. On the bar at the top of the page, click the **Settings (&#9881;)** button.
     2. On the **Settings** page, view the **Resources** tab.
     3. At the top of the page, click **Language Studio** to return to the Language Studio home page.
 
@@ -140,7 +141,7 @@ To create a knowledge base for question answering in your Language resource, you
 
    ![](./images/language4.png)
 
-9. Click on Language Studio at top of the page and in the **Create a project** wizard, on the **Choose language setting** page, select the option to set the language for all projects in this resource, and select **English (1)** as the language. Then click **Next (2)**.
+9. Click on Language Studio at the top of the page and in the **Create a project** wizard, on the **Choose language setting** page, select the option to set the language for all projects in this resource, and select **English (1)** as the language. Then click **Next (2)**.
 
     ![](./images/createproject(1).png)
 
@@ -154,7 +155,7 @@ To create a knowledge base for question answering in your Language resource, you
 
 11. On the **Review and finish** page, click **Create project**.
 
-## Task 4: Add a sources to the knowledge base
+## Task 4: Add a source to the knowledge base
 
 In this task, you will learn how to **add sources to the knowledge base** in your Question Answering project, providing documents or data that will help the model generate relevant answers.
 
@@ -183,7 +184,7 @@ You can create a knowledge base from scratch, but it's common to start by import
 
 In this task, you will learn how to **edit the knowledge base** in your Question Answering project, refining the content or adjusting the data to improve the accuracy of answers provided by the model.
 
-Your knowledge base has been populated with question and answer pairs from the Microsoft Learn FAQ, supplemented with a set of conversational *chit-chat* question  and answer pairs. You can extend the knowledge base by adding additional question and answer pairs.
+Your knowledge base has been populated with question and answer pairs from the Microsoft Learn FAQ, supplemented with a set of conversational *chit-chat* question  and answer pairs. You can extend the knowledge base by adding additional questions and answer pairs.
 
 1. In your **LearnFAQ** project in Language Studio, click on Project **LearnFAQ** navigate and click on to the **source type URL** in manage sources.
 
@@ -193,7 +194,7 @@ Your knowledge base has been populated with question and answer pairs from the M
 
     ![](./images/language11(1).png)
 
-1. In the knowledge base, on the **Question answer pairs** tab, select **&#65291;** **(1)**, and create a new question answer pair with the following settings, then Select **Done (5)** and then click on **Save (6)** icon.
+1. In the knowledge base, on the **Question answer pairs** tab, select **&#65291;** **(1)**, and create a new question answer pair with the following settings, then select **Done (5)** and then click on **Save (6)** icon.
 
     - **Source**: `https://docs.microsoft.com/en-us/learn/support/faq` **(2)**
     - **Question**: `What is Microsoft certification?` **(3)**
@@ -201,7 +202,7 @@ Your knowledge base has been populated with question and answer pairs from the M
 
         ![](./images/language12(1).png)
 
-1. On the **Question answer pairs** tab search for the **What is Microsoft certification? (1)** question that is created, on the right hand side expand **Alternate questions (2)**. Now click **+ Add alternate question (3)** and add `How can I demonstrate my Microsoft technology skills?` **(4)**, and press enter.
+1. On the **Question answer pairs** tab, search for the **What is Microsoft certification? (1)** question that is created, on the right-hand side, expand **Alternate questions (2)**. Now click **+ Add alternate question (3)** and add `How can I demonstrate my Microsoft technology skills?` **(4)**, and press enter.
 
     ![](./images/language13(1).png)
 
@@ -231,11 +232,11 @@ Now that you have a knowledge base, you can test it in Language Studio.
 
      ![](./images/language16.png)
 
-1. In the test pane, at the top, deselect **Include short answer response** (if not already unselected). Then at the bottom enter the message `Hello`. A suitable response should be returned.
+1. In the test pane, at the top, deselect **Include short answer response** (if not already unselected). Then at the bottom, enter the message `Hello`. A suitable response should be returned.
 
      ![](./images/language17(1).png)
 
-1. In the test pane, at the bottom enter the message `What is Microsoft Learn?`. An appropriate response from the FAQ should be returned.
+1. In the test pane, at the bottom, enter the message `What is Microsoft Learn?`. An appropriate response from the FAQ should be returned.
 
 1. Enter the message `Thanks!` An appropriate chit-chat response should be returned.
 
@@ -255,7 +256,7 @@ The knowledge base provides a back-end service that client applications can use 
 
      ![](./images/language18.png)
 
-2. At the top of the page, click **Deploy (1)**. Then again click **Deploy (2)** on the **Deploy this project?** dialogue.
+2. At the top of the page, click **Deploy (1)**. Then again, click **Deploy (2)** on the **Deploy this project?** dialogue.
 
     ![](./images/language17(2).png)
 
@@ -340,7 +341,7 @@ Most commonly, the client applications used to retrieve answers from a knowledge
 
     ![](./images/bot4(1).png)
 
-1. In the overview pane for your bot, select the **Test in Web Chat** page, and wait until the bot displays the message **Hello and welcome!** (it may take a few seconds to initialize).
+1. In the overview pane for your bot, select the **Test in Web Chat** page, and wait until the bot displays the message **Hello and welcome!** (It may take a few seconds to initialize).
 
    ![](./images/bot5(1).png)
 
@@ -349,9 +350,10 @@ Most commonly, the client applications used to retrieve answers from a knowledge
     ![](./images/bot6(1).png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="857df81b-de5f-4b4c-945d-af7650044b03" />
 
@@ -361,10 +363,10 @@ In this lab, you have completed:
 + Opened the cloned folder in Visual Studio Code
 + Created a Language resource
 + Created a question answering project
-+ Added a sources to the knowledge base
++ Added a source to the knowledge base
 + Edited the knowledge base
-+ Trained and test the knowledge base
-+ Deployed and test the knowledge base
++ Trained and tested the knowledge base
++ Deployed and tested the knowledge base
 + Created a bot for the knowledge base
 
 ### You have successfully completed the Hands-on lab!
