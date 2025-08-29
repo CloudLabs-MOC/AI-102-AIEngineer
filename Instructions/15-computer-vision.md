@@ -200,34 +200,6 @@ Now you're ready to use the SDK to call the Vision service and analyze an image.
 
      **C#**
     
-    ```C
-    // Get image analysis
-    using (var imageData = File.OpenRead(imageFile))
-    {    
-        var analysis = await cvClient.AnalyzeImageInStreamAsync(imageData, features);
-
-        // get image captions
-        foreach (var caption in analysis.Description.Captions)
-        {
-            Console.WriteLine($"Description: {caption.Text} (confidence: {caption.Confidence.ToString("P")})");
-        }
-
-        // Get image tags
-
-
-        // Get image categories
-
-
-        // Get brands in the image
-
-
-        // Get objects in the image
-
-
-        // Get moderation ratings
-    }            
-    ```
-    
     ![](./images/compvi(11).png)
     
 5. Save your changes and return to the integrated terminal for the **image-analysis** folder, and enter the following command to run the program with the argument **images/street.jpg**:
