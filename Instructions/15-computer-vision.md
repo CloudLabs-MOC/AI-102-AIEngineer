@@ -200,7 +200,7 @@ Now you're ready to use the SDK to call the Vision service and analyze an image.
 
     **C#**
      
-    ```C
+    ```C#
     // Get image analysis
     using (var imageData = File.OpenRead(imageFile))
     {    
@@ -287,7 +287,7 @@ The Vision service can suggest *categories* for images, and within each category
     **C#**
 
     ```C
-    
+
     // Get image categories
     List<LandmarksModel> landmarks = new List<LandmarksModel> {};
     Console.WriteLine("Categories:");
