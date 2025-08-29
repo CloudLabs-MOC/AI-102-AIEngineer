@@ -201,6 +201,7 @@ Now you're ready to use the SDK to call the Vision service and analyze an image.
     **C#**
      
     ```C#
+    
     // Get image analysis
     using (var imageData = File.OpenRead(imageFile))
     {    
