@@ -4,7 +4,7 @@
 
 ## Overview
 
-Security is a critical consideration for any application, and as a developer you should ensure that access to resources such as Azure AI services is restricted to only those who require it.
+Security is a critical consideration for any application, and as a developer, you should ensure that access to resources such as Azure AI services is restricted to only those who require it.
 
 Access to Azure AI services is typically controlled through authentication keys, which are generated when you initially create an Azure AI services resource.
 
@@ -46,7 +46,7 @@ When you created your Azure AI services resource, two authentication keys were g
 
         ![](./images/a-21(1).png)
 
-1. Navigate back to the VS code, If prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.                   
+1. Navigate back to the VS Code. If prompted, **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.                   
 
 1. Now you can use the following command to get the list of Azure AI services keys.
 
@@ -58,7 +58,7 @@ When you created your Azure AI services resource, two authentication keys were g
 
     ![Visual Studio Code Icon](./images/output2(1).png)
 
-1. To test your cognitive service, you can use **curl** - a command line tool for HTTP requests. In the **02-cognitive-security** folder, open **rest-test.cmd** and edit the **curl** command it contains (shown below), replacing *&lt;yourEndpoint&gt;* and *&lt;yourKey&gt;* with your endpoint URI and **Key1** key to use the Text Analytics API in your Azure AI services resource.
+1. To test your cognitive service, you can use **curl** - a command-line tool for HTTP requests. In the **02-cognitive-security** folder, open **rest-test.cmd** and edit the **curl** command it contains (shown below), replacing *&lt;yourEndpoint&gt;* and *&lt;yourKey&gt;* with your endpoint URI and **Key1** key to use the Text Analytics API in your Azure AI services resource.
 
     ```
     curl -X POST "<yourEndpoint>/text/analytics/v3.0/languages?" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: <yourKey>" --data-ascii "{'documents':[{'id':1,'text':'hello'}]}"
@@ -163,9 +163,10 @@ First, you need to create a key vault and add a *secret* for the Azure AI servic
 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="1e07fa06-8bcb-427e-910d-af8818d625e5" />
 
