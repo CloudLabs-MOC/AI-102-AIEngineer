@@ -1,25 +1,24 @@
-# Exercise 2 : Analyze Video with Video Analyzer
+# Lab 2 : Analyze Video with Video Analyzer
 
-## Lab scenario
+### Estimated Duration: 90 Minutes
+
+## Overview
 
 A large proportion of the data created and consumed today is in the format of video. **Azure AI Video Indexer** is an AI-powered service that you can use to index videos and extract insights from them.
 
-> **Note**: From June 21st 2022, capabilities of Azure AI services that return personally identifiable information are restricted to customers who have been granted [limited access](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access). Without getting limited access approval, recognizing people and celebrities with Video Analyzer for this lab is not available. For more details about the changes Microsoft has made, and why - see [Responsible AI investments and safeguards for facial recognition](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/).
+> **Note:** From June 21st 2022, capabilities of Azure AI services that return personally identifiable information are restricted to customers who have been granted [limited access](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access). Without getting limited access approval, recognizing people and celebrities with Video Analyzer for this lab is not available. For more details about the changes Microsoft has made, and why - see [Responsible AI investments and safeguards for facial recognition](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/).
 
 ## Objectives
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Open the cloned folder in Visual Studio Code
-+ Task 2: Upload a video to Video Analyzer
-+ Task 3: Review video insights
-+ Task 4: Search for insights
-+ Task 5: Use Video Analyzer widgets
-+ Task 6: Use the Video Analyzer REST API
-+ Task 6.1 : Get your API details
-+ Task 7: Use the REST API
-
-## Estimated timing: 90 minutes
++ **Task 1:** Open the cloned folder in Visual Studio Code
++ **Task 2:** Upload a video to Video Analyzer
++ **Task 3:** Review video insights
++ **Task 4:** Search for insights
++ **Task 5:** Use Video Analyzer widgets
++ **Task 6:** Use the Video Analyzer REST API
++ **Task 7:** Use the REST API
 
 ## Architecture diagram
 
@@ -29,13 +28,15 @@ In this lab, you will complete the following tasks:
 
 In this task, you will learn how to open the cloned folder in **Visual Studio Code**, allowing you to view and edit the project files within the IDE.
 
-1.  Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
+1. In the Lab-VM desktop, double click on the **Visual Studio Code**.
 
-     ![Visual Studio Code Icon](./images/vscode.png)
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\LabFiles\AI-102-AIEngineer-stage**.
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
 
-     ![](./images/8.1.png)
+    ![](./images/botframe1(6).png)
+
+    >**Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
      
 ## Task 2: Upload a video to Video Analyzer
 
@@ -43,7 +44,7 @@ In this task, you will learn how to **upload a video** to **Azure Video Analyzer
 
 First, you'll need to sign into the Video Analyzer portal and upload a video.
 
-> **Tip**: If the Video Analyzer page is slow to load in the hosted lab environment, use your locally installed browser. You can switch back to the hosted VM for the later tasks.
+> **Tip:** If the Video Analyzer page is slow to load in the hosted lab environment, use your locally installed browser. You can switch back to the hosted VM for the later tasks.
 
 1. In your browser, open the Video Analyzer portal at `https://www.videoindexer.ai`.
 
@@ -55,17 +56,27 @@ First, you'll need to sign into the Video Analyzer portal and upload a video.
 
 4. Download the video by browsing the url in new tab **https://aka.ms/responsible-ai-video**.
 
-    ![](./images/Ai_Video_Synthesizer_download_1.png)
+    ![](./images/vidana(1).png)
    
-5. In Video Analyzer, select the **Upload** option. Then select the option to **Browse for files** and Select the **Video downloaded** in earlier step and click on **Open**. click on **review+upload**.  select the checkbox to verify compliance with Microsoft's policies for facial recognition, and Click on **Upload + Index**. do not close the upload and index page unless it shows 100% completed, it will cause interruption in the index of video.
+5. In Video Analyzer, click **Upload (1)**, then choose **Browse for files (2)**. In the Open window, navigate to the **Downloads (3)** folder from the left panel, select **Downloaded Video (4)**, and click **Open (5)**.
+
+    ![](./images/vidana(2).png)
+
+1. Click on **Review + upload**. 
+
+    ![](./images/vidana(3).png)
+
+1. Select the **checkbox (1)** to verify compliance with Microsoft's policies for facial recognition, and click on **Upload + Index (2)**.
        
-    ![Video Analyzer search results for Bee](./images/lab8-image1.png)
+    ![](./images/vidana(4).png)
 
-6. After the file has uploaded, wait a few minutes while Video Analyzer automatically indexes it. Dublicate the Tab and View the Index Status
+    >**Note:** Do not close the upload and index page unless it shows 100% completed, it will cause interruption in the index of video.
 
-    ![](./images/Ai_Video_Synthesizer_Status_2.png)
+6. After the file has uploaded, wait a few minutes while Video Analyzer automatically indexes it. Duplicate the tab and view the Index Status
 
-    > **Note**: In this exercise, we're using this video to explore Video Analyzer functionality; but you should take the time to watch it in full when you've finished the exercise as it contains useful information and guidance for developing AI-enabled applications responsibly! 
+    ![](./images/vidana(5).png)
+
+    > **Note:** In this exercise, we're using this video to explore Video Analyzer functionality; but you should take the time to watch it in full when you've finished the exercise as it contains useful information and guidance for developing AI-enabled applications responsibly! 
 
 ## Task 3: Review video insights
 
@@ -73,22 +84,24 @@ In this task, you will learn how to **review video insights** provided by **Azur
 
 The indexing process extracts insights from the video, which you can view in the portal.
 
-1. In the Video Analyzer portal, when the video is indexed, Click middle of the video to play it. You'll see the video player alongside a pane that shows insights extracted from the video.
+1. In the Video Analyzer portal, when the video is indexed, click on middle of the video to play it. You'll see the video player alongside a pane that shows insights extracted from the video.
 
-    ![Video Analyzer with a video player and Insights pane](./images/video-indexer-insights.png)
+    ![](./images/vidana(6).png)
 
 2. As the video plays, select the **Timeline** tab to view a transcript of the video audio.
 
-    ![Video Analyzer with a video player and Timeline pane showing the video transcript.](./images/video-indexer-transcript.png)
+    ![](./images/vidana(7).png)
 
 3. At the top right of the portal, select the **View** symbol (which looks similar to &#128455;), and in the list of insights, in addition to **Transcript**, select **OCR** and **Speakers**.
 
-    ![Video Analyzer view menu with Transcript, OCR, and Speakers selected](./images/video-indexer-view-menu.png)
+    ![](./images/vidana(8).png)
 
 4. Observe that the **Timeline** pane now includes:
     - Transcript of audio narration.
     - Text visible in the video.
     - Indications of speakers who appear in the video. Some well-known people are  automatically recognized by name, others are indicated by number (for example *Speaker #1*).
+
+        ![](./images/vidana(9).png)
 
 5. Switch back to the **Insights** pane and view the insights show there. They include:
     - Individual people who appear in the video.
@@ -113,9 +126,9 @@ You can use Video Analyzer to search the video for insights.
 
 3. Select the beginning of the section where the presence of a bee is indicated, and view the video at that point (you may need to pause the video and select carefully - the bee only appears briefly!)
 
-4. Clear the **Search** box to show all insights for the video.
+    ![](./images/vidana(10).png)
 
-    ![Video Analyzer search results for Bee](./images/video-indexer-search.png)
+4. Clear the **Search** box to show all insights for the video.
 
 ## Task 5: Use Video Analyzer widgets
 
@@ -123,27 +136,39 @@ In this task, you will learn how to **use Video Analyzer widgets** to visually d
 
 The Video Analyzer portal is a useful interface to manage video indexing projects. However, there may be occasions when you want to make the video and its insights available to people who don't have access to your Video Analyzer account. Video Analyzer provides widgets that you can embed in a web page for this purpose.
 
-1. In Visual Studio Code, in the **16-video-indexer** folder, open **analyze-video.html**. This is a basic HTML page to which you will add the Video Analyzer **Player** and **Insights** widgets. Note the reference to the **vb.widgets.mediator.js** script in the header - this script enables multiple Video Analyzer widgets on the page to interact with one another.
+1. In Visual Studio Code, in the **16-video-indexer (1)** folder, open **analyze-video.html (2)**. This is a basic HTML page to which you will add the Video Analyzer **Player** and **Insights** widgets. Note the reference to the **vb.widgets.mediator.js (3)** script in the header - this script enables multiple Video Analyzer widgets on the page to interact with one another.
+
+    ![](./images/vidana(11).png)
 
 2. In the Video Analyzer portal, return to the **Media files** page and open your **Responsible AI** video.
 
 3. Under the video player, select **&lt;/&gt; Embed** to view the HTML iframe code to embed the widgets.
 
-     ![Video Analyzer search results for Bee](./images/lab8-image2.png)
+    ![](./images/vidana(12).png)
 
-4. In the **Share and Embed** dialog box, select the **Player** widget, set the video size to 560 x 315,  and then copy the embed code to the clipboard.
+4. In the **Share and Embed** dialog box, select the **Player (1)** widget, set the video size to **560 x 315 (2)**,  and click **Copy code (3)** to copy the embed code to the clipboard.
+
+    ![](./images/vidana(13).png)
 
 5. In Visual Studio Code, in the **analyze-video.html** file, paste the copied code under the comment **&lt;-- Player widget goes here -- &gt;**.
 
+    ![](./images/vidana(14).png)
+
 6. Back in the **Share and Embed** dialog box, select the **Insights** widget and then copy the embed code to the clipboard. Then close the **Share and Embed** dialog box, switch back to Visual Studio Code, and paste the copied code under the comment **&lt;-- Insights widget goes here -- &gt;**.
 
-7. Save the file. Then in the **Explorer** pane, right-click **analyze-video.html** and select **Reveal in File Explorer**.
+    ![](./images/vidana(15).png)
+
+7. Save the file. Then in the **Explorer** pane, right-click **analyze-video.html (1)** and select **Reveal in File Explorer**.
+
+    ![](./images/vidana(16).png)
 
 8. In File Explorer, open **analyze-video.html** in your browser to see the web page.
 
+    ![](./images/vidana(17).png)
+
 9. Experiment with the widgets, using the **Insights** widget to search for insights and jump to them in the video.
 
-    ![Video Analyzer widgets in a web page](./images/video-indexer-widgets.png)
+    ![](./images/vidana(18).png)
 
 ## Task 6: Use the Video Analyzer REST API
 
@@ -157,9 +182,9 @@ In this task, you will learn how to **get your API details** for the Video Analy
 
 To use the Video Analyzer API, you need some information to authenticate requests:
 
-1. In the Video Analyzer portal, expand the menu (>>) on the left side and select the **Account settings** page. Note the **Account ID** on this page - you will need it later.
+1. In the Video Analyzer portal, expand the menu **(>>) (1)** on the left side and select the **Account settings (2)** page. Copy the **Account ID (3)** on this page - you will need it later.
 
-    ![Video Analyzer search results for Bee](./images/copy.png)
+    ![](./images/vidana(19).png)
 
 2. Open a new browser tab and go to the Video Analyzer developer portal at `https://api-portal.videoindexer.ai`, signing in using the credentials for your Video Analyzer account.
 
@@ -167,13 +192,17 @@ To use the Video Analyzer API, you need some information to authenticate request
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
+        ![](./images/vidana(20).png)
+
 3. On the **Profile** page, view the **Subscriptions** associated with your profile.
 
-4. On the page with your subscription(s), observe that you have been assigned two keys (primary and secondary) for each subscription. Then select **Show** for any of the keys to see it and copy the Keys You will need this shortly.
+    ![](./images/vidana(21).png)
 
-    ![Video Analyzer search results for Bee](./images/lab8-image4.png)
+4. On the page with your subscription(s), observe that you have been assigned two keys (primary and secondary) for each subscription. Then select **Show** for any of the keys to see it and copy the Keys. You will need this shortly.
 
-    ![Video Analyzer search results for Bee](./images/lab8-image(5).png)
+    ![](./images/vidana(22).png)
+
+    ![](./images/vidana(23).png)
 
 ## Task 7: Use the REST API
 
@@ -188,7 +217,11 @@ All interactions with the Video Analyzer REST API follow the same pattern:
 
 1. In Visual Studio Code, in the **16-video-indexer** folder, open **get-videos.ps1**.
 
+    ![](./images/vidana(24).png)
+
 2. In the PowerShell script, replace the **YOUR_ACCOUNT_ID** and **YOUR_API_KEY** placeholders with the account ID and API key values you identified previously.
+
+    ![](./images/vidana(25).png)
 
 3. Observe that the *location* for a free account is "trial". If you have created an unrestricted Video Analyzer account (with an associated Azure resource), you can change this to the location where your Azure resource is provisioned **<inject key="Region" enableCopy="false"/>**.
 
@@ -196,16 +229,21 @@ All interactions with the Video Analyzer REST API follow the same pattern:
 
 5. Save your changes, and then right click on **16-video-indexer**, click on **open in integrated terminal** and run the script using **.\get-videos.ps1**.
 
+    ![](./images/vidana(27).png)
+
 6. View the JSON response from the REST service, which should contain details of the **Responsible AI** video you indexed previously.
 
+    ![](./images/vidana(28).png)
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="31f3bf09-5006-41db-bb38-a0d3c0752b9f" />
 
-### Review
+## Summary
 In this lab, you have completed:
 
 +  Opened the cloned folder in Visual Studio Code
@@ -217,4 +255,4 @@ In this lab, you have completed:
 +  Got your API details
 +  Used the REST API
 
-## You have successfully completed the lab
+### You have successfully completed the Hands-on lab!

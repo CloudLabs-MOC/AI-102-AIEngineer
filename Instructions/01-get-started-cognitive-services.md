@@ -57,7 +57,7 @@ Azure AI Services are cloud-based services that encapsulate artificial intellige
 
     ![Visual Studio Code Icon](./images/a-3(1).png)
 
-1. Create the resource with the following settings, then click on **Review+Create (7)**
+1. Create the resource with the following settings, then click on **Review + Create (7)**.
     
     - **Subscription**: **Your Azure subscription (1)**
     
