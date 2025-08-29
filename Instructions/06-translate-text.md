@@ -1,12 +1,12 @@
 # Lab 02: Translate Text
 
-### Estimated Duration : 120 Minutes
+### Estimated Duration: 120 Minutes
 
 ## Overview
 
 **Azure AI Translator** is a service that enables you to translate text between languages.
 
-For example, suppose a travel agency wants to examine hotel reviews that have been submitted to the company's web site, standardizing on English as the language that is used for analysis. By using Azure AI Translator, they can determine the language each review is written in, and if it is not already English, translate it from whatever source language it was written in into English.
+For example, suppose a travel agency wants to examine hotel reviews that have been submitted to the company's website, standardizing on English as the language that is used for analysis. By using Azure AI Translator, they can determine the language each review is written in, and if it is not already English, translate it from whatever source language it was written in into English.
 
 ## Objectives
 
@@ -57,19 +57,19 @@ In this lab, you will complete the following tasks:
     ```
      ![](./images/21(1).png)
 
-    > **Note**: If you asked for switch to classic shell please click on confirm.     
+    > **Note**: If you asked for a switch to the classic shell, please click on confirm.     
 
      > **Note**: If you don't see the built-in code editor, please repeat steps 5 and 6 accordingly.   
 
 ## Task 2: Provision an Azure AI Translator resource
 
-1. Open a new tab, and open Azure portal at `https://portal.azure.com`.
+1. Open a new tab, and open the Azure portal at `https://portal.azure.com`.
 
 1. In the Azure Portal click the **&#65291;Create a resource** button.
 
      ![](images/a-23.png)
    
-1. In the Marketplace page search for **Azure ai Services (1)**,and press Enter. Then click on **Create (2)** drop-down and select **Azure AI services (3)**. 
+1. In the Marketplace page, search for **Azure ai Services (1)**, and press Enter. Then click on **Create (2)** drop-down and select **Azure AI services (3)**. 
    
    ![](images/b-10(1).png)
      
@@ -80,7 +80,7 @@ In this lab, you will complete the following tasks:
     - **Region**: **<inject key="Region" enableCopy="false"/> (3)**
     - **Name**: **aiservices-<inject key="DeploymentID" enableCopy="false"/> (4)**
     - **Pricing tier**: **Standard S0 (5)**
-    - By checking this box I acknowledge that I have read and understood all the terms below: **Selected (6)**.
+    - By checking this box, I acknowledge that I have read and understood all the terms below: **Selected (6)**.
 
       ![Visual Studio Code Icon](./images/b-12(1).png)       
 
@@ -109,7 +109,7 @@ In this exercise, you'll complete a partially implemented client application tha
     
     - **Python**: .env
 
- 1. Open the notepad, where you pasted the values for **KEY 1** and **Location** and update the configuration values it contains to include an authentication **key** for your Azure AI Translator resource, and the **location** where it is deployed (<u>not</u> the endpoint). Update the values in the file.
+ 1. Open the notepad, where you pasted the values for **KEY 1** and **Location**, and update the configuration values it contains to include an authentication **key** for your Azure AI Translator resource, and the **location** where it is deployed (<u>not</u> the endpoint). Update the values in the file.
 
     ![](./images/loc-key.png)
 
@@ -129,7 +129,7 @@ In this exercise, you'll complete a partially implemented client application tha
 
 1. In the **Main** function, note that code to load the Azure AI Translator key and region from the configuration file has already been provided. The endpoint for the  service is also specified in your code.
 
-1. In your terminal enter the following commands to point the terminal to the appropriate folder and do a test run:
+1. In your terminal, enter the following commands to point the terminal to the appropriate folder and do a test run:
 
     **C#**
 
@@ -169,7 +169,7 @@ In this exercise, you'll complete a partially implemented client application tha
 
 ## Task 4: Detect language
 
-Azure AI Translator can automatically detect the source language of text to be translated, but it also enables you to explicitly detect the language in which text is written.
+Azure AI Translator can automatically detect the source language of text to be translated, but it also enables you to explicitly detect the language in which the text is written.
 
 1. In your code file, find the **GetLanguage** function, which currently returns "en" for all text values.
  
@@ -242,7 +242,7 @@ Azure AI Translator can automatically detect the source language of text to be t
     
    ![](./images/9(1).png)
     
-1. Save your changes by pressing **CTRL+S** and  and enter the following command in the terminal to run the program:
+1. Save your changes by pressing **CTRL+S** and enter the following command in the terminal to run the program:
 
     **C#**
 
@@ -265,7 +265,7 @@ Azure AI Translator can automatically detect the source language of text to be t
 
 Now that your application can determine the language in which reviews are written, you can use Azure AI Translator to translate any non-English reviews into English.
 
-1. In your code file, find the **Translate** function, which currently returns and empty string for all text values.
+1. In your code file, find the **Translate** function, which currently returns an empty string for all text values.
 
 1. In the **Translate** function, under the comment **Use the Azure AI Translator translate function**, replace the following code to use the Azure AI Translator's REST API to translate the specified text from its source language into English, being careful not to replace the code at the end of the function that returns the translation:
 
@@ -353,9 +353,10 @@ Now that your application can determine the language in which reviews are writte
 1. Observe the output, noting that non-English reviews are translated into English.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="c6c79fc2-befa-4bec-a292-6982d769df0c" />
 
