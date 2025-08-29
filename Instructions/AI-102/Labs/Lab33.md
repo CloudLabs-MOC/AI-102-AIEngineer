@@ -78,7 +78,7 @@ In this task, you’ll create an Azure AI Foundry hub and project. You’ll sign
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
  
-<validation step="" />
+<validation step="a65ef465-6237-4acc-bb65-c8a8430bab16" />
 
 ## Task 2: Use the REST API to create a Content Understanding analyzer
 
