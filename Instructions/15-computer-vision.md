@@ -287,6 +287,7 @@ The Vision service can suggest *categories* for images, and within each category
     **C#**
 
     ```C
+    
     // Get image categories
     List<LandmarksModel> landmarks = new List<LandmarksModel> {};
     Console.WriteLine("Categories:");
