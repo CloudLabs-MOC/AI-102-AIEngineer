@@ -226,7 +226,7 @@ Now you're ready to use the SDK to call the Vision service and analyze an image.
 
         // Get moderation ratings
         
-        
+
     }            
     ```
     
@@ -283,42 +283,40 @@ In this task, you will learn how to use the **Azure AI Vision SDK** to get image
 The Vision service can suggest *categories* for images, and within each category it can identify well-known landmarks.
 
 1. In the **AnalyzeImage** function, under the comment **Get image categories**, add the following code:
+     
+    ```C#
+    // Get image categories
+    List<LandmarksModel> landmarks = new List<LandmarksModel> {};
+    Console.WriteLine("Categories:");
+    foreach (var category in analysis.Categories)
+    {
+        // Print the category
+        Console.WriteLine($" -{category.Name} (confidence: {category.Score.ToString("P")})");
 
-     **C#**
-     
-     ```C
-     // Get image categories
-     List<LandmarksModel> landmarks = new List<LandmarksModel> {};
-     Console.WriteLine("Categories:");
-     foreach (var category in analysis.Categories)
-     {
-         // Print the category
-         Console.WriteLine($" -{category.Name} (confidence: {category.Score.ToString("P")})");
-     
-         // Get landmarks in this category
-         if (category.Detail?.Landmarks != null)
-         {
-             foreach (LandmarksModel landmark in category.Detail.Landmarks)
-             {
-                 if (!landmarks.Any(item => item.Name == landmark.Name))
-                 {
-                     landmarks.Add(landmark);
-                 }
-             }
-         }
-     }
-     
-     // If there were landmarks, list them
-     if (landmarks.Count > 0)
-     {
-         Console.WriteLine("Landmarks:");
-         foreach(LandmarksModel landmark in landmarks)
-         {
-             Console.WriteLine($" -{landmark.Name} (confidence: {landmark.Confidence.ToString("P")})");
-         }
-     }
-     
-     ```
+        // Get landmarks in this category
+        if (category.Detail?.Landmarks != null)
+        {
+            foreach (LandmarksModel landmark in category.Detail.Landmarks)
+            {
+                if (!landmarks.Any(item => item.Name == landmark.Name))
+                {
+                    landmarks.Add(landmark);
+                }
+            }
+        }
+    }
+
+    // If there were landmarks, list them
+    if (landmarks.Count > 0)
+    {
+        Console.WriteLine("Landmarks:");
+        foreach(LandmarksModel landmark in landmarks)
+        {
+            Console.WriteLine($" -{landmark.Name} (confidence: {landmark.Confidence.ToString("P")})");
+        }
+    }
+        
+    ```
     
 2. Save your changes and run the program once for each of the image files in the **images** folder, observing that in addition to the image caption and tags, a list of suggested categories is displayed along with any recognized landmarks (in particular in the **building.jpg** image).
 
