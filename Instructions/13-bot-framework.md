@@ -1,6 +1,8 @@
-# Exercise 1: Create a Bot with the Bot Framework SDK
+# Lab 1: Create a Bot with the Bot Framework SDK
 
-## Lab scenario
+### Estimated Duration: 45 Minutes
+
+## Overview
 
 *Bots* are software agents that can participate in conversational dialogs with human users. The Microsoft Bot Framework provides a comprehensive platform for building bots that can be delivered as cloud services through the Azure Bot Service.
 
@@ -10,13 +12,11 @@ In this exercise, you'll use the Microsoft Bot Framework SDK to create and deplo
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Update the Bot Framework Emulator
-+ Task 2: Open the cloned repository for this course
-+ Task 3: Create a bot
-+ Task 4: Test the bot in the Bot Framework Emulator
-+ Task 5: Modify the bot code
-
-## Estimated timing: 45 minutes
++ **Task 1:** Update the Bot Framework Emulator
++ **Task 2:** Open the cloned repository for this course
++ **Task 3:** Create a bot
++ **Task 4:** Test the bot in the Bot Framework Emulator
++ **Task 5:** Modify the bot code
 
 ## Architecture diagram
 
@@ -32,15 +32,25 @@ You're going to use the Bot Framework SDK to create your bot, and the Bot Framew
 
 1. Open an edge browser, copy and paste this link, `https://github.com/microsoft/BotFramework-Emulator/releases/download/v4.15.1/BotFramework-Emulator-4.15.1-windows-setup.exe`, download the **Bot Framework Emulator**.
 
+1. Click on **Open file** to start installation.
+
+    ![](./images/botframe1(1).png)
+
 1. On the **Choose Installation option** page click on **Next**.
+
+    ![](./images/botframe1(2).png)
 
 1. On the **Choose Install Location** page click on **Install** then click on **Finish**.
 
    ![Visual Studio Code Icon](./images/14.18.png)
 
-1. Start the **Bot Framework Emulator**, and if you are prompted to install an update, do so for the currently logged in user. If you are not prompted automatically, use the **Check for update** option on the **Help** menu to check for updates.
+1. Click on **Finsih** to start the **Bot Framework Emulator**, and if you are prompted to install an update, do so for the currently logged in user. If you are not prompted automatically, use the **Check for update** option on the **Help** menu to check for updates.
+
+    ![](./images/botframe1(3).png)
 
     >**Note:** If **Help us improve?** pop-ups, select **Not now**.
+
+    ![](./images/botframe1(4).png)
     
 1. After installing any available update, close the Bot Framework Emulator until you need it again later.
 
@@ -48,18 +58,19 @@ You're going to use the Bot Framework SDK to create your bot, and the Bot Framew
 
 In this task, you will learn how to open the cloned repository for this course.
 
-1. In the Lab-VM, double click on the **Visual Studio Code**.
+1. In the Lab-VM desktop, double click on the **Visual Studio Code**.
 
-1. Select the **Explorer**, select **Open Folder** in Visual Studio Code. Open **C:\AllFiles\AI-102-AIEngineer-stage (1)** then click on **Select Folder (2)**
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-    >**Note:** On the **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust the authors**.
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
 
-    ![Visual Studio Code Icon](./images/d-5.png)
+    ![](./images/botframe1(6).png)
+
+    >**Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
 
 1. Wait while additional files are installed to support the C# code projects in the repo.
 
     > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
-
 
 ## Task 3: Create a bot
 
@@ -67,9 +78,10 @@ In this task, you will learn how to create a bot.
 
 You can use the Bot Framework SDK to create a bot based on a template, and then customize the code to meet your specific requirements.
 
-1. In Visual Studio Code, in the **Explorer** pane, browse to the **13-bot-framework** folder and expand the **C-Sharp** folder.
+1. In Visual Studio Code, in the **Explorer** pane, browse to the **13-bot-framework (1)** folder and expand the **C-Sharp (2)** folder.
+Right-click the folder for your **C-Sharp** language and **Open in Integrated Terminal (3)**.
 
-1. Right-click the folder for your **C-Sharp** language and open an integrated terminal.
+    ![](./images/botframe1(7).png)
 
 1. In the terminal, run the following commands to install the bot templates and packages you need:
 
@@ -85,12 +97,16 @@ You can use the Bot Framework SDK to create a bot based on a template, and then 
     dotnet new echobot -n TimeBot
     ```
 
+    ![](./images/botframe1(8).png)
+
 1. In the terminal pane, enter the following commands to change the current directory to the **TimeBot** folder list the code files that have been generated for your bot:
 
     ```
     cd TimeBot
     dir
     ```
+
+    ![](./images/botframe1(9).png)
 
 ## Task 4: Test the bot in the Bot Framework Emulator
 
@@ -104,17 +120,20 @@ You've created a bot based on the *EchoBot* template. Now you can run it locally
     dotnet run
     ```
 
+    ![](./images/botframe1(10).png)
+
     >**Note:** When the bot starts, note the endpoint at which it is running is shown. This should be similar to  **http://localhost:3978**.
 
-2. Start the **Bot Framework Emulator**, and select **open bot** by specifying the endpoint with the **`http://localhost:3978/api/messages` (1)** path appended, and select **Connect (2)**:
+2. Start the **Bot Framework Emulator** by double clicking on the icon on the desktop.
 
-     ![Visual Studio Code Icon](./images/open-bot.png)
+1. Select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
+
+     ![Visual Studio Code Icon](./images/botframe1(11).png)
     
-     ![Visual Studio Code Icon](./images/openabot.png)
 
 3. After the conversation is opened in a **Live chat** pane, wait for the message *Hello and welcome!*.
 
-4. Enter a message such as *Hello* and view the response from the bot, which should echo back the message you entered.
+4. Enter a message such as `Hello` and view the response from the bot, which should echo back the message you entered.
 
     ![Visual Studio Code Icon](./images/openchat.png)
 
@@ -128,7 +147,7 @@ You've created a bot that echoes the user's input back to them. It's not particu
 
 1. In Visual Studio Code, open the following code file for your bot:
     
-    - **C-Sharp**: TimeBot/Bots/EchoBot.cs
+    - **C-Sharp**: `TimeBot/Bots/EchoBot.cs`
 
         >**Note:** The code in this file consists of *activity handler* functions; one for the *Member Added* conversation update activity (when someone joins the chat session) and another for the *Message* activity (when a message is received). The conversation is based on the concept of *turns*, in which each turn represents an interaction in which the bot receives, processes, and responds to an activity. The *turn context* is used to track information about the activity being processed in the current turn.
 
@@ -183,6 +202,9 @@ You've created a bot that echoes the user's input back to them. It's not particu
         }
     }
     ```
+
+    ![](./images/botframe1(13).png)
+
 5. Save your changes, and then in the terminal pane, ensure that the current directory is the **TimeBot** folder containing your bot code files, and then enter the following command to start your bot running locally.
 
     ```
@@ -191,21 +213,25 @@ You've created a bot that echoes the user's input back to them. It's not particu
 
     >**Note:** As before, when the bot starts, note the endpoint at which it is running is shown.
 
-6. Start the Bot Framework Emulator, and open your bot by specifying the endpoint with the **`http://localhost:3978/api/messages` (1)** path appended, and select **Connect (2)**.
+6. Start the Bot Framework Emulator, and select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
 
-    ![Visual Studio Code Icon](./images/open-bot.png)
-    
-    ![Visual Studio Code Icon](./images/openabot.png)
+     ![Visual Studio Code Icon](./images/botframe1(11).png)
 
-7. After the conversation is opened in a **Live chat** pane, enter a message such as **Hello** and view the response from the bot, which should be **Ask me what the time is**.
+7. After the conversation is opened in a **Live chat** pane, enter a message such as **`Hello`** and view the response from the bot, which should be **Ask me what the time is**.
 
-8. Enter **What is the time?** and view the response.
+    ![](./images/botframe1(14).png)
+
+
+8. Enter **`What is the time?`** and view the response.
+
+    ![](./images/botframe1(15).png)
 
     >**Note:** The bot now responds to the query "What is the time?" by displaying the local time where the bot is running. For any other query, it prompts the user to ask it what the time is. This is a very limited bot, which could be improved through integration with the Language Understanding service and additional custom code, but it serves as a working example of how you can build a solution with the Bot Framework SDK by extending a bot created from a template.
 
 9. Close the Bot Framework Emulator and return to Visual Studio Code, then in the terminal window, enter **CTRL+C** to stop the bot.
 
-### Review
+## Summary
+
 In this lab, you have completed:
 
 + Updated the Bot Framework Emulator
@@ -214,4 +240,6 @@ In this lab, you have completed:
 + Tested the bot in the Bot Framework Emulator
 + Modified the bot code
 
-## You have successfully completed the lab >> Click on Next
+### You have successfully completed the lab, click on Next >>.
+
+![](./images/nextpage(3pages).png)

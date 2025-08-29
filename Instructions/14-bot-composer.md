@@ -1,6 +1,8 @@
-# Exercise 2: Create a Bot with Bot Framework Composer
+# Lab 2: Create a Bot with Bot Framework Composer
 
-## Lab scenario
+### Estimated Duration: 60 minutes
+
+## Overview
 
 Bot Framework Composer is a graphical designer that lets you quickly and easily build sophisticated conversational bots without writing code. The composer is an open-source tool that presents a visual canvas for building bots.
 
@@ -8,21 +10,12 @@ Bot Framework Composer is a graphical designer that lets you quickly and easily 
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Get an OpenWeather API key
-+ Task 2: Update Bot Framework Composer
-+ Task 3: Create a bot
-+ Task 3.1: Create a bot and customize the "welcome" dialog flow
-+ Task 3.2: Test the bot
-+ Task 4: Add a dialog to get the weather
-+ Task 4.1: Add a dialog
-+ Task 4.2: Add a trigger for the dialog
-+ Task 5: Handle interruptions
-+ Task 6: Enhance the user experience
-+ Task 6.1: Add a button
-+ Task 6.2: Add a card
-+ Task 6.3: Test the new user interface
-
-## Estimated timing: 60 minutes
++ **Task 1:** Get an OpenWeather API key
++ **Task 2:** Update Bot Framework Composer
++ **Task 3:** Create a bot
++ **Task 4:** Add a dialog to get the weather
++ **Task 5:** Handle interruptions
++ **Task 6:** Enhance the user experience
 
 ## Architecture diagram
 
@@ -36,6 +29,8 @@ In this task, you will create a bot that uses the OpenWeather service to retriev
 
 1. In the OpenWeather click on **Sign In**.
 
+    ![](./images/botcomp(1).png)
+
 1. On the Sign In page click on **Create an Account**.
 
    ![Visual Studio Code Icon](./images/create2.png)
@@ -46,17 +41,17 @@ In this task, you will create a bot that uses the OpenWeather service to retriev
     - Email : <inject key="AzureAdUserEmail"></inject>
     - Password: <inject key="AzureAdUserPassword"></inject>
 
-    Click on all the checkboxes as shown in the below image.
+    - Click on all the **checkboxes** as shown in the below image.
 
-   ![Visual Studio Code Icon](./images/create1.png)
+        ![Visual Studio Code Icon](./images/create1.png)
 
-1. In the **How and where will you use our API?** pop-up, you can either provide your company name and select "Education/Science" as the purpose or simply close the pop-up.
+1. In the **How and where will you use our API?** pop-up, you can provide your **company name (1)** and select **Education/Science (2)** as the purpose and click on **Save (3)**.
 
-   ![api-option](./images/api-usage.png)
+   ![api-option](./images/botcomp(2).png)
 
-1. Select **API Keys** and copy the key to the notepad.
+1. Select **API Keys (1)** tab and copy the **Key (2)** to the notepad.
 
-    ![api-option](./images/14.13.png)
+    ![api-option](./images/botcomp(3).png)
 
 ## Task 2: Update Bot Framework Composer
 
@@ -68,7 +63,7 @@ In this task, you're going to use the Bot Framework Composer to create your bot.
 
 1. From the downloads click on **Open file**.
   
-   ![Visual Studio Code Icon](./images/14.16.png)
+   ![api-option](./images/botcomp(4).png)
 
 1. On the **Choose Installation option** page click on **Next**.
 
@@ -78,13 +73,17 @@ In this task, you're going to use the Bot Framework Composer to create your bot.
 
 1. Start the **Bot Framework Composer** installation, and if you are not automatically prompted to install an update, use the **Check for updates** option on the **Help** menu to check for updates.
 
+    ![](./images/botcomp(5).png)
+
 1. If an update is available, choose the option to install it when the application is closed. Then close the Bot Framework Composer and install the update for the currently logged in user, restarting the Bot Framework Composer after the installation is complete. Installation may take a few minutes.
 
     >**Note:** If **Help us improve?** pop-ups, select **Not now**.
 
 1. Ensure that the version of Bot Framework Composer is **2.0.0** or later.
 
-1. On the Lab-VM, in the **Type here to search** bar, search for **Command Prompt**, then right-click on it, and select **Run as administrator**.
+1. On the Lab-VM, in the **Type here to search** bar, search for **Command Prompt (1)**, then right-click on it **(2)** , and select **Run as administrator (3)**.
+
+    ![](./images/botcomp(6).png)
 
 1. Run these following commands, for adding the path:
 
@@ -104,9 +103,15 @@ In this task, you will learn how to use the Bot Framework Composer to create a b
 
 1. On the **Home** screen, select **+ Create new**.
 
-1. On the **Select a template** pop-up, select **Empty Bot** on **Node (Preview) tab (1)** and select **Next (2)**. Name it as **WeatherBot**, select **Location** as **C:\** folder, and select **Create**.
+    ![](./images/botcomp(8).png)
 
-     ![Visual Studio Code Icon](./images/14.14.png)
+1. On the **Select a template** pop-up, on **Node (Preview)** tab, select **Empty Bot (1)** and click **Next (2)**.
+
+    ![](./images/botcomp(9).png)
+
+1. Name it as **`WeatherBot` (1)**, select **Location** as **`C:\` (2)** folder, and select **Create (3)**.
+
+    ![](./images/botcomp(10).png)
 
     >**Note:** If the Node js required pop-up appears, select **Cancel**, and follow these steps:
 
@@ -122,19 +127,31 @@ In this task, you will learn how to use the Bot Framework Composer to create a b
 
    ![Visual Studio Code Icon](./images/14.15.png)
 
-1. In the authoring canvas, select the **Send a response** action. Then, in the properties pane, change the default text from **Welcome to your bot.**  to `Hi! I'm WeatherBot.`
+1. In the authoring canvas, select the **Send a response (1)** action. Then, in the properties pane, change the default text from **Welcome to your bot.**  to `Hi! I'm WeatherBot.` **(2)**.
+
+    ![](./images/botcomp(11).png)
 
 1. In the authoring canvas, select the final **+** symbol (just above the circle that marks the <u>end</u> of the dialog flow), and add a new **Ask a question** action for a **Text** response.
 
+    ![](./images/botcomp(12).png)
+
     >**Note:** The new action creates two nodes in the dialog flow. The first node defines a prompt for the bot to ask the user a question, and the second node represents the response that will be received from the user. In the properties pane, these nodes have corresponding **Bot response** and **User input** tabs.
 
-1. In the properties pane, on the **Bot response** tab, add a response with the text `What's your name?`. Then, on the **User input** tab, set the **Property** value to `user.name` to define a variable that you can access later in the bot conversation.
+1. In the properties pane, on the **Bot response** tab, add a response with the text `What's your name?`. 
+
+    ![](./images/botcomp(13).png)
+
+1. Then, on the **User input** tab, set the **Property** value to `user.name` to define a variable that you can access later in the bot conversation.
+
+    ![](./images/botcomp(14).png)
 
 1. Back in the authoring canvas, select the **+** symbol under the **User input(Text)** action you just added, and add a **Send a response** action.
 
+    ![](./images/botcomp(15).png)
+
 1. Select the newly added **Send a response** action and in the properties pane, set the text value to `Hello ${user.name}, nice to meet you!`. The completed activity flow should look like this:
 
-    ![A dialog flow welcoming a users and asking for their name](./images/welcomeUsers.png)
+    ![](./images/botcomp(16).png)
 
 ### Task 3.2: Test the bot
 
@@ -142,15 +159,19 @@ In this task, you will learn how to test your basic bot.
 
 1. Select **Start Bot** in the upper right-hand corner of Composer, and wait while your bot is compiled and started. This may take several minutes.
 
-    - If a Windows Firewall message is displayed, enable access for all networks.
+    ![](./images/botcomp(17).png)
+
+    >**Note:** If a Windows Firewall message is displayed, enable access for all networks.
 
 1. In the **Local bot runtime manager** pane, select **Open Web Chat**.
 
-    ![A dialog flow welcoming a users and asking for their name](./images/openwebchat.png)
+    ![A dialog flow welcoming a users and asking for their name](./images/botcomp(18).png)
 
 1. In the **WeatherBot** web chat pane, after a short pause, you will see the welcome message and the prompt to enter your name.  Enter your name and press **Enter**.
 
 1. The bot should respond with the **Hello *your_name*, nice to meet you!**.
+
+    ![](./images/botcomp(19).png)
 
 1. Close the web chat panel.
 
@@ -172,11 +193,15 @@ First, you need to define a dialog flow that will be used to handle questions ab
 
     ![Add Dialog menu](./images/weatherbot.png)
 
-1. Then create a new dialog named **GetWeather** with the description **Get the current weather condition for the provided zip code**, and select **OK**.
+1. Then create a new dialog named **GetWeather (1)** with the description **Get the current weather condition for the provided zip code (2)**, and select **OK (3)**.
 
-1. In the right-navigation pane, select the **BeginDialog** node for the new **GetWeather** dialog. Then on the authoring canvas, use the **+** symbol to add a **Ask a question** action for a **Text** response.
+    ![](./images/botcomp(20).png)
+
+1. In the left-navigation pane, select the **BeginDialog** node for the new **GetWeather** dialog. Then on the authoring canvas, use the **+** symbol to add a **Ask a question** action for a **Text** response.
 
 1. In the properties pane, on the **Bot response** tab, add the response `Enter your city`.
+
+    ![](./images/botcomp(21).png)
 
 1. On the **User input** tab, set the **Property** field to `dialog.city`, and set the **Output format** field to the expression `=trim(this.value)` to remove any superfluous spaces around the user-provided value. The activity flow so far should look like this:
 
@@ -188,12 +213,16 @@ First, you need to define a dialog flow that will be used to handle questions ab
 
 1. From the list of actions, select **Access external resources** and then **Send an HTTP request**.
 
+    ![](./images/botcomp(22).png)
+
 1. Set the properties for the **HTTP request** as follows, replacing **YOUR_API_KEY** with your [OpenWeather](https://openweathermap.org/price) API key:
-    - **HTTP method**: GET
+    - **HTTP method**: GET **(1)**
     
-    - **Url**: `http://api.openweathermap.org/data/2.5/weather?units=metric&q=${dialog.city}&appid=YOUR_API_KEY`
+    - **Url**: `http://api.openweathermap.org/data/2.5/weather?units=metric&q=${dialog.city}&appid=YOUR_API_KEY`**(2)**
     
-    - **Result property**: `dialog.api_response`
+    - **Result property**: `dialog.api_response` **(3)**
+
+        ![](./images/botcomp(23).png)
 
         >**Note:** The result can include any of the following four properties from the HTTP response:
 
@@ -209,15 +238,23 @@ First, you need to define a dialog flow that will be used to handle questions ab
 
     > Now you need to add logic to the dialog flow that handles the response, which might indicate success or failure of the HTTP request.
 
-1. On the authoring canvas, under the **Send HTTP Request** action you created, add a **Create a condition** > **Branch: if/else** action. This action defines a branch in the dialog flow with **True** and **False** paths.
+1. On the authoring canvas, under the **Send HTTP Request** action you created, add a **Create a condition (1)** > **Branch: if/else (2)** action. This action defines a branch in the dialog flow with **True** and **False** paths.
+
+    ![](./images/botcomp(24).png)
 
 1. In the **Properties** of the branch action, set the **Condition** field to **write an expression**:
 
-   ```
-   dialog.api_response.statusCode == 200
-   ```
+    ```
+    dialog.api_response.statusCode == 200
+    ```
 
-1. If the call was successful, you need to store the response in a variable. On the authoring canvas, in the **True** branch, add a **Manage properties** > **Set properties** action. Then in the properties pane, add the following property assignments:
+    ![](./images/botcomp(25).png)
+
+1. If the call was successful, you need to store the response in a variable. On the authoring canvas, in the **True** branch, add a **Manage properties (1)** > **Set properties (2)** action. 
+
+    ![](./images/botcomp(26).png)
+
+1. Then in the properties pane, add the following property assignments:
 
    | Property        | Value                                     |
    |-----------------|-------------------------------------------|
@@ -226,6 +263,8 @@ First, you need to define a dialog flow that will be used to handle questions ab
    | dialog.icon    | =dialog.api_response.content.weather[0].icon      |
 
    ![api-option](./images/14.10.png)
+
+    ![](./images/botcomp(27).png)
 
 1. Still in the **True** branch, add a **Send a response** action under the **Set a property** action and set its text to:
 
@@ -273,7 +312,9 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
     > **Note:** The text entered in the regex pattern text box is a simple regular expression pattern that will cause the bot to look for the word *weather* in any incoming message.  If "weather" is present, the message becomes a **recognized intent** and the trigger is initiated.
 
-1. Now that the trigger is created, you need to configure an action for it. In the authoring canvas for the trigger, select the **+** symbol under your new **WeatherRequested** trigger node. Then in the list of actions, select **Dialog Management** and select **Begin a new dialog**.
+1. Now that the trigger is created, you need to configure an action for it. In the authoring canvas for the trigger, select the **+ (1)** symbol under your new **WeatherRequested** trigger node. Then in the list of actions, select **Dialog Management (2)** and select **Begin a new dialog (3)**.
+
+    ![](./images/botcomp(30).png)
 
 1. With the **Begin a new dialog** action selected, in the properties pane, select the **GetWeather** dialog from the **Dialog name** drop-down list to start the **GetWeather** dialog you defined earlier when the **WeatherRequested** trigger is recognized. The **WeatherRequested** activity flow should look like this:
 
@@ -281,7 +322,7 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
 1. Start the bot and open the web chat pane.Then restart the conversation, and after entering your name, enter `What is the weather like?`. Then, when prompted, enter a city, such as `Seattle`. The bot will contact the service and should respond with a small weather report statement.
 
-   ![api-option](./images/14.6.png)
+   ![api-option](./images/botcomp(31).png)
 
 7. When you have finished testing, close the web chat pane and stop the bot.
 
@@ -304,11 +345,11 @@ A well designed bot should allow users to change the flow of the conversation, f
 
 1. In the authoring canvas for the trigger, add a **Send a response** action, and set its text response to `OK. Whenever you're ready, you can ask me about the weather.`
 
-1. Under the **Send a response** action, add a new action to end the dialog by selecting **Dialog management** and **End this dialog**.
+    ![](./images/botcomp(32).png)
 
-    The **CancelRequest** dialog flow should look like this:
+1. Under the **Send a response** action, add a new action to end the dialog by selecting **Dialog management** and **End this dialog**. The **CancelRequest** dialog flow should look like this:
 
-    ![A CancelRequest trigger with Send a response and End this dialog actions](./images/cancelrequest.png)
+    ![](./images/botcomp(33).png)
 
     >**Note:** Now that you have a trigger to respond to a user's request to cancel, you must allow interruptions to dialog flows where the user might want to make such a request - such as when prompted for a zip code after asking for weather information.
 
@@ -322,7 +363,7 @@ A well designed bot should allow users to change the flow of the conversation, f
 
 1. Start the bot and open the web chat pane. Restart the conversation, and and after entering your name, enter `What is the weather like?`. Then, when prompted, enter `cancel`, and confirm that the request is canceled.
 
-   ![api-option](./images/14.3.png)
+   ![api-option](./images/botcomp(34).png)
 
 1. After canceling the request, enter `What's the weather like?` and note that the appropriate trigger starts a new instance of the **GetWeather** dialog, prompting you once again to enter a city.
 
@@ -371,6 +412,8 @@ In this task, you will learn how to add a card to your bot, enabling the present
     ]
     ```
 
+    ![](./images/botcomp(35).png)
+
     >**Note:** This template will use the same variables as before for the weather condition but also adds a title to the card that will be displayed, along with an image for the weather condition.
 
 ### Task 6.3: Test the new user interface
@@ -383,16 +426,19 @@ In this task, you will learn how to test the new user interface of your bot, ens
   
 1. After canceling, enter `Tell me about the weather` and when prompted, enter a city, such as `London`. The bot will contact the service and should respond with a card indicating the weather conditions.
 
+    ![](./images/botcomp(36).png)
+
 1. When you have finished testing, close the emulator and stop the bot.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="b203f839-39fe-4f72-be23-81584c5b9093" />
 
-### Review
+## Summary
 In this lab, you have completed:
 
 + Got an OpenWeather API key
@@ -409,4 +455,4 @@ In this lab, you have completed:
 + Added a card
 + Tested the new user interface
 
-## You have successfully completed the lab
+### You have successfully completed the Hands-on lab!

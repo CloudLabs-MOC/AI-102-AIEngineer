@@ -32,8 +32,8 @@ In this task, you will open the cloned project folder in **Visual Studio Code** 
 
     ![](./images/vsclangund(1).png)
 
-    **Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
-    **Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**
+    >**Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
+    >**Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
 
 1. Wait while additional files are installed to support the C# code projects in the repo.
 
