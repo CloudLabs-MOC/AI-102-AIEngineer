@@ -41,7 +41,7 @@ In this task, you will clone the AI-102-AIEngineer repository to your local envi
 
     ![](./images/Terminal_new_vs_1(1).png)
 
-1. In the Terminal run a **git clone** command to clone the`https://github.com/MicrosoftLearning/AI-102-AIEngineer` repository to a local folder (it doesn't matter which folder).
+1. In the Terminal, run a **git clone** command to clone the`https://github.com/MicrosoftLearning/AI-102-AIEngineer` repository to a local folder (it doesn't matter which folder).
 
     ![](./images/Terminal_new_vs_1(2).png)
    
@@ -89,7 +89,7 @@ In this task, you will create an Azure AI Speech resource in the Azure portal. Y
 
     ![](./images/azureaiservice2(2).png)
 
-1. Wait for deployment to complete, and then view the deployment details and click on **Go to resource**.
+1. Wait for the deployment to complete, and then view the deployment details and click on **Go to resource**.
 
     ![](./images/azureaiservice2(3).png)
 
@@ -117,7 +117,7 @@ In this task, you'll complete a partially implemented client application that us
     
      - **C#**: appsettings.json
 
-1. Open the configuration file and update the configuration values it contains to include an authentication **key** for Azure AI Speech resource, and the **location** where it is deployed. Save your changes.
+1. Open the configuration file and update the configuration values it contains to include an authentication **key** for the Azure AI Speech resource, and the **location** where it is deployed. Save your changes.
 
     ![](./images/07-speechvsc(2).png)
 
@@ -157,7 +157,7 @@ In this task, you'll complete a partially implemented client application that us
     dotnet run
     ```
 
-7. If you are using C#, you can ignore any warnings about using the **await** operator in asynchronous methods - we'll fix that later. The code should display the region of the speech service resource the application will use.
+7. If you are using C#, you can ignore any warnings about using the **await** operator in asynchronous methods - we'll fix that later. The code should display the region of the speech service resource that the application will use.
 
     ![](./images/07-speechvsc(4).png)
 
@@ -366,7 +366,7 @@ In this task, you will modify the speech synthesis configuration to use Speech S
 
     ![](./images/07-speechvsc(10).png)
 
-1. When prompted, speak clearly into the microphone and say "**what time is it?**". The program should speak in the voice that is specified in the SSML (overriding the voice specified in the SpeechConfig), telling you the time, and then after a pause telling you it's time to end this lab - which it is!
+1. When prompted, speak clearly into the microphone and say "**what time is it?**". The program should speak in the voice that is specified in the SSML (overriding the voice specified in the SpeechConfig), telling you the time, and then, after a pause, telling you it's time to end this lab - which it is!
 
     >**Note:** You may be prompted to speak the question, but we are using a virtual environment where voice communication from your laptop or desktop to the virtual environment is not supported
 
