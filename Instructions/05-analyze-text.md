@@ -1,12 +1,12 @@
 # Lab 01: Analyze Text
 
-### Estimated Duration : 120 Minutes
+### Estimated Duration: 120 Minutes
 
 ## Overview
 
 **Azure Language** supports analysis of text, including language detection, sentiment analysis, key phrase extraction, and entity recognition.
 
-For example, suppose a travel agency wants to process hotel reviews that have been submitted to the company's web site. By using the Azure AI Language, they can determine the language each review is written in, the sentiment (positive, neutral, or negative) of the reviews, key phrases that might indicate the main topics discussed in the review, and named entities, such as places, landmarks, or people mentioned in the reviews.
+For example, suppose a travel agency wants to process hotel reviews that have been submitted to the company's website. By using the Azure AI Language, they can determine the language each review is written in, the sentiment (positive, neutral, or negative) of the reviews, key phrases that might indicate the main topics discussed in the review, and named entities, such as places, landmarks, or people mentioned in the reviews.
 
 ## Objectives
 
@@ -59,7 +59,7 @@ If you don't already have one in your subscription, you'll need to provision an 
     .
 1. In the Review + create tab, click on **Create**.
 
-1. Wait for deployment to complete, and then view the deployment details.
+1. Wait for the deployment to complete, and then view the deployment details.
 
 1. Select **Go to resource**.
 
@@ -81,7 +81,7 @@ Open up a new browser tab to work with Cloud Shell. If you haven't cloned this r
 
      ![Visual Studio Code Icon](./images/mod03-ai-102-image6.png)
    
-1. If you're prompted to create storage for your Cloud Shell, select **Mount storage account (1)** and select your default **Subscription (2)** , and then click on **Apply (3)**.
+1. If you're prompted to create storage for your Cloud Shell, select **Mount storage account (1)** and select your default **Subscription (2)**, and then click on **Apply (3)**.
 
       ![Visual Studio Code Icon](./images/mod03-ai-102-image7(1).png)
    
@@ -91,7 +91,7 @@ Open up a new browser tab to work with Cloud Shell. If you haven't cloned this r
    
 1. On the **Create Storage account** page, provide the following details and then click on **Create (6)**.
 
-    - **Subscription**: **Choose the deafult Subscription (1)**
+    - **Subscription**: **Choose the default Subscription (1)**
 
     - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**.
    
@@ -103,7 +103,7 @@ Open up a new browser tab to work with Cloud Shell. If you haven't cloned this r
 
       ![Visual Studio Code Icon](./images/b-3(1).png)
 
-      > **Note**: If you face any issues with respect to regions while creating storage account. please select the east us region.
+      > **Note**: If you face any issues with respect to regions while creating a storage account. Please select the East US region.
    
 1. Then wait a minute or so for the storage to be created.
 
@@ -122,14 +122,14 @@ Open up a new browser tab to work with Cloud Shell. If you haven't cloned this r
    cd azure-ai-eng/05-analyze-text
     ```
 
-    - Applications for both C# and Python have been provided, as well as a supporting files you'll use to test the feature. Both apps feature the same functionality. Navigate to the folder of your preferred language.
+    - Applications for both C# and Python have been provided, as well as supporting files you'll use to test the feature. Both apps feature the same functionality. Navigate to the folder of your preferred language.
 
 1. Open the built-in code editor, and observe the text files in the `text-analysis` folder. Use the following command to open the lab files in the code editor.
 
     ```
     code .
     ```
-    > **Note**: If you asked for switch to classic shell please click on confirm.
+    > **Note**: If you asked for a switch to the classic shell, please click on confirm.
 
     > **Note**: If you don't see the built-in code editor, please repeat steps 9 and 10 accordingly.   
 
@@ -141,9 +141,9 @@ In this exercise, you'll complete a partially implemented client application tha
 
  > **Note:** You can choose to use the SDK for either **C#** or **Python**. In the steps below, perform the actions appropriate for your preferred language.
 
-1. In Cloud Shell, ensure you are in the **05-analyze-text** folder and have navigated to the **C-Sharp** > **text-analysis** or **Python** > **text-analysis** folder depending on your language preference.
+1. In Cloud Shell, ensure you are in the **05-analyze-text** folder and have navigated to the **C-Sharp** > **text-analysis** or **Python** > **text-analysis** folder, depending on your language preference.
 
-1. Use the following commands to navigate the the specific **C-Sharp** or **Python**'s **text-analysis** folder depending on your language preference.
+1. Use the following commands to navigate the specific **C-Sharp** or **Python**'s **text-analysis** folder depending on your language preference.
 
     **C#**
 
@@ -177,7 +177,7 @@ In this exercise, you'll complete a partially implemented client application tha
 
     - **Python**: .env
 
-1. Open the configuration file and update the configuration values with **Key1** and **Endpoint** that you had copied previously, to reflect the **endpoint** and an authentication **key** for your Azure AI Language service resource. Save your changes by pressing **Ctrl+S** in your keyboard.
+1. Open the configuration file and update the configuration values with **Key1** and **Endpoint** that you had copied previously, to reflect the **endpoint** and an authentication **key** for your Azure AI Language service resource. Save your changes by pressing **Ctrl+S** on your keyboard.
 
     - This is how it looks for **C#**: appsettings.json file.
 
@@ -245,7 +245,7 @@ In this exercise, you'll complete a partially implemented client application tha
     python text-analysis.py
     ```
 
-1. Observe the output as the code should run without error, displaying the contents of each review text file in the **reviews** folder. The application successfully creates a client for the Text Analytics API but doesn't make use of it. We'll fix that in the next procedure.
+1. Observe the output as the code should run without error, displaying the contents of each review text file in the **reviews** folder. The application successfully creates a client for the Text Analytics API, but doesn't make use of it. We'll fix that in the next procedure.
 
 ## Task 4: Detect language
 
@@ -269,7 +269,7 @@ Now that you have created a client for the API, let's use it to detect the langu
     print('\nLanguage: {}'.format(detectedLanguage.primary_language.name))
     ```
 
-    > **Note**: *In this example, each review is analyzed individually, resulting in a separate call to the service for each file. An alternative approach is to create a             collection of documents and pass them to the service in a single call. In both approaches, the response from the service consists of a collection of documents; which is why     in the Python code above, the index of the first (and only) document in the response ([0]) is specified.*
+    > **Note**: *In this example, each review is analyzed individually, resulting in a separate call to the service for each file. An alternative approach is to create a collection of documents and pass them to the service in a single call. In both approaches, the response from the service consists of a collection of documents, which is why     in the Python code above, the index of the first (and only) document in the response ([0]) is specified.*
 
 1. Save your changes and return to the integrated terminal for the **text-analysis** folder, and enter the following command to run the program:
 
@@ -381,7 +381,7 @@ It can be useful to identify key phrases in a body of text to help determine the
 
 ## Task 7: Extract entities
 
-Often, documents or other bodies of text mention people, places, time periods, or other entities. The text Analytics API can detect multiple categories (and subcategories) of entity in your text.
+Often, documents or other bodies of text mention people, places, time periods, or other entities. The text Analytics API can detect multiple categories (and subcategories) of entities in your text.
 
 1. In the **Main** function for your program, find the comment **Get entities**. Then, under this comment, add the code necessary to identify entities that are mentioned in each review:
 
