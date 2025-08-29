@@ -283,8 +283,10 @@ In this task, you will learn how to use the **Azure AI Vision SDK** to get image
 The Vision service can suggest *categories* for images, and within each category it can identify well-known landmarks.
 
 1. In the **AnalyzeImage** function, under the comment **Get image categories**, add the following code:
-     
-    ```C#
+
+    **C#**
+
+    ```C
     // Get image categories
     List<LandmarksModel> landmarks = new List<LandmarksModel> {};
     Console.WriteLine("Categories:");
