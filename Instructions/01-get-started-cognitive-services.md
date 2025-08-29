@@ -1,6 +1,6 @@
 # Lab 01: Get Started with Azure AI Services
 
-### Estimated Duration : 45 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -69,21 +69,21 @@ Azure AI Services are cloud-based services that encapsulate artificial intellige
     
     - **Pricing tier**: **Standard S0 (5)**
 
-    - **By checking this box I acknowledge that I have read and understood all the terms below**: Select the checkbox **(6)**
+    - **By checking this box, I acknowledge that I have read and understood all the terms below**: Select the checkbox **(6)**
 
       ![Visual Studio Code Icon](./images/a-4.png)    
 
-1. Once the validation passed, click **Create**.
+1. Once the validation passes, click **Create**.
 
     ![](./images/a-4(1).png) 
 
-1. Wait for deployment to complete, and then view the deployment details.
+1. Wait for the deployment to complete, and then view the deployment details.
 
 1. Click on **Go to resource**.
 
     ![Visual Studio Code Icon](./images/a-34(1).png)
 
-1. From the left navigation menu, select **Resource management (1)** and then click **Keys and Endpoint (2)** under . This page contains the information that you will need to connect to your resource and use it from applications you develop. Specifically:
+1. From the left navigation menu, select **Resource management (1)** and then click **Keys and Endpoint (2)** under. This page contains the information that you will need to connect to your resource and use it from applications you develop. Specifically:
     
     - An HTTP **Endpoint** to which client applications can send requests.
     
@@ -97,9 +97,10 @@ Azure AI Services are cloud-based services that encapsulate artificial intellige
 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="fe4194bf-9530-4184-8b85-c29e2532b9b6" />
 
@@ -107,7 +108,7 @@ Azure AI Services are cloud-based services that encapsulate artificial intellige
 
 In this task, you will learn how to use a REST interface to interact with Azure services by making HTTP requests to manage resources and retrieve data.
 
-The Azure AI services APIs are REST-based, so you can consume them by submitting JSON requests over HTTP. In this example, you'll explore a console application that uses the **Language** REST API to perform language detection; but the basic principle is the same for all of the APIs supported by the Azure AI services resource.
+The Azure AI services APIs are REST-based, so you can consume them by submitting JSON requests over HTTP. In this example, you'll explore a console application that uses the **Language** REST API to perform language detection, but the basic principle is the same for all of the APIs supported by the Azure AI services resource.
 
 1. Open Visual Studio Code, in the **Explorer (1)** pane, browse to the **01-getting-started (2)** folder and expand the **C-Sharp (3)** folder.
 
@@ -133,7 +134,7 @@ The Azure AI services APIs are REST-based, so you can consume them by submitting
 
       ![Visual Studio Code Icon](./images/a-11.png)    
     
-    - The program accepts user input, and uses the **GetLanguage** function to call the Text Analytics language detection REST API for your Azure AI services endpoint to detect the language of the text that was entered.
+    - The program accepts user input and uses the **GetLanguage** function to call the Text Analytics language detection REST API for your Azure AI services endpoint to detect the language of the text that was entered.
     
     - The request sent to the API consists of a JSON object containing the input data - in this case, a collection of **document** objects, each of which has an **id** and **text**.
 
@@ -163,7 +164,7 @@ The Azure AI services APIs are REST-based, so you can consume them by submitting
 
 In this task, you will learn how to use an SDK to interact with Azure services programmatically, simplifying the process of managing resources and performing operations.
 
-You can write code that consumes Azure AI services REST APIs directly, but there are software development kits (SDKs) for many popular programming languages, including Microsoft C#, Python, and Node.js. Using an SDK can greatly simplify development of applications that consume Azure AI services.
+You can write code that consumes Azure AI services REST APIs directly, but there are software development kits (SDKs) for many popular programming languages, including Microsoft C#, Python, and Node.js. Using an SDK can greatly simplify the development of applications that consume Azure AI services.
 
 1. In Visual Studio Code, in the **Explorer (1)** pane, in the **01-getting-started (2)** folder, expand the **C-Sharp (3)** folder. Right-click the **sdk-client (4)** folder and then select **Open in Integrated Terminal (5)**.
 
@@ -221,7 +222,7 @@ You can write code that consumes Azure AI services REST APIs directly, but there
 In this lab, you have completed:
 
 - Opened the cloned folder in Visual Studio Code
-- Provisioned a Azure AI services resource
+- Provisioned an Azure AI services resource
 - Used a REST Interface
 - Used an SDK
 
