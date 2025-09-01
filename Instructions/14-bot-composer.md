@@ -31,7 +31,7 @@ In this task, you will create a bot that uses the OpenWeather service to retriev
 
     ![](./images/botcomp(1).png)
 
-1. On the Sign In page click on **Create an Account**.
+1. On the Sign In page, click on **Create an Account**.
 
    ![Visual Studio Code Icon](./images/create2.png)
 
@@ -41,7 +41,7 @@ In this task, you will create a bot that uses the OpenWeather service to retriev
     - Email : <inject key="AzureAdUserEmail"></inject>
     - Password: <inject key="AzureAdUserPassword"></inject>
 
-    - Click on all the **checkboxes** as shown in the below image.
+    - Click on all the **checkboxes** as shown in the image below.
 
         ![Visual Studio Code Icon](./images/create1.png)
 
@@ -55,13 +55,13 @@ In this task, you will create a bot that uses the OpenWeather service to retriev
 
 ## Task 2: Update Bot Framework Composer
 
-In this task, you're going to use the Bot Framework Composer to create your bot. This tools is updated regularly, so let's make sure you have the latest version installed.
+In this task, you're going to use the Bot Framework Composer to create your bot. This tool is updated regularly, so let's make sure you have the latest version installed.
 
-> **Note**: Updates may include changes to the user interface that affect the instructions in this exercise.
+> **Note:** Updates may include changes to the user interface that affect the instructions in this exercise.
 
-1. Open a new tab, copy and paste this link, `https://github.com/microsoft/BotFramework-Composer/releases/download/v2.1.2/BotFramework-Composer-2.1.2-windows-setup.exe`, download the **Bot Framework Composer**.
+1. Open a new tab, copy and paste this link, `https://github.com/microsoft/BotFramework-Composer/releases/download/v2.1.2/BotFramework-Composer-2.1.2-windows-setup.exe`, and download the **Bot Framework Composer**.
 
-1. From the downloads click on **Open file**.
+1. From the downloads, click on **Open file**.
   
    ![api-option](./images/botcomp(4).png)
 
@@ -75,7 +75,7 @@ In this task, you're going to use the Bot Framework Composer to create your bot.
 
     ![](./images/botcomp(5).png)
 
-1. If an update is available, choose the option to install it when the application is closed. Then close the Bot Framework Composer and install the update for the currently logged in user, restarting the Bot Framework Composer after the installation is complete. Installation may take a few minutes.
+1. If an update is available, choose the option to install it when the application is closed. Then close the Bot Framework Composer and install the update for the currently logged-in user, restarting the Bot Framework Composer after the installation is complete. Installation may take a few minutes.
 
     >**Note:** If **Help us improve?** pop-ups, select **Not now**.
 
@@ -85,7 +85,7 @@ In this task, you're going to use the Bot Framework Composer to create your bot.
 
     ![](./images/botcomp(6).png)
 
-1. Run these following commands, for adding the path:
+1. Run the following commands to add the path:
 
     ```
     setx path1 "%PATH%;C:\Program Files\nodejs;"
@@ -119,7 +119,7 @@ In this task, you will learn how to use the Bot Framework Composer to create a b
 
     - Select the **Start** button.
 
-    - Select the **Power** button, and click on **Restart**. Now, re-connect again with the **Lab-VM**.
+    - Select the **Power** button, and click on **Restart**. Now, reconnect again with the **Lab-VM**.
 
 1. Close the **Get Started** pane if it opens, and then in the navigation pane on the left, select **Greeting** to open the authoring canvas and show the *ConversationUpdate* activity that is called when a user initially joins a conversation with the bot. The activity consists of a flow of actions.
 
@@ -191,7 +191,7 @@ In this task, you will learn how to define a dialog flow to handle questions abo
 
 First, you need to define a dialog flow that will be used to handle questions about the weather.
 
-1. In Composer, in the navigation pane, hold the mouse over the top level node (**WeatherBot**) and in the **... (1)** menu, select **+ Add a dialog (2)**, as shown here:
+1. In Composer, in the navigation pane, hold the mouse over the top-level node (**WeatherBot**) and in the **... (1)** menu, select **+ Add a dialog (2)**, as shown here:
 
     ![Add Dialog menu](./images/weatherbot.png)
 
@@ -199,7 +199,7 @@ First, you need to define a dialog flow that will be used to handle questions ab
 
     ![](./images/botcomp(20).png)
 
-1. In the left-navigation pane, select the **BeginDialog** node for the new **GetWeather** dialog. Then on the authoring canvas, use the **+** symbol to add a **Ask a question** action for a **Text** response.
+1. In the left-navigation pane, select the **BeginDialog** node for the new **GetWeather** dialog. Then, on the authoring canvas, use the **+** symbol to add an **Ask a question** action for a **Text** response.
 
 1. In the properties pane, on the **Bot response** tab, add the response `Enter your city`.
 
@@ -256,7 +256,7 @@ First, you need to define a dialog flow that will be used to handle questions ab
 
     ![](./images/botcomp(26).png)
 
-1. Then in the properties pane, add the following property assignments:
+1. Then, in the properties pane, add the following property assignments:
 
    | Property        | Value                                     |
    |-----------------|-------------------------------------------|
@@ -274,7 +274,7 @@ First, you need to define a dialog flow that will be used to handle questions ab
    The weather in ${dialog.city} is ${dialog.weather} and the temperature is ${dialog.temp}&deg;.
    ```
 
-   >**Note**: This message uses the **dialog.city**, **dialog.weather**, and **dialog.temp** properties you set in the previous actions. Later, you'll also use the **dialog.icon** property.
+   >**Note:** This message uses the **dialog.city**, **dialog.weather**, and **dialog.temp** properties you set in the previous actions. Later, you'll also use the **dialog.icon** property.
 
 1. You also need to account for a response from the weather service that is not 200, so in the **False** branch, add a **Send a response** action and set its text to `I got an error: ${dialog.api_response.content.message}.` The dialog flow should now look like this:
 
@@ -294,7 +294,7 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
    ![api-option](./images/14.9.png)
 
-    >**Note:** The default recognizer type uses the Language Understanding service to product the user's intent using a natural language understanding model. We're using a regular expression recognizer to simplify this exercise. In a real, application, you should consider using Language Understanding to allow for more sophisticated intent recognition.
+    >**Note:** The default recognizer type uses the Language Understanding service to produce the user's intent using a natural language understanding model. We're using a regular expression recognizer to simplify this exercise. In a real application, you should consider using Language Understanding to allow for more sophisticated intent recognition.
 
 1. In the **...** menu for the **WeatherBot** dialog, select **+ Add new Trigger**.
 
@@ -314,7 +314,7 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
     > **Note:** The text entered in the regex pattern text box is a simple regular expression pattern that will cause the bot to look for the word *weather* in any incoming message.  If "weather" is present, the message becomes a **recognized intent** and the trigger is initiated.
 
-1. Now that the trigger is created, you need to configure an action for it. In the authoring canvas for the trigger, select the **+ (1)** symbol under your new **WeatherRequested** trigger node. Then in the list of actions, select **Dialog Management (2)** and select **Begin a new dialog (3)**.
+1. Now that the trigger is created, you need to configure an action for it. In the authoring canvas for the trigger, select the **+ (1)** symbol under your new **WeatherRequested** trigger node. Then, in the list of actions, select **Dialog Management (2)** and select **Begin a new dialog (3)**.
 
     ![](./images/botcomp(30).png)
 
@@ -322,7 +322,7 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
     ![A regex trigger begins the GetWeather dialog](./images/weather-regex.png)
 
-1. Start the bot and open the web chat pane.Then restart the conversation, and after entering your name, enter `What is the weather like?`. Then, when prompted, enter a city, such as `Seattle`. The bot will contact the service and should respond with a small weather report statement.
+1. Start the bot and open the web chat pane. Then restart the conversation, and after entering your name, enter `What is the weather like?`. Then, when prompted, enter a city, such as `Seattle`. The bot will contact the service and should respond with a small weather report statement.
 
    ![api-option](./images/botcomp(31).png)
 
@@ -332,7 +332,7 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
 In this task, you will learn how to handle interruptions in your bot, allowing users to change the flow of the conversation, such as canceling a request.
 
-A well designed bot should allow users to change the flow of the conversation, for example by canceling a request.
+A well-designed bot should allow users to change the flow of the conversation, for example, by canceling a request.
 
 1. In the Bot Composer, in the navigation pane, use the **...** menu for the **WeatherBot** dialog to add a new trigger (in addition to the existing **WelcomeUsers** and **WeatherRequested** triggers). The new trigger should have the following settings:
 
@@ -363,7 +363,7 @@ A well designed bot should allow users to change the flow of the conversation, f
 
    ![api-option](./images/14.4.png)
 
-1. Start the bot and open the web chat pane. Restart the conversation, and and after entering your name, enter `What is the weather like?`. Then, when prompted, enter `cancel`, and confirm that the request is canceled.
+1. Start the bot and open the web chat pane. Restart the conversation, and after entering your name, enter `What is the weather like?`. Then, when prompted, enter `cancel`, and confirm that the request is canceled.
 
    ![api-option](./images/botcomp(34).png)
 
@@ -375,7 +375,7 @@ A well designed bot should allow users to change the flow of the conversation, f
 
 In this task, you will learn how to enhance the user experience of your weather bot by using buttons and cards to present information visually and initiate recommended actions.
 
-The interactions with the weather bot so far has been through text. Users enter text for their intentions and the bot responds with text. While text is often a suitable way to communicate, you can enhance the experience through other forms of user interface element.  For example, you can use buttons to initiate recommended actions, or display a *card* to present information visually.
+The interactions with the weather bot so far have been through text. Users enter text for their intentions, and the bot responds with text. While text is often a suitable way to communicate, you can enhance the experience through other forms of user interface elements.  For example, you can use buttons to initiate recommended actions, or display a *card* to present information visually.
 
 ### Task 6.1: Add a button
 
@@ -416,7 +416,7 @@ In this task, you will learn how to add a card to your bot, enabling the present
 
     ![](./images/botcomp(35).png)
 
-    >**Note:** This template will use the same variables as before for the weather condition but also adds a title to the card that will be displayed, along with an image for the weather condition.
+    >**Note:** This template will use the same variables as before for the weather condition, but also adds a title to the card that will be displayed, along with an image for the weather condition.
 
 ### Task 6.3: Test the new user interface
 
@@ -446,7 +446,7 @@ In this lab, you have completed:
 + Got an OpenWeather API key
 + Updated Bot Framework Composer
 + Created a bot
-+ Created a bot and customize the "welcome" dialog flow
++ Created a bot and customized the "welcome" dialog flow
 + Tested the bot
 + Added a dialog to get the weather
 + Added a dialog
