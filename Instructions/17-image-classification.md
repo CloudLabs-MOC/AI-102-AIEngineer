@@ -1,4 +1,4 @@
-# Lab 1: Classify Images with Custom Vision
+# Lab 01: Classify Images with Custom Vision
 
 ### Estimated Duration: 60 Minutes
 
@@ -33,7 +33,7 @@ In this task, you will learn how to open the cloned folder in **Visual Studio Co
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**.
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click **Select folder (5)**.
 
     ![](./images/botframe1(6).png)
 

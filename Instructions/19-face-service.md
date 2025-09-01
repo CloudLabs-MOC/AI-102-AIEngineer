@@ -1,4 +1,4 @@
-# Lab 1: Detect and Analyze Faces
+# Lab 01: Detect and Analyze Faces
 
 ## Estimated Duration: 90 Minutes
 
@@ -30,7 +30,7 @@ In this task, you will open the cloned project folder in Visual Studio Code to a
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**.
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click **Select folder (5)**.
 
     ![](./images/botframe1(6).png)
 
@@ -48,15 +48,15 @@ In this task, you will provision an Azure AI Services resource in the Azure port
 
     ![](./images/detana(1).png)
 
-1. Now Search for **Azure AI Services (1)**, and press Enter. Then click on **Azure AI Services (2)** from the result.
+1. Search for **Azure AI Services (1)** and press **Enter**, then select **Azure AI services (2)** from the results. 
 
     ![](./images/detana(2).png)
 
-1. Now click on **Create**.
+1. On the Azure AI services blade, click on **Create**.
 
     ![](./images/detana(3).png)
 
-1. Create an AI service with the following settings:
+1. On the Create Azure AI service blade, create a resource with the following settings:
     
     - **Subscription**: *Your Azure subscription* **(1)**
     - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**

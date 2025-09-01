@@ -1,4 +1,4 @@
-# Lab 2: Detect Objects in Images with Custom Vision
+# Lab 02: Detect Objects in Images with Custom Vision
 
 ### Estimated Duration: 60 Minutes
 

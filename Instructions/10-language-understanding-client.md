@@ -28,7 +28,7 @@ In this task, you will open the cloned project folder in **Visual Studio Code** 
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\LabFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\LabFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click **Select folder (5)**.
 
     ![](./images/vsclangund(1).png)
 

@@ -1,4 +1,4 @@
-# Lab 1: Analyze Images with Computer Vision
+# Lab 01: Analyze Images with Computer Vision
 
 ## Estimated Duration: 90 Minutes
 
@@ -34,7 +34,7 @@ In this task, you will learn how to open the cloned folder in **Visual Studio Co
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click **Select folder (5)**.
 
     ![](./images/botframe1(6).png)
 
@@ -198,8 +198,6 @@ Now you're ready to use the SDK to call the Vision service and analyze an image.
 
 4. In the **AnalyzeImage** function, under the comment **Get image analysis**, add the following code (including the comments indicating where you will add more code later):
 
-    **C#**
-
     ```C#
     // Get image analysis
     using (var imageData = File.OpenRead(imageFile))
@@ -225,8 +223,7 @@ Now you're ready to use the SDK to call the Vision service and analyze an image.
 
 
         // Get moderation ratings
-    }        
-        
+    }           
     ```
     
     ![](./images/compvi(11).png)

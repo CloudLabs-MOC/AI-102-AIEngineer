@@ -1,4 +1,4 @@
-# Lab 2: Create a Bot with Bot Framework Composer
+# Lab 02: Create a Bot with Bot Framework Composer
 
 ### Estimated Duration: 60 Minutes
 
