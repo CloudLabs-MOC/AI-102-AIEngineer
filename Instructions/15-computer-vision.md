@@ -198,7 +198,9 @@ Now you're ready to use the SDK to call the Vision service and analyze an image.
 
 4. In the **AnalyzeImage** function, under the comment **Get image analysis**, add the following code (including the comments indicating where you will add more code later):
 
-    ```C#
+    **C#**
+
+    ```
     // Get image analysis
     using (var imageData = File.OpenRead(imageFile))
     {    
