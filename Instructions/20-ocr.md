@@ -1,6 +1,8 @@
-# Exercise 1 : Read Text in Images
+# Lab 01 : Read Text in Images
 
-## Lab scenario
+### Estimated Duration: 30 Minutes
+
+## Overview
 
 Optical character recognition (OCR) is a subset of computer vision that deals with reading text in images and documents. The **Computer Vision** service provides two APIs for reading text, which you'll explore in this exercise.
 
@@ -8,14 +10,12 @@ Optical character recognition (OCR) is a subset of computer vision that deals wi
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Open the cloned folder in Visual Studio Code.
-+ Task 2: Provision a Cognitive Services resource
-+ Task 3: Prepare to use the Azure AI Vision SDK
-+ Task 4: Use the Read API to read text from an image
-+ Task 5: Use the Read API to read text from a document
-+ Task 6: Read handwritten text
-
-## Estimated timing: 30 minutes
++ **Task 1:** Open the cloned folder in Visual Studio Code.
++ **Task 2:** Provision a Cognitive Services resource
++ **Task 3:** Prepare to use the Azure AI Vision SDK
++ **Task 4:** Use the Read API to read text from an image
++ **Task 5:** Use the Read API to read text from a document
++ **Task 6:** Read handwritten text
 
 ## Architecture diagram
 
@@ -25,15 +25,15 @@ In this lab, you will complete the following tasks:
 
 In this task, you will learn how to open the cloned folder in **Visual Studio Code**, allowing you to view and edit the project files within the IDE.
 
-1.  Start Visual Studio Code (the program icon is pinned to the Desktop).
+1. In the Lab-VM desktop, double-click on the **Visual Studio Code**.
 
-     ![Visual Studio Code Icon](./images/vscode.png) 
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-2.  Open a file, From the top-left options, Click on **File->Open Folder** and navigate to **C:\LabFiles** choose **AI-102-AIEngineer-stage** folder and select **select folder**
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click **Select folder (5)**.
 
-      **Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
-  
-      **Note:** When **Do you trust the authors of the filesin tjis folder?** prompted select **Yes, I trust the authors**.
+    ![](./images/botframe1(6).png)
+
+    >**Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
 
 ## Task 2: Provision Azure AI Services resource
 
@@ -70,9 +70,10 @@ In this task, you will learn how to provision an **Azure AI Services** resource,
    ![Visual Studio Code Icon](./images/a-6.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="af1589b0-2190-4b03-837c-531110235ef5" /> 
 
@@ -222,7 +223,7 @@ In addition to printed text, the **Read** API can extract handwritten text in En
      ```
 4. When prompted, enter **3** and observe the output, which is the text extracted from the document.
 
-### Review
+## Summary
 In this lab, you have completed:
  +  Opened the cloned folder in Visual Studio Code.
  +  Provisioned a Cognitive Services resource
@@ -231,4 +232,6 @@ In this lab, you have completed:
  +  Used the Read API to read text from a document
  +  Readed handwritten text
    
-## You have successfully completed the lab >> Click on Next
+### You have successfully completed the lab, click on Next >>.
+
+![](./images/nextpage(3pages).png)
