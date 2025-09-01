@@ -28,9 +28,9 @@ In this task, you will learn how to update the Bot Framework Emulator to the lat
 
 You're going to use the Bot Framework SDK to create your bot, and the Bot Framework Emulator to test it. The Bot Framework Emulator is updated regularly, so let's make sure you have the latest version installed.
 
-> **Note**: Updates may include changes to the user interface that affect the instructions in this exercise.
+> **Note:** Updates may include changes to the user interface that affect the instructions in this exercise.
 
-1. Open an edge browser, copy and paste this link, `https://github.com/microsoft/BotFramework-Emulator/releases/download/v4.15.1/BotFramework-Emulator-4.15.1-windows-setup.exe`, download the **Bot Framework Emulator**.
+1. Open an edge browser, copy and paste this link, `https://github.com/microsoft/BotFramework-Emulator/releases/download/v4.15.1/BotFramework-Emulator-4.15.1-windows-setup.exe`, and download the **Bot Framework Emulator**.
 
 1. Click on **Open file** to start installation.
 
@@ -44,7 +44,7 @@ You're going to use the Bot Framework SDK to create your bot, and the Bot Framew
 
    ![Visual Studio Code Icon](./images/14.18.png)
 
-1. Click on **Finsih** to start the **Bot Framework Emulator**, and if you are prompted to install an update, do so for the currently logged in user. If you are not prompted automatically, use the **Check for update** option on the **Help** menu to check for updates.
+1. Click on **Finish** to start the **Bot Framework Emulator**, and if you are prompted to install an update, do so for the currently logged-in user. If you are not prompted automatically, use the **Check for update** option on the **Help** menu to check for updates.
 
     ![](./images/botframe1(3).png)
 
@@ -58,7 +58,7 @@ You're going to use the Bot Framework SDK to create your bot, and the Bot Framew
 
 In this task, you will learn how to open the cloned repository for this course.
 
-1. In the Lab-VM desktop, double click on the **Visual Studio Code**.
+1. In the Lab-VM desktop, double-click on the **Visual Studio Code**.
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
@@ -70,7 +70,7 @@ In this task, you will learn how to open the cloned repository for this course.
 
 1. Wait while additional files are installed to support the C# code projects in the repo.
 
-    > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
+    > **Note:** If you are prompted to add required assets to build and debug, select **Not Now**.
 
 ## Task 3: Create a bot
 
@@ -122,9 +122,9 @@ You've created a bot based on the *EchoBot* template. Now you can run it locally
 
     ![](./images/botframe1(10).png)
 
-    >**Note:** When the bot starts, note the endpoint at which it is running is shown. This should be similar to  **http://localhost:3978**.
+    >**Note:** When the bot starts, note that the endpoint at which it is running is shown. This should be similar to  **http://localhost:3978**.
 
-2. Start the **Bot Framework Emulator** by double clicking on the icon on the desktop.
+2. Start the **Bot Framework Emulator** by double-clicking on the icon on the desktop.
 
 1. Select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
 
@@ -143,11 +143,11 @@ You've created a bot based on the *EchoBot* template. Now you can run it locally
 
 In this task, you will learn how to modify the bot code.
 
-You've created a bot that echoes the user's input back to them. It's not particularly useful, but serves to illustrate the basic flow of a conversational dialog. A conversation with a bot consists of a sequence of *activities*, in which text, graphics, or user interface *cards* are used to exchange information. The bot begins the conversation with a greeting, which is the result of a *conversation update* activity that is triggered when a user initializes a chat session with the bot. Then the conversation consists of a sequence of further activities in which the user and bot take it in turns to send *messages*.
+You've created a bot that echoes the user's input back to them. It's not particularly useful, but it serves to illustrate the basic flow of a conversational dialog. A conversation with a bot consists of a sequence of *activities*, in which text, graphics, or user interface *cards* are used to exchange information. The bot begins the conversation with a greeting, which is the result of a *conversation update* activity that is triggered when a user initializes a chat session with the bot. Then the conversation consists of a sequence of further activities in which the user and bot take turns to send *messages*.
 
 1. In Visual Studio Code, open the following code file for your bot:
     
-    - **C-Sharp**: `TimeBot/Bots/EchoBot.cs`
+    - **C-Sharp:** `TimeBot/Bots/EchoBot.cs`
 
         >**Note:** The code in this file consists of *activity handler* functions; one for the *Member Added* conversation update activity (when someone joins the chat session) and another for the *Message* activity (when a message is received). The conversation is based on the concept of *turns*, in which each turn represents an interaction in which the bot receives, processes, and responds to an activity. The *turn context* is used to track information about the activity being processed in the current turn.
 
@@ -211,7 +211,7 @@ You've created a bot that echoes the user's input back to them. It's not particu
     dotnet run
     ```
 
-    >**Note:** As before, when the bot starts, note the endpoint at which it is running is shown.
+    >**Note:** As before, when the bot starts, note that the endpoint at which it is running is shown.
 
 6. Start the Bot Framework Emulator, and select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
 
