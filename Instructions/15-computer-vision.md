@@ -30,7 +30,7 @@ In this lab, you will complete the following tasks:
 
 In this task, you will learn how to open the cloned folder in **Visual Studio Code**, allowing you to view and edit the project files within the IDE.
 
-1. In the Lab-VM desktop, double click on the **Visual Studio Code**.
+1. In the Lab-VM desktop, double-click on the **Visual Studio Code**.
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
@@ -70,7 +70,7 @@ If you don't already have one in your subscription, you'll need to provision a *
     
     - **Pricing tier**: Standard S0 **(4)**
     
-    - **By checking this box I acknowledge that I have read and understood all the terms below**: Select the checkbox **(5)**.
+    - **By checking this box, I acknowledge that I have read and understood all the terms below**: Select the checkbox **(5)**.
 
         ![](./images/compvi(1).png)
 
@@ -82,7 +82,7 @@ If you don't already have one in your subscription, you'll need to provision a *
 
    ![](./images/compvi(3).png)
 
-1. From the left navigation menu, select **Resource management (1)** and then click **Keys and Endpoint (2)** under. This page contains the information that you will need to connect to your resource and use it from applications you develop. Specifically:
+1. From the left navigation menu, select **Resource management (1)** and then click **Keys and Endpoint (2)**. This page contains the information that you will need to connect to your resource and use it from applications you develop. Specifically:
     
     - An HTTP **Endpoint** to which client applications can send requests.
     
@@ -150,7 +150,7 @@ In this task, you will learn how to view and analyze multiple images using the *
 
 1. In Visual Studio Code, expand the **image-analysis** folder and the **images** folder it contains.
 
-2. Select each of the image files in turn to view then in Visual Studio Code.
+2. Select each of the image files in turn to view them in Visual Studio Code.
 
     ![](./images/compvi(8).png)
 
@@ -160,7 +160,7 @@ In this task, you will learn how to use the **Azure AI Vision SDK** to analyze a
 
 Now you're ready to use the SDK to call the Vision service and analyze an image.
 
-1. In the code file for your client application (**Program.cs**), in the **Main** function, note that the code to load the configuration settings has been provided. Then find the comment **Authenticate Azure AI Vision client**. Then, under this comment, add the following language-specific code to create and authenticate a Azure AI Vision client object:
+1. In the code file for your client application (**Program.cs**), in the **Main** function, note that the code to load the configuration settings has been provided. Then find the comment **Authenticate Azure AI Vision client**. Then, under this comment, add the following language-specific code to create and authenticate an Azure AI Vision client object:
 
      **C#**
      
@@ -196,11 +196,11 @@ Now you're ready to use the SDK to call the Vision service and analyze an image.
 
      ![](./images/compvi(10).png)
 
-4. In the **AnalyzeImage** function, under the comment **Get image analysis**, add the following code (including the comments indicating where you will add more code later.):
+4. In the **AnalyzeImage** function, under the comment **Get image analysis**, add the following code (including the comments indicating where you will add more code later):
 
     **C#**
 
-    ```C
+    ```C#
     // Get image analysis
     using (var imageData = File.OpenRead(imageFile))
     {    
@@ -279,13 +279,13 @@ It can sometimes be useful to identify relevant *tags* that provide clues about 
 
 In this task, you will learn how to use the **Azure AI Vision SDK** to get image categories.
 
-The Vision service can suggest *categories* for images, and within each category it can identify well-known landmarks.
+The Vision service can suggest *categories* for images, and within each category, it can identify well-known landmarks.
 
 1. In the **AnalyzeImage** function, under the comment **Get image categories**, add the following code:
 
     **C#**
 
-    ```C
+    ```C#
 
     // Get image categories
     List<LandmarksModel> landmarks = new List<LandmarksModel> {};
@@ -328,7 +328,7 @@ The Vision service can suggest *categories* for images, and within each category
 
 In this task, you will learn how to use the **Azure AI Vision SDK** to detect and identify well-known **brands** from images based on their logos.
 
-Some brands are visually recognizable from logo's, even when the name of the brand is not displayed. The Vision service is trained to identify thousands of well-known brands.
+Some brands are visually recognizable from their logos, even when the name of the brand is not displayed. The Vision service is trained to identify thousands of well-known brands.
 
 1. In the **AnalyzeImage** function, under the comment **Get brands in the image**, add the following code:
 
@@ -446,7 +446,7 @@ In some cases, you may need to create a smaller version of an image named a *thu
      }
      ```
     
-2. Save your changes and run the program once for each of the image files in the **images** folder, (**images/building.jpg**, **images/person.jpg**, **images/street.jpg**).
+2. Save your changes and run the program once for each of the image files in the **images** folder (**images/building.jpg**, **images/person.jpg**, **images/street.jpg**).
 
      ```
      dotnet run images/street.jpg
@@ -462,20 +462,20 @@ In some cases, you may need to create a smaller version of an image named a *thu
     
     ![](./images/compvi(20).png)
 
-    > **Note:** If you face any issues after running the command like process cannot access the file because it is being used by another process please ignore and proceed with next lab.
+    > **Note:** If you face any issues after running the command, like the process cannot access the file because it is being used by another process, please ignore and proceed with the next lab.
 
 ## Summary
 In this lab, you have completed:
 
 + Opened the cloned folder in Visual Studio Code
-+ Provisioned a Azure AI services resource
++ Provisioned an Azure AI services resource
 + Prepared to use the Azure AI Vision SDK
 + Viewed the images you will analyze
 + Analyzed an image to suggest a caption
 + Got suggested tags for an image
 + Got image categories
 + Got brands in an image
-+ Detected and locate objects in an image
++ Detect and locate objects in an image
 + Got moderation ratings for an image
 + Generated a thumbnail image
 
