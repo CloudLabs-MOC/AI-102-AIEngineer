@@ -1,6 +1,8 @@
-# Exercise 01: Detect and Analyze Faces
+# Lab 1: Detect and Analyze Faces
 
-## Lab scenario
+## Estimated Duration: 90 Minutes
+
+## Overview
 
 The ability to detect and analyze human faces is a core AI capability. In this exercise, you'll explore two Azure Cognitive Services that you can use to work with faces in images: the **Computer Vision** service, and the **Face** service.
 
@@ -8,15 +10,13 @@ The ability to detect and analyze human faces is a core AI capability. In this e
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Open the cloned folder in Visual Studio Code.
-+ Task 2: Provision a Cognitive Services resource
-+ Task 3: Prepare to use the Azure AI Vision SDK
-+ Task 4: View the image you will analyze
-+ Task 5: Detect faces in an image
-+ Task 6: Prepare to use the Face SDK
-+ Task 7: Detect and analyze faces
-
-## Estimated timing: 90 minutes
++ **Task 1:** Open the cloned folder in Visual Studio Code.
++ **Task 2:** Provision a Cognitive Services resource
++ **Task 3:** Prepare to use the Azure AI Vision SDK
++ **Task 4:** View the image you will analyze
++ **Task 5:** Detect faces in an image
++ **Task 6:** Prepare to use the Face SDK
++ **Task 7:** Detect and analyze faces
 
 ## Architecture diagram
 
@@ -26,17 +26,17 @@ In this lab, you will complete the following tasks:
 
 In this task, you will open the cloned project folder in Visual Studio Code to access and modify the necessary files for the lab. This setup ensures you can edit, run, and test the code efficiently.
 
-1.  Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
+1. In the Lab-VM desktop, double-click on the **Visual Studio Code**.
 
-     ![Visual Studio Code Icon](./images/vscode.png)
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles\AI-102-AIEngineer-stage**.
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and select **Select folder (5)**.
 
-    **Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
+    ![](./images/botframe1(6).png)
 
-3. You will get a pop-up stating **Do you trust the authors of the files in this folder?** Select **Yes, I turst the authors**.
+    >**Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
 
-    ![Visual Studio Code Icon](./images/vscodewarning.png)
+3.  Wait while additional files are installed to support the C# code projects in the repo.
 
 ## Task 2: Provision a Cognitive Services resource
 
@@ -44,31 +44,51 @@ In this task, you will provision an Azure AI Services resource in the Azure port
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account associated with your Azure subscription.
 
-2. Select the **&#65291;Create a resource** button, search for *Azure AI Services*, and create a **Azure AI Services** resource with the following settings:
+2. Select the **&#65291;Create a resource** button.
+
+    ![](./images/detana(1).png)
+
+1. Now Search for **Azure AI Services (1)**, and press Enter. Then click on **Azure AI Services (2)** from the result.
+
+    ![](./images/detana(2).png)
+
+1. Now click on **Create**.
+
+    ![](./images/detana(3).png)
+
+1. Create an AI service with the following settings:
     
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/>**
-    - **Region**: *Choose any available region*
-    - **Name**: **aicognitive<inject key="DeploymentID" enableCopy="false"/>**
-    - **Pricing tier**: Standard S0
+    - **Subscription**: *Your Azure subscription* **(1)**
+    - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Region**: **<inject key="Region" enableCopy="false"/> (3)**
+    - **Name**: **aicognitive<inject key="DeploymentID" enableCopy="false"/>** **(4)**
+    - **Pricing tier**: Standard S0 **(5)**
+    - Select the required checkbox **(6)**
+    - Click on **Review + create (7)**
 
-      ![](images/b-10.png)
-      ![](images/b-12.png)
-3. Select the required checkboxes and create the resource.
+        ![](./images/detana(4).png)
 
-4. Select **Review + create** to navigate to the **Review + create** tab, and then select **Create**.
+4. Navigate to the **Review + create** tab, and click **Create**.
+
+    ![](./images/detana(5).png)
 
 5. Wait for deployment to complete, and and then click **Go to resource**.
 
-6. On **Azure AI Services** blade, click on **Keys and Endpoint** under Resource Management. You will need the **endpoint** and one of the **keys** from this page in the next procedure.
+    ![](./images/detana(6).png)
+
+6. In the **Azure AI Services** blade, under **Resource Management (1)**, click **Keys and Endpoint (2)**. From this page, you’ll need the **Endpoint (3)** and one of the keys (**KEY 1 (4)**) for the next step.
+
+    ![](./images/detana(7).png)
 
 ## Task 3: Prepare to use the Azure AI Vision SDK
 
 In this task, you'll complete a partially implemented client application that uses the Azure AI Vision SDK to analyze faces in an image.
 
-1. In Visual Studio Code, in the **Explorer** pane, browse to the **19-face** folder and expand the **C-Sharp** folder depending on your language preference.
+1. In Visual Studio Code, in the **Explorer** pane, browse to the **19-face (1)** folder and expand the **C-Sharp (2)** folder depending on your language preference. Right-click the **computer-vision (3)** folder and select **Open in Integrated Terminal (4)**. 
 
-2. Right-click the **computer-vision** folder and open an integrated terminal. Then install the Computer Vision SDK package by running the below mentioned command:
+    ![](./images/detana(8).png)
+
+1. Then install the Computer Vision SDK package by running the below mentioned command:
 
     **C#**
 
@@ -81,6 +101,8 @@ In this task, you'll complete a partially implemented client application that us
     - **C#**: appsettings.json
 
 4. Open the configuration file and update the configuration values it contains to reflect the **endpoint** and an authentication **key** for your cognitive services resource. Save your changes.
+
+    ![](./images/detana(9).png)
 
 5. Note that the **computer-vision** folder contains a code file for the client application:
 
@@ -96,6 +118,8 @@ In this task, you'll complete a partially implemented client application that us
     using Microsoft.Azure.CognitiveServices.Vision.ComputerVision.Models;
     ```
 
+    ![](./images/detana(10).png)
+
 ## Task 4: View the image you will analyze
 
 In this exercise, you will use the Computer Vision service to analyze an image of people.
@@ -103,6 +127,8 @@ In this exercise, you will use the Computer Vision service to analyze an image o
 1. In Visual Studio Code, expand the **computer-vision** folder and the **images** folder it contains.
 
 2. Select the **people.jpg** image to view it.
+
+    ![](./images/detana(11).png)
 
 ## Task 5: Detect faces in an image
 
@@ -121,6 +147,8 @@ In this task ,you will use the SDK to call the Computer Vision service and detec
     };
     ```
 
+    ![](./images/detana(12).png)
+
 2. In the **Main** function, under the code you just added, note that the code specifies the path to an image file and then passes the image path to a function named **AnalyzeFaces**. This function is not yet fully implemented.
 
 3. In the **AnalyzeFaces** function, under the comment **Specify features to be retrieved (faces)**, add the following code:
@@ -134,6 +162,8 @@ In this task ,you will use the SDK to call the Computer Vision service and detec
         VisualFeatureTypes.Faces
     };
     ```
+
+    ![](./images/detana(13).png)
 
 4. In the **AnalyzeFaces** function, under the comment **Get image analysis**, add the following code:
 
@@ -185,15 +215,21 @@ In this task ,you will use the SDK to call the Computer Vision service and detec
 
 7. Observe the output, which should indicate the number of faces detected.
 
+    ![](./images/detana(14).png)
+
 8. View the **detected_faces.jpg** file that is generated in the same folder as your code file to see the annotated faces. In this case, your code has used the attributes of the face to label the location of the top left of the box, and the bounding box coordinates to draw a rectangle around each face.
+
+    ![](./images/detana(15).png)
 
 ## Task 6: Prepare to use the Face SDK
 
 In this task, you will prepare to use the Face SDK in your Visual Studio Code project. You will install the required package, update the configuration settings, and authenticate the Face client. Additionally, you will import the necessary namespaces and ensure that your application is ready to interact with the Azure Face service for facial recognition and analysis.
 
-1. In Visual Studio Code, in the **Explorer** pane, browse to the **19-face** folder and expand the **C-Sharp** folder.
+1. In Visual Studio Code, in the **Explorer** pane, browse to the **19-face** folder and expand the **C-Sharp** folder.Right-click the **face-api (1)** folder and select **Open in Integrated Terminal (2)**. 
 
-2. Right-click the **face-api** folder and open an integrated terminal. Then install the Face SDK package by running the below mentioned command:
+    ![](./images/detana(16).png)
+
+1. Then install the Face SDK package by running the below mentioned command:
 
     **C#**
 
@@ -206,6 +242,8 @@ In this task, you will prepare to use the Face SDK in your Visual Studio Code pr
     - **C#**: appsettings.json
 
 4. Open the configuration file and update the configuration values it contains to reflect the **endpoint** and an authentication **key** for your cognitive services resource. Save your changes.
+
+    ![](./images/detana(17).png)
 
 5. Note that the **face-api** folder contains a code file for the client application:
 
@@ -221,6 +259,8 @@ In this task, you will prepare to use the Face SDK in your Visual Studio Code pr
     using Microsoft.Azure.CognitiveServices.Vision.Face.Models;
     ```
 
+    ![](./images/detana(18).png)
+
 8. In the **Main** function, note that the code to load the configuration settings has been provided. Then find the comment **Authenticate Face client**. Then, under this comment, add the following code to create and authenticate a **FaceClient** object:
 
     **C#**
@@ -233,6 +273,8 @@ In this task, you will prepare to use the Face SDK in your Visual Studio Code pr
         Endpoint = cogSvcEndpoint
     };
     ```
+
+    ![](./images/detana(19).png)
 
 9. In the **Main** function, under the code you just added, note that the code displays a menu that enables you to call functions in your code to explore the capabilities of the Face service. You will implement these functions in the remainder of this exercise.
 
@@ -255,6 +297,8 @@ In this task, you'll update the **DetectFaces** function to analyze images using
         FaceAttributeType.Glasses
     };
     ```
+
+    ![](./images/detana(20).png)
 
 4. In the **DetectFaces** function, under the code you just added, find the comment **Get faces** and add the following code:
 
@@ -316,20 +360,25 @@ In this task, you'll update the **DetectFaces** function to analyze images using
     dotnet run
     ```
 
-    *The C# output may display warnings about asynchronous functions now using the **await** operator. You can ignore these.*
+    >**Note:** The C# output may display warnings about asynchronous functions now using the **await** operator. You can ignore these.
 
 6. When prompted, enter **1** and observe the output, which should include the ID and attributes of each face detected.
 
+    ![](./images/detana(21).png)
+
 7. View the **detected_faces.jpg** file that is generated in the same folder as your code file to see the annotated faces.
 
+    ![](./images/detana(22).png)
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="8b14af8e-6a29-4e7e-a695-8261457d1a46" />
 
-### Review
+## Summary
 In this lab, you have completed:
 
 + Opened the cloned folder in Visual Studio Code.
@@ -340,4 +389,4 @@ In this lab, you have completed:
 + Prepared to use the Face SDK
 + Detected and analyze faces
    
-## You have successfully completed the lab.
+### You have successfully completed the Hands-on lab!
