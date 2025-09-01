@@ -6,7 +6,7 @@
 
 A large proportion of the data created and consumed today is in the format of video. **Azure AI Video Indexer** is an AI-powered service that you can use to index videos and extract insights from them.
 
-> **Note:** From June 21st 2022, capabilities of Azure AI services that return personally identifiable information are restricted to customers who have been granted [limited access](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access). Without getting limited access approval, recognizing people and celebrities with Video Analyzer for this lab is not available. For more details about the changes Microsoft has made, and why - see [Responsible AI investments and safeguards for facial recognition](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/).
+> **Note:** From June 21st, 2022, capabilities of Azure AI services that return personally identifiable information are restricted to customers who have been granted [limited access](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access). Without getting limited access approval, recognizing people and celebrities with the Video Analyzer for this lab is not available. For more details about the changes Microsoft has made, and why - see [Responsible AI investments and safeguards for facial recognition](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/).
 
 ## Objectives
 
@@ -28,7 +28,7 @@ In this lab, you will complete the following tasks:
 
 In this task, you will learn how to open the cloned folder in **Visual Studio Code**, allowing you to view and edit the project files within the IDE.
 
-1. In the Lab-VM desktop, double click on the **Visual Studio Code**.
+1. In the Lab-VM desktop, double-click on the **Visual Studio Code**.
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
@@ -44,17 +44,17 @@ In this task, you will learn how to **upload a video** to **Azure Video Analyzer
 
 First, you'll need to sign into the Video Analyzer portal and upload a video.
 
-> **Tip:** If the Video Analyzer page is slow to load in the hosted lab environment, use your locally installed browser. You can switch back to the hosted VM for the later tasks.
+>**Tip:** If the Video Analyzer page is slow to load in the hosted lab environment, use your locally installed browser. strictly go ahead and do for customers who have been granted [limited access
 
 1. In your browser, open the Video Analyzer portal at `https://www.videoindexer.ai`.
 
-2. When Choose an account to continue: prompted select **Microsoft Entra ID (formerly Azure AD)** and sign-in with following credentials.
+2. When Choose an account to continue prompted, select **Microsoft Entra ID (formerly Azure AD)** and sign in with the following credentials.
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-4. Download the video by browsing the url in new tab **https://aka.ms/responsible-ai-video**.
+4. Download the video by browsing the URL in a new tab **https://aka.ms/responsible-ai-video**.
 
     ![](./images/vidana(1).png)
    
@@ -70,13 +70,13 @@ First, you'll need to sign into the Video Analyzer portal and upload a video.
        
     ![](./images/vidana(4).png)
 
-    >**Note:** Do not close the upload and index page unless it shows 100% completed, it will cause interruption in the index of video.
+    >**Note:** Do not close the upload and index page unless it shows 100% completed, as it will cause interruption in the index of the video.
 
-6. After the file has uploaded, wait a few minutes while Video Analyzer automatically indexes it. Duplicate the tab and view the Index Status
+6. After the file has been uploaded, wait a few minutes while Video Analyzer automatically indexes it. Duplicate the tab and view the Index Status
 
     ![](./images/vidana(5).png)
 
-    > **Note:** In this exercise, we're using this video to explore Video Analyzer functionality; but you should take the time to watch it in full when you've finished the exercise as it contains useful information and guidance for developing AI-enabled applications responsibly! 
+    > **Note:** In this exercise, we're using this video to explore Video Analyzer functionality, but you should take the time to watch it in full when you've finished the exercise, as it contains useful information and guidance for developing AI-enabled applications responsibly! 
 
 ## Task 3: Review video insights
 
@@ -84,7 +84,7 @@ In this task, you will learn how to **review video insights** provided by **Azur
 
 The indexing process extracts insights from the video, which you can view in the portal.
 
-1. In the Video Analyzer portal, when the video is indexed, click on middle of the video to play it. You'll see the video player alongside a pane that shows insights extracted from the video.
+1. In the Video Analyzer portal, when the video is indexed, click on the middle of the video to play it. You'll see the video player alongside a pane that shows insights extracted from the video.
 
     ![](./images/vidana(6).png)
 
@@ -99,11 +99,11 @@ The indexing process extracts insights from the video, which you can view in the
 4. Observe that the **Timeline** pane now includes:
     - Transcript of audio narration.
     - Text visible in the video.
-    - Indications of speakers who appear in the video. Some well-known people are  automatically recognized by name, others are indicated by number (for example *Speaker #1*).
+    - Indications of speakers who appear in the video. Some well-known people are  automatically recognized by name, others are indicated by number (for example, *Speaker #1*).
 
         ![](./images/vidana(9).png)
 
-5. Switch back to the **Insights** pane and view the insights show there. They include:
+5. Switch back to the **Insights** pane and view the insights shown there. They include:
     - Individual people who appear in the video.
     - Topics discussed in the video.
     - Labels for objects that appear in the video.
@@ -176,7 +176,7 @@ In this task, you will learn how to **use the Video Analyzer REST API** to inter
 
 Video Analyzer provides a REST API that you can use to upload and manage videos in your account.
 
-## Task 6.1 : Get your API details
+### Task 6.1: Get your API details
 
 In this task, you will learn how to **get your API details** for the Video Analyzer service, including the endpoint and authentication key needed for API calls.
 
@@ -208,7 +208,7 @@ To use the Video Analyzer API, you need some information to authenticate request
 
 In this task, you will learn how to **use the REST API** to interact with the Video Analyzer service by sending requests to analyze videos and retrieve insights.
 
-Now that you have the account ID and an API key, you can use the REST API to work with videos in your account. In this procedure, you'll use a PowerShell script to make REST calls; but the same principles apply with HTTP utilities such as cURL or Postman, or any programming language capable of sending and receiving JSON over HTTP.
+Now that you have the account ID and an API key, you can use the REST API to work with videos in your account. In this procedure, you'll use a PowerShell script to make REST calls, but the same principles apply with HTTP utilities such as cURL or Postman, or any programming language capable of sending and receiving JSON over HTTP.
 
 All interactions with the Video Analyzer REST API follow the same pattern:
 
@@ -225,9 +225,9 @@ All interactions with the Video Analyzer REST API follow the same pattern:
 
 3. Observe that the *location* for a free account is "trial". If you have created an unrestricted Video Analyzer account (with an associated Azure resource), you can change this to the location where your Azure resource is provisioned **<inject key="Region" enableCopy="false"/>**.
 
-4. Review the code in the script, noting that invokes two REST methods: one to get an access token, and another to list the videos in your account.
+4. Review the code in the script, noting that it invokes two REST methods: one to get an access token, and another to list the videos in your account.
 
-5. Save your changes, and then right click on **16-video-indexer**, click on **open in integrated terminal** and run the script using **.\get-videos.ps1**.
+5. Save your changes, and then right-click on **16-video-indexer**, click on **open in integrated terminal**, and run the script using **.\get-videos.ps1**.
 
     ![](./images/vidana(27).png)
 
