@@ -1,6 +1,6 @@
 # Lab 2: Detect Objects in Images with Custom Vision
 
-### Estimated Duration : 60 Minutes
+### Estimated Duration: 60 Minutes
 
 ## Overview
 
@@ -212,7 +212,7 @@ In this task, you will learn how to use the published object detection model fro
 
 Now that you've published the image classification model, you can use it from a client application. Once again, you can choose to use **C#**.
 
-1. In Visual Studio Code, browse to the **18-object-detection (1)** folder and in the folder for your preferred language (**C-Sharp (2)**), expand the **test-detector** folder. Right-click the **test-detector (3)** folder and select **Open in Integrated Terminal (4)**.
+1. In Visual Studio Code, browse to the **18-object-detection (1)** folder and in the folder, select **C-Sharp (2)**. Right-click the **test-detector (3)** folder and select **Open in Integrated Terminal (4)**.
 
     ![](./images/objdet(22).png)
 
