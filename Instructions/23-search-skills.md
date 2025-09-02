@@ -1,6 +1,9 @@
-# Exercise 02: Create a Custom Skill for Azure AI Search
+# Lab 02: Create a Custom Skill for Azure AI Search
 
-## Lab scenario
+### Estimated Duration: 60 Minutes
+
+## Overview
+
 Azure AI Search uses an enrichment pipeline of AI skills to extract AI-generated fields from documents and include them in a search index. There's a comprehensive set of built-in skills that you can use, but if you have a specific requirement that isn't met by these skills, you can create a custom skill.
 
 In this exercise, you'll create a custom skill that tabulates the frequency of individual words in a document to generate a list of the top five most used words, and add it to a search solution for Margie's Travel - a fictitious travel agency.
@@ -9,15 +12,13 @@ In this exercise, you'll create a custom skill that tabulates the frequency of i
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Clone the repository for this course
-+ Task 2: Create Azure resources
-+ Task 3: Create a search solution
-+ Task 4: Search the index
-+ Task 5: Create an Azure Function for a custom skill
-+ Task 6: Add the custom skill to the search solution
-+ Task 7: Search the index
-
-## Estimated timing: 60 minutes
++ **Task 1:** Clone the repository for this course
++ **Task 2:** Create Azure resources
++ **Task 3:** Create a search solution
++ **Task 4:** Search the index
++ **Task 5:** Create an Azure Function for a custom skill
++ **Task 6:** Add the custom skill to the search solution
++ **Task 7:** Search the index
 
 ## Architecture diagram
 
@@ -49,7 +50,7 @@ If you have already cloned **AI-102-AIEngineer** code repository to the environm
 
 In this task, you will learn how to create the necessary Azure resources.
 
-> **Note**: If you have previously completed the **[Create an Azure AI Search solution](22-azure-search.md)** exercise, and still have these Azure resources in your subscription, you can skip this section and start at the **Create a search solution** section. Otherwise, follow the steps below to provision the required Azure resources.
+> **Note:** If you have previously completed the **[Create an Azure AI Search solution](22-azure-search.md)** exercise, and still have these Azure resources in your subscription, you can skip this section and start at the **Create a search solution** section. Otherwise, follow the steps below to provision the required Azure resources.
 
 1. In a web browser, open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account associated with your Azure subscription.
 
@@ -64,22 +65,24 @@ In this task, you will learn how to create the necessary Azure resources.
 1. In Visual Studio Code, expand the **23-custom-search-skill** folder and then select **setup.cmd**. You will use this batch script to run the Azure command line interface (CLI) commands required to create the Azure resources you need.
 
 1. Right click on the **23-custom-search-skill** folder and select **Open in Integrated Terminal**.
+
 1. In the terminal pane, enter the following command to establish an authenticated connection to your Azure subscription.
 
     ```
     az login --output none
     ```
 
-    If the **sign-in pop-up** doesn’t appear immediately, wait for **1-2 minutes**. Then, **minimize all tabs**, and you should find the pop-up on the desktop for signing in.
-    A web browser tab will open and prompt you to sign into Azure. Do so, and then close the browser tab and return to Visual Studio Code.
+    >**Note:** If the **sign-in pop-up** doesn’t appear immediately, wait for **1-2 minutes**. Then, **minimize all tabs**, and you should find the pop-up on the desktop for signing in.
 
-    - If prompted select **Work or school account** then click on **Continue**.
+    - If prompted, select **Work or school account (1)** then click on **Continue (2)**.
 
-      ![Visual Studio Code Icon](./images/a-21.png)  
+      ![](./images/formrecog(10).png)  
 
     - Enter the Email address and Password provided in the **Environment** tab.
 
-    - Click on **No, sign in to this app only** to **Stay signed in ti all your apps**.
+    - In the **Automatically sign in to all desktop apps and websites on this device?** prompt, select **No, this app only**. 
+
+        ![](./images/formrecog(11).png)
 
 1. Navigate back to the VS code, If prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.     
 
@@ -105,7 +108,7 @@ In this task, you will learn how to create the necessary Azure resources.
 
     ![Visual Studio Code Icon](./images/d-46.png)     
 
-    > **Note**: The Search CLI module is in preview, and may get stuck in the *- Running ..* process. If this happens for over 2 minutes, press CTRL+C to cancel the long-running operation, and then select **N** when asked if you want to terminate the script. It should then complete successfully.
+    > **Note:** The Search CLI module is in preview, and may get stuck in the *- Running ..* process. If this happens for over 2 minutes, press CTRL+C to cancel the long-running operation, and then select **N** when asked if you want to terminate the script. It should then complete successfully.
     >
     > If the script fails, ensure you saved it with the correct variable names and try again.
 
@@ -143,9 +146,11 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
     DefaultEndpointsProtocol=https;AccountName=ai102str123;AccountKey=12345abcdefg...==;EndpointSuffix=core.windows.net
     ```
 
+    ![](./images/searchskill(2).png)
+
     *You can find the connection string on the **Access keys** page for your storage account in the Azure portal.*
 
-    ![Visual Studio Code Icon](./images/d-48.png)     
+    ![](./images/searchskill(3).png)     
 
 1. Save and close the updated JSON file.
 
@@ -153,11 +158,11 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
 
 1. At the top of the skillset definition, in the **cognitiveServices** element, replace the **YOUR_AI_SERVICES_KEY** placeholder with either of the keys for your Azure AI Services resources.
 
-    ![Visual Studio Code Icon](./images/d-50.png) 
+    ![](./images/searchskill(4).png) 
 
     *You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.*
 
-    ![Visual Studio Code Icon](./images/d-49.png)     
+    ![](./images/searchskill(5).png)    
 
 1. Save and close the updated JSON file.
 
@@ -169,7 +174,7 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
 
 1. Review the JSON for the indexer, then close the file without making any changes.
 
-1. In the **create-search** folder, open **create-search.cmd**. This batch script uses the cURL utility to submit the JSON definitions to the REST interface for your Azure AI Search resource.
+1. In the **create-search** folder, open **create-search.cmd**. This batch script uses the CURL utility to submit the JSON definitions to the REST interface for your Azure AI Search resource.
 
 1. Replace the **YOUR_SEARCH_URL** and **YOUR_ADMIN_KEY** variable placeholders with the **Url** and one of the **admin keys** for your Azure AI Search resource.
 
@@ -187,9 +192,9 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
     .\create-search.cmd
     ```
 
-1. When the script completes, in the Azure portal, on the page for your Azure AI Search resource, select the **Indexers** page and wait for the indexing process to complete.
+1. After the script finishes, open the Azure portal, go to your Azure AI Search resource, and from the left pane select **Search management > Indexers**, then wait for the indexing process to complete.
 
-    ![Visual Studio Code Icon](./images/d-63.png) 
+    ![](./images/searchskill(6).png) 
 
     *You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.*
 
@@ -199,7 +204,9 @@ In this task, you will learn how to search the index in your Azure AI Search sol
 
 Now that you have an index, you can search it.
 
-1. At the top of the blade for your Azure AI Search resource, select **Search explorer**.
+1. At the top of the Overview section for your Azure AI Search resource, click **Search explorer**.
+
+    ![](./images/searchskill(7).png)
 
 1. In Search explorer, in the **Query string** box, enter the following query string, and then select **Search**.
 
@@ -207,7 +214,7 @@ Now that you have an index, you can search it.
     search=London&$select=url,sentiment,keyphrases&$filter=metadata_author eq 'Reviewer' and sentiment eq 'positive'
     ```
 
-    ![Visual Studio Code Icon](./images/d-64.png)     
+    ![](./images/searchskill(8).png)     
 
     This query retrieves the **url**, **sentiment**, and **keyphrases** for all documents that mention *London* authored by *Reviewer* that have a positive **sentiment** label (in other words, positive reviews that mention London)
 
@@ -221,23 +228,23 @@ You can enhance the index further by creating custom skills. For example, it mig
 
 To implement the word count functionality as a custom skill, you'll create an Azure Function in your preferred language.
 
-> **Note**: In this exercise, you'll create a simple Node.JS function using the code editing capabilities in the Azure portal. In a production solution, you would typically use a development environment such as Visual Studio Code to create a function app in your preferred language (for example C#, Python, Node.JS, or Java) and publish it to Azure as part of a DevOps process.
+> **Note:** In this exercise, you'll create a simple Node.JS function using the code editing capabilities in the Azure portal. In a production solution, you would typically use a development environment such as Visual Studio Code to create a function app in your preferred language (for example C#, Python, Node.JS, or Java) and publish it to Azure as part of a DevOps process.
 
-1. In the Azure Portal, on the **Home** page, search for **Function App** and select **Function App** from the services.
+1. In the Azure Portal, on the home page, search for **Function App (1)** and select **Function App (2)** from the services.
 
-    ![Visual Studio Code Icon](./images/d-52.png) 
+    ![](./images/searchskill(9).png)
 
-1. Click on **+Create**.
+1. On the Function App blade, click on **+ Create**.
 
-    ![Visual Studio Code Icon](./images/d-53.png) 
+    ![](./images/searchskill(10).png) 
 
-1. Select **Cunsumption (1)** and then click on **Select (2)**.
+1. Select **Consumption (1)** and then click on **Select (2)**.
 
-    ![Visual Studio Code Icon](./images/d-54.png) 
+    ![](./images/searchskill(11).png) 
 
 1. Create a new **Function App** resource with the following settings:
 
-    - **Subscription**: **Leave your default subscription (1)**
+    - **Subscription**: Leave your default subscription **(1)**
 
     - **Resource Group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
 
@@ -245,15 +252,21 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     - **Runtime stack**: **Node.js (4)**
 
-    - **Version**: **18 LTS (5)**
+    - **Version**: **20 LTS (5)**
 
     - **Region**: **<inject key="Region" enableCopy="false" /></inject> (6)** -*The same region as your Azure AI Search resource*
 
-    - Click on **Review_Create (7)**
+    - Click on **Review + Create (7)**
 
-      ![Visual Studio Code Icon](./images/d-55.png)     
+        ![](./images/searchskill(12).png)     
+
+1. In the **Review + Create** tab, click **Create**.
+
+    ![](./images/searchskill(13).png)
 
 1. Wait for deployment to complete, click on **Go to resources** and then go to the deployed Function App resource.
+
+    ![](./images/searchskill(14).png)
 
 1. In the blade for your Function App, in the pane on the overview, select the **Functions** tab in the middle of the page. 
 
@@ -262,16 +275,16 @@ To implement the word count functionality as a custom skill, you'll create an Az
 1. Then create a new function with the following settings:
 
     - On **Select a template** page,
-        - **Template**: **HTTP Trigger**, then click on **Next**.
+        - **Template**: Select **HTTP trigger (1)**, then click on **Next (2)**.
 
-          ![Visual Studio Code Icon](./images/d-57.png)         
+            ![](./images/searchskill(15).png)         
 
     - On **Template details** page,    
         - **Function Name**: **wordcount (1)**
         - **Authorization level**: **Function (2)**
         - Click on **Create (3)**
 
-          ![Visual Studio Code Icon](./images/d-58.png) 
+            ![](./images/searchskill(16).png) 
 
 1. Wait for the *wordcount* function to be created. Then in the **Function** tab, select the **wordcount** function.Then in its page, select the **Code + Test** tab.
 
@@ -375,9 +388,9 @@ To implement the word count functionality as a custom skill, you'll create an Az
     };
     ```
 
-1. Save the function.
+1. Click on **Save** to save the function.
 
-    ![Visual Studio Code Icon](./images/d-59.png) 
+    ![](./images/searchskill(17).png)
 
 1. Open the **Test/Run** pane.
 
@@ -406,7 +419,7 @@ To implement the word count functionality as a custom skill, you'll create an Az
     }
     ```
 
-    ![Visual Studio Code Icon](./images/d-60.png)     
+    ![](./images/searchskill(18).png)    
     
 1. View the HTTP response content that is returned by your function. This reflects the schema expected by Azure AI Search when consuming a skill, in which a response for each document is returned. In this case, the response consists of up to 10 terms in each document in descending order of how frequently they appear:
 
@@ -446,13 +459,13 @@ To implement the word count functionality as a custom skill, you'll create an Az
     }
     ```
 
-    ![Visual Studio Code Icon](./images/d-61.png)     
+    ![](./images/searchskill(19).png)    
 
 1. Close the **Test/Run** pane and in the **wordcount** function blade, click **Get function URL (1)**. Then copy the URL for the default key to the clipboard. You'll need this in the next procedure.
 
    >**Note:** Please use the Detault **Function Key (2)** option.
-
-    ![Visual Studio Code Icon](./images/d-62.png)    
+  
+    ![](./images/searchskill(20).png)
 
 ## Task 6: Add the custom skill to the search solution
 
@@ -468,7 +481,7 @@ Now you need to include your function as a custom skill in the search solution s
 
 1. At the top of the skillset definition, in the **cognitiveServices** element, replace the **YOUR_AI_SERVICES_KEY (2)** placeholder with either of the keys for your Azure AI Services resources.
 
-    ![Visual Studio Code Icon](./images/d-65.png) 
+    ![](./images/searchskill(21).png)
 
     *You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.*
 
@@ -481,6 +494,7 @@ Now you need to include your function as a custom skill in the search solution s
 1. In the **update-search** folder, open **update-indexer.json**. This file contains a JSON definition for the **margies-custom-indexer**, with an additional mapping for the **top_words** field.
 
 1. Review the JSON for the indexer, then close the file without making any changes.
+
 10. In the **update-search** folder, open **update-search.cmd**. This batch script uses the cURL utility to submit the updated JSON definitions to the REST interface for your Azure AI Search resource.
 
 1. Replace the **YOUR_SEARCH_URL** and **YOUR_ADMIN_KEY** variable placeholders with the **Url** and one of the **admin keys** for your Azure AI Search resource.
@@ -501,7 +515,9 @@ Now you need to include your function as a custom skill in the search solution s
 
 1. When the script completes, in the Azure portal, on the page for your Azure AI Search resource, select the **Indexers** page and wait for the indexing process to complete.
 
-    *You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.*
+    ![](./images/searchskill(22).png)
+
+    >**Note:** You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.*
 
 ## Task 7: Search the index
 
@@ -525,13 +541,14 @@ Now that you have an index, you can search it.
     This query retrieves the **url** and **top_words** fields for all documents that mention *Las Vegas*.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="1fad44f5-db84-484f-b0d9-99d6c54793a6" />
 
-### Review
+## Summary
 In this lab, you have completed:
 
 + Cloned the repository for this course
@@ -542,5 +559,6 @@ In this lab, you have completed:
 + Added the custom skill to the search solution
 + Searched the index
 
-## You have successfully completed the lab >> Click on Next
+### You have successfully completed the lab, click on Next >>.
 
+![](./images/nextpagemod12.png)
