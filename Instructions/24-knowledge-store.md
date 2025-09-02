@@ -67,7 +67,7 @@ In this task, you will learn how to create the necessary Azure resources.
 
     ![](./images/knowstore(2).png)
 
-1. Right-click the the **24-knowledge-store (1)** folder and select **Open in Integrated Terminal (2)**.
+1. Right-click on the **24-knowledge-store (1)** folder and select **Open in Integrated Terminal (2)**.
 
     ![](./images/knowstore(3).png)
 
@@ -79,7 +79,7 @@ In this task, you will learn how to create the necessary Azure resources.
 
     >**Note:** If the **sign-in pop-up** doesn’t appear immediately, wait for **1-2 minutes**. Then, **minimize all tabs**, and you should find the pop-up on the desktop for signing in.
 
-    - If prompted, select **Work or school account (1)** then click on **Continue (2)**.
+    - If prompted, select **Work or school account (1)**, then click on **Continue (2)**.
 
       ![](./images/formrecog(10).png)  
 
@@ -89,7 +89,7 @@ In this task, you will learn how to create the necessary Azure resources.
 
         ![](./images/formrecog(11).png)
 
-1. Navigate back to the VS code, If prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.       
+1. Navigate back to the VS code, if prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.       
 
 1. Run the following command to list Azure locations.
 
@@ -169,7 +169,7 @@ You'll use the REST interface to submit JSON definitions for your Azure AI Searc
 
     ![Visual Studio Code Icon](./images/d-69.png) 
 
-    *You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.*
+    >**Note:** You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.
 
 1. At the end of the collection of skills in your skillset, find the **Microsoft.Skills.Util.ShaperSkill** skill named **define-projection**. This skill defines a JSON structure for the enriched data that will be used for the projections that the pipeline will persist on the knowledge store for each document processed by the indexer.
 
@@ -205,17 +205,17 @@ In this task, you will learn how to submit REST requests to interact with Azure 
 
 Now that you've prepared the JSON objects that define your search solution components, you can submit the JSON documents to the REST interface to create them.
 
-1. In the **create-search** folder, open **create-search.cmd**. This batch script uses the cURL utility to submit the JSON definitions to the REST interface for your Azure AI Search resource.
+1. In the **create-search** folder, open **create-search.cmd**. This batch script uses the CURL utility to submit the JSON definitions to the REST interface for your Azure AI Search resource.
 
 1. Replace the **YOUR_SEARCH_URL** and **YOUR_ADMIN_KEY** variable placeholders with the **Url** and one of the **admin keys** for your Azure AI Search resource.
 
     ![Visual Studio Code Icon](./images/d-70.png) 
 
-    *You can find these values on the **Overview** and **Keys** pages for your Azure AI Search resource in the Azure portal.*
+    >**Note:** You can find these values on the **Overview** and **Keys** pages for your Azure AI Search resource in the Azure portal.
 
 1. Save the updated batch file.
 
-1. Right-click the the **create-search** folder and select **Open in Integrated Terminal**.
+1. Right-click on the **create-search** folder and select **Open in Integrated Terminal**.
 
 1. In the terminal pane for the **create-search** folder, enter the following command run the batch script.
 
@@ -227,9 +227,9 @@ Now that you've prepared the JSON objects that define your search solution compo
 
     ![](./images/knowstore(9).png) 
 
-    *You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.*
+    >**Note:** You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.
 
-    > **Tip:** If the script fails, check the placeholders you added in the **data_source.json** and **skillset.json** files as well as the **create-search.cmd** file. After correcting any mistakes, you may need to use the Azure portal user interface to delete any components that were created in your search resource before re-running the script.
+    > **Note:** If the script fails, check the placeholders you added in the **data_source.json** and **skillset.json** files as well as the **create-search.cmd** file. After correcting any mistakes, you may need to use the Azure portal user interface to delete any components that were created in your search resource before re-running the script.
 
 ## Task 4: View the knowledge store
 
@@ -249,9 +249,9 @@ The *object* projections defined in the Margie's Travel skillset consist of a JS
 
     ![](./images/knowstore(10)(1).png)
 
-1. Select the **margies-knowledge** container. It should contain a folder for each indexed document.Open any of the folders.
+1. Select the **margies-knowledge** container. It should contain a folder for each indexed document. Open any of the folders.
 
-    ![Visual Studio Code Icon](./images/d-74.png) 
+    ![Visual Studio Code Icon](./images/knowstore(11)(1).png) 
 
 1. Then click **Download (1)**, and select **Open file (2)** to view **knowledge-projection.json**.
 

@@ -60,7 +60,7 @@ In this task, you will learn how to create the necessary Azure resources.
 
 1. On the **Overview** page for your resource group, note the **Subscription ID (1)** and **Location (2)**. You will need these values, along with the name of the **Resource group (3)** in subsequent steps.
 
-    ![Visual Studio Code Icon](./images/d-82.png) 
+    ![Visual Studio Code Icon](./images/knowstore(1).png) 
 
 1. In Visual Studio Code, expand the **23-custom-search-skill** folder and then select **setup.cmd**. You will use this batch script to run the Azure command line interface (CLI) commands required to create the Azure resources you need.
 
@@ -84,7 +84,7 @@ In this task, you will learn how to create the necessary Azure resources.
 
         ![](./images/formrecog(11).png)
 
-1. Navigate back to the VS code, If prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.     
+1. Navigate back to the VS code, if prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.     
 
 1. Run the following command to list Azure locations.
 
@@ -148,7 +148,7 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
 
     ![](./images/searchskill(2).png)
 
-    *You can find the connection string on the **Access keys** page for your storage account in the Azure portal.*
+    >**Note:** You can find the connection string on the **Access keys** page for your storage account in the Azure portal.
 
     ![](./images/searchskill(3).png)     
 
@@ -160,7 +160,7 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
 
     ![](./images/searchskill(4).png) 
 
-    *You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.*
+    >**Note:** You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.
 
     ![](./images/searchskill(5).png)    
 
@@ -180,7 +180,7 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
 
     ![Visual Studio Code Icon](./images/d-51.png) 
 
-    *You can find these values on the **Overview** and **Keys** pages for your Azure AI Search resource in the Azure portal.*
+    >**Note:** You can find these values on the **Overview** and **Keys** pages for your Azure AI Search resource in the Azure portal.
 
 1. Save the updated batch file.
 
@@ -196,7 +196,7 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
 
     ![](./images/searchskill(6).png) 
 
-    *You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.*
+    >**Note:** You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.
 
 ## Task 4: Search the index
 
@@ -234,11 +234,11 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     ![](./images/searchskill(9).png)
 
-1. On the Function App blade, click on **+ Create**.
+1. On the **Function App** blade, click on **+ Create**.
 
     ![](./images/searchskill(10).png) 
 
-1. Select **Consumption (1)** and then click on **Select (2)**.
+1. From the Hosting plans, select **Consumption (1)** and then click on **Select (2)**.
 
     ![](./images/searchskill(11).png) 
 
@@ -268,7 +268,7 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     ![](./images/searchskill(14).png)
 
-1. In the blade for your Function App, in the pane on the overview, select the **Functions** tab in the middle of the page. 
+1. In the blade for your Function App, in the pane on the overview, select the **Functions** tab in the middle of the page and then click **Create function**.
 
     ![Visual Studio Code Icon](./images/d-56.png) 
 
@@ -286,7 +286,7 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
             ![](./images/searchskill(16).png) 
 
-1. Wait for the *wordcount* function to be created. Then in the **Function** tab, select the **wordcount** function.Then in its page, select the **Code + Test** tab.
+1. Wait for the *wordcount* function to be created. Then in the **Function** tab, select the **wordcount** function. Then in its page, select the **Code + Test** tab.
 
 1. Replace the default function code with the following code:
 
@@ -392,9 +392,9 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     ![](./images/searchskill(17).png)
 
-1. Open the **Test/Run** pane.
+1. Open the **Test/Run (1)** pane.
 
-1. In the **Test/Run (1)** pane, replace the existing **Body** with the following JSON **(2)**, which reflects the schema expected by an Azure AI Search skill in which records containing data for one or more documents are submitted for processing and then click on **Run (3)**.
+1. In the **Test/Run** pane, replace the existing **Body** with the following JSON **(2)**, which reflects the schema expected by an Azure AI Search skill in which records containing data for one or more documents are submitted for processing and then click on **Run (3)**.
 
     ```
     {
@@ -463,7 +463,7 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
 1. Close the **Test/Run** pane and in the **wordcount** function blade, click **Get function URL (1)**. Then copy the URL for the default key to the clipboard. You'll need this in the next procedure.
 
-   >**Note:** Please use the Detault **Function Key (2)** option.
+   >**Note:** Please use the **Default (Function key) (2)** option.
   
     ![](./images/searchskill(20).png)
 
@@ -501,7 +501,7 @@ Now you need to include your function as a custom skill in the search solution s
 
     ![Visual Studio Code Icon](./images/d-66.png) 
 
-    *You can find these values on the **Overview** and **Keys** pages for your Azure AI Search resource in the Azure portal.*
+    >**Note:** You can find these values on the **Overview** and **Keys** pages for your Azure AI Search resource in the Azure portal.
 
 1. Save the updated batch file.
 

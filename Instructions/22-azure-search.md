@@ -51,7 +51,7 @@ If you have not already cloned **AI-102-AIEngineer** code repository to the envi
 
     > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
 
-1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **`C:\Users\azureuser\AI-102-AIEngineer` (3)**, and click **Select folder (4)**.
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **`C:\Users\azureuser\AI-102-AIEngineer` (3)**, and click **Select Folder (4)**.
 
     ![](./images/azsearch(2).png)
 
@@ -123,7 +123,7 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     ![](./images/azsearch(8)(1).png)
 
-1. On the **Create a resource** page, search for **Azure AI services (1)** and press **Enter**. From the results, select **Azure AI services**, click the **Create (2)** dropdown, and then choose **Azure AI services (3)**.
+1. On the **Create a resource** page, search for **Azure ai services (1)** and press **Enter**. From the results, select **Azure AI services**, click the **Create (2)** dropdown, and then choose **Azure AI services (3)**.
 
     ![](./images/azsearch(8).png)
  
@@ -159,7 +159,7 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 In this task, you will learn how to create a storage account in Azure to store your documents in a blob container.
 
-1. Return to the home page of the Azure portal, and search for **Storage accounts (1)** and then select **Storage accounts (2)** from the services.
+1. Return to the home page of the Azure portal, and search for **Storage account (1)** and then select **Storage accounts (2)** from the services.
 
     ![](./images/azsearch(11)(1).png)
 
@@ -169,7 +169,7 @@ In this task, you will learn how to create a storage account in Azure to store y
  
  1. Create a **Storage account** resource with the following settings and then click on **Advanced** tab from the top.
 
-    - **Subscription**: **Leave default Azure subscription (1)**
+    - **Subscription**: Leave default Azure subscription **(1)**
 
     - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
 
@@ -183,7 +183,7 @@ In this task, you will learn how to create a storage account in Azure to store y
 
       ![Visual Studio Code Icon](./images/d-12.png) 
      
-    - On the **Advanced** tab, check the box next to **Allow enabling anonymous access on individual containers** then select **Review+create (2)**.
+    - On the **Advanced** tab, check the box next to **Allow enabling anonymous access on individual containers (1)** then select **Review+create (2)**.
 
       ![](./images/azsearch(12).png)
      
@@ -191,7 +191,7 @@ In this task, you will learn how to create a storage account in Azure to store y
 
     ![](./images/azsearch(13).png)
 
-1. Wait for deployment to complete, and click on **Go yo resources** then go to the deployed resource.
+1. Wait for deployment to complete, and click on **Go to resource**.
 
     ![](./images/azsearch(14).png)
 
@@ -365,7 +365,7 @@ Now that you have the documents in place, you can create a search solution by in
     - Runs the skillset of cognitive skills to generate additional enriched fields
     - Maps the extracted fields to the index.
 
-1. In the bottom half of the **Overview** page for your Azure AI Search resource, view the **Indexers (1)** tab, which should show the newly created **margies-indexer (2)**. Wait a few minutes, and click **&orarr; Refresh** until the **Status** indicates success.
+1. In the left navigation pane, go to **Search management** and select **Indexers (1)**. The newly created **margies-indexer (2)** will appear in the list. Wait a few minutes, then click **↻ Refresh** until the **Status** changes to *Success*.
 
     ![](./images/azsearch(26).png) 
  
@@ -623,7 +623,7 @@ In this task, you will learn how to use the REST API to update your Azure AI Sea
 
 In this task, you will learn how to query the modified index in Azure AI Search to retrieve updated results based on your changes to the index structure.
 
-1. In the Overview tab of your Azure AI Search resource, click **Search explorer**.
+1. In the **Overview** tab of your Azure AI Search resource, click **Search explorer**.
 
     ![](./images/azsearch(35).png)
 
@@ -661,7 +661,7 @@ In this task, you will learn how to get the endpoint and keys for your Azure AI 
 
     ![](./images/azsearch(38).png) 
  
-    *You will need the **endpoint and query key** for your client application.*
+    >**Note:** You will need the **endpoint and query key** for your client application.*
 
 ### Task 7.2: Prepare to use the Azure AI Search SDK
 
