@@ -1,4 +1,4 @@
-# Getting Started with Your AI-102: AI Engineer
+# Getting Started with Your AI-102: AI Engineer Workshop
  
 Welcome to your AI-102: AI Engineer workshop! We've prepared a seamless environment for you to explore and learn about in Azure AI services and machine learning techniques. Let's begin by making the most of this experience:
  

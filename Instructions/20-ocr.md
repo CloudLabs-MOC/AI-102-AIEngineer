@@ -285,6 +285,4 @@ In this lab, you have completed:
  +  Used the Read API to read text from a document
  +  Readed handwritten text
    
-### You have successfully completed the lab, click on Next >>.
-
-![](./images/nextpage(3pages).png)
+### You have successfully completed the Hands-on lab!
