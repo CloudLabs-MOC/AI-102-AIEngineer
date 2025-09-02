@@ -85,6 +85,10 @@
         "Order": 20
       },
       {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/stage/Instructions/21-form-recognizer.md",
+        "Order": 21
+      },
+      {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/stage/Instructions/22-azure-search.md",
         "Order": 22
       },
