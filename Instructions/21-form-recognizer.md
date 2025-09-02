@@ -46,7 +46,7 @@ To use the Form Recognizer service, you need a Form Recognizer resource in your 
 
 1. Open the Azure portal.
 
-2. Using the searchbar, search for **Document intelligence (1)**, select **Document intelligence (2)** from the result.
+2. In the search bar, type **Document intelligence (1)** and select **Document intelligence (2)** from the results.
 
     ![](./images/formrecog(1).png)
 
@@ -121,11 +121,17 @@ You'll use the sample forms from the **21-custom-form/sample-forms** folder in t
      az login --output none
      ```
 
-7. When prompted, sign into your Azure subscription. Then return to Visual Studio Code and wait for the sign-in process to complete.
+7. When prompted, sign in to your Azure subscription by selecting **Work or School account (1)**, then click **Continue (2)**.
 
     ![](./images/formrecog(10).png)
 
+    > **Note:** If the Sign-in window doesn’t appear, try minimizing VS Code.
+
+1. In the **Automatically sign in to all desktop apps and websites on this device?** prompt, select **No, this app only**. 
+
     ![](./images/formrecog(11).png)
+
+1. Next, go back to Visual Studio Code, press **Enter**, and wait for the sign-in to finish.
 
     ![](./images/formrecog(12).png)
 
@@ -149,7 +155,7 @@ You'll use the sample forms from the **21-custom-form/sample-forms** folder in t
     - Print a Shared Access Signature URI
 
 12. Modify the **subscription_id**, **resource_group**, and **location** variable declarations with the appropriate values for the subscription, resource group, and location name which you noted in step 9. 
-Then press **Ctrl+S** to **Save** your changes.
+Then press **Ctrl+S** to **save** your changes.
 
     ![](./images/formrecog(14).png)
 
