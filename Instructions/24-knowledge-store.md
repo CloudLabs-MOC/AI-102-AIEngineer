@@ -1,6 +1,9 @@
-# Exercise 03: Create a Knowledge Store with Azure AI Search
+# Lab 03: Create a Knowledge Store with Azure AI Search
 
-## Lab scenario
+### Estimated Duration: 60 Minutes
+
+## Overview
+
 Azure AI Search uses an enrichment pipeline of AI skills to extract AI-generated fields from documents and include them in a search index. While the index might be considered the primary output from an indexing process, the enriched data it contains might also be useful in other ways. For example:
 
 - Since the index is essentially a collection of JSON objects, each representing an indexed record, it might be useful to export the objects as JSON files for integration into a data orchestration process using tools such as Azure Data Factory.
@@ -13,12 +16,10 @@ In this exercise, you'll implement a knowledge store for *Margie's Travel*, a fi
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Clone the repository for this course
-+ Task 2: Create Azure resources
-+ Task 3: Create a search solution
-+ Task 4: View the knowledge store
-
-## Estimated timing: 60 minutes
++ **Task 1:** Clone the repository for this course
++ **Task 2:** Create Azure resources
++ **Task 3:** Create a search solution
++ **Task 4:** View the knowledge store
 
 ## Architecture diagram
 
@@ -54,17 +55,21 @@ In this task, you will learn how to create the necessary Azure resources.
 
 1. In a web browser, open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account associated with your Azure subscription.
 
-1. View the **ai-102-<inject key="DeploymentID" enableCopy="false"/>** resource group in your subscription.
+1. View the **Ai-102-<inject key="DeploymentID" enableCopy="false"/>** resource group in your subscription.
 
 1. If you are using a restricted subscription in which a resource group has been provided for you, select the resource group to view its properties. Otherwise, create a new resource group with a name of your choice, and go to it when it has been created.
 
 1.  On the **Overview** page for your resource group, note the **Subscription ID (1)** and **Location (2)**. You will need these values, along with the name of the **Resource group (3)** in subsequent steps.
 
-    ![Visual Studio Code Icon](./images/d-82.png) 
+    ![](./images/knowstore(1).png)
 
 1. In Visual Studio Code, expand the **24-knowledge-store** folder and select **setup.cmd**. You will use this batch script to run the Azure command line interface (CLI) commands required to create the Azure resources you need.
 
-1. Right-click the the **24-knowledge-store** folder and select **Open in Integrated Terminal**.
+    ![](./images/knowstore(2).png)
+
+1. Right-click the the **24-knowledge-store (1)** folder and select **Open in Integrated Terminal (2)**.
+
+    ![](./images/knowstore(3).png)
 
 1. In the terminal pane, enter the following command to establish an authenticated connection to your Azure subscription.
 
@@ -72,15 +77,17 @@ In this task, you will learn how to create the necessary Azure resources.
     az login --output none
     ```
 
-    A web browser tab will open and prompt you to sign into Azure. Do so, and then close the browser tab and return to Visual Studio Code.
+    >**Note:** If the **sign-in pop-up** doesn’t appear immediately, wait for **1-2 minutes**. Then, **minimize all tabs**, and you should find the pop-up on the desktop for signing in.
 
-    - If prompted select **Work or school account** then click on **Continue**.
+    - If prompted, select **Work or school account (1)** then click on **Continue (2)**.
 
-      ![Visual Studio Code Icon](./images/a-21.png)  
+      ![](./images/formrecog(10).png)  
 
     - Enter the Email address and Password provided in the **Environment** tab.
 
-    - Click on **No, sign in to this app only** to **Stay signed in ti all your apps**.
+    - In the **Automatically sign in to all desktop apps and websites on this device?** prompt, select **No, this app only**. 
+
+        ![](./images/formrecog(11).png)
 
 1. Navigate back to the VS code, If prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.       
 
@@ -94,14 +101,15 @@ In this task, you will learn how to create the necessary Azure resources.
 
 1. In the **setup.cmd** script, modify the **subscription_id**, **resource_group**, and **location** variable declarations with the appropriate values for your subscription ID, resource group name, and location name. Then save your changes.
 
-    ![Visual Studio Code Icon](./images/d-68.png) 
+    ![](./images/knowstore(4).png) 
 
 1. In the terminal for the **24-knowledge-store** folder, enter the following command to run the script:
 
     ```
     .\setup.cmd
     ```
-    > **Note**: The Search CLI module is in preview, and may get stuck in the *- Running ..* process. If this happens for over 2 minutes, press CTRL+C to cancel the long-running operation, and then select **N** when asked if you want to terminate the script. It should then complete successfully.
+
+    > **Note:** The Search CLI module is in preview, and may get stuck in the *- Running ..* process. If this happens for over 2 minutes, press CTRL+C to cancel the long-running operation, and then select **N** when asked if you want to terminate the script. It should then complete successfully.
     >
     > If the script fails, ensure you saved it with the correct variable names and try again.
 
@@ -114,7 +122,11 @@ In this task, you will learn how to create the necessary Azure resources.
     - Search service admin key
     - Search service query key
 
+        ![](./images/knowstore(5).png)
+
 1. In the Azure portal, refresh the resource group and verify that it contains the Azure Storage account, Azure AI Services resource, and Azure AI Search resource.
+
+    ![](./images/knowstore(6).png)
 
 ## Task 3: Create a search solution
 
@@ -137,11 +149,15 @@ You'll use the REST interface to submit JSON definitions for your Azure AI Searc
 
 1. In Visual Studio Code, in the **24-knowledge-store** folder, expand the **create-search** folder and select **data_source.json**. This file contains a JSON definition for a data source named **margies-knowledge-data**.
 
+    ![](./images/knowstore(7).png)
+
 1. Replace the **YOUR_CONNECTION_STRING** placeholder with the connection string for your Azure storage account, which should resemble the following:
 
     ```
     DefaultEndpointsProtocol=https;AccountName=ai102str123;AccountKey=12345abcdefg...==;EndpointSuffix=core.windows.net
     ```
+
+    ![](./images/knowstore(8).png)
 
     *You can find the connection string on the **Access keys** page for your storage account in the Azure portal.*
 
@@ -209,11 +225,11 @@ Now that you've prepared the JSON objects that define your search solution compo
 
 1. When the script completes, in the Azure portal, on the page for your Azure AI Search resource, select the **Indexers** page and wait for the indexing process to complete.
 
-    ![Visual Studio Code Icon](./images/d-72.png) 
+    ![](./images/knowstore(9).png) 
 
     *You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.*
 
-    > **Tip**: If the script fails, check the placeholders you added in the **data_source.json** and **skillset.json** files as well as the **create-search.cmd** file. After correcting any mistakes, you may need to use the Azure portal user interface to delete any components that were created in your search resource before re-running the script.
+    > **Tip:** If the script fails, check the placeholders you added in the **data_source.json** and **skillset.json** files as well as the **create-search.cmd** file. After correcting any mistakes, you may need to use the Azure portal user interface to delete any components that were created in your search resource before re-running the script.
 
 ## Task 4: View the knowledge store
 
@@ -231,15 +247,19 @@ The *object* projections defined in the Margie's Travel skillset consist of a JS
 
 1. Select the **Storage browser (1)** tab (in the pane on the left) to view the storage account in the storage explorer interface in the Azure portal. Expand **Blob containers (2)** to view the containers in the storage account. In addition to the **margies** container where the source data is stored, there should be two new containers: **margies-images** and **margies-knowledge** **(3)**. These were created by the indexing process.
 
-    ![Visual Studio Code Icon](./images/d-73.png) 
+    ![](./images/knowstore(10)(1).png)
 
 1. Select the **margies-knowledge** container. It should contain a folder for each indexed document.Open any of the folders.
 
     ![Visual Studio Code Icon](./images/d-74.png) 
 
-1. Then **Download (1)** and **Open (2)** the **knowledge-projection.json** file it contains. 
+1. Then click **Download (1)**, and select **Open file (2)** to view **knowledge-projection.json**.
 
-    ![Visual Studio Code Icon](./images/d-75.png) 
+    ![](./images/knowstore(11).png) 
+
+1. In the **Do you want to allow untrusted files in this workspace?** pop-up window, click **Open**.
+
+    ![](./images/knowstore(12).png)
 
 1. Each JSON file contains a representation of an indexed document, including the enriched data extracted by the skillset as shown here.
 
@@ -283,11 +303,11 @@ The *file* projections defined in the skillset create JPEG files for each image 
 
 1. In the storage browser interface in the Azure portal, select the **margies-images** blob container. This container contains a folder for each document that contained images.
 
-    ![Visual Studio Code Icon](./images/d-76.png) 
+    ![](./images/knowstore(13).png) 
 
 1. Open any of the folders and view its contents - each folder contains at least one \*.jpg file.
 
-    ![Visual Studio Code Icon](./images/d-77.png) 
+    ![](./images/knowstore(14).png) 
 
 1. Download and open any of the image files to verify that they contain images extracted from the documents.
 
@@ -303,7 +323,7 @@ The *table* projections defined in the skillset form a relational schema of enri
 
 1. In the storage explorer interface in the Azure portal, expand **Tables (1)**. Select the **docs (2)** table to view its columns. 
 
-    ![Visual Studio Code Icon](./images/d-79.png) 
+    ![](./images/knowstore(15).png) 
 
 1. The columns include some standard Azure Storage table columns - to hide these, modify the **Column Options** to select only the following columns:
 
@@ -314,7 +334,7 @@ The *table* projections defined in the skillset form a relational schema of enri
     - **sentiment** the sentiment score calculated for the document.
     - **url** the URL for the document blob in Azure storage.
 
-      ![Visual Studio Code Icon](./images/d-80.png)     
+      ![](./images/knowstore(16).png)     
 
 1. View the other tables that were created by the indexing process:
     - **ImageTags** (contains a row for each individual image tag with the **document_id** for the document in which the tag appears).
@@ -324,13 +344,14 @@ The *table* projections defined in the skillset form a relational schema of enri
 The ability to create *table* projections enables you to build analytical and reporting solutions that query the relational schema; for example, using Microsoft Power BI. The automatically generated key columns can be used to join the tables in queries - for example to return all of the locations mentioned in a specific document.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
 
 <validation step="4add4aed-1b40-4dde-a56c-e96454b48fc1" />
 
-### Review
+## Summary
 In this lab, you have completed:
 
 + Cloned the repository for this course
@@ -338,4 +359,4 @@ In this lab, you have completed:
 + Created a search solution
 + Viewed the knowledge store
 
-## You have successfully completed the lab.
+### You have successfully completed the Hands-on lab!
