@@ -28,7 +28,7 @@ In this lab, you will complete the following tasks:
 
 In this task, you will learn how to clone the repository for this course.
 
-If you have already cloned **AI-102-AIEngineer** code repository to the environment where you're working on this lab, open it in Visual Studio Code; otherwise, follow these steps to clone it now.
+If you have already cloned the **AI-102-AIEngineer** code repository to the environment where you're working on this lab, open it in Visual Studio Code; otherwise, follow these steps to clone it now.
 
 1. Start Visual Studio Code.
 
@@ -58,7 +58,7 @@ In this task, you will learn how to create the necessary Azure resources.
 
 1. If you are using a restricted subscription in which a resource group has been provided for you, select the resource group to view its properties. Otherwise, create a new resource group with a name of your choice, and go to it when it has been created.
 
-1. On the **Overview** page for your resource group, note the **Subscription ID (1)** and **Location (2)**. You will need these values, along with the name of the **Resource group (3)** in subsequent steps.
+1. On the **Overview** page for your resource group, note the **Subscription ID (1)** and **Location (2)**. You will need these values, along with the name of the **Resource group (3)**, in subsequent steps.
 
     ![Visual Studio Code Icon](./images/knowstore(1).png) 
 
@@ -84,7 +84,7 @@ In this task, you will learn how to create the necessary Azure resources.
 
         ![](./images/formrecog(11).png)
 
-1. Navigate back to the VS code, if prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.     
+1. Navigate back to the VS Code, if prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.     
 
 1. Run the following command to list Azure locations.
 
@@ -92,7 +92,7 @@ In this task, you will learn how to create the necessary Azure resources.
     az account list-locations -o table
     ```
 
-1. In the output, find the **Name** value that corresponds with the location of your resource group (for example, for *East US* the corresponding name is *eastus*).
+1. In the output, find the **Name** value that corresponds with the location of your resource group (for example, for *East US*, the corresponding name is *eastus*).
 
     ![Visual Studio Code Icon](./images/d-44.png) 
 
@@ -186,7 +186,7 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
 
 1. Right-click the the **create-search** folder and select **Open in Integrated Terminal**.
 
-1. In the terminal pane for the **create-search** folder, enter the following command run the batch script.
+1. In the terminal pane for the **create-search** folder, enter the following command to run the batch script.
 
     ```
     .\create-search.cmd
@@ -208,7 +208,7 @@ Now that you have an index, you can search it.
 
     ![](./images/searchskill(7).png)
 
-1. In Search explorer, in the **Query string** box, enter the following query string, and then select **Search**.
+1. In Search Explorer, in the **Query string** box, enter the following query string, and then select **Search**.
 
     ```
     search=London&$select=url,sentiment,keyphrases&$filter=metadata_author eq 'Reviewer' and sentiment eq 'positive'
@@ -228,7 +228,7 @@ You can enhance the index further by creating custom skills. For example, it mig
 
 To implement the word count functionality as a custom skill, you'll create an Azure Function in your preferred language.
 
-> **Note:** In this exercise, you'll create a simple Node.JS function using the code editing capabilities in the Azure portal. In a production solution, you would typically use a development environment such as Visual Studio Code to create a function app in your preferred language (for example C#, Python, Node.JS, or Java) and publish it to Azure as part of a DevOps process.
+> **Note:** In this exercise, you'll create a simple Node.js function using the code editing capabilities in the Azure portal. In a production solution, you would typically use a development environment such as Visual Studio Code to create a function app in your preferred language (for example, C#, Python, Node.js, or Java) and publish it to Azure as part of a DevOps process.
 
 1. In the Azure Portal, on the home page, search for **Function App (1)** and select **Function App (2)** from the services.
 
@@ -256,7 +256,7 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     - **Region**: **<inject key="Region" enableCopy="false" /></inject> (6)** -*The same region as your Azure AI Search resource*
 
-    - Click on **Review + Create (7)**
+    - Click **Review + Create (7)**
 
         ![](./images/searchskill(12).png)     
 
@@ -264,7 +264,7 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     ![](./images/searchskill(13).png)
 
-1. Wait for deployment to complete, click on **Go to resources** and then go to the deployed Function App resource.
+1. Wait for deployment to complete, click on **Go to resources**, and then go to the deployed Function App resource.
 
     ![](./images/searchskill(14).png)
 
@@ -286,7 +286,7 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
             ![](./images/searchskill(16).png) 
 
-1. Wait for the *wordcount* function to be created. Then in the **Function** tab, select the **wordcount** function. Then in its page, select the **Code + Test** tab.
+1. Wait for the *wordcount* function to be created. Then in the **Function** tab, select the **wordcount** function. Then on its page, select the **Code + Test** tab.
 
 1. Replace the default function code with the following code:
 
@@ -394,7 +394,7 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
 1. Open the **Test/Run (1)** pane.
 
-1. In the **Test/Run** pane, replace the existing **Body** with the following JSON **(2)**, which reflects the schema expected by an Azure AI Search skill in which records containing data for one or more documents are submitted for processing and then click on **Run (3)**.
+1. In the **Test/Run** pane, replace the existing **Body** with the following JSON **(2)**, which reflects the schema expected by an Azure AI Search skill in which records containing data for one or more documents are submitted for processing, and then click on **Run (3)**.
 
     ```
     {
