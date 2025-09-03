@@ -4,7 +4,7 @@
 
 ## Overview
 
-Suppose a company needs to automate a data entry process. Currently an employee might manually read a purchase order and enter the data into a database. You want to build a model that will use machine learning  to read the form and produce structured data that can be used to automatically update a database.
+Suppose a company needs to automate a data entry process. Currently, an employee might manually read a purchase order and enter the data into a database. You want to build a model that will use machine learning  to read the form and produce structured data that can be used to automatically update a database.
 
 **Form Recognizer** is a cognitive service that enables users to build automated data processing software. This software can extract text, key/value pairs, and tables from form documents using optical character recognition (OCR). Form Recognizer has pre-built models for recognizing invoices, receipts, and business cards. The service also provides the capability to train custom models. In this exercise, we will focus on building custom models.
 
@@ -13,7 +13,7 @@ Suppose a company needs to automate a data entry process. Currently an employee 
 In this lab, you will complete the following tasks:
 
  + **Task 1:** Open the cloned folder in Visual Studio Code.
- + **Task 2:** Create a Azure AI Document Intelligence resource
+ + **Task 2:** Create an Azure AI Document Intelligence resource
  + **Task 3:** Gather documents for training
  + **Task 4:** Train a model using the Document Intelligence SDK
  + **Task 5:** Test your custom Document Intelligence model 
@@ -38,7 +38,7 @@ In this task, you will learn how to open the cloned folder in **Visual Studio Co
 
 3.  Wait while additional files are installed to support the C# code projects in the repo.
 
-## Task 2: Create a Azure AI Document Intelligence resource
+## Task 2: Create an Azure AI Document Intelligence resource
 
 In this task, you will learn how to create an Azure AI Document Intelligence resource in the Azure portal to use the Form Recognizer service.
 
@@ -75,7 +75,7 @@ To use the Form Recognizer service, you need a Form Recognizer resource in your 
 
     ![](./images/formrecog(5).png)
 
-1. In the left navigation pane, under the **Resource Management (1)** section, choose **Keys and Endpoint (2)**. Make sure to note down the **KEY 1 (3)** and **Endpoint (4)** values in notepad. You'll require the endpoint and one of the keys from this page for the subsequent procedure.
+1. In the left navigation pane, under the **Resource Management (1)** section, choose **Keys and Endpoint (2)**. Make sure to note down the **KEY 1 (3)** and **Endpoint (4)** values in Notepad. You'll require the endpoint and one of the keys from this page for the subsequent procedure.
 
     ![](./images/formrecog(6).png)
 
@@ -107,11 +107,11 @@ You'll use the sample forms from the **21-custom-form/sample-forms** folder in t
 
 3. View the **Resource group** in which you created the Document Intelligence resource previously.
 
-4. On the **Overview (1)** page for your resource group, note the **Subscription ID (2)** and **Location (3)**. You will need these values, along with your **Resource group (4)** name in subsequent steps. Select the Essentials option if you don't see the above options.
+4. On the **Overview (1)** page for your resource group, note the **Subscription ID (2)** and **Location (3)**. You will need these values, along with your **Resource group (4)** name, in subsequent steps. Select the Essentials option if you don't see the above options.
 
    ![](./images/formrecog(8).png)
 
-5. In Visual Studio Code, in the Explorer pane, right-click the the **21-custom-form (1)** folder and select **Open in Integrated Terminal (2)**.
+5. In Visual Studio Code, in the Explorer pane, right-click the **21-custom-form (1)** folder and select **Open in Integrated Terminal (2)**.
 
     ![](./images/formrecog(9).png)
 
@@ -154,7 +154,7 @@ You'll use the sample forms from the **21-custom-form/sample-forms** folder in t
     - Upload files from your local _sampleforms_ folder to a container called _sampleforms_ in the storage account
     - Print a Shared Access Signature URI
 
-12. Modify the **subscription_id**, **resource_group**, and **location** variable declarations with the appropriate values for the subscription, resource group, and location name which you noted in step 9. 
+12. Modify the **subscription_id**, **resource_group**, and **location** variable declarations with the appropriate values for the subscription, resource group, and location name that you noted in step 9. 
 Then press **Ctrl+S** to **save** your changes.
 
     ![](./images/formrecog(14).png)
@@ -231,8 +231,8 @@ Now you will train a model using the **.jpg** and **.json** files.
 
 1. Open the code file and review the code it contains, noting the following details:
     - Namespaces from the package you installed are imported
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **Client**.
-    - The code uses the the training client to train a model using the images in your blob storage container, which is accessed using the SAS URI you generated.
+    - The **Main** function retrieves the configuration settings and uses the key and endpoint to create an authenticated **Client**.
+    - The code uses the training client to train a model using the images in your blob storage container, which is accessed using the SAS URI you generated.
 
         ![](./images/formrecog(22).png)
 
@@ -282,7 +282,7 @@ In this task, you will learn how to test your custom Document Intelligence model
 
 6. In the **test-model** folder, open the code file for your client application (*Program.cs* for C#) and review the code it contains, noting the following details:
     - Namespaces from the package you installed are imported
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **Client**.
+    - The **Main** function retrieves the configuration settings and uses the key and endpoint to create an authenticated **Client**.
     - The client is then used to extract form fields and values from the **test1.jpg** image.
     
 7. Return the integrated terminal for the **test-model** folder, and enter the following command to run the program:
