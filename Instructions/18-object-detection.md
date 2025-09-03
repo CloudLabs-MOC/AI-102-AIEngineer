@@ -69,7 +69,7 @@ To train an object detection model, you need to upload images that contain the c
 
 4. After the images have been uploaded, select the first one to open it.
 
-5. Hold the mouse over any object in the image until an automatically detected region is displayed like the image below. Then select the object, and if necessary resize the region to surround it.
+5. Hold the mouse over any object in the image until an automatically detected region is displayed, like the image below. Then select the object, and if necessary, resize the region to surround it.
 
      ![The default region for an object](./images/object-region.jpg)
 
@@ -105,7 +105,7 @@ You can use the graphical tool in the Custom Vision portal to tag your images, b
 
     ![](./images/objdet(8).png)
 
-3. On the right, under **Resources** note that the details for the *training* resource, including its **key and endpoint** are shown (you can also obtain this information by viewing the resource in the Azure portal).
+3. On the right, under **Resources**, note that the details for the *training* resource, including its **key and endpoint**, are shown (you can also obtain this information by viewing the resource in the Azure portal).
 
     ![](./images/objdet(9).png)
 
@@ -131,7 +131,7 @@ You can use the graphical tool in the Custom Vision portal to tag your images, b
 
 7. In the **train-detector** folder, open **tagged-images.json** and examine the JSON it contains. The JSON defines a list of images, each containing one or more tagged regions. Each tagged region includes a tag name, and the top and left coordinates and width and height dimensions of the bounding box containing the tagged object.
 
-    > **Note**: The coordinates and dimensions in this file indicate relative points on the image. For example, a *height* value of 0.7 indicates a box that is 70% of the height of the image. Some tagging tools generate other formats of file in which the coordinate and dimension values represent pixels, inches, or other units of measurements.
+    > **Note**: The coordinates and dimensions in this file indicate relative points on the image. For example, a *height* value of 0.7 indicates a box that is 70% of the height of the image. Some tagging tools generate other formats of file in which the coordinate and dimension values represent pixels, inches, or other units of measurement.
 
 8. Note that the **train-detector** folder contains a subfolder in which the image files referenced in the JSON file are stored.
 
@@ -145,7 +145,7 @@ You can use the graphical tool in the Custom Vision portal to tag your images, b
 
 1. Open the code file and review the code it contains, noting the following details:
     - Namespaces from the package you installed are imported
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
+    - The **Main** function retrieves the configuration settings and uses the key and endpoint to create an authenticated **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
     - The **Upload_Images** function extracts the tagged region information from the JSON file and uses it to create a batch of images with regions, which it then uploads to the project.
 
 10. Return the integrated terminal for the **train-detector** folder, and enter the following command to run the program:
@@ -230,7 +230,7 @@ Now that you've published the image classification model, you can use it from a 
 
 4. Open the code file for your client application (*Program.cs* for C#) and review the code it contains, noting the following details:
     - Namespaces from the package you installed are imported
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
+    - The **Main** function retrieves the configuration settings and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
     - The prediction client object is used to get object detection predictions for the **produce.jpg** image, specifying the project ID and model name in the request. The predicted tagged regions are then drawn on the image, and the result is saved as **output.jpg**.
 
 5. Return to the integrated terminal for the **test-detector** folder, and enter the following command to run the program:
@@ -259,9 +259,9 @@ Now that you've published the image classification model, you can use it from a 
 In this lab, you have completed:
 
 + Created a Custom Vision project
-+ Added and tag images
++ Added and tagged images
 + Used the Training API to upload images
-+ Trained and test a model
++ Trained and tested a model
 + Published the object detection model
 + Used the image classifier from a client application
    
