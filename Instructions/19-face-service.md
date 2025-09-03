@@ -4,7 +4,7 @@
 
 ## Overview
 
-The ability to detect and analyze human faces is a core AI capability. In this exercise, you'll explore two Azure Cognitive Services that you can use to work with faces in images: the **Computer Vision** service, and the **Face** service.
+The ability to detect and analyze human faces is a core AI capability. In this exercise, you'll explore two Azure Cognitive Services that you can use to work with faces in images: the **Computer Vision** service and the **Face** service.
 
 ## Objectives
 
@@ -72,7 +72,7 @@ In this task, you will provision an Azure AI Services resource in the Azure port
 
     ![](./images/detana(5).png)
 
-5. Wait for deployment to complete, and and then click **Go to resource**.
+5. Wait for deployment to complete, and then click **Go to resource**.
 
     ![](./images/detana(6).png)
 
@@ -88,7 +88,7 @@ In this task, you'll complete a partially implemented client application that us
 
     ![](./images/detana(8).png)
 
-1. Then install the Computer Vision SDK package by running the below mentioned command:
+1. Then install the Computer Vision SDK package by running the following command:
 
     **C#**
 
@@ -132,7 +132,7 @@ In this exercise, you will use the Computer Vision service to analyze an image o
 
 ## Task 5: Detect faces in an image
 
-In this task ,you will use the SDK to call the Computer Vision service and detect faces in an image.
+In this task, you will use the SDK to call the Computer Vision service and detect faces in an image.
 
 1. In the code file for your client application (**Program.cs**), in the **Main** function, note that the code to load the configuration settings has been provided. Then find the comment **Authenticate Computer Vision client**. Then, under this comment, add the following code to create and authenticate a Computer Vision client object:
 
@@ -229,7 +229,7 @@ In this task, you will prepare to use the Face SDK in your Visual Studio Code pr
 
     ![](./images/detana(16).png)
 
-1. Then install the Face SDK package by running the below mentioned command:
+1. Then install the Face SDK package by running the following command:
 
     **C#**
 
@@ -350,7 +350,7 @@ In this task, you'll update the **DetectFaces** function to analyze images using
      }
      ```
 
-4. Examine the code you added to the **DetectFaces** function. It analyzes an image file and detects any faces it contains, including attributes for age, emotions, and the presence of spectacles. The details of each face are displayed, including a unique face identifier that is assigned to each face; and the location of the faces is indicated on the image using a bounding box.
+4. Examine the code you added to the **DetectFaces** function. It analyzes an image file and detects any faces it contains, including attributes for age, emotions, and the presence of spectacles. The details of each face are displayed, including a unique face identifier that is assigned to each face, and the location of the faces is indicated on the image using a bounding box.
 
 5. Save your changes and return to the integrated terminal for the **face-api** folder, and enter the following command to run the program:
 
@@ -387,6 +387,6 @@ In this lab, you have completed:
 + Viewed the image you will analyze
 + Detected faces in an image
 + Prepared to use the Face SDK
-+ Detected and analyze faces
++ Detected and analyzed faces
    
 ### You have successfully completed the Hands-on lab!
