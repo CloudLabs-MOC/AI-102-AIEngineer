@@ -4,7 +4,7 @@
 
 ## Overview
 
-The **Custom Vision** service enables you to create computer vision models that are trained on your own images. You can use it to train *image classification* and *object detection* models; which you can then publish and consume from applications.
+The **Custom Vision** service enables you to create computer vision models that are trained on your own images. You can use it to train *image classification* and *object detection* models, which you can then publish and consume from applications.
 
 In this exercise, you will use the Custom Vision service to train an image classification model that can identify three classes of fruit (apple, banana, and orange).
 
@@ -45,7 +45,7 @@ In this task, you will learn how to open the cloned folder in **Visual Studio Co
 
 In this task, you will learn how to create Custom Vision resources in Azure for training and prediction, allowing you to manage access and costs for these workloads separately.
 
-1. In the azure portal, from the top search bar, search for **Custom vision (1)**, select **Custom vision (2)** from the result.
+1. In the Azure portal, from the top search bar, search for **Custom vision (1)**, select **Custom vision (2)** from the results.
 
    ![Upload apple with apple tag](./images/custvision(1).png)
 
@@ -65,7 +65,7 @@ In this task, you will learn how to create Custom Vision resources in Azure for 
 
         ![](./images/custvision(3).png)
 
-        > **Note**: If you already have an F0 custom vision service in your subscription, select **S0** for this one.
+        > **Note:** If you already have an F0 custom vision service in your subscription, select **S0** for this one.
 
 3. Now navigate to the **Review + create** tab, and then select **Create**.
 
@@ -73,7 +73,7 @@ In this task, you will learn how to create Custom Vision resources in Azure for 
 
 4. Wait for the resources to be created, and then view the deployment details and note that two Custom Vision resources are provisioned; one for training, and another for prediction. You can view these by navigating to the resource group where you created them.
 
-    > **Important**: Each resource has its own *endpoint* and *keys*, which are used to manage access from your code. To train an image classification model, your code must use the *training* resource (with its endpoint and key); and to use the trained model to predict image classes, your code must use the *prediction* resource (with its endpoint and key).
+    > **Important:** Each resource has its own *endpoint* and *keys*, which are used to manage access from your code. To train an image classification model, your code must use the *training* resource (with its endpoint and key); and to use the trained model to predict image classes, your code must use the *prediction* resource (with its endpoint and key).
 
 ## Task 3: Create a Custom Vision project
 
@@ -128,7 +128,7 @@ To train an image classification model, you need to create a Custom Vision proje
 
    ![Tagged images of fruit - 15 apples, 15 bananas, and 15 oranges](./images/fruit.jpg)
     
-8. In the Custom Vision project, above the images, click **Train (1)** to train a classification model using the tagged images. Select the **Quick Training (2)** option then click on **Train (3)**, and then wait for the training iteration to complete (this may take a minute or so).
+8. In the Custom Vision project, above the images, click **Train (1)** to train a classification model using the tagged images. Select the **Quick Training (2)** option, then click on **Train (3)**, and then wait for the training iteration to complete (this may take a minute or so).
 
    ![](./images/custvision(12).png)
 
@@ -178,7 +178,7 @@ In this task, you will learn how to view the project settings in Custom Vision.
 
 In this task, you will learn how to use the Custom Vision *training* API to automate the process of uploading images, tagging them, and training models without relying on the portal's user interface.
 
-The Custom Vision portal provides a convenient user interface that you can use to upload and tag images, and train models. However, in some scenarios you may want to automate model training by using the Custom Vision training API.
+The Custom Vision portal provides a convenient user interface that you can use to upload and tag images and train models. However, in some scenarios, you may want to automate model training by using the Custom Vision training API.
 
 1. In Visual Studio Code, in the **Explorer** pane, browse to the **17-image_classification (1)** folder and expand the **C-Sharp (2)**. Right-click the **train-classifier (3)** folder and select **Open in Integrated Terminal (4)**. 
 
@@ -210,7 +210,7 @@ The Custom Vision portal provides a convenient user interface that you can use t
 
 1. Open the code file and review the code it contains, noting the following details:
     - Namespaces from the package you installed are imported
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
+    - The **Main** function retrieves the configuration settings and uses the key and endpoint to create an authenticated **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
     - The **Upload_Images** function retrieves the tags that are defined in the Custom Vision project and then uploads image files from correspondingly named folders to the project, assigning the appropriate tag ID.
     - The **Train_Model** function creates a new training iteration for the project and waits for training to complete.
 
@@ -238,7 +238,7 @@ Now you're ready to publish your trained model so that it can be used from a cli
 
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish (1)** to publish the trained model with the following settings:
     - **Model name**: fruit-classifier **(2)**
-    - **Prediction resource**: *The **prediction** resource you created previously which ends with "-Prediction" (<u>not</u> the training resource)*. **(3)**
+    - **Prediction resource**: *The **prediction** resource you created previously, which ends with "-Prediction" (<u>not</u> the training resource)*. **(3)**
      - Click **Publish (4)**
 
         ![](./images/custvision(25).png)
@@ -247,7 +247,7 @@ Now you're ready to publish your trained model so that it can be used from a cli
 
     ![](./images/custvision(26).png)
 
-3. On the Custom Vision portal home page, at the top right, click the *settings* (&#9881;) icon to view the settings for your Custom Vision service. Then, under **Resources**, find your *prediction* resource which ends with "-Prediction"  (<u>not</u> the training resource) to determine its **Key (1)** and **Endpoint (2)** values (you can also obtain this information by viewing the resource in the Azure portal).
+3. On the Custom Vision portal home page, at the top right, click the *settings* (&#9881;) icon to view the settings for your Custom Vision service. Then, under **Resources**, find your *prediction* resource, which ends with "-Prediction"  (<u>not</u> the training resource), to determine its **Key (1)** and **Endpoint (2)** values (you can also obtain this information by viewing the resource in the Azure portal).
 
    ![](./images/custvision(27).png)
 
@@ -261,7 +261,7 @@ Now that you've published the image classification model, you can use it from a 
 
     ![](./images/custvision(28).png)
 
-1.Then enter the following SDK-specific command to install the Custom Vision Prediction package:
+1. Then enter the following SDK-specific command to install the Custom Vision Prediction package:
 
     **C#**
 
@@ -279,7 +279,7 @@ Now that you've published the image classification model, you can use it from a 
 
     - Namespaces from the package you installed are imported
 
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
+    - The **Main** function retrieves the configuration settings and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
 
     - The prediction client object is used to predict a class for each image in the **test-images** folder, specifying the project ID and model name for each request. Each prediction includes a probability for each possible class, and only predicted tags with a probability greater than 50% are displayed.
 
