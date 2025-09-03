@@ -28,7 +28,7 @@ Imagine you work for a travel agency and you're developing a chat application to
 
 In this task, you'll sign in to the Azure AI Foundry portal, create a new project, and deploy the GPT-4.1 model to set up your workspace for building and testing a custom chat application. You’ll also verify that the model deployment is successful and accessible through the **Models + endpoints** page.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com)[https://ai.azure.com/], then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
 1. Click on **Sign in**.
  
@@ -105,12 +105,12 @@ In this task, you'll start the fine-tuning process for the GPT-4.1 model by down
 
 1. Copy the following command into PowerShell and press Enter to download the file `travel-finetune-hotel.jsonl` to your Downloads folder.
 
-    ![](../Images/l5t2p3.png)
-
     ```
     cd $env:USERPROFILE\Downloads
     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl" -OutFile "$env:USERPROFILE\Downloads\travel-finetune-hotel.jsonl"
     ```
+
+    ![](../Images/l5t2p3.png)
 
 1. Navigate to the **Fine-tuning (1)** page under the **Build and customize** section, using the menu on the left and then click on **+ Fine-tune model (2)**.
 
@@ -170,11 +170,11 @@ In this task, you'll interact with the base GPT-4.1 model in the chat playground
 
 1. Update the system message in the setup pane with the following prompt and then click on **Apply changes**:
 
-    ![](../Images/l5t3p3.png)
-
     ```
     You are an AI assistant that helps people plan their travel.
     ```
+
+    ![](../Images/l5t3p3.png)
 
 1. In the Update system message? dialogue, click **Continue**.
 
