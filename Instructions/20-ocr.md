@@ -75,7 +75,7 @@ In this task, you will learn how to provision an **Azure AI Services** resource,
 
     ![](./images/ocr(3).png)
 
-5. In the left navigation pane, under the **Resource Management (1)** section, choose **Keys and Endpoint (2)**. Make sure to note down the **KEY (3)** and **Endpoint (4)** values in notepad. You'll require the endpoint and one of the keys from this page for the subsequent procedure.
+5. In the left navigation pane, under the **Resource Management (1)** section, choose **Keys and Endpoint (2)**. Make sure to note down the **KEY (3)** and **Endpoint (4)** values in Notepad. You'll require the endpoint and one of the keys from this page for the subsequent procedure.
 
    ![](./images/ocr(4).png) 
 
@@ -129,7 +129,7 @@ In this task, you will learn how to prepare a partially implemented client appli
 
      ![](./images/ocr(7).png) 
 
-5. In the code file for your client application, in the **Main** function, note that the code to load the configuration settings has been provided. Then find the comment **Authenticate Computer Vision client**. Then, under this comment, add the following language-specific code to create and authenticate a Azure AI Vision client object:
+5. In the code file for your client application, in the **Main** function, note that the code to load the configuration settings has been provided. Then find the comment **Authenticate Computer Vision client**. Then, under this comment, add the following language-specific code to create and authenticate an Azure AI Vision client object:
 
      **C#**
      
@@ -150,7 +150,7 @@ In this task, you will learn how to use the **Read API** from the **Azure AI Vis
 
 The **Read** API uses a newer text recognition model and generally performs better for larger images that contain a lot of text, but will work for any amount of text. It also supports text extraction from *.pdf* files, and can recognize both printed text and handwritten text in multiple languages.
 
-The **Read** API uses an asynchronous operation model, in which a request to start text recognition is submitted; and the operation ID returned from the request can subsequently be used to check progress and retrieve results.
+The **Read** API uses an asynchronous operation model, in which a request to start text recognition is submitted, and the operation ID returned from the request can subsequently be used to check progress and retrieve results.
 
 1. In the code file for your application, in the **Main** function, examine the code that runs if the user selects menu option **1**. This code calls the **GetTextRead** function, passing the path to an image  file.
 
@@ -202,7 +202,7 @@ The **Read** API uses an asynchronous operation model, in which a request to sta
 
      ![](./images/ocr(19).png)
 
-4. Examine the code you added to the **GetTextRead** function. It submits a request for a read operation, and then repeatedly checks status until the operation has completed. If it was successful, the code processes the results by iterating through each page, and then through each line.
+4. Examine the code you added to the **GetTextRead** function. It submits a request for a read operation, and then repeatedly checks the status until the operation has completed. If it was successful, the code processes the results by iterating through each page and then through each line.
 
 5. Save your changes and return to the integrated terminal for the **read-text** folder, and enter the following command to run the program:
 
@@ -233,7 +233,7 @@ In this task, you will learn how to use the **Read API** from the **Azure AI Vis
 
     ![](./images/ocr(13).png) 
 
-1. Then in File Explorer, open the PDF file to view it by double-clicking on it.
+1. Then, in File Explorer, open the PDF file to view it by double-clicking on it.
 
     ![](./images/ocr(14).png) 
 
@@ -263,7 +263,7 @@ In addition to printed text, the **Read** API can extract handwritten text in En
 
     ![](./images/ocr(17).png)
 
-3. In the integrated terminal for the **read-text** folder, and enter the following command to run the program:
+3. In the integrated terminal for the **read-text** folder, enter the following command to run the program:
 
      **C#**
      
@@ -283,6 +283,6 @@ In this lab, you have completed:
  +  Prepared to use the Azure AI Vision SDK
  +  Used the Read API to read text from an image
  +  Used the Read API to read text from a document
- +  Readed handwritten text
+ +  Read handwritten text
    
 ### You have successfully completed the Hands-on lab!
