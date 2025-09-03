@@ -29,13 +29,13 @@ In this lab, you will complete the following tasks:
 
 In this task, you will learn how to clone the repository for this course.
 
-If you have not already cloned **AI-102-AIEngineer** code repository to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the cloned folder in Visual Studio Code.
+If you have not already cloned the **AI-102-AIEngineer** code repository to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the cloned folder in Visual Studio Code.
 
 1. In the Lab-VM desktop, double-click on the **Visual Studio Code**.
  
      ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. From the top menu bar, click on the **elipsis (...) (1)**, and select **Terminal (2)**. Then click on **New Terminal (2)**.
+1. From the top menu bar, click on the **ellipsis (...) (1)**, and select **Terminal (2)**. Then click on **New Terminal (2)**.
 
     ![Visual Studio Code Icon](./images/azsearch(1).png)
 
@@ -69,7 +69,7 @@ The solution you will create for Margie's Travel requires the following resource
 - An **Azure AI Services** resource, which provides AI services for skills that your search solution can use to enrich the data in the data source with AI-generated insights.
 - A **Storage account** with a blob container in which the documents to be searched are stored.
 
-    > **Important**: Your Azure AI Search and Azure AI Services resources must be in the same location!
+    > **Important:** Your Azure AI Search and Azure AI Services resources must be in the same location!
 
 ### Task 2.1: Create an Azure AI Search resource
 
@@ -107,11 +107,11 @@ In this task, you will learn how to create an Azure AI Search resource to manage
 
     ![](./images/azsearch(6).png)
 
-1. Review the **Overview** page on the blade for your Azure AI Search resource in the Azure portal. Here, you can use a visual interface to create, test, manage, and monitor the various components of a search solution; including data sources, indexes, indexers, and skillsets.
+1. Review the **Overview** page on the blade for your Azure AI Search resource in the Azure portal. Here, you can use a visual interface to create, test, manage, and monitor the various components of a search solution, including data sources, indexes, indexers, and skillsets.
 
     ![](./images/azsearch(7).png)
 
->**Note:** Perform the Validation after completing, **Task 4**. Otherwise you may get validation as failed.
+>**Note:** Perform the Validation after completing, **Task 4**. Otherwise, you may get validation as failed.
 
 ### Task 2.2: Create an Azure AI Services resource
 
@@ -149,11 +149,11 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     ![](./images/azsearch(9).png)
 
-1. Wait for deployment to complete, and click on **Go to resources** then view the deployment details.
+1. Wait for the deployment to complete, and click on **Go to resources**, then view the deployment details.
 
     ![](./images/azsearch(10).png)
 
->**Important**: Perform the Validation after completing, **Task 4**. Otherwise you may get validation as failed.
+>**Important:** Perform the Validation after completing, **Task 4**. Otherwise, you may get validation as failed.
 
 ### Task 2.3: Create a storage account
 
@@ -167,7 +167,7 @@ In this task, you will learn how to create a storage account in Azure to store y
 
     ![](./images/azsearch(11).png)
  
- 1. Create a **Storage account** resource with the following settings and then click on **Advanced** tab from the top.
+ 1. Create a **Storage account** resource with the following settings and then click on the **Advanced** tab from the top.
 
     - **Subscription**: Leave default Azure subscription **(1)**
 
@@ -203,7 +203,7 @@ In this task, you will learn how to create a storage account in Azure to store y
 
     ![](./images/azsearch(16).png) 
  
-    > **Note:** Keep the **Storage Account** blade open - you will need the subscription ID and one of the keys in the next procedure.
+    >**Note:** Keep the **Storage Account** blade open - you will need the subscription ID and one of the keys in the next procedure.
 
 ## Task 3: Upload Documents to Azure Storage
 
@@ -227,7 +227,7 @@ Now that you have the required resources, you can upload some documents to your 
     az login
     ```
 
-    A web browser tab will open and prompt you to sign into Azure. Do so, and then close the browser tab and return to Visual Studio Code.
+    A web browser tab will open and prompt you to sign in to Azure. Do so, and then close the browser tab and return to Visual Studio Code.
 
     > **Note:** If the Sign-in window doesn’t appear, try minimizing VS Code.
 
@@ -241,7 +241,7 @@ Now that you have the required resources, you can upload some documents to your 
 
         ![](./images/formrecog(11).png)
 
-1. Navigate back to the VS code, If prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.     
+1. Navigate back to the VS Code. If prompted, **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.     
 
 1. Enter the following command to run the batch file. This will create a blob container in your storage account and upload the documents in the **data** folder to it.
 
@@ -289,7 +289,7 @@ Now that you have the documents in place, you can create a search solution by in
 
       ![](./images/azsearch(21).png) 
          
-    - Then select your storage account **(1)**, and finally select the **margies (2)** container that was created by the UploadDocs.cmd script and the click on **Select (3)**.
+    - Then select your storage account **(1)**, and finally select the **margies (2)** container that was created by the UploadDocs.cmd script and click on **Select (3)**.
 
       ![](./images/azsearch(22).png)
 
@@ -301,7 +301,7 @@ Now that you have the documents in place, you can create a search solution by in
 
     - **Blob folder**: **Leave this blank (9)**
 
-    - **Description**: **Brochures and reviews in Margie's Travel web site (10)**
+    - **Description**: **Brochures and reviews in Margie's Travel website (10)**
 
     - Proceed to the next step **Next: Add cognitive skills (Optional) (11)**
 
@@ -319,7 +319,7 @@ Now that you have the documents in place, you can create a search solution by in
 
     - Ensure that the **Source data field** is set to **merged_content**.
 
-    - Leave the **Enrichment granularity level** as **Source field**, which is set the entire contents of the document being indexed; but note that you can change this to extract information at more granular levels, like pages or sentences.
+    - Leave the **Enrichment granularity level** as **Source field**, which sets the entire contents of the document being indexed; but note that you can change this to extract information at more granular levels, like pages or sentences.
 
     - Select the following enriched fields: **(3)**
 
@@ -467,7 +467,7 @@ While you can use the portal to create and modify search solutions, it's often d
 
 In this task, you will learn how to get the endpoint and key for your Azure AI Search resource to authenticate and interact with the service.
 
-1. In the Azure portal, return to the **Overview** page for your Azure AI Search resource; and in the top section of the page, find the **Url** for your resource (which looks like **https://resource_name.search.windows.net**) and copy it to the clipboard.
+1. In the Azure portal, return to the **Overview** page for your Azure AI Search resource, and in the top section of the page, find the **Url** for your resource (which looks like **https://resource_name.search.windows.net**) and copy it to the clipboard.
 
     ![Visual Studio Code Icon](./images/d-33.png) 
  
@@ -565,7 +565,7 @@ In this task, you will learn how to review and modify the index in Azure AI Sear
 
     ![Visual Studio Code Icon](./images/d-37.png) 
      
-1. The **sentiment** field will be used to add the output from the **get-sentiment** skill that was added the skillset. The **url** field will be used to add the URL for each indexed document to the index, based on the **metadata_storage_path** value extracted from the data source. Note that index already includes the **metadata_storage_path** field, but it's used as the index key and Base-64 encoded, making it efficient as a key but requiring client applications to decode it if they want to use the actual URL value as a field. Adding a second field for the unencoded value resolves this problem.
+1. The **sentiment** field will be used to add the output from the **get-sentiment** skill that was added to the skillset. The **url** field will be used to add the URL for each indexed document to the index, based on the **metadata_storage_path** value extracted from the data source. Note that the index already includes the **metadata_storage_path** field, but it's used as the index key and Base-64 encoded, making it efficient as a key but requiring client applications to decode it if they want to use the actual URL value as a field. Adding a second field for the unencoded value resolves this problem.
 
 ### Task 6.4: Review and modify the indexer
 
@@ -613,11 +613,11 @@ In this task, you will learn how to use the REST API to update your Azure AI Sea
     .\modify-search.cmd
     ```
 
-1. When the script has finished, return to the **Overview** page for your Azure AI Search resource in the Azure portal and view the **Indexers** page. The periodically select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.
+1. When the script has finished, return to the **Overview** page for your Azure AI Search resource in the Azure portal and view the **Indexers** page. Periodically select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.
 
     ![](./images/azsearch(34).png)
 
-    *There may be some warnings for a few documents that are too large to evaluate sentiment. Often sentiment analysis is performed at the page or sentence level rather than the full document; but in this case scenario, most of the documents - particularly the hotel reviews, are short enough for useful document-level sentiment scores to be evaluated.*
+    *There may be some warnings for a few documents that are too large to evaluate sentiment. Often, sentiment analysis is performed at the page or sentence level rather than the full document, but in this case scenario, most of the documents, particularly the hotel reviews, are short enough for useful document-level sentiment scores to be evaluated.*
 
 ### Task 6.6: Query the modified index
 
@@ -627,7 +627,7 @@ In this task, you will learn how to query the modified index in Azure AI Search 
 
     ![](./images/azsearch(35).png)
 
-1. In Search explorer, in the **Query string** box, submit the following JSON query:
+1. In Search Explorer, in the **Query string** box, submit the following JSON query:
 
     ```json
     {
@@ -647,7 +647,7 @@ In this task, you will learn how to query the modified index in Azure AI Search 
 
 In this task, you will learn how to create a search client application that interacts with your Azure AI Search service to send queries and display results.
 
-Now that you have a useful index, you can use it from a client application. You can do this by consuming the REST interface, submitting requests and receiving responses in JSON format over HTTP; or you can use the software development kit (SDK) for your preferred programming language. In this exercise, we'll use the SDK.
+Now that you have a useful index, you can use it from a client application. You can do this by consuming the REST interface, submitting requests and receiving responses in JSON format over HTTP, or you can use the software development kit (SDK) for your preferred programming language. In this exercise, we'll use the SDK.
 
 ### Task 7.1: Get the endpoint and keys for your search resource
 
@@ -690,11 +690,11 @@ In this task, you will learn how to get the endpoint and keys for your Azure AI 
 
 In this task, you will learn how to explore the code needed to search an index using the Azure AI Search SDK, including how to send queries and retrieve search results programmatically.
 
-The **margies-travel** folder contains code files for a web application a Microsoft C# *ASP.NET Razor* web application, which includes search functionality.
+The **margies-travel** folder contains code files for a web application, a Microsoft C# *ASP.NET Razor* web application, which includes search functionality.
 
 1. Open the following code file in the web application, depending on your choice of programming language:
 
-    - **C#**:Pages/Index.cshtml.cs
+    - **C#**: Pages/Index.cshtml.cs
 
 1. Near the top of the code file, find the comment **Import search namespaces**, and note the namespaces that have been imported to work with the Azure AI Search SDK:
 
@@ -702,7 +702,7 @@ The **margies-travel** folder contains code files for a web application a Micros
 
 1. In the **search_query** function, find the comment **Submit search query**, and review the code to submit a search for the specified text with the following options:
 
-    - A *search mode* that requires **all** of the individual words in the search text are found.
+    - A *search mode* that requires **all** of the individual words in the search text to be found.
     - The total number of documents found by the search is included in the results.
     - The results are filtered to include only documents that match the provided filter expression.
     - The results are sorted into the specified sort order.
@@ -760,14 +760,14 @@ In this task, you will learn how to run the web app that interacts with your Azu
 
 1. Observe that the results page includes some user interface elements that enable you to refine the results. These include:
 
-    - A *filter* based on a facet value for the **metadata_author** field. This demonstrates how you can use *facetable* fields to return a list of *facets* - fields with a small set of discrete values that can displayed as potential filter values in the user interface.
+    - A *filter* based on a facet value for the **metadata_author** field. This demonstrates how you can use *facetable* fields to return a list of *facets* - fields with a small set of discrete values that can be displayed as potential filter values in the user interface.
     - The ability to *order* the results based on a specified field and sort direction (ascending or descending). The default order is based on *relevancy*, which is calculated as a **search.score()** value based on a *scoring profile* that evaluates the frequency and importance of search terms in the index fields.
 
 1. Select the **Reviewer (1)** filter and the **Positive to negative (2)** sort option, and then select **Refine Results (3)**.
 
     ![](./images/azsearch(42).png) 
  
-1. Observe that the results are filtered to include only reviews, and sorted based on the sentiment label.
+1. Observe that the results are filtered to include only reviews and sorted based on the sentiment label.
 
 1. In the **Search** box, enter a new search for **quiet hotel in New York** and review the results.
 
@@ -776,7 +776,7 @@ In this task, you will learn how to run the web app that interacts with your Azu
     - **skyscraper** (observe that this word doesn't appear in the actual content of any documents, but is found in the *image captions* and *image tags* that were generated for images in some documents).
     - **Mojave desert** (observe that this term is identified as a *location* in some documents).
 
-1. Close the browser tab containing the Margie's Travel web site and return to Visual Studio Code. Then in the terminal for the **margies-travel** folder where the dotnet  application is running, enter **Ctrl+C** to stop the app.
+1. Close the browser tab containing the Margie's Travel website and return to Visual Studio Code. Then, in the terminal for the **margies-travel** folder where the dotnet  application is running, enter **Ctrl+C** to stop the app.
 
 ## Summary
 In this lab, you have completed:
@@ -786,7 +786,7 @@ In this lab, you have completed:
 + Uploaded Documents to Azure Storage
 + Indexed the documents
 + Searched the index
-+ Explored and modify definitions of search components
++ Explored and modified definitions of search components
 + Created a search client application
 
 ### You have successfully completed the lab, click on Next >>.
