@@ -29,7 +29,7 @@ In this lab, you will complete the following tasks:
 
 In this task, you will learn how to clone the repository for this course.
 
-If you have already cloned **AI-102-AIEngineer** code repository to the environment where you're working on this lab, open it in Visual Studio Code; otherwise, follow these steps to clone it now.
+If you have already cloned the **AI-102-AIEngineer** code repository to the environment where you're working on this lab, open it in Visual Studio Code; otherwise, follow these steps to clone it now.
 
 1. Start Visual Studio Code.
 
@@ -89,7 +89,7 @@ In this task, you will learn how to create the necessary Azure resources.
 
         ![](./images/formrecog(11).png)
 
-1. Navigate back to the VS code, if prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.       
+1. Navigate back to the VS Code, if prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.       
 
 1. Run the following command to list Azure locations.
 
@@ -97,7 +97,7 @@ In this task, you will learn how to create the necessary Azure resources.
     az account list-locations -o table
     ```
 
-1. In the output, find the **Name** value that corresponds with the location of your resource group (for example, for *East US* the corresponding name is *eastus*).
+1. In the output, find the **Name** value that corresponds with the location of your resource group (for example, for *East US*, the corresponding name is *eastus*).
 
 1. In the **setup.cmd** script, modify the **subscription_id**, **resource_group**, and **location** variable declarations with the appropriate values for your subscription ID, resource group name, and location name. Then save your changes.
 
@@ -171,7 +171,7 @@ You'll use the REST interface to submit JSON definitions for your Azure AI Searc
 
     >**Note:** You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.
 
-1. At the end of the collection of skills in your skillset, find the **Microsoft.Skills.Util.ShaperSkill** skill named **define-projection**. This skill defines a JSON structure for the enriched data that will be used for the projections that the pipeline will persist on the knowledge store for each document processed by the indexer.
+1. At the end of the collection of skills in your skillset, find the **Microsoft.Skills.Util.ShaperSkill** skill named **define-projection**. This skill defines a JSON structure for the enriched data that will be used for the projections that the pipeline will persist in the knowledge store for each document processed by the indexer.
 
 1. At the bottom of the skillset file, observe that the skillset also includes a **knowledgeStore** definition, which includes a connection string for the Azure Storage account where the knowledge store is to be created, and a collection of **projections**. This skillset includes three *projection groups*:
 
@@ -217,7 +217,7 @@ Now that you've prepared the JSON objects that define your search solution compo
 
 1. Right-click on the **create-search** folder and select **Open in Integrated Terminal**.
 
-1. In the terminal pane for the **create-search** folder, enter the following command run the batch script.
+1. In the terminal pane for the **create-search** folder, enter the following command to run the batch script.
 
     ```
     .\create-search.cmd
@@ -293,7 +293,7 @@ The *object* projections defined in the Margie's Travel skillset consist of a JS
     }
     ```
 
-The ability to create *object* projections like this enables you to generate enriched data objects that can be incorporated into an enterprise data analysis solution - for example by ingesting the JSON files into an Azure Data Factory pipeline for further processing or loading into a data warehouse.
+The ability to create *object* projections like this enables you to generate enriched data objects that can be incorporated into an enterprise data analysis solution - for example, by ingesting the JSON files into an Azure Data Factory pipeline for further processing or loading into a data warehouse.
 
 ### Task 4.2: View file projections
 
@@ -301,7 +301,7 @@ In this task, you will learn how to view file projections, which are JPEG files 
 
 The *file* projections defined in the skillset create JPEG files for each image that was extracted from the documents during the indexing process.
 
-1. In the storage browser interface in the Azure portal, select the **margies-images** blob container. This container contains a folder for each document that contained images.
+1. In the storage browser interface in the Azure portal, select the **margies-images** blob container. This container contains a folder for each document that contains images.
 
     ![](./images/knowstore(13).png) 
 
@@ -341,7 +341,7 @@ The *table* projections defined in the skillset form a relational schema of enri
     - **KeyPhrases** (contains a row for each individual key phrase with the **document_id** for the document in which the phrase appears).
     - **Locations** (contains a row for each individual location with the **document_id** for the document in which the location appears).
 
-The ability to create *table* projections enables you to build analytical and reporting solutions that query the relational schema; for example, using Microsoft Power BI. The automatically generated key columns can be used to join the tables in queries - for example to return all of the locations mentioned in a specific document.
+The ability to create *table* projections enables you to build analytical and reporting solutions that query the relational schema; for example, using Microsoft Power BI. The automatically generated key columns can be used to join the tables in queries - for example, to return all of the locations mentioned in a specific document.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
