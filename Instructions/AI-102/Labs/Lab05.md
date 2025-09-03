@@ -279,13 +279,13 @@ In this task, you'll test your deployed fine-tuned model in the playground. You'
 
 1. Make sure the system message contains these instructions. **Copy (1)** the text below and then click **Apply Changes (2)**.
 
-    ![](../Images/l5t6p3.png)
-
     ```
     You are an AI travel assistant that helps people plan their trips. Your objective is to offer support for travel-related inquiries, such as visa requirements, weather forecasts, local attractions, and cultural norms.
     You should not provide any hotel, flight, rental car or restaurant recommendations.
     Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
     ```
+
+    ![](../Images/l5t6p3.png)
 
 1. In the Update system message? dialogue, click **Continue**.
 
