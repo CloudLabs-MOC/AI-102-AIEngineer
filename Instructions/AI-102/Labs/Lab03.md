@@ -1,6 +1,6 @@
 # Lab 03: Use a prompt flow to manage conversation in a chat app
 
-### Estimated Duration : 60 Minutes
+### Estimated Duration: 60 Minutes
 
 ## Overview
 
@@ -78,7 +78,7 @@ In this task, you’ll configure resource authorization so that your Azure AI Fo
 
     ![](../Images/aii64.png)
 
-1. Select the **AI Foundry (1)** resource for your hub to open it and then select AI service that start with **ai-myhubxxxxxx (2)**.
+1. Select the **AI Foundry (1)** resource for your hub to open it and then select the AI service that starts with **ai-myhubxxxxxx (2)**.
 
     ![](../Images/aii65.png)
 
@@ -90,11 +90,11 @@ In this task, you’ll configure resource authorization so that your Azure AI Fo
 
     ![](../Images/aii67.png)
 
-1. On the Azure portal searh bar, search for **Storage account** **(1)** and then select **Storage account (2)** from the results. 
+1. On the Azure portal search bar, search for **Storage account** **(1)** and then select **Storage account (2)** from the results. 
 
     ![](../Images/aii95.png)
 
-1. Then select the Storage account resource for your hub starts with **sthubxxxxxxxx**.   
+1. Then select the Storage account resource for your hubthat  starts with **sthubxxxxxxxx**.   
 
     ![](../Images/aii96.png)
 
@@ -106,7 +106,7 @@ In this task, you’ll configure resource authorization so that your Azure AI Fo
 
     ![](../Images/aii71.png)
 
-1. Select **Managed identity (1)**, click on **+ Select Members (2)**. Then choose **Azure AI Foundry (3)** then select the **ai-myhubxxxx (4)** and then **Select (5)**.
+1. Select **Managed identity (1)**, click on **+ Select Members (2)**. Then choose **Azure AI Foundry (3)**, then select the **ai-myhubxxxx (4)**, and then **Select (5)**.
 
     ![](../Images/aii72.png)
 
@@ -116,7 +116,7 @@ In this task, you’ll configure resource authorization so that your Azure AI Fo
 
     ![](../Images/aii73.png)
 
-1. Again click on **Review+assign**.
+1. Again, click on **Review+assign**.
 
     ![](../Images/aii74.png)
 
@@ -179,11 +179,11 @@ In this task, you’ll create a basic AI assistant for a travel agency using a p
 
     ![](../Images/aii79.png)
 
-1. If a permissions error occurs like the below,  Specify a different flow name  as **Travel-Chat<inject key="DeploymentID" enableCopy="false"/> (1)** and **Create (2)**.
+1. If a permissions error occurs like the below, specify a different flow name  as **Travel-Chat<inject key="DeploymentID" enableCopy="false"/> (1)** and **Create (2)**.
 
     ![](../Images/aii80.png)
 
-1. Once the flow is created, click on **Edit (1)** icon to rename the folder. Provide the name as  **Travel-Chat (2)** and then **Save (3)**.  
+1. Once the flow is created, click on the **Edit (1)** icon to rename the folder. Provide the name as  **Travel-Chat (2)** and then **Save (3)**.  
 
     ![](../Images/aii81.png)
 
@@ -211,7 +211,7 @@ In this task, you’ll create a basic AI assistant for a travel agency using a p
 
       ![](../Images/aii-85(1).png)   
 
-1. Delete the existing prompt. Copy and paste the following the **Prompt**.
+1. Delete the existing prompt. Copy and paste the following **Prompt**.
 
     ```yml
     # system:
@@ -244,7 +244,7 @@ In this task, you’ll create a basic AI assistant for a travel agency using a p
 
      ![](../Images/aii86.png)    
 
-      >**Note**: Read the prompt you added so you are familiar with it. It consists of a system message (which includes an objective, a definition of its capabilities, and some instructions), and the chat history (ordered to show each user question input and each previous assistant answer output)
+      >**Note**: Read the prompt you added so you are familiar with it. It consists of a system message (which includes an objective, a definition of its capabilities, and some instructions), and the chat history (ordered to show each user question input and each previous assistant's answer output)
 
 1. In the **Inputs** section for the Chat LLM tool (under the prompt), ensure the following variables are set **(1)**:
 
@@ -258,7 +258,7 @@ In this task, you’ll create a basic AI assistant for a travel agency using a p
 
 ## Task 5: Test the flow
 
-In this task you’ll test the deployed flow by running a compute session, sending a sample query, and verifying that the chat responds with appropriate travel recommendations.
+In this task, you’ll test the deployed flow by running a compute session, sending a sample query, and verifying that the chat responds with appropriate travel recommendations.
 
 1. Ensure the **compute session is running (1)**. If not, wait for it to start.
 
@@ -272,7 +272,7 @@ In this task you’ll test the deployed flow by running a compute session, sendi
 
 ## Task 6: Deploy the flow
 
-In this task you’ll deploy your flow as an endpoint, verify it is running successfully, test it with sample prompts, and review the connection details to understand how it can be integrated into an application.
+In this task, you’ll deploy your flow as an endpoint, verify it is running successfully, test it with sample prompts, and review the connection details to understand how it can be integrated into an application.
 
 1. On the toolbar, select **Deploy** and deploy the flow with the following settings:
 
@@ -294,11 +294,11 @@ In this task you’ll deploy your flow as an endpoint, verify it is running succ
 
     ![](../Images/aii92.png)
 
-1. Deployment may take aroud 12-15 minutes. Please wait until it completes. You can track the progress in the Notifications panel.
+1. Deployment may take around 12-15 minutes. Please wait until it completes. You can track the progress in the Notifications panel.
 
     ![](../Images/aii93.png)
 
-1. Once the deployemnt is completed, In Azure AI Foundry portal, in the navigation pane, in the My assets section, click on the **Models + endpoints (1)** twice. Refresh the page. Make sure the **myendpointxxxxx** endopint is listed and in the **Succeeded (2)** state. Then select it **(3)**.
+1. Once the deployment is completed, in the Azure AI Foundry portal, in the navigation pane, in the My assets section, click on the **Models + endpoints (1)** twice. Refresh the page. Make sure the **myendpointxxxxx** endpoint is listed and in the **Succeeded (2)** state. Then select it **(3)**.
 
     ![](../Images/aii94.png)
 
