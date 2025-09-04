@@ -37,7 +37,7 @@ By the end of this lab, you will be able to:
 
 ## Architecture Diagram
 
-![](../Images/lab08archdiagram.png)
+![](../Images/AI-102-l10-arch.png)
 
 ## Explanation of Components
 

@@ -1,11 +1,24 @@
 # Lab 11: Develop an Azure AI agent with the Semantic Kernel SDK
 
-
 ## Overview
 
-In this lab, you'll use Azure AI Agent Service and Semantic Kernel to create an AI agent that processes expense claims.
+In this lab, you will develop an Azure AI agent with the Semantic Kernel SDK to process expense claims end to end. You will deploy gpt-4.1 in an Azure AI Foundry project, configure the app to use the project endpoint and deployment name, and define the agent’s instructions and tools (including a simulated email plugin). You will run the agent against sample expenses and observe it generate a structured response and invoke the plugin to “send” an expense claim. Finally, you will validate the output to understand how Semantic Kernel orchestrates model calls and tool execution.
+
+## Lab Objectives
+
+- **Task 1:** Deploy a model in an Azure AI Foundry project
+
+- **Task 2:** Create an agent client app
+
+- **Task 3:** Configure the application settings
+
+- **Task 4:** Write code for an agent app
+
+- **Task 5:** Sign into Azure and run the app
 
 ### Task 1: Deploy a model in an Azure AI Foundry project
+
+In this task, you’ll create a new Azure AI Foundry project and deploy the **gpt-4.1** model. By the end, you’ll have the **project endpoint** and **deployment name** ready for use in your application code.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -17,7 +30,21 @@ In this lab, you'll use Azure AI Agent Service and Semantic Kernel to create an 
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
+     ![](../Images/aifoundrysignin1.png)
+
    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+     ![](../Images/aifoundrysignin1.png)
+
+1. When the **Stay signed in?** window appears, select **No**.
+
+    ![](../Images/aifoundrysignin3.png)
+
+1. Click on **X** to close the **Chat with Foundry Agent** popup window.
+
+    ![](../Images/l8t1p2.png)
+
+    >**Note:** Close the **Help** pane if it's open
 
 1. In the home page, in the **Explore models and capabilities** section, search for the **gpt-4.1 (1)** model and then select **gpt-4.1 (2)** which we'll use in our project
 
@@ -71,7 +98,7 @@ In this lab, you'll use Azure AI Agent Service and Semantic Kernel to create an 
 
 ### Task 2: Create an agent client app
 
-Now you're ready to create a client app that defines an agent and a custom function. Some code has been provided for you in a GitHub repository.
+In this task, you’ll open **Azure Cloud Shell**, clone the provided repository, and review the starter files for the agent sample. By the end, your workspace will contain the code scaffold you’ll extend with Semantic Kernel.
 
 1. Navigate to [Azure portal](https://portal.azure.com/).
 
@@ -130,6 +157,8 @@ Now you're ready to create a client app that defines an agent and a custom funct
 
 ### Task 3: Configure the application settings
 
+In this task, you’ll set up a Python virtual environment, install dependencies, and update the `.env` file with your **project endpoint** and **gpt-4.1** deployment name. By the end, your app will be correctly wired to call your Azure AI Foundry project.
+
 1. In the cloud shell command-line pane, enter the following command to install the libraries you'll use:
 
     ```
@@ -138,7 +167,7 @@ Now you're ready to create a client app that defines an agent and a custom funct
     pip install python-dotenv azure-identity semantic-kernel --upgrade 
     ```
 
-    > **Note**: Installing *semantic-kernel* autmatically installs a semantic kernel-compatible version of *azure-ai-projects*.
+    > **Note**: Installing **semantic-kernel** autmatically installs a semantic kernel-compatible version of **azure-ai-projects**.
 
 1. Enter the following command to edit the configuration file that has been provided:
 
@@ -159,6 +188,8 @@ Now you're ready to create a client app that defines an agent and a custom funct
 
 ### Task 4: Write code for an agent app
 
+In this task, you’ll add imports, define a Semantic Kernel plugin (simulated email sender), create the agent definition and client, and implement the call flow to process expense data. By the end, the app will construct and run an agent that can invoke your custom function.
+
 >**Note**: As you add code, be sure to maintain the correct indentation. Use the existing comments as a guide, entering the new code at the same level of indentation.
 
 1. Enter the following command to edit the agent code file that has been provided:
@@ -170,7 +201,7 @@ Now you're ready to create a client app that defines an agent and a custom funct
 1. Review the code in the file. It contains:
 
     - Some **import** statements to add references to commonly used namespaces
-    - A *main* function that loads a file containing expenses data, asks the user for instructions, and and then calls...
+    - A **main** function that loads a file containing expenses data, asks the user for instructions, and and then calls...
     - A **process_expenses_data** function in which the code to create and use your agent must be added
     - An **EmailPlugin** class that includes a kernel function named **send_email**; which will be used by your agent to simulate the functionality used to send an email.
     
@@ -206,7 +237,7 @@ Now you're ready to create a client app that defines an agent and a custom funct
 
      ![](../Images/ai11l17.png)     
 
-      >**Note**: The function *simulates* sending an email by printing it to the console. In a real application, you'd use an SMTP service or similar to actually send the email!
+      >**Note**: The function **simulates** sending an email by printing it to the console. In a real application, you'd use an SMTP service or similar to actually send the email!
 
 1. Find the comment **Get configuration settings**, and add the following code to load the configuration file and create an **AzureAIAgentSettings** object (which will automatically include the Azure AI Agent settings from the configuration).
 
@@ -304,6 +335,8 @@ Now you're ready to create a client app that defines an agent and a custom funct
 
 ### Task 5: Sign into Azure and run the app
 
+In this task, you’ll authenticate with `az login` and execute the Python app to submit expense data to the agent. By the end, you’ll verify the agent’s response and observe it “sending” an expense-claim email via the plugin output.
+
 1. In the cloud shell command-line pane beneath the code editor, enter the following command to sign into Azure **(1)**. Copy and paste the Sign in URL in the web browser **(2)**. Copy the device code as well to authenticate **(3)**.
 
     ```
@@ -356,7 +389,9 @@ Now you're ready to create a client app that defines an agent and a custom funct
 
 ## Summary
 
-In this lab, you used the Azure AI Agent Service SDK and Semantic Kernel to create an agent.
+In this lab, you created an Azure AI Foundry project and deployed gpt-4.1, capturing the project endpoint and deployment name. You set up Azure Cloud Shell, cloned the repo, configured the app, and used the Semantic Kernel SDK to define an agent with instructions and a simulated email plugin. You authenticated and ran the app against sample expense data, reviewed the agent’s response, and confirmed it generated a structured claim and invoked the plugin.
+
+### You have successfully completed the Hands-on Lab!
 
 
 
