@@ -1,6 +1,6 @@
 # Lab 04: Create a generative AI app that uses your own data
 
-### Estimated Duration : 45 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -8,7 +8,7 @@ Retrieval Augmented Generation (RAG) is a technique used to build applications t
 
 In this exercise, you'll use Azure AI Foundry to integrate custom data into a generative AI solution.
 
-> **Note:** The code in this exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages; which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
+> **Note:** The code in this exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages, which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
 
 ## Lab Objectives
 
@@ -66,7 +66,7 @@ In this task, you'll set up the Azure AI Foundry workspace by creating a hub and
 
     ![](../Images/l4t1p3.png)
 
-1. In the Advanced options specify the following settings for your project and the  click **Create (9)**.
+1. In the Advanced options, specify the following settings for your project and click **Create (9)**.
 
     * Subscription: **Choose Default Subscription (5)**
     * Resource group: **AI-102-RG04 (6)**
@@ -81,7 +81,7 @@ In this task, you'll set up the Azure AI Foundry workspace by creating a hub and
 
 ## Task 2: Deploy models
 
-In this task, you'll deploy two models, an embedding model to convert text into vector format for searching, and a generative model to produce responses based on retrieved data.
+In this task, you'll deploy two models: an embedding model to convert text into vector format for searching, and a generative model to produce responses based on retrieved data.
 
 You need two models to implement your solution:
 
@@ -134,7 +134,7 @@ You need two models to implement your solution:
 
     ![](../Images/l4t2p7.png)
 
-    > **Note:** Reducing the Tokens Per Minute (TPM) helps avoid over-using the quota available in the subscription you are using. 50,000 TPM is sufficient for the data used in this exercise.
+    > **Note:** Reducing the Tokens Per Minute (TPM) helps avoid overusing the quota available in the subscription you are using. 50,000 TPM is sufficient for the data used in this exercise.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -204,7 +204,7 @@ The data for your app consists of a set of travel brochures in PDF format from t
 
 In this task, you'll create a vector index in Azure AI Search from the uploaded brochures. This index will enable efficient retrieval of relevant content during a query.
 
-1. In Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Data + indexes (1)** page and in the **Indexes (2)** tab, click on **+ New index (3)**.
+1. In the Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Data + indexes (1)** page and in the **Indexes (2)** tab, click on **+ New index (3)**.
 
     ![](../Images/l4t4p1.png)
 
@@ -247,7 +247,7 @@ In this task, you'll create a vector index in Azure AI Search from the uploaded 
 
         ![](../Images/l4t4p8.png)
 
-1. In the **Search settings** section, review the settings, keep them as default, and click **Next**.
+1. In the **Search settings** section, review the settings, keep them as the default, and click **Next**.
 
     ![](../Images/l4t4p9.png)
 
@@ -281,7 +281,7 @@ In this task, you'll verify that your index is working by running queries in the
 
     ![](../Images/l4t5p4.png)
 
-    > **Note:** In some cases, newly created indexes may not be available right away. Refreshing the browser usually helps, but if you're still experiencing the issue where it can't find the index you may need to wait until the index is recognized.
+    > **Note:** In some cases, newly created indexes may not be available right away. Refreshing the browser usually helps, but if you're still experiencing the issue where it can't find the index, you may need to wait until the index is recognized.
 
 1. After the index has been added and the chat session has restarted, resubmit the prompt `Where can I stay in New York?`
 
@@ -437,7 +437,7 @@ In this task, you'll configure and run a Python-based client application that us
 
     >**Note:** The response includes source references to indicate the indexed data in which the answer was found.
 
-1. Try a follow-up question, for example `Where can I stay there?`
+1. Try a follow-up question, for example, `Where can I stay there?`
 
     ![](../Images/l4t6p14.png)
 
@@ -455,4 +455,5 @@ By completing this lab, you learned how to:
 * Configure and run a Python-based RAG client application using the Azure OpenAI SDK and Azure AI Search.
 
 ### You have successfully completed the Hands-on Lab!
+
 
