@@ -15,49 +15,39 @@ In this lab, you will learn how to evaluate the performance of generative AI mod
 By the end of this lab, you will be able to:
 
 1. **Create an Azure AI Foundry project**: Set up a new project environment to build and manage prompt flows.
-2. **Design and configure a prompt flow**: Add system instructions, connect to a model, and adjust flow components.
-3. **Test flows in the chat pane**: Run sample queries, review outputs, and refine prompts to improve responses.
-4. **Deploy a prompt flow as an endpoint**: Publish your flow, enabling it to be accessed outside the design environment.
-5. **Validate the deployed endpoint**: Interact with the deployed flow directly in Azure AI Foundry to confirm functionality.
-6. **Retrieve endpoint connection details**: Access deployment information required to integrate the flow into client applications.
+2. **Deploy models:** Deploy the gpt-4.1 and gpt-4.1-mini models within the project for evaluation.
+3. **Perform manual evaluation:** Use a dataset of travel-related queries to test model accuracy and score outputs against expected responses.
+4. **Run automated evaluations:** Apply evaluators to measure semantic similarity, relevance, F1 score, and fairness for standardized model assessment.
 
 ## Pre-requisites
 
-- Basic knowledge of navigating the Azure portal.
-
-- Familiarity with AI concepts such as generative AI, language models, and benchmarks.
+- Familiarity with AI concepts such as model evaluation and performance metrics.
 
 - An active Azure subscription with access to Azure AI Foundry.
 
-- Permission to create and manage resources (including enabling managed identities).
-
 ## Architecture
 
-1. **Azure AI Foundry Resource**: Provisioned via the Azure portal, this resource connects to Azure AI services, manages access via system-assigned identities, and hosts deployed models such as **gpt-4.1** and **Phi-4-mini-instruct**.
+1. **Azure AI Foundry Resource**: Provisioned via the Azure portal, this resource connects to Azure AI services, manages access via system-assigned identities, and hosts deployed models such as **gpt-4.1** and **gpt-4.1-mini**.
 
 2. **Azure AI Foundry Project**: A workspace for deploying and managing models, configuring project settings, creating prompt flows, and accessing endpoints and authorization keys for applications.
 
-3. **Prompt Flow and Chat Playground**: Interactive tools within the project to build, test, and deploy prompt flows, configure system instructions, submit queries to models, analyze responses, and compare model performance for different scenarios.
+3. **Evaluation Dataset:** A JSONL file with travel-related questions and expected answers, used to validate model outputs.
 
-4. **Storage and Authorization**: Blob storage integrated with managed identities ensures the project and prompt flows have secure access to necessary data and assets.
+4. **Evaluation Workflows:** Manual evaluations capture human scoring, while automated evaluations apply semantic similarity, relevance, F1 score, and fairness checks.
 
 ## Architecture Diagram
 
-![](../Images/lab01archdiagram.png)
+![](../Images/AI-102-l7-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Resource**: The core service provisioned in the Azure portal that connects to Azure AI services, hosts deployed models, and manages secure access via system-assigned identities. It serves as the foundation for creating projects, deploying models, and integrating AI capabilities.
+1. **Azure AI Foundry Project:** You create a hub and project that act as the workspace to deploy models, upload datasets, and run evaluations.
 
-2. **Azure AI Foundry Project**: The workspace where you deploy and manage models, configure project-level settings, create prompt flows, and access endpoints and authorization keys. This is where all model-related operations, including deployment, testing, and orchestration, occur.
+2. **Deployed Models (gpt-4.1 and gpt-4.1-mini):** You deploy the gpt-4.1 model to generate AI-assisted evaluation metrics, and the gpt-4.1-mini model to test performance against sample queries.
 
-3. **Models and Endpoints**: AI models such as **gpt-4.1**, are deployed within the project and exposed through endpoints. Endpoints enable applications or prompt flows to interact with the models programmatically while ensuring secure access via keys.
+3. **Manual Evaluation Module:** You run test queries against the gpt-4.1-mini model, compare its responses with the expected answers, and score results manually using thumbs up/down.
 
-4. **Prompt Flow**: A configurable workflow that orchestrates prompts, inputs, and outputs for a generative AI model. It allows you to define interactions, integrate system instructions, and process user queries to automate AI-assisted tasks.
-
-5. **Chat Playground**: An interactive interface for testing deployed models and prompt flows. Users can input queries, provide system instructions, observe responses, and iteratively refine model behavior before integrating it into applications.
-
-6. **Storage Integration and Authorization**: Blob storage connected via managed identities ensures that prompt flows and projects can securely read and store assets required for AI operations, maintaining controlled access to sensitive data.
+4. **Automated Evaluation:** Built-in evaluators (semantic similarity, relevance, F1 score, fairness) automatically score the model outputs, enabling scalable and standardized assessment.
 
 # Getting Started with lab
 
