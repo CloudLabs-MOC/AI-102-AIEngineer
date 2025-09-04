@@ -61,7 +61,7 @@ By the end of this lab, you will be able to:
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  
@@ -140,5 +140,6 @@ Learner Support Contacts:
 Click on **Next** from the lower right corner to move on to the next page.
 
    ![Start Your Azure Journey](../Images/nextpage.png)
+
 
 ## Happy Learning !!
