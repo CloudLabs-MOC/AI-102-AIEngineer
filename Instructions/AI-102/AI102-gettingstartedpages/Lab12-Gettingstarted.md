@@ -8,12 +8,6 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-Here’s a concise overview for Lab 12 in the style of your previous lab summaries:
-
----
-
-## Overview
-
 In this lab, you developed a multi-agent solution using the **Semantic Kernel SDK** in Azure AI Foundry. You created two AI agents: the *Incident Manager*, which analyzes service log files to detect potential issues and recommend resolutions, and the *DevOps Assistant*, which executes corrective actions and updates the logs. You configured the agents, defined turn-taking and termination strategies for their group chat, and tested their collaboration using sample log files. Finally, you verified that the log files were updated correctly and that the agents’ interactions achieved the intended results.
 
 ## Objectives
@@ -41,7 +35,7 @@ The lab architecture demonstrates how two AI agents collaborate using the **Sema
 2. **Incident Manager Agent**: An agent responsible for parsing and analyzing service log files, detecting issues, and recommending corrective actions.
 3. **DevOps Assistant Agent**: A supporting agent that executes corrective steps suggested by the Incident Manager and updates the service log accordingly.
 4. **Group Chat Orchestration**: A coordination mechanism that defines agent turn-taking rules and sets termination criteria for the conversation.
-5. **Updated Log File**: The output file reflecting both the analysis of detected issues and the corrective actions performed.
+5. **Updated Log File**: The output file reflects both the analysis of detected issues and the corrective actions performed.
 
 ## Architecture Diagram
 
@@ -58,7 +52,7 @@ The lab architecture demonstrates how two AI agents collaborate using the **Sema
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  
@@ -106,7 +100,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
    ![Launch Azure Portal](../Images/azureportalicon.png)
 
-1. In sign-in window, kindly sign in using the provided Azure credentials
+1. In the sign-in window, kindly sign in using the provided Azure credentials
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -139,4 +133,5 @@ Click on **Next** from the lower right corner to move on to the next page.
    ![Start Your Azure Journey](../Images/nextpage.png)
 
 ## Happy Learning !!
+
 
