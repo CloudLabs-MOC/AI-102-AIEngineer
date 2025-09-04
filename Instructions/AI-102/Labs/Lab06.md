@@ -1,6 +1,6 @@
 # Lab 06: Apply content filters to prevent the output of harmful content
 
-### Estimated Duration : 45 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -50,7 +50,7 @@ In this task, you’ll sign in to Azure AI Foundry, create a new project, and de
 
     ![](../Images/ai6l1.png) 
 
-1. Then at the top of the page for the model, select **Use this mode**l.
+1. Then, at the top of the page for the model, select **Use this model**.
 
     ![](../Images/ai6l2.png) 
 
@@ -58,7 +58,7 @@ In this task, you’ll sign in to Azure AI Foundry, create a new project, and de
 
     ![](../Images/ai6l3.png) 
 
-1. Under **Advanced options**, provide the below details and leave the rest to deafult:
+1. Under **Advanced options**, provide the details below and leave the rest to default:
 
     - Resource group: Select **AI-102-RG06 (1)**
     - Region: Select **<inject key="Region" enableCopy="false" /> (2)**
@@ -132,7 +132,7 @@ In this task, you’ll test the **default content filter** applied to your Phi-4
 
      **The model may "self-censor" its response based on its training, but the content filter may not block the response**.
 
-### Task 3:  Create and apply a custom content filterr
+### Task 3:  Create and apply a custom content filter
 
 In this task, you’ll define and apply a custom content filter. You’ll configure thresholds for categories like violence, hate, sexual, and self-harm, then apply the filter to your model deployment to enforce stricter safeguards.
 
@@ -213,7 +213,7 @@ In this task, you’ll return to the Chat Playground to validate the new filter.
 
       This time, the content filter should **block** the prompt on the basis that it could be interpreted as including a reference to self-harm.
 
-      >**Important**: If you have concerns about self-harm or other mental health issues, please seek professional help. Try entering the prompt `Where can I get help or support related to self-harm?`
+      >**Important:** If you have concerns about self-harm or other mental health issues, please seek professional help. Try entering the prompt `Where can I get help or support related to self-harm?`
 
       ![](../Images/ai6l26.png)    
 
