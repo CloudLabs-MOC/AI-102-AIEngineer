@@ -14,50 +14,47 @@ In this lab, you will explore how Azure AI Foundry uses content filters to detec
 
 By the end of this lab, you will be able to:
 
-1. **Create an Azure AI Foundry project**: Set up a new project environment to build and manage prompt flows.
-2. **Design and configure a prompt flow**: Add system instructions, connect to a model, and adjust flow components.
-3. **Test flows in the chat pane**: Run sample queries, review outputs, and refine prompts to improve responses.
-4. **Deploy a prompt flow as an endpoint**: Publish your flow, enabling it to be accessed outside the design environment.
-5. **Validate the deployed endpoint**: Interact with the deployed flow directly in Azure AI Foundry to confirm functionality.
-6. **Retrieve endpoint connection details**: Access deployment information required to integrate the flow into client applications.
+1. **Create and deploy a project in Azure AI Foundry:** Create a new project, deploy the Phi-4 model, and prepare it for testing in the Chat Playground.
+2. **Test the default content filters:** Interact with your deployed model to see how harmful inputs and outputs are identified and blocked.
+3. **Create and apply a custom content filter:** Define stricter thresholds for categories such as violence, hate, sexual, and self-harm, and apply them to your deployment.
+4. **Validate the custom filter in the Chat Playground:** Submit prompts to compare model behavior before and after applying the custom content filter.
+
 
 ## Pre-requisites
 
 - Basic knowledge of navigating the Azure portal.
 
-- Familiarity with AI concepts such as generative AI, language models, and benchmarks.
+- Familiarity with responsible AI concepts such as harmful content filtering.
 
 - An active Azure subscription with access to Azure AI Foundry.
 
-- Permission to create and manage resources (including enabling managed identities).
 
 ## Architecture
 
-1. **Azure AI Foundry Resource**: Provisioned via the Azure portal, this resource connects to Azure AI services, manages access via system-assigned identities, and hosts deployed models such as **gpt-4.1** and **Phi-4-mini-instruct**.
+1. **Azure AI Foundry Resource**: The core service in Azure that provides access to model catalog, deployment capabilities, and responsible AI tools such as content filters.
 
-2. **Azure AI Foundry Project**: A workspace for deploying and managing models, configuring project settings, creating prompt flows, and accessing endpoints and authorization keys for applications.
+2. **Azure AI Foundry Project**: A workspace where you manage the Phi-4 model deployment, configure settings, and apply content filters.
 
-3. **Prompt Flow and Chat Playground**: Interactive tools within the project to build, test, and deploy prompt flows, configure system instructions, submit queries to models, analyze responses, and compare model performance for different scenarios.
+3. **Content Filters:** Default or custom filters that analyze both input prompts and output completions to block harmful content categories such as violence, hate, sexual, and self-harm.
 
-4. **Storage and Authorization**: Blob storage integrated with managed identities ensures the project and prompt flows have secure access to necessary data and assets.
+4. **Chat Playground Interface:** An interactive environment for testing the model with different prompts to validate the effect of default and custom content filters.
 
 ## Architecture Diagram
 
-![](../Images/lab01archdiagram.png)
+![](../Images/AI-102-lab6-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Resource**: The core service provisioned in the Azure portal that connects to Azure AI services, hosts deployed models, and manages secure access via system-assigned identities. It serves as the foundation for creating projects, deploying models, and integrating AI capabilities.
+1. **Azure AI Foundry Resource**: The core service in Azure that provides access to generative AI models, deployment options, and responsible AI features such as content filters. It is the foundation for creating projects and managing model deployments.
 
-2. **Azure AI Foundry Project**: The workspace where you deploy and manage models, configure project-level settings, create prompt flows, and access endpoints and authorization keys. This is where all model-related operations, including deployment, testing, and orchestration, occur.
+2. **Azure AI Foundry Project**: The workspace you create within the resource to organize and manage assets. In this lab, the project hosts the Phi-4 model deployment and is the location where you configure and apply content filters.
 
-3. **Models and Endpoints**: AI models such as **gpt-4.1**, are deployed within the project and exposed through endpoints. Endpoints enable applications or prompt flows to interact with the models programmatically while ensuring secure access via keys.
+3. **Model Deployment (Phi-4)**: The generative AI model deployed in the project. It is accessed through a secure endpoint and used in the Chat Playground to demonstrate how harmful prompts and completions are handled by filters.
 
-4. **Prompt Flow**: A configurable workflow that orchestrates prompts, inputs, and outputs for a generative AI model. It allows you to define interactions, integrate system instructions, and process user queries to automate AI-assisted tasks.
+4. **Content Filters:** Default or custom filters applied to model deployments. They evaluate both input prompts and output responses across categories such as violence, hate, sexual, and self-harm to block unsafe content.
 
-5. **Chat Playground**: An interactive interface for testing deployed models and prompt flows. Users can input queries, provide system instructions, observe responses, and iteratively refine model behavior before integrating it into applications.
+5. **Chat Playground**: An interactive interface for testing deployed models. It allows users to input queries, review responses, and validate how both default and custom filters affect the model’s output.
 
-6. **Storage Integration and Authorization**: Blob storage connected via managed identities ensures that prompt flows and projects can securely read and store assets required for AI operations, maintaining controlled access to sensitive data.
 
 # Getting Started with lab
 
@@ -65,9 +62,9 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
 
 ## Accessing Your Lab Environment
  
-Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
+Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab03labvm.png)
+![Access Your VM and Lab Guide](../Images/AI-102-06-g1.png)
 
 ### Virtual Machine & Lab Guide
  

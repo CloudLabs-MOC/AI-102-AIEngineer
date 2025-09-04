@@ -4,11 +4,21 @@
 
 ## Overview
 
-Azure AI Foundry includes default content filters to help ensure that potentially harmful prompts and completions are identified and removed from interactions with the service. Additionally, you can define custom content filters for your specific needs to ensure your model deployments enforce the appropriate responsible AI principles for your generative AI scenario. Content filtering is one element of an effective approach to responsible AI when working with generative AI models.
+In this lab, you will work with Azure AI Foundry to explore how content filters protect generative AI applications from harmful inputs and outputs. You’ll deploy the Phi-4 model, test the default content filters in the Chat Playground, create a custom content filter with stricter thresholds, and apply it to your model deployment. The lab provides hands-on experience in configuring and validating responsible AI safeguards for generative AI scenarios.
 
-In this lab, you'll explore the effect of the default content filters in Azure AI Foundry.
+## Lab Objectives
+
+- **Task 1:** Deploy a model in an Azure AI Foundry project
+
+- **Task 2:** Chat using the default content filter
+
+- **Task 3:** Create and apply a custom content filter
+
+- **Task 4:** Test your custom content filter
 
 ### Task 1: Deploy a model in an Azure AI Foundry project
+
+In this task, you’ll sign in to Azure AI Foundry, create a new project, and deploy the **Phi-4** model. This will set up the workspace and model needed to explore content filtering.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -20,7 +30,21 @@ In this lab, you'll explore the effect of the default content filters in Azure A
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
+     ![](../Images/aifoundrysignin1.png)
+
    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+     ![](../Images/aifoundrysignin2.png)
+
+1. When the **Stay signed in?** window appears, select **No**.
+
+    ![](../Images/aifoundrysignin3.png)
+
+1. Click on **X** to close the **Chat with Foundry Agent** popup window.
+
+    ![](../Images/l8t1p2.png)
+
+    >**Note:** Close the **Help** pane if it's open
 
 1. In the home page, in the **Explore models and capabilities** section, search for the **Phi-4 (1)** model and then select **Phi-4 (2)** which we'll use in our project
 
@@ -37,7 +61,7 @@ In this lab, you'll explore the effect of the default content filters in Azure A
 1. Under **Advanced options**, provide the below details and leave the rest to deafult:
 
     - Resource group: Select **AI-102-RG06 (1)**
-    - Region: Select **Region**: Select **<inject key="Region" enableCopy="false" /> (2)**
+    - Region: Select **<inject key="Region" enableCopy="false" /> (2)**
     - Select **Create (3)**
 
       ![](../Images/ai6l4.png)
@@ -46,7 +70,7 @@ In this lab, you'll explore the effect of the default content filters in Azure A
 
     ![](../Images/ai6l5.png) 
 
-1. On the **Deploy Phi-4** page, select Deployment type as **Global Standard (1)** and then **Create (2)**.
+1. On the **Deploy Phi-4** page, select Deployment type as **Global Standard (1)** and then **Deploy (2)**.
 
     ![](../Images/ai6l6.png) 
 
@@ -72,7 +96,7 @@ In this lab, you'll explore the effect of the default content filters in Azure A
 
 ### Task 2: Chat using the content filter  
 
-The Phi-4 model you deployed has a default content filter applied, which has a balanced set of filters that will disallow most harmful content while allowing input and output language considered reasonable safe.
+In this task, you’ll test the **default content filter** applied to your Phi-4 deployment. You’ll submit safe prompts as well as harmful ones to see how the system responds and blocks inappropriate requests.
 
 1. Enter the following prompt **(1)** and then **send (2)**:
 
@@ -110,9 +134,9 @@ The Phi-4 model you deployed has a default content filter applied, which has a b
 
 ### Task 3:  Create and apply a custom content filterr
 
-When the default content filter doesn't meet your needs, you can create custom content filters to take greater control over the prevention of potentially harmful or offensive content generation.
+In this task, you’ll define and apply a custom content filter. You’ll configure thresholds for categories like violence, hate, sexual, and self-harm, then apply the filter to your model deployment to enforce stricter safeguards.
 
-1. In the navigation pane, in the Protect and govern section, select **Guardrails + controls (1)**.
+1. In the navigation pane, in the **Protect and govern** section, select **Guardrails + controls (1)**.
 
     - Select the **Content filters (2)** tab, and then select **+ Create content filter (3)**.
 
@@ -120,7 +144,7 @@ When the default content filter doesn't meet your needs, you can create custom c
 
       You create and apply a content filter by providing details in a series of pages.
 
-1. On the Basic information page, provide a content filter name as **ContentFilters<inject key="DeploymentID" enableCopy="false"/> (1)** and then **Create (2)**.
+1. On the **Basic information** page, provide a content filter name as **ContentFilters<inject key="DeploymentID" enableCopy="false"/> (1)** and then click **Next (2)**.
 
     ![](../Images/ai6l14.png)
 
@@ -139,7 +163,7 @@ When the default content filter doesn't meet your needs, you can create custom c
 
     Additionally, prompt shield protections are provided to mitigate deliberate attempts to abuse your generative AI app.
 
-1. Change the threshold for each category of input filter to **Block all (1)** and then **Next (2)**.
+1. Change the threshold for each category of input filter to **Block all (1)** and then click **Next (2)**.
 
     ![](../Images/ai6l16.png)
 
@@ -147,11 +171,11 @@ When the default content filter doesn't meet your needs, you can create custom c
 
     ![](../Images/ai6l17.png)
 
-1. On the Deployment page, select your **Phi-4 model (1)** deployment to apply the new content filter to it and then **Next (2)**.
+1. On the Deployment page, select your **Phi-4 model (1)** deployment to apply the new content filter to it and then click **Next (2)**.
 
     ![](../Images/ai6l18.png)
 
-1. Select **Replace** to confirm that you want to replace the existing content filter when prompted.  
+1. Select **Replace** to confirm that you want to **Replace existing content filter** when prompted.  
 
     ![](../Images/ai6l19.png)
 
@@ -173,7 +197,7 @@ When the default content filter doesn't meet your needs, you can create custom c
 
 ### Task 4: Test your custom content filter
 
-Let's have one final chat with the model to see the effect of the custom content filter.
+In this task, you’ll return to the Chat Playground to validate the new filter. You’ll run prompts that were previously allowed or partially blocked and confirm that the stricter custom filter now blocks them as expected.
 
 1. In the navigation pane, select **Playgrounds (1)** to open the Chat playground. Ensure a new session has been started with your **Phi-4 (2)** model.
 
@@ -211,10 +235,10 @@ Let's have one final chat with the model to see the effect of the custom content
 
      ![](../Images/ai6l28.png)  
 
-     **Once again, the content should be blocked by your content filter**.
+     **Once again, the content should be blocked by your content filter**.   
 
-### Summary     
+## Summary
 
-In this lab, you've explored content filters and the ways in which they can help safeguard against potentially harmful or offensive content. Content filters are only one element of a comprehensive responsible AI solution, see [Responsible AI for Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/responsible-use-of-ai-overview) for more information.
+In this lab, you deployed the Phi-4 model in Azure AI Foundry and explored how content filters enforce responsible AI practices. You tested the default content filters in the Chat Playground to see how harmful prompts are blocked, then created and applied a custom content filter with stricter thresholds. Finally, you validated the custom filter by submitting prompts and observing how responses were managed. By the end, you gained hands-on experience in configuring, applying, and testing content filters to safeguard generative AI applications.
 
-   
+### You have successfully completed the Hands-on Lab!
