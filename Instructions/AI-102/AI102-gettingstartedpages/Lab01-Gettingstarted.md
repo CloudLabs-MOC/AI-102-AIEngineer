@@ -50,7 +50,7 @@ The lab architecture demonstrates how an Azure AI Foundry project supports gener
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  
@@ -98,7 +98,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
    ![Launch Azure Portal](../Images/azureportalicon.png)
 
-1. In sign-in window, kindly sign in using the provided Azure credentials
+1. In the sign-in window, kindly sign in using the provided Azure credentials
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -131,4 +131,5 @@ Click on **Next** from the lower right corner to move on to the next page.
    ![Start Your Azure Journey](../Images/nextpage.png)
 
 ## Happy Learning !!
+
 
