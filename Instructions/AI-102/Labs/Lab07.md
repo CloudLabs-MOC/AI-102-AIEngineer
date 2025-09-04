@@ -1,9 +1,11 @@
 # Lab 07: Evaluate generative AI model performance
 
 ## Overview
-In this lab, you'll use manual and automated evaluations to assess the performance of a model in the Azure AI Foundry portal.
+In this lab, you will use manual and automated evaluations to assess the performance of a generative AI model in Azure AI Foundry. You will begin by creating a hub and project, then deploy gpt-4.1 and gpt-4.1-mini models. After deployment, you will perform manual evaluations by comparing model outputs against expected responses, and then configure automated evaluations using semantic similarity, relevance, F1 score, and fairness metrics. These exercises will give you practical experience in applying evaluation techniques to validate generative AI models.
 
 ### Task 1: Create an Azure AI Foundry hub and project
+
+In this task, you’ll sign in to Azure AI Foundry, create a new hub, and set up a project. This will provide the workspace you’ll use to deploy and evaluate models.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
