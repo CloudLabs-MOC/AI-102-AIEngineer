@@ -3,6 +3,16 @@
 ## Overview
 In this lab, you will use manual and automated evaluations to assess the performance of a generative AI model in Azure AI Foundry. You will begin by creating a hub and project, then deploy gpt-4.1 and gpt-4.1-mini models. After deployment, you will perform manual evaluations by comparing model outputs against expected responses, and then configure automated evaluations using semantic similarity, relevance, F1 score, and fairness metrics. These exercises will give you practical experience in applying evaluation techniques to validate generative AI models.
 
+## Lab Objectives
+
+- **Task 1:** Create an Azure AI Foundry hub and project
+
+- **Task 2:** Deploy models
+
+- **Task 3:** Manually evaluate a model
+
+- **Task 4:** Use automated evaluation
+
 ### Task 1: Create an Azure AI Foundry hub and project
 
 In this task, you’ll sign in to Azure AI Foundry, create a new hub, and set up a project. This will provide the workspace you’ll use to deploy and evaluate models.
@@ -17,13 +27,27 @@ In this task, you’ll sign in to Azure AI Foundry, create a new hub, and set up
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
+     ![](../Images/aifoundrysignin1.png)
+
    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+     ![](../Images/aifoundrysignin2.png)
+
+1. When the **Stay signed in?** window appears, select **No**.
+
+    ![](../Images/aifoundrysignin3.png)
+
+1. Click on **X** to close the **Chat with Foundry Agent** popup window.
+
+    ![](../Images/l8t1p2.png)
+
+    >**Note:** Close the **Help** pane if it's open
 
 1. In the LabVM browser tab, copy and paste the following link  https://ai.azure.com/managementCenter/allResources and select **Create new**.  
 
    ![](../Images/aii60.png) 
 
-1. In the Create a project wizard, select **AI hub resource**.
+1. In the **Create project** wizard, select **AI hub resource (1)** and click **Next (2)**.
 
    ![](../Images/aii61.png)
 
@@ -54,7 +78,7 @@ In this task, you’ll sign in to Azure AI Foundry, create a new hub, and set up
 
 ### Task 2: Deploy models
 
-In this lab, you'll evaluate the performance of a gpt-4o-mini model. You'll also use a gpt-4o model to generate AI-assisted evaluation metrics.
+In this task, you’ll deploy two models in your Azure AI Foundry project: gpt-4.1 and gpt-4.1-mini . The gpt-4.1 model will be used to generate AI-assisted evaluation metrics, while the gpt-4.1-mini model will be the one you evaluate for performance.
 
 1. In the pane on the left for your project, in the My assets section, select the **Models + endpoints (1)** page.
 
@@ -118,7 +142,7 @@ In this lab, you'll evaluate the performance of a gpt-4o-mini model. You'll also
 
 ### Task 3: Manually evaluate a model
 
-You can manually review model responses based on test data. Manually reviewing allows you to test different inputs to evaluate whether the model performs as expected.
+In this task, you’ll perform a manual evaluation by uploading a dataset of travel related queries and comparing model outputs against expected responses. You’ll score the results to measure the accuracy and quality of the model’s responses.
 
 1. Right click on the following link [travel_evaluation_data.jsonl](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel_evaluation_data.jsonl) then select **Copy link** to download the file from `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel_evaluation_data.jsonl`.
 
@@ -183,13 +207,11 @@ You can manually review model responses based on test data. Manually reviewing a
 
 1. Assign a suitable name as **Manualevaluation<inject key="DeploymentID" enableCopy="false"/> (1)** and then **Save (2)**. Saving results enables you to retrieve them later for further evaluation or comparison with a different model.   
 
-    ![](../Images/ai7l20.png)
+    ![](../Images/AI-102-l7-1.png)
 
 ### Task 4: Use automated evaluation
 
-While manually comparing model output to your own expected responses can be a useful way to assess a model's performance, it's a time-consuming approach in scenarios where you expect a wide range of questions and responses; and it provides little in the way of standardized metrics that you can use to compare different model and prompt combinations.
-
-Automated evaluation is an approach that attempts to address these shortcomings by calculating metrics and using AI to assess responses for coherence, relevance, and other factors.
+In this task, you’ll configure automated evaluators to assess your model outputs. Automated evaluation provides standardized metrics such as semantic similarity, relevance, F1 score, and fairness. This helps you quickly compare models and prompts without relying only on manual reviews.
 
 1. Use the back arrow **(←)** next to the Manual evaluation page title to return to the Evaluation page.
 
@@ -292,3 +314,8 @@ Automated evaluation is an approach that attempts to address these shortcomings 
 
     ![](../Images/ai7l38.png)  
       
+## Summary
+
+In this lab, you created a hub and project in Azure AI Foundry and deployed the gpt-4.1 and gpt-4.1-mini models. You performed manual evaluation by importing test data, running the models, and comparing outputs against expected responses. You then configured automated evaluations with metrics such as semantic similarity, relevance, F1 score, and fairness to generate standardized insights. By the end, you gained hands-on experience in deploying models and applying both manual and automated techniques to evaluate generative AI performance.
+
+### You have successfully completed the Hands-on Lab!

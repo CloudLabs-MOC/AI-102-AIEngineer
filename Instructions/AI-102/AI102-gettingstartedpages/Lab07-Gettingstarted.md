@@ -65,9 +65,9 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
 
 ## Accessing Your Lab Environment
  
-Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
+Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab03labvm.png)
+![Access Your VM and Lab Guide](../Images/AI-102-l7-g1.png)
 
 ### Virtual Machine & Lab Guide
  
