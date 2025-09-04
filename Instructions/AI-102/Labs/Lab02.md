@@ -1,6 +1,6 @@
 # Lab 02: Choose and deploy a language model
 
-### Estimated Duration : 45 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -78,7 +78,7 @@ In this task, you’ll compare different AI models in Azure AI Foundry. You will
 
 1. A visual chart for model comparison is displayed with a selection of common models.
 
-1. In the **Models to compare** pane, note that you can select popular tasks, such as **question answering (1)** to automatically select commonly used models for specific tasks.
+1. In the **Models to compare** pane, note that you can select popular tasks, such as **question answering (1)**, to automatically select commonly used models for specific tasks.
 
    - Use the **Clear all models (🗑) (2)** icon to remove all of the pre-selected models.
 
@@ -114,7 +114,7 @@ In this task, you’ll compare different AI models in Azure AI Foundry. You will
 
 1. Based on the benchmarks, the `gpt-4.1` model looks like offering the best overall performance, but at a higher cost.
 
-1. In the list of models to compare, select the `gpt-4.1` model to re-open its benchmarks page.
+1. In the list of models to compare, select the `gpt-4.1` model to reopen its benchmarks page.
 
    ![](../Images/aii35.png)
 
@@ -136,7 +136,7 @@ To use a model, you need to create an Azure AI Foundry project.
 
    ![](../Images/aii38.png)
 
-1. Under **Advanced options**, provide the below details and leave the rest to deafult:
+1. Under **Advanced options**, provide the details below and leave the rest to default:
 
     - Resource group: Select **AI-102-RG02 (1)**
     - Region: **<inject key="Region" enableCopy="false" /> (2)**
@@ -275,7 +275,7 @@ In this task, you’ll interact with the **Phi-4-mini-instruct** model in the ch
 1. Provide the following puzzle in the **Phi-4 model** chat:
 
     ```
-    I have 53 socks in my drawer: 21 identical blue, 15 identical black and 17 identical red. The lights are out, and it is completely dark. How many socks must I take out to make 100 percent certain I have at least one pair of black socks?
+    I have 53 socks in my drawer: 21 identical blue, 15 identical black, and 17 identical red. The lights are out, and it is completely dark. How many socks must I take out to make 100 percent certain I have at least one pair of black socks?
     ```   
 
      ![](../Images/aii57.png)    
@@ -287,7 +287,7 @@ In this task, you’ll interact with the **Phi-4-mini-instruct** model in the ch
 1. Provide the following puzzle in chat:
 
     ```
-    I have 53 socks in my drawer: 21 identical blue, 15 identical black and 17 identical red. The lights are out, and it is completely dark. How many socks must I take out to make 100 percent certain I have at least one pair of black socks?
+    I have 53 socks in my drawer: 21 identical blue, 15 identical black, and 17 identical red. The lights are out, and it is completely dark. How many socks must I take out to make 100 percent certain I have at least one pair of black socks?
     ```   
 
 1. View the result:
@@ -296,9 +296,9 @@ In this task, you’ll interact with the **Phi-4-mini-instruct** model in the ch
 
 ### Reflect on the models
 
-You've compared two models, which may vary in terms of both their ability to generate appropriate responses and in their cost. In any generative scenario, you need to find a model with the right balance of suitability for the task you need it to perform and the cost of using the model for the number of requests you expect it to have to handle.
+You've compared two models, which may vary in terms of both their ability to generate appropriate responses and their cost. In any generative scenario, you need to find a model with the right balance of suitability for the task you need it to perform and the cost of using the model for the number of requests you expect it to have to handle.
 
-The details and benchmarks provided in the model catalog, along with the ability to visually compare models provides a useful starting point when identifying candidate models for a generative AI solution. You can then test candidate models with a variety of system and user prompts in the chat playground.
+The details and benchmarks provided in the model catalog, along with the ability to visually compare models, provide a useful starting point when identifying candidate models for a generative AI solution. You can then test candidate models with a variety of system and user prompts in the chat playground.
 
 ## Summary 
 
