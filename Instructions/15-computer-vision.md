@@ -219,7 +219,7 @@
    }           
    ```
 
-     ![](./images/compvi(11).png)
+   ![](./images/compvi(11).png)
      
  5. Save your changes and return to the integrated terminal for the **image-analysis** folder, and enter the following command to run the program with the argument **images/street.jpg**:
  
