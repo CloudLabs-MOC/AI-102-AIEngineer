@@ -8,13 +8,13 @@ In this hands-on lab, you’ll work with **Azure AI Foundry** to create and expl
 
 ## Lab Objectives
 
-- **Task 1:** Create a Azure AI Foundry Project and deploy a model
+- **Task 1:** Create an Azure AI Foundry Project and deploy a model
 
 - **Task 2:** Review project endpoints
 
 - **Task 3:** Test a generative AI model
 
-## Task 1: Create a Azure AI Foundry Project and deploy a model
+## Task 1: Create an Azure AI Foundry Project and deploy a model
 
 In this task, you’ll create a new Azure AI Foundry project, deploy the **gpt-4.1** model into it, and explore the management settings at both the project and resource levels. You’ll also verify the Azure resources created to support the deployment in the Azure portal.
 
@@ -42,7 +42,7 @@ In this task, you’ll create a new Azure AI Foundry project, deploy the **gpt-4
 
    ![](../Images/aii4.png) 
 
-1. Under **Advanced options**, provide the below details and leave the rest to deafult:
+1. Under **Advanced options**, provide the details below and leave the rest to default:
 
     - Resource group: Select **AI-102-RG01 (1)**
     - Region: **<inject key="Region" enableCopy="false" /> (2)**
@@ -66,11 +66,11 @@ In this task, you’ll create a new Azure AI Foundry project, deploy the **gpt-4
 
    ![](../Images/aii8.png)
 
-1. The management center is where you can configure settings at both the **resource** and **project** levels; which are both shown in the navigation pane.     
+1. The management center is where you can configure settings at both the **resource** and **project** levels, which are both shown in the navigation pane.     
 
    ![](../Images/aii9.png)
 
-   - The **resource level** relates to the Azure AI Foundry resource that was created to support your project. This resource includes connections to Azure AI Services and Azure AI Foundry models; and provides a centralplace to manage user access to AI development projects.
+   - The **resource level** relates to the Azure AI Foundry resource that was created to support your project. This resource includes connections to Azure AI Services and Azure AI Foundry models, and provides a central place to manage user access to AI development projects.
 
    - The **project level** relates to your individual project, where you can add and manage project-specific resources.
 
@@ -106,7 +106,7 @@ In this task, you’ll review the endpoints and authorization keys available in 
 
     ![](../Images/aii12.png)
 
-1. In the project **Overview (1)** page, view the Endpoints and keys section; which contains endpoints and authorization keys that you can use in your application code to access **(2)**:
+1. In the project **Overview (1)** page, view the Endpoints and keys section, which contains endpoints and authorization keys that you can use in your application code to access **(2)**:
 
     - The **Azure AI Foundry project** and any models deployed in it.
     - **Azure OpenAI** in Azure AI Foundry models.
@@ -121,7 +121,7 @@ In this task, you’ll use the chat playground in Azure AI Foundry to test your 
 
 1. In the navigation pane on the left for your project, select **Playgrounds (1)**.
 
-    - On the Chat playground, and ensure that your `gpt-4.1` **(2)** model deployment is selected in the Deployment section.
+    - On the Chat playground, ensure that your `gpt-4.1` **(2)** model deployment is selected in the Deployment section.
 
       ![](../Images/aii14.png)    
 
