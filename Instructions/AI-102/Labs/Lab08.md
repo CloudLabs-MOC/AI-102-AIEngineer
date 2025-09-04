@@ -19,7 +19,7 @@ In this lab, you'll perform the following tasks:
 
 In this task, you’ll sign in to the Azure AI Foundry portal, create a new project, and deploy the **gpt-4.1** model with the given settings. By completing it, you’ll have a ready-to-use project and model deployment in the Agents playground.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com)[https://ai.azure.com/], then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
 1. Click on **Sign in**.
  
