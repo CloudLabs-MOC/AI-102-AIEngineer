@@ -4,37 +4,40 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 08: Explore AI Agent development
 
-### Overall Estimated Timing: 60 Minutes
+### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 
-In this lab, you will explore Azure AI Foundry by creating a project and deploying the gpt-4.1 model. You’ll review the project’s endpoints and keys to understand how applications connect to deployed models and AI services. Finally, you’ll test the generative AI model in the chat playground by configuring system instructions, sending queries, and reviewing responses to see how the model can be applied in real scenarios.
+In this lab, you will explore **Azure AI Foundry** by creating a project and deploying the **gpt-4.1** model. You’ll then build an AI agent, configure its system instructions, and upload a corporate expenses policy document as grounding data. Next, you’ll enable actions such as the code interpreter and test the agent in the playground by asking questions and submitting an expense claim. Finally, you’ll download and review the generated claim file to see how agents can automate real business processes.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create and deploy a project in Azure AI Foundry**: Set up a new project, deploy the gpt-4.1 model, and explore resource and project-level settings.
+1. **Create a project and deploy a model in Azure AI Foundry**: Set up a new project, deploy the gpt-4.1 model, and prepare it for agent development.
 
-2. **Review project endpoints and keys**: Understand how applications connect to your Azure AI Foundry project, deployed models, and integrated AI services.
+2. **Build and configure an AI agent**: Define system instructions, upload a corporate expenses policy document as grounding data, and enable the code interpreter for actions.
 
-3. **Test a generative AI model in the chat playground**: Configure system instructions, send queries, and analyze responses from the deployed model.
+3. **Test and validate the agent in the playground**: Interact with the agent by asking policy-related questions, guide it through creating an expense claim, and review the generated claim file.
 
 ## Pre-requisites
 
 * Basic knowledge of the Azure portal.
-* Familiarity with core AI concepts such as generative AI and language models.
-* An active Azure subscription with access to Azure AI Foundry.
+* Familiarity with AI concepts such as agents, grounding data, and actions.
+* An active Azure subscription with access to **Azure AI Foundry**.
+* Permission to create and manage resources in the assigned resource group (for example, Azure AI User role).
 
 ## Architecture
 
-The lab architecture demonstrates how an Azure AI Foundry project supports generative AI development and integration:
+The lab architecture demonstrates how an Azure AI Foundry project supports AI agent development and automation:
 
-1. **Azure AI Foundry Resource**: Created in the Azure portal, this resource connects to Azure AI services and hosts deployed models such as gpt-4.1.
+1. **Azure AI Foundry Resource**: Created in the Azure portal, this resource connects to Azure AI services and hosts deployed models such as **gpt-4.1**.
 
-2. **Azure AI Foundry Project**: A workspace where you deploy and manage the gpt-4.1 model, configure project settings, and access endpoints and keys for application integration.
+2. **Azure AI Foundry Project**: A workspace where you deploy and manage the gpt-4.1 model, create agents, configure system instructions, and upload grounding data for agent knowledge.
 
-3. **Chat Playground Interface**: A built-in tool within Azure AI Foundry that allows you to test your deployed model, provide custom instructions, send queries, and analyze responses before integrating the model into applications.
+3. **AI Agent**: A configurable assistant within the project that uses the deployed model and uploaded documents to answer questions, perform actions, and generate outputs (like expense claim files).
+
+4. **Agents Playground Interface**: A built-in testing environment where you interact with the agent, validate its behavior, send queries, and review responses before applying the agent in real-world scenarios.
 
 ## Architecture Diagram
 
@@ -42,11 +45,17 @@ The lab architecture demonstrates how an Azure AI Foundry project supports gener
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project**: The main workspace where you organize your AI solutions. It acts as a hub for managing deployed models, configuring project settings, and controlling access to resources.
+1. **Azure AI Foundry Project**: The main workspace where you create and manage AI agents. It serves as the hub for deploying models, configuring agent instructions, uploading grounding data, and controlling access to resources.
 
-2. **Models and Endpoints**: Deployed AI models, like gpt-4.1, are accessible via endpoints and secured with authorization keys. These endpoints allow client applications to interact with the models programmatically.
+2. **Deployed Model (gpt-4.1)**: The AI model used by your agent to generate responses. It is hosted within the Foundry project and accessed via endpoints to process queries and perform tasks.
 
-3. **Chat Playground**: An interactive interface within the Foundry project that lets you experiment with your models. You can provide instructions, run queries, and observe model responses, which helps in testing and refining AI behavior before integration.
+3. **AI Agent**: A configurable assistant that leverages the deployed model and grounding data to answer questions, perform actions (like creating expense claims), and interact with users based on system instructions.
+
+4. **Grounding Data / Knowledge Base**: Documents or files uploaded to the agent (e.g., the expenses policy) that provide the factual context for the agent’s responses.
+
+5. **Code Interpreter / Actions**: Tools enabled for the agent to perform specific tasks programmatically, such as generating text files or processing data.
+
+6. **Agents Playground**: An interactive interface within the Foundry project where you can test the agent, run queries, validate behavior, and review outputs before integrating it into applications.
 
 # Getting Started with lab
 

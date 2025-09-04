@@ -3,7 +3,7 @@
 ### Estimated Duration : 30 Minutes
 
 ## Overview
-In this exercise, you use the Azure AI Agent service in the Azure AI Foundry portal to create a simple AI agent that assists employees with expense claims.
+In this lab, you will create an AI agent in **Azure AI Foundry** that helps employees with expense claims. You’ll start by creating a new project and deploying the **gpt-4.1** model. Then you’ll build and configure your agent with system instructions and upload an expenses policy document as grounding data. You’ll also enable the code interpreter as an action. Finally, you’ll interact with the agent in the playground, asking policy questions and guiding it through generating an expense claim file that you can download and review.
 
 ## Lab Objectives
 
@@ -142,7 +142,7 @@ In this exercise, you'll build a simple agent that answers questions based on a 
 
     ![](../Images/l8t2p7.png)
 
-1. In the **Add code interpreter action** window,click on **Save**. 
+1. In the **Add code interpreter action** window, click on **Save**. 
 
     ![](../Images/l8t2p8.png)
 
@@ -188,8 +188,11 @@ In this task, you’ll interact with the agent in the Foundry playground to quer
 
     ![](../Images/l8t3p6.png)
 
-
 ## Summary
+
+In this lab, you created a new project in **Azure AI Foundry** and deployed the **gpt-4.1** model. You then built an AI agent, provided it with system instructions, and added an expenses policy document as a knowledge source. You configured the code interpreter tool so the agent could perform actions. Finally, you tested the agent in the playground by asking questions about the policy and walking through the steps of submitting an expense claim. The agent generated a text file with the claim details, which you downloaded and reviewed.
+
+### You have successfully completed the Hands-on Lab!
 
 
 
