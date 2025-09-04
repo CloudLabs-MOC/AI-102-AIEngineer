@@ -78,7 +78,7 @@ In this task, you’ll sign in to Azure AI Foundry, create a new hub, and set up
 
 ### Task 2: Deploy models
 
-In this task, you’ll deploy two models in your Azure AI Foundry project: gpt-4.1 and gpt-4.1-mini . The gpt-4.1 model will be used to generate AI-assisted evaluation metrics, while the gpt-4.1-mini model will be the one you evaluate for performance.
+In this task, you’ll deploy two models in your Azure AI Foundry project: gpt-4.1 and gpt-4.1-mini. The gpt-4.1 model will be used to generate AI-assisted evaluation metrics, while the gpt-4.1-mini model will be the one you evaluate for performance.
 
 1. In the pane on the left for your project, in the My assets section, select the **Models + endpoints (1)** page.
 
@@ -124,7 +124,7 @@ In this task, you’ll deploy two models in your Azure AI Foundry project: gpt-4
 
     ![](../Images/ai7l6.png)
 
-1. Deploy the model with the following settings in the deployment details and leave the other settings to its defaults:
+1. Deploy the model with the following settings in the deployment details and leave the other settings to their defaults:
 
     - Tokens per Minute Rate Limit (thousands): `56K` **(1)** (or the maximum available in your subscription if less than 50K)
     - Then select **Deploy (2)**
@@ -150,7 +150,7 @@ In this task, you’ll perform a manual evaluation by uploading a dataset of tra
 
 1. Press **Ctrl+S** to save the file in a local folder.
 
-1. Navigate to `C:\LabFiles` **(1)**, select **All files (2)** as Save as type. Then name the fil as **travel_evaluation_data.jsonl (3)** and then select **Save (4)**. (be sure to save it as a .jsonl file, not a .txt file).
+1. Navigate to `C:\LabFiles` **(1)**, select **All files (2)** as Save as type. Then name the file as **travel_evaluation_data.jsonl (3)** and then select **Save (4)**. (Be sure to save it as a .jsonl file, not a .txt file.)
 
     ![](../Images/ai7l8.png)
 
@@ -318,6 +318,6 @@ In this task, you’ll configure automated evaluators to assess your model outpu
       
 ## Summary
 
-In this lab, you created a hub and project in Azure AI Foundry and deployed the gpt-4.1 and gpt-4.1-mini models. You performed manual evaluation by importing test data, running the models, and comparing outputs against expected responses. You then configured automated evaluations with metrics such as semantic similarity, relevance, F1 score, and fairness to generate standardized insights. By the end, you gained hands-on experience in deploying models and applying both manual and automated techniques to evaluate generative AI performance.
+In this lab, you created a hub and project in Azure AI Foundry and deployed the gpt-4.1 and gpt-4.1-mini models. You performed a manual evaluation by importing test data, running the models, and comparing outputs against expected responses. You then configured automated evaluations with metrics such as semantic similarity, relevance, F1 score, and fairness to generate standardized insights. By the end, you gained hands-on experience in deploying models and applying both manual and automated techniques to evaluate generative AI performance.
 
 ### You have successfully completed the Hands-on Lab!
