@@ -1,6 +1,6 @@
 # Lab 12: Develop a multi-agent solution with Semantic Kernel
 
-### Estimated Duration : 30 Minutes
+### Estimated Duration: 30 Minutes
 
 ## Overview
 
@@ -437,14 +437,6 @@ In this task, you’ll sign in to Azure Cloud Shell, run the agent_chat.py appli
 
 ## Summary
 
-By completing this lab, you learned how to:
-
-* Create an Azure AI Foundry project integrated with the **Semantic Kernel SDK**.
-* Set up two collaborating agents: an *Incident Manager* to analyze log files and a *DevOps Assistant* to apply corrective actions.
-* Provide and work with sample log files for issue detection and resolution.
-* Implement function calls where the DevOps Assistant updates logs with resolution messages.
-* Re-run analysis with the Incident Manager to verify that issues were resolved successfully.
-* Test the end-to-end agent workflow within Azure Cloud Shell.
-* Review conversation and log history to confirm agent collaboration.
+In this lab, you built a **multi-agent solution** in **Azure AI Foundry** using the **Semantic Kernel SDK**. You created an *Incident Manager* agent to analyze service logs and a *DevOps Assistant* agent to implement corrective actions. You configured group chat rules for controlled collaboration between the agents and tested the workflow with sample log files. Finally, you validated that the agents successfully identified issues, resolved them, and updated the logs, demonstrating effective agent collaboration.
 
 ### You have successfully completed the Hands-on Lab!
