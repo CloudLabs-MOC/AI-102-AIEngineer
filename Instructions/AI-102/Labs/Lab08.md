@@ -92,7 +92,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
 
 1. When your project is created, the **Agents playground** will be opened automatically.
 
-    ![](../Images/l8t1p9.png)
+    ![](../Images/l8t1p9(1).png)
 
 You'll see that an agent with a default name has been created for you, along with your base model deployment.
 

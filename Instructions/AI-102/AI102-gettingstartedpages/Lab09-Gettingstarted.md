@@ -51,13 +51,15 @@ The lab architecture demonstrates how an Azure AI Foundry project supports AI ag
 
 2. **Deployed Model (gpt-4.1)**: The AI model used by your agent to generate responses. It is hosted within the Foundry project and accessed via endpoints to process queries and perform tasks.
 
-3. **AI Agent**: A configurable assistant that leverages the deployed model and grounding data to answer questions, perform actions (like creating expense claims), and interact with users based on system instructions.
+3. **AI Agent**: A configurable assistant that leverages the deployed model and grounding data to answer questions, perform actions (like generating expense claim files or analyzing data), and interact with users based on system instructions.
 
-4. **Grounding Data / Knowledge Base**: Documents or files uploaded to the agent (e.g., the expenses policy) that provide the factual context for the agent’s responses.
+4. **Grounding Data / Knowledge Base**: Documents or files uploaded to the agent (e.g., the corporate expenses policy or data.txt) that provide factual context for the agent’s responses and actions.
 
-5. **Code Interpreter / Actions**: Tools enabled for the agent to perform specific tasks programmatically, such as generating text files or processing data.
+5. **Code Interpreter / Actions**: Tools enabled for the agent to perform programmatic tasks, such as uploading data, generating outputs, performing calculations, or creating visualizations.
 
-6. **Agents Playground**: An interactive interface within the Foundry project where you can test the agent, run queries, validate behavior, and review outputs before integrating it into applications.
+6. **Client Application**: A Python-based application that connects to the Azure AI Foundry project endpoint, sends prompts to the agent, receives responses, and handles interactive conversations programmatically.
+
+7. **Agents Playground**: An interactive interface within the Foundry project where you can test the agent, run queries, validate behavior, and review outputs before integrating it into real-world workflows.
 
 # Getting Started with lab
 
