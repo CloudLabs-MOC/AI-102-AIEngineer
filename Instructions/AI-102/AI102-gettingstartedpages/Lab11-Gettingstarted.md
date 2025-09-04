@@ -2,13 +2,13 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 10: Use a custom function in an AI agent
+# Lab 11: Develop an Azure AI agent with the Semantic Kernel SDK
 
 ### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 
-In this lab, you will use Azure AI Foundry to create a project, deploy the gpt-4.1 model, and extend it with custom function tools. You’ll develop functions in Azure Cloud Shell (like generating and saving support tickets) and make them available to your agent. Finally, you’ll build and run an AI agent that can call these functions during a live chat, manage conversation history, and clean up resources. This lab shows how to move beyond simple chat into real-world automation with intelligent agents.
+In this lab, you will prepare your environment to build and run an Azure AI agent with the Semantic Kernel SDK. You will create an Azure AI Foundry project, deploy the gpt-4.1 model, and record the project endpoint and deployment name for use in code. You will then set up Azure Cloud Shell, clone the sample repository, and configure application settings. By the end, your workspace, model deployment, and tools will be ready so you can implement and test the agent.
 
 ## Objectives
 
@@ -132,4 +132,3 @@ Click on **Next** from the lower right corner to move on to the next page.
    ![Start Your Azure Journey](../Images/nextpage.png)
 
 ## Happy Learning !!
-

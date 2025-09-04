@@ -49,7 +49,7 @@ In this task, you’ll sign in to Azure AI Foundry, create a new hub, and set up
 
 1. In the **Create project** wizard, select **AI hub resource (1)** and click **Next (2)**.
 
-   ![](../Images/aii61.png)
+    ![](../Images/aii61(1).png)
 
 1. Enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)**, then select **Rename hub (2)**. Then rename the hub as  **Myhub<inject key="DeploymentID" enableCopy="false"/> (3)** and then **Next (4)**.
 
@@ -82,11 +82,11 @@ In this task, you’ll deploy two models in your Azure AI Foundry project: gpt-4
 
 1. In the pane on the left for your project, in the My assets section, select the **Models + endpoints (1)** page.
 
-    - In the Models + endpoints page, in the Model deployments tab, in the **+ Deploy model (2)** menu, select **Deploy base model (3)**.
+    - On the **Manage deployments of your models and services**, under **Model deployments** tab, select **+ Deploy model (2)** and then select **Deploy base model (3)** from the dropdown.
  
       ![](../Images/aii75.png)   
 
-1. Search for the **gpt-4.1 (1)** model in the list, and then select **(2)** and confirm it **(3)**.
+1. On the **Select a model** page, search for the **gpt-4.1 (1)** model in the list, and then select **(2)** and confirm it **(3)**.
 
     ![](../Images/aii76.png)
 
@@ -110,11 +110,13 @@ In this task, you’ll deploy two models in your Azure AI Foundry project: gpt-4
 
     ![](../Images/ai7l2.png)
 
-1. In the Models + endpoints page, in the Model deployments tab, in the **+ Deploy model (2)** menu, select **Deploy base model (3)**.
+1. From the left navigation menu, under **My assets**, select **Model + endpoints (1)**.
+
+1. On the **Manage deployments of your models and services**, under **Model deployments** tab, select **+ Deploy model (2)** and then select **Deploy base model (3)** from the dropdown.
 
     ![](../Images/ai7l4.png)
 
-1. Search for the **gpt-4.1-mini (1)** model in the list, and then select **(2)** and confirm it **(3)**.
+1. On the **Select a model** page, search for the **gpt-4.1-mini (1)** model in the list, and then select **(2)** and confirm it **(3)**.
 
     ![](../Images/ai7l5.png)
 
@@ -243,14 +245,14 @@ In this task, you’ll configure automated evaluators to assess your model outpu
    
       ![](../Images/ai7l-25.png)   
 
-1. On the **Configure evaluators** page, use the **+Add (1)** button to add the following evaluators, configuring each one as follows:
+1. On the **Configure evaluators** page, use the **+ Add (1)** button to add the following evaluators, configuring each one as follows:
 
     - Select **Model scorer (2)**:      
 
       ![](../Images/ai7l26.png)
 
-    - **Criteria name**: *Select the **Semantic_similarity (1)** preset*
-    - **Grade with**: *Select your **gpt-4.1 (2)** model*
+    - **Criteria name**: Select the **Semantic_similarity (1)** preset
+    - **Grade with**: Select your **gpt-4.1 (2)** model
 
       ![](../Images/ai7l27.png)   
 
@@ -262,25 +264,25 @@ In this task, you’ll configure automated evaluators to assess your model outpu
 
       ![](../Images/ai7l28.png)       
 
-1. On the **Configure evaluators** page, use the **+Add (1)** button, select  **Likert-scale evaluator**:
+1. On the **Configure evaluators** page, use the **+ Add (1)** button, select  **Likert-scale evaluator**:
 
     ![](../Images/ai7l29.png)   
 
 1. On the **Likert-scale evaluator** page,  provide the following details and then **Add (4)**:
 
-    - **Criteria name**: *Select the **Relevance (1)** preset*
-    - **Grade with**: *Select your **gpt-4.1 (2)** model*
+    - **Criteria name**: Select the **Relevance (1)** preset
+    - **Grade with**: Select your **gpt-4.1 (2)** model
     - **Query**: \{\{item.question\}\} **(3)**
 
       ![](../Images/ai7l30.png)
 
-1. On the **Configure evaluators** page, use the **+Add (1)** button, select  **Text similarity (2)**:
+1. On the **Configure evaluators** page, use the **+ Add (1)** button, select  **Text similarity (2)**:
 
     ![](../Images/ai7l31.png)       
 
 1. On the **Text similarity** page, provide the following details and then **Add (3)**
 
-    - **Criteria name**: *Select the **F1_Score (1)** preset*
+    - **Criteria name**: Select the **F1_Score (1)** preset
     - **Ground truth**: \{\{item.ExpectedResponse\}\} **(2)**
 
       ![](../Images/ai7l32.png) 
