@@ -429,5 +429,4 @@ In this task, you’ll complete and run the code for your agent application. You
 
 In this lab, you learned how to create a new **Azure AI Foundry** project and deploy the **gpt-4.1** model. You retrieved and saved the project endpoint for use in client applications, and used Azure Cloud Shell to clone a GitHub repository and configure a client app. You installed the required dependencies, updated environment settings to connect the app to your project, and wrote Python code for an agent application that uploads data and leverages the code interpreter tool. Finally, you ran the app to interact with your model, asking questions, requesting statistical metrics or visualizations, and reviewing the conversation history.
 
-
 ### You have successfully completed the Hands-on Lab!
