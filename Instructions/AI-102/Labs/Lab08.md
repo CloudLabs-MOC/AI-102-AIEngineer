@@ -61,7 +61,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
         
         >**Note:** Some Azure AI resources are constrained by regional model quotas. In the event of a quota limit being exceeded later in the exercise, there's a possibility you may need to create another resource in a different region.
         
-        >**Note:** The creation of project can take few minutes to complete.
+        >**Note:** The creation of the project can take a few minutes to complete.
 
         >**Note:** In some cases, Azure AI Foundry will automatically deploy a default model (usually gpt-4o). If this happens, you can skip directly to the next step.
 
@@ -89,7 +89,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
 
     ![](../Images/l8t1p8.png)
 
-     > **Note**: Reducing the TPM helps avoid over-using the quota available in the subscription you are using. 50,000 TPM should be sufficient for the data used in this exercise. If your available quota is lower than this, you will be able to complete the exercise but you may experience errors if the rate limit is exceeded.
+     > **Note**: Reducing the TPM helps avoid overusing the quota available in the subscription you are using. 50,000 TPM should be sufficient for the data used in this exercise. If your available quota is lower than this, you will be able to complete the exercise, but you may experience errors if the rate limit is exceeded.
 
 1. When your project is created, the **Agents playground** will be opened automatically.
 
@@ -107,7 +107,7 @@ You'll see that an agent with a default name has been created for you, along wit
 
 ## Task 2: Create your agent
 
-In this exercise, you'll build a simple agent that answers questions based on a corporate expenses policy. You'll download the expenses policy document, and use it as grounding data for the agent.
+In this exercise, you'll build a simple agent that answers questions based on a corporate expenses policy. You'll download the expenses policy document and use it as the grounding data for the agent.
 
 1. Open a new browser tab and navigate to `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx` to download the **Expenses\_Policy.docx** file and save it locally. This document contains the expenses policy for the fictional Contoso corporation. If a dialog box appears, click **Download** to save the file for later use.
    
@@ -120,7 +120,7 @@ In this exercise, you'll build a simple agent that answers questions based on a 
     ```
     You are an AI assistant for corporate expenses.
     You answer questions about expenses based on the expenses policy data.
-    If a user wants to submit an expense claim, you get their email address, a description of the claim, and the amount to be claimed and write the claim details to a text file that the user can download.
+    If a user wants to submit an expense claim, you get their email address, a description of the claim, and the amount to be claimed, and write the claim details to a text file that the user can download.
     ```
 
 1. From the **Add knowledge** window, click on **Files**.
@@ -147,7 +147,7 @@ In this exercise, you'll build a simple agent that answers questions based on a 
 
     ![](../Images/l8t2p8.png)
 
-    >**Note:** You do not need to upload any files for the code interpreter).
+    >**Note:** You do not need to upload any files for the code interpreter.
 
 Your agent will use the document you uploaded as its knowledge source to ground its responses (in other words, it will answer questions based on the contents of this document). It will use the code interpreter tool as required to perform actions by generating and running its own Python code.
 
@@ -155,7 +155,7 @@ Your agent will use the document you uploaded as its knowledge source to ground 
 
 In this task, you’ll interact with the agent in the Foundry playground to query information from its knowledge base and guide it through creating an expense claim. You’ll provide step-by-step details, including a description, amount, and date, and then download and review the generated expense claim file.
 
-1. In the playground chat box, type the prompt **`What's the maximum I can claim for meals?`(1)** and click on **Add and run (2)** icon.
+1. In the playground chat box, type the prompt **`What's the maximum I can claim for meals?`(1)** and click on the **Add and run (2)** icon.
 
     ![](../Images/l8t3p1(1).png)
 
@@ -183,7 +183,7 @@ In this task, you’ll interact with the agent in the Foundry playground to quer
 
     ![](../Images/l8t3p6(1).png)
 
-    > **Note:** You can use any date for this step, it doesn’t have to be the one shown in the example. The agent will generate the expense claim file based on whatever date you provide.
+    > **Note:** You can use any date for this step; it doesn’t have to be the one shown in the example. The agent will generate the expense claim file based on whatever date you provide.
 
 1. A Notepad window will open, displaying the expense claim details.
 
