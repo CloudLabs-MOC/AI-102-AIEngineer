@@ -1,6 +1,6 @@
 # Lab 05: Fine-tune a language model
 
-### Estimated Duration : 60 Minutes
+### Estimated Duration: 60 Minutes
 
 ## Overview
 
@@ -73,7 +73,7 @@ In this task, you'll sign in to the Azure AI Foundry portal, create a new projec
         
         >**Note:** Some Azure AI resources are constrained by regional model quotas. In the event of a quota limit being exceeded later in the exercise, there's a possibility you may need to create another resource in a different region.
         
-        >**Note:** The creation of project can take few minutes to complete.
+        >**Note:** The creation of the project can take a few minutes to complete.
 
 1. When your project is created, the chat playground will be opened automatically so you can test your model:
 
@@ -112,7 +112,7 @@ In this task, you'll start the fine-tuning process for the GPT-4.1 model by down
 
     ![](../Images/l5t2p3.png)
 
-1. Navigate to the **Fine-tuning (1)** page under the **Build and customize** section, using the menu on the left and then click on **+ Fine-tune model (2)**.
+1. Navigate to the **Fine-tuning (1)** page under the **Build and customize** section, using the menu on the left, and then click on **+ Fine-tune model (2)**.
 
     ![](../Images/l5t2p4.png)
 
@@ -120,7 +120,7 @@ In this task, you'll start the fine-tuning process for the GPT-4.1 model by down
 
     ![](../Images/l5t2p5.png)
 
-1. In **Create a fine-tuned model** window provide the following configuration:
+1. In the **Create a fine-tuned model** window, provide the following configuration:
     - Method of customization: **Supervised (1)**
     - Base model: **Keep as Default (gpt-4.1) (2)**
     - Training data: Click **+ Add training data (3)**
@@ -158,7 +158,7 @@ In this task, you'll interact with the base GPT-4.1 model in the chat playground
 
     ![](../Images/l4t5p1.png)
 
-1. Verify your deployed **gpt-4.1** base model is selected in setup pane.
+1. Verify your deployed **gpt-4.1** base model is selected in the setup pane.
 
     ![](../Images/l5t3p1.png)
 
@@ -166,7 +166,7 @@ In this task, you'll interact with the base GPT-4.1 model in the chat playground
 
     ![](../Images/l5t3p2.png)
 
-    >**Note:** The answers may be fairly generic. Remember we want to create a chat application that inspires people to travel.
+    >**Note:** The answers may be fairly generic. Remember, we want to create a chat application that inspires people to travel.
 
 1. Update the system message in the setup pane with the following prompt and then click on **Apply changes**:
 
@@ -184,13 +184,13 @@ In this task, you'll interact with the base GPT-4.1 model in the chat playground
 
     ![](../Images/l5t3p5.png)
 
-    >**Note:** As a response, the assistant may tell you that it can help you book flights, hotels and rental cars for your trip. You want to avoid this behavior.
+    >**Note:** As a response, the assistant may tell you that it can help you book flights, hotels, and rental cars for your trip. You want to avoid this behavior.
 
 1. Update the system message again with a new prompt:
 
     ```
     You are an AI travel assistant that helps people plan their trips. Your objective is to offer support for travel-related inquiries, such as visa requirements, weather forecasts, local attractions, and cultural norms.
-    You should not provide any hotel, flight, rental car or restaurant recommendations.
+    You should not provide any hotel, flight, rental car, or restaurant recommendations.
     Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
     ```
 
@@ -214,7 +214,7 @@ In this task, you'll review the JSONL training file to understand how the fine-t
 
     ![](../Images/l5t4p1.png)
 
-1. Examine the list of the JSON documents in the training data file. The first one should be similar to this (formatted for readability):
+1. Examine the list of JSON documents in the training data file. The first one should be similar to this (formatted for readability):
 
     ```json
     {"messages": [
@@ -310,5 +310,6 @@ In this task, you'll test your deployed fine-tuned model in the playground. You'
 In this lab, you learned how to fine-tune a GPT-4.1 model using Azure AI Foundry. You deployed a base model, prepared and uploaded a training dataset, and initiated a fine-tuning job. After the fine-tuned model was deployed, you tested it against the base model to compare performance, observing improvements in response style, consistency, and relevance for a travel chat application. The lab provided practical experience in customizing AI behavior and deploying models tailored to specific conversational scenarios.
 
 ### You have successfully completed the Hands-on Lab!
+
 
 
