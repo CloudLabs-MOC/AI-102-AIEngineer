@@ -18,7 +18,7 @@ By the end of this lab, you will be able to:
 
 2. **Build and configure an AI agent**: Upload a data file for analysis, define system instructions, and enable the code interpreter tool to perform actions.
 
-3. **Test and run the agent using a client application**: Interact with the agent by sending prompts, request calculations or visualizations, and review the conversation history to validate its behavior.
+3. **Test and run the agent using a client application**: Interact with the agent by sending prompts, requesting calculations or visualizations, and reviewing the conversation history to validate its behavior.
 
 ## Pre-requisites
 
@@ -63,7 +63,7 @@ The lab architecture demonstrates how an Azure AI Foundry project supports AI ag
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  
@@ -111,7 +111,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
    ![Launch Azure Portal](../Images/azureportalicon.png)
 
-1. In sign-in window, kindly sign in using the provided Azure credentials
+1. In the sign-in window, kindly sign in using the provided Azure credentials
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -144,4 +144,5 @@ Click on **Next** from the lower right corner to move on to the next page.
    ![Start Your Azure Journey](../Images/nextpage.png)
 
 ## Happy Learning !!
+
 
