@@ -196,37 +196,28 @@
  
       ![](./images/compvi(10).png)
  
- 4. In the **AnalyzeImage** function, under the comment **Get image analysis**, add the following code (including the comments indicating where you will add more code later):
- 
-     **C#**
- 
-     ```C#
-     // Get image analysis
-     using (var imageData = File.OpenRead(imageFile))
-     {    
-         var analysis = await cvClient.AnalyzeImageInStreamAsync(imageData, features);
- 
-         // get image captions
-         foreach (var caption in analysis.Description.Captions)
-         {
-             Console.WriteLine($"Description: {caption.Text} (confidence: {caption.Confidence.ToString("P")})");
-         }
- 
-         // Get image tags
- 
- 
-         // Get image categories
- 
- 
-         // Get brands in the image
- 
- 
-         // Get objects in the image
- 
- 
-         // Get moderation ratings
-     }           
-     ```
+4. In the **AnalyzeImage** function, under the comment **Get image analysis**, add the following code (including the comments indicating where you will add more code later):
+
+   **C#**
+   ```csharp
+   // Get image analysis
+   using (var imageData = File.OpenRead(imageFile))
+   {    
+       var analysis = await cvClient.AnalyzeImageInStreamAsync(imageData, features);
+
+       // Get image captions
+       foreach (var caption in analysis.Description.Captions)
+       {
+           Console.WriteLine($"Description: {caption.Text} (confidence: {caption.Confidence.ToString("P")})");
+       }
+
+       // Get image tags
+       // Get image categories
+       // Get brands in the image
+       // Get objects in the image
+       // Get moderation ratings
+   }           
+   ```
 
      ![](./images/compvi(11).png)
      
