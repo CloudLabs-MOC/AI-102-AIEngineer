@@ -1,8 +1,14 @@
 # Lab 13: Connect to remote agents with A2A protocol
 
+### Estimated Duration: 30 Minutes
+
+## Overview
+
 In this lab, you'll use Azure AI Agent Service with the A2A protocol to create simple remote agents that interact with one another. These agents will assist technical writers with preparing their developer blog posts. A title agent will generate a headline, and an outline agent will use the title to develop a concise outline for the article.
 
 ### Task 1: Create an Azure AI Foundry project
+
+In this task, you will create a new Azure AI Foundry project, deploy the gpt-4.1 model with the required quota, and set up the project environment. You’ll also capture the project endpoint, which will be used later to connect client applications to your Azure AI agents.
 
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -73,6 +79,8 @@ In this lab, you'll use Azure AI Agent Service with the A2A protocol to create s
 Now you're ready to create a client app that uses an agent. Some code has been provided for you in a GitHub repository.
 
 ### Task 2.1: Clone the repo containing the application code
+
+In this task, you will clone the GitHub repository that contains the application code and explore its structure. You’ll then set up a Python virtual environment, install the required libraries, and configure the .env file with your Azure AI Foundry project endpoint and model deployment name (gpt-4.1) to prepare the app for running.
 
 1. Navigate to [Azure portal](https://portal.azure.com/).
 
@@ -147,6 +155,8 @@ Now you're ready to create a client app that uses an agent. Some code has been p
 
 
 ### Task 2.2: Configure the application settings
+
+In this task, you install the required Python libraries and update the .env file with your project endpoint and model deployment name (gpt-4.1) to connect the app to your Azure AI Foundry project.
 
 1. In the cloud shell command-line pane, enter the following command to install the libraries you'll use:
 
@@ -496,6 +506,9 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
 ### Task 2.5: Sign into Azure and run the app
 
+In this task, you sign in to Azure using az login, install the necessary Python dependencies, and run the run_all.py script to start all agents. Once running, you can send prompts (like creating a blog title and outline) and receive responses from your Azure AI agents.
+
+
 1. In the cloud shell command-line pane beneath the code editor, enter the following command to sign into Azure **(1)**. Copy and paste the Sign in URL in the web browser **(2)**. Copy the device code as well to authenticate **(3)**.
 
     ```
@@ -568,3 +581,4 @@ In this task, you use the A2A protocol to enable the routing agent to send messa
 
 In this lab, you used the Azure AI Agent Service SDK and the A2A Python SDK to create a remote multi-agent solution. You created a discoverable A2A-compatible agent and set up a routing agent to access the agent's skills. You also implemented an agent executor to process incoming A2A messages and manage tasks. Great work!
 
+### You have successfully completed the Hands-on Lab!
