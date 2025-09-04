@@ -200,7 +200,7 @@
  
      **C#**
  
-     ```
+     ```C#
      // Get image analysis
      using (var imageData = File.OpenRead(imageFile))
      {    
@@ -256,7 +256,7 @@
  
       **C#**
       
-      ```C
+      ```C#
       // Get image tags
       if (analysis.Tags.Count > 0)
       {
