@@ -1,8 +1,9 @@
 # Lab 08: Explore AI Agent development
 
-### Estimated Duration : 30 Minutes
+### Estimated Duration: 30 Minutes
 
 ## Overview
+
 In this lab, you will create an AI agent in **Azure AI Foundry** that helps employees with expense claims. You’ll start by creating a new project and deploying the **gpt-4.1** model. Then you’ll build and configure your agent with system instructions and upload an expenses policy document as grounding data. You’ll also enable the code interpreter as an action. Finally, you’ll interact with the agent in the playground, asking policy questions and guiding it through generating an expense claim file that you can download and review.
 
 ## Lab Objectives
