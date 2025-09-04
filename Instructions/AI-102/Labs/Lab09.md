@@ -61,7 +61,7 @@ Let's start by creating an Azure AI Foundry project.
         
         >**Note:** Some Azure AI resources are constrained by regional model quotas. In the event of a quota limit being exceeded later in the exercise, there's a possibility you may need to create another resource in a different region.
         
-        >**Note:** The creation of project can take few minutes to complete.
+        >**Note:** The creation of the project can take a few minutes to complete.
 
         >**Note:** In some cases, Azure AI Foundry will automatically deploy a default model (usually gpt-4o). If this happens, you can skip directly to the next step.
 
@@ -89,17 +89,17 @@ Let's start by creating an Azure AI Foundry project.
 
     ![](../Images/l8t1p8.png)
 
-     > **Note**: Reducing the TPM helps avoid over-using the quota available in the subscription you are using. 50,000 TPM should be sufficient for the data used in this exercise. If your available quota is lower than this, you will be able to complete the exercise but you may experience errors if the rate limit is exceeded.
+     > **Note**: Reducing the TPM helps avoid overusing the quota available in the subscription you are using. 50,000 TPM should be sufficient for the data used in this exercise. If your available quota is lower than this, you will be able to complete the exercise, but you may experience errors if the rate limit is exceeded.
 
 1. When your project is created, the **Agents playground** will be opened automatically.
 
     ![](../Images/l9t1p2.png)
 
-1. In the navigation pane on the left, select **Overview** to see the main page for your project; which looks like this:
+1. In the navigation pane on the left, select **Overview** to see the main page for your project, which looks like this:
 
     ![](../Images/l9t1p3.png)
 
-1. Click the **Copy Azure AI Foundry project endpoint** icon to copy the value, then save it in a notepad, you’ll need it later to connect your client application to the project.
+1. Click the **Copy Azure AI Foundry project endpoint** icon to copy the value, then save it in a notepad. You’ll need it later to connect your client application to the project.
 
     ![](../Images/l9t1p4.png)
 
@@ -154,7 +154,7 @@ In this task, you’ll set up a client application that connects to the agent yo
     git clone https://github.com/MicrosoftLearning/mslearn-ai-agents ai-agents
     ```
 
-    > **Note:** As you enter commands into the cloudshell, the output may take up a large amount of the screen buffer and the cursor on the current line may be obscured. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Note:** As you enter commands into the cloudshell, the output may take up a large amount of the screen buffer, and the cursor on the current line may be obscured. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. Once the repository is cloned, go to the folder with the chat application code files and open them to view their contents.
 
@@ -165,7 +165,7 @@ In this task, you’ll set up a client application that connects to the agent yo
     ls -a -l
     ```
 
-1. The folder contains a code file as well as a configuration file for application settings and a file defining the project runtime and package requrirements.
+1. The folder contains a code file as well as a configuration file for application settings and a file defining the project runtime and package requirements.
 
 1. In the cloud shell command-line pane, enter the following command to install the libraries you'll use:
 
@@ -283,7 +283,7 @@ In this task, you’ll complete and run the code for your agent application. You
     
 1. Note that the next section of code sets up a loop for a user to enter a prompt, ending when the user enters "quit".
 
-1. Find the comment **Send a prompt to the agent** and add the following code to add a user message to the prompt (along with the data from the file that was loaded previously), and then run thread with the agent.
+1. Find the comment **Send a prompt to the agent** and add the following code to add a user message to the prompt (along with the data from the file that was loaded previously), and then run the thread with the agent.
 
     ![](../Images/l9t2p11.png)
 
@@ -423,7 +423,7 @@ In this task, you’ll complete and run the code for your agent application. You
 
 1. You can continue the conversation if you like. The thread is *stateful*, so it retains the conversation history - meaning that the agent has the full context for each response. Enter `quit` when you're done.
 
-1. Review the conversation messages that were retrieved from the thread - which may include messages the agent generated to explain its steps when using the code interpreter tool.
+1. Review the conversation messages that were retrieved from the thread, which may include messages the agent generated to explain its steps when using the code interpreter tool.
 
 ## Summary
 
