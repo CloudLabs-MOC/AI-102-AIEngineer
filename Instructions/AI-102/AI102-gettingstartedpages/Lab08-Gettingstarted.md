@@ -41,7 +41,7 @@ The lab architecture demonstrates how an Azure AI Foundry project supports AI ag
 
 ## Architecture Diagram
 
-![](../Images/lab01archdiagram.png)
+![](../Images/lab08archdiagram.png)
 
 ## Explanation of Components
 
@@ -65,7 +65,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab01labvm.png)
+![Access Your VM and Lab Guide](../Images/lab08labvm.png)
 
 ### Virtual Machine & Lab Guide
  
