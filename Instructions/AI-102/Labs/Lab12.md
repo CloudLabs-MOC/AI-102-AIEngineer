@@ -4,7 +4,7 @@
 
 ## Overview
 
-In this lab, you’ll build a project that orchestrates two AI agents using the **Semantic Kernel SDK**. The first agent, the *Incident Manager*, will analyze provided service log files to detect potential issues. When an issue is identified, the Incident Manager will recommend a resolution action. The second agent, the *DevOps Assistant*, will take this recommendation, invoke the corrective function, and apply the resolution by updating the logs with example messages. Afterward, the Incident Manager will recheck the updated log files to verify whether the resolution was successful. For this exercise, you’ll work with four sample log files, with the DevOps Assistant simulating updates by appending diagnostic and resolution messages.
+In this lab, you’ll build a project that orchestrates two AI agents using the **Semantic Kernel SDK**. The first agent, the *Incident Manager*, will analyze the provided service log files to detect potential issues. When an issue is identified, the Incident Manager will recommend a resolution action. The second agent, the *DevOps Assistant*, will take this recommendation, invoke the corrective function, and apply the resolution by updating the logs with example messages. Afterward, the Incident Manager will recheck the updated log files to verify whether the resolution was successful. For this exercise, you’ll work with four sample log files, with the DevOps Assistant simulating updates by appending diagnostic and resolution messages.
 
 ## Lab Objectives
 
@@ -56,7 +56,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
 
     ![](../Images/aii2.png) 
 
-1. Then at the top of the page for the model, select **Use this model**.
+1. Then, at the top of the page for the model, select **Use this model**.
 
     ![](../Images/ai11l1.png) 
 
@@ -64,7 +64,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
 
     ![](../Images/ai11l-2.png) 
 
-1. Expand **Advanced options (1)**, provide the below details and leave the rest to deafult:
+1. Expand **Advanced options (1)**, provide the details below, and leave the rest to default:
 
     - Resource group: Select **AI-102-RG12 (2)**
     - Region: Select **Region**: Select **<inject key="Region" enableCopy="false" /> (3)**
@@ -86,11 +86,11 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
 
     ![](../Images/l12t1p3.png)
 
-1. In the navigation pane on the left, select **Overview** to see the main page for your project; which looks like this.
+1. In the navigation pane on the left, select **Overview** to see the main page for your project, which looks like this.
 
     ![](../Images/l12t1p4.png)
 
-1. Click the **Copy Azure AI Foundry project endpoint** icon to copy the value, then save it in a notepad, you’ll need it later to connect your client application to the project.
+1. Click the **Copy Azure AI Foundry project endpoint** icon to copy the value, then save it in a notepad. You’ll need it later to connect your client application to the project.
 
     ![](../Images/l12t1p5.png)
 
@@ -147,7 +147,7 @@ Now you're ready to create a client app that defines an agent and a custom funct
     git clone https://github.com/MicrosoftLearning/mslearn-ai-agents ai-agents
     ```
 
-    > **Note**: As you enter commands into the cloud shell, the output may take up a large amount of the screen buffer and the cursor on the current line may be obscured. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Note**: As you enter commands into the cloud shell, the output may take up a large amount of the screen buffer, and the cursor on the current line may be obscured. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. When the repo has been cloned, enter the following command to change the working directory to the folder containing the code files and list them all.
 
@@ -158,7 +158,7 @@ Now you're ready to create a client app that defines an agent and a custom funct
     ls -a -l
     ```
 
-1. The folder contains a code file as well as a configuration file for application settings and a file defining the project runtime and package requrirements.
+1. The folder contains a code file as well as a configuration file for application settings and a file defining the project runtime and package requirements.
 
 ## Task 3: Configure the application settings
 
@@ -214,7 +214,7 @@ Now you're ready to create the  agents for your multi-agent solution! Let's get 
     - A **main** function where most of the code to implement your multi-agent solution will be added.
     - A **SelectionStrategy** class, which you'll use to implement the logic required to determine which agent should be selected for each turn in the conversation.
     - An **ApprovalTerminationStrategy** class, which you'll use to implement the logic needed to determine when the conversation to end.
-    - A **DevopsPlugin** class that contains functions to perform devops operations.
+    - A **DevopsPlugin** class that contains functions to perform DevOps operations.
     - A **LogFilePlugin** class that contains functions to read and write log files.
 
     First, you'll create the *Incident Manager* agent, which will analyze service log files, identify potential issues, and recommend resolution actions or escalate issues when necessary.
@@ -285,7 +285,7 @@ Now you're ready to create the  agents for your multi-agent solution! Let's get 
     )
     ```
 
-    The **DevopsPlugin** allows the agent to simulate devops tasks, such as restarting the service or rolling back a transaction.
+    The **DevopsPlugin** allows the agent to simulate DevOps tasks, such as restarting the service or rolling back a transaction.
 
 ## Task 5: Define group chat strategies
 
@@ -349,7 +349,7 @@ In this task, you’ll implement the group chat that brings both agents together
     )
     ```
 
-    In this code, you create an agent group chat object with the incident manager and devops agents. You also define the termination and selection strategies for the chat. Notice that the **ApprovalTerminationStrategy** is tied to the incident manager agent only, and not the devops agent. This makes the incident manager agent is responsible for signaling the end of the chat. The **SelectionStrategy** includes all agents that should take a turn in the chat.
+    In this code, you create an agent group chat object with the incident manager and DevOps agents. You also define the termination and selection strategies for the chat. Notice that the **ApprovalTerminationStrategy** is tied to the incident manager agent only, and not the DevOps agent. This makes the incident manager agent responsible for signaling the end of the chat. The **SelectionStrategy** includes all agents that should take a turn in the chat.
 
     Note that the automatic reset flag will automatically clear the chat when it ends. This way, the agent can continue analyzing the files without the chat history object using too many unnecessary tokens. 
 
@@ -375,7 +375,7 @@ In this task, you’ll implement the group chat that brings both agents together
             print(f"{response.content}")
     ```
 
-    This is the code that triggers the chat. Since the log file text has been added as a message, the selection strategy will determine which agent should read and respond to it and then the conversation will continue between the agents until the conditions of the termination strategy are met or the maximum number of iterations is reached.
+    This is the code that triggers the chat. Since the log file text has been added as a message, the selection strategy will determine which agent should read and respond to it, and then the conversation will continue between the agents until the conditions of the termination strategy are met or the maximum number of iterations is reached.
 
 1. Use the **CTRL+S** command to save your changes to the code file. You can keep it open (in case you need to edit the code to fix any errors) or use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
@@ -440,3 +440,4 @@ In this task, you’ll sign in to Azure Cloud Shell, run the agent_chat.py appli
 In this lab, you built a **multi-agent solution** in **Azure AI Foundry** using the **Semantic Kernel SDK**. You created an *Incident Manager* agent to analyze service logs and a *DevOps Assistant* agent to implement corrective actions. You configured group chat rules for controlled collaboration between the agents and tested the workflow with sample log files. Finally, you validated that the agents successfully identified issues, resolved them, and updated the logs, demonstrating effective agent collaboration.
 
 ### You have successfully completed the Hands-on Lab!
+
