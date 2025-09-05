@@ -327,6 +327,7 @@ In this task, you’ll prepare the Azure Cloud Shell environment to develop your
     ```
     cd mslearn-ai-language/Labfiles/02-qna/Python/qna-app
     ```
+    
 ## Task 8: Configure your application
 
 In this task, you’ll configure your question answering application in Cloud Shell. You’ll set up a Python virtual environment, install required packages including the Azure AI Language Question Answering SDK, and update the application’s configuration file with your Azure Language resource endpoint, authentication key, project name, and deployment name, preparing the app for execution.
