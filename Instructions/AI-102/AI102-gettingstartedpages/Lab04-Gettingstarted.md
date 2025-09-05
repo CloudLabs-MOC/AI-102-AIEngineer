@@ -14,32 +14,32 @@ In this lab, you will build a generative AI application using the Retrieval Augm
 
 By the end of this lab, you will be able to:
 
-1. **Create an Azure AI Foundry project**: Set up a new project environment to build and manage prompt flows.
-2. **Design and configure a prompt flow**: Add system instructions, connect to a model, and adjust flow components.
-3. **Test flows in the chat pane**: Run sample queries, review outputs, and refine prompts to improve responses.
-4. **Deploy a prompt flow as an endpoint**: Publish your flow, enabling it to be accessed outside the design environment.
-5. **Validate the deployed endpoint**: Interact with the deployed flow directly in Azure AI Foundry to confirm functionality.
-6. **Retrieve endpoint connection details**: Access deployment information required to integrate the flow into client applications.
+1. **Create and organize resources in Azure AI Foundry:** Set up a hub and project to manage models, data, and indexes.
+2. **Deploy models for RAG:** Deploy an embedding model for vectorization and a generative model for grounded responses.
+3. **Add and index custom data:** Upload PDF files, create a vector index in Azure AI Search, and connect it to your project.
+4. **Test responses with data grounding:** Use the Chat Playground to compare outputs with and without the index.
+5. **Build and run a client application:** Configure a Python-based RAG app that integrates the Azure OpenAI SDK and Azure AI Search.
+
 
 ## Pre-requisites
 
 - Basic knowledge of navigating the Azure portal.
 
-- Familiarity with AI concepts such as generative AI, language models, and benchmarks.
+- Familiarity with concepts of generative AI and vector search.
 
 - An active Azure subscription with access to Azure AI Foundry.
 
-- Permission to create and manage resources (including enabling managed identities).
+- Basic knowledge of Python programming.
 
 ## Architecture
 
-1. **Azure AI Foundry Resource**: Provisioned via the Azure portal, this resource connects to Azure AI services, manages access via system-assigned identities, and hosts deployed models such as **gpt-4.1** and **Phi-4-mini-instruct**.
+1. **Azure AI Foundry Resource**: The core service in Azure that provides access to model catalog, deployment capabilities, and integration with Azure AI Search.
 
-2. **Azure AI Foundry Project**: A workspace for deploying and managing models, configuring project settings, creating prompt flows, and accessing endpoints and authorization keys for applications.
+2. **Azure AI Foundry Project**: A workspace within the resource where you deploy models, upload custom data, and manage indexes.
 
-3. **Prompt Flow and Chat Playground**: Interactive tools within the project to build, test, and deploy prompt flows, configure system instructions, submit queries to models, analyze responses, and compare model performance for different scenarios.
+3. **Azure AI Search:** A service that hosts the vector index created from your custom data, enabling semantic and keyword-based retrieval.
 
-4. **Storage and Authorization**: Blob storage integrated with managed identities ensures the project and prompt flows have secure access to necessary data and assets.
+4. **Chat Playground and RAG Client App:** Interactive environments for testing model responses. The Playground allows quick validation with and without data grounding, while the Python client app demonstrates how to integrate RAG into real applications.
 
 ## Architecture Diagram
 
@@ -47,17 +47,15 @@ By the end of this lab, you will be able to:
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Resource**: The core service provisioned in the Azure portal that connects to Azure AI services, hosts deployed models, and manages secure access via system-assigned identities. It serves as the foundation for creating projects, deploying models, and integrating AI capabilities.
+1. **Azure AI Foundry Resource**: The core Azure service that provides access to model deployment, data integration, and connections with Azure AI Search. It serves as the foundation for building and managing your RAG solution.
 
-2. **Azure AI Foundry Project**: The workspace where you deploy and manage models, configure project-level settings, create prompt flows, and access endpoints and authorization keys. This is where all model-related operations, including deployment, testing, and orchestration, occur.
+2. **Azure AI Foundry Project**: A workspace where you deploy the gpt-4.1 generative model and the text-embedding-ada-002 embedding model, upload PDF brochures, and manage indexes. The project acts as the central hub for all assets.
 
-3. **Models and Endpoints**: AI models such as **gpt-4.1**, are deployed within the project and exposed through endpoints. Endpoints enable applications or prompt flows to interact with the models programmatically while ensuring secure access via keys.
+3. **Azure AI Search (Vector Index):** A connected resource that hosts the brochures-index, enabling both vector and keyword search. It retrieves the most relevant passages from the uploaded PDFs to ground responses.
 
-4. **Prompt Flow**: A configurable workflow that orchestrates prompts, inputs, and outputs for a generative AI model. It allows you to define interactions, integrate system instructions, and process user queries to automate AI-assisted tasks.
+4. **Chat Playground and Python Client App:** Tools for testing and validation. The Chat Playground provides a no-code environment to compare outputs with and without grounding, while the Python client app demonstrates programmatic integration of Azure OpenAI and Azure AI Search to deliver a full RAG application.
 
-5. **Chat Playground**: An interactive interface for testing deployed models and prompt flows. Users can input queries, provide system instructions, observe responses, and iteratively refine model behavior before integrating it into applications.
-
-6. **Storage Integration and Authorization**: Blob storage connected via managed identities ensures that prompt flows and projects can securely read and store assets required for AI operations, maintaining controlled access to sensitive data.
+5. **Azure Cloud Shell:** A browser-based command-line environment in the Azure portal that comes preconfigured with developer tools. In this lab, you will use it to run the Python client app.
 
 # Getting Started with lab
 

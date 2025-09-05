@@ -4,9 +4,7 @@
 
 ## Overview
 
-Retrieval Augmented Generation (RAG) is a technique used to build applications that integrate data from custom data sources into a prompt for a generative AI model. RAG is a commonly used pattern for developing generative AI apps - chat-based applications that use a language model to interpret inputs and generate appropriate responses.
-
-In this exercise, you'll use Azure AI Foundry to integrate custom data into a generative AI solution.
+In this lab, you will use Azure AI Foundry to build a Retrieval Augmented Generation (RAG) solution that integrates your own data with a generative AI model. You’ll set up a hub and project, deploy embedding and generative models, upload PDF data, and create a vector index in Azure AI Search for semantic retrieval. You will then test the index in the Chat Playground and run a Python-based client app that uses the Azure OpenAI SDK and Azure AI Search to generate grounded responses from your dataset.
 
 > **Note:** The code in this exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages, which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
 
@@ -70,8 +68,8 @@ In this task, you'll set up the Azure AI Foundry workspace by creating a hub and
 
     * Subscription: **Choose Default Subscription (5)**
     * Resource group: **AI-102-RG04 (6)**
-    * Azure AI Foundry resource: **Keep as Default (7)**
-    * Region: **<inject key="Region"></inject> (8)**
+    * Region: **<inject key="Region"></inject> (7)**
+    * Azure AI Foundry resource: **Keep as Default (8)**
 
         ![](../Images/l4t1p4.png)
 
@@ -85,7 +83,7 @@ In this task, you'll deploy two models: an embedding model to convert text into 
 
 You need two models to implement your solution:
 
-- An *embedding* model to vectorize text data for efficient indexing and processing.
+- An **embedding** model to vectorize text data for efficient indexing and processing.
 - A model that can generate natural language responses to questions based on your data.
 
 1. In your Azure AI Foundry project, go to the navigation pane on the left, under **My assets**, open the **Models + endpoints (1)** page. Click **+ Deploy model (2)**, then choose **Deploy base model (3)**.
@@ -148,7 +146,7 @@ You need two models to implement your solution:
 
 In this task, you'll upload a set of travel brochures in PDF format to your Azure AI Foundry project so they can be used as a knowledge source.
 
-The data for your app consists of a set of travel brochures in PDF format from the fictitious travel agency *Margie's Travel*. Let's add them to the project.
+The data for your app consists of a set of travel brochures in PDF format from the fictitious travel agency **Margie's Travel**. Let's add them to the project.
 
 1. In a new browser tab, go to [this link](https://github.com/MicrosoftLearning/mslearn-ai-studio/raw/main/data/brochures.zip) to download the zipped brochure archive from `https://github.com/MicrosoftLearning/mslearn-ai-studio/raw/main/data/brochures.zip`, then click **Open** to view it.
 
@@ -259,6 +257,8 @@ In this task, you'll create a vector index in Azure AI Search from the uploaded 
 
     ![](../Images/l4t4p11.png)
 
+    > **Note:** The indexing process may take 4-5 minutes to complete. The actual time can vary depending on the compute resources available in your subscription.
+
 ## Task 5: Test the index in the playground
 
 In this task, you'll verify that your index is working by running queries in the Chat Playground, both with and without the index, to compare responses.
@@ -272,6 +272,8 @@ In this task, you'll verify that your index is working by running queries in the
     ![](../Images/l4t5p2.png)
 
 1. Review the response, which should be a generic answer from the model without any data from the index.
+
+     ![](../Images/l4t5p2.1.png)
 
 1. In the Setup pane, expand the **Add your data** field, open the **drop-down (1)**, and select the **brochures-index (2)** project index.
 
@@ -384,6 +386,8 @@ In this task, you'll configure and run a Python-based client application that us
 
         ![](../Images/l4t6p8(1).png)
 
+        > **Note:** If the endpoint URL is not visible in the list of connected resources, click on the service name (for example, **mysearchservice**) to open its details pane. From there, copy the **Target** URL.
+
     - **your_search_api_key:** To get the API key for your Azure AI Search resource, go to the **Management center**, select **Connected resources (1)** under Project, and click **Copy API keys (2)** for the **Azure AI Service**.
     
         ![](../Images/l4t6p8.png)
@@ -415,11 +419,11 @@ In this task, you'll configure and run a Python-based client application that us
     - Creates a suitable system message for a travel-related chat solution.
     - Submits a prompt (including the system and a user message based on the user input) to the Azure OpenAI client, adding:
         - Connection details for the Azure AI Search index to be queried.
-        - Details of the embedding model to be used to vectorize the query\*.
+        - Details of the embedding model to be used to vectorize the query.
     - Displays the response from the grounded prompt.
     - Adds the response to the chat history.
 
-    \* *The query for the search index is based on the prompt, and is used to find relevant text in the indexed documents. You can use a keyword-based search that submits the query as text, but using a vector-based search can be more efficient - hence the use of an embedding model to vectorize the query text before submitting it.*
+     The query for the search index is based on the prompt, and is used to find relevant text in the indexed documents. You can use a keyword-based search that submits the query as text, but using a vector-based search can be more efficient - hence the use of an embedding model to vectorize the query text before submitting it.
 
 1. Use the **CTRL+Q** command to close the code editor without saving any changes, while keeping the cloud shell command line open.
 
