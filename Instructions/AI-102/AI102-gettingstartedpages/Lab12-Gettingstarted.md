@@ -8,47 +8,55 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you developed a multi-agent solution using the **Semantic Kernel SDK** in Azure AI Foundry. You created two AI agents: the *Incident Manager*, which analyzes service log files to detect potential issues and recommend resolutions, and the *DevOps Assistant*, which executes corrective actions and updates the logs. You configured the agents, defined turn-taking and termination strategies for their group chat, and tested their collaboration using sample log files. Finally, you verified that the log files were updated correctly and that the agents’ interactions achieved the intended results.
+In this lab, you developed a **multi-agent workflow** in **Azure AI Foundry** using the **Semantic Kernel SDK**. You deployed the *gpt-4.1* model and set up a Python client app configured with your project’s endpoint and key. You then created three agents: the *Summarizer Agent* to condense customer feedback, the *Classifier Agent* to categorize sentiment, and the *Action Agent* to suggest next steps. You defined a sequential orchestration to ensure their outputs built on each other, and ran the solution in Cloud Shell. Finally, you tested the workflow with different customer feedback inputs and verified that the agents collaborated effectively to analyze, classify, and recommend actions.
 
 ## Objectives
 
-By the end of this lab, you will be able to:
-
-1. **Create AI agents using the Semantic Kernel SDK**: Build and configure two distinct agents — an *Incident Manager* and a *DevOps Assistant* — within an Azure AI Foundry project.
-2. **Define group chat behavior**: Set up rules for turn-taking and termination to ensure effective collaboration between agents.
-3. **Test agents with log files**: Provide sample service log files as input, observe how the Incident Manager analyzes issues, and how the DevOps Assistant applies corrective actions.
-4. **Validate outputs**: Confirm that the log files were updated and that the agents worked together to resolve issues.
+1. **Deploy and configure a model in Azure AI Foundry**: Set up a project using the *gpt-4.1* model and capture its endpoint and key for client integration.
+2. **Create AI agents with the Semantic Kernel SDK**: Implement a *Summarizer Agent*, *Classifier Agent*, and *Action Agent* to process customer feedback.
+3. **Build a sequential orchestration**: Configure the agents to work in order so that summaries, classifications, and actions flow together logically.
+4. **Run and test the multi-agent workflow**: Execute the solution in Cloud Shell with different feedback inputs and observe how the agents collaborate.
+5. **Validate outputs**: Confirm that the agents accurately summarize, classify, and recommend actions based on customer feedback.
 
 ## Pre-requisites
 
 * Basic understanding of AI agents and their roles in collaborative problem-solving.
-* Familiarity with the **Semantic Kernel SDK** concepts like planners, skills, and connectors.
+* Familiarity with the **Semantic Kernel SDK** concepts, including agents, orchestrations, and connectors.
 * Experience with the **Azure portal** and navigating **Azure AI Foundry**.
 * An active Azure subscription with access to **Azure AI Foundry**.
 * Permissions to create and manage resources within the assigned resource group (for example, Azure AI User role).
+* Basic knowledge of Python and working in **Cloud Shell** or similar terminal environments.
 
 ## Architecture
 
-The lab architecture demonstrates how two AI agents collaborate using the **Semantic Kernel SDK** inside an Azure AI Foundry project:
+The lab architecture demonstrates how three AI agents collaborate using the **Semantic Kernel SDK** inside an Azure AI Foundry project:
 
-1. **Azure AI Foundry Project**: The central workspace that hosts the deployed model and provides endpoints for the Semantic Kernel–based agents.
-2. **Incident Manager Agent**: An agent responsible for parsing and analyzing service log files, detecting issues, and recommending corrective actions.
-3. **DevOps Assistant Agent**: A supporting agent that executes corrective steps suggested by the Incident Manager and updates the service log accordingly.
-4. **Group Chat Orchestration**: A coordination mechanism that defines agent turn-taking rules and sets termination criteria for the conversation.
-5. **Updated Log File**: The output file reflects both the analysis of detected issues and the corrective actions performed.
+1. **Azure AI Foundry Project**: The central workspace that hosts the deployed *gpt-4.1* model and provides endpoints and API keys for the Semantic Kernel–based agents.
+2. **Summarizer Agent**: Condenses customer feedback into a concise summary, extracting the key points while keeping the tone neutral.
+3. **Classifier Agent**: Categorizes the summarized feedback as **Positive**, **Negative**, or **Feature Request**, providing context for decision-making.
+4. **Action Agent**: Suggests the next step or recommended action based on the summary and classification, such as logging feedback or escalating an issue.
+5. **Sequential Orchestration**: Coordinates the workflow, ensuring that each agent runs in order and passes its output to the next agent.
+6. **Final Output**: Displays the summarized feedback, classification, and recommended action, showing how the agents collaboratively analyze and act on customer input.
 
 ## Architecture Diagram
 
-![](../Images/lab08archdiagram.png)
+![](../Images/AI-102-l11-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project**: Provides the environment to deploy the model, configure Semantic Kernel agents, and manage experiments.
-2. **Semantic Kernel SDK**: A framework used to build, orchestrate, and manage the multi-agent workflow. It provides APIs for agent communication, memory, and plugins.
-3. **Incident Manager Agent**: Detects problems in service logs, prioritizes them, and recommends corrective actions for resolution.
-4. **DevOps Assistant Agent**: Applies the corrective actions suggested, modifies the log file accordingly, and ensures changes are tracked.
-5. **Group Chat Mechanism**: Ensures structured dialogue between agents by enforcing rules for how agents take turns and when the conversation ends.
-6. **Log Files**: Serve as both input (service data) and output (updated with fixes), acting as the ground truth for testing the multi-agent workflow.
+1. **Azure AI Foundry Project**: Provides the environment to deploy the *gpt-4.1* model, configure Semantic Kernel agents, and manage API endpoints for the multi-agent workflow.
+
+2. **Semantic Kernel SDK**: A framework used to build, orchestrate, and manage AI agents. It provides APIs for creating agents, defining sequential orchestrations, handling agent outputs, and connecting to Azure OpenAI services.
+
+3. **Summarizer Agent**: Processes raw customer feedback and condenses it into a short, clear summary that captures the key points without bias.
+
+4. **Classifier Agent**: Categorizes the summarized feedback into one of three classes — **Positive**, **Negative**, or **Feature Request** — to provide context for actionable decisions.
+
+5. **Action Agent**: Suggests the next step based on the summary and classification, such as escalating an issue, logging positive feedback, or adding a feature request to the backlog.
+
+6. **Sequential Orchestration**: Manages the execution order of agents, ensuring that each agent runs in sequence and passes its output to the next agent for processing.
+
+7. **Task Input and Final Output**: The input is customer feedback text, and the output shows the summarized feedback, classification, and recommended action, demonstrating the collaboration and workflow of the multi-agent system.
 
 # Getting Started with lab
 
