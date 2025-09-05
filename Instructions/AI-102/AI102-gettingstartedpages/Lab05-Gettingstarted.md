@@ -40,7 +40,7 @@ The lab architecture demonstrates how a base model is fine-tuned and deployed in
 
 ## Architecture Diagram
 
-![](../Images/lab08archdiagram.png)
+![](../Images/lab05archdiagram.png)
 
 ## Explanation of Components
 

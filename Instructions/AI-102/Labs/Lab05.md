@@ -28,7 +28,7 @@ Imagine you work for a travel agency and you're developing a chat application to
 
 In this task, you'll sign in to the Azure AI Foundry portal, create a new project, and deploy the GPT-4.1 model to set up your workspace for building and testing a custom chat application. You’ll also verify that the model deployment is successful and accessible through the **Models + endpoints** page.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com)[https://ai.azure.com/], then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com)[`https://ai.azure.com/`], then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
 1. Click on **Sign in**.
  
