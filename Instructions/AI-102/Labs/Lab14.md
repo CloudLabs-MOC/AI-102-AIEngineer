@@ -235,7 +235,7 @@ In this task, you’ll extend the application to use the Text Analytics client t
     print('\nLanguage: {}'.format(detectedLanguage.primary_language.name))
     ```
 
-     > **Note**: *In this example, each review is analyzed individually, resulting in a separate call to the service for each file. An alternative approach is to create a collection of documents and pass them to the service in a single call. In both approaches, the response from the service consists of a collection of documents; which is why in the Python code above, the index of the first (and only) document in the response ([0]) is specified.*
+     > **Note**: In this example, each review is analyzed individually, resulting in a separate call to the service for each file. An alternative approach is to create a collection of documents and pass them to the service in a single call. In both approaches, the response from the service consists of a collection of documents; which is why in the Python code above, the index of the first (and only) document in the response ([0]) is specified.
 
 1. Save your changes. Then re-run the program.
 

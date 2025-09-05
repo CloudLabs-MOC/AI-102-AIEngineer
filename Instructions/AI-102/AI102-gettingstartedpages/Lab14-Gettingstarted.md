@@ -14,40 +14,38 @@ In this lab, you will analyze real customer reviews using Azure AI Language. You
 
 By the end of this lab, you will be able to:
 
-1. **Create AI agents using the Azure AI Agent Service:** Build and configure three agents a Title Agent, an Outline Agent, and a Routing Agent within an Azure AI Foundry project.
-2. **Configure the application environment:** Set up project resources, connect the client app, and update configuration files with your project endpoint and model deployment.
-3. **Implement discoverable A2A agents:** Define skills, agent cards, and executors to enable message handling and make agents interoperable through the A2A protocol.
-4. **Validate multi-agent collaboration:** Run the client application, send prompts, and confirm that agents interact and respond collaboratively.
+1. **Provision and configure Azure AI Language:** Create a Language service, capture the endpoint and key.
+2. **Set up the Python SDK workflow in Azure Cloud Shell:** Create a lightweight Python environment, install the Azure AI Language SDK, initialize TextAnalyticsClient, and execute end-to-end text analytics (language detection, sentiment, key phrases, named entities, and linked entities) on sample reviews.
+3. **Run and test the workflow end to end:** Execute the solution in Cloud Shell with multiple review inputs and observe results for each capability.
+4. **Validate outputs:** Verify that the outputs correctly identify language, sentiment, key topics, entities, and linked references, and prepare results for downstream reporting.
 
 ## Pre-requisites
 
-* Basic understanding of AI agents.
-* Familiarity with the **Semantic Kernel SDK** concepts like planners, skills, and connectors.
-* Experience with the **Azure portal** and navigating **Azure AI Foundry**.
+* **Azure portal**
 * Basic knowledge of **Python** programming.
-* Permissions to create and manage resources within the assigned resource group (for example, Azure AI User role).
 
 ## Architecture
 
-The lab architecture demonstrates how multiple AI agents communicate using the **A2A protocol** inside an Azure AI Foundry project:
+he lab architecture demonstrates how a Python-based text analytics application uses **Azure AI Language** to transform unstructured hotel reviews into structured insights:
 
-1. **Azure AI Foundry Project:** Provides the workspace to host the model deployment and manage endpoints for the agents.
-2. **Title Agent:** Generates blog post titles based on user prompts.
-3. **Outline Agent:** Expands the generated title into a structured article outline. 
-4. **Routing Agent:** Orchestrates the workflow by routing user prompts to the appropriate agent and returning the final combined output.
-5. **Client Application:** Connects to the routing agent, sends prompts, and displays the coordinated response from the agents.
+1. **Azure AI Language Resource:** Managed service that exposes text analytics capabilities via secure endpoints and keys.
+2. **Runtime & App (Azure Cloud Shell + Python Console App):** Browser-based, managed shell in the Azure portal where you run a Python console application that loads review documents, invokes the Azure AI Language SDK, and prints structured results.
+3. **Azure AI Language SDK (TextAnalyticsClient):** Client library that authenticates with the Language service using the endpoint/key and invokes text analytics APIs. 
+4. **Data Flow (Reviews → Insights):** Inputs: sample hotel review text files. Outputs: detected language, sentiment labels/scores, key phrases, named entities, and linked entities.
 
 ## Architecture Diagram
 
-![](../Images/AI-102-l13-arch.png)
+![](../Images/AI-102-l14-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project** The workspace where you create and manage your AI project. It hosts the deployed gpt-4.1 model and provides the project endpoint that agents and client apps use for communication.
-2. **Model Deployment (gpt-4.1):** The language model deployed in Azure AI Foundry with sufficient quota. It powers the Title and Outline Agents, enabling them to generate content when prompted.
-3. **Title and Outline Agents (A2A):** Two agents that collaborate through the A2A protocol. The Title Agent generates catchy blog post titles, while the Outline Agent expands them into structured outlines. Both register their skills and are discoverable via agent cards, allowing the Routing Agent to invoke them.
-4. **Routing Agent (A2A server):** The orchestrator that receives prompts from the client app, discovers the Title and Outline Agents using A2A, routes messages between them, and aggregates the responses into a final result.
-5. **Client Application (run_all.py):** A Python app that launches all agents, manages A2A-based communication, and handles end-to-end interaction. It sends prompts to the Routing Agent, enables agent-to-agent message exchange, and displays the combined output (a generated title and matching outline) to the user.
+1. **Azure AI Language Resource:** The core Azure service that powers text analysis. It provides endpoints and keys to authenticate requests, enabling features like language detection, sentiment analysis, and entity recognition.
+2. **Python Client App (text-analysis.py):** The executable script that loads review files, initializes the Text Analytics client with the endpoint and key, and sequentially invokes the features (language, sentiment, key phrases, entities, linked entities), writing results to the console.
+3. **Language Detection:** A Text Analytics feature that identifies the primary language of each review and returns the language name and confidence scores.
+4. **Sentiment Analysis:** A Text Analytics feature that classifies each review as positive, neutral, negative, or mixed, with per-document and per-sentence sentiment scores.
+5. **Key Phrase Extraction:** A Text Analytics feature that surfaces the main topics and themes in each review as key phrases to quickly summarize what the customer is talking about.
+6. **Entity Recognition:** A Text Analytics feature that detects and labels entities (for example, people, locations, organizations, amenities) mentioned in the reviews, returning the text span and category.
+7. **Linked Entity Recognition:** A Text Analytics feature that resolves detected entities to authoritative sources (such as Wikipedia), returning a canonical name and a reference URL to provide context.
 
 # Getting Started with lab
 
@@ -57,7 +55,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/AI-102-l13-g1.png)
+![Access Your VM and Lab Guide](../Images/AI-102-l14-g1.png)
 
 ### Virtual Machine & Lab Guide
  
