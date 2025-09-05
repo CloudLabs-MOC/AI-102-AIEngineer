@@ -43,7 +43,7 @@ The lab architecture demonstrates how an Azure AI Foundry project supports AI ag
 
 ## Architecture Diagram
 
-![](../Images/lab08archdiagram.png)
+![](../Images/AI-102-arch-lab2a.png)
 
 ## Explanation of Components
 
