@@ -39,7 +39,7 @@ The lab architecture demonstrates how a **Custom Question Answering solution** i
 
 ## Architecture Diagram
 
-![](../Images/AI-102-l11-arch.png)
+![](../Images/lab15archdiagram.png)
 
 ## Explanation of Components
 
