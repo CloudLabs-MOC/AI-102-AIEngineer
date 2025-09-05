@@ -2,6 +2,12 @@
 
 ### Estimated Duration: 30 Minutes
 
+## Lab Objectives
+
+- **Task 1:** Create an Azure AI Foundry project
+
+- **Task 2:** Create an A2A application
+
 ## Overview
 
 In this lab, you'll use Azure AI Agent Service with the A2A protocol to create simple remote agents that interact with one another. These agents will assist technical writers with preparing their developer blog posts. A title agent will generate a headline, and an outline agent will use the title to develop a concise outline for the article.
@@ -20,7 +26,21 @@ In this task, you will create a new Azure AI Foundry project, deploy the gpt-4.1
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
+     ![](../Images/l14t1p1.png)
+
    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+      ![](../Images/l14t1p2.png)
+
+1. When the **Stay signed in?** window appears, select **No**.
+
+    ![](../Images/aifoundrysignin3.png)
+
+1. Click on **X** to close the **Chat with Foundry Agent** popup window.
+
+    ![](../Images/l8t1p2.png)
+
+    >**Note:** Close the **Help** pane if it's open
 
 1. In the home page, select **Create an agent**.   
 
@@ -37,6 +57,9 @@ In this task, you will create a new Azure AI Foundry project, deploy the gpt-4.1
     - Select **Create (3)**
 
       ![](../Images/ai13l3.png)    
+
+      >**Note:** In some cases, Azure AI Foundry will automatically deploy a default model (usually gpt-4o). If this happens, you can skip directly to the next step.
+
 
 1. Wait for your project to be created.      
 
@@ -82,7 +105,7 @@ Now you're ready to create a client app that uses an agent. Some code has been p
 
 In this task, you will clone the GitHub repository that contains the application code and explore its structure. You’ll then set up a Python virtual environment, install the required libraries, and configure the .env file with your Azure AI Foundry project endpoint and model deployment name (gpt-4.1) to prepare the app for running.
 
-1. Navigate to [Azure portal](https://portal.azure.com/).
+1. Open a new browser tab (keeping the Azure AI Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
 1. If prompted, provide the credentials below:
     
@@ -90,13 +113,13 @@ In this task, you will clone the GitHub repository that contains the application
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+      >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
 
-    ![](../Images/ai11l4.png) 
+      ![](../Images/l2at2p2.png)
 
-1. Selecting a **PowerShell** environment.
+1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
-    ![](../Images/ai11l5.png) 
+    ![](../Images/l2at2p3.png)
 
 1. On the **Getting started** page,
 
@@ -266,7 +289,7 @@ In this task, you create the title agent that helps writers create trendy headli
 
      The code provided in the rest of the file will process and return the agent's response. 
 
-1. Save the code file (**CTRL+S**). Now you're ready to share the agent's skills and card with the A2A protocol. 
+1. Save the code file (**CTRL+S**) or  **Right-click > Save**. Then close the editor with **CTRL+Q** or **Right-click > Quit**. Now you're ready to share the agent's skills and card with the A2A protocol. 
 
 1. Enter the following command to edit the title agent's `server.py` file  
 
@@ -312,6 +335,8 @@ In this task, you create the title agent that helps writers create trendy headli
    )
     ```
 
+     ![](../Images/AI-102-l13-1.png)   
+
 1. Locate the comment **Create agent executor** and add the following code to initialize the agent executor using the agent card:
 
     ```python
@@ -330,6 +355,8 @@ In this task, you create the title agent that helps writers create trendy headli
    )
     ```
 
+    ![](../Images/AI-102-l13-2.png) 
+
 1. Under the comment **Create A2A application**, add this code to create the A2A-compatible application instance:
 
     ```python
@@ -339,9 +366,11 @@ In this task, you create the title agent that helps writers create trendy headli
    )
     ```
     
+    ![](../Images/AI-102-l13-3.png) 
+
     This code creates an A2A server that will share the title agent's information and handle incoming requests for this agent using the title agent executor.
 
-1. Save the code file (**CTRL+S**) when you have finished.
+1. Save your changes in the code editor using **CTRL+S** or **Right-click > Save**. Then close the editor with **CTRL+Q** or **Right-click > Quit**, leaving the Cloud Shell command line open.
 
 
 ### Task 2.4: Task Enable messages between the agents

@@ -2,13 +2,13 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 13: Connect to remote agents with A2A protocol
+# Lab 14: Analyze Text
 
 ### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 
-In this lab, you will explore how the Azure AI Agent Service uses the A2A protocol to enable communication between multiple agents. You’ll create a Title Agent to generate headlines, an Outline Agent to expand them into article outlines, and a Routing Agent to coordinate their interaction. You’ll configure the project in Azure AI Foundry, set up the application environment, and implement A2A-compatible servers. Finally, you’ll run the client application to test prompts and validate how the agents collaborate to produce results.
+In this lab, you will analyze real customer reviews using Azure AI Language. You’ll provision a Language service, retrieve the endpoint and key, and configure a lightweight Python application in Azure Cloud Shell. You’ll then run end-to-end text analytics language detection, sentiment analysis, key phrase extraction, named entity recognition, and linked entity resolution to convert unstructured feedback into actionable insights. Along the way, you’ll use the TextAnalyticsClient from the Azure AI Language SDK and apply secure authentication patterns for connecting applications to Azure resources.
 
 ## Objectives
 
