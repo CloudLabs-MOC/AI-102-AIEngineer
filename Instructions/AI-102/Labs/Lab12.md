@@ -62,9 +62,9 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
 
 1. Expand **Advanced options (1)**, provide the details below, and leave the rest to default:
 
-    - Resource group: Select **AI-102-RG12 (2)**
-    - Region: Select **Region**: Select **<inject key="Region" enableCopy="false" /> (3)**
-    - Select **Create (4)**
+    - Resource group: **AI-102-RG12 (2)**
+    - Region: **<inject key="Region" enableCopy="false" /> (3)**
+    - Click **Create (4)**
 
       ![](../Images/l12t1p1.png) 
 
@@ -82,7 +82,7 @@ In this task, you’ll sign in to the Azure AI Foundry portal, create a new proj
 
     ![](../Images/l12t1p3.png)
 
-1. In the left navigation pane, select **Overview (1)**. Under the **Libraries** section, choose **Azure OpenAI (2)**. Copy the endpoint and API key by clicking **Copy Azure OpenAI endpoint (3)** and **Copy API Key (4)**, then paste them into Notepad. You’ll use these values later to connect your client application to the project.
+1. Now in the left navigation pane, select **Overview (1)**. Under the **Libraries** section, choose **Azure OpenAI (2)**. Copy the endpoint and API key by clicking **Copy Azure OpenAI endpoint (3)** and **Copy API Key (4)**, then paste them into Notepad. You’ll use these values later to connect your client application to the project.
 
     ![](../Images/l12t1p4(1).png)
 

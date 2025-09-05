@@ -1,11 +1,34 @@
 # Lab 15: Create a Question Answering Solution
 
-One of the most common conversational scenarios is providing support through a knowledge base of frequently asked questions (FAQs). Many organizations publish FAQs as documents or web pages, which works well for a small set of question and answer pairs, but large documents can be difficult and time-consuming to search.
+### Estimated Duration: 45 Minutes
 
-Azure AI Language includes a question answering capability that enables you to create a knowledge base of question and answer pairs that can be queried using natural language input, and is most commonly used as a resource that a bot can use to look up answers to questions submitted by users. In this exercise, you'll use the Azure AI Language Python SDK for text analytics to implement a simple question answering application.
+## Overview
 
-### Task 1: Provision an *Azure AI Language* resource
+In this lab, you’ll build a **Custom Question Answering solution** using **Azure AI Language**. You’ll start by provisioning a language resource in Azure and creating a question answering project in **Language Studio**, configuring its language and basic settings. Next, you’ll populate the knowledge base by importing an existing FAQ page and adding chit-chat content, then extend it by editing question-answer pairs, adding alternate questions, and creating follow-up prompts for multi-turn conversations. After training and testing the knowledge base in Language Studio, you’ll deploy it to make it accessible via a REST endpoint. Finally, you’ll set up a Python application in **Azure Cloud Shell**, configure it with the resource endpoint and key, add code to query the knowledge base interactively, and run the app to submit questions and receive answers in real time.
 
+## Lab Objectives 
+
+- **Task 1:** Provision an Azure AI Language resource
+
+- **Task 2:** Create a question answering project
+
+- **Task 3:** Add sources to the knowledge base
+
+- **Task 4:**  Edit the knowledge base
+
+- **Task 5:** Train and test the knowledge base
+
+- **Task 6:** Deploy the knowledge base
+
+- **Task 7:** Prepare to develop an app in Cloud Shell
+
+- **Task 8:** Configure your application
+
+- **Task 9:** Add code to user your knowledge base
+
+## Task 1: Provision an Azure AI Language resource
+
+In this task, you’ll provision an Azure AI Language resource configured for Custom Question Answering. You’ll navigate the Azure portal to create the resource, set up required parameters such as subscription, resource group, region, and pricing tier, and retrieve the resource keys and endpoint, which are necessary for interacting with the language service in subsequent steps.
 
 1. On the Azure portal, search for **Language service (1)** and then select **Language(2)** from the services.
 
@@ -29,10 +52,11 @@ Azure AI Language includes a question answering capability that enables you to c
     - Azure Search region: Select **<inject key="Region" enableCopy="false" /> (6)**
     - Azure Search pricing tier: **Free (F) (7)** (*If this tier is not available, select Basic (B)*)
     - Responsible AI Notice: ***Agree* (8)**
-    - Select **Review + create (9)**,
+    - Select **Review + create (9)**
     
-      ![](../Images/ai15l4.png) 
-      ![](../Images/ai15l5.png)   
+        ![](../Images/ai15l4.png) 
+
+        ![](../Images/ai15l5.png)   
 
 1. Then select **Create**.
 
@@ -60,12 +84,11 @@ Azure AI Language includes a question answering capability that enables you to c
  
 <validation step="2200df38-ce0c-418c-98e4-cdb808b3c3e2" />
  
----   
+---  
 
+## Task 2: Create a question answering project
 
-### Task 2: Create a question answering project
-
-To create a knowledge base for question answering in your Azure AI Language resource, you can use the Language Studio portal to create a question answering project. In this case, you'll create a knowledge base containing questions and answers about [Microsoft Learn](https://docs.microsoft.com/learn).
+In this task, you’ll create a Custom Question Answering project in Azure Language Studio. You’ll connect your previously provisioned Azure AI Language resource, define the project language, and set up a knowledge base containing questions and answers about Microsoft Learn. This project will serve as the foundation for querying and retrieving answers in subsequent steps.
 
 1. In a new browser tab, go to the Language Studio portal at [https://language.cognitive.azure.com/](https://language.cognitive.azure.com/).
 
@@ -91,7 +114,7 @@ To create a knowledge base for question answering in your Azure AI Language reso
     - **Resource name**: Select **languageservice<inject key="DeploymentID" enableCopy="false"/> (4)**
     - Then select **Done (5)**
 
-      ![](../Images/ai15l11.png)    
+        ![](../Images/ai15l11.png)    
 
       If you are <u>not</u> prompted to choose a language resource, it may be because you have multiple Language resources in your subscription; in which case:
 
@@ -110,7 +133,7 @@ To create a knowledge base for question answering in your Azure AI Language reso
     - Select **English (2)** as the language. 
     - Then select **Next (3)**.
 
-      ![](../Images/ai15l13.png) 
+        ![](../Images/ai15l13.png) 
 
 1. On the **Enter basic information** page, enter the following details:
 
@@ -135,9 +158,9 @@ To create a knowledge base for question answering in your Azure AI Language reso
  
 ---   
 
-### Task 3: Add sources to the knowledge base
+## Task 3: Add sources to the knowledge base
 
-You can create a knowledge base from scratch, but it's common to start by importing questions and answers from an existing FAQ page or document. In this case, you'll import data from an existing FAQ web page for Microsoft Learn, and you'll also import some pre-defined "chit chat" questions and answers to support common conversational exchanges.
+In this task, you’ll enrich your Custom Question Answering project by adding sources to the knowledge base. You’ll import questions and answers from an existing Microsoft Learn FAQ web page and add pre-defined “chit chat” content to handle common conversational exchanges, providing a broader and more interactive knowledge base for the project.
 
 1. On the **Manage sources (1)** page for your question answering project, in the **&#9547; Add source (2)** list, select **URLs (3)**.
 
@@ -158,13 +181,14 @@ You can create a knowledge base from scratch, but it's common to start by import
 
     ![](../Images/ai15l19.png) 
 
-### Task 4:  Edit the knowledge base
+## Task 4:  Edit the knowledge base
 
-Your knowledge base has been populated with question and answer pairs from the Microsoft Learn FAQ, supplemented with a set of conversational *chit-chat* question  and answer pairs. You can extend the knowledge base by adding additional question and answer pairs.
+In this task, you’ll enhance your Custom Question Answering knowledge base by editing and extending it. You’ll add new question-and-answer pairs, create alternate questions for better recognition, and define follow-up prompts to support multi-turn conversations, making the knowledge base more complete and interactive.
 
 1. In your **LearnFAQ** project in Language Studio, select the **Edit knowledge base** page to see the existing question and answer pairs (if some tips are displayed, read them and choose **Got it** to dismiss them, or select **Skip all**)
 
     ![](../Images/ai15l20.png) 
+
     ![](../Images/ai15l21.png) 
 
 1. In the knowledge base, on the **Question answer pairs** tab, select **&#65291; (1)**.
@@ -179,7 +203,7 @@ Your knowledge base has been populated with question and answer pairs from the M
 
       ![](../Images/ai15l23.png)
 
-1. In the page for the **What are Microsoft credentials?** question that is created, expand **Alternate questions (1)**. Click on **+ Add the alternate question (2)** and the add the alternate question `How can I demonstrate my Microsoft technology skills?`. **(3)**
+1. In the page for the **What are Microsoft credentials?** question that is created, expand **Alternate questions (1)**. Click on **+ Add the alternate question (2)** and the add the alternate question `How can I demonstrate my Microsoft technology skills?` **(3)**.
 
     ![](../Images/ai15l24.png) 
 
@@ -199,9 +223,9 @@ Your knowledge base has been populated with question and answer pairs from the M
 
       ![](../Images/ai15l26.png) 
 
-### Task 5: Train and test the knowledge base
+## Task 5: Train and test the knowledge base
 
-Now that you have a knowledge base, you can test it in Language Studio.
+In this task, you’ll train and test your Custom Question Answering knowledge base in Language Studio. You’ll save the knowledge base, use the test pane to verify responses to both FAQ and chit-chat questions, and confirm that follow-up prompts work correctly, ensuring the knowledge base provides accurate and interactive answers.
 
 1. Save the changes to your knowledge base by selecting the **Save** button under the **Question answer pairs** tab on the left.
 
@@ -233,9 +257,9 @@ Now that you have a knowledge base, you can test it in Language Studio.
 
 1. When you're done testing the knowledge base, close the test pane.
 
-### Task 6: Deploy the knowledge base
+## Task 6: Deploy the knowledge base
 
-The knowledge base provides a back-end service that client applications can use to answer questions. Now you are ready to publish your knowledge base and access its REST interface from a client.
+In this task, you’ll deploy your Custom Question Answering knowledge base so it can be accessed by client applications. You’ll publish the knowledge base in Language Studio, obtain the REST endpoint, and review the required parameters for making API calls, enabling external applications to query your knowledge base.
 
 1. In the **LearnFAQ** project in Language Studio, select the **Deploy knowledge base (1)** page from the navigation menu on the left.
     - At the top of the page, select **Deploy (2)**. Then select **Deploy (3)** to confirm you want to deploy the knowledge base.
@@ -251,9 +275,9 @@ The knowledge base provides a back-end service that client applications can use 
 
 1. Close the prediction URL dialog box.
 
-### Task 7: Prepare to develop an app in Cloud Shell
+## Task 7: Prepare to develop an app in Cloud Shell
 
-You'll develop your question answering app using Cloud Shell in the Azure portal. The code files for your app have been provided in a GitHub repo.
+In this task, you’ll prepare the Azure Cloud Shell environment to develop your question answering app. You’ll launch Cloud Shell in PowerShell, switch to the classic version to access the code editor, and clone the provided GitHub repository containing the application code, setting up the environment for development and testing.
 
 1. Navigate to [Azure portal](https://portal.azure.com/).
 
@@ -303,9 +327,9 @@ You'll develop your question answering app using Cloud Shell in the Azure portal
     ```
     cd mslearn-ai-language/Labfiles/02-qna/Python/qna-app
     ```
-### Task 8: Configure your application
+## Task 8: Configure your application
 
-1. In the command line pane, run the following command to view the code files in the **qna-app** folder:
+In this task, you’ll configure your question answering application in Cloud Shell. You’ll set up a Python virtual environment, install required packages including the Azure AI Language Question Answering SDK, and update the application’s configuration file with your Azure Language resource endpoint, authentication key, project name, and deployment name, preparing the app for execution.
 
     ```
    ls -a -l
@@ -341,7 +365,9 @@ You'll develop your question answering app using Cloud Shell in the Azure portal
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
 
-### Task 9: Add code to user your knowledge base
+## Task 9: Add code to user your knowledge base
+
+In this task, you’ll enhance your Python application to interact with your deployed knowledge base. You’ll import the required Azure Question Answering SDK namespaces, create a client using your resource’s endpoint and key, and add code to submit questions from the command line and display the returned answers along with confidence scores and sources, enabling interactive querying of your knowledge base.
 
 1. Enter the following command to edit the application code file:
 
@@ -417,7 +443,11 @@ You'll develop your question answering app using Cloud Shell in the Azure portal
 
 1. Ask more questions. When you're done, enter `quit`.
 
+## Summary
 
+In this lab, you built a **Custom Question Answering solution** in **Azure AI Language**. You provisioned an Azure AI Language resource, created a question answering project, and populated its knowledge base using an existing FAQ page and pre-defined chit-chat content. You then edited the knowledge base to add new questions, alternate questions, and follow-up prompts to support multi-turn conversations. After training and testing the knowledge base in **Language Studio**, you deployed it to make it accessible via a REST endpoint. Finally, you prepared a Python application in **Azure Cloud Shell**, configured it with your resource’s endpoint and key, added code to interact with the knowledge base, and ran the app to submit questions and receive answers interactively.
+
+### You have successfully completed the Hands-on Lab!
 
 
 
