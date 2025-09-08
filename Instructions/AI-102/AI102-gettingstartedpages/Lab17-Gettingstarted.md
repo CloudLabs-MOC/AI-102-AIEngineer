@@ -66,7 +66,13 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab01labvm.png)
+![Access Your VM and Lab Guide](../Images/ai13g1.png)
+
+## Lab Guide Zoom In/Zoom Out
+ 
+To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
+
+![](../Images/zoominai102.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -77,6 +83,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
 ![Explore Lab Resources](../Images/envtab.png)
+
+## Utilizing the Split Window Feature
+ 
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
+ 
+![Use the Split Window Feature](../Images/splitwindow.png)
+
 
 ## Managing Your Virtual Machine
  
@@ -90,17 +103,7 @@ You can use the **Progress** tab to track your progress while working on the lab
 
 ![](../Images/progresstab.png)
 
-## Utilizing the Split Window Feature
- 
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
- 
-![Use the Split Window Feature](../Images/splitwindow.png)
 
-## Lab Guide Zoom In/Zoom Out
- 
-To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
-
-![](../Images/zoominai102.png)
 
 ## Let's Get Started with Azure Portal
  
