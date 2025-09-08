@@ -110,7 +110,7 @@ Once you've created the Azure AI Language service and storage account, you'll ne
 
     ![](../Images/ai17l15.png)
 
-1. Select **Containers (1)** in the left menu, located below **Data storage**. On the screen that appears, select **+ Container (2)**. Give the container the name `articles` **(3)**, and set **Anonymous access level** to **Container (anonymous read access for containers and blobs) (4)** and then **Create (5)**.
+1. Select **Containers (1)** under the **Data Storage** from the left menu, located below **Data storage**. On the screen that appears, select **+ Add Container (2)**. Give the container the name `articles` **(3)**, and set **Anonymous access level** to **Container (anonymous read access for containers and blobs) (4)** and then **Create (5)**.
 
     ![](../Images/ai17l16.png)
 
@@ -247,7 +247,7 @@ Now that your project is created, you need to label, or tag, your data to train 
     | Article 8 | News | Training |
     | Article 9 | Entertainment | Training |
 
-1. Select **Article 1 (1)** to start Assign each article the appropriate class and dataset (training or testing) using the **Activity** pane on the right **(2)**.
+1. `Use the above table for selecting the class and datasets.` Select **Article 1 (1)** to start Assign each article the appropriate class and dataset (training or testing) using the **Activity** pane on the right **(2)**.
 
     ![](../Images/ai17l30.png) 
 
@@ -290,7 +290,7 @@ After you've labeled your data, you need to train your model.
 
 In real world applications of text classification, it's important to evaluate and improve your model to verify it's performing as you expect.
 
-1. Select **Model performance**, and select your **ClassifyArticles** model. 
+1. Select **Model performance (1)**, and select your **ClassifyArticles (2)** model. 
 
     ![](../Images/ai17l37.png)
 
