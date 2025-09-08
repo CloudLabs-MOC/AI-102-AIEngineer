@@ -1,12 +1,23 @@
 # Lab 17: Custom text classification
 
-Azure AI Language provides several NLP capabilities, including the key phrase identification, text summarization, and sentiment analysis. The Language service also provides custom features like custom question answering and custom text classification.
+In this hands-on lab, you will learn how to build a custom text classification model using Azure AI Language. You’ll start by provisioning a Language resource and uploading sample articles to Azure Storage. Then, using Language Studio, you’ll create a project, label the data, train and evaluate the model, and finally deploy it. To validate the model, you will configure and run a Python application in Azure Cloud Shell that classifies documents based on the trained categories.
 
-To test the custom text classification of the Azure AI Language service, you'll configure the model using Language Studio then use a Python application to test it.
+## Lab Objectives
+
+- Task 1: Provision an Azure AI Language resource
+- Task 2: Upload sample articles
+- Task 3: Create a custom text classification project
+- Task 4: Label your data
+- Task 5: Train your model
+- Task 6: Evaluate your model
+- Task 7: Deploy your model
+- Task 8: Prepare to develop an app in Cloud Shell
+- Task 9: Configure your application
+- Task 10: Add code to classify documents
 
 ### Task 1: Provision an Azure AI Language resource
 
-If you don't already have one in your subscription, you'll need to provision an Azure AI Language service resource. Additionally, use custom text classification, you need to enable the Custom text classification & extraction feature.
+In this task, you will provision an Azure AI Language resource with the Custom Text Classification feature enabled and configure its storage account. You will also retrieve the keys and endpoint required for later steps.
 
 1. On the Azure portal, search for **Language service (1)** and then select **Language(2)** from the services.
 
@@ -82,7 +93,7 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 ### Task 2: Upload sample articles
 
-Once you've created the Azure AI Language service and storage account, you'll need to upload example articles to train your model later.
+In this task, you will download sample articles, configure your storage account, and upload the articles to a container. These files will be used to train and test your custom text classification model.
 
 1. Within the JumpVM, in a new browser tab, download sample articles from `https://aka.ms/classification-articles`.
 
@@ -134,7 +145,7 @@ Once you've created the Azure AI Language service and storage account, you'll ne
 
 ### Task 3: Create a custom text classification project
 
-After configuration is complete, create a custom text classification project. This project provides a working place to build, train, and deploy your model.
+In this task, you will create a custom text classification project in Azure AI Language Studio, connect it to your storage container, and set up the basic project details to prepare for labeling and training.
 
 > **NOTE**: This lab utilizes **Language Studio**, but you can also create, build, train, and deploy your model through the REST API.
 
@@ -269,7 +280,7 @@ Now that your project is created, you need to label, or tag, your data to train 
 
 ### Task 5: Train your model
 
-After you've labeled your data, you need to train your model.
+In this task, you will train your custom text classification model using the labeled data, creating a model named ClassifyArticles for later evaluation and deployment.
 
 1. Select **Training jobs (1)** on the left side menu. Select **Start a training job (2)**.
 
@@ -288,7 +299,7 @@ After you've labeled your data, you need to train your model.
 
 ### Task 6: Evaluate your model
 
-In real world applications of text classification, it's important to evaluate and improve your model to verify it's performing as you expect.
+In this task, you will evaluate your trained model by reviewing its performance metrics, analyzing test results, and identifying any misclassified documents to improve accuracy.
 
 1. Select **Model performance (1)**, and select your **ClassifyArticles (2)** model. 
 
@@ -304,7 +315,7 @@ In real world applications of text classification, it's important to evaluate an
 
 ### Task 7: Deploy your model
 
-When you're satisfied with the training of your model, it's time to deploy it, which allows you to start classifying text through the API.
+In this task, you will deploy your trained model, making it available for use through the API to classify new text documents.
 
 1. On the left panel, select **Deploying model (1)**.
     - Select **Add deployment (2)**
@@ -317,6 +328,8 @@ When you're satisfied with the training of your model, it's time to deploy it, w
 1. Once your model is deployed, leave that page open. You'll need your `project and deployment name` in the next step.
 
 ### Task 8: Prepare to develop an app in Cloud Shell
+
+In this task, you will set up the Azure Cloud Shell environment, switch to the classic version, and clone the GitHub repository that contains the sample application code needed for testing your deployed text classification model.
 
 1. Navigate to [Azure portal](https://portal.azure.com/).
 
@@ -369,6 +382,8 @@ When you're satisfied with the training of your model, it's time to deploy it, w
 
 ### Task 9: Configure your application
 
+In this task, you will configure your application by setting up a Python virtual environment, installing required packages, and updating the .env file with your Azure AI Language resource details and project settings.
+
 1. In the command line pane, run the following command to view the code files in the **classify-text** folder:
 
     ```
@@ -404,6 +419,8 @@ When you're satisfied with the training of your model, it's time to deploy it, w
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
 ### Task 10: Add code to classify documents
+
+In this task, you will add Python code to your application that uses the Azure AI Language SDK to classify documents, run the program, and view the classification results with confidence scores.
 
 1. Enter the following command to edit the application code file:
 
@@ -496,3 +513,10 @@ When you're satisfied with the training of your model, it's time to deploy it, w
     ```    
 
      ![](../Images/ai17l52.png)       
+
+
+### Summary
+
+In this lab, you created an Azure AI Language resource and built a custom text classification project. You uploaded and labeled data, trained and evaluated your model, then deployed it for use. Finally, you configured and ran a Python app in Cloud Shell to classify documents using your deployed model, gaining hands-on experience with end-to-end text classification in Azure.
+
+### You have successfully completed the Hands-on Lab!
