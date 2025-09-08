@@ -35,7 +35,6 @@ By the end of this lab, you will be able to:
 * Basic understanding of question answering systems and knowledge bases.
 * Familiarity with **Azure AI Language** concepts, including projects, knowledge bases, and REST endpoints.
 * Experience with the **Azure portal** and navigating **Language Studio**.
-* An active Azure subscription with permissions to create and manage resources in the assigned resource group.
 * Basic knowledge of Python and experience working in **Cloud Shell** or similar terminal environments.
 
 ## Architecture
