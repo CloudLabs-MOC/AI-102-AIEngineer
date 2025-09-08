@@ -2,39 +2,46 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 01: Prepare for an AI development project
+# Lab 17: Custom text classification
 
 ### Overall Estimated Timing: 60 Minutes
 
 ## Overview
 
-In this lab, you will explore Azure AI Foundry by creating a project and deploying the gpt-4.1 model. You’ll review the project’s endpoints and keys to understand how applications connect to deployed models and AI services. Finally, you’ll test the generative AI model in the chat playground by configuring system instructions, sending queries, and reviewing responses to see how the model can be applied in real scenarios.
+In this hands-on lab, you'll gain practical experience in building a custom text classification solution using Azure AI Language. You will learn how to provision an Azure AI Language resource, upload and label training data, and train and evaluate your classification model. Additionally, you’ll gain expertise in deploying the model and integrating it with a Python application in Azure Cloud Shell to classify documents programmatically. By the end of this lab, you'll be proficient in the end-to-end process of creating, training, deploying, and consuming a custom text classification model in Azure AI Language, equipping you with the skills to apply text analytics in real-world scenarios.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create and deploy a project in Azure AI Foundry**: Set up a new project, deploy the gpt-4.1 model, and explore resource and project-level settings.
+1. **Provision an Azure AI Language resource:** You will learn how to create an Azure AI Language resource in the Azure portal, configure its storage account, and retrieve keys and endpoints required to build and integrate custom text classification solutions.
 
-2. **Review project endpoints and keys**: Understand how applications connect to your Azure AI Foundry project, deployed models, and integrated AI services.
+1. **Upload and organize sample articles**: You will upload sample text documents into an Azure Storage container and configure appropriate access levels so they can be used for training and testing your model.
 
-3. **Test a generative AI model in the chat playground**: Configure system instructions, send queries, and analyze responses from the deployed model.
+1. **Create and label a custom text classification project:** You will create a project in Language Studio, define classification categories, and label sample articles with the correct class and dataset (training or testing) to prepare your data for model training.
+
+1. **Train and evaluate your model:** You will train a custom classification model using the labeled data and evaluate its performance using built-in metrics and test set details to identify misclassifications and potential areas for improvement.
+
+1. **Deploy your classification model:** You will deploy your trained model in Language Studio, making it accessible via an API endpoint for real-time text classification.
+
+1. **Configure and run a Python application in Cloud Shell:** You will set up a Python environment in Azure Cloud Shell, configure application settings with your resource details, add SDK code for classification, and run the app to classify documents and view confidence scores.
 
 ## Pre-requisites
 
-* Basic knowledge of the Azure portal.
-* Familiarity with core AI concepts such as generative AI and language models.
-* An active Azure subscription with access to Azure AI Foundry.
+- Familiarity with text analytics concepts such as labeling, training, and testing models.
+- Basic experience with Python and working in Azure Cloud Shell.
 
 ## Architecture
 
-The lab architecture demonstrates how an Azure AI Foundry project supports generative AI development and integration:
+The lab architecture demonstrates how Azure AI Language enables custom text classification using uploaded documents and application integration:
 
-1. **Azure AI Foundry Resource**: Created in the Azure portal, this resource connects to Azure AI services and hosts deployed models such as gpt-4.1.
+1. **Azure AI Language Resource:** Learning how to provision an AI Language service in the Azure portal that provides the core NLP capabilities, including training, deploying, and hosting custom classification models.
 
-2. **Azure AI Foundry Project**: A workspace where you deploy and manage the gpt-4.1 model, configure project settings, and access endpoints and keys for application integration.
+1. **Azure Storage Account:** Understanding how to create and configure a storage account to store and manage sample articles. These articles are uploaded into a container and linked to the classification project for labeling and training.
 
-3. **Chat Playground Interface**: A built-in tool within Azure AI Foundry that allows you to test your deployed model, provide custom instructions, send queries, and analyze responses before integrating the model into applications.
+1. **Language Studio:** Gaining experience using the browser-based interface to create a classification project, label data, train, evaluate, and deploy the model.
+
+1. **Cloud Shell & Python App:** Learning how to configure a development environment in Azure Cloud Shell, connect to the deployed model using endpoints and keys, and classify text files programmatically through the Azure AI Language SDK.
 
 ## Architecture Diagram
 
@@ -42,11 +49,14 @@ The lab architecture demonstrates how an Azure AI Foundry project supports gener
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project**: The main workspace where you organize your AI solutions. It acts as a hub for managing deployed models, configuring project settings, and controlling access to resources.
+1. **Azure AI Language Resource:** Provides NLP capabilities to build, train, deploy, and host custom text classification models.
 
-2. **Models and Endpoints**: Deployed AI models, like gpt-4.1, are accessible via endpoints and secured with authorization keys. These endpoints allow client applications to interact with the models programmatically.
+1. **Azure Storage Account:** Stores and organizes sample articles in containers for labeling and model training.
 
-3. **Chat Playground**: An interactive interface within the Foundry project that lets you experiment with your models. You can provide instructions, run queries, and observe model responses, which helps in testing and refining AI behavior before integration.
+1. **Language Studio:** A web-based interface to create projects, label data, train, evaluate, and deploy classification models.
+
+1. **Cloud Shell & Python App:** A development setup to configure and run a Python app that connects to the deployed model for text classification.
+
 
 # Getting Started with lab
 
@@ -54,7 +64,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
 
 ## Accessing Your Lab Environment
  
-Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
+Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
 ![Access Your VM and Lab Guide](../Images/lab01labvm.png)
 
