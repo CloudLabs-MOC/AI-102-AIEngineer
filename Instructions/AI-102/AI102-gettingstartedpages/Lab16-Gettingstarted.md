@@ -8,15 +8,27 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you built a **Custom Question Answering solution** with **Azure AI Language**. You provisioned a language resource, created a project in **Language Studio**, and populated the knowledge base with an FAQ and chit-chat content. You extended it with additional questions, alternate phrasing, and follow-up prompts for multi-turn conversations. After training, testing, and deploying the knowledge base, you set up a Python client app in **Azure Cloud Shell**, configured it with your resource’s endpoint and key, and ran the app to interactively query the knowledge base and receive accurate, context-aware answers.
+In this lab, you will build a conversational language understanding model using the Azure AI Language service. You will start by provisioning a Language resource and creating a new project in Language Studio. Next, you will define intents and sample utterances, then train and test the model to evaluate its performance. You will enhance the model further by adding entities and retraining it for improved accuracy. Finally, you will integrate the deployed model with a Python client application to process user queries and generate intelligent responses.
 
 ## Objectives
 
-1. **Provision and configure an Azure AI Language resource**: Create a language resource in Azure and capture its endpoint and key for client integration.
-2. **Create a question answering project in Language Studio**: Set up a project, define the language, and configure basic settings for your knowledge base.
-3. **Populate and extend the knowledge base**: Import FAQ and chit-chat content, add new question-answer pairs, alternate questions, and follow-up prompts to support multi-turn conversations.
-4. **Train, test, and deploy the knowledge base**: Verify responses in Language Studio and deploy the knowledge base to make it accessible via a REST endpoint.
-5. **Develop and configure a Python client app**: Set up the app in Azure Cloud Shell, configure it with the resource endpoint and key, and run it to interactively submit questions and receive answers.
+By the end of this lab, you will be able to:
+
+1. **Provision an Azure AI Language resource**: Create and configure a Language service resource in the Azure portal, then collect the keys and endpoint required for model development.
+
+1. **Create a conversational language understanding project**: Use Language Studio to define a new project with its name, primary language, and description as the foundation for your conversational model.
+
+1. **Create intents**: Define intents such as GetTime, GetDay, and GetDate to represent the goals behind user utterances.
+
+1. **Label each intent with sample utterances**: Provide example phrases for each intent so the model can learn to map user inputs to the correct intent.
+
+1. **Train and test the model**: Train the model on defined intents and utterances, then evaluate its accuracy using sample queries and review metrics like precision, recall, and F1 score.
+
+1. **Add entities**: Enhance the model by adding entities (learned, list, or prebuilt) to extract specific details like locations, weekdays, and dates from user utterances.
+
+1. **Retrain the model**: Retrain and redeploy the model after adding entities to improve performance, then validate predictions through additional testing.
+
+1. **Use the model from a client app**: Configure and extend a Python client application to connect with the deployed model, send user queries, and generate responses based on predicted intents and extracted entities.
 
 ## Pre-requisites
 
@@ -28,14 +40,19 @@ In this lab, you built a **Custom Question Answering solution** with **Azure AI 
 
 ## Architecture
 
-The lab architecture demonstrates how a **Custom Question Answering solution** is built and accessed using **Azure AI Language**:
+The lab architecture demonstrates how a **Conversational Language Understanding (CLU)** solution is built and accessed using **Azure AI Language**:
 
-1. **Azure AI Language Resource**: The central service that hosts the question answering capabilities, providing endpoints and API keys for client applications.
-2. **Question Answering Project (Language Studio)**: Defines the knowledge base, including imported FAQ and chit-chat content, and manages question-answer pairs, alternate questions, and follow-up prompts.
-3. **Knowledge Base**: Stores questions and answers, including multi-turn conversational flows, enabling context-aware responses.
-4. **REST Endpoint**: Exposes the deployed knowledge base to external applications for interactive querying.
-5. **Python Client App (Cloud Shell)**: Connects to the deployed knowledge base using the endpoint and key, allowing users to submit questions and receive answers interactively.
-6. **User Interaction**: Users ask questions through the app, and the system returns answers with confidence scores, sources, and follow-up prompts, demonstrating how the knowledge base provides accurate and context-aware responses.
+1. **Azure AI Language Resource**: The core service that hosts the conversational language understanding model, providing endpoints and API keys for client applications.
+
+1. **Language Studio**: Defines the project structure with intents, utterances, and entities, and manages training, testing, and deployment of the model.
+
+1. **Intents and Entities**: Intents capture the purpose behind user queries (e.g., GetTime, GetDay, GetDate), while entities extract specific details such as dates, weekdays, or locations.
+
+1. **REST Endpoint**: Publishes the trained CLU model as a deployable service that external applications can call for predictions.
+
+1. **Python Client App (Cloud Shell)**: Connects to the deployed CLU model using the endpoint and key, sends user utterances, and receives predicted intents and extracted entities.
+
+1. **User Interaction**: Users provide input through the Python app, and the system returns intent predictions and entity values, demonstrating how the model interprets and processes natural language queries.
 
 ## Architecture Diagram
 
