@@ -45,7 +45,7 @@ The lab architecture demonstrates how Azure AI Language enables custom text clas
 
 ## Architecture Diagram
 
-![](../Images/lab01archdiagram.png)
+![](../Images/ai13g2.png)
 
 ## Explanation of Components
 
