@@ -86,7 +86,7 @@ Once you've created the Azure AI Language service and storage account, you'll ne
 
 1. Within the JumpVM, in a new browser tab, download sample articles from `https://aka.ms/classification-articles`.
 
-1. Select the **folder** icon.
+1. Select the **Download** icon and then select the **folder** icon.
 
     ![](../Images/ai17l10.png)
 
@@ -98,7 +98,7 @@ Once you've created the Azure AI Language service and storage account, you'll ne
 
     ![](../Images/ai17l12.png)
 
-1. In the **Azure portal**, search for **storage account (1)**and select it **(2)**.
+1. In the **Azure portal**, search for **storage account (1)** and select it **(2)**.
 
     ![](../Images/ai17l13.png)
 
