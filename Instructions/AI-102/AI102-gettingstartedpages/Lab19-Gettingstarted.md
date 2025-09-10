@@ -2,7 +2,7 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 17: Custom text classification
+# Lab 19: Translate Text
 
 ### Overall Estimated Timing: 60 Minutes
 
