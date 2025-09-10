@@ -8,22 +8,22 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this hands-on lab, you'll gain practical experience in building a text translation solution using Azure AI Translator. You will learn how to provision an Azure AI Translator resource, configure it in Azure Cloud Shell, and update a Python application to integrate with the Translator SDK. Additionally, you’ll gain expertise in running the application to detect source languages and translate text into multiple target languages programmatically. By the end of this lab, you'll be proficient in the end-to-end process of creating, configuring, and consuming an Azure AI Translator solution, equipping you with the skills to apply language translation in real-world scenarios.
+In this hands-on lab, you'll gain practical experience in building a speech translation solution using Azure AI Speech. You will learn how to provision an Azure AI Speech resource, configure it in Azure Cloud Shell, and update a Python application to integrate with the Speech SDK. Additionally, you’ll gain expertise in recognizing spoken input, translating it into multiple target languages, and synthesizing the translations into speech. By the end of this lab, you'll be proficient in the end-to-end process of creating, configuring, and consuming an Azure AI Speech solution, equipping you with the skills to apply multilingual speech translation in real-world scenarios.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
 
-1. **Provision an Azure AI Translator resource:** You will learn how to create an Azure AI Translator resource in the Azure portal, configure its settings, and retrieve keys and region information required for integration.
+1. **Provision an Azure AI Speech resource:** You will learn how to create an Azure AI Speech resource in the Azure portal, configure its settings, and retrieve keys and region information required for integration.
 
-1. **Set up a development environment in Azure Cloud Shell:** You will create a Cloud Shell environment, clone the GitHub repository, and prepare the workspace for developing a translation application.
+1. **Set up a development environment in Azure Cloud Shell:** You will create a Cloud Shell environment, clone the GitHub repository, and prepare the workspace for developing a speech translation application.
 
-1. **Configure application settings:** You will update the configuration file with your Translator resource key and region, ensuring secure connectivity between your app and the Azure AI Translator service.
+1. **Configure application settings:** You will update the configuration file with your Speech resource key and region, ensuring secure connectivity between your app and the Azure AI Speech service.
 
-1. **Integrate the Translator SDK in a Python app:** You will modify the application code to import the necessary SDK packages, create a client, and connect to the Translator service.
+1. **Integrate the Speech SDK in a Python app:** You will modify the application code to import the necessary SDK packages, configure speech recognition, translation, and synthesis, and connect to the Speech service.
 
-1. **Translate text interactively:** You will run the Python app in Cloud Shell, select a target language, and test translation by providing text inputs, observing how the app automatically detects the source language and returns accurate translations.
+1. **Translate and synthesize speech:** You will run the Python app in Cloud Shell, provide audio input, translate it into multiple target languages, and generate synthesized speech output to test end-to-end speech translation functionality.
 
 ## Pre-requisites
 
@@ -33,15 +33,15 @@ By the end of this lab, you will be able to:
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Language enables custom text classification using uploaded documents and application integration:
+The lab architecture demonstrates how Azure AI Speech enables real-time speech translation and synthesis:
 
-1. **Azure AI Language Resource:** Learning how to provision an AI Language service in the Azure portal that provides the core NLP capabilities, including training, deploying, and hosting custom classification models.
+1. **Azure AI Speech Resource:** Learning how to provision a Speech service in the Azure portal that provides speech-to-text, translation, and text-to-speech capabilities.
 
-1. **Azure Storage Account:** Understanding how to create and configure a storage account to store and manage sample articles. These articles are uploaded into a container and linked to the classification project for labeling and training.
+1. **Azure Cloud Shell:** Gaining experience in setting up a Cloud Shell environment to develop, run, and test the Python application.
 
-1. **Language Studio:** Gaining experience using the browser-based interface to create a classification project, label data, train, evaluate, and deploy the model.
+1. **Python Application:** Understanding how to integrate the Azure AI Speech SDK in a Python app to recognize spoken input, translate it into multiple languages, and synthesize the translations into speech.
 
-1. **Cloud Shell & Python App:** Learning how to configure a development environment in Azure Cloud Shell, connect to the deployed model using endpoints and keys, and classify text files programmatically through the Azure AI Language SDK.
+1. **Audio Input & Output:** Using a sample .wav audio file as input for translation and generating output .wav files to hear the translated speech.
 
 ## Architecture Diagram
 
@@ -49,11 +49,13 @@ The lab architecture demonstrates how Azure AI Language enables custom text clas
 
 ## Explanation of Components
 
-1. **Azure AI Translator Resource:** Provides translation services that enable multilingual text processing, including detecting source languages and translating into target languages.
+1. **Azure AI Speech Resource:** Provides speech services including speech-to-text, real-time translation, and text-to-speech synthesis, enabling multilingual speech processing.
 
-1. **Cloud Shell:** A browser-based development environment in the Azure portal used to set up, configure, and run the translation application without requiring local tools.
+1. **Cloud Shell:** A browser-based development environment in the Azure portal used to set up, configure, and run the speech translation application without requiring local tools.
 
-1. **Python Application:** A console app developed in Cloud Shell that integrates with the Translator resource using keys and endpoints to perform text translation programmatically.
+1. **Python Application:** A console app developed in Cloud Shell that integrates with the Speech resource using keys and endpoints to perform speech recognition, translation, and synthesis programmatically.
+
+1. **Audio Files:** Sample .wav files used as input for speech translation and output for synthesized speech, allowing users to test end-to-end functionality.
 
 
 # Getting Started with lab

@@ -33,7 +33,7 @@ By the end of this lab, you will be able to:
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Language enables custom text classification using uploaded documents and application integration:
+The lab architecture demonstrates how Azure AI Translator enables real-time text translation and application integration:
 
 1. **Azure AI Language Resource:** Learning how to provision an AI Language service in the Azure portal that provides the core NLP capabilities, including training, deploying, and hosting custom classification models.
 
