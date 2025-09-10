@@ -1,10 +1,10 @@
 # Lab 18: Extract custom entities
 
-### Estimated Duration : 35 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
-Azure AI Language makes it possible to go beyond prebuilt text analysis by creating custom models that recognize entities specific to your needs. In this lab, you’ll work with a set of sample classified ads and use Azure AI Language Studio to build a custom named entity recognition model. You’ll label the data with entities such as items for sale, prices, and locations, train and evaluate your model, and then deploy it as an endpoint. Finally, you’ll use a Python application in Azure Cloud Shell to test the deployed model and extract entities from new text. While this exercise uses Python, you can integrate the service into applications built in other languages using the Azure AI Language SDKs.
+In this hands-on lab, you will learn how to build a custom named entity recognition (NER) model using Azure AI Language. You’ll start by provisioning a Language resource and uploading sample text documents to Azure Storage. Then, using Language Studio, you’ll create a project, define entity categories, label the data, train and evaluate the model, and finally deploy it. To validate the model, you will configure and run a Python application in Azure Cloud Shell that extracts entities such as items, prices, and locations from new text inputs.
 
 ## Lab Objectives
 
@@ -64,7 +64,7 @@ In this task, you’ll sign in to the Azure portal, create a new Language servic
 
     ![](../Images/l14t1p7.png)
 
-1. When on the page for **Select additional features**, in the **Custom features** containing **Custom named entity recognition extraction** click **Select (1)** and then click **Continue to create your resource (2)**.
+1. When on the page for **Select additional features**, in the **Custom features** containing **Custom named entity recognition** click **Select (1)** and then click **Continue to create your resource (2)**.
 
     ![](../Images/l18t1p1.png)
 
@@ -78,7 +78,7 @@ In this task, you’ll sign in to the Azure portal, create a new Language servic
     - Storage account: **New storage account (6)**
       - Storage account name: **storage<inject key="DeploymentID" enableCopy="false"/> (7)**
       - Storage account type: **Standard LRS (8)**
-    - Responsible AI notice: **Selected (9)**
+    - Responsible AI notice: **Checked (9)**
 
         ![](../Images/l18t1p2.png)
 
@@ -86,9 +86,13 @@ In this task, you’ll sign in to the Azure portal, create a new Language servic
 
     ![](../Images/l18t1p3.png)
 
-1. Wait for deployment to complete, and then click on **Go to resource**.
+1. Wait for deployment to complete, and then click on **Go to resource group**.
 
     ![](../Images/l18t1p4.png)
+
+1. In the resource group **AI-102-RG18**, select **entityrecognition<inject key="DeploymentID" enableCopy="false"/>**.
+
+    ![](../Images/l18t1p4(1).png)
 
 1. From the left navigation pane, go to **Resource Management (1)** and select **Keys and Endpoint (2)**. Copy the **Endpoint (3)** and **Key (4)**, then save them in a notepad file, you’ll need these details later in the exercise.
 
@@ -112,7 +116,7 @@ In this task, you’ll download sample classified ads, configure your Azure Stor
 
     ![](../Images/l18t2p1.png)
 
-1. Right click on **ads** folder **(1)** and then select **Extract (2)**.  
+1. Right click on **ads** folder **(1)** and then select **Extract All... (2)**.  
 
     ![](../Images/l18t2p2.png)
 
@@ -120,7 +124,7 @@ In this task, you’ll download sample classified ads, configure your Azure Stor
 
     ![](../Images/l18t2p3.png)
 
-1. In the **Azure portal**, search for **storage account (1)**and select it **(2)**.
+1. In the **Azure portal**, search for **storage account (1)** and select it **(2)**.
 
     ![](../Images/ai17l13.png)
 
@@ -132,7 +136,7 @@ In this task, you’ll download sample classified ads, configure your Azure Stor
 
     ![](../Images/ai17l15.png)
 
-1. Select **Containers (1)** in the left menu, located below **Data storage**. On the screen that appears, select **+ Container (2)**. Give the container the name `classifieds` **(3)**, and set **Anonymous access level** to **Container (anonymous read access for containers and blobs) (4)** and then **Create (5)**.
+1. Select  in the left menu, select **Data storage (1)** and then click on **Containers (2)**. On the screen that appears, select **+ Add container (3)**. Give the container the name `classifieds` **(4)**, and set **Anonymous access level** to **Container (anonymous read access for containers and blobs) (5)** and then click **Create (6)**.
 
     ![](../Images/l18t2p4.png)
 
@@ -172,7 +176,7 @@ In this task, you’ll use Azure AI Language Studio to create a new custom named
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. Close the pop ups.
+1. Close the **Welcome to the new Language Studio** pop-up.
 
     ![](../Images/ai17l21.png) 
 
@@ -180,7 +184,7 @@ In this task, you’ll use Azure AI Language Studio to create a new custom named
 
     - Azure Directory: **Default Azure directory containing your subscription** **(1)**
     - Azure subscription: **Default Azure subscription (2)**
-    - Resource type: Language.
+    - Resource type: **Language (3)**
     - Language resource: **entityrecoginition<inject key="DeploymentID" enableCopy="false"/> (4)**
 
         ![](../Images/l18t3p1.png)
@@ -192,7 +196,7 @@ In this task, you’ll use Azure AI Language Studio to create a new custom named
         - Select the language resource you just created, and click **Switch resource**.
         - At the top of the page, click **Language Studio** to return to the Language Studio home page.
 
-1. At the top of the portal, in the **Create new** menu, select **Custom named entity recognition**.
+1. At the top of the portal, in the **Create new (1)** menu, select **Custom named entity recognition (2)**.
 
     ![](../Images/l18t3p2.png)
 
@@ -203,8 +207,8 @@ In this task, you’ll use Azure AI Language Studio to create a new custom named
 1. In the **Enter Basic information** section, provide the follwoing information:
 
     - Name: **`CustomEntityLab` (1)**
-    - **Text primary language**: **English (US) (2)**
-    - Does your dataset include documents that are not in the same language?: **No (3)**
+    - Text primary language: **English (US) (2)**
+    - Does your dataset include documents that are not in the same language?: **Uncheck (3)**
     - Description: **`Custom entities in classified ads` (4)**
     - Click **Next (5)**
 
@@ -213,14 +217,14 @@ In this task, you’ll use Azure AI Language Studio to create a new custom named
 1. In the **Choose Container** section, provide the follwoing information:
 
     - Blob store container: **classifieds (1)**
-    - Are your files labeled with classes?: **No, I need to label my files as part of this project (2)**
+    - Are your files labeled with classes?: **No, I need to label my documents as part of this project (2)**
     - Click **Next (3)**
 
         ![](../Images/l18t3p5.png)
 
         > **Note:** If you get an error about not being authorized to perform this operation, you'll need to add a role assignment. To fix this, we add the role "Storage Blob Data Contributor" on the storage account for the user running the lab. More details can be found [on the documentation page](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource)
 
-1. In the Review and finish section, click **Create Project**.
+1. In the **Review and finish** section, click **Create Project**.
 
     ![](../Images/l18t3p6.png)
 
@@ -240,11 +244,12 @@ In this task, you’ll label the sample ads in your project by defining entities
 
     ![](../Images/l18t4p1.png)
 
-1. On the right side, in the **Activity** pane, select **Add entity** and add a new entity named `ItemForSale`.
+1. On the right side, in the **Activity pane**, select **+ Add entity (1)** and add a new entity named `ItemForSale` **(2)** and click **Done (3)**.
 
     ![](../Images/l18t4p2.png)
 
 1.  Repeat the previous step to create the following entities:
+
     - `Price`
     - `Location`
 
@@ -284,13 +289,13 @@ In this task, you’ll train your custom named entity recognition model by start
 
     ![](../Images/l18t5p1.png)
 
-2. Click **Start a training job**.
+2. Click **+ Start a training job**.
 
     ![](../Images/l18t5p2.png)
 
-3. In the Start a  Training section, provide the following details:
+3. In the **Start a training job** section, provide the following details:
 
-    - Train a new model named **`ExtractAds` (1)**.
+    - Train a new model: **`ExtractAds` (1)**.
     - Choose **Automatically split the testing set from training data (2)**
     - Click **Train (3)**
 

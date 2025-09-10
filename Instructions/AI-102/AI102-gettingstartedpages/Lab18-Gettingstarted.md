@@ -8,52 +8,57 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will build a **Custom Question Answering solution** with **Azure AI Language**. You will provision a language resource, create a project in **Language Studio**, and populate the knowledge base with an FAQ and chit-chat content. You will extend it with additional questions, alternate phrasing, and follow-up prompts for multi-turn conversations. After training, testing, and deploying the knowledge base, you will set up a Python client app in **Azure Cloud Shell**, configure it with your resource’s endpoint and key, and run the app to interactively query the knowledge base and receive accurate, context-aware answers.
+In this hands-on lab, you’ll gain practical experience in building a custom named entity recognition (NER) solution using Azure AI Language. You will learn how to provision an Azure AI Language resource, upload and label training data with entities such as items for sale, prices, and locations, and then train and evaluate your model. Additionally, you’ll gain expertise in deploying the model and integrating it with a Python application in Azure Cloud Shell to extract entities programmatically from new text. By the end of this lab, you’ll be proficient in the end-to-end process of creating, training, deploying, and consuming a custom NER model in Azure AI Language, equipping you with the skills to apply entity extraction in real-world scenarios.
 
 ## Objectives
 
-1. **Provision and configure an Azure AI Language resource**: Create a language resource in Azure and capture its endpoint and key for client integration.
-2. **Create a question answering project in Language Studio**: Set up a project, define the language, and configure basic settings for your knowledge base.
-3. **Populate and extend the knowledge base**: Import FAQ and chit-chat content, add new question-answer pairs, alternate questions, and follow-up prompts to support multi-turn conversations.
-4. **Train, test, and deploy the knowledge base**: Verify responses in Language Studio and deploy the knowledge base to make it accessible via a REST endpoint.
-5. **Develop and configure a Python client app**: Set up the app in Azure Cloud Shell, configure it with the resource endpoint and key, and run it to interactively submit questions and receive answers.
+By the end of this lab, you will be able to:
+
+1. **Provision an Azure AI Language resource:** Create an Azure AI Language resource in the Azure portal and retrieve the keys and endpoint required to build and integrate a custom named entity recognition (NER) solution.
+
+2. **Upload and prepare training data:** Upload text documents to an Azure Storage container and ensure appropriate access so they can be used for labeling and model training.
+
+3. **Create and label a custom NER project:** Use Language Studio to create a project, define entity categories (such as items, prices, and locations), and label text samples to prepare data for training.
+
+4. **Train and evaluate your model:** Train a custom NER model with the labeled data and evaluate its accuracy using built-in metrics and test sets to identify strengths and areas for improvement.
+
+5. **Deploy your entity extraction model:** Deploy the trained NER model in Language Studio, making it available through an API endpoint for real-time entity extraction.
+
+6. **Configure and run a Python application in Cloud Shell:** Set up a Python environment in Azure Cloud Shell, configure application settings with your resource details, add SDK code for entity extraction, and run the app to extract entities from new text inputs.
 
 ## Pre-requisites
 
-* Basic understanding of question answering systems and knowledge bases.
-* Familiarity with **Azure AI Language** concepts, including projects, knowledge bases, and REST endpoints.
-* Experience with the **Azure portal** and navigating **Language Studio**.
+* Basic understanding of **natural language processing (NLP)** concepts, especially named entity recognition (NER).
+* Familiarity with **Azure AI Language** concepts, including projects, datasets, and endpoints.
+* Experience using the **Azure portal** and working in **Language Studio**.
 * An active Azure subscription with permissions to create and manage resources in the assigned resource group.
 * Basic knowledge of Python and experience working in **Cloud Shell** or similar terminal environments.
 
 ## Architecture
 
-The lab architecture demonstrates how a **Custom Question Answering solution** is built and accessed using **Azure AI Language**:
+The lab architecture demonstrates how Azure AI Language enables custom entity extraction using labeled documents and application integration:
 
-1. **Azure AI Language Resource**: The central service that hosts the question answering capabilities, providing endpoints and API keys for client applications.
-2. **Question Answering Project (Language Studio)**: Defines the knowledge base, including imported FAQ and chit-chat content, and manages question-answer pairs, alternate questions, and follow-up prompts.
-3. **Knowledge Base**: Stores questions and answers, including multi-turn conversational flows, enabling context-aware responses.
-4. **REST Endpoint**: Exposes the deployed knowledge base to external applications for interactive querying.
-5. **Python Client App (Cloud Shell)**: Connects to the deployed knowledge base using the endpoint and key, allowing users to submit questions and receive answers interactively.
-6. **User Interaction**: Users ask questions through the app, and the system returns answers with confidence scores, sources, and follow-up prompts, demonstrating how the knowledge base provides accurate and context-aware responses.
+1. **Azure AI Language Resource:** Provision an AI Language service in the Azure portal that provides the core NLP capabilities, including training, deploying, and hosting custom entity recognition models.
+
+2. **Azure Storage Account:** Create and configure a storage account to store and manage sample text documents. These documents are uploaded into a container and linked to the NER project for labeling and training.
+
+3. **Language Studio:** Use the browser-based interface to create a custom NER project, define entity categories, label data, train, evaluate, and deploy the model.
+
+4. **Cloud Shell & Python App:** Configure a development environment in Azure Cloud Shell, connect to the deployed model using endpoints and keys, and extract entities programmatically through the Azure AI Language SDK.
 
 ## Architecture Diagram
 
-![](../Images/lab15archdiagram.png)
+![](../Images/lab18archdiagram.png)
 
 ## Explanation of Components
 
-1. **Azure AI Language Resource**: Provides the service environment to host the question answering capabilities, manage API keys, and expose endpoints for client applications.
+1. **Azure AI Language Resource:** Provides NLP capabilities to build, train, deploy, and host custom named entity recognition (NER) models.
 
-2. **Language Studio Project**: Enables creation and management of the knowledge base, including importing FAQs, adding chit-chat content, and organizing question-answer pairs, alternate questions, and follow-up prompts.
+2. **Azure Storage Account:** Stores sample text documents in containers for labeling and model training.
 
-3. **Knowledge Base**: Stores all questions, answers, and conversational flows, supporting context-aware responses and multi-turn interactions.
+3. **Language Studio:** A web-based interface to create NER projects, define entity categories, label data, train, evaluate, and deploy models.
 
-4. **REST Endpoint**: Exposes the deployed knowledge base to external applications, allowing programmatic access to submit questions and retrieve answers.
-
-5. **Python Client App (Cloud Shell)**: Connects to the deployed knowledge base using the endpoint and key, providing an interactive interface to submit questions and display answers along with confidence scores and sources.
-
-6. **User Interaction**: Users enter questions through the app, and the system returns responses from the knowledge base, including follow-up prompts for multi-turn conversations, demonstrating the knowledge base’s ability to provide accurate and context-sensitive answers.
+4. **Cloud Shell & Python App:** A development setup to configure and run a Python app that connects to the deployed model for extracting entities from new text inputs.
 
 # Getting Started with lab
 

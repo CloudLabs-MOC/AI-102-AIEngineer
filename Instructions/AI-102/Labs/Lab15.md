@@ -4,7 +4,7 @@
 
 ## Overview
 
-In this lab, you’ll build a **Custom Question Answering solution** using **Azure AI Language**. You’ll start by provisioning a language resource in Azure and creating a question answering project in **Language Studio**, configuring its language and basic settings. Next, you’ll populate the knowledge base by importing an existing FAQ page and adding chit-chat content, then extend it by editing question-answer pairs, adding alternate questions, and creating follow-up prompts for multi-turn conversations. After training and testing the knowledge base in Language Studio, you’ll deploy it to make it accessible via a REST endpoint. Finally, you’ll set up a Python application in **Azure Cloud Shell**, configure it with the resource endpoint and key, add code to query the knowledge base interactively, and run the app to submit questions and receive answers in real time.
+In this lab, you’ll build a **Custom Named Entity Recognition (NER) solution** using **Azure AI Language**. You’ll start by provisioning a language resource in Azure and creating a custom NER project in **Language Studio**, defining entity categories such as items, prices, and locations. Next, you’ll upload sample text documents, label them with the correct entities, and prepare the dataset for training and evaluation. After training and testing the model in Language Studio, you’ll deploy it to make it accessible through a REST endpoint. Finally, you’ll set up a Python application in **Azure Cloud Shell**, configure it with the resource endpoint and key, add code to extract entities from new text, and run the app to see the model identify and return entities in real time.
 
 ## Lab Objectives 
 
