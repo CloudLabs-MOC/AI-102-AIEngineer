@@ -137,24 +137,6 @@ In this task, you will set up a Python virtual environment, install the required
 
      The file is opened in a code editor.
 
-     - If you get a pop to **Switch to classic powershell**, select **Confirm**
-     - If you do not see the classic powershell as shown in the above image, you can reperform the steps again
-     - Enter the below commands:
-
-      ```
-     cd mslearn-ai-language/Labfiles/06-translator-sdk/Python/translate-text
-      ```     
-
-      ```
-     python -m venv labenv
-     ./labenv/bin/Activate.ps1
-     pip install -r requirements.txt azure-ai-translation-text==1.0.1
-     ```      
-
-     ```
-    code .env
-     ```     
-
 1. Update the configuration values to include the  **key (1)** and a **region (2)** from the Azure AI Translator resource you created (available on the **Keys and Endpoint** page for your Azure AI Translator resource in the Azure portal that you have copied in `Task 1`).
 
      ![](../Images/ai1910.png)
