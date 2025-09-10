@@ -1,11 +1,21 @@
 # Lab 19: Translate Text
-Azure AI Translator is a service that enables you to translate text between languages. In this exercise, you'll use it to create a simple app that translates input in any supported language to the target language of your choice.
 
-While this lab is based on Python, you can develop text translation applications using multiple language-specific SDKs.
+### Estimated Duration: 60 Minutes
 
-### Task 1: Provision an *Azure AI Translator* resource
+## Lab Overview
 
-If you don't already have one in your subscription, you'll need to provision an **Azure AI Translator** resource.
+In this lab, you will explore Azure AI Translator, a cloud-based service for real-time language translation. You’ll provision an Azure AI Translator resource, configure a Python application in Cloud Shell, and connect it with your Translator resource using keys and region. You will then enhance the app by adding code to detect source languages, select a target language, and translate text interactively. By the end of the lab, you will gain hands-on experience in building multilingual applications using Azure AI Translator.
+
+## Lab Objectives
+
+- Task 1: Provision an Azure AI Translator resource
+- Task 2: Prepare to develop an app in Cloud Shell
+- Task 3: Configure your application
+- Task 4: Add code to translate text
+
+### Task 1: Provision an Azure AI Translator resource
+
+In this task, you will create an Azure AI Translator resource in the Azure portal, configure its basic settings, and retrieve the key and location details required for later steps in the lab.
 
 1. On the Azure portal, search for **Translators (1)** then select **Translators (2)** from the results.
 
@@ -53,7 +63,7 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 ### Task 2: Prepare to develop an app in Cloud Shell
 
-To test the text translation capabilities of Azure AI Translator, you'll develop a simple console application in the Azure Cloud Shell.
+In this task, you will set up Azure Cloud Shell, configure the environment, and clone the GitHub repository that contains the sample code needed to build your text translation application.
 
 1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
 
@@ -98,6 +108,8 @@ To test the text translation capabilities of Azure AI Translator, you'll develop
 
 ### Task 3: Configure your application
 
+In this task, you will set up a Python virtual environment, install the required SDK packages, and update the configuration file with your Translator resource key and region to enable secure connection.
+
 1. In the command line pane, run the following command to view the code files in the **translate-text** folder:
 
     ```
@@ -134,6 +146,8 @@ To test the text translation capabilities of Azure AI Translator, you'll develop
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
 ### Task 4: Add code to translate text
+
+In this task, you will update the Python application to use the Azure AI Translator SDK, allowing users to select a target language and translate text interactively.
 
 1. Enter the following command to edit the application code file:
 
@@ -253,5 +267,11 @@ To test the text translation capabilities of Azure AI Translator, you'll develop
       **Here source language is English and it translated the text to the target language French**.
     
 1. When you're done, enter `quit`. You can run the application again and choose a different target language.    
+
+### Summary
+
+In this lab, you provisioned an Azure AI Translator resource and configured it for use. You prepared a development environment in Azure Cloud Shell, set up configuration files, and updated a Python application with the Azure AI Translator SDK. You then ran the app to translate text between multiple languages, gaining hands-on experience with building and testing a translation solution using Azure AI Translator.
+
+### You have successfully completed the Hands-on Lab!
 
 
