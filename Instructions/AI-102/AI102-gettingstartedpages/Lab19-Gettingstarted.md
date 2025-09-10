@@ -8,28 +8,28 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this hands-on lab, you'll gain practical experience in building a custom text classification solution using Azure AI Language. You will learn how to provision an Azure AI Language resource, upload and label training data, and train and evaluate your classification model. Additionally, you’ll gain expertise in deploying the model and integrating it with a Python application in Azure Cloud Shell to classify documents programmatically. By the end of this lab, you'll be proficient in the end-to-end process of creating, training, deploying, and consuming a custom text classification model in Azure AI Language, equipping you with the skills to apply text analytics in real-world scenarios.
+In this hands-on lab, you'll gain practical experience in building a text translation solution using Azure AI Translator. You will learn how to provision an Azure AI Translator resource, configure it in Azure Cloud Shell, and update a Python application to integrate with the Translator SDK. Additionally, you’ll gain expertise in running the application to detect source languages and translate text into multiple target languages programmatically. By the end of this lab, you'll be proficient in the end-to-end process of creating, configuring, and consuming an Azure AI Translator solution, equipping you with the skills to apply language translation in real-world scenarios.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Provision an Azure AI Language resource:** You will learn how to create an Azure AI Language resource in the Azure portal, configure its storage account, and retrieve keys and endpoints required to build and integrate custom text classification solutions.
 
-1. **Upload and organize sample articles**: You will upload sample text documents into an Azure Storage container and configure appropriate access levels so they can be used for training and testing your model.
+1. **Provision an Azure AI Translator resource:** You will learn how to create an Azure AI Translator resource in the Azure portal, configure its settings, and retrieve keys and region information required for integration.
 
-1. **Create and label a custom text classification project:** You will create a project in Language Studio, define classification categories, and label sample articles with the correct class and dataset (training or testing) to prepare your data for model training.
+1. **Set up a development environment in Azure Cloud Shell:** You will create a Cloud Shell environment, clone the GitHub repository, and prepare the workspace for developing a translation application.
 
-1. **Train and evaluate your model:** You will train a custom classification model using the labeled data and evaluate its performance using built-in metrics and test set details to identify misclassifications and potential areas for improvement.
+1. **Configure application settings:** You will update the configuration file with your Translator resource key and region, ensuring secure connectivity between your app and the Azure AI Translator service.
 
-1. **Deploy your classification model:** You will deploy your trained model in Language Studio, making it accessible via an API endpoint for real-time text classification.
+1. **Integrate the Translator SDK in a Python app:** You will modify the application code to import the necessary SDK packages, create a client, and connect to the Translator service.
 
-1. **Configure and run a Python application in Cloud Shell:** You will set up a Python environment in Azure Cloud Shell, configure application settings with your resource details, add SDK code for classification, and run the app to classify documents and view confidence scores.
+1. **Translate text interactively:** You will run the Python app in Cloud Shell, select a target language, and test translation by providing text inputs, observing how the app automatically detects the source language and returns accurate translations.
 
 ## Pre-requisites
 
-- Familiarity with text analytics concepts such as labeling, training, and testing models.
-- Basic experience with Python and working in Azure Cloud Shell.
+- Familiarity with Python programming and package management.
+
+- Experience working in Azure Cloud Shell and using command-line tools.
 
 ## Architecture
 
@@ -45,17 +45,15 @@ The lab architecture demonstrates how Azure AI Language enables custom text clas
 
 ## Architecture Diagram
 
-![](../Images/ai13g2.png)
+![](../Images/ai19g1.png)
 
 ## Explanation of Components
 
-1. **Azure AI Language Resource:** Provides NLP capabilities to build, train, deploy, and host custom text classification models.
+1. **Azure AI Translator Resource:** Provides translation services that enable multilingual text processing, including detecting source languages and translating into target languages.
 
-1. **Azure Storage Account:** Stores and organizes sample articles in containers for labeling and model training.
+1. **Cloud Shell:** A browser-based development environment in the Azure portal used to set up, configure, and run the translation application without requiring local tools.
 
-1. **Language Studio:** A web-based interface to create projects, label data, train, evaluate, and deploy classification models.
-
-1. **Cloud Shell & Python App:** A development setup to configure and run a Python app that connects to the deployed model for text classification.
+1. **Python Application:** A console app developed in Cloud Shell that integrates with the Translator resource using keys and endpoints to perform text translation programmatically.
 
 
 # Getting Started with lab
