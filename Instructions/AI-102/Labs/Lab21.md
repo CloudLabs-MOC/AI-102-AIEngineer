@@ -1,12 +1,25 @@
 # Lab 21: Translate Speech
 
-Azure AI Speech includes a speech translation API that you can use to translate spoken language. For example, suppose you want to develop a translator application that people can use when traveling in places where they don't speak the local language. They would be able to say phrases such as "Where is the station?" or "I need to find a pharmacy" in their own language, and have it translate them to the local language. 
+### Estimated Duration: 30 Minutes
 
-In this lab, you'll use the Azure AI Speech SDK for Python to create a simple application based on this example.
+## Lab Overview
+
+In this lab, you will explore Azure AI Speech, a cloud-based service for real-time speech translation. You’ll provision an Azure AI Speech resource, configure a Python application in Cloud Shell, and connect it with your Speech resource using keys and region. You will enhance the app by adding code to recognize spoken input, translate it into multiple target languages, and synthesize the translations into speech. By the end of the lab, you will gain hands-on experience in building multilingual speech-enabled applications using Azure AI Speech.
+
+## Lab Objectives
+
+- Task 1: Create an Azure AI Speech resource
+- Task 2: Prepare to develop an app in Cloud Shell
+- Task 3: Add code to use the Azure AI Speech SDK
+- Task 4: Run the app
+- Task 5: Implement speech translation
+- Task 6: Synthesize the translation to speech
+
+
 
 ### Task 1: Create an Azure AI Speech resource
 
-Let's start by creating an Azure AI Speech resource.
+In this task, you will create an Azure AI Speech resource in the Azure portal.
 
 1. Open the **Azure portal**, search for **Speech service (1)** and select **Speech service (2)** from the services.
 
@@ -54,7 +67,7 @@ Let's start by creating an Azure AI Speech resource.
    
 ### Task 2: Prepare to develop an app in Cloud Shell
 
-To test the text translation capabilities of Azure AI Translator, you'll develop a simple console application in the Azure Cloud Shell.
+In this task, you set up the development environment in Azure Cloud Shell by cloning the required repo, creating a Python virtual environment, installing dependencies, and configuring the .env file with your Azure AI Speech resource details.
 
 1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
 
@@ -133,6 +146,8 @@ To test the text translation capabilities of Azure AI Translator, you'll develop
 
 ### Task 3: Add code to use the Azure AI Speech SDK
 
+In this task, you update the translator.py file by importing the Azure AI Speech SDK, configuring speech translation with multiple target languages, and setting up speech synthesis for using the Speech service.
+
 >**Note**: As you add code, be sure to maintain the correct indentation.
 
 1. Enter the following command to edit the code file that has been provided:
@@ -183,7 +198,7 @@ To test the text translation capabilities of Azure AI Translator, you'll develop
 
 ### Task 4: Run the app
 
-So far, the app doesn't do anything other than connect to your Azure AI Speech resource, but it's useful to run it and check that it works before adding speech functionality.
+In this task, you run the translator.py app to verify that it successfully connects to your Azure AI Speech resource, displays the configured region, and confirms readiness for translation before ending the program.
 
 1. In the command line, enter the following command to run the translator app:
 
@@ -199,7 +214,7 @@ So far, the app doesn't do anything other than connect to your Azure AI Speech r
 
 ### Task 5: Implement speech translation
 
-Now that you have a **SpeechTranslationConfig** for the Azure AI Speech service, you can use the Azure AI Speech translation API to recognize and translate speech.
+In this task, you enhance the app by adding a TranslationRecognizer to process audio input from a file, transcribe it, and translate the recognized speech into the target language (fr, es, or hi). Running the updated program demonstrates real-time speech-to-text translation using Azure AI Speech.
 
 1. In the code file, note that the code uses the **Translate** function to translate spoken input. Then in the **Translate** function, under the comment **Translate speech**, add the following code to create a **TranslationRecognizer** client that can be used to recognize and translate speech from a file.
 
@@ -240,7 +255,7 @@ Now that you have a **SpeechTranslationConfig** for the Azure AI Speech service,
 
 ### Task 6: Synthesize the translation to speech
 
-So far, your application translates spoken input to text; which might be sufficient if you need to ask someone for help while traveling. However, it would be better to have the translation spoken aloud in a suitable voice.
+In this task, you extend the app to not only translate speech to text but also synthesize the translated text into speech using Azure AI Speech. The translation is saved as an .wav audio file, which can be downloaded and played locally to hear the spoken output in the target language (French, Spanish, or Hindi).
 
 >**Note**: Due to the hardware limitations of the cloud shell, we'll direct the synthesized speech output to a file.
 
@@ -297,6 +312,14 @@ So far, your application translates spoken input to text; which might be suffici
 1. You can hear the translated language audio in the downloaded audio file.
 
     ![](../Images/ai21l23.png) 
+
+### Summary
+
+In this lab, you provisioned an Azure AI Speech resource and prepared a development environment in Azure Cloud Shell. You configured and updated a Python application with the Azure AI Speech SDK to recognize and translate speech into multiple languages. Finally, you enhanced the app to synthesize the translated text into speech and save it as an audio file, gaining hands-on experience with building and testing a speech translation solution using Azure AI Speech.
+
+### You have successfully completed the Hands-on Lab!
+
+
 
 
 
