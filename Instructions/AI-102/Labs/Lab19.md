@@ -1,6 +1,6 @@
 # Lab 19: Translate Text
 
-### Estimated Duration: 60 Minutes
+### Estimated Duration: 30 Minutes
 
 ## Lab Overview
 
