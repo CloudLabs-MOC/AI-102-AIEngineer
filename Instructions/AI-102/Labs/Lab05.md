@@ -75,6 +75,10 @@ In this task, you'll sign in to the Azure AI Foundry portal, create a new projec
         
         >**Note:** The creation of the project can take a few minutes to complete.
 
+1. Click on **Deploy**.
+
+   ![](../Images/ai5l1.png)
+
 1. When your project is created, the chat playground will be opened automatically so you can test your model:
 
    ![](../Images/aii6.png)
@@ -146,7 +150,9 @@ In this task, you'll start the fine-tuning process for the GPT-4.1 model by down
 
         ![](../Images/l5t2p10.png)
 
-1. It may take some time to complete. You can continue with the next section of the exercise while you wait.
+1. Intially the status will be in **Queued** state. It may take some time to complete. You can continue with the next section of the exercise while you wait.
+
+   ![](../Images/ai5l2.png)
 
     > **Note**: Fine-tuning and deployment can take a significant amount of time (30 minutes or longer), so you may need to check back periodically. You can see more details of the progress so far by selecting the fine-tuning model job and viewing its **Logs** tab.
 
