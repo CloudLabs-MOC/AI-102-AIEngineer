@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you built a **Custom Question Answering solution** with **Azure AI Language**. You provisioned a language resource, created a project in **Language Studio**, and populated the knowledge base with an FAQ and chit-chat content. You extended it with additional questions, alternate phrasing, and follow-up prompts for multi-turn conversations. After training, testing, and deploying the knowledge base, you set up a Python client app in **Azure Cloud Shell**, configured it with your resource’s endpoint and key, and ran the app to interactively query the knowledge base and receive accurate, context-aware answers.
+In this lab, you will build a **Custom Question Answering solution** with **Azure AI Language**. You will provision a language resource, create a project in **Language Studio**, and populate the knowledge base with an FAQ and chit-chat content. You will extend it with additional questions, alternate phrasing, and follow-up prompts for multi-turn conversations. After training, testing, and deploying the knowledge base, you will set up a Python client app in **Azure Cloud Shell**, configure it with your resource’s endpoint and key, and run the app to interactively query the knowledge base and receive accurate, context-aware answers.
 
 ## Objectives
 
@@ -138,5 +138,6 @@ Click on **Next** from the lower right corner to move on to the next page.
    ![Start Your Azure Journey](../Images/nextpage.png)
 
 ## Happy Learning !!
+
 
 
