@@ -45,7 +45,7 @@ The lab architecture demonstrates how Azure AI Speech enables real-time speech t
 
 ## Architecture Diagram
 
-![](../Images/ai19g1.png)
+![](../Images/ai21g1.png)
 
 ## Explanation of Components
 
