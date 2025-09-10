@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you developed a **multi-agent workflow** in **Azure AI Foundry** using the **Semantic Kernel SDK**. You deployed the *gpt-4.1* model and set up a Python client app configured with your project’s endpoint and key. You then created three agents: the *Summarizer Agent* to condense customer feedback, the *Classifier Agent* to categorize sentiment, and the *Action Agent* to suggest next steps. You defined a sequential orchestration to ensure their outputs built on each other, and ran the solution in Cloud Shell. Finally, you tested the workflow with different customer feedback inputs and verified that the agents collaborated effectively to analyze, classify, and recommend actions.
+In this lab, you will build a multi-agent workflow in Azure AI Foundry using the Semantic Kernel SDK. You will deploy the gpt-4.1 model and configure a Python client app with your project’s endpoint and key. Next, you will create three agents: the Summarizer Agent to condense customer feedback, the Classifier Agent to determine sentiment, and the Action Agent to recommend next steps. You will then define a sequential orchestration so each agent’s output feeds into the next and run the workflow in Cloud Shell. By the end of the lab, you will have tested the solution with different customer feedback inputs and observed the agents working together to analyze, classify, and recommend actions.
 
 ## Objectives
 
@@ -141,5 +141,6 @@ Click on **Next** from the lower right corner to move on to the next page.
    ![Start Your Azure Journey](../Images/nextpage.png)
 
 ## Happy Learning !!
+
 
 
