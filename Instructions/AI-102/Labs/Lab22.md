@@ -4,11 +4,7 @@
 
 ## Overview
 
-This lab demonstrates how to deploy and interact with a multimodal AI model using Azure AI Foundry. You’ll start by creating a new Azure AI Foundry project and deploying the Phi-4-multimodal-instruct model, giving you a dedicated workspace and a project endpoint for client applications. Next, you’ll configure and build a Python client application that connects to the deployed model using the Azure AI Foundry and Azure AI Model Inference SDKs.
-
-You’ll then write code to initialize the project client, obtain a chat client, and handle user interactions. The lab focuses on audio input processing, showing how to encode audio files, submit them along with user prompts to the model, and receive responses. Through iterative steps, you’ll run the application, test it with different audio files, and observe how the model responds to prompts, demonstrating real-time audio-to-text interactions and summarization capabilities.
-
-By the end of this lab, you’ll have hands-on experience in deploying a multimodal model in Azure AI Foundry, building a client application to communicate with it, and leveraging audio and text inputs to interact with a sophisticated AI model.
+In this hands-on lab, you will learn how to develop an audio-enabled chat application using Azure AI Foundry. You’ll start by creating a Foundry project and deploying the Phi-4-multimodal-instruct model. Then, you’ll configure a Python client application in Azure Cloud Shell, connect it to your project, and write code to obtain a chat client. Next, you’ll enhance the application to handle audio input by encoding audio files, combining them with text prompts, and submitting them to the model. Finally, you’ll test the app with different audio files and observe how the model processes audio-to-text interactions and generates responses.
 
 ## Lab Objectives
 
@@ -28,7 +24,7 @@ By the end of this lab, you’ll have hands-on experience in deploying a multimo
 
 In this task, you’ll create an Azure AI Foundry project and deploy the Phi-4-multimodal-instruct model to it. This will give us a dedicated project workspace in Azure AI Foundry with a deployed model, along with the project endpoint that client applications can use to connect and interact with the model.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com) `https://ai.azure.com/`, then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
 1. Click on **Sign in**.
  
@@ -87,7 +83,7 @@ In this task, you’ll create an Azure AI Foundry project and deploy the Phi-4-m
 
     ![](../Images/l22t1p6.png)
 
-1. On the left navigation pane, select **Overview (1)** to open your project’s main page. In the **Project details** section, find the **Azure AI Foundry project endpoint (2)**, this is the endpoint you’ll use to connect your client application to the project.
+1. On the left navigation pane, select **Overview (1)** to open your project’s main page. In the **Project details** section, click the **Copy Azure AI Foundry project endpoint (2)**, this is the endpoint you’ll use to connect your client application to the project.
 
     ![](../Images/l22t1p7.png)
 

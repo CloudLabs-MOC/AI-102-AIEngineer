@@ -14,37 +14,37 @@ In this hands-on lab, you’ll gain practical experience in developing an audio-
 
 By the end of this lab, you will be able to:
 
-1. **Provision an Azure AI Language resource:** Create an Azure AI Language resource in the Azure portal and retrieve the keys and endpoint required to build and integrate a custom named entity recognition (NER) solution.
+1. **Create an Azure AI Foundry project:** Set up a project in Azure AI Foundry and deploy the Phi-4-multimodal-instruct model to enable multimodal interactions.
 
-2. **Upload and prepare training data:** Upload text documents to an Azure Storage container and ensure appropriate access so they can be used for labeling and model training.
+2. **Configure a client application in Azure Cloud Shell:** Clone the required repository, install dependencies, and prepare a Python app to connect to the deployed model.
 
-3. **Create and label a custom NER project:** Use Language Studio to create a project, define entity categories (such as items, prices, and locations), and label text samples to prepare data for training.
+3. **Connect your application to the deployed model:** Write code to initialize the Foundry project client, obtain a chat client, and securely connect to the model.
 
-4. **Train and evaluate your model:** Train a custom NER model with the labeled data and evaluate its accuracy using built-in metrics and test sets to identify strengths and areas for improvement.
+4. **Submit audio-based prompts:** Enhance your app to encode audio files, attach them to user messages, and send both audio and text inputs to the model.
 
-5. **Deploy your entity extraction model:** Deploy the trained NER model in Language Studio, making it available through an API endpoint for real-time entity extraction.
+5. **Run and test the application:** Sign in to Azure, execute the Python app in Cloud Shell, and observe how the model responds to audio and text inputs in real time.
 
-6. **Configure and run a Python application in Cloud Shell:** Set up a Python environment in Azure Cloud Shell, configure application settings with your resource details, add SDK code for entity extraction, and run the app to extract entities from new text inputs.
+6. **Experiment with different audio inputs:** Modify your application to process alternate audio files and explore how the model generates summaries and insights from varied audio prompts.
 
 ## Pre-requisites
 
-* Basic understanding of **natural language processing (NLP)** concepts, especially named entity recognition (NER).
-* Familiarity with **Azure AI Language** concepts, including projects, datasets, and endpoints.
-* Experience using the **Azure portal** and working in **Language Studio**.
+* Basic understanding of **multimodal AI concepts**, including how models process both text and audio inputs.
+* Familiarity with **Azure AI Foundry**, including projects, deployments, and endpoints.
+* Experience using the **Azure portal** and navigating **Cloud Shell**.
 * An active Azure subscription with permissions to create and manage resources in the assigned resource group.
 * Basic knowledge of Python and experience working in **Cloud Shell** or similar terminal environments.
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Language enables custom entity extraction using labeled documents and application integration:
+The lab architecture demonstrates how Azure AI Foundry enables multimodal interactions by combining audio and text processing with application integration:
 
-1. **Azure AI Language Resource:** Provision an AI Language service in the Azure portal that provides the core NLP capabilities, including training, deploying, and hosting custom entity recognition models.
+1. **Azure AI Foundry Project and Model Deployment:** Provision an Azure AI Foundry project and deploy the **Phi-4-multimodal-instruct** model, which provides the core multimodal capabilities for processing both text and audio inputs.
 
-2. **Azure Storage Account:** Create and configure a storage account to store and manage sample text documents. These documents are uploaded into a container and linked to the NER project for labeling and training.
+2. **Azure AI Foundry Endpoint:** Use the project endpoint generated during deployment to connect client applications securely to the multimodal model.
 
-3. **Language Studio:** Use the browser-based interface to create a custom NER project, define entity categories, label data, train, evaluate, and deploy the model.
+3. **Azure Cloud Shell:** Set up a development environment in Cloud Shell to configure dependencies, clone code repositories, and run the Python client application.
 
-4. **Cloud Shell & Python App:** Configure a development environment in Azure Cloud Shell, connect to the deployed model using endpoints and keys, and extract entities programmatically through the Azure AI Language SDK.
+4. **Python Client Application:** Build and configure a Python app that connects to the deployed model, encodes audio files, submits audio and text prompts, and retrieves real-time responses using the Azure AI Model Inference SDK.
 
 ## Architecture Diagram
 
@@ -52,13 +52,13 @@ The lab architecture demonstrates how Azure AI Language enables custom entity ex
 
 ## Explanation of Components
 
-1. **Azure AI Language Resource:** Provides NLP capabilities to build, train, deploy, and host custom named entity recognition (NER) models.
+1. **Azure AI Foundry Project and Model Deployment:** Provides the environment to deploy and manage the **Phi-4-multimodal-instruct** model, enabling multimodal AI capabilities for both text and audio inputs.
 
-2. **Azure Storage Account:** Stores sample text documents in containers for labeling and model training.
+2. **Azure AI Foundry Endpoint:** Acts as the connection point that allows client applications to securely interact with the deployed model for real-time processing.
 
-3. **Language Studio:** A web-based interface to create NER projects, define entity categories, label data, train, evaluate, and deploy models.
+3. **Azure Cloud Shell:** A browser-based terminal environment used to configure dependencies, clone the lab repository, and run the Python client app.
 
-4. **Cloud Shell & Python App:** A development setup to configure and run a Python app that connects to the deployed model for extracting entities from new text inputs.
+4. **Python Client Application:** A sample application that connects to the deployed model, encodes and submits audio files along with text prompts, and retrieves responses using the Azure AI Model Inference SDK.
 
 # Getting Started with lab
 
@@ -68,7 +68,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab18labvm.png)
+![Access Your VM and Lab Guide](../Images/lab22labvm.png)
 
 ### Virtual Machine & Lab Guide
  
