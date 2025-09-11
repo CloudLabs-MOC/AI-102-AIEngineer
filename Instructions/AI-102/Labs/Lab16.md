@@ -643,7 +643,6 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
    # Call the Language service model to get intent and entities
    cls_project = 'Clock'
    deployment_slot = 'production'
-
    with client:
         query = userText
         result = client.analyze_conversation(
@@ -666,26 +665,22 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
                 }
             }
         )
-
    top_intent = result["result"]["prediction"]["topIntent"]
    entities = result["result"]["prediction"]["entities"]
-
    print("view top intent:")
    print("\ttop intent: {}".format(result["result"]["prediction"]["topIntent"]))
    print("\tcategory: {}".format(result["result"]["prediction"]["intents"][0]["category"]))
    print("\tconfidence score: {}\n".format(result["result"]["prediction"]["intents"][0]["confidenceScore"]))
-
    print("view entities:")
    for entity in entities:
         print("\tcategory: {}".format(entity["category"]))
         print("\ttext: {}".format(entity["text"]))
         print("\tconfidence score: {}".format(entity["confidenceScore"]))
-
    print("query: {}".format(result["result"]["query"]))
     ```
-    ![](../Images/AI-l16-80.png)
+   ![](../Images/AI-l16-80.png)
     
-    The call to the conversational understanding model returns a prediction/result, which includes the top (most likely) intent as well as any entities that were detected in the input utterance. Your client application must now use that prediction to determine and perform the appropriate action.
+   The call to the conversational understanding model returns a prediction/result, which includes the top (most likely) intent as well as any entities that were detected in the input utterance. Your client application must now use that prediction to determine and perform the appropriate action.
 
 1. Find the comment **Apply the appropriate action**, and add the following code, which checks for intents supported by the application (**GetTime**, **GetDate**, and **GetDay**) and determines if any relevant entities have been detected, before calling an existing function to produce an appropriate response.
 
@@ -702,7 +697,6 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
                     location = entity["text"]
         # Get the time for the specified location
         print(GetTime(location))
-
    elif top_intent == 'GetDay':
         date_string = date.today().strftime("%m/%d/%Y")
         # Check for entities
@@ -714,7 +708,6 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
                     date_string = entity["text"]
         # Get the day for the specified date
         print(GetDay(date_string))
-
    elif top_intent == 'GetDate':
         day = 'today'
         # Check for entities
@@ -726,7 +719,6 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
                     day = entity["text"]
         # Get the date for the specified day
         print(GetDate(day))
-
    else:
         # Some other intent (for example, "None") was predicted
         print('Try asking me for the time, the day, or the date.')
