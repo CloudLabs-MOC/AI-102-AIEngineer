@@ -55,21 +55,22 @@ The lab architecture demonstrates how a **Conversational Language Understanding 
 
 ## Architecture Diagram
 
-![](../Images/lab15archdiagram.png)
+![](../Images/AI-102-l16-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Language Resource**: Provides the service environment to host the question answering capabilities, manage API keys, and expose endpoints for client applications.
+1. **Azure AI Language Resource:** Provides the Conversational Language Understanding (CLU) capability. Hosts your project, training jobs, deployments, and the prediction endpoint you’ll call from code.
 
-2. **Language Studio Project**: Enables creation and management of the knowledge base, including importing FAQs, adding chit-chat content, and organizing question-answer pairs, alternate questions, and follow-up prompts.
+2. **Language Studio Project:** Browser-based workspace to create the **Clock** project, define **intents** (GetTime, GetDay, GetDate) and **entities** (Location, Weekday, Date), add and label utterances, kick off training, view evaluation metrics, and manage deployments.
 
-3. **Knowledge Base**: Stores all questions, answers, and conversational flows, supporting context-aware responses and multi-turn interactions.
+3. **Data Labeling (Schema & Utterances):** The place where you map example user phrases to intents and tag entity spans (e.g., “London” → Location). These labeled examples become the training data for the model.
 
-4. **REST Endpoint**: Exposes the deployed knowledge base to external applications, allowing programmatic access to submit questions and retrieve answers.
+4. **Training & Evaluation (Model Build):** Runs a training job to produce the Clock model, then reports precision/recall/F1 and a confusion matrix so you can verify quality before deployment.
 
-5. **Python Client App (Cloud Shell)**: Connects to the deployed knowledge base using the endpoint and key, providing an interactive interface to submit questions and display answers along with confidence scores and sources.
+5. **Deployment (Prediction Endpoint):**
+Publishes the trained model (e.g., deployment name production) to a REST endpoint. This is the endpoint your app uses for real-time intent/entity predictions.
 
-6. **User Interaction**: Users enter questions through the app, and the system returns responses from the knowledge base, including follow-up prompts for multi-turn conversations, demonstrating the knowledge base’s ability to provide accurate and context-sensitive answers.
+6. **Python Client App (Cloud Shell):** A sample app that sends user input to the production deployment, reads back the top intent and entities, and applies simple logic (e.g., fetch time for a city, resolve a date or weekday).
 
 # Getting Started with lab
 
@@ -77,9 +78,9 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
 
 ## Accessing Your Lab Environment
  
-Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
+Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab15labvm.png)
+![Access Your VM and Lab Guide](../Images/AI-102-l16-g1.png)
 
 ### Virtual Machine & Lab Guide
  

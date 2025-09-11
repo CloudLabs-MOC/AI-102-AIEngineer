@@ -143,13 +143,13 @@ In this task, you will create a new project in Language Studio and define the ba
 
      ![](../Images/AI-l16-11.png)
 
-1. In the **Create a project** dialog box, on the **Enter basic information** page, enter the following details and then select **Next**:
+1. In the **Create a project** dialog box, on the **Enter basic information** page, enter the following details and then select **Next (5)**:
     - **Name**: `Clock` **(1)**
     - **Utterances primary language**: English **(2)**
     - **Enable multiple languages in project?**: Unselect **(3)**
     - **Description**: `Natural language clock` **(4)**
       
-      ![](../Images/AI-l16-12.png)
+      ![](../Images/AI-102-l16-l0.png)
 
 1. On the **Review and finish** page, select **Create**.
 
@@ -171,7 +171,7 @@ In this task, you will define intents (such as GetTime, GetDay, and GetDate) tha
 
 > **Tip**: When working on your project, if some tips are displayed, read them and select **Got it** to dismiss them, or select **Skip all**.
 
-1. On the **Schema definition** page, under the **Intents** tab, click **Add (1)** to create a new intent.  
+1. On the **Schema definition** page, under the **Intents** tab, click **+ Add** to create a new intent.  
 
     ![](../Images/AI-l16-14.png)
 
@@ -182,14 +182,14 @@ In this task, you will define intents (such as GetTime, GetDay, and GetDate) tha
 1. Verify that the **GetTime** intent is listed (along with the default **None** intent). Then add the following additional intents: 
     - `GetDay`
     - `GetDate`
-     
-       ![](../Images/AI-l16-16-new.png)
+
+      ![](../Images/AI-l16-16-new.png)
 
 ## Task 4: Label each intent with sample utterances
 
 In this task, you will add example utterances to each intent to help the model learn how to predict the correct intent from user input.
 
-1. On the **Data labeling (1)** page, click **Select intent (2)**, then choose **GetTime (3)** from the list and enter the utterance `what is the time?` **(4)**.
+1. On the **Data labeling (1)** page, click **Select intent (2)**, choose **GetTime (3)** from the list, type  `what is the time?` into the field, **(4)** and press **Enter**.
 
     ![](../Images/AI-l16-17.png)
 
@@ -207,7 +207,7 @@ In this task, you will add example utterances to each intent to help the model l
         > **NOTE**
         > To add a new utterance, write the utterance in the textbox next to the intent and then press ENTER. 
 
-1. Select the **GetDay (1)** intent and enter the utterance `what day is it?` **(2)**.
+1. Select the **GetDay (1)** intent, enter the utterance `what day is it?` **(2)** and press **Enter**.
 
     ![](../Images/AI-l16-18.png)
 
@@ -216,7 +216,7 @@ In this task, you will add example utterances to each intent to help the model l
     - `what is the day today?`
     - `what day of the week is it?`
 
-1. Select the **GetDate (1)** intent and enter the utterance `what date is it?` **(2)**.
+1. Select the **GetDate (1)** intent, enter the utterance `what date is it?` **(2)** and press **Enter**.
 
     ![](../Images/AI-l16-19.png)
 
@@ -224,8 +224,6 @@ In this task, you will add example utterances to each intent to help the model l
     - `what's the date?`
     - `what is the date today?`
     - `what's today's date?`
-
-      ![](../Images/AI-l16-18.png)
 
 1. After you've added utterances for each of your intents, select **Save changes**.
 
@@ -274,11 +272,11 @@ In this task, you will train the language model on the defined intents and utter
 
 1. After deployment is complete, go to the **Testing deployments (1)** page and select **production (2)** from the **Deployment name** field.  
 
-1. Enter the following text in the empty textbox **(3)**, and then select **Run the test**:
+1. Enter the following text in the empty textbox **(3)**, and then select **Run the test (4)**:
 
     `what's the time now?`
 
-    ![](../Images/AI-l16-28.png)
+    ![](../Images/AI-102-l16-l6.png)
 
 1. Review the result that is returned, noting that it includes the predicted intent (which should be **GetTime**) and a confidence score that indicates the probability the model calculated for the predicted intent. The JSON tab shows the comparative confidence for each potential intent (the one with the highest confidence score is the predicted intent)
 
@@ -320,7 +318,7 @@ The most common kind of entity is a **learned** entity, in which the model learn
 
     ![](../Images/AI-l16-35.png)
 
-1. Select the **GetTime (1)** intent and enter the following new example utterance **(2)**:
+1. Select the **GetTime (1)** intent, enter the following new example utterance **(2)** and press **Enter**:
 
     `what time is it in London?`
 
@@ -389,6 +387,8 @@ In some cases, valid values for an entity can be restricted to a list of specifi
     | `Thursday` | `Thur, Thurs` |
     | `Friday` | `Fri` |
     | `Saturday` | `Sat` |
+
+    ![](../Images/AI-102-l16-l3.png)
 
 1. After adding and saving the list values, return to the **Data labeling (1)** page.
 
@@ -682,9 +682,7 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
         print("\tconfidence score: {}".format(entity["confidenceScore"]))
 
    print("query: {}".format(result["result"]["query"]))
-    
     ```
-
     ![](../Images/AI-l16-80.png)
     
     The call to the conversational understanding model returns a prediction/result, which includes the top (most likely) intent as well as any entities that were detected in the input utterance. Your client application must now use that prediction to determine and perform the appropriate action.
@@ -733,8 +731,7 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
         # Some other intent (for example, "None") was predicted
         print('Try asking me for the time, the day, or the date.')
     ```
-    
-    ![](../Images/AI-l16-81.png)
+    ![](../Images/AI-102-l16-l5.png)
 
 1. Save your changes (CTRL+S), then enter the following command to run the program (you maximize the cloud shell pane and resize the panels to see more text in the command line pane):
 
@@ -768,7 +765,8 @@ You'll develop your language understanding app using Cloud Shell in the Azure po
 
     ![](../Images/AI-l16-83.png)
 
+### Summary
 
-## More information
+In this lab, you provisioned an Azure AI Language resource and created a conversational language understanding project in Language Studio. You defined multiple intents with sample utterances, trained and evaluated the model, and added different types of entities including learned, list, and prebuilt to enhance its ability to recognize details in user input. After retraining and deploying the model, you tested predictions for various utterances. Finally, you configured and extended a Python client application in Cloud Shell to connect to the deployed model, submit queries, and return results based on predicted intents and entities.
 
-To learn more about conversational language understanding in  Azure AI Language, see the [Azure AI Language documentation](https://learn.microsoft.com/azure/ai-services/language-service/conversational-language-understanding/overview).
+### You have successfully completed the Hands-on Lab!
