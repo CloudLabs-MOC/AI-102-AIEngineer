@@ -8,6 +8,8 @@ In this lab, you will create a project in Azure AI Foundry and explore the Voice
 
 ### Task 1: Create an Azure AI Foundry project
 
+In this task, you will create a new project in Azure AI Foundry, configure its settings, and deploy the gpt-4.1 model to enable agent development in the playground.
+
 1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
 1. Click on **Sign in**.
@@ -78,7 +80,7 @@ In this lab, you will create a project in Azure AI Foundry and explore the Voice
 
 ### Task 2: Start a Voice Live sample
 
-In this section of the exercise you interact with one of the agents. 
+In this task, you will explore the Speech Playground, interact with the Voice Live sample agent, and experiment with real-time voice conversations to observe how agents respond and adapt.
 
 1. Select **Playgrounds (1)** in the navigation pane. Locate the **Speech playground** group, and select the **Try the Speech playground (2)** button.
 
@@ -115,7 +117,7 @@ In this section of the exercise you interact with one of the agents.
 
 ### Task 3: Configure the agent 
 
-In this section you change the voice of the agent, and add an avatar to the **Casual chat** agent. The **Configuration** panel is divided into three sections: **GenAI**, **Speech**, and **Avatar**.
+In this task, you will change the voice of the agent, and add an avatar to the **Casual chat** agent. The **Configuration** panel is divided into three sections: **GenAI**, **Speech**, and **Avatar**.
 
 >**Note:** If you change, or interact with, any of the configuration options you need to select the **Apply** button at the bottom of the **Configuration** panel to enable the agent.
 
@@ -165,7 +167,7 @@ In this section you change the voice of the agent, and add an avatar to the **Ca
 
 ### Task 4: Create a voice agent
 
-In this section you create your own voice agent from scratch.
+In this task, you will create your own voice agent from scratch.
 
 1. Select **Start from blank (1)** in the **Try with your own** section of the panel. 
 
@@ -205,7 +207,11 @@ In this section you create your own voice agent from scratch.
 
     After the agent introduces itself, ask it `Do you have any planes for rent?`. Notice the agent responds more quickly than it did earlier after finishing your question. The **End of utterance (EOU)** setting configures the agent to detect pauses and your end of speech based on context and semantics. This enables it to have a more natural conversation.
 
+### Summary
 
+In this lab, you created a project in Azure AI Foundry and deployed a GPT-4.1 model. You explored the Speech Playground with the Voice Live API, configured an agent with custom voices and avatars, and built a new voice agent from scratch, gaining hands-on experience with real-time conversational AI.
+
+### You have successfully completed the Hands-on Lab!
 
 
 
