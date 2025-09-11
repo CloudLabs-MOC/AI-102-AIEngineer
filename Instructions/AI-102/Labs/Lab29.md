@@ -1,8 +1,28 @@
 # Lab 29: Analyze video
 
-A large proportion of the data created and consumed today is in the format of video. Azure AI Video Indexer is an AI-powered service that you can use to index videos and extract insights from them.
+### Estimated Duration: 45 Minutes
 
-### Task 1: Upload a video to Video Indexer
+## Overview
+
+In this hands-on lab, you will learn how to analyze videos using **Azure Video Indexer**. You’ll start by uploading a video to the Video Indexer portal and allowing the service to extract insights such as transcripts, OCR text, speakers, topics, and sentiments. Next, you’ll review and search these insights directly in the portal to better understand the content and context of the video. You’ll then move to the **Azure portal** and **Cloud Shell**, where you’ll configure and run scripts that interact with the **Video Indexer REST API** using your account ID and API key. Finally, you’ll extend the solution by embedding **Video Indexer widgets**—including the Player and Insights—into a simple HTML application, enabling interactive playback and exploration of extracted insights outside the portal. By the end of this lab, you’ll be proficient in using Video Indexer both through the portal and programmatically via the REST API, and in integrating video insights into custom applications.
+
+## Lab Objectives
+
+- **Task 1:** Upload a video to Video Indexer
+
+- **Task 2:** Review video insights
+
+- **Task 3:** Search for insights
+
+- **Task 4:** Use the Video Indexer REST API
+
+- **Task 5:** Get your API details
+
+- **Task 6:** Use the REST API
+
+- **Task 7:** Use Video Indexer widgets
+
+## Task 1: Upload a video to Video Indexer
 
 First, you'll need to sign into the Video Indexer portal and upload a video.
 
@@ -32,7 +52,7 @@ First, you'll need to sign into the Video Indexer portal and upload a video.
 
    ![](../Images/ai29l5.png)
 
-1. Navigate to `C:\Users\azureuser\Downloads` **(1)**, select the downloaded video **(2)**, and click **Open**.
+1. Navigate to `C:\Users\azureuser\Downloads` **(1)**, select the downloaded video **(2)**, and click **Open (3)**.
 
    ![](../Images/ai29l6.png)
 
@@ -40,7 +60,7 @@ First, you'll need to sign into the Video Indexer portal and upload a video.
 
    ![](../Images/ai29l7.png)
 
-1. Review the summary overview, select the checkbox to verify compliance with Microsoft's policies for facial recognition **(1)** and then select **Review+index (2)** to upload the file.
+1. Review the summary overview, select the **checkbox (1)** to verify compliance with Microsoft's policies for facial recognition  and then select **Upload + index (2)** to upload the file.
 
    ![](../Images/ai29l8.png)
 
@@ -62,14 +82,13 @@ First, you'll need to sign into the Video Indexer portal and upload a video.
  
 ---    
 
-
-### Task 2: Review video insights
+## Task 2: Review video insights
 
 The indexing process extracts insights from the video, which you can view in the portal.
 
 1. In the **Video Indexer portal**, when the video is indexed, select it to view it.
 
-1. You'll see the video player alongside a pane that shows **insights** extracted from the video.
+1. You'll see the video player alongside a pane that shows **Insights** extracted from the video.
 
     ![](../Images/ai29l10.png)
 
@@ -107,7 +126,7 @@ The indexing process extracts insights from the video, which you can view in the
 
     The insights found can help you determine the main themes in the video. For example, the **topics** for this video show that it is clearly about technology, social responsibility, and ethics.
 
-### Task 3: Search for insights
+## Task 3: Search for insights
 
 You can use Video Indexer to search the video for insights.
 
@@ -121,7 +140,7 @@ You can use Video Indexer to search the video for insights.
 1. Clear the **Search** box to show all insights for the video.
 
 
-### Task 4: Use the Video Indexer REST API
+## Task 4: Use the Video Indexer REST API
 
 1. Navigate to [Azure portal](https://portal.azure.com/).
 
@@ -172,7 +191,7 @@ You can use Video Indexer to search the video for insights.
    cd mslearn-ai-vision/Labfiles/video-indexer
     ```
 
-### Task 5: Get your API details
+## Task 5: Get your API details
 
 To use the Video Indexer API, you need some information to authenticate requests:
 
@@ -203,7 +222,7 @@ To use the Video Indexer API, you need some information to authenticate requests
       ![](../Images/ai29l21.png)     
 
 
-### Task 6: Use the REST API
+## Task 6: Use the REST API
 
 Now that you have the account ID and an API key, you can use the REST API to work with videos in your account. In this procedure, you'll use a PowerShell script to make REST calls; but the same principles apply with HTTP utilities such as cURL or Postman, or any programming language capable of sending and receiving JSON over HTTP.
 
@@ -241,7 +260,7 @@ All interactions with the Video Indexer REST API follow the same pattern:
     ![](../Images/ai29l24.png)
 
 
-### Task 7: Use Video Indexer widgets
+## Task 7: Use Video Indexer widgets
 
 The Video Indexer portal is a useful interface to manage video indexing projects. However, there may be occasions when you want to make the video and its insights available to people who don't have access to your Video Indexer account. Video Indexer provides widgets that you can embed in a web page for this purpose.
 
@@ -273,7 +292,7 @@ The Video Indexer portal is a useful interface to manage video indexing projects
 
     ![](../Images/ai29l29.png)
 
-1. In the **Share and Embed** dialog box, select the **Player (1)** widget, set the video size to `560 x 315` **(2)**, and then copy the embed code to the clipboard **(2)**.
+1. In the **Share and Embed** dialog box, select the **Player (1)** widget, set the video size to `560 x 315` **(2)**, and then copy the embed code to the clipboard by clicking on **Copy code (3)**.
 
     ![](../Images/ai29l31.png)
 
@@ -312,7 +331,13 @@ The Video Indexer portal is a useful interface to manage video indexing projects
 
 1. Experiment with the widgets, using the **Insights** widget to search for insights and jump to them in the video.     
    
+## Summary
 
+In this lab, you explored how to analyze videos using **Azure Video Indexer**. You uploaded a sample video to the portal, reviewed extracted insights such as transcripts, OCR text, speakers, topics, keywords, and sentiments, and searched the video for specific insights. You then worked with the **Video Indexer REST API** in Cloud Shell by retrieving your account ID and API key, updating a PowerShell script, and running it to interact with your video programmatically. Finally, you embedded **Video Indexer widgets**—including the Player and Insights—into an HTML page to make video content and insights accessible outside the portal.
+
+Through these steps, you learned how to use the Video Indexer portal, API, and widgets to analyze video content, extract rich metadata, and integrate video insights into custom applications.
+
+### You have successfully completed the Hands-on Lab!
 
 
 
