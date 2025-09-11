@@ -2,45 +2,37 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# 
+# Lab 24: Analyze images
 
 ### Overall Estimated Timing: 30 Minutes
 
 ## Overview
 
-In this hands-on lab, you'll gain practical experience in building and customizing conversational AI agents using Azure AI Foundry. You will learn how to create a project, deploy a GPT-4.1 model, and explore the Speech Playground with the Voice Live API. Additionally, you’ll configure agent settings such as voice, avatars, and proactive engagement, and create a custom voice agent from scratch. By the end of this lab, you'll be proficient in designing, configuring, and testing real-time voice-enabled agents, equipping you with the skills to apply conversational AI in real-world scenarios.
+In this hands-on lab, you'll gain practical experience in building an image analysis solution using Azure AI Vision. You will learn how to provision and configure a Vision resource, set up a development environment in Azure Cloud Shell, and integrate the Vision SDK into a Python application. Additionally, you’ll implement features to generate captions, extract tags, detect and locate objects, and identify people in images. By the end of this lab, you’ll be proficient in designing, configuring, and testing computer vision applications, equipping you with the skills to apply image analysis in real-world scenarios.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
 
-1. **Create an Azure AI Foundry project:** You will learn how to provision a new project in Azure AI Foundry, configure resource group and region settings, and deploy the GPT-4.1 model for use in agents.
+1. **Provision an Azure AI Vision resource:** You will create and configure an Azure AI Vision resource, set up authentication keys, and prepare it for integration with applications.
 
-1. **Explore the Speech Playground with Voice Live API:** You will interact with pre-built sample agents in the Speech Playground, use live voice interactions, and observe how the agent handles real-time conversations.
-
-1. **Configure agent settings:** You will modify the agent’s voice, enable avatars, and adjust proactive engagement settings to customize conversational behavior.
-
-1. **Build a custom voice agent:** You will create a new agent from scratch, configure its generative AI model, voice input/output, and response instructions, and test it in live interactions.
-
-1. **Test and validate conversational AI:** You will run different agents, apply configuration changes, and evaluate how settings like speech detection and avatars impact the agent’s real-time responses.
+1. **Develop an image analysis app with the Azure AI Vision SDK:** You will build a Python application using the SDK, implement image analysis features such as object detection and description generation, run the app with sample images, validate the analysis output, and apply best practices for integrating AI Vision capabilities into real-world scenarios.
 
 ## Pre-requisites
 
-- Basic familiarity with conversational AI concepts and speech recognition.
-- A working microphone and speakers (or headset) for testing voice interactions.
+- Basic familiarity with Python programming.
+
+- Understanding of REST APIs and SDK usage.
+
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Foundry enables the creation and customization of real-time voice-enabled agents using the Voice Live API:
+The lab architecture demonstrates how Azure AI Vision enables building and testing image analysis applications using the Azure AI Vision SDK:
 
-1. **Azure AI Foundry Project:** Learning how to create a project, provision resources, and deploy the GPT-4.1 model to power conversational AI capabilities.
+1. **Provision an Azure AI Vision resource:** You will create and configure an Azure AI Vision resource, set up authentication keys, and prepare it for integration with applications.
 
-1. **Voice Live API in Speech Playground:** Exploring pre-built voice-enabled agents to test real-time conversation, speech recognition, and natural voice responses.
-
-1. **Configuration Panel:** Gaining experience customizing agent settings such as speech output, avatars, and engagement modes to modify interaction behavior.
-
-1. **Custom Voice Agent:** Building a voice agent from scratch, configuring it with a generative AI model, voice options, and conversation flow to simulate real-world use cases.
+1. **Develop an image analysis app with the Azure AI Vision SDK:** You will build a Python application using the SDK, implement image analysis features, run the app with sample images, validate the analysis output, and apply AI Vision capabilities to real-world scenarios.
 
 ## Architecture Diagram
 
@@ -48,14 +40,11 @@ The lab architecture demonstrates how Azure AI Foundry enables the creation and 
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project:** Provides the workspace for creating, managing, and deploying AI-powered agents, including access to models and integration with voice features.
+1. **Azure AI Vision Resource:** Provides the core service for image analysis, enabling features such as object detection, image tagging, and description generation.
 
-1. **Voice Live API (Speech Playground):** A service within Azure AI Foundry that enables real-time speech interaction with agents, supporting natural conversation through speech recognition and voice synthesis.
+1. **Azure AI Vision SDK:** A development toolkit that allows integration of Azure AI Vision capabilities into applications, providing APIs to send images for analysis and receive structured outputs.
 
-1. **Configure the agent:** Divided into GenAI, Speech, and Avatar sections, it allows customization of the agent’s behavior, voice output, and visual representation.
-
-1. **Create Voice Agent:** A generative AI-powered agent that can be configured with different voices, avatars, and response styles to simulate real-world conversational scenarios.
-
+1. **Image Analysis Application:** A Python-based application that leverages the SDK to process images, analyze visual content, and present results in a usable format.
 
 # Getting Started with lab
 
