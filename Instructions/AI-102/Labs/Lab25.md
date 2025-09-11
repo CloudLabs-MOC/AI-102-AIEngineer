@@ -1,12 +1,10 @@
 # Lab 25: Read text in images
 
-### Estimated Duration : 30 Minutes
+### Estimated Duration: 30 Minutes
 
 ## Overview
 
-Optical character recognition (OCR) is a key capability of computer vision that makes it possible to detect and interpret printed or handwritten text in images. In this lab, you’ll provision an **Azure AI Vision** resource, configure a Python application in Azure Cloud Shell, and use the **Azure AI Vision SDK** to authenticate, analyze images, and extract text. Step by step, you’ll extend the app to read full lines of text, identify individual words with confidence scores, and generate annotated images that highlight the detected text.
-
-While this exercise focuses on the **Python SDK**, the same functionality is available through other language-specific SDKs such as .NET, Java, and JavaScript. Note that the lab uses specific package versions, which may differ from the latest releases, so you might encounter warnings or minor behavior changes as the SDK evolves.
+In this hands-on lab, you will learn how to build an OCR-enabled application using **Azure AI Vision**. You’ll begin by provisioning a Vision resource in the Azure portal and retrieving its keys and endpoint. Then, you’ll set up a Python client application in Azure Cloud Shell, install the required SDK packages, and configure the app to authenticate with your resource. Next, you’ll extend the application to analyze sample images, extract full lines of text, and generate annotated images. Finally, you’ll enhance the solution to detect individual words, display their confidence scores, and produce word-level annotations on the images.
 
 ## Lab Objectives 
 
@@ -52,7 +50,7 @@ In this task, you’ll provision an Azure AI Vision resource in the Azure portal
 
     ![](../Images/l25t1p2.png)
 
-1. Provision the resource using the following settings and the click on **Review + create**:
+1. Provision the resource using the following settings and then click on **Review + create**:
 
     - Subscription: **Choose Default Subscription (1)**
     - Resource group: **AI-102-RG25 (2)**

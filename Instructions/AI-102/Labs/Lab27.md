@@ -1,6 +1,6 @@
 # Lab 27: Classify images
 
-### Estimated Duration : 45 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
