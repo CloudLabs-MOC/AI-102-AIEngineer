@@ -1,6 +1,10 @@
 # Lab 17: Custom text classification
 
-In this hands-on lab, you will learn how to build a custom text classification model using Azure AI Language. You’ll start by provisioning a Language resource and uploading sample articles to Azure Storage. Then, using Language Studio, you’ll create a project, label the data, train and evaluate the model, and finally deploy it. To validate the model, you will configure and run a Python application in Azure Cloud Shell that classifies documents based on the trained categories.
+### Estimated Duration: 60 Minutes
+
+## Lab Overview
+
+In this lab, you will learn how to build a custom text classification model using Azure AI Language. You’ll start by provisioning a Language resource and uploading sample articles to Azure Storage. Then, using Language Studio, you’ll create a project, label the data, train and evaluate the model, and finally deploy it. To validate the model, you will configure and run a Python application in Azure Cloud Shell that classifies documents based on the trained categories.
 
 ## Lab Objectives
 
