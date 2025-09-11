@@ -42,7 +42,7 @@ By the end of this lab, you will be able to:
 
 The lab architecture demonstrates how Azure AI Custom Vision enables image classification by combining resource provisioning, model training, and client application integration:
 
-1. **Custom Vision Training and Prediction Resources:** Provision two resources in Azure—one for training the image classification model and another for serving predictions through an endpoint.
+1. **Custom Vision Training and Prediction Resources:** Provision two resources in Azure, one for training the image classification model and another for serving predictions through an endpoint.
 
 2. **Custom Vision Portal:** Create and manage a project in the Custom Vision portal, upload and tag images, and train the classification model.
 
