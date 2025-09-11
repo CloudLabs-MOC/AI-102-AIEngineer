@@ -333,7 +333,7 @@ The Video Indexer portal is a useful interface to manage video indexing projects
    
 ## Summary
 
-In this lab, you explored how to analyze videos using **Azure Video Indexer**. You uploaded a sample video to the portal, reviewed extracted insights such as transcripts, OCR text, speakers, topics, keywords, and sentiments, and searched the video for specific insights. You then worked with the **Video Indexer REST API** in Cloud Shell by retrieving your account ID and API key, updating a PowerShell script, and running it to interact with your video programmatically. Finally, you embedded **Video Indexer widgets**—including the Player and Insights—into an HTML page to make video content and insights accessible outside the portal.
+In this lab, you explored how to analyze videos using **Azure Video Indexer**. You uploaded a sample video to the portal, reviewed extracted insights such as transcripts, OCR text, speakers, topics, keywords, and sentiments, and searched the video for specific insights. You then worked with the **Video Indexer REST API** in Cloud Shell by retrieving your account ID and API key, updating a PowerShell script, and running it to interact with your video programmatically. Finally, you embedded **Video Indexer widgets**, including the Player and Insights, into an HTML page to make video content and insights accessible outside the portal.
 
 Through these steps, you learned how to use the Video Indexer portal, API, and widgets to analyze video content, extract rich metadata, and integrate video insights into custom applications.
 
