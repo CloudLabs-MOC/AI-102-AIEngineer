@@ -1,8 +1,20 @@
 # Lab 24: Analyze images
 
-Azure AI Vision is an artificial intelligence capability that enables software systems to interpret visual input by analyzing images. In Microsoft Azure, the Vision Azure AI service provides pre-built models for common computer vision tasks, including analysis of images to suggest captions and tags, detection of common objects and people. You can also use the Azure AI Vision service to remove the background or create a foreground matting of images.
+### Estimated Duration: 30 Minutes
+
+## Lab Overview
+
+In this lab, you will provision an Azure AI Vision resource and configure it for image analysis tasks. You will work with a Python application in Azure Cloud Shell to integrate the Vision SDK and analyze sample images. The lab covers generating captions, extracting tags, detecting and locating objects, and identifying people in images. By the end, you will gain hands-on experience in building and testing computer vision solutions using Azure AI Vision.
+
+## Lab Objectives
+
+- Task 1: Provision an Azure AI Vision resource
+- Task 2: Develop an image analysis app with the Azure AI Vision SDK
+
 
 ### Task 1: Provision an Azure AI Vision resource
+
+In this task, you will provision an Azure AI Vision resource in the Azure portal, configure its settings, and retrieve the keys and endpoint required to connect your application to the service.
 
 1. On the Azure portal, search for **Computer Vision (1)** then select **Computer Vision (2)** from the results.
 
@@ -54,6 +66,8 @@ Azure AI Vision is an artificial intelligence capability that enables software s
 In this task, you'll complete a partially implemented client application that uses the Azure AI Vision SDK to analyze images.   
 
 ### Task 2.1: Prepare the application configuration
+
+In this task, you will set up your development environment in Azure Cloud Shell by cloning the GitHub repository, installing required packages, and configuring the application with your Azure AI Vision resource endpoint and key.
 
 1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
 
@@ -126,6 +140,8 @@ In this task, you'll complete a partially implemented client application that us
 1. After you've replaced the placeholders, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
 ### Task 2.2: Add code to suggest a caption
+
+In this task, you will update the Python application to use the Azure AI Vision SDK, authenticate the client, analyze images, and generate suggested captions along with dense captions for different sample images.
 
 1. In the cloud shell command line, enter the following command to open the code file for the client application:
 
@@ -238,6 +254,8 @@ In this task, you'll complete a partially implemented client application that us
 
 ### Task 2.3: Add code to generate suggested tags
 
+In this task, you will enhance the Python application to extract and display suggested tags for analyzed images, providing additional context about their contents.
+
 It can sometimes be useful to identify relevant *tags* that provide clues about the contents of an image.
 
 1. In the code editor, in the **AnalyzeImage** function, find the comment **Get image tags** and add the following code:
@@ -271,6 +289,8 @@ It can sometimes be useful to identify relevant *tags* that provide clues about 
     ```
 
 ### Task 2.4: Add code to detect and locate objects
+
+In this task, you will extend the application to detect and locate objects within images, generate an annotated output file, and download it for review.
 
 1. In the code editor, in the **AnalyzeImage** function, find the comment **Get objects in the image** and add the following code to list the objects detected in the image, and call the provided function to annotate an image with the detected objects:
 
@@ -319,6 +339,8 @@ It can sometimes be useful to identify relevant *tags* that provide clues about 
 
 
 ### Task 2.5: Add code to detect and locate people
+
+In this task, you will update the application to detect and locate people in images with a confidence threshold, generate annotated output files, and download them for review.
 
 1. In the code editor, in the **AnalyzeImage** function, find the comment **Get people in the image** and add the following code to list any detected people with a confidence level of 20% or more, and call a provided function to annotate them in an image:
 
@@ -370,5 +392,9 @@ It can sometimes be useful to identify relevant *tags* that provide clues about 
    >**Tip:** If you see bounding boxes returned from the model that don't make sense, check the JSON confidence score and try increasing the confidence score filtering in your app.
 
 
+### Summary
 
+In this lab, you provisioned an Azure AI Vision resource and configured it in Azure Cloud Shell. You updated a Python application to integrate with the Vision SDK, enabling image analysis capabilities. You implemented features to generate captions, suggest tags, detect and locate objects, and identify people in images, gaining hands-on experience with building and testing a computer vision solution using Azure AI Vision.
+
+### You have successfully completed the Hands-on Lab!
 
