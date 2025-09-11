@@ -14,41 +14,39 @@ In this hands-on lab, you’ll gain practical experience building an end-to-end 
 
 By the end of this lab, you will be able to:
 
-1. **Create Custom Vision resources:** Provision both training and prediction resources in Azure to support image classification.
+1. **Create Custom Vision resources:** Provision both training and prediction resources in Azure to support object detection workflows.
 
-2. **Set up a Custom Vision project:** Create a new project in the Custom Vision portal and configure it for fruit classification.
+2. **Set up a Custom Vision project:** Create an Object Detection project in the Custom Vision portal and connect it to your training resource.
 
-3. **Upload and tag images:** Add images of apples, bananas, and oranges to the project and assign appropriate tags for training.
+3. **Upload and tag images:** Add fruit images (apples, bananas, oranges), draw bounding boxes, and assign the correct tags for each object.
 
-4. **Train and evaluate a model:** Run a training iteration, review performance metrics like precision and recall, and validate the model’s accuracy.
+4. **Use the Training SDK from Cloud Shell:** Configure authentication, clone the repo, and run Python code to programmatically upload tagged images from JSON.
 
-5. **Test the model with sample images:** Use Quick Test to submit images and review classification probabilities.
+5. **Train, evaluate, and validate the detector**: Run a training iteration, review Precision, Recall, and mAP metrics, then use Quick Test to verify predicted boxes, labels, and confidence scores.
 
-6. **Use the training API in Cloud Shell:** Configure authentication, clone the repository, and run Python code to automate model retraining.
+6. **Publish the best iteration:** Publish the trained model to the prediction resource and obtain the prediction endpoint and key.
 
-7. **Publish the trained model:** Link the model to your prediction resource and make it available for use in applications.
-
-8. **Build and run a client application:** Configure a Python client app with prediction details, test classification on sample images, and view probability scores.
+7. **Build and run a client application:** Configure a lightweight Python client to call the prediction API and render bounding boxes on test images for end-to-end inference.
 
 ## Pre-requisites
 
-* Basic understanding of **computer vision concepts**, including image classification and tagging.
+* Basic understanding of **computer vision concepts**
 * Familiarity with the **Azure portal**, including how to create and manage resources.
 * Experience using **Azure Cloud Shell** for running Python scripts and managing environments.
-* An active Azure subscription with permissions to create Custom Vision resources in the assigned resource group.
+
 * Basic knowledge of **Python programming** and working in a terminal or shell environment.
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Custom Vision enables image classification by combining resource provisioning, model training, and client application integration:
+The lab architecture demonstrates how Azure AI Custom Vision enables object detection by combining resource provisioning, model training, and client application integration:
 
-1. **Custom Vision Training and Prediction Resources:** Provision two resources in Azure—one for training the image classification model and another for serving predictions through an endpoint.
+1. **Custom Vision Training and Prediction Resources:** Provision two resources in Azure one for training the object detection model and another for serving predictions (labels, bounding boxes, confidences) through a secure endpoint.
 
-2. **Custom Vision Portal:** Create and manage a project in the Custom Vision portal, upload and tag images, and train the classification model.
+2. **Custom Vision Portal:** Create and manage an Object Detection project, upload images, draw bounding boxes, tag objects, train iterations, and publish the best model.
 
-3. **Azure Cloud Shell:** Configure a development environment in Cloud Shell to install dependencies, clone code repositories, and run Python scripts for automated training and testing.
+3. **Azure Cloud Shell:** Configure a development environment to install dependencies, clone the repository, and run Python/SDK scripts for automated data upload, training, and quick testing.
 
-4. **Python Client Application:** Build and configure a Python app that connects to the published prediction resource, submits test images, and retrieves classification results with probability scores.
+4. **Python Client Application:** Connect to the published prediction resource, submit images, receive detections with labels and confidence scores, and generate annotated output images.
 
 ## Architecture Diagram
 
@@ -56,15 +54,19 @@ The lab architecture demonstrates how Azure AI Custom Vision enables image class
 
 ## Explanation of Components
 
-1. **Custom Vision Training Resource:** Provides the environment to build, train, and manage an image classification model by uploading and tagging images.
+1. **Custom Vision Training Resource:** Provides the environment to build, train, and manage an object detection model by uploading images and tagging bounding boxes.
 
-2. **Custom Vision Prediction Resource:** Exposes a secure endpoint that allows client applications to submit images and receive classification results with probability scores.
+2. **Custom Vision Prediction Resource:** Hosts the published model and exposes a secure endpoint and key for serving detections (labels, boxes, confidence scores).
 
-3. **Custom Vision Portal:** A web-based interface to create projects, tag training data, train models, and publish them to the prediction resource.
+3. **Custom Vision Portal:** Web interface to create Object Detection projects, tag regions, run training iterations, review Precision/Recall/mAP, and publish the best model.
 
-4. **Azure Cloud Shell:** A browser-based terminal environment used to set up dependencies, clone the lab repository, and run Python scripts to interact with the Custom Vision services.
+4. **Azure Cloud Shell:** Browser-based terminal used to install dependencies, clone the lab repo, manage the .env configuration, and run Python/SDK scripts end-to-end.
 
-5. **Python Client Application:** A sample application that connects to the prediction resource, sends images for analysis, and retrieves classification results programmatically.
+5. **Azure AI Custom Vision SDK (Training):** Python SDK that authenticates to the training resource to create projects and bulk-upload images with region annotations from JSON.
+
+6. **Azure AI Custom Vision SDK (Prediction):** Python SDK that calls the hosted model and returns predicted bounding boxes, tags, and probabilities for input images.
+
+7. **Python Client Application:** Sample app that invokes the prediction endpoint, parses results, draws boxes/labels, and saves an annotated output image for verification.
 
 # Getting Started with lab
 
@@ -72,9 +74,9 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
 
 ## Accessing Your Lab Environment
  
-Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
+Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab27labvm.png)
+![Access Your VM and Lab Guide](../Images/AI-102-l28-g1.png)
 
 ### Virtual Machine & Lab Guide
  

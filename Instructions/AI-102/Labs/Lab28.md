@@ -2,18 +2,9 @@
 
 ### Estimated Duration : 45 Minutes
 
-The **Azure AI Custom Vision** service enables you to create computer vision models that are trained on your own images. You can use it to train *image classification* and *object detection* models; which you can then publish and consume from applications.
+## Lab Overview
 
-In this exercise, you will use the Custom Vision service to train an *object detection* model that can detect and locate three classes of fruit (apple, banana, and orange) in an image.
-
-While this exercise is based on the Azure Custom Vision Python SDK, you can develop vision applications using multiple language-specific SDKs; including:
-
-* [Azure Custom Vision for JavaScript (training)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-training)
-* [Azure Custom Vision for JavaScript (prediction)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction)
-* [Azure Custom Vision for Microsoft .NET (training)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training/)
-* [Azure Custom Vision for Microsoft .NET (prediction)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction/)
-* [Azure Custom Vision for Java (training)](https://search.maven.org/artifact/com.azure/azure-cognitiveservices-customvision-training/1.1.0-preview.2/jar)
-* [Azure Custom Vision for Java (prediction)](https://search.maven.org/artifact/com.azure/azure-cognitiveservices-customvision-prediction/1.1.0-preview.2/jar)
+In this hands-on lab, you will build an end-to-end object detection solution with Azure AI Custom Vision. You’ll provision training and prediction resources in Azure, create an Object Detection project in the Custom Vision portal, and upload/tag images of fruit (apples, bananas, oranges). You’ll then use the Custom Vision training SDK from Azure Cloud Shell to programmatically upload tagged images, train a model, and review its precision/recall/mAP metrics. Next, you’ll validate results with Quick Test, publish the best iteration to your prediction resource, and configure a lightweight Python client to call the prediction endpoint and draw bounding boxes on sample images demonstrating how to operationalize your Custom Vision model in real applications.
 
 ## Lab Objectives 
 
@@ -33,7 +24,7 @@ While this exercise is based on the Azure Custom Vision Python SDK, you can deve
 
 ## Task 1: Create Custom Vision resources
 
-Before you can train a model, you will need Azure resources for *training* and *prediction*. You can create **Custom Vision** resources for each of these tasks, or you can create a single resource and use it for both. In this exercise, you'll create **Custom Vision** resources for training and prediction.
+In this task, you’ll create Custom Vision resources in Azure to support both training and prediction. You’ll provision two separate resources one for training and one for prediction so you can build the object detector and later use it from applications.
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
@@ -101,15 +92,15 @@ Before you can train a model, you will need Azure resources for *training* and *
 
 ## Task 2: Create a Custom Vision project in the Custom Vision portal
 
-To train an object detection model, you need to create a Custom Vision project based on your training resource. To do this, you'll use the Custom Vision portal.
+In this task, you’ll set up a new Object Detection project in the Custom Vision portal. You’ll connect it to your training resource, choose the Object Detection project type and General domain, and prepare the workspace for data ingestion and training.
 
 1. Open a new browser tab (keeping the Azure portal tab open - you'll return to it later).
 
 1. In the new browser tab, open the [Custom Vision portal](https://customvision.ai) at `https://customvision.ai`. Click **Sign in**.
 
-   ![](../Images/AI-l28-9.png)
+    ![](../Images/AI-l28-9.png)
 
-   > **Note:** If prompted, sign in using your Azure credentials and agree to the terms of service.
+    > **Note:** If prompted, sign in using your Azure credentials and agree to the terms of service.
 
 1. If prompted, provide the credentials below:
 
@@ -148,7 +139,7 @@ To train an object detection model, you need to create a Custom Vision project b
 
 ## Task 3: Upload and tag images in the Custom Vision portal
 
-The Custom Vision portal includes visual tools that you can use to upload images and tag regions within them that contain multiple types of object.
+In this task, you’ll upload sample fruit images and draw bounding boxes around apples, bananas, and oranges. You’ll apply the correct tags to each region so the model learns where and what each object is.
 
 1. In a new browser tab, download the [training images](https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/main/Labfiles/object-detection/training-images.zip) from `https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/main/Labfiles/object-detection/training-images.zip`
 
@@ -203,21 +194,21 @@ The Custom Vision portal includes visual tools that you can use to upload images
 
 ## Task 4: Use the Custom Vision SDK to upload images
 
-You can use the UI in the Custom Vision portal to tag your images, but many AI development teams use other tools that generate files containing information about tags and object regions in images. In scenarios like this, you can use the Custom Vision training API to upload tagged images to the project.
+In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Training SDK to programmatically upload images and region annotations from a JSON file. You’ll configure the SDK with your training endpoint, key, and project ID to automate data ingestion.
 
 1. On the **Training Images** page in the Custom Vision portal, click the **settings** (&#9881;) icon at the top right to view the project settings.  
 
      ![](../Images/AI-l28-21.png)
 
-1. Under **General** (on the left), note the **Project Id** that uniquely identifies this project.
+1. Under **General** (on the left), note the **Project Id (1)** that uniquely identifies this project (Copy to Notepad for later use).
  
 1. On the right, under **Resources**, copy the **Key** and **Endpoint (2)** values to a Notepad file for later use. These are the details for the **training** resource.  
 
-   [](../Images/AI-l28-22.png)
+    ![](../Images/AI-l28-22.png)
 
-   > **Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)**, where you will find **Key 1 (2)**, and the **Endpoint (4)**.  
+    > **Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)**, where you will find **Key 1 (2)**, and the **Endpoint (4)**.  
 
-     [](../Images/AI-l28-8-key1.png)
+     ![](../Images/AI-l28-8-key1.png)
 
 1. Return to the browser tab containing the Azure portal (keeping the Custom Vision portal tab open you'll return to it later).
 
@@ -323,17 +314,19 @@ You can use the UI in the Custom Vision portal to tag your images, but many AI d
 
     ![](../Images/AI-l28-30.png)
 
+    > **Note:** Make sure You are in **Training Images** page
+
 ## Task 5: Train and test a model
 
-Now that you've tagged the images in your project, you're ready to train a model.
+In this task, you’ll run a Quick Training to create a new iteration of your object detection model and then review performance metrics (Precision, Recall, mAP). You’ll validate the model with Quick Test to see predicted boxes and labels on a sample image.
 
 1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. Select the **Quick Training** option and then wait for the training iteration to complete (this may take a minute or so).
 
-   ![](../Images/AI-l28-31.png)
+     ![](../Images/AI-l28-31.png)
 
-   ![](../Images/AI-l28-32.png)
+     ![](../Images/AI-l28-32.png)
 
-    > **Tip**: The Azure cloud shell has a 20-minute inactivity timeout, after which the session is abandoned. While you wait for training to finish, occassionally return to the cloud shell and enter a colland like `ls` to keep the session active.
+     > **Tip**: The Azure cloud shell has a 20-minute inactivity timeout, after which the session is abandoned. While you wait for training to finish, occassionally return to the cloud shell and enter a colland like `ls` to keep the session active.
 
 1. In the Custom Vision portal, when training has finished, review the *Precision*, *Recall*, and *mAP* performance metrics - these measure the prediction accuracy of the object detection model, and should all be high.
 
@@ -351,11 +344,9 @@ Now that you've tagged the images in your project, you're ready to train a model
 
 1. Close the **Quick Test** window.
 
-## Use the object detector in a client application
-
-Now you're ready to publish your trained model and use it in a client application.
-
 ## Task 6: Publish the object detection model
+
+In this task, you’ll publish the best-trained iteration (e.g., fruit-detector) to your Prediction resource. You’ll capture the prediction endpoint and key so external apps can call the hosted model.
 
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish** to publish the trained model.
  
@@ -363,7 +354,7 @@ Now you're ready to publish your trained model and use it in a client applicatio
     
 1. On the **Publish Model** window, enter the following details:     
     - **Model name**: `fruit-detector` **(1)**
-    - **Prediction Resource**: **customvision<inject key="DeploymentID"></inject>-Prediction (2)**
+    - **Prediction Resource**: Select **customvision<inject key="DeploymentID"></inject>-Prediction (2)**
     - Click **Publish (3)**
 
        ![](../Images/AI-l28-38.png)
@@ -378,15 +369,15 @@ Now you're ready to publish your trained model and use it in a client applicatio
 
 1. Under **Resources**, click on **customvision<inject key="DeploymentID"></inject>-Prediction (1)**, then copy the **Key (2)** and **Endpoint (3)** values to a Notepad file for later use.  
 
-   ![](../Images/AI-l28-41.png)
+     ![](../Images/AI-l28-41.png)
 
-   > **Note:** You can also obtain this information by viewing the resource in the Azure portal. Navigate to **Keys and Endpoint (1)**, then copy **Key 1 (2)**, and the **Endpoint (3)**.  
+     > **Note:** You can also obtain this information by viewing the resource in the Azure portal. Navigate to **Keys and Endpoint (1)**, then copy **Key 1 (2)**, and the **Endpoint (3)**.  
 
-    ![](../Images/AI-l28-18-key2.png)
+     ![](../Images/AI-l28-8-key2.png)
 
 ## Task 7: Use the image classifier from a client application
 
-Now that you've published the image classification model, you can use it from a client application. Once again, you can choose to use **C#** or **Python**.
+In this task, you’ll configure a lightweight Python client to call the prediction endpoint with a test image. You’ll parse predictions, draw bounding boxes with labels and confidence scores, and save an annotated output image to demonstrate end-to-end inference.
 
 1. Return to the browser tab containing the Azure portal and the cloud shell pane.
 
@@ -458,8 +449,10 @@ Now that you've published the image classification model, you can use it from a 
 
 1. The downloaded image should display the detected objects, similar to the example shown below: 
 
-     [](../Images/AI-l28-48.png)
+     ![](../Images/AI-l28-48.png)
 
-## More information
+## Summary
 
-For more information about object detection with the Custom Vision service, see the [Custom Vision documentation](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/).
+In this lab, you built an end-to-end object detection workflow with Azure AI Custom Vision. You provisioned dedicated Training and Prediction resources, created an Object Detection project, prepared data by uploading and tagging images, trained/evaluated a model, published the best iteration, and invoked it from a lightweight Python client to draw bounding boxes on a test image.
+
+### You have successfully completed the Hands-on Lab!
