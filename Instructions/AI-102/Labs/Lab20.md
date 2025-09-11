@@ -1,25 +1,33 @@
 
 # Lab 20: Recognize and Synthesize Speech
 
-**Azure AI Speech** is a service that provides speech-related functionality, including:
+### Estimated Duration: 30 Minutes
 
-- A *speech-to-text* API that enables you to implement speech recognition (converting audible spoken words into text).
-- A *text-to-speech* API that enables you to implement speech synthesis (converting text into audible speech).
+## Lab Overview
 
-In this exercise, you'll use both of these APIs to implement a speaking clock application.
-
-While this exercise is based on Python, you can develop speech applications using multiple language-specific SDKs; including:
-
-- [Azure AI Speech SDK for Python](https://pypi.org/project/azure-cognitiveservices-speech/)
-- [Azure AI Speech SDK for .NET](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech)
-- [Azure AI Speech SDK for JavaScript](https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk)
-
-This exercise takes approximately **30** minutes.
+In this hands-on lab, you will implement a speaking clock using Azure AI Speech. You’ll provision a Speech resource, configure a Python environment in Azure Cloud Shell, and add code to recognize speech from an audio file (speech-to-text) and synthesize natural-sounding audio from text (text-to-speech). You will then enhance the output with Speech Synthesis Markup Language (SSML). Optional steps show how to switch to a microphone and speaker when running outside Cloud Shell.
 
 > **NOTE**
 > This exercise is designed to be completed in the Azure cloud shell, where direct access to your computer's sound hardware is not supported. The lab will therefore use audio files for speech input and output streams. The code to achieve the same results using a mic and speaker is provided for your reference.
 
+## Lab Objectives
+
+- **Task 1:** Create an Azure AI Speech resource
+
+- **Task 2:** Prepare and configure the speaking clock app
+
+- **Task 3:** Add code to use the Azure AI Speech SDK
+
+- **Task 4:** Add code to recognize speech
+
+- **Task 5:** Synthesize speech
+
+- **Task 6:** Use Speech Synthesis Markup Language
+
+
 ## Task 1: Create an Azure AI Speech resource
+
+In this task, you will create an Azure AI Speech resource in the Azure portal, configure its basic settings, and retrieve the key and region values required for later steps in the lab.
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
@@ -82,6 +90,8 @@ This exercise takes approximately **30** minutes.
 ---   
 
 ## Task 2: Prepare and configure the speaking clock app
+
+In this task, you will open Azure Cloud Shell, clone the lab repository, set up a Python virtual environment, install dependencies, and populate the .env file with your Speech key and region.
 
 1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
@@ -153,6 +163,8 @@ This exercise takes approximately **30** minutes.
 
 ## Task 3: Add code to use the Azure AI Speech SDK
 
+In this task, you will import the required namespaces, initialize SpeechConfig with your credentials, and run the app once to verify a successful connection to the Speech service.
+
 > **Tip**: As you add code, be sure to maintain the correct indentation.
 
 1. Enter the following command to edit the code file that has been provided:
@@ -200,6 +212,8 @@ This exercise takes approximately **30** minutes.
     The code should display the region of the speech service resource the application will use. A successful run indicates that the app has connected to your Azure AI Speech resource.
 
 ## Task 4: Add code to recognize speech
+
+In this task, you will create a SpeechRecognizer that transcribes speech from an audio file and returns the recognized text to the speaking clock logic.
 
 Now that you have a **SpeechConfig** for the speech service in your project's Azure AI Services resource, you can use the **Speech-to-text** API to recognize speech and transcribe it to text.
 
@@ -252,6 +266,8 @@ In this procedure, the speech input is captured from an audio file, which you ca
 
 ## Task 5: Synthesize speech
 
+In this task, you will create a SpeechSynthesizer that generates spoken output to a .wav file so you can download and verify the synthesized audio in Cloud Shell.
+
 Your speaking clock application accepts spoken input, but it doesn't actually speak! Let's fix that by adding code to synthesize speech.
 
 Once again, due to the hardware limitations of the cloud shell we'll direct the synthesized speech output to a file.
@@ -300,7 +316,7 @@ Once again, due to the hardware limitations of the cloud shell we'll direct the 
 
 ## Task 6:  Use Speech Synthesis Markup Language
 
-Speech Synthesis Markup Language (SSML) enables you to customize the way your speech is synthesized using an XML-based format.
+In this task, you will replace plain text synthesis with SSML to control voice, pacing, and pauses, and then regenerate the spoken output to confirm the enhanced results.
 
 1. In the **TellTime** function, replace all of the current code under the comment **Synthesize spoken output** with the following code (leave the code under the comment **Print the response**):
 
@@ -385,8 +401,9 @@ In this exercise, you used audio files for the speech input and output. Let's se
 
     > **Note**: The system default speaker is the default audio output, so you could also just omit the AudioConfig altogether!
 
+## Summary
 
-## More information
+In this lab, you built an end-to-end speaking clock with Azure AI Speech. You provisioned a Speech resource, configured your environment in Cloud Shell, and added code to authenticate to the service. You implemented speech recognition from an audio file, generated natural-sounding speech to a .wav file, and enhanced the user experience with SSML controls.
 
-For more information about using the **Speech-to-text** and **Text-to-speech** APIs, see the [Speech-to-text documentation](https://learn.microsoft.com/azure/ai-services/speech-service/index-speech-to-text) and [Text-to-speech documentation](https://learn.microsoft.com/azure/ai-services/speech-service/index-text-to-speech).
+###You have successfully completed the Hands-on Lab!
 
