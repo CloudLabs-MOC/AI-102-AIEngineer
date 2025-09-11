@@ -36,7 +36,7 @@ The lab architecture demonstrates how Azure AI Vision enables building and testi
 
 ## Architecture Diagram
 
-![](../Images/ai23g1.png)
+![](../Images/ai24g1.png)
 
 ## Explanation of Components
 
@@ -44,7 +44,7 @@ The lab architecture demonstrates how Azure AI Vision enables building and testi
 
 1. **Azure AI Vision SDK:** A development toolkit that allows integration of Azure AI Vision capabilities into applications, providing APIs to send images for analysis and receive structured outputs.
 
-1. **Image Analysis Application:** A Python-based application that leverages the SDK to process images, analyze visual content, and present results in a usable format.
+1. **Image Analysis Application (Client App):** A Python-based application that leverages the SDK to process images, analyze visual content, and present results in a usable format.
 
 # Getting Started with lab
 
