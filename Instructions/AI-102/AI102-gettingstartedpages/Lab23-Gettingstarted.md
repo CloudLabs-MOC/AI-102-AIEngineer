@@ -44,7 +44,7 @@ The lab architecture demonstrates how Azure AI Foundry enables the creation and 
 
 ## Architecture Diagram
 
-![](../Images/ai21g1.png)
+![](../Images/ai23g1.png)
 
 ## Explanation of Components
 
@@ -52,9 +52,9 @@ The lab architecture demonstrates how Azure AI Foundry enables the creation and 
 
 1. **Voice Live API (Speech Playground):** A service within Azure AI Foundry that enables real-time speech interaction with agents, supporting natural conversation through speech recognition and voice synthesis.
 
-1. **Configuration Panel:** Divided into GenAI, Speech, and Avatar sections, it allows customization of the agent’s behavior, voice output, and visual representation.
+1. **Configure the agent:** Divided into GenAI, Speech, and Avatar sections, it allows customization of the agent’s behavior, voice output, and visual representation.
 
-1. **Custom Voice Agent:** A generative AI-powered agent that can be configured with different voices, avatars, and response styles to simulate real-world conversational scenarios.
+1. **Create Voice Agent:** A generative AI-powered agent that can be configured with different voices, avatars, and response styles to simulate real-world conversational scenarios.
 
 
 # Getting Started with lab

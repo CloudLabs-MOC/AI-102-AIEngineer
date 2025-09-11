@@ -6,6 +6,13 @@
 
 In this lab, you will create a project in Azure AI Foundry and explore the Voice Live API through the Speech Playground. You will interact with pre-built voice agents, customize their voices and avatars, and experiment with configuration options like proactive engagement. Finally, you will build your own voice agent from scratch and test real-time conversations. This hands-on lab helps you understand how to design and deploy interactive voice-enabled agents using Azure AI Foundry.
 
+## Lab Objectives
+
+- Task 1: Create an Azure AI Foundry project
+- Task 2: Start a Voice Live sample
+- Task 3: Configure the agent
+- Task 4: Create a voice agent
+
 ### Task 1: Create an Azure AI Foundry project
 
 In this task, you will create a new project in Azure AI Foundry, configure its settings, and deploy the gpt-4.1 model to enable agent development in the playground.
