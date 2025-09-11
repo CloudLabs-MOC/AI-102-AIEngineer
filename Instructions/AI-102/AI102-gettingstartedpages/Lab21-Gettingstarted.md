@@ -90,18 +90,18 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 ![Use the Split Window Feature](../Images/splitwindow.png)
 
+## Lab Progress
+
+You can use the **Progress** tab to track your progress while working on the lab. A score will be provided after successful validation.
+
+![](../Images/progresstab.png)
+
 
 ## Managing Your Virtual Machine
  
 Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
 ![Manage Your Virtual Machine](../Images/resourcetab.png)
-
-## Lab Progress
-
-You can use the **Progress** tab to track your progress while working on the lab. A score will be provided after successful validation.
-
-![](../Images/progresstab.png)
 
 
 
