@@ -2,46 +2,45 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 21: Translate Speech
+# Lab 23: Explore the Voice Live API
 
 ### Overall Estimated Timing: 30 Minutes
 
 ## Overview
 
-In this hands-on lab, you'll gain practical experience in building a speech translation solution using Azure AI Speech. You will learn how to provision an Azure AI Speech resource, configure it in Azure Cloud Shell, and update a Python application to integrate with the Speech SDK. Additionally, you’ll gain expertise in recognizing spoken input, translating it into multiple target languages, and synthesizing the translations into speech. By the end of this lab, you'll be proficient in the end-to-end process of creating, configuring, and consuming an Azure AI Speech solution, equipping you with the skills to apply multilingual speech translation in real-world scenarios.
+In this hands-on lab, you'll gain practical experience in building and customizing conversational AI agents using Azure AI Foundry. You will learn how to create a project, deploy a GPT-4.1 model, and explore the Speech Playground with the Voice Live API. Additionally, you’ll configure agent settings such as voice, avatars, and proactive engagement, and create a custom voice agent from scratch. By the end of this lab, you'll be proficient in designing, configuring, and testing real-time voice-enabled agents, equipping you with the skills to apply conversational AI in real-world scenarios.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
 
-1. **Provision an Azure AI Speech resource:** You will learn how to create an Azure AI Speech resource in the Azure portal, configure its settings, and retrieve keys and region information required for integration.
+1. **Create an Azure AI Foundry project:** You will learn how to provision a new project in Azure AI Foundry, configure resource group and region settings, and deploy the GPT-4.1 model for use in agents.
 
-1. **Set up a development environment in Azure Cloud Shell:** You will create a Cloud Shell environment, clone the GitHub repository, and prepare the workspace for developing a speech translation application.
+1. **Explore the Speech Playground with Voice Live API:** You will interact with pre-built sample agents in the Speech Playground, use live voice interactions, and observe how the agent handles real-time conversations.
 
-1. **Configure application settings:** You will update the configuration file with your Speech resource key and region, ensuring secure connectivity between your app and the Azure AI Speech service.
+1. **Configure agent settings:** You will modify the agent’s voice, enable avatars, and adjust proactive engagement settings to customize conversational behavior.
 
-1. **Integrate the Speech SDK in a Python app:** You will modify the application code to import the necessary SDK packages, configure speech recognition, translation, and synthesis, and connect to the Speech service.
+1. **Build a custom voice agent:** You will create a new agent from scratch, configure its generative AI model, voice input/output, and response instructions, and test it in live interactions.
 
-1. **Translate and synthesize speech:** You will run the Python app in Cloud Shell, provide audio input, translate it into multiple target languages, and generate synthesized speech output to test end-to-end speech translation functionality.
+1. **Test and validate conversational AI:** You will run different agents, apply configuration changes, and evaluate how settings like speech detection and avatars impact the agent’s real-time responses.
 
 ## Pre-requisites
 
-- Familiarity with Python programming and package management.
-
-- Experience working in Azure Cloud Shell and using command-line tools.
+- Basic familiarity with conversational AI concepts and speech recognition.
+- A working microphone and speakers (or headset) for testing voice interactions.
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Speech enables real-time speech translation and synthesis:
+The lab architecture demonstrates how Azure AI Foundry enables the creation and customization of real-time voice-enabled agents using the Voice Live API:
 
-1. **Azure AI Speech Resource:** Learning how to provision a Speech service in the Azure portal that provides speech-to-text, translation, and text-to-speech capabilities.
+1. **Azure AI Foundry Project:** Learning how to create a project, provision resources, and deploy the GPT-4.1 model to power conversational AI capabilities.
 
-1. **Azure Cloud Shell:** Gaining experience in setting up a Cloud Shell environment to develop, run, and test the Python application.
+1. **Voice Live API in Speech Playground:** Exploring pre-built voice-enabled agents to test real-time conversation, speech recognition, and natural voice responses.
 
-1. **Python Application:** Understanding how to integrate the Azure AI Speech SDK in a Python app to recognize spoken input, translate it into multiple languages, and synthesize the translations into speech.
+1. **Configuration Panel:** Gaining experience customizing agent settings such as speech output, avatars, and engagement modes to modify interaction behavior.
 
-1. **Audio Input & Output:** Using a sample .wav audio file as input for translation and generating output .wav files to hear the translated speech.
+1. **Custom Voice Agent:** Building a voice agent from scratch, configuring it with a generative AI model, voice options, and conversation flow to simulate real-world use cases.
 
 ## Architecture Diagram
 
@@ -49,13 +48,13 @@ The lab architecture demonstrates how Azure AI Speech enables real-time speech t
 
 ## Explanation of Components
 
-1. **Azure AI Speech Resource:** Provides speech services including speech-to-text, real-time translation, and text-to-speech synthesis, enabling multilingual speech processing.
+1. **Azure AI Foundry Project:** Provides the workspace for creating, managing, and deploying AI-powered agents, including access to models and integration with voice features.
 
-1. **Cloud Shell:** A browser-based development environment in the Azure portal used to set up, configure, and run the speech translation application without requiring local tools.
+1. **Voice Live API (Speech Playground):** A service within Azure AI Foundry that enables real-time speech interaction with agents, supporting natural conversation through speech recognition and voice synthesis.
 
-1. **Python Application:** A console app developed in Cloud Shell that integrates with the Speech resource using keys and endpoints to perform speech recognition, translation, and synthesis programmatically.
+1. **Configuration Panel:** Divided into GenAI, Speech, and Avatar sections, it allows customization of the agent’s behavior, voice output, and visual representation.
 
-1. **Audio Files:** Sample .wav files used as input for speech translation and output for synthesized speech, allowing users to test end-to-end functionality.
+1. **Custom Voice Agent:** A generative AI-powered agent that can be configured with different voices, avatars, and response styles to simulate real-world conversational scenarios.
 
 
 # Getting Started with lab
