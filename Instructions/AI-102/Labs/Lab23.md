@@ -32,7 +32,7 @@ In this lab you create an agent in the Azure AI Foundry and explore the Voice Li
 
       ![](../Images/ai23l1.png)    
 
-1. Wait for your project to be created.      
+1. Wait for your project to be created, it may take around 5 minutes.    
 
 1. When prompted, search for `gpt-4.1` **(1)**, then select **gpt-4.1 (2)** model and then **Confirm (3)**.
 
