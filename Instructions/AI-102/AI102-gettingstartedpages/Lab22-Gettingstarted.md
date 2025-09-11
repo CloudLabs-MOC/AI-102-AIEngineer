@@ -4,7 +4,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 22: Develop an audio-enabled chat app
 
-### Overall Estimated Duration: 60 Minutes
+### Overall Estimated Duration: 30 Minutes
 
 ## Overview
 
@@ -48,7 +48,7 @@ The lab architecture demonstrates how Azure AI Foundry enables multimodal intera
 
 ## Architecture Diagram
 
-![](../Images/lab18archdiagram.png)
+![](../Images/lab22archdiagram.png)
 
 ## Explanation of Components
 
@@ -74,23 +74,17 @@ Once you're ready to dive in, your virtual machine and **lab guide** will be rig
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
 
+## Lab Guide Zoom In/Zoom Out
+ 
+To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
+
+![](../Images/zoominai102.png)
+
 ## Exploring Your Lab Resources
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
 ![Explore Lab Resources](../Images/envtab.png)
-
-## Managing Your Virtual Machine
- 
-Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
- 
-![Manage Your Virtual Machine](../Images/resourcetab.png)
-
-## Lab Progress
-
-You can use the **Progress** tab to track your progress while working on the lab. A score will be provided after successful validation.
-
-![](../Images/progresstab.png)
 
 ## Utilizing the Split Window Feature
  
@@ -98,11 +92,17 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 ![Use the Split Window Feature](../Images/splitwindow.png)
 
-## Lab Guide Zoom In/Zoom Out
- 
-To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
+## Lab Progress
 
-![](../Images/zoominai102.png)
+You can use the **Progress** tab to track your progress while working on the lab. A score will be provided after successful validation.
+
+![](../Images/progresstab.png)
+
+## Managing Your Virtual Machine
+ 
+Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
+ 
+![Manage Your Virtual Machine](../Images/resourcetab.png)
 
 ## Let's Get Started with Azure Portal
  

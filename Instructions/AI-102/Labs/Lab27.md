@@ -4,11 +4,7 @@
 
 ## Overview
 
-The Azure AI Custom Vision service lets you build computer vision models tailored to your own dataset. It supports both image classification and object detection, and once trained, models can be published to a prediction endpoint for use in applications.
-
-In this lab, you’ll train an image classification model to distinguish between apples, bananas, and oranges using the Custom Vision service.
-
-Although the lab demonstrates the process with the Python SDK in Azure Cloud Shell, you can also use other language-specific SDKs to build and integrate Custom Vision applications.
+In this hands-on lab, you will learn how to build an image classification solution using Azure AI Custom Vision. You’ll start by creating training and prediction resources in Azure and setting up a Custom Vision project in the portal. Then, you’ll upload images of apples, bananas, and oranges, tag them appropriately, and train a classification model. Next, you’ll test the model with sample images, review its performance metrics, and use the training API in Azure Cloud Shell to automate retraining with additional data. Finally, you’ll publish the trained model, configure a Python client application with your prediction resource, and run the app to classify new images.
 
 ## Lab Objectives 
 
@@ -117,7 +113,7 @@ In this task, you’ll create a Custom Vision project in the Custom Vision porta
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. In the Terms of Service dialog, **select (1)** the agreement box and then click **I agree (2)**.
+1. In the Terms of Service dialog, **check (1)** the agreement box and then click **I agree (2)**.
 
     ![](../Images/l27t2p2.png)
 
@@ -351,11 +347,11 @@ In this task, you’ll write and run Python code to train your Custom Vision mod
 
     ![](../Images/l27t8p2.png)
 
-1. Wait for the program to end. Then return to the browser tab containing the Custom Vision portal, and view the **Training Images** page for your project (refreshing the browser if necessary).
+1. Wait for the program to end. Then return to the browser tab containing the Custom Vision portal, and view the **Training Images** page for your project (refreshing the browser if necessary). Verify that some new tagged images have been added to the project.
 
     ![](../Images/l27t8p3.png)
 
-1. Verify that some new tagged images have been added to the project. Then view the **Performance** page and verify that a new iteration has been created.
+1. Then view the **Performance** page and verify that a new iteration has been created.
 
     ![](../Images/l27t8p4.png)
 
