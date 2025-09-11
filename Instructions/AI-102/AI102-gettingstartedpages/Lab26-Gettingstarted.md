@@ -2,13 +2,13 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 20: Recognize and Synthesize Speech
+# Lab 26: Detect and analyze faces
 
 ### Overall Estimated Timing: 30 Minutes
 
 ## Overview
 
-In this hands-on lab, you'll gain practical experience building a speaking clock with Azure AI Speech. You will provision an Azure AI Speech resource, configure a Python environment in Azure Cloud Shell, and integrate the Speech SDK into a console application. You’ll implement speech-to-text (recognizing spoken input from an audio file) and text-to-speech (generating natural-sounding audio to a .wav file), then enhance expressiveness using Speech Synthesis Markup Language (SSML). By the end of this lab, you’ll be confident creating, configuring, and consuming Azure AI Speech for end-to-end recognition and synthesis scenarios
+In this hands-on lab, you’ll build an end-to-end face detection and analysis solution with Azure AI Face by provisioning the service, capturing its endpoint and key, and—using Azure Cloud Shell cloning a prebuilt Python project configured with the Face SDK to detect faces and extract attributes such as head pose, occlusions (eyes, mouth, forehead), and accessories (e.g., glasses); you’ll then generate annotated images with bounding boxes and download them for verification, leaving you confident in provisioning, authenticating from code, analyzing images programmatically, and validating outputs for responsible, privacy-aware scenarios.
 
 ## Objectives
 
@@ -66,7 +66,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/AI-102-l20-g1.png)
+![Access Your VM and Lab Guide](../Images/ai19g2.png)
 
 ## Lab Guide Zoom In/Zoom Out
  
