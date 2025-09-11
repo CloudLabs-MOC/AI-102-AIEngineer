@@ -8,55 +8,55 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this hands-on lab, you’ll build an end-to-end face detection and analysis solution with Azure AI Face by provisioning the service, capturing its endpoint and key, and—using Azure Cloud Shell cloning a prebuilt Python project configured with the Face SDK to detect faces and extract attributes such as head pose, occlusions (eyes, mouth, forehead), and accessories (e.g., glasses); you’ll then generate annotated images with bounding boxes and download them for verification, leaving you confident in provisioning, authenticating from code, analyzing images programmatically, and validating outputs for responsible, privacy-aware scenarios.
+In this hands-on lab, you’ll build an end-to-end face detection and analysis solution with Azure AI Face by provisioning the service, capturing its endpoint and key, and using Azure Cloud Shell cloning a prebuilt Python project configured with the Face SDK to detect faces and extract attributes such as head pose, occlusions (eyes, mouth, forehead), and accessories (e.g., glasses); you’ll then generate annotated images with bounding boxes and download them for verification, leaving you confident in provisioning, authenticating from code, analyzing images programmatically, and validating outputs for responsible, privacy-aware scenarios.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Provision an Azure AI Speech resource:** You will create the Speech resource in the Azure portal, configure basic settings, and retrieve the key and region required for integration.
+1. **Provision an Azure AI Face resource:** Create the Face resource, and obtain the Endpoint and Key for secure API access.
 
-1. **Set up a development environment in Azure Cloud Shell:** Open Cloud Shell (PowerShell), clone the GitHub repository, create a Python virtual environment, and install dependencies.
+1. **Configure a Python environment in Azure Cloud Shell:** Set up a virtual environment, install dependencies (including the Azure AI Vision Face SDK), and prepare the app configuration.
 
-1. **Configure application settings:** You will update the configuration file with your Azure AI Speech resource key and region, ensuring secure connectivity between your app and the Azure AI Speech service.
+1. **Connect your application to the Face service:** Initialize a FaceClient with your endpoint and key using AzureKeyCredential for authenticated calls.
 
-1. **Integrate and verify the Speech SDK in a Python app:** You will import SDK packages, initialize SpeechConfig, and run the app once to confirm successful connection to the Speech endpoint.
+1. **Detect and analyze faces in images:** Invoke the detect API to identify faces and retrieve attributes such as head pose, occlusions, and accessories.
 
-1. **Recognize speech (speech-to-text):** You will create a SpeechRecognizer to transcribe spoken input from an audio file and handle recognition results.
+1. **Generate and review annotated outputs:** Produce images with bounding boxes around detected faces, download the results, and validate findings alongside console output.
 
-1. **Synthesize speech (text-to-speech) with SSML:** You will create a SpeechSynthesizer to generate a .wav file and apply SSML to control voice selection, pacing, and pauses.
+1. **Test across varied scenarios:** Run the program on single and multi-person images to compare outputs and understand model behavior.
 
 ## Pre-requisites
 
-- Familiarity with Python programming and package management.
+- Familiarity with Python programming.
 
 - Experience working in Azure Cloud Shell and using command-line tools.
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Speech enables real-time speech recognition and synthesis for application integration:
+The lab architecture demonstrates how Azure AI Face exposes a secure endpoint/key for face detection and attribute analysis.
 
-1. **Azure AI Speech Resource:** A managed Cognitive Service that exposes speech-to-text and text-to-speech endpoints (with SSML support). The app authenticates using the resource key and region.
+1. **Azure AI Face Resource & Endpoint:** Managed service exposing Face APIs secured by keys; returns face rectangles and attributes (head pose, occlusions, accessories).
 
-1. **Azure Cloud Shell (PowerShell):** A browser-based environment used to clone the lab repository, manage the Python virtual environment, run the app, and download the generated audio files.
+1. **Azure Cloud Shell:** Browser-based execution environment used to configure the app, manage dependencies, and run the Python client without local setup.
 
-1. **Python Application (speaking-clock):** A console app that uses the Azure AI Speech SDK to initialize SpeechConfig, recognize speech from an input file via SpeechRecognizer, and synthesize audio via SpeechSynthesizer. Configuration is read from a .env file.
+1. **Python Client Application (Face SDK):** Uses FaceClient from the Azure AI Vision Face SDK to call the detect API, log results, and render bounding boxes on output images.
 
-1. **Audio Input & Output:** A sample .wav input file (for recognition) and a generated output.wav file (for synthesis). Because Cloud Shell lacks audio hardware, all speech I/O is file-based.
+1. **Input/Output Images:** Sample images are read from a local folder; annotated results (e.g., detected_faces.jpg) are generated and downloaded for validation.
 
 ## Architecture Diagram
 
-![](../Images/AI-102-l20arch.png)
+![](../Images/AI-102-l26-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Speech Resource:** Provides speech-to-text and text-to-speech services (with SSML support) via region-specific endpoints. The application authenticates using the resource key and region to perform recognition and synthesis.
+1. **Azure AI Face Resource:** Provides face detection and analysis (head pose, occlusions, accessories) through a secure endpoint and key.
 
-1. **Cloud Shell:** A browser-based development environment in the Azure portal used to set up the Python workspace, install dependencies, edit the .env file, run the speaking-clock app, and download the generated audio.
+1. **Azure Cloud Shell:** A browser-based terminal used to configure dependencies, clone the lab repository, edit environment settings, and run the Python app against the Face resource.
 
-1. **Python Application:** A console app that integrates the Azure AI Speech SDK using keys and endpoints to programmatically recognize speech from an input .wav and synthesize natural-sounding output, with SSML to control voice and prosody.
+1. **Azure AI Face SDK (Python):** A client library that authenticates with the Face endpoint, detects faces in images, returns attributes and bounding boxes, and handles responses programmatically.
 
-1. **Audio Files:** Sample .wav files used as input for recognition (e.g., time.wav) and as output for synthesized speech (e.g., output.wav), enabling end-to-end testing in Cloud Shell.
+1. **Python Client Application:** A sample console app that loads the endpoint/key from .env, submits images for analysis, prints detected attributes with details, and generates annotated output images with bounding boxes for download and verification.
 
 # Getting Started with lab
 
@@ -66,7 +66,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/ai19g2.png)
+![Access Your VM and Lab Guide](../Images/AI-102-l26-g1.png)
 
 ## Lab Guide Zoom In/Zoom Out
  

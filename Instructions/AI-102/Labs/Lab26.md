@@ -1,14 +1,46 @@
 # Lab 26: Detect and analyze faces
 
-The ability to detect and analyze human faces is a core AI capability. In this exercise, you'll explore the Face service to work with faces.
+### Estimated Duration: 30 Minutes
+
+## Lab Overview
+
+In this hands-on lab, you’ll build a face detection and analysis solution using Azure AI Face. You’ll provision a Face resource, capture its endpoint/key, and configure the Face SDK in Azure Cloud Shell. You’ll implement and run code to detect faces and extract attributes such as head pose, occlusions, and accessories. You’ll generate annotated images with bounding boxes and review results in the console. By the end, you’ll be able to authenticate securely, analyze faces programmatically, and export results for validation and reporting.
+
+## Lab Objectives
+
+- **Task 1:** Provision an Azure AI Face API resource
+
+- **Task 2:** Develop a facial analysis app with the Face SDK
 
 ### Task 1: Provision an Azure AI Face API resource
 
-1. On the **Azure portal**, select **Create a resource**.
+In this task, you’ll create an Azure AI Face resource, then go to Keys and Endpoint to copy the Endpoint and Key. These credentials will be used later to authenticate SDK calls from your app.
+
+1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
+
+1. If prompted with a sign-in window, kindly sign in using the provided Azure credentials
+
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+        ![](../Images/AI-l16-0.png)
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+        ![](../Images/AIl16-1.png)
+
+1. If prompted to **Stay signed in?**, you can click **No**.
+
+    ![](../Images/AIl16-2.png)
+
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+
+    ![](../Images/AIl16-3.png)
+
+1. On the **Azure portal**, select **+ Create a resource**.
 
    ![](../Images/ai26l1.png)
 
-1. In the search bar, search for `Face`, select **Face**.
+1. In the search bar, search for `Face` **(1)**, select **face (2)**.
 
    ![](../Images/ai26l2.png)
 
@@ -32,6 +64,8 @@ The ability to detect and analyze human faces is a core AI capability. In this e
       ![](../Images/ai26l5.png)  
 
 1. Then select **Create** to provision the resource.
+
+    ![](../Images/AI-102-l26-g2.png)
 
 1. Wait for deployment to complete, and select **Go to resource** to go to the resource group.
 
@@ -61,13 +95,13 @@ In this task, you'll complete a partially implemented client application that us
 
 ### Task 2.1: Prepare the application configuration
 
-1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+In this task, you’ll open Azure Cloud Shell, set up a Python environment, install the Azure AI Vision Face SDK, and add your Endpoint and Key to the app configuration so the SDK can authenticate.
 
-    ![](../Images/ai11l4.png) 
+1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
-1. Selecting a **PowerShell** environment.
+    ![](../Images/AI-l16-69.png)
 
-    ![](../Images/ai11l5.png) 
+    ![](../Images/AI-l16-70.png)
 
 1. On the **Getting started** page,
 
@@ -138,6 +172,8 @@ In this task, you'll complete a partially implemented client application that us
 
 ### Task 2.2: Add code to create a Face API client
 
+In this task, you’ll import the required namespaces and instantiate FaceClient with AzureKeyCredential and your endpoint, enabling secure calls to the Face API from your code.
+
 1. In the cloud shell command line, enter the following command to open the code file for the client application:
 
     ```
@@ -171,6 +207,8 @@ In this task, you'll complete a partially implemented client application that us
      ![](../Images/ai26l15.png)
 
 ### Task 2.3: Add code to detect and analyze faces
+
+In this task, you’ll specify the facial attributes to return (head pose, occlusions, accessories), call the detect API on sample images, review console output, and generate an output image with bounding boxes around detected faces.
 
 1. In the code file for your application, in the **Main** function, find the comment **Specify facial features to be retrieved** and add the following code:
 
@@ -224,9 +262,9 @@ In this task, you'll complete a partially implemented client application that us
 
 3. Examine the code you added to the **Main** function. It analyzes an image file and detects any faces it contains, including attributes for head pose, occlusion, and the presence of accessories such as glasses. Additionally, a function is called to annotate the original image with a bounding box for each detected face.
 
-1. Save your changes using ***CTRL+S*** but keep the code editor open in case you need to fix any typo's.
+1. Save your changes using **CTRL+S** but keep the code editor open in case you need to fix any typo's.
 
-1. Resize the panes so you can see more of the console, then enter the following command to run the program with the argument *images/face1.jpg*:
+1. Resize the panes so you can see more of the console, then enter the following command to run the program with the argument **images/face1.jpg**:
 
     ```
    python analyze-faces.py images/face1.jpg
@@ -260,7 +298,7 @@ In this task, you'll complete a partially implemented client application that us
 
     ![](../Images/ai26l21.png) 
 
-1. Run the program again, this time specifying the parameter *images/face2.jpg* to extract text from the following image:
+1. Run the program again, this time specifying the parameter **images/face2.jpg** to extract text from the following image:
 
      ![](../Images/ai26l24.png) 
 
@@ -305,9 +343,8 @@ In this task, you'll complete a partially implemented client application that us
     ![](../Images/i7.png)  
  
 
+## Summary
 
+In this lab, you built a face detection and analysis solution with Azure AI Face. You provisioned a Face resource, captured its Endpoint and Key, and configured the Face SDK in Azure Cloud Shell. You implemented code to authenticate a FaceClient, detect faces in sample images, and retrieve attributes such as head pose, occlusions, and accessories. You generated annotated images with bounding boxes and reviewed outputs in the console and downloaded files for validation.
 
-
-
-
-
+### You have successfully completed the Hands-on Lab!
