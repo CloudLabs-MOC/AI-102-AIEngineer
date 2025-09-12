@@ -1,16 +1,12 @@
 # Lab 31: Generate images with AI
 
 ### Estimated Duration : 30 Minutes
+
 ## Overview
 
-In this exercise, you use the OpenAI DALL-E generative AI model to generate images. You also use the OpenAI Python SDK to create a simple app to generate images based on your prompts.
+In this lab, you will explore the Azure OpenAI DALL-E model, a generative AI service for image creation. You’ll provision a project in Azure AI Foundry, configure a Python application in Cloud Shell, and connect it with your DALL-E deployment using endpoint and authentication details. You will then enhance the app by writing code to submit descriptive prompts, generate images, and save results locally. By the end of the lab, you will gain hands-on experience in building AI-powered applications that generate and operationalize images using Azure OpenAI DALL-E.
 
 > **Note**: This exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages; which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
-
-While this exercise is based on the OpenAI Python SDK, you can develop AI chat applications using multiple language-specific SDKs; including:
-
-* [OpenAI Projects for Microsoft .NET](https://www.nuget.org/packages/OpenAI)
-* [OpenAI Projects for JavaScript](https://www.npmjs.com/package/openai)
 
 ## Lab Objectives
 
@@ -28,9 +24,7 @@ In this lab, you'll perform the following tasks:
 
 ## Task 1: Choose a model to start a project
 
-An Azure AI *project* provides a collaborative workspace for AI development. Let's start by choosing a model that we want to work with and creating a project to use it in.
-
-> **Note**: AI Foundry projects can be based on an *Azure AI Foundry* resource, which provides access to AI models (including Azure OpenAI), Azure AI services, and other resources for developing AI agents and chat solutions. Alternatively, projects can be based on *AI hub* resources; which include connections to Azure resources for secure storage, compute, and specialized tools. Azure AI Foundry based projects are great for developers who want to manage resources for AI agent or chat app development. AI hub based projects are more suitable for enterprise development teams working on complex AI solutions.
+In this task, you will create a new project in Azure AI Foundry and select the DALL-E model to work with. You will configure the basic project settings.
 
 1.  Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
 
@@ -78,9 +72,19 @@ An Azure AI *project* provides a collaborative workspace for AI development. Let
 
 1. When your project is created, your model will be displayed in the **Models + endpoints** page.
 
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="45811d69-91ca-4c7d-8c01-61977ae4422f" />
+ 
+---      
 ## Task 2: Test the model in the playground
 
-Before creating a client application, let's test the DALL-E model in the playground.
+In this task, you will use the Images playground in Azure AI Foundry to test the DALL-E model by submitting prompts and reviewing generated outputs.
 
 1. In the left navigation pane, select **Playgrounds (1)**. Under **Images playground**, click **Try the Images playground (2)**.
 
@@ -119,7 +123,7 @@ Before creating a client application, let's test the DALL-E model in the playgro
 
 ## Task 3: Create a client application
 
-The model seems to work in the playground. Now you can use the OpenAI SDK to use it in a client application.
+In this task, you will configure a Python client app in Azure Cloud Shell, install dependencies, and connect it with your DALL-E deployment.
 
 ### Prepare the application configuration
 
@@ -185,6 +189,8 @@ The model seems to work in the playground. Now you can use the OpenAI SDK to use
 1. After you've replaced the placeholders, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
 ## Task 4: Write code to connect to your project and chat with your model
+
+In this task, you will extend the client app by writing code that submits prompts, generates images through the DALL-E model, and saves results locally.
 
 > **Tip**: As you add code, be sure to maintain the correct indentation.
 
@@ -253,6 +259,8 @@ The model seems to work in the playground. Now you can use the OpenAI SDK to use
 
 ## Task 5: Run the client application
 
+In this task, you will run the Python app in Cloud Shell, test it with prompts, and download the generated images for verification.
+
 1. In the Cloud Shell command-line pane, enter the following command **(1)** to sign into Azure. Click the **link (2)** displayed in the output and Copy the **code (3)** provided to authenticate.  
 
     ```
@@ -320,12 +328,6 @@ The model seems to work in the playground. Now you can use the OpenAI SDK to use
 
 ## Summary
 
-In this exercise, you used Azure AI Foundry and the Azure OpenAI SDK to create a client application uses a DALL-E model to generate images.
+In this lab, you created a project in Azure AI Foundry and deployed the DALL-E model for image generation. You tested the model in the playground by submitting descriptive prompts and refining outputs. You then built a Python client application in Cloud Shell, connected it to your deployment, and added code to generate and save images. Finally, you ran the app to create and download AI-generated images, gaining hands-on experience in operationalizing generative AI solutions with Azure OpenAI.
 
-## Clean up
-
-If you've finished exploring DALL-E, you should delete the resources you have created in this exercise to avoid incurring unnecessary Azure costs.
-
-1. Return to the browser tab containing the Azure portal (or re-open the [Azure portal](https://portal.azure.com) at `https://portal.azure.com` in a new browser tab) and view the contents of the resource group where you deployed the resources used in this exercise.
-1. On the toolbar, select **Delete resource group**.
-1. Enter the resource group name and confirm that you want to delete it.
+### You have successfully completed the Hands-on Lab!

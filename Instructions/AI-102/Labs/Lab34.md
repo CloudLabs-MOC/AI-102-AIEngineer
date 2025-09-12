@@ -76,6 +76,15 @@ Let's start by creating an Azure AI Foundry project.
 
 1. Wait for your project to be created. This may take approximately **5 minutes**.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="a641dcd6-2684-4dea-9c74-c3bc58891d03" />
+ 
+---      
 ## Task 2: Use the Read model
 
 Let's start by using the **Azure AI Foundry** portal and the Read model to analyze a document with multiple languages:
