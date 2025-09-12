@@ -1,6 +1,6 @@
 # Lab 30: Develop a vision-enabled chat app
 
-### Estimated Duration : 30 Minutes
+### Estimated Duration: 30 Minutes
 
 ## Overview
 
@@ -105,9 +105,13 @@ In this task, you’ll create an Azure AI project in the Azure AI Foundry portal
 
 In this task, you’ll test your Phi-4-multimodal-instruct model deployment in the chat playground. You’ll upload an image of a mango, combine it with a text prompt, and review the model’s response to see how it interprets and reasons over both image and text inputs.
 
-1. Go to **Models + endpoints (1)** under My Assets,click on **Open in playground (2)** on the model deployment page.
+1. Go to **Models + endpoints (1)** under **My Assets**, and select **Phi-4-multimodal-instruct (2)**.
 
-    ![](../Images/l30t2p1.png)
+    ![](../Images/l30t2p1(1).png)
+
+1. Click on **Open in playground** on the **Phi-4-multimodal-instruct** blade. 
+
+    ![](../Images/l30t2p1(2).png)
 
 1. In a new browser tab, open [mango.jpeg](https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg) from `https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg`. Right click on the image and select **Save image as**, to save the image to a folder on your local file system.
 
@@ -139,7 +143,7 @@ In this task, you’ll test your Phi-4-multimodal-instruct model deployment in t
 
 In this task, you’ll create a client application that connects to your Azure AI project. You’ll clone the provided GitHub repo, set up a Python environment in Azure Cloud Shell, install the required libraries, and configure the app with your project’s endpoint and model deployment details. This prepares the client app to interact with your deployed model.
 
-1. On the **[Azure portal](https://portal.azure.com/)** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
+1. On the **[Azure portal](https://portal.azure.com/)** (https://portal.azure.com/) homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
     ![](../Images/l2at2p3.png)
 
@@ -227,10 +231,6 @@ In this task, you’ll extend your client application by writing code to connect
     ![](../Images/l30t4p2.png)
 
     > **Note:** As you add code, be sure to maintain the correct indentation.
-
-1. In the **main** function, under the comment **Get configuration settings**, note that the code loads the project connection string and model deployment name values you defined in the configuration file.
-
-    ![](../Images/l30t4p3.png)
 
 1. In the **main** function, under the comment **Get configuration settings**, note that the code loads the project connection string and model deployment name values you defined in the configuration file.
 
