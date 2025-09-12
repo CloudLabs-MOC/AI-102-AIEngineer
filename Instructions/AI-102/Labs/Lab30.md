@@ -4,9 +4,9 @@
 
 ## Overview
 
-In this lab, you’ll learn how to set up and use Azure AI Foundry to create, deploy, and interact with multimodal AI models that handle both text and image inputs. You’ll start by creating an **Azure AI Foundry hub and project**, then create a **Content Understanding analyzer** via the REST API, and finally build a **Python client application** to consume the analyzer and process business card images.
+In this hands-on lab, you’ll build a vision-enabled chat app using **Azure AI Foundry**. You’ll create a project, deploy the **Phi-4-multimodal-instruct** model, and test it in the **playground** with both text and image inputs. Then, in **Azure Cloud Shell**, you’ll configure a Python client app to connect to your deployed model, extend it to handle URL-based images, and finally enable support for local image files.
 
-The lab demonstrates how to configure the environment, authenticate with Azure, submit image-based requests, handle responses, and extract structured information from analyzed content. While the steps use **Python in Azure Cloud Shell**, the concepts and workflow can be applied with other SDKs or environments to integrate AI services into custom applications.
+By the end, you’ll know how to deploy and use a multimodal model in AI Foundry and integrate it into a custom application for text and image interactions.
 
 ## Lab Objectives
 
