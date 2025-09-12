@@ -10,8 +10,6 @@ In this lab, you will explore the Azure OpenAI DALL-E model, a generative AI ser
 
 ## Lab Objectives
 
-In this lab, you'll perform the following tasks:
-
 - **Task 1:** Choose a model to start a project
 
 - **Task 2:** Test the model in the playground
@@ -100,7 +98,7 @@ In this task, you will use the Images playground in Azure AI Foundry to test the
 
 1. Enter a follow-up prompt such as `Show the robot in a restaurant` **(1)** and click **Generate (2)**.
 
-   ![](../Images/AI-l31-11.png)
+    ![](../Images/AI-l31-11.png)
 
 1. Review the generated image displayed in the **Images playground**. 
 
@@ -113,9 +111,9 @@ In this task, you will use the Images playground in Azure AI Foundry to test the
     ![](../Images/AI-l31-13.1.png) 
 
 1. On the **Entra ID authentication (2)** tab, record the following information from your deployment **(3)**:  
-    * OpenAI Endpoint: 
-    * OpenAI API version: 
-    * Deployment name (model name): 
+    * OpenAI Endpoint 
+    * OpenAI API version 
+    * Deployment name (model name) 
 
       ![](../Images/AI-l31-13-key.png) 
        
@@ -212,43 +210,43 @@ In this task, you will extend the client app by writing code that submits prompt
    import requests
     ```
 
-   ![](../Images/AI-l31-19.png) 
+    ![](../Images/AI-l31-19.png) 
 
 1. In the **main** function, under the comment **Get configuration settings**, note that the code loads the endpoint, API version, and model deployment name values you defined in the configuration file.
 
 1. Under the comment **Initialize the client**, add the following code to connect to your model using the Azure credentials you are currently signed in with:
 
     ```python
-   # Initialize the client
-   token_provider = get_bearer_token_provider(
-       DefaultAzureCredential(exclude_environment_credential=True,
-           exclude_managed_identity_credential=True), 
-       "https://cognitiveservices.azure.com/.default"
-   )
-    
-   client = AzureOpenAI(
-       api_version=api_version,
-       azure_endpoint=endpoint,
-       azure_ad_token_provider=token_provider
-   )
+    # Initialize the client
+    token_provider = get_bearer_token_provider(
+        DefaultAzureCredential(exclude_environment_credential=True,
+            exclude_managed_identity_credential=True), 
+        "https://cognitiveservices.azure.com/.default"
+    )
+        
+    client = AzureOpenAI(
+        api_version=api_version,
+        azure_endpoint=endpoint,
+        azure_ad_token_provider=token_provider
+    )
     ```
 
-    ![](../Images/AI-l31-20.png) 
+     ![](../Images/AI-l31-20.png) 
 
 1. Note that the code includes a loop to allow a user to input a prompt until they enter "quit". Then in the loop section, under the comment **Generate an image**, add the following code to submit the prompt and retrieve the URL for the generated image from your model:
 
     **Python**
 
     ```python
-   # Generate an image
-   result = client.images.generate(
-        model=model_deployment,
-        prompt=input_text,
-        n=1
-    )
+    # Generate an image
+    result = client.images.generate(
+            model=model_deployment,
+            prompt=input_text,
+            n=1
+        )
 
-   json_response = json.loads(result.model_dump_json())
-   image_url = json_response["data"][0]["url"] 
+    json_response = json.loads(result.model_dump_json())
+    image_url = json_response["data"][0]["url"] 
     ```
 
      ![](../Images/AI-l31-21.png) 
@@ -269,9 +267,9 @@ In this task, you will run the Python app in Cloud Shell, test it with prompts, 
     
     ![](../Images/AI-l31-22.png)
    
-    >**Note:** **<font color="red">You must sign into Azure - even though the cloud shell session is already authenticated.</font>**
+    >**Note:** **<font color="black">You must sign into Azure - even though the cloud shell session is already authenticated.</font>**
 
-    >**Note:** In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
+    >**Note:** In most scenarios, just using **az login** will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the **--tenant** parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
 
 1. In the new browser tab, when the **Enter code to allow access window** appears, paste the copied code **(1)** and select **Next (2)**.
 

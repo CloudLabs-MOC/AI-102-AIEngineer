@@ -14,59 +14,55 @@ In this hands-on lab, you’ll gain practical experience in generating images us
 
 By the end of this lab, you will be able to:
 
-1. **Create Custom Vision resources:** Provision both training and prediction resources in Azure to support object detection workflows.
+1. **Create a project in Azure AI Foundry:** Deploy the DALL·E model within a workspace for image generation.
 
-2. **Set up a Custom Vision project:** Create an Object Detection project in the Custom Vision portal and connect it to your training resource.
+2. **Test the model in the playground:** Submit descriptive prompts and refine outputs interactively.
 
-3. **Upload and tag images:** Add fruit images (apples, bananas, oranges), draw bounding boxes, and assign the correct tags for each object.
+3. **Configure a client application in Cloud Shell:** Install dependencies, set environment variables, and authenticate with your deployment.
 
-4. **Use the Training SDK from Cloud Shell:** Configure authentication, clone the repo, and run Python code to programmatically upload tagged images from JSON.
+4. **Extend the application with code:** Use the OpenAI Python SDK to send prompts, generate images, and save them locally.
 
-5. **Train, evaluate, and validate the detector**: Run a training iteration, review Precision, Recall, and mAP metrics, then use Quick Test to verify predicted boxes, labels, and confidence scores.
-
-6. **Publish the best iteration:** Publish the trained model to the prediction resource and obtain the prediction endpoint and key.
-
-7. **Build and run a client application:** Configure a lightweight Python client to call the prediction API and render bounding boxes on test images for end-to-end inference.
+5. **Run and validate the client app:** Generate custom AI images, download the results, and verify successful end-to-end execution.
 
 ## Pre-requisites
 
-* Basic understanding of **computer vision concepts**
-* Familiarity with the **Azure portal**, including how to create and manage resources.
+* Basic understanding of **generative AI concepts**
+
 * Experience using **Azure Cloud Shell** for running Python scripts and managing environments.
 
 * Basic knowledge of **Python programming** and working in a terminal or shell environment.
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Custom Vision enables object detection by combining resource provisioning, model training, and client application integration:
+The lab architecture demonstrates how Azure AI Foundry with Azure OpenAI enables text-to-image generation by combining model deployment, SDK integration, and client application development:
 
-1. **Custom Vision Training and Prediction Resources:** Provision two resources in Azure one for training the object detection model and another for serving predictions (labels, bounding boxes, confidences) through a secure endpoint.
+1. **Azure AI Foundry Project:** Provides a collaborative workspace to deploy the DALL·E model and manage model endpoints.
 
-2. **Custom Vision Portal:** Create and manage an Object Detection project, upload images, draw bounding boxes, tag objects, train iterations, and publish the best model.
+2. **Azure AI Foundry Portal:** Web interface to explore models, test prompts in the playground, and retrieve deployment details.
 
-3. **Azure Cloud Shell:** Configure a development environment to install dependencies, clone the repository, and run Python/SDK scripts for automated data upload, training, and quick testing.
+3. **Azure Cloud Shell:** Browser-based terminal used to install dependencies, configure environment variables, and run Python scripts.
 
-4. **Python Client Application:** Connect to the published prediction resource, submit images, receive detections with labels and confidence scores, and generate annotated output images.
+4. **OpenAI Python SDK:** Provides programmatic access to the DALL·E model for sending prompts and retrieving generated images.
+
+5. **Python Client Application:** A sample app that connects to the deployed model, generates images from prompts, and saves results locally for verification.
 
 ## Architecture Diagram
 
-![](../Images/lab27archdiagram.png)
+![](../Images/AI-102-l31arch.png)
 
 ## Explanation of Components
 
-1. **Custom Vision Training Resource:** Provides the environment to build, train, and manage an object detection model by uploading images and tagging bounding boxes.
+1. **Azure AI Foundry Project:** The central workspace where you deploy the DALL-E model, manage endpoints, and prepare configurations needed for client applications.
 
-2. **Custom Vision Prediction Resource:** Hosts the published model and exposes a secure endpoint and key for serving detections (labels, boxes, confidence scores).
+2. **Deployed Model (DALL-E):** The generative AI model that transforms text prompts into images. It is hosted within the Foundry project and accessed via secure endpoints.
 
-3. **Custom Vision Portal:** Web interface to create Object Detection projects, tag regions, run training iterations, review Precision/Recall/mAP, and publish the best model.
+3. **Images Playground:** An interactive environment in the Foundry portal used to test prompts, view generated outputs, and capture configuration values (endpoint, API version, deployment name).
 
 4. **Azure Cloud Shell:** Browser-based terminal used to install dependencies, clone the lab repo, manage the .env configuration, and run Python/SDK scripts end-to-end.
 
-5. **Azure AI Custom Vision SDK (Training):** Python SDK that authenticates to the training resource to create projects and bulk-upload images with region annotations from JSON.
+5. **OpenAI Python SDK:** A Python library that authenticates with the deployment, sends text prompts to the DALL·E model, and retrieves generated image URLs programmatically.
 
-6. **Azure AI Custom Vision SDK (Prediction):** Python SDK that calls the hosted model and returns predicted bounding boxes, tags, and probabilities for input images.
-
-7. **Python Client Application:** Sample app that invokes the prediction endpoint, parses results, draws boxes/labels, and saves an annotated output image for verification.
+6. **Python Client Application:** A sample app built in Cloud Shell that calls the deployed model through the SDK, processes responses, downloads images, and saves them locally for verification.
 
 # Getting Started with lab
 
@@ -76,7 +72,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/AI-102-l28-g1.png)
+![Access Your VM and Lab Guide](../Images/AI-102-l31-g1.png)
 
 ### Virtual Machine & Lab Guide
  
