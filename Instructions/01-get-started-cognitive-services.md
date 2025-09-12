@@ -81,7 +81,7 @@ Azure AI Services are cloud-based services that encapsulate artificial intellige
 
 1. Click on **Go to resource**.
 
-    ![Visual Studio Code Icon](./images/a-34(1).png)
+    ![Visual Studio Code Icon](./images/a-5(1).png)
 
 1. From the left navigation menu, select **Resource management (1)** and then click **Keys and Endpoint (2)** under. This page contains the information that you will need to connect to your resource and use it from applications you develop. Specifically:
     
