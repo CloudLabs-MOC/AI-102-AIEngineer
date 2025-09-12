@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will explore **Azure AI Foundry** by creating a project and deploying the **gpt-4.1** model. You’ll then build an AI agent, configure its system instructions, and upload a corporate expenses policy document as grounding data. Next, you’ll enable actions such as the code interpreter and test the agent in the playground by asking questions and submitting an expense claim. Finally, you’ll download and review the generated claim file to see how agents can automate real business processes.
+In this hands-on lab, you’ll gain practical experience with **Azure AI Foundry** by creating a project and deploying the **gpt-4.1** model. You’ll then build an AI agent, configure its system instructions, and upload a corporate expenses policy document as grounding data. Next, you’ll enable actions such as the code interpreter and test the agent in the playground by asking questions and submitting an expense claim. Finally, you’ll download and review the generated claim file to observe how AI agents can automate real business processes and streamline workflows.
 
 ## Objectives
 

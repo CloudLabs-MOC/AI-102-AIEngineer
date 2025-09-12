@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will explore Azure AI Foundry by creating a project and deploying the gpt-4.1 model. You’ll review the project’s endpoints and keys to understand how applications connect to deployed models and AI services. Finally, you’ll test the generative AI model in the chat playground by configuring system instructions, sending queries, and reviewing responses to see how the model can be applied in real scenarios.
+In this hands-on lab, you’ll gain practical experience with **Azure AI Foundry** by creating a project and deploying the **gpt-4.1** model. You’ll review the project’s endpoints and keys to understand how applications connect to deployed models and AI services. Next, you’ll test the generative AI model in the chat playground by configuring system instructions, sending queries, and reviewing responses to see how the model can be applied in real-world scenarios.
 
 ## Objectives
 

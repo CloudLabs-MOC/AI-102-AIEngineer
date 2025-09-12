@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will work with **Azure AI Foundry** to design, build, and deploy a prompt flow solution. You’ll begin by creating a project, then construct and configure a flow with system instructions and connect it to a model. You will test the flow in the chat pane using sample prompts to validate its responses and make adjustments as needed. Finally, you’ll deploy the flow as an endpoint, test it directly in the Azure AI Foundry portal, and review connection details that enable integration into client applications. This lab provides practical experience in creating, testing, and deploying prompt flows to deliver generative AI capabilities.
+In this hands-on lab, you’ll gain practical experience with **Azure AI Foundry** by designing, building, and deploying a prompt flow solution. You’ll start by creating a project, then construct and configure a flow with system instructions and connect it to a model. Next, you’ll test the flow in the chat pane using sample prompts, refine responses as needed, and validate its behavior. Finally, you’ll deploy the flow as an endpoint, test it directly in the Azure AI Foundry portal, and review connection details for integrating it into client applications. By the end of the lab, you’ll be proficient in creating, testing, and deploying prompt flows to deliver interactive generative AI capabilities.
 
 ## Objectives
 

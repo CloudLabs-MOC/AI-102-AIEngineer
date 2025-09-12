@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will explore Azure AI Foundry by reviewing and comparing AI models, creating a project, and deploying models such as gpt-4.1 and Phi-4-mini-instruct. You’ll examine model details and benchmarks to understand their capabilities and performance, then test the models in the chat playground by providing system instructions, sending queries, and analyzing responses. Finally, you’ll compare the models to determine their suitability for different tasks and scenarios.
+In this hands-on lab, you’ll gain practical experience with **Azure AI Foundry** by reviewing and comparing AI models. You’ll create a project and deploy models such as **gpt-4.1** and **Phi-4-mini-instruct**, examining their details and benchmarks to understand capabilities and performance. Next, you’ll test the models in the chat playground by configuring system instructions, sending queries, and analyzing responses. By the end of the lab, you’ll have compared the models to evaluate their suitability for different tasks and real-world scenarios.
 
 ## Objectives
 

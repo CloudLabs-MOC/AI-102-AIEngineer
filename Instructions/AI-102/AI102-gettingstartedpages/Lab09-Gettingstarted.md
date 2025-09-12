@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will explore **Azure AI Foundry** by creating a project and deploying the **gpt-4.1** model. You’ll then set up a client application in Azure Cloud Shell, configure it with your project details, and upload a data file for analysis. Next, you’ll build an AI agent that uses the **code interpreter** to analyze the uploaded data, run threads for interactive conversations, and generate responses, visualizations, or statistical metrics. Finally, you’ll test the agent by sending prompts, reviewing its outputs, and observing the conversation history to understand how AI agents can be integrated into custom applications for real-time data analysis.
+In this hands-on lab, you’ll gain practical experience with **Azure AI Foundry** by creating a project and deploying the **gpt-4.1** model. You’ll set up a Python client application in **Azure Cloud Shell**, configure it with your project details, and upload a data file for analysis. Next, you’ll build an AI agent that leverages the **code interpreter** to analyze the data, run interactive conversation threads, and generate responses, visualizations, and statistical metrics. Finally, you’ll test the agent by sending prompts, reviewing outputs, and exploring conversation history to see how AI agents can be integrated into custom applications for real-time data analysis.
 
 ## Objectives
 
