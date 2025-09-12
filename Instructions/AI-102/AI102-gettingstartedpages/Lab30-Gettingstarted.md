@@ -4,7 +4,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 30: Develop a vision-enabled chat app
 
-### Overall Estimated Duration: 45 Minutes
+### Overall Estimated Duration: 30 Minutes
 
 ## Overview
 
