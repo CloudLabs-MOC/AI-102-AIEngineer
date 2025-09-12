@@ -29,7 +29,7 @@ Many commonly used Azure AI services APIs are available in container images. For
 
     ![Visual Studio Code Icon](./images/a-45(1).png)
 
-1. In the **Container instances** blade, Click on **+ Create**.
+1. In the **Container instances** blade, click on **+ Create**.
 
     ![Visual Studio Code Icon](./images/a-45(2).png)
 
@@ -47,19 +47,22 @@ Many commonly used Azure AI services APIs are available in container images. For
         
         - **Image source**: Choose **Other Registry (5)**
         
+            ![Visual Studio Code Icon](./images/a-38.png) 
+
         - **Image type**: **Public (6)**
         
         - **Image**: `mcr.microsoft.com/azure-cognitive-services/textanalytics/language:latest` **(7)**
         
         - **OS type**: **Linux (8)**
         
-        - **Size**: Click on **Change size**, then set **4 vcpu (1), 16 GB memory (2)** and then **Ok (3)**. **(9)**
+        - **Size**: 
+        
+            
+            + Click on **Change size**, then set **4 vcpu (1), 16 GB memory (2)** and then **Ok (3)**. **(9)**
 
-        - Click **Next : Networking > (10)**
+                ![Visual Studio Code Icon](./images/a-49.png) 
 
-          ![Visual Studio Code Icon](./images/a-49.png)        
-
-          ![Visual Studio Code Icon](./images/a-38.png)        
+        - Click **Next : Networking > (10)**       
     
           ![Visual Studio Code Icon](./images/a-39(1).png)       
 

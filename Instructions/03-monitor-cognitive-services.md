@@ -10,8 +10,8 @@ Azure AI Services can be a critical part of an overall application infrastructur
 
 In this lab, you will complete the following tasks:
 
-+ Task 1: Configure an alert
-+ Task 2: Visualize a metric
++ **Task 1:** Configure an alert
++ **Task 2:** Visualize a metric
 
 ## Architecture diagram
 
