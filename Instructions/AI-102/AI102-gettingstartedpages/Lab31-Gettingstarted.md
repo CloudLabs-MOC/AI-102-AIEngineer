@@ -2,7 +2,7 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 31: Generate images with AI
+# Lab 30: Generate images with AI
 
 ### Overall Estimated Duration: 30 Minutes
 

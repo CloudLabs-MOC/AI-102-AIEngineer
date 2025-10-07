@@ -2,7 +2,7 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 18: Extract custom entities
+# Lab 17: Extract custom entities
 
 ### Overall Estimated Duration: 60 Minutes
 
