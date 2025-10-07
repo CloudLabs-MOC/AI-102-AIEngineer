@@ -1,4 +1,4 @@
-# Lab 21: Translate Speech
+# Lab 20: Translate Speech
 
 ### Estimated Duration: 30 Minutes
 

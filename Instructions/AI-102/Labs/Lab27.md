@@ -1,4 +1,4 @@
-# Lab 27: Classify images
+# Lab 26: Classify images
 
 ### Estimated Duration: 45 Minutes
 

@@ -1,4 +1,4 @@
-# Lab 19: Translate Text
+# Lab 18: Translate Text
 
 ### Estimated Duration: 30 Minutes
 

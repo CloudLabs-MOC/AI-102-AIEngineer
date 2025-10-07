@@ -1,5 +1,5 @@
 
-# Lab 14: Analyze Text
+# Lab 13: Analyze Text
 
 ### Estimated Duration : 30 Minutes
 

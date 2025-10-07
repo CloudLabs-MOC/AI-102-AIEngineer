@@ -1,4 +1,4 @@
-# Lab 29: Analyze video
+# Lab 28: Analyze video
 
 ### Estimated Duration: 45 Minutes
 

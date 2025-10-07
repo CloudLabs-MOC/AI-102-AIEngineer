@@ -1,4 +1,4 @@
-# Lab 17: Custom text classification
+# Lab 16: Custom text classification
 
 ### Estimated Duration: 60 Minutes
 

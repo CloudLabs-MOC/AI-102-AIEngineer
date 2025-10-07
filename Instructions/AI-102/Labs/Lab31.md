@@ -1,4 +1,4 @@
-# Lab 31: Generate images with AI
+# Lab 30: Generate images with AI
 
 ### Estimated Duration : 30 Minutes
 

@@ -1,4 +1,4 @@
-# Lab 28: Detect objects in images
+# Lab 27: Detect objects in images
 
 ### Estimated Duration : 45 Minutes
 

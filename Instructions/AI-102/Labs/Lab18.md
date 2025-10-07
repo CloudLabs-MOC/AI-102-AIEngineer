@@ -1,4 +1,4 @@
-# Lab 18: Extract custom entities
+# Lab 17: Extract custom entities
 
 ### Estimated Duration: 45 Minutes
 

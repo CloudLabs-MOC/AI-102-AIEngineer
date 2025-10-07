@@ -1,4 +1,4 @@
-# Lab 09: Develop an AI agent
+# Lab 08: Develop an AI agent
 
 ### Estimated Duration: 30 Minutes
 

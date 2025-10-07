@@ -1,4 +1,4 @@
-# Lab 25: Read text in images
+# Lab 24: Read text in images
 
 ### Estimated Duration: 30 Minutes
 

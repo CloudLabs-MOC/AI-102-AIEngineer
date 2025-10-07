@@ -1,4 +1,4 @@
-# Lab 26: Detect and analyze faces
+# Lab 25: Detect and analyze faces
 
 ### Estimated Duration: 30 Minutes
 

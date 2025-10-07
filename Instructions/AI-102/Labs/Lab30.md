@@ -1,4 +1,4 @@
-# Lab 30: Develop a vision-enabled chat app
+# Lab 29: Develop a vision-enabled chat app
 
 ### Estimated Duration: 30 Minutes
 

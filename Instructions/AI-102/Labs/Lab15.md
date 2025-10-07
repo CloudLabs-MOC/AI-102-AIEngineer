@@ -1,4 +1,4 @@
-# Lab 15: Create a Question Answering Solution
+# Lab 14: Create a Question Answering Solution
 
 ### Estimated Duration: 45 Minutes
 

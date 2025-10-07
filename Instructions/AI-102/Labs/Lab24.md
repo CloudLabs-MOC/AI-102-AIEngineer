@@ -1,4 +1,4 @@
-# Lab 24: Analyze images
+# Lab 23: Analyze images
 
 ### Estimated Duration: 30 Minutes
 

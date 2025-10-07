@@ -1,4 +1,4 @@
-# Lab 12: Develop a multi-agent solution with Semantic Kernel
+# Lab 11: Develop a multi-agent solution with Semantic Kernel
 
 ### Estimated Duration: 30 Minutes
 

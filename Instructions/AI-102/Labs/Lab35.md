@@ -1,4 +1,4 @@
-# Lab 35: Analyze forms with custom Azure AI Document Intelligence models
+# Lab 34: Analyze forms with custom Azure AI Document Intelligence models
 
 ### Estimated Duration : 30 Minutes
 

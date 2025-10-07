@@ -1,4 +1,4 @@
-# Lab 06: Apply content filters to prevent the output of harmful content
+# Lab 05: Apply content filters to prevent the output of harmful content
 
 ### Estimated Duration: 45 Minutes
 

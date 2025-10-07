@@ -1,4 +1,4 @@
-# Lab 23: Explore the Voice Live API
+# Lab 22: Explore the Voice Live API
 
 ### Estimated Duration: 30 Minutes
 

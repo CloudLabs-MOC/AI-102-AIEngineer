@@ -1,5 +1,5 @@
 
-# Lab 20: Recognize and Synthesize Speech
+# Lab 19: Recognize and Synthesize Speech
 
 ### Estimated Duration: 30 Minutes
 

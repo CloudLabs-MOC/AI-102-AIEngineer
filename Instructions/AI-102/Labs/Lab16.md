@@ -1,4 +1,4 @@
-# Lab 16: Create a language understanding model with the Language service
+# Lab 15: Create a language understanding model with the Language service
 
 ### Estimated Duration: 35 Minutes
 

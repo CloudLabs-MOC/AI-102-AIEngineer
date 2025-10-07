@@ -1,4 +1,4 @@
-# Lab 22: Develop an audio-enabled chat app
+# Lab 21: Develop an audio-enabled chat app
 
 ### Estimated Duration : 30 Minutes
 
