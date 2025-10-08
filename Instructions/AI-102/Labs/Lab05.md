@@ -1,4 +1,4 @@
-# Lab 05: Fine-tune a language model
+# Lab 05: Fine-tune a language model (Removed)
 
 ### Estimated Duration: 60 Minutes
 
@@ -316,6 +316,7 @@ In this task, you'll test your deployed fine-tuned model in the playground. You'
 In this lab, you learned how to fine-tune a GPT-4.1 model using Azure AI Foundry. You deployed a base model, prepared and uploaded a training dataset, and initiated a fine-tuning job. After the fine-tuned model was deployed, you tested it against the base model to compare performance, observing improvements in response style, consistency, and relevance for a travel chat application. The lab provided practical experience in customizing AI behavior and deploying models tailored to specific conversational scenarios.
 
 ### You have successfully completed the Hands-on Lab!
+
 
 
 
