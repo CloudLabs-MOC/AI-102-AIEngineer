@@ -12,49 +12,18 @@ In this exercise, you'll use the Microsoft Bot Framework SDK to create and deplo
 
 In this lab, you will complete the following tasks:
 
-+ **Task 1:** Update the Bot Framework Emulator
-+ **Task 2:** Open the cloned repository for this course
-+ **Task 3:** Create a bot
-+ **Task 4:** Test the bot in the Bot Framework Emulator
-+ **Task 5:** Modify the bot code
+
++ **Task 1:** Open the cloned repository for this course
++ **Task 2:** Create a bot
++ **Task 3:** Test the bot in the Bot Framework Emulator
++ **Task 4:** Modify the bot code
 
 ## Architecture diagram
 
 ![](./images/mod7-ex1-dia.png)
 
-## Task 1: Update the Bot Framework Emulator
 
-In this task, you will learn how to update the Bot Framework Emulator to the latest version for improved performance and compatibility.
-
-You're going to use the Bot Framework SDK to create your bot, and the Bot Framework Emulator to test it. The Bot Framework Emulator is updated regularly, so let's make sure you have the latest version installed.
-
-> **Note:** Updates may include changes to the user interface that affect the instructions in this exercise.
-
-1. Open an edge browser, copy and paste this link, `https://github.com/microsoft/BotFramework-Emulator/releases/download/v4.15.1/BotFramework-Emulator-4.15.1-windows-setup.exe`, and download the **Bot Framework Emulator**.
-
-1. Click on **Open file** to start installation.
-
-    ![](./images/botframe1(1).png)
-
-1. On the **Choose Installation option** page click on **Next**.
-
-    ![](./images/botframe1(2).png)
-
-1. On the **Choose Install Location** page click on **Install** then click on **Finish**.
-
-   ![Visual Studio Code Icon](./images/14.18.png)
-
-1. Click on **Finish** to start the **Bot Framework Emulator**, and if you are prompted to install an update, do so for the currently logged-in user. If you are not prompted automatically, use the **Check for update** option on the **Help** menu to check for updates.
-
-    ![](./images/botframe1(3).png)
-
-    >**Note:** If **Help us improve?** pop-ups, select **Not now**.
-
-    ![](./images/botframe1(4).png)
-    
-1. After installing any available update, close the Bot Framework Emulator until you need it again later.
-
-## Task 2: Open the cloned repository for this course
+## Task 1: Open the cloned repository for this course
 
 In this task, you will learn how to open the cloned repository for this course.
 
@@ -72,7 +41,7 @@ In this task, you will learn how to open the cloned repository for this course.
 
     > **Note:** If you are prompted to add required assets to build and debug, select **Not Now**.
 
-## Task 3: Create a bot
+## Task 2: Create a bot
 
 In this task, you will learn how to create a bot.
 
@@ -108,7 +77,7 @@ Right-click the folder for your **C-Sharp** language and **Open in Integrated Te
 
     ![](./images/botframe1(9).png)
 
-## Task 4: Test the bot in the Bot Framework Emulator
+## Task 3: Test the bot in the Bot Framework Emulator
 
 In this task, you will learn how to test the bot in the Bot Framework Emulator.
 
@@ -161,7 +130,7 @@ You've created a bot based on the *EchoBot* template. Now you can run it locally
 
     ![](./images/ai6.png)
 
-## Task 5: Modify the bot code
+## Task 4: Modify the bot code
 
 In this task, you will learn how to modify the bot code.
 
@@ -242,7 +211,6 @@ You've created a bot that echoes the user's input back to them. It's not particu
 
 In this lab, you have completed:
 
-+ Updated the Bot Framework Emulator
 + Opened the cloned repository for this course
 + Created a bot
 + Tested the bot in the Bot Framework Emulator
