@@ -83,7 +83,7 @@ Right-click the folder for your **C-Sharp** language and **Open in Integrated Te
 
     ![](./images/botframe1(7).png)
 
-1. In the terminal, run the following commands to install the bot templates and packages you need:
+1. In the terminal, run the following commands to install the bot templates and packages you need, press **Enter** after the last command.
 
     ```
     dotnet new -i Microsoft.Bot.Framework.CSharp.EchoBot
@@ -124,20 +124,42 @@ You've created a bot based on the *EchoBot* template. Now you can run it locally
 
     >**Note:** When the bot starts, note that the endpoint at which it is running is shown. This should be similar to  **http://localhost:3978**.
 
-2. Start the **Bot Framework Emulator** by double-clicking on the icon on the desktop.
+1. `Ctrl+click` on the **http://localhost:3978** link.
+
+    ![](./images/botframe1(10).png)
+
+1. Click on **Download the Emulator**.
+
+    ![](./images/ai1.png)
+
+1. Click on `BotFramework-Emulator-4.5.2-windows-setup.exe` to download the file.
+
+    ![](./images/ai2.png)
+
+1. Navigate to **Downloads (1)**, select **Open File (2)** to install the downloaded Bot Emulator framework.
+
+    ![](./images/ai3.png)
+
+1. Wait for the installtion to complete, **Bot Framework Emulator** window will appear.
+
+1. **Close** the Update available pop up.
+
+    ![](./images/ai5.png)
 
 1. Select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
 
      ![Visual Studio Code Icon](./images/botframe1(11).png)
     
 
-3. After the conversation is opened in a **Live chat** pane, wait for the message *Hello and welcome!*.
+1. After the conversation is opened in a **Live chat** pane, wait for the message *Hello and welcome!*.
 
-4. Enter a message such as `Hello` and view the response from the bot, which should echo back the message you entered.
+1. Enter a message such as `Hello` and view the response from the bot, which should echo back the message you entered.
 
     ![Visual Studio Code Icon](./images/openchat.png)
 
-5. Close the Bot Framework Emulator and return to Visual Studio Code, then in the terminal window, enter **CTRL+C** to stop the bot.
+1. Close the **Bot Framework Emulator** and return to **Visual Studio Code**, then in the terminal window, enter **CTRL+C** to stop the bot.
+
+    ![](./images/ai6.png)
 
 ## Task 5: Modify the bot code
 
@@ -146,34 +168,14 @@ In this task, you will learn how to modify the bot code.
 You've created a bot that echoes the user's input back to them. It's not particularly useful, but it serves to illustrate the basic flow of a conversational dialog. A conversation with a bot consists of a sequence of *activities*, in which text, graphics, or user interface *cards* are used to exchange information. The bot begins the conversation with a greeting, which is the result of a *conversation update* activity that is triggered when a user initializes a chat session with the bot. Then the conversation consists of a sequence of further activities in which the user and bot take turns to send *messages*.
 
 1. In Visual Studio Code, open the following code file for your bot:
-    
+
     - **C-Sharp:** `TimeBot/Bots/EchoBot.cs`
 
-        >**Note:** The code in this file consists of *activity handler* functions; one for the *Member Added* conversation update activity (when someone joins the chat session) and another for the *Message* activity (when a message is received). The conversation is based on the concept of *turns*, in which each turn represents an interaction in which the bot receives, processes, and responds to an activity. The *turn context* is used to track information about the activity being processed in the current turn.
+      ![](./images/ai8.png)    
 
-2. At the top of the code file, add the following namespace import statement:
+       >**Note:** The code in this file consists of *activity handler* functions; one for the *Member Added* conversation update activity (when someone joins the chat session) and another for the *Message* activity (when a message is received). The conversation is based on the concept of *turns*, in which each turn represents an interaction in which the bot receives, processes, and responds to an activity. The *turn context* is used to track information about the activity being processed in the current turn.
 
-    ```C#
-    using System;
-    ```
-
-3. Modify the activity handler function for the *Message* activity to match the following code:
-
-    ```C#
-    protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
-    {
-        string inputMessage = turnContext.Activity.Text;
-        string responseMessage = "Ask me what the time is.";
-        if (inputMessage.ToLower().StartsWith("what") && inputMessage.ToLower().Contains("time"))
-        {
-            var now = DateTime.Now;
-            responseMessage = "The time is " + now.Hour.ToString() + ":" + now.Minute.ToString("D2");
-        }
-        await turnContext.SendActivityAsync(MessageFactory.Text(responseMessage, responseMessage), cancellationToken);
-    }
-    ```
-
-4. The code looks similar to this:
+1. Replace the whole existing code with the following code:
 
     ```C#
     // Generated with EchoBot .NET Template version v4.22.0
@@ -205,13 +207,19 @@ You've created a bot that echoes the user's input back to them. It's not particu
 
     ![](./images/botframe1(13).png)
 
-5. Save your changes, and then in the terminal pane, ensure that the current directory is the **TimeBot** folder containing your bot code files, and then enter the following command to start your bot running locally.
+1. Save your changes, and then in the terminal pane, ensure that the current directory is the **TimeBot** folder containing your bot code files, and then enter the following command to start your bot running locally.
 
     ```
     dotnet run
     ```
 
-    >**Note:** As before, when the bot starts, note that the endpoint at which it is running is shown.
+     ![](./images/ai7.png)    
+
+     >**Note:** As before, when the bot starts, note that the endpoint at which it is running is shown.
+
+1. Navigate to **Downloads (1)**, select **Open File (2)** to open Bot Emulator framework.
+
+    ![](./images/ai3.png)     
 
 6. Start the Bot Framework Emulator, and select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
 
