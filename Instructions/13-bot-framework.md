@@ -20,7 +20,7 @@ In this lab, you will complete the following tasks:
 
 ## Architecture diagram
 
-![](./images/mod7-ex1-dia.png)
+![](./images/ai9.png)
 
 
 ## Task 1: Open the cloned repository for this course
