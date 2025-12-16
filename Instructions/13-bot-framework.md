@@ -188,24 +188,29 @@ You've created a bot that echoes the user's input back to them. It's not particu
 
 1. Navigate to **Downloads (1)**, select **Open File (2)** to open Bot Emulator framework.
 
-    ![](./images/ai3.png)     
+    ![](./images/ai3.png)
 
-6. Start the Bot Framework Emulator, and select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
+1. Wait for the installtion to complete, **Bot Framework Emulator** window will appear.
+
+1. **Close** the Update available pop up.
+
+    ![](./images/ai5.png)    
+
+1. Start the Bot Framework Emulator, and select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
 
      ![Visual Studio Code Icon](./images/botframe1(11).png)
 
-7. After the conversation is opened in a **Live chat** pane, enter a message such as **`Hello`** and view the response from the bot, which should be **Ask me what the time is**.
+1. After the conversation is opened in a **Live chat** pane, enter a message such as **`Hello`** and view the response from the bot, which should be **Ask me what the time is**.
 
     ![](./images/botframe1(14).png)
 
-
-8. Enter **`What is the time?`** and view the response.
+1. Enter **`What is the time?`** and view the response.
 
     ![](./images/botframe1(15).png)
 
     >**Note:** The bot now responds to the query "What is the time?" by displaying the local time where the bot is running. For any other query, it prompts the user to ask it what the time is. This is a very limited bot, which could be improved through integration with the Language Understanding service and additional custom code, but it serves as a working example of how you can build a solution with the Bot Framework SDK by extending a bot created from a template.
 
-9. Close the Bot Framework Emulator and return to Visual Studio Code, then in the terminal window, enter **CTRL+C** to stop the bot.
+1. Close the Bot Framework Emulator and return to Visual Studio Code, then in the terminal window, enter **CTRL+C** to stop the bot.
 
 ## Summary
 

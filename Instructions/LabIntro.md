@@ -116,14 +116,13 @@ Feel free to **start, stop, or restart (2)** your virtual machine as needed from
 
        ![ws name.](./images/gg6.png)     
 
-
 1. Tap on **Finish** in the Mobile Device.
 
     >**NOTE:** While logging in again, enter the digits displayed on the screen in the **Authenticator app** and click on Yes.
 
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Cancel"** to skip the tour.
 
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab 
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab. 
  
 ## Support Contact
 
