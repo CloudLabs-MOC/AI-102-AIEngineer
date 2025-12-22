@@ -4,23 +4,23 @@
     "Language": "English",
     "Files": [
 	    {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/instructions/MSSPL/gettingstarted.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/Instructions/MSSPL/gettingstarted.md",
         "Order": 1
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/instructions/MSSPL/Lab01.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/Instructions/MSSPL/Lab01.md",
         "Order": 2
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/instructions/MSSPL/Lab02.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/Instructions/MSSPL/Lab02.md",
         "Order": 3
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/instructions/MSSPL/Lab03.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/Instructions/MSSPL/Lab03.md",
         "Order": 4
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/instructions/MSSPL/Lab04.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/ms-innovation/Instructions/MSSPL/Lab04.md",
         "Order": 5
       }
     ]
