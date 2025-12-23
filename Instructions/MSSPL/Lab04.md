@@ -75,11 +75,7 @@ In this task, you will set up Azure Cloud Shell, configure the environment, and 
 
     ![](../AI-102/Images/ai11l5.png) 
 
-1. On the **Getting started** page,
-
-    - Select **No storage account required (1)** 
-    - Select your subscription **(2)**
-    - Click on **Apply (3)**
+1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
       ![](../AI-102/Images/ai11l6.png) 
 
@@ -275,3 +271,7 @@ In this task, you will update the Python application to use the Azure AI Transla
 In this lab, you provisioned an Azure AI Translator resource and configured it for use. You prepared a development environment in Azure Cloud Shell, set up configuration files, and updated a Python application with the Azure AI Translator SDK. You then ran the app to translate text between multiple languages, gaining hands-on experience with building and testing a translation solution using Azure AI Translator.
 
 ### You have successfully completed the Hands-on Lab!
+
+### Conclusion
+
+This lab provided hands-on experience with key **Azure AI services**, enabling participants to integrate **image analysis, object detection, face recognition, and text translation** into applications. By leveraging these services, you have learned how to quickly build scalable, AI-powered solutions to solve real-world problems with minimal complexity.

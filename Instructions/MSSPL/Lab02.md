@@ -46,19 +46,20 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
     - **Training pricing tier**: **Free (F0) (6)**
     - **Prediction pricing tier**: **Free (F0) (7)**
 
-      ![](../AI-102/Images/AI-l28-3.png)
+      ![](../MSSPL/images/Lab02/L2T1S4.png)
 
-      ![](./AI-102./Images/AI-l28-4.png)
+      ![](../MSSPL/images/Lab02/L2T1S4i.png)
+
 
 1. On the **Review + create** tab, click **Create** to provision the resource.
 
-    ![](../AI-102/Images/AI-l28-5.png)
+    ![](../MSSPL/images/Lab02/L2T1S5.png)
    
 1. Wait for the deployment to finish, then check the deployment details and select **Go to resource group** to view them. You should see two custom vision resources, one for training, and another for prediction.
 
-    ![](../AI-102/Images/AI-l28-6.png)
+    ![](../MSSPL/images/Lab02/L2T1S6.png)
 
-    ![](../AI-102/Images/AI-l28-7.png)
+    ![](../MSSPL/images/Lab02/L2T1S6I.png)
 
     > **Note**: Each resource has its own **endpoint** and **keys**, which are used to manage access from your code. To train an image classification model, your code must use the **training** resource (with its endpoint and key); and to use the trained model to predict image classes, your code must use the **prediction** resource (with its endpoint and key).
 
@@ -127,10 +128,11 @@ In this task, you’ll upload sample fruit images and draw bounding boxes around
 
 1. Click the **Downloads (1)** icon in the browser and then click the **Folder (2)** icon to open the downloaded file location.  
     
-    ![](../AI-102/AI-102/Images/AI-l28-12.1.png)
+    ![](../AI-102/Images/AI-l28-12.1.png)
+
 1. In the **Downloads** folder, right-click the **training-images (1)** file and select **Extract All (2)**.  
 
-    ![](../AI-102/Images/AI-l28-12.2.png)
+    ![](../MSSPL/images/Lab02/L2T3S3.png)
 
 1. On the **Extract Compressed (Zipped) Folders** window, click **Extract** to unzip the files.  
 
@@ -146,7 +148,7 @@ In this task, you’ll upload sample fruit images and draw bounding boxes around
 
 1. On the **Image upload** preview screen, review the selected images and click **Upload 10 files**.  
 
-    ![](../AI-102/Images/AI-l28-15.png)
+    ![](../MSSPL/images/Lab02/L2T3S7.png)
 
 1. Once the upload is complete, a confirmation message appears. Click **Done** to finish.  
 
@@ -186,7 +188,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
  
 1. On the right, under **Resources**, copy the **Key** and **Endpoint (2)** values to a Notepad file for later use. These are the details for the **training** resource.  
 
-    ![](../AI-102/Images/AI-l28-22.png)
+   ![](../MSSPL/images/Lab02/L2T4S3.png)
 
     > **Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)**, where you will find **Key 1 (2)**, and the **Endpoint (4)**.  
 
@@ -194,11 +196,13 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
 1. Return to the browser tab containing the Azure portal (keeping the Custom Vision portal tab open you'll return to it later).
 
-1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
+1. Use the **[>_]** button located to the right of the **Copilot** tab at the top of the page, to create a new **Cloud Shell** in the Azure portal.
 
-    ![](../AI-102/Images/AI-l16-69.png)
+    ![](../MSSPL/images/Lab01/L1T2.1S1.png) 
 
-    ![](../AI-102/Images/AI-l16-70.png)
+1. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell**.
+
+    ![](../AI-102/Images/ai11l5.png)
 
     > **Note**: If you have previously created a cloud shell that uses a **Bash** environment, switch it to **PowerShell**.
 
@@ -437,6 +441,6 @@ In this task, you’ll configure a lightweight Python client to call the predict
 
 In this lab, you built an end-to-end object detection workflow with Azure AI Custom Vision. You provisioned dedicated Training and Prediction resources, created an Object Detection project, prepared data by uploading and tagging images, trained/evaluated a model, published the best iteration, and invoked it from a lightweight Python client to draw bounding boxes on a test image.
 
-Now, click on **Next >>** from the lower right corner to move on to the next exercise.
+## Click on **Next >>** from the lower right corner to move on to the next exercise.
 
 ![](../MSSPL/images/next.png)

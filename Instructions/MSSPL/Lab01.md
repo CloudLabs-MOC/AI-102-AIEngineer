@@ -79,11 +79,7 @@ In this task, you will set up your development environment in Azure Cloud Shell 
 
     ![](../AI-102/Images/ai11l5.png) 
 
-1. On the **Getting started** page,
-
-    - Select **No storage account required (1)** 
-    - Select your subscription **(2)**
-    - Click on **Apply (3)**
+1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
       ![](../AI-102/Images/ai11l6.png) 
 
@@ -398,7 +394,7 @@ In this task, you will update the application to detect and locate people in ima
 
 In this lab, you provisioned an Azure AI Vision resource and configured it in Azure Cloud Shell. You updated a Python application to integrate with the Vision SDK, enabling image analysis capabilities. You implemented features to generate captions, suggest tags, detect and locate objects, and identify people in images, gaining hands-on experience with building and testing a computer vision solution using Azure AI Vision.
 
-Now, click on **Next >>** from the lower right corner to move on to the next exercise.
+## Click on **Next >>** from the lower right corner to move on to the next exercise.
 
 ![](../MSSPL/images/next.png)
 

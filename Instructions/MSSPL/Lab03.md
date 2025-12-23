@@ -75,7 +75,6 @@ In this task, you'll complete a partially implemented client application that us
 
 In this task, you’ll open Azure Cloud Shell, set up a Python environment, install the Azure AI Vision Face SDK, and add your Endpoint and Key to the app configuration so the SDK can authenticate.
 
-
 1. Use the **[>_]** button located to the right of the **Copilot** tab at the top of the page, to create a new **Cloud Shell** in the Azure portal.
 
     ![](../MSSPL/images/Lab01/L1T2.1S1.png) 
@@ -84,11 +83,7 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
 
     ![](../AI-102/Images/ai11l5.png) 
 
-1. On the **Getting started** page,
-
-    - Select **No storage account required (1)** 
-    - Select your subscription **(2)**
-    - Click on **Apply (3)**
+1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
       ![](../AI-102/Images/ai11l6.png) 
 
@@ -332,6 +327,6 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
 
 In this lab, you built a face detection and analysis solution with Azure AI Face. You provisioned a Face resource, captured its Endpoint and Key, and configured the Face SDK in Azure Cloud Shell. You implemented code to authenticate a FaceClient, detect faces in sample images, and retrieve attributes such as head pose, occlusions, and accessories. You generated annotated images with bounding boxes and reviewed outputs in the console and downloaded files for validation.
 
-Now, click on **Next >>** from the lower right corner to move on to the next exercise.
+## Click on **Next >>** from the lower right corner to move on to the next exercise.
 
 ![](../MSSPL/images/next.png)
