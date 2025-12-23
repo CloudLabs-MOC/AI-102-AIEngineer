@@ -28,38 +28,20 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
-1. If prompted with a sign-in window, kindly sign in using the provided Azure credentials
-
-    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-
-        ![](../AI-102/Images/AI-l16-0.png)
-
-    - **Password:** <inject key="AzureAdUserPassword"></inject>
-
-        ![](../AI-102/Images/AIl16-1.png)
-
-1. If prompted to **Stay signed in?**, you can click **No**.
-
-    ![](../AI-102/Images/AIl16-2.png)
-
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
-
-    ![](../AI-102/Images/AIl16-3.png)
-
 1. Open the **Azure portal**, search for **Custom Vision (1)** and select **Custom Vision (2)** from the services.
 
-    ![](../AI-102/Images/AI-l28-1.png)
+    ![](../MSSPL/images/Lab02/L2T1S1.png)
 
-1. On **AI Foundry | Custom Vision** blade, select **Custom Vision (1)** and click on **+ Create (2)**.
+1. On **Microsoft Foundry | Custom Vision** blade, select **Custom Vision (1)** and click on **+ Create (2)**.
 
-    ![](../AI-102/Images/AI-l28-2.png)
+    ![](../MSSPL/images/Lab02/L2T1S2.png)
 
 1. In the Basics tab of **Create Custom Vision**, follow these instructions to fill out the properties, then select **Review + create (8)**:
 
-    - **Create options**: **Both (1)**
-    - **Subscription**: **Default Subscription (2)**
-    - **Resource group**: **AI-102-RG28 (3)**
-    - **Region**: **<inject key="Region"></inject> (4)**
+    - **Create options**: Opt for **Both (1)**
+    - **Subscription**: Select **Default Subscription (2)**
+     - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Region**: Select **<inject key="Region"></inject> (4)**
     - **Name**: **customvision<inject key="DeploymentID"></inject> (5)**
     - **Training pricing tier**: **Free (F0) (6)**
     - **Prediction pricing tier**: **Free (F0) (7)**
@@ -455,4 +437,6 @@ In this task, you’ll configure a lightweight Python client to call the predict
 
 In this lab, you built an end-to-end object detection workflow with Azure AI Custom Vision. You provisioned dedicated Training and Prediction resources, created an Object Detection project, prepared data by uploading and tagging images, trained/evaluated a model, published the best iteration, and invoked it from a lightweight Python client to draw bounding boxes on a test image.
 
-### You have successfully completed the Hands-on Lab!
+Now, click on **Next >>** from the lower right corner to move on to the next exercise.
+
+![](../MSSPL/images/next.png)

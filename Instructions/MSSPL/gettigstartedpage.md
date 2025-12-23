@@ -128,6 +128,6 @@ Learner Support Contacts:
 
 Now, click on **Next** from the lower right corner to move on to the next page.
 
-![Create storage by clicking confirm.](../media/gg3.png)
+![](../MSSPL/images/next.png)
 
 ## Happy Learning!!

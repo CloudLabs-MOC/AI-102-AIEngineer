@@ -16,64 +16,42 @@ In this hands-on lab, you’ll build a face detection and analysis solution usin
 
 In this task, you’ll create an Azure AI Face resource, then go to Keys and Endpoint to copy the Endpoint and Key. These credentials will be used later to authenticate SDK calls from your app.
 
-1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
-
-1. If prompted with a sign-in window, kindly sign in using the provided Azure credentials
-
-    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-
-        ![](../AI-102/Images/AI-l16-0.png)
-
-    - **Password:** <inject key="AzureAdUserPassword"></inject>
-
-        ![](../AI-102/Images/AIl16-1.png)
-
-1. If prompted to **Stay signed in?**, you can click **No**.
-
-    ![](../AI-102/Images/AIl16-2.png)
-
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
-
-    ![](../AI-102/Images/AIl16-3.png)
+1. Navigate to the Azure portal at `https://portal.azure.com`, 
 
 1. On the **Azure portal**, select **+ Create a resource**.
 
-   ![](../AI-102/Images/ai26l1.png)
+   ![](../MSSPL/images/Lab03/L3T1S2.png)
 
 1. In the search bar, search for `Face` **(1)**, select **face (2)**.
 
-   ![](../AI-102/Images/ai26l2.png)
+   ![](../MSSPL/images/Lab03/L3T1S3.png)
 
-1. Select **Face** resource from the Marketplace.
+1. Locate **Face (1)** resource from the Marketplace, click on **Create (2)** and select on **Face (3)**
 
-   ![](../AI-102/Images/ai26l3.png)
-
-1. Select **Create**.
-
-   ![](../AI-102/Images/ai26l4.png)
+    ![](../MSSPL/images/Lab03/L3T1S4.png)
 
 1. Create the resource with the following settings:
 
     - **Subscription**: Leave your default Azure subscription **(1)**
-    - **Resource group**: Select **AI-102-RG24 (2)**
+    - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (2)**
     - Region: Select **<inject key="Region" enableCopy="false" /> (3)**
     - Name: Enter **face<inject key="DeploymentID" enableCopy="false"/> (4)**
     - **Pricing tier**: Select **F0 (5)** 
     - Select **Review + create (6)**
 
-      ![](../AI-102/Images/ai26l5.png)  
+      ![](../MSSPL/images/Lab03/L3T1S5.png)  
 
 1. Then select **Create** to provision the resource.
 
-    ![](../AI-102/Images/AI-102-l26-g2.png)
+    ![](../MSSPL/images/Lab03/L3T1S6.png)
 
 1. Wait for deployment to complete, and select **Go to resource** to go to the resource group.
 
-   ![](../AI-102/Images/ai26l6.png)
+    ![](../MSSPL/images/Lab03/L3T1S7.png)
 
 1. Select the Face resource **face<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../AI-102/Images/ai26l7.png)
+   ![](../MSSPL/images/Lab03/L3T1S7.png)
 
 1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Endpoint(3)**. You will need the information on this page later in the lab.
 
@@ -97,11 +75,14 @@ In this task, you'll complete a partially implemented client application that us
 
 In this task, you’ll open Azure Cloud Shell, set up a Python environment, install the Azure AI Vision Face SDK, and add your Endpoint and Key to the app configuration so the SDK can authenticate.
 
-1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
-    ![](../AI-102/Images/AI-l16-69.png)
+1. Use the **[>_]** button located to the right of the **Copilot** tab at the top of the page, to create a new **Cloud Shell** in the Azure portal.
 
-    ![](../AI-102/Images/AI-l16-70.png)
+    ![](../MSSPL/images/Lab01/L1T2.1S1.png) 
+
+1. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell**.
+
+    ![](../AI-102/Images/ai11l5.png) 
 
 1. On the **Getting started** page,
 
@@ -141,7 +122,7 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
    ls -a -l
     ```
 
-     ![](../AI-102/Images/ai26l10.png)     
+     ![](../MSSPL/images/Lab03/L3T2.1S6.png)     
 
       The folder contains application configuration and code files for your app. It also contains an **/images** subfolder, which contains some image files for your app to analyze.
 
@@ -159,13 +140,13 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
    code .env
     ```
 
-     ![](../AI-102/Images/ai26l11.png)     
+     ![](../MSSPL/images/Lab03/L3T2.1S9.png)     
 
      The file is opened in a code editor.
 
 1. In the code file, update the configuration values it contains to reflect the **endpoint (1)** and an authentication **key (2)** for your Face resource (copied from its **Keys and Endpoint** page in `Task 1`).
 
-    ![](../AI-102/Images/ai26l12.png) 
+    ![](../MSSPL/images/Lab03/L3T2.1S10.png)  
 
 1. After you've replaced the placeholders, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
@@ -288,7 +269,7 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
 
     - The download command creates a popup link at the bottom right of your browser, which you can select to download and open the file **(2)**
 
-      ![](../AI-102/Images/ai26l19.png)     
+        ![](../MSSPL/images/Lab03/L3T2.3S8.png)    
 
 1. Open the file.
 
@@ -318,7 +299,11 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
    download detected_faces.jpg
     ```
 
-    The resulting image should look like this:
+    - The download command creates a popup link at the bottom right of your browser, which you can select to download and open the file **(2)**
+
+        ![](../MSSPL/images/Lab03/L3T2.3S13.png)
+
+1. The resulting image should look like this:
 
     ![](../AI-102/Images/i5.png) 
 
@@ -347,4 +332,6 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
 
 In this lab, you built a face detection and analysis solution with Azure AI Face. You provisioned a Face resource, captured its Endpoint and Key, and configured the Face SDK in Azure Cloud Shell. You implemented code to authenticate a FaceClient, detect faces in sample images, and retrieve attributes such as head pose, occlusions, and accessories. You generated annotated images with bounding boxes and reviewed outputs in the console and downloaded files for validation.
 
-### You have successfully completed the Hands-on Lab!
+Now, click on **Next >>** from the lower right corner to move on to the next exercise.
+
+![](../MSSPL/images/next.png)
