@@ -19,32 +19,34 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
 
 1. On the Azure portal, search for **Translators (1)** then select **Translators (2)** from the results.
 
-   ![](../AI-102/Images/ai19l1.png) 
+   ![](../MSSPL/images/Lab04/L4T1S1.png)  
 
-1. Select **+ Create**.
+1. On **Microsoft Foundry | Translators(1)** page, Select **+ Create (2)**.
 
-   ![](../AI-102/Images/ai19l2.png) 
+   ![](../MSSPL/images/Lab04/L4T1S2.png) 
 
 1. Create a resource with the following settings:
 
     - **Subscription**: Leave your default Azure subscription **(1)**
-    - **Resource group**: Select **AI-102-RG19 (2)**
+    - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (2)**
     - Region: Select **<inject key="Region" enableCopy="false" /> (3)**
     - Name: Enter **Translator<inject key="DeploymentID" enableCopy="false"/> (4)**
     - **Pricing tier**: Select **F0 (5)** (*free*), or **S** (*standard*) if F is not available.
     - Select **Review + create (6)**
 
-      ![](../AI-102/Images/ai19l3.png)     
+      ![](../MSSPL/images/Lab04/L4T1S3.png)      
     
 1. Then select **Create** to provision the resource.
 
+    ![](../MSSPL/images/Lab04/L4T1S4.png) 
+
 1. Wait for deployment to complete, and select **Go to resource group** to go to the resource group.
 
-   ![](../AI-102/Images/ai19l4.png) 
+   ![](../MSSPL/images/Lab04/L4T1S5.png)  
 
 1. Select the Translator **Translator<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../AI-102/Images/ai19l5.png) 
+   ![](../MSSPL/images/Lab04/L4T1S6.png)   
 
 1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Location (3)**. You will need the information on this page later in the lab.
 
@@ -65,19 +67,15 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
 
 In this task, you will set up Azure Cloud Shell, configure the environment, and clone the GitHub repository that contains the sample code needed to build your text translation application.
 
-1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+1. Use the **[>_]** button located to the right of the **Copilot** tab at the top of the page, to create a new **Cloud Shell** in the Azure portal.
 
-    ![](../AI-102/Images/ai11l4.png) 
+    ![](../MSSPL/images/Lab01/L1T2.1S1.png) 
 
-1. Selecting a **PowerShell** environment.
+1. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell**.
 
     ![](../AI-102/Images/ai11l5.png) 
 
-1. On the **Getting started** page,
-
-    - Select **No storage account required (1)** 
-    - Select your subscription **(2)**
-    - Click on **Apply (3)**
+1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
       ![](../AI-102/Images/ai11l6.png) 
 
@@ -116,7 +114,7 @@ In this task, you will set up a Python virtual environment, install the required
    ls -a -l
     ```
 
-     ![](../AI-102/Images/ai19l8.png)
+     ![](../MSSPL/images/Lab04/L4T3S1.png) 
 
      The files include a configuration file (**.env**) and a code file (**translate.py**).
 
@@ -139,7 +137,7 @@ In this task, you will set up a Python virtual environment, install the required
 
 1. Update the configuration values to include the  **key (1)** and a **region (2)** from the Azure AI Translator resource you created (available on the **Keys and Endpoint** page for your Azure AI Translator resource in the Azure portal that you have copied in `Task 1`).
 
-     ![](../AI-102/Images/ai1910.png)
+     ![](../MSSPL/images/Lab04/L4T3S4.png) 
 
       > **NOTE**: Be sure to add the *region* for your resource, <u>not</u> the endpoint!
 
@@ -273,3 +271,7 @@ In this task, you will update the Python application to use the Azure AI Transla
 In this lab, you provisioned an Azure AI Translator resource and configured it for use. You prepared a development environment in Azure Cloud Shell, set up configuration files, and updated a Python application with the Azure AI Translator SDK. You then ran the app to translate text between multiple languages, gaining hands-on experience with building and testing a translation solution using Azure AI Translator.
 
 ### You have successfully completed the Hands-on Lab!
+
+### Conclusion
+
+This lab provided hands-on experience with key **Azure AI services**, enabling participants to integrate **image analysis, object detection, face recognition, and text translation** into applications. By leveraging these services, you have learned how to quickly build scalable, AI-powered solutions to solve real-world problems with minimal complexity.

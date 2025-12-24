@@ -16,40 +16,42 @@ In this lab, you will provision an Azure AI Vision resource and configure it for
 
 In this task, you will provision an Azure AI Vision resource in the Azure portal, configure its settings, and retrieve the keys and endpoint required to connect your application to the service.
 
-1. On the Azure portal, search for **Computer Vision (1)** then select **Computer Vision (2)** from the results.
+1. On the **Azure portal**, search for **Computer Vision (1)** then select **Computer Vision (2)** from the results.
 
-   ![](../AI-102/Images/ai24l1.png)
+    ![](../MSSPL/images/Lab01/L1T1S1.png)
 
 1. Select **+ Create**.
 
-   ![](../AI-102/Images/ai24l2.png)
+    ![](../MSSPL/images/Lab01/L1T1S2.png)
 
 1. Create a resource with the following settings:
 
     - **Subscription**: Leave your default Azure subscription **(1)**
-    - **Resource group**: Select **AI-102-RG24 (2)**
+    - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (2)**
     - Region: Select **<inject key="Region" enableCopy="false" /> (3)**
     - Name: Enter **computervision<inject key="DeploymentID" enableCopy="false"/> (4)**
     - **Pricing tier**: Select **F0 (5)** (*free*), or **S** (*standard*) if F is not available.
     - Select the required checkboxes **(6)**
     - Select **Review + create (7)**
 
-      ![](../AI-102/Images/ai24l3.png)       
+      ![](../MSSPL/images/Lab01/L1T1S3i.png)       
       ![](../AI-102/Images/ai24l4.png)     
     
 1. Then select **Create** to provision the resource.
 
+    ![](../MSSPL/images/Lab01/L1T1S4.png)
+
 1. Wait for deployment to complete, and select **Go to resource** to go to the resource group.
 
-   ![](../AI-102/Images/ai24l5.png)
+    ![](../MSSPL/images/Lab01/L1T1S5.png)
 
 1. Select the Computer Vision resource **computervision<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../AI-102/Images/ai24l6.png)
+   ![](../MSSPL/images/Lab01/L1T1S6.png)
 
 1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Endpoint(3)**. You will need the information on this page later in the lab.
 
-   ![](../AI-102/Images/ai24l7.png)
+   ![](../MSSPL/images/Lab01/L1T1S7.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -69,19 +71,15 @@ In this task, you'll complete a partially implemented client application that us
 
 In this task, you will set up your development environment in Azure Cloud Shell by cloning the GitHub repository, installing required packages, and configuring the application with your Azure AI Vision resource endpoint and key.
 
-1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+1. Use the **[>_]** button located to the right of the **Copilot** tab at the top of the page, to create a new **Cloud Shell** in the Azure portal.
 
-    ![](../AI-102/Images/ai11l4.png) 
+    ![](../MSSPL/images/Lab01/L1T2.1S1.png) 
 
-1. Selecting a **PowerShell** environment.
+1. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell**.
 
     ![](../AI-102/Images/ai11l5.png) 
 
-1. On the **Getting started** page,
-
-    - Select **No storage account required (1)** 
-    - Select your subscription **(2)**
-    - Click on **Apply (3)**
+1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
       ![](../AI-102/Images/ai11l6.png) 
 
@@ -111,7 +109,7 @@ In this task, you will set up your development environment in Azure Cloud Shell 
    ls -a -l
     ```
 
-     ![](../AI-102/Images/ai24l11.png)    
+      ![](../MSSPL/images/Lab01/L1T2.1S6.png)   
 
      The folder contains application configuration and code files for your app. It also contains a **/images** subfolder, which contains some image files for your app to analyze.
     
@@ -135,7 +133,7 @@ In this task, you will set up your development environment in Azure Cloud Shell 
 
 1. In the code file, update the configuration values it contains to reflect the **endpoint (1)** and an authentication **key (2)** for your Computer Vision resource (copied from its **Keys and Endpoint** page in the `Task 1`).
 
-     ![](../AI-102/Images/ai24l13.png)    
+    ![](../MSSPL/images/Lab01/L1T2.1S9.png)   
 
 1. After you've replaced the placeholders, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
@@ -226,7 +224,7 @@ In this task, you will update the Python application to use the Azure AI Vision 
 
      ![](../AI-102/Images/i1.png) 
 
-     ![](../AI-102/Images/ai24l19.png)      
+     ![](../MSSPL/images/Lab01/L1T2.2S8.png)      
 
 1. Run the program again, this time with the argument **images/building.jpg** to see the caption that gets generated for the **building.jpg** image, which looks like this:
 
@@ -234,13 +232,13 @@ In this task, you will update the Python application to use the Azure AI Vision 
    python image-analysis.py images/building.jpg
     ```
 
-     ![](../AI-102/Images/ai24l20.png) 
+    ![](../MSSPL/images/Lab01/L1T2.2S9.png)
 
 1. Observe the output, which should include a suggested caption for the **building.jpg** image, which looks like this:
 
     ![A picture of a building.](../AI-102/Images/i2.png)
 
-     ![](../AI-102/Images/ai24l21.png)     
+    ![](../MSSPL/images/Lab01/L1T2.2S10.png)     
 
 1. Repeat the previous step to generate a caption for the **images/person.jpg** file, which looks like this:
 
@@ -250,7 +248,7 @@ In this task, you will update the Python application to use the Azure AI Vision 
 
     ![A picture of a building.](../AI-102/Images/i3.png)
 
-     ![](../AI-102/Images/ai24l22.png)  
+     ![](../MSSPL/images/Lab01/L1T2.2S11.png) 
 
 ### Task 2.3: Add code to generate suggested tags
 
@@ -276,7 +274,7 @@ It can sometimes be useful to identify relevant *tags* that provide clues about 
    python image-analysis.py images/street.jpg
     ```
 
-     ![](../AI-102/Images/ai24l24.png)  
+     ![](../MSSPL/images/Lab01/L1T2.3S2.png)  
 
 1. Rerun the program for the **images/building.jpg** and **images/person.jpg** files.
 
@@ -396,4 +394,7 @@ In this task, you will update the application to detect and locate people in ima
 
 In this lab, you provisioned an Azure AI Vision resource and configured it in Azure Cloud Shell. You updated a Python application to integrate with the Vision SDK, enabling image analysis capabilities. You implemented features to generate captions, suggest tags, detect and locate objects, and identify people in images, gaining hands-on experience with building and testing a computer vision solution using Azure AI Vision.
 
-### You have successfully completed the Hands-on Lab!
+## Click on **Next >>** from the lower right corner to move on to the next exercise.
+
+![](../MSSPL/images/next.png)
+
