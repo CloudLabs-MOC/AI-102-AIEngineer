@@ -46,9 +46,9 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
     - **Training pricing tier**: **Free (F0) (6)**
     - **Prediction pricing tier**: **Free (F0) (7)**
 
-      ![](../MSSPL/images/Lab02/L2T1S4.png)
+         ![](../MSSPL/images/Lab02/L2T1S4.png)
 
-      ![](../MSSPL/images/Lab02/L2T1S4i.png)
+         ![](../MSSPL/images/Lab02/L2T1S4i.png)
 
 
 1. On the **Review + create** tab, click **Create** to provision the resource.
@@ -57,9 +57,9 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
    
 1. Wait for the deployment to finish, then check the deployment details and select **Go to resource group** to view them. You should see two custom vision resources, one for training, and another for prediction.
 
-    ![](../MSSPL/images/Lab02/L2T1S6.png)
+     ![](../MSSPL/images/Lab02/L2T1S6.png)
 
-    ![](../MSSPL/images/Lab02/L2T1S6I.png)
+     ![](../MSSPL/images/Lab02/L2T1S6i.png)
 
     > **Note**: Each resource has its own **endpoint** and **keys**, which are used to manage access from your code. To train an image classification model, your code must use the **training** resource (with its endpoint and key); and to use the trained model to predict image classes, your code must use the **prediction** resource (with its endpoint and key).
 
@@ -188,11 +188,11 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
  
 1. On the right, under **Resources**, copy the **Key** and **Endpoint (2)** values to a Notepad file for later use. These are the details for the **training** resource.  
 
-   ![](../MSSPL/images/Lab02/L2T4S3.png)
+    ![](../MSSPL/images/Lab02/L2T4S3.png)
 
-    > **Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)**, where you will find **Key 1 (2)**, and the **Endpoint (4)**.  
+      > **Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)**, where you will find **Key 1 (2)**, and the **Endpoint (4)**.  
 
-     ![](../AI-102/Images/AI-l28-8-key1.png)
+      ![](../AI-102/Images/AI-l28-8-key1.png)
 
 1. Return to the browser tab containing the Azure portal (keeping the Custom Vision portal tab open you'll return to it later).
 
