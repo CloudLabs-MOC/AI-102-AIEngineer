@@ -28,7 +28,7 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
 
     - **Subscription**: Leave your default Azure subscription **(1)**
     - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (2)**
-    - Region: Select **<inject key="Region" enableCopy="false" /> (3)**
+    - Region: Select **West US (3)**
     - Name: Enter **computervision<inject key="DeploymentID" enableCopy="false"/> (4)**
     - **Pricing tier**: Select **F0 (5)** (*free*), or **S** (*standard*) if F is not available.
     - Select the required checkboxes **(6)**
