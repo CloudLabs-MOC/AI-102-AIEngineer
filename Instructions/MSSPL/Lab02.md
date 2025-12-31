@@ -40,9 +40,9 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
 
     - **Create options**: Opt for **Both (1)**
     - **Subscription**: Select **Default Subscription (2)**
-     - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (2)**
-    - **Region**: Select **<inject key="Region"></inject> (4)**
-    - **Name**: **customvision<inject key="DeploymentID"></inject> (5)**
+     - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (3)**
+    - **Region**: Select **<inject key="Region" enableCopy="false"/> (4)**
+    - **Name**: **customvision<inject key="DeploymentID" enableCopy="false"/> (5)**
     - **Training pricing tier**: **Free (F0) (6)**
     - **Prediction pricing tier**: **Free (F0) (7)**
 
@@ -53,7 +53,7 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
 
 1. On the **Review + create** tab, click **Create** to provision the resource.
 
-    ![](../MSSPL/images/Lab02/L2T1S5.png)
+    ![](../MSSPL/images/Lab02/L2T1S5new.png)
    
 1. Wait for the deployment to finish, then check the deployment details and select **Go to resource group** to view them. You should see two custom vision resources, one for training, and another for prediction.
 
@@ -102,22 +102,14 @@ In this task, you’ll set up a new Object Detection project in the Custom Visio
 1. On **Create a new project** enter the following settings and click on **Create project (6)**
     - **Name**: `Detect Fruit` **(1)**
     - **Description**: `Object detection for fruit.` **(2)**
-    - **Resource**: Select customvision<inject key="DeploymentID"></inject> **(3)**
+    - **Resource**: Select **customvision<inject key="DeploymentID"></inject> (3)**
     - **Project Types**: Object Detection **(4)**
     - **Domains**: General **(5)**
+    - Click on **Create project** to provision the resource. **(6)**
 
       ![](../AI-102/Images/AI-l28-12.png)
 
 1. Wait for the project to be created and opened in the browser.
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
->
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
- 
-<validation step="0380cecc-5633-467a-97b1-0d12993e7228" />
- 
 ---      
 
 ## Task 3: Upload and tag images in the Custom Vision portal
@@ -132,7 +124,7 @@ In this task, you’ll upload sample fruit images and draw bounding boxes around
 
 1. In the **Downloads** folder, right-click the **training-images (1)** file and select **Extract All (2)**.  
 
-    ![](../MSSPL/images/Lab02/L2T3S3.png)
+    ![](../MSSPL/images/Lab02/L2T3S3new.png)
 
 1. On the **Extract Compressed (Zipped) Folders** window, click **Extract** to unzip the files.  
 
@@ -216,7 +208,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
     >**Note:** **<font color="black">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
 
-1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text):
+1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text and click enter button):
 
     ```
     rm -r mslearn-ai-vision -f
@@ -306,13 +298,13 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
 In this task, you’ll run a Quick Training to create a new iteration of your object detection model and then review performance metrics (Precision, Recall, mAP). You’ll validate the model with Quick Test to see predicted boxes and labels on a sample image.
 
-1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. Select the **Quick Training** option and then wait for the training iteration to complete (this may take a minute or so).
+1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. Select the **Quick Training (1)** option and click on **Train(2)**  then wait for the training iteration to complete (this may take a minute or so).
 
      ![](../AI-102/Images/AI-l28-31.png)
 
      ![](../AI-102/Images/AI-l28-32.png)
 
-     > **Tip**: The Azure cloud shell has a 20-minute inactivity timeout, after which the session is abandoned. While you wait for training to finish, occassionally return to the cloud shell and enter a colland like `ls` to keep the session active.
+     > **Tip**: The Azure cloud shell has a 20-minute inactivity timeout, after which the session is abandoned. While you wait for training to finish, occassionally return to the cloud shell and enter a command like `ls` to keep the session active.
 
 1. In the Custom Vision portal, when training has finished, review the *Precision*, *Recall*, and *mAP* performance metrics - these measure the prediction accuracy of the object detection model, and should all be high.
 
@@ -359,7 +351,7 @@ In this task, you’ll publish the best-trained iteration (e.g., fruit-detector)
 
      > **Note:** You can also obtain this information by viewing the resource in the Azure portal. Navigate to **Keys and Endpoint (1)**, then copy **Key 1 (2)**, and the **Endpoint (3)**.  
 
-     ![](../AI-102/Images/AI-l28-8-key2.png)
+     ![](../MSSPL/images/Lab02/L2T6S5new.png)
 
 ## Task 7: Use the image classifier from a client application
 

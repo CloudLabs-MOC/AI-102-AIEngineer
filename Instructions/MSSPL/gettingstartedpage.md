@@ -57,11 +57,11 @@ Once you're ready to dive in, your virtual machine and **Guide** will be right a
 
 ## Lab Guide Zoom In/Zoom Out
 
-To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the upper-right corner of the lab environment.
+To adjust the zoom level of the lab guide, select the **A↕ (1)** icon and choose your preferred zoom **percentage (2)**.
 
-![Create storage by clicking confirm.](../MSSPL/images/zoom.png)
+![Create storage by clicking confirm.](../MSSPL/images/labzoom.png)
 
-## Virtual Machine & Lab Guide
+### Virtual Machine & Lab Guide
  
 Your virtual machine is your workhorse throughout the workshop. The guide is your roadmap to success.
  
@@ -69,7 +69,7 @@ Your virtual machine is your workhorse throughout the workshop. The guide is you
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-![env](../MSSPL/images/resources.png)
+![env](../MSSPL/images/environment.png)
  
 ## Utilizing the Split Window Feature
  

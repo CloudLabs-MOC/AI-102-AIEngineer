@@ -28,8 +28,8 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
 
     - **Subscription**: Leave your default Azure subscription **(1)**
     - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (2)**
-    - Region: Select **West US (3)**
-    - Name: Enter **computervision<inject key="DeploymentID" enableCopy="false"/> (4)**
+    - **Region**: Select **<inject key="Region" enableCopy="false"/> (3)**
+    - **Name**: Enter **computervision<inject key="DeploymentID" enableCopy="false"/> (4)**
     - **Pricing tier**: Select **F0 (5)** (*free*), or **S** (*standard*) if F is not available.
     - Select the required checkboxes **(6)**
     - Select **Review + create (7)**
@@ -47,11 +47,11 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
 
 1. Select the Computer Vision resource **computervision<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../MSSPL/images/Lab01/L1T1S6.png)
+   ![](../MSSPL/images/Lab01/L1T1S5new.png)
 
 1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Endpoint(3)**. You will need the information on this page later in the lab.
 
-   ![](../MSSPL/images/Lab01/L1T1S7.png)
+   ![](../MSSPL/images/Lab01/L1T1S7new.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -91,7 +91,7 @@ In this task, you will set up your development environment in Azure Cloud Shell 
 
      >**Note**: Ensure you've switched to the classic version of the cloud shell before continuing.
 
-1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text):
+1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text and click enter button):
 
     ```
     rm -r mslearn-ai-vision -f
