@@ -33,7 +33,7 @@ The lab architecture leverages a range of Microsoft Azure services and tools to 
 
 ## Architecture Diagram
 
-![](../media/new-arch-diagram.png)
+![](../images/getting-started-arch-diagram.png)
 
 ## Explanation of Components
 
