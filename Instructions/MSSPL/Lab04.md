@@ -40,7 +40,7 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
 
     ![](../MSSPL/images/Lab04/L4T1S4.png) 
 
-1. Wait for deployment to complete, and select **Go to resource group** to go to the resource group.
+1. Wait for deployment to complete and select **Go to resource group** to go to the resource group.
 
    ![](../MSSPL/images/Lab04/L4T1S5.png)  
 
@@ -96,7 +96,7 @@ In this task, you will set up Azure Cloud Shell, configure the environment, and 
 
      ![](../AI-102/Images/ai19l7.png)
 
-      >**Tip**: As you enter commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+      >**Tip**: As you enter commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, navigate to the folder containing the application code files:  
 
@@ -135,7 +135,7 @@ In this task, you will set up a Python virtual environment, install the required
 
      The file is opened in a code editor.
 
-1. Update the configuration values to include the  **key (1)** and a **region (2)** from the Azure AI Translator resource you created (available on the **Keys and Endpoint** page for your Azure AI Translator resource in the Azure portal that you have copied in `Task 1`).
+1. Update the configuration values to include the **key (1)** and a **region (2)** from the Azure AI Translator resource you created (available on the **Keys and Endpoint** page for your Azure AI Translator resource in the Azure portal that you have copied in `Task 1`).
 
      ![](../MSSPL/images/Lab04/L4T3S4.png) 
 
@@ -240,7 +240,7 @@ In this task, you will update the Python application to use the Azure AI Transla
 
 1. When prompted, enter a valid target language from the list displayed (for example `en`, `fr`).
 
-    - Lets provide `en` as a target language **(1)**
+    - Let's provide `en` as a target language **(1)**
     - Enter `C'est un test` as a phrase to be translated **(2)**
     - View the results, which should detect the source language and translate the text to the target language **(3)**
 

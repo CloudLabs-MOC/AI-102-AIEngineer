@@ -1,6 +1,6 @@
 # Lab 02: Detect objects with Azure AI Custom Vision
 
-### Estimated Duration : 60 Minutes
+### Estimated Duration: 60 Minutes
 
 ## Lab Overview
 
@@ -225,7 +225,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
     ![](../AI-102/Images/AI-l28-23.png)
 
-    > **Tip**: As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Tip**: As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, use the following command to navigate to the application code files:
 
@@ -283,7 +283,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
 1. Note the following details in the code file:
     - The namespaces for the Azure AI Custom Vision SDK are imported.
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
+    - The **Main** function retrieves the configuration settings and uses the key and endpoint to create an authenticated **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
     - The **Upload_Images** function extracts the tagged region information from the JSON file and uses it to create a batch of images with regions, which it then uploads to the project.
 
 1. Close the code editor (**CTRL+Q**) and enter the following command to run the program:
@@ -296,7 +296,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
     ![](../AI-102/Images/AI-l28-29.png)
 
-1. Switch back to the browser tab containing the Custom Vision portal (keeping the Azure portal cloud shell tab open), and view the **Training Images** page for your project (refreshing the browser if necessary). Verify that some new tagged images have been added to the project.
+1. Switch back to the browser tab containing the Custom Vision portal (keeping the Azure portal cloud shell tab open) and view the **Training Images** page for your project (refreshing the browser if necessary). Verify that some new tagged images have been added to the project.
 
     ![](../AI-102/Images/AI-l28-30.png)
 
@@ -312,7 +312,7 @@ In this task, you’ll run a Quick Training to create a new iteration of your ob
 
      ![](../AI-102/Images/AI-l28-32.png)
 
-     > **Tip**: The Azure cloud shell has a 20-minute inactivity timeout, after which the session is abandoned. While you wait for training to finish, occassionally return to the cloud shell and enter a colland like `ls` to keep the session active.
+     > **Tip**: The Azure cloud shell has a 20-minute inactivity timeout, after which the session is abandoned. While you wait for training to finish, occasionally return to the cloud shell and enter a command like `ls` to keep the session active.
 
 1. In the Custom Vision portal, when training has finished, review the *Precision*, *Recall*, and *mAP* performance metrics - these measure the prediction accuracy of the object detection model, and should all be high.
 
@@ -334,7 +334,7 @@ In this task, you’ll run a Quick Training to create a new iteration of your ob
 
 In this task, you’ll publish the best-trained iteration (e.g., fruit-detector) to your Prediction resource. You’ll capture the prediction endpoint and key so external apps can call the hosted model.
 
-1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish** to publish the trained model.
+1. In the Custom Vision portal, on the **Performance** page, click **&#128504; Publish** to publish the trained model.
  
     ![](../AI-102/Images/AI-l28-37.png)
     
@@ -412,7 +412,7 @@ In this task, you’ll configure a lightweight Python client to call the predict
 
 1. Review the code, noting the following details:
     - The namespaces for the Azure AI Custom Vision SDK are imported.
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
+    - The **Main** function retrieves the configuration settings and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
     - The prediction client object is used to get object detection predictions for the **produce.jpg** image, specifying the project ID and model name in the request. The predicted tagged regions are then drawn on the image, and the result is saved as **output.jpg**.
 
 1. Close the code editor and enter the following command to run the program:

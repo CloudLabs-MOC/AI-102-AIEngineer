@@ -41,7 +41,7 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
 
     ![](../MSSPL/images/Lab01/L1T1S4.png)
 
-1. Wait for deployment to complete, and select **Go to resource** to go to the resource group.
+1. Wait for deployment to complete and select **Go to resource** to go to the resource group.
 
     ![](../MSSPL/images/Lab01/L1T1S5.png)
 
@@ -149,7 +149,7 @@ In this task, you will update the Python application to use the Azure AI Vision 
 
      ![](../AI-102/Images/ai24l14.png)       
 
-      >**Tip**: You might want to maximize the cloud shell pane and move the split-bar between the command line cosole and the code editor so you can see the code more easily.
+      >**Tip**: You might want to maximize the cloud shell pane and move the split-bar between the command line console and the code editor so you can see the code more easily.
 
 1. In the code file, find the comment **Import namespaces**, and add the following code to import the namespaces you will need to use the Azure AI Vision SDK:
 

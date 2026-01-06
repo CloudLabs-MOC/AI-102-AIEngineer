@@ -45,7 +45,7 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 
     ![](../MSSPL/images/Lab03/L3T1S6.png)
 
-1. Wait for deployment to complete, and select **Go to resource** to go to the resource group.
+1. Wait for deployment to complete and select **Go to resource** to go to the resource group.
 
     ![](../MSSPL/images/Lab03/L3T1S7.png)
 
@@ -158,7 +158,7 @@ In this task, you’ll import the required namespaces and instantiate FaceClient
 
      ![](../AI-102/Images/ai26l13.png)   
 
-      >**Tip**: You might want to maximize the cloud shell pane and move the split-bar between the command line cosole and the code editor so you can see the code more easily.
+      >**Tip**: You might want to maximize the cloud shell pane and move the split-bar between the command line console and the code editor so you can see the code more easily.
 
 1. In the code file, find the comment **Import namespaces**, and add the following code to import the namespaces you will need to use the Azure AI Vision SDK:
 
@@ -270,7 +270,7 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
 
     ![](../AI-102/Images/ai26l20.png) 
 
-1. The image should look simlar to this:
+1. The image should look similar to this:
 
     ![](../AI-102/Images/ai26l21.png) 
 
