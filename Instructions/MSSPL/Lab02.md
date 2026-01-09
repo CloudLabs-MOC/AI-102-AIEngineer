@@ -110,14 +110,6 @@ In this task, you’ll set up a new Object Detection project in the Custom Visio
 
 1. Wait for the project to be created and opened in the browser.
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
->
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
- 
-<validation step="0380cecc-5633-467a-97b1-0d12993e7228" />
- 
 ---      
 
 ## Task 3: Upload and tag images in the Custom Vision portal
@@ -192,7 +184,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
       > **Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)**, where you will find **Key 1 (2)**, and the **Endpoint (4)**.  
 
-      ![](../AI-102/Images/AI-l28-8-key1.png)
+   ![](../AI-102/Images/AI-l28-8-key1.png)
 
 1. Return to the browser tab containing the Azure portal (keeping the Custom Vision portal tab open you'll return to it later).
 
@@ -306,7 +298,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
 In this task, you’ll run a Quick Training to create a new iteration of your object detection model and then review performance metrics (Precision, Recall, mAP). You’ll validate the model with Quick Test to see predicted boxes and labels on a sample image.
 
-1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. Select the **Quick Training** option and then wait for the training iteration to complete (this may take a minute or so).
+1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. Select the **Quick Training(1)** option and click on **Train(2)** then wait for the training iteration to complete (this may take a minute or so).
 
      ![](../AI-102/Images/AI-l28-31.png)
 
@@ -359,7 +351,7 @@ In this task, you’ll publish the best-trained iteration (e.g., fruit-detector)
 
      > **Note:** You can also obtain this information by viewing the resource in the Azure portal. Navigate to **Keys and Endpoint (1)**, then copy **Key 1 (2)**, and the **Endpoint (3)**.  
 
-     ![](../AI-102/Images/AI-l28-8-key2.png)
+    ![](../MSSPL/images/Lab02/L2T6S5i.png) 
 
 ## Task 7: Use the image classifier from a client application
 
