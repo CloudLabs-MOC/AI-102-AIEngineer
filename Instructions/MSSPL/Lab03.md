@@ -51,7 +51,7 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 
 1. Select the Face resource **face<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../MSSPL/images/Lab03/L3T1S7.png)
+   ![](../MSSPL/images/Lab03/L3T1S8.png)
 
 1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Endpoint(3)**. You will need the information on this page later in the lab.
 
@@ -181,6 +181,7 @@ In this task, you’ll import the required namespaces and instantiate FaceClient
     ```
 
      ![](../AI-102/Images/ai26l15.png)
+     >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.
 
 ### Task 2.3: Add code to detect and analyze faces
 

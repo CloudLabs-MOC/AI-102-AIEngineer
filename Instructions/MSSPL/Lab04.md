@@ -58,7 +58,7 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
  
-<validation step="4549feb5-4ca4-4e67-8263-f994108c704e" />
+<validation step="08c05541-8a05-48d1-941a-3236c903629a" />
  
 ---   
 
