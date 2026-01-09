@@ -69,7 +69,7 @@ Your virtual machine is your workhorse throughout the workshop. The guide is you
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-![env](../MSSPL/images/resources.png)
+![env](../MSSPL/images/env.png)
  
 ## Utilizing the Split Window Feature
  
@@ -131,3 +131,4 @@ Now, click on **Next** from the lower right corner to move on to the next page.
 ![](../MSSPL/images/next.png)
 
 ## Happy Learning!!
+
