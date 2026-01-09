@@ -18,7 +18,7 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
 
 1. On the **Azure portal**, search for **Computer Vision (1)** then select **Computer Vision (2)** from the results.
 
-    ![](../MSSPL/images/Lab01/L1T1S1.png)
+    ![](../AI-102/Images/cv.png)
 
 1. Select **+ Create**.
 
@@ -34,24 +34,23 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
     - Select the required checkboxes **(6)**
     - Select **Review + create (7)**
 
-      ![](../MSSPL/images/Lab01/L1T1S3i.png)       
-      ![](../AI-102/Images/ai24l4.png)     
+      ![](../AI-102/Images/cvrc.png)            
     
 1. Then select **Create** to provision the resource.
 
-    ![](../MSSPL/images/Lab01/L1T1S4.png)
+    ![](../AI-102/Images/rcc.png)
 
 1. Wait for deployment to complete and select **Go to resource** to go to the resource group.
 
-    ![](../MSSPL/images/Lab01/L1T1S5.png)
+    ![](../AI-102/Images/cvgtr.png)
 
-1. Select the Computer Vision resource **computervision<inject key="DeploymentID" enableCopy="false"/>**.
+1. Select the Computer Vision resource named **computervision<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../MSSPL/images/Lab01/L1T1S6.png)
+   ![](../AI-102/Images/cvslct.png)
 
-1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Endpoint(3)**. You will need the information on this page later in the lab.
+1. Expand **Resource Management (1)** from the left navigation menu and click **Keys and Endpoint (2)**. Copy and paste the **KEY 1 (3)** and **Endpoint (4)** values in notepad. You will need this information later in the lab.
 
-   ![](../MSSPL/images/Lab01/L1T1S7.png)
+   ![](../AI-102/Images/kend.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -85,7 +84,7 @@ In this task, you will set up your development environment in Azure Cloud Shell 
 
 1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
 
-    ![](../AI-102/Images/ai11l7.png)
+    ![](../AI-102/Images/gtcv.png)
 
      >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
@@ -109,7 +108,7 @@ In this task, you will set up your development environment in Azure Cloud Shell 
    ls -a -l
     ```
 
-      ![](../MSSPL/images/Lab01/L1T2.1S6.png)   
+      ![](../AI-102/Images/lsal.png)   
 
      The folder contains application configuration and code files for your app. It also contains a **/images** subfolder, which contains some image files for your app to analyze.
     
@@ -160,7 +159,7 @@ In this task, you will update the Python application to use the Azure AI Vision 
    from azure.core.credentials import AzureKeyCredential
     ```
 
-     ![](../AI-102/Images/ai24l15.png)       
+     ![](../AI-102/Images/namespc.png)       
 
 1. In the **Main** function, note that the code to load the configuration settings and determine the image file to be analyzed has been provided. Then find the comment **Authenticate Azure AI Vision client** and add the following code to create and authenticate an Azure AI Vision client object (be sure to maintain the correct indentation levels):
 
@@ -172,7 +171,7 @@ In this task, you will update the Python application to use the Azure AI Vision 
     )
     ```
 
-    ![](../AI-102/Images/ai24l16.png)    
+    ![](../AI-102/Images/vscl.png)    
 
 1. In the **Main** function, under the code you just added, find the comment **Analyze image** and add the following code:
 
@@ -194,7 +193,7 @@ In this task, you will update the Python application to use the Azure AI Vision 
     )
     ```
 
-    ![](../AI-102/Images/ai24l17.png)   
+    ![](../AI-102/Images/aimg.png)   
 
 1. Find the comment **Get image captions**, add the following code to display image captions and dense captions:
 
@@ -210,7 +209,7 @@ In this task, you will update the Python application to use the Azure AI Vision 
             print(" Caption: '{}' (confidence: {:.2f}%)".format(caption.text, caption.confidence * 100))
     ```
 
-    ![](../AI-102/Images/ai24l18.png)       
+    ![](../AI-102/Images/cap.png)       
 
 1. Save your changes using **CTRL+S** and resize the panes so you can clearly see the command line console while keeping the code editor open.
 
@@ -266,7 +265,7 @@ It can sometimes be useful to identify relevant *tags* that provide clues about 
             print(" Tag: '{}' (confidence: {:.2f}%)".format(tag.name, tag.confidence * 100))
     ```
 
-     ![](../AI-102/Images/ai24l23.png)    
+     ![](../AI-102/Images/imtag.png)    
 
 1. Save your changes using **CTRL+S** and run the program with the argument **images/street.jpg**, observing that in addition to the image caption, a list of suggested tags is displayed.
 
@@ -282,9 +281,13 @@ It can sometimes be useful to identify relevant *tags* that provide clues about 
    python image-analysis.py images/building.jpg
     ```
 
+    ![](../AI-102/Images/bt.png)
+
     ```
    python image-analysis.py images/person.jpg
     ```
+
+    ![](../AI-102/Images/pt.png)
 
 ### Task 2.4: Add code to detect and locate objects
 
@@ -303,7 +306,7 @@ In this task, you will extend the application to detect and locate objects withi
         show_objects(image_file, result.objects.list)
     ```
 
-     ![](../AI-102/Images/ai24l25.png)      
+     ![](../AI-102/Images/obj.png)      
 
 1. Save your changes using **CTRL+S**.
 
@@ -321,13 +324,13 @@ In this task, you will extend the application to detect and locate objects withi
    download objects.jpg
     ```
 
-    - The download command creates a popup link at the bottom right of your browser, which you can select to download 
+    - The download command creates a **popup link (2)** at the bottom right of your browser, which you can select to download. 
     
-      ![](../AI-102/Images/ai24l27.png)    
+      ![](../AI-102/Images/dwn.png)    
     
 1. Open the file.
 
-    ![](../AI-102/Images/ai24l28.png)  
+    ![](../AI-102/Images/upai24l28.png)  
 
 1. The image should look similar to this:
 
@@ -355,7 +358,7 @@ In this task, you will update the application to detect and locate people in ima
         show_people(image_file, result.people.list)
     ```
 
-     ![](../AI-102/Images/ai24l30.png)      
+     ![](../AI-102/Images/pm.png)      
 
 1. Save your changes using **CTRL+S**.
 
@@ -373,9 +376,9 @@ In this task, you will update the application to detect and locate people in ima
    download people.jpg
     ```
 
-    - The download command creates a popup link at the bottom right of your browser, which you can select to download **(2)**
+    - The download command creates a **popup link (2)** at the bottom right of your browser, which you can select to download.
 
-      ![](../AI-102/Images/ai24l32.png)     
+      ![](../AI-102/Images/dp.png)     
     
 1. Open the file.
 
