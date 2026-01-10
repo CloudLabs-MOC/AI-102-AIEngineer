@@ -191,6 +191,8 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
     >**Note:** If Cloud Shell is already provisioned (from Lab 01 setup) and shows **Switch to Bash** at the top left of the Cloud Shell pane, you're currently in a **PowerShell** environment. Proceed directly to **Step 8** to switch to the classic version.
 
+    ![](../AI-102/Images/stb.png)
+
 1. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell**.
 
     ![](../AI-102/Images/ai11l5.png)
@@ -202,6 +204,8 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 1. In the Cloud Shell toolbar, open the **Settings (1)** menu and choose **Go to Classic version (2)** from the drop-down.
 
     ![](../AI-102/Images/AI-l16-72.png)
+
+    >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
     >**Note:** **<font color="black">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
 

@@ -28,7 +28,7 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 
 1. Locate **Face (1)** resource from the Marketplace, click on **Create (2)** and select on **Face (3)**
 
-    ![](../MSSPL/images/Lab03/L3T1S4.png)
+    ![](../MSSPL/images/Lab03/face.png)
 
 1. Create the resource with the following settings:
 
@@ -39,23 +39,23 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
     - **Pricing tier**: Select **F0 (5)** 
     - Select **Review + create (6)**
 
-      ![](../MSSPL/images/Lab03/L3T1S5.png)  
+      ![](../MSSPL/images/Lab03/frc.png)  
 
 1. Then select **Create** to provision the resource.
 
-    ![](../MSSPL/images/Lab03/L3T1S6.png)
+    ![](../MSSPL/images/Lab03/frcc.png)
 
 1. Wait for deployment to complete and select **Go to resource** to go to the resource group.
 
-    ![](../MSSPL/images/Lab03/L3T1S7.png)
+    ![](../MSSPL/images/Lab03/fgtr.png)
 
 1. Select the Face resource **face<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../MSSPL/images/Lab03/L3T1S8.png)
+   ![](../MSSPL/images/Lab03/fdon.png)
 
 1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Endpoint(3)**. You will need the information on this page later in the lab.
 
-   ![](../AI-102/Images/ai26l8.png)    
+   ![](../MSSPL/images/Lab03/fkey.png)    
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -79,6 +79,10 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
 
     ![](../MSSPL/images/Lab01/L1T2.1S1.png) 
 
+    >**Note:** If Cloud Shell is already provisioned (from Lab 01 setup) and shows **Switch to Bash** at the top left of the Cloud Shell pane, you're currently in a **PowerShell** environment. Proceed directly to **Step 4** to switch to the classic version.
+
+    ![](../AI-102/Images/stb.png)
+
 1. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell**.
 
     ![](../AI-102/Images/ai11l5.png) 
@@ -89,7 +93,7 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
 
 1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
 
-    ![](../AI-102/Images/ai11l7.png)
+    ![](../AI-102/Images/AI-l16-72.png)
 
      >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
@@ -97,7 +101,7 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
 
 1. Resize the cloud shell pane so you can still see the **Keys and Endpoint** page for your Face resource.
 
-    > **Tip**" You can resize the pane by dragging the top border. You can also use the minimize and maximize buttons to switch between the cloud shell and the main portal interface.
+    > **Tip**: You can resize the pane by dragging the top border. You can also use the minimize and maximize buttons to switch between the cloud shell and the main portal interface.
 
 1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text):
 
@@ -139,12 +143,11 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
 
      The file is opened in a code editor.
 
-1. In the code file, update the configuration values it contains to reflect the **endpoint (1)** and an authentication **key (2)** for your Face resource (copied from its **Keys and Endpoint** page in `Task 1`).
+1. In the code file, update the configuration values it contains to reflect the **endpoint (1)** and an authentication **key (2)** for your Face resource (copied from its **Keys and Endpoint** page in **Task 1**).
 
     ![](../MSSPL/images/Lab03/L3T2.1S10.png)  
 
 1. After you've replaced the placeholders, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
-
 
 ### Task 2.2: Add code to create a Face API client
 
