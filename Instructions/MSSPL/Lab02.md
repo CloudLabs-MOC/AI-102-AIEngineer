@@ -30,11 +30,11 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
 
 1. Open the **Azure portal**, search for **Custom Vision (1)** and select **Custom Vision (2)** from the services.
 
-    ![](../MSSPL/images/Lab02/L2T1S1.png)
+    ![](../AI-102/Images/csv.png)
 
-1. On **Microsoft Foundry | Custom Vision** blade, select **Custom Vision (1)** and click on **+ Create (2)**.
+1. On **Microsoft Foundry | Custom vision** blade, select **Custom vision (1)** and click on **+ Create (2)**.
 
-    ![](../MSSPL/images/Lab02/L2T1S2.png)
+    ![](../AI-102/Images/csvcr.png)
 
 1. In the Basics tab of **Create Custom Vision**, follow these instructions to fill out the properties, then select **Review + create (8)**:
 
@@ -42,24 +42,21 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
     - **Subscription**: Select **Default Subscription (2)**
      - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (2)**
     - **Region**: Select **<inject key="Region"></inject> (4)**
-    - **Name**: **customvision<inject key="DeploymentID"></inject> (5)**
+    - **Name**: **customvision<inject key="DeploymentID" enableCopy="false"/> (5)**
     - **Training pricing tier**: **Free (F0) (6)**
     - **Prediction pricing tier**: **Free (F0) (7)**
 
-         ![](../MSSPL/images/Lab02/L2T1S4.png)
-
-         ![](../MSSPL/images/Lab02/L2T1S4i.png)
-
+         ![](../AI-102/Images/csvrc.png)
 
 1. On the **Review + create** tab, click **Create** to provision the resource.
 
-    ![](../MSSPL/images/Lab02/L2T1S5.png)
+    ![](../AI-102/Images/csvrcc.png)
    
 1. Wait for the deployment to finish, then check the deployment details and select **Go to resource group** to view them. You should see two custom vision resources, one for training, and another for prediction.
 
-     ![](../MSSPL/images/Lab02/L2T1S6.png)
+     ![](../AI-102/Images/csvgtr.png)
 
-     ![](../MSSPL/images/Lab02/L2T1S6i.png)
+     ![](../AI-102/Images/csvdon.png)
 
     > **Note**: Each resource has its own **endpoint** and **keys**, which are used to manage access from your code. To train an image classification model, your code must use the **training** resource (with its endpoint and key); and to use the trained model to predict image classes, your code must use the **prediction** resource (with its endpoint and key).
 
@@ -83,32 +80,32 @@ In this task, you’ll set up a new Object Detection project in the Custom Visio
 
     ![](../AI-102/Images/AI-l28-9.png)
 
-    > **Note:** If prompted, sign in using your Azure credentials and agree to the terms of service.
-
 1. If prompted, provide the credentials below:
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. If you're prompted pop-up **Terms of service** select the check box and click on **I agree**.
+1. If you're prompted with a pop-up **Terms of service** select the check box and click on **I agree**.
 
      ![](../AI-102/Images/AI-l28-10.png)
 
-1. On the **Projects** page, click **+ New Project** to create your first project. 
+1. On the **Projects** page, click **+ NEW PROJECT** to create your first project. 
 
      ![](../AI-102/Images/AI-l28-11.png)
 
 1. On **Create a new project** enter the following settings and click on **Create project (6)**
     - **Name**: `Detect Fruit` **(1)**
-    - **Description**: `Object detection for fruit.` **(2)**
-    - **Resource**: Select customvision<inject key="DeploymentID"></inject> **(3)**
+    - **Description**: `Object detection for fruit` **(2)**
+    - **Resource**: Select **customvision<inject key="DeploymentID" enableCopy="false"/>** **(3)**
     - **Project Types**: Object Detection **(4)**
     - **Domains**: General **(5)**
 
       ![](../AI-102/Images/AI-l28-12.png)
 
-1. Wait for the project to be created and opened in the browser.
+1. Wait for the project to be created.
+
+    ![](../AI-102/Images/PJCR.png)
 
 ---      
 
@@ -122,17 +119,17 @@ In this task, you’ll upload sample fruit images and draw bounding boxes around
     
     ![](../AI-102/Images/AI-l28-12.1.png)
 
-1. In the **Downloads** folder, right-click the **training-images (1)** file and select **Extract All (2)**.  
+1. In the **Downloads** folder, right-click the **training-images (1)** file and select **Extract All... (2)**.  
 
-    ![](../MSSPL/images/Lab02/L2T3S3.png)
+    ![](../AI-102/Images/ext.png)
 
 1. On the **Extract Compressed (Zipped) Folders** window, click **Extract** to unzip the files.  
 
-    ![](../AI-102/Images/AI-l28-12.3.png)
+    ![](../AI-102/Images/ext2.png)
   
 1. In the Custom Vision portal, in your object detection project, select **Add images**.
 
-    ![](../AI-102/Images/AI-l28-13.png)
+    ![](../AI-102/Images/PJCR2.png)
 
 1. In the **Open** window, navigate to **Downloads\training-images**, press **CTRL+A** to select all the images **(1)** and click **Open (2)**.  
 
@@ -140,7 +137,7 @@ In this task, you’ll upload sample fruit images and draw bounding boxes around
 
 1. On the **Image upload** preview screen, review the selected images and click **Upload 10 files**.  
 
-    ![](../MSSPL/images/Lab02/L2T3S7.png)
+    ![](../AI-102/Images/up10.png)
 
 1. Once the upload is complete, a confirmation message appears. Click **Done** to finish.  
 
@@ -166,7 +163,7 @@ In this task, you’ll upload sample fruit images and draw bounding boxes around
    
 1. When you have finished tagging the last image, close the **Image Detail** editor. On the **Training Images** page, under **Tags**, select **Tagged** to see all of your tagged images:
 
-    ![](../AI-102/Images/AI-l28-20.png)
+    ![](../AI-102/Images/tagged.png)
 
 ## Task 4: Use the Custom Vision SDK to upload images
 
@@ -178,13 +175,13 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
 1. Under **General** (on the left), note the **Project Id (1)** that uniquely identifies this project (Copy to Notepad for later use).
  
-1. On the right, under **Resources**, copy the **Key** and **Endpoint (2)** values to a Notepad file for later use. These are the details for the **training** resource.  
+1. On the right, under **Resources**, copy the **Key (2)** and **Endpoint (3)** values to a Notepad file for later use. These are the details for the **training** resource.  
 
-    ![](../MSSPL/images/Lab02/L2T4S3.png)
+    ![](../AI-102/Images/df.png)
 
-      > **Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)**, where you will find **Key 1 (2)**, and the **Endpoint (4)**.  
+      >**Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)** section of your **customvision<inject key="DeploymentID" enableCopy="false"/>** resource, where you will find **Key 1 (2)**, and the **Endpoint (3)**.  
 
-   ![](../AI-102/Images/AI-l28-8-key1.png)
+    ![](../AI-102/Images/AI-l28-8-key1.png)
 
 1. Return to the browser tab containing the Azure portal (keeping the Custom Vision portal tab open you'll return to it later).
 
@@ -192,11 +189,11 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
     ![](../MSSPL/images/Lab01/L1T2.1S1.png) 
 
+    >**Note:** If Cloud Shell is already provisioned (from Lab 01 setup) and shows **Switch to Bash** at the top left of the Cloud Shell pane, you're currently in a **PowerShell** environment. Proceed directly to **Step 8** to switch to the classic version.
+
 1. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell**.
 
     ![](../AI-102/Images/ai11l5.png)
-
-    > **Note**: If you have previously created a cloud shell that uses a **Bash** environment, switch it to **PowerShell**.
 
 1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
@@ -292,13 +289,13 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
     ![](../AI-102/Images/AI-l28-30.png)
 
-    > **Note:** Make sure You are in **Training Images** page
+    > **Note:** Make sure You are in **Training Images** page.
 
 ## Task 5: Train and test a model
 
 In this task, you’ll run a Quick Training to create a new iteration of your object detection model and then review performance metrics (Precision, Recall, mAP). You’ll validate the model with Quick Test to see predicted boxes and labels on a sample image.
 
-1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. Select the **Quick Training(1)** option and click on **Train(2)** then wait for the training iteration to complete (this may take a minute or so).
+1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. A pop-up will appear to **Choose Training Type**, select the **Quick Training(1)** option and click on **Train(2)** then wait for the training iteration to complete (this may take a minute or so).
 
      ![](../AI-102/Images/AI-l28-31.png)
 
@@ -308,7 +305,7 @@ In this task, you’ll run a Quick Training to create a new iteration of your ob
 
 1. In the Custom Vision portal, when training has finished, review the *Precision*, *Recall*, and *mAP* performance metrics - these measure the prediction accuracy of the object detection model, and should all be high.
 
-     ![](../AI-102/Images/AI-l28-33.png)
+     ![](../AI-102/Images/tfin.png)
 
 1. At the top right of the page, click **Quick Test**, and then in the **Image URL** box, type `https://aka.ms/test-fruit` **(1)** and click the **quick test image** (&#10132;) **(2)** button.
 
@@ -328,11 +325,11 @@ In this task, you’ll publish the best-trained iteration (e.g., fruit-detector)
 
 1. In the Custom Vision portal, on the **Performance** page, click **&#128504; Publish** to publish the trained model.
  
-    ![](../AI-102/Images/AI-l28-37.png)
+    ![](../AI-102/Images/tfpub.png)
     
 1. On the **Publish Model** window, enter the following details:     
     - **Model name**: `fruit-detector` **(1)**
-    - **Prediction Resource**: Select **customvision<inject key="DeploymentID"></inject>-Prediction (2)**
+    - **Prediction Resource**: Select **customvision<inject key="DeploymentID" enableCopy="false"/>-Prediction (2)**
     - Click **Publish (3)**
 
        ![](../AI-102/Images/AI-l28-38.png)
@@ -345,11 +342,11 @@ In this task, you’ll publish the best-trained iteration (e.g., fruit-detector)
 
     ![](../AI-102/Images/AI-l28-40.png)
 
-1. Under **Resources**, click on **customvision<inject key="DeploymentID"></inject>-Prediction (1)**, then copy the **Key (2)** and **Endpoint (3)** values to a Notepad file for later use.  
+1. Under **Resources**, click on **customvision<inject key="DeploymentID" enableCopy="false"/>-Prediction (1)**, then copy the **Key (2)** and **Endpoint (3)** values to a Notepad file for later use.  
 
-     ![](../AI-102/Images/AI-l28-41.png)
+     ![](../AI-102/Images/pred.png)
 
-     > **Note:** You can also obtain this information by viewing the resource in the Azure portal. Navigate to **Keys and Endpoint (1)**, then copy **Key 1 (2)**, and the **Endpoint (3)**.  
+     > **Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)** section of your **customvision<inject key="DeploymentID" enableCopy="false"/>-Prediction** resource, where you will find **Key 1 (2)**, and the **Endpoint (3)**.
 
     ![](../MSSPL/images/Lab02/L2T6S5i.png) 
 
