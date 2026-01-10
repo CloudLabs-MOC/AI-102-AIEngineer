@@ -40,7 +40,7 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
 
     ![](../AI-102/Images/trcc.png) 
 
-1. Wait for deployment to complete and select **Go to resource group** to go to the resource group.
+1. Wait for deployment to complete and select **Go to resource** to go to the resource group.
 
    ![](../MSSPL/images/Lab04/tgtr.png)  
 
@@ -277,5 +277,6 @@ In this lab, you provisioned an Azure AI Translator resource and configured it f
 ### You have successfully completed the Hands-on Lab!
 
 ### Conclusion
+
 
 This lab provided hands-on experience with key **Azure AI services**, enabling participants to integrate **image analysis, object detection, face recognition, and text translation** into applications. By leveraging these services, you have learned how to quickly build scalable, AI-powered solutions to solve real-world problems with minimal complexity.
