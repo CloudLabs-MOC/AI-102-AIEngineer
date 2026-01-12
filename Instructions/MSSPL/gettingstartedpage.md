@@ -69,19 +69,19 @@ Your virtual machine is your workhorse throughout the workshop. The guide is you
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-![env](../MSSPL/images/env.png)
+![env](../MSSPL/images/envtabbb.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![split](../MSSPL/images/split.png)
+![split](../MSSPL/images/splittt.png)
  
 ## Managing Your Virtual Machine
  
 Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
-![](../MSSPL/images/resources.png)
+![](../MSSPL/images/vmrsrc.png)
 
 ## Lab Validation
 
@@ -96,27 +96,29 @@ Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from
  
 1. On your virtual machine, click on the **Azure Portal** icon as shown below:
  
-    ![](../MSSPL/images/portal.png)
+    ![](../MSSPL/images/portalll.png)
  
 1. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials and click on **Next**:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-      ![](../MSSPL/images/GS3.png)
+      ![](../MSSPL/images/usr1.png)
  
 3. Next, provide your password and click on **Sign in**.
  
-   - **Enter Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
+   - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
  
-      ![](../MSSPL/images/GS4.png)
+      ![](../MSSPL/images/tap.png)
 
-1. If you see the pop-up **Stay Signed in?**, click **Yes**.
+1. If the pop-up **Stay signed in?** appears, click on **No**.
 
-   ![](../MSSPL/images/GS5.png)
+   ![](../MSSPL/images/staysign.png)
 
 1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, click **Maybe later** to skip the tour.
+
+   ![](../MSSPL/images/starttour.png)
 
 ## Support Contact
  

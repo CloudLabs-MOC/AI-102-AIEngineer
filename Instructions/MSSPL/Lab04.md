@@ -19,11 +19,11 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
 
 1. On the Azure portal, search for **Translators (1)** then select **Translators (2)** from the results.
 
-   ![](../MSSPL/images/Lab04/L4T1S1.png)  
+   ![](../AI-102/Images/trn.png)  
 
-1. On **Microsoft Foundry | Translators(1)** page, Select **+ Create (2)**.
+1. On **Microsoft Foundry | Translator** page, Select **+ Create (2)**.
 
-   ![](../MSSPL/images/Lab04/L4T1S2.png) 
+   ![](../MSSPL/images/Lab04/tcr.png) 
 
 1. Create a resource with the following settings:
 
@@ -34,23 +34,23 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
     - **Pricing tier**: Select **F0 (5)** (*free*), or **S** (*standard*) if F is not available.
     - Select **Review + create (6)**
 
-      ![](../MSSPL/images/Lab04/L4T1S3.png)      
+      ![](../MSSPL/images/Lab04/trc.png)      
     
 1. Then select **Create** to provision the resource.
 
-    ![](../MSSPL/images/Lab04/L4T1S4.png) 
+    ![](../AI-102/Images/trcc.png) 
 
-1. Wait for deployment to complete and select **Go to resource group** to go to the resource group.
+1. Wait for deployment to complete and select **Go to resource** to go to the resource group.
 
-   ![](../MSSPL/images/Lab04/L4T1S5.png)  
+   ![](../MSSPL/images/Lab04/tgtr.png)  
 
-1. Select the Translator **Translator<inject key="DeploymentID" enableCopy="false"/>**.
+1. Select the Translator that you have created: **Translator<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../MSSPL/images/Lab04/L4T1S6.png)   
+   ![](../MSSPL/images/Lab04/tdon.png)   
 
 1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Location (3)**. You will need the information on this page later in the lab.
 
-   ![](../AI-102/Images/ai19l6.png) 
+   ![](../AI-102/Images/tke.png) 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -71,6 +71,10 @@ In this task, you will set up Azure Cloud Shell, configure the environment, and 
 
     ![](../MSSPL/images/Lab01/L1T2.1S1.png) 
 
+    >**Note:** If Cloud Shell is already provisioned (from Lab 01 setup) and shows **Switch to Bash** at the top left of the Cloud Shell pane, you're currently in a **PowerShell** environment. Proceed directly to **Step 4** to switch to the classic version.
+
+    ![](../AI-102/Images/stb.png)
+
 1. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell**.
 
     ![](../AI-102/Images/ai11l5.png) 
@@ -81,7 +85,7 @@ In this task, you will set up Azure Cloud Shell, configure the environment, and 
 
 1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
 
-    ![](../AI-102/Images/ai11l7.png)
+    ![](../AI-102/Images/AI-l16-72.png)
 
      >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
@@ -135,7 +139,7 @@ In this task, you will set up a Python virtual environment, install the required
 
      The file is opened in a code editor.
 
-1. Update the configuration values to include the **key (1)** and a **region (2)** from the Azure AI Translator resource you created (available on the **Keys and Endpoint** page for your Azure AI Translator resource in the Azure portal that you have copied in `Task 1`).
+1. Update the configuration values to include the **key (1)** and a **region (2)** from the Azure AI Translator resource you created (available on the **Keys and Endpoint** page for your Azure AI Translator resource in the Azure portal that you have copied in **Task 1**).
 
      ![](../MSSPL/images/Lab04/L4T3S4.png) 
 
@@ -273,5 +277,6 @@ In this lab, you provisioned an Azure AI Translator resource and configured it f
 ### You have successfully completed the Hands-on Lab!
 
 ### Conclusion
+
 
 This lab provided hands-on experience with key **Azure AI services**, enabling participants to integrate **image analysis, object detection, face recognition, and text translation** into applications. By leveraging these services, you have learned how to quickly build scalable, AI-powered solutions to solve real-world problems with minimal complexity.
