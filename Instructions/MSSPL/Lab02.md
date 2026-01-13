@@ -30,11 +30,11 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
 
 1. Open the **Azure portal**, search for **Custom Vision (1)** and select **Custom Vision (2)** from the services.
 
-    ![](../AI-102/Images/csv.png)
+    ![](../AI-102/Images/customv.png)
 
 1. On **Microsoft Foundry | Custom vision** blade, select **Custom vision (1)** and click on **+ Create (2)**.
 
-    ![](../AI-102/Images/csvcr.png)
+    ![](../AI-102/Images/mfcvcr.png)
 
 1. In the Basics tab of **Create Custom Vision**, follow these instructions to fill out the properties, then select **Review + create (8)**:
 

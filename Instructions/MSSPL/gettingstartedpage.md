@@ -81,7 +81,7 @@ For convenience, you can open the guide in a separate window by selecting the **
  
 Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
-![](../MSSPL/images/vmrsrc.png)
+![](../AI-102/Images/vmrun.png)
 
 ## Lab Validation
 
@@ -102,7 +102,7 @@ Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-      ![](../MSSPL/images/usr1.png)
+      ![](../AI-102/Images/signfix.png)
  
 3. Next, provide your password and click on **Sign in**.
  
