@@ -22,13 +22,11 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 
    ![](../MSSPL/images/Lab03/L3T1S2.png)
 
-1. In the search bar, search for `Face` **(1)**, select **face (2)**.
+1. In the search bar, search for **`Face` (1)** and hit enter.
 
-   ![](../MSSPL/images/Lab03/L3T1S3.png)
+1. Locate **Face (2)** resource from the Marketplace, click on **Create (3)** and select on **Face (4)**
 
-1. Locate **Face (1)** resource from the Marketplace, click on **Create (2)** and select on **Face (3)**
-
-    ![](../MSSPL/images/Lab03/face.png)
+    ![](../AI-102/Images/faceee.png)
 
 1. Create the resource with the following settings:
 
