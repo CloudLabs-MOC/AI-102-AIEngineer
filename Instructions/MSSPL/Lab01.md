@@ -8,9 +8,9 @@ In this lab, you will provision an Azure AI Vision resource and configure it for
 
 ## Lab Objectives
 
-- Task 1: Provision an Azure AI Vision resource
-- Task 2: Develop an image analysis app with the Azure AI Vision SDK
+- **Task 1:** Provision an Azure AI Vision resource
 
+- **Task 2:** Develop an image analysis app with the Azure AI Vision SDK
 
 ### Task 1: Provision an Azure AI Vision resource
 

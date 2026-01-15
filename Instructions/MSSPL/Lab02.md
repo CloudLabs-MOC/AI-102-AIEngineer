@@ -22,7 +22,7 @@ In this hands-on lab, you will build an end-to-end object detection solution wit
 
 - **Task 7:** Use the image classifier from a client application
 
-## Task 1: Create Custom Vision resources
+### Task 1: Create Custom Vision resources
 
 In this task, you’ll create Custom Vision resources in Azure to support both training and prediction. You’ll provision two separate resources one for training and one for prediction so you can build the object detector and later use it from applications.
 
