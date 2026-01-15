@@ -8,10 +8,13 @@ In this lab, you will explore Azure AI Translator, a cloud-based service for rea
 
 ## Lab Objectives
 
-- Task 1: Provision an Azure AI Translator resource
-- Task 2: Prepare to develop an app in Cloud Shell
-- Task 3: Configure your application
-- Task 4: Add code to translate text
+- **Task 1:** Provision an Azure AI Translator resource
+
+- **Task 2:** Prepare to develop an app in Cloud Shell
+
+- **Task 3:** Configure your application
+
+- **Task 4:** Add code to translate text
 
 ### Task 1: Provision an Azure AI Translator resource
 
