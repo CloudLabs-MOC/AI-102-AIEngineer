@@ -30,11 +30,11 @@ In this task, you will provision an Azure AI Speech resource in the Azure portal
 
 1. In the top search bar, search for **Microsoft Foundry (1)**, select **Microsoft Foundry (2)** from the result.
 
-    ![](./images/speech-t2p3.png) 
+    ![Visual Studio Code Icon](./images/speech-t2p2.png)
 
 1. On the **Microsoft Foundry** blade, from the left navigation pane click **More services (1)** → select **Speech service (2)** → click **+ Create (3)**.
 
-    ![](./images/speechservice2(1).png)   
+    ![](./images/speech2-t2p2.png)   
 
 1. Create a resource with the following settings:
    
@@ -161,7 +161,7 @@ In this task, you will implement speech translation using Azure AI Speech. You w
 
     > **Note:** The code in your application translates the input to all three languages in a single call. Only the translation for the specific language is displayed, but you could retrieve any of the translations by specifying the target language code in the **translations** collection of the result.
 
-1. Now skip ahead to the **Run the program** section below.
+1. Now save the file and skip ahead to the **Run the program** section below.
 
 ### Task 3.2: Alternatively, use audio input from a file
 

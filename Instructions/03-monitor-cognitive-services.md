@@ -33,7 +33,7 @@ Let's start monitoring by defining an alert rule so you can detect activity in y
 
 1. In the **Create an alert rule** page, under **Scope**, verify that your Azure AI services resource is listed.
 
-    ![Visual Studio Code Icon](./images/a-34(1).png)
+    ![Visual Studio Code Icon](./images/moniaz-t1p1.png)
 
 1. Select **Condition** tab, and click on **See all signals (1)**.On the **Select a signal** pane that appears on the right, you can select a signal type to monitor. Search for **List (2)**, then select **List keys (3)** under Activity log, and then click on **Apply (4)**.
 

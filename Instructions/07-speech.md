@@ -17,7 +17,7 @@ In this exercise, you'll use both of these APIs to implement a speaking clock ap
 
 In this lab, you will complete the following tasks:
 
-+ **Task 1:** Clone the repo into your Azure Cloud Shell
++ **Task 1:** Clone the repository for this course
 + **Task 2:** Provision an Azure AI Speech resource
 + **Task 3:** Prepare to use Azure AI speech
 + **Task 4:** Recognize speech
@@ -58,8 +58,6 @@ In this task, you will clone the AI-102-AIEngineer repository to your local envi
     >**Note:** On the **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust the authors**.
 
     ![](./images/speech-t1p5.png)
-
-    >**Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
 
 ## Task 2: Provision an Azure AI Speech resource
 

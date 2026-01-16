@@ -33,11 +33,11 @@ In this task, you will learn how to **open the cloned folder in Visual Studio Co
 
 1. Open **`C:\AllFiles\AI-102-AIEngineer-stage` (1)** and then click on **Select Folder (2)**.
 
-    ![Visual Studio Code Icon](./images/a-8.png)
+    ![Visual Studio Code Icon](./images/azaiserv-t1p1.png)
 
     >**Note:** On the **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust the authors**.
 
-    >**Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
+    ![](./images/speech-t1p5.png)
 
 ## Task 2: Provision an Azure AI Services resource
 
@@ -49,15 +49,15 @@ Azure AI Services are cloud-based services that encapsulate artificial intellige
 
     ![Visual Studio Code Icon](./images/azportal(1).png)
 
-1. In the top search bar, search for **Azure AI Foundry (1)**, select **Azure AI Foundry (2)** from the result.
+1. In the top search bar, search for **Microsoft Foundry (1)**, select **Microsoft Foundry (2)** from the result.
 
-    ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
+    ![](./images/speech-t2p2.png)
 
-1. On the **AI Foundry** home page, from the left navigation menu, under **Classic AI services (1)**, select **Azure AI services multi-service account (classic) (2)**, and then click **+ Create (3)**.
+1. On the **Microsoft Foundry** home page, from the left navigation menu, under **Classic AI services (1)**, select **Azure AI services multi-service account (classic) (2)**, and then click **+ Create (3)**.
 
-    ![Visual Studio Code Icon](./images/a-3(1).png)
+    ![Visual Studio Code Icon](./images/azaiserv-t2p1.png)
 
-1. Create the resource with the following settings, then click on **Review + Create (7)**.
+1. Create the resource with the following settings, then click on **Review + create (7)**.
     
     - **Subscription**: **Your Azure subscription (1)**
     
@@ -116,7 +116,7 @@ The Azure AI services APIs are REST-based, so you can consume them by submitting
 
 1. View the contents of the **rest-client** folder, and note that it contains a file for configuration settings:
     
-    - **C#**: **appsettings.json (1)**
+    - **C#**: appsettings.json **(1)**
 
 1. Open the configuration file and update the configuration values it contains to reflect the **endpoint (2)** and an authentication **key (3)** for your Azure AI services resource that you had copied earlier. **Save your changes**, by pressing **CTRL + S** on the keyboard.
 
@@ -124,7 +124,7 @@ The Azure AI services APIs are REST-based, so you can consume them by submitting
 
 1. Note that the **rest-client** folder contains a code file for the client application:
 
-    - **C#**: **Program.cs (1)**
+    - **C#**: Program.cs **(1)**
 
 1. Open the code file and review the code it contains, the following details:
     
@@ -144,7 +144,7 @@ The Azure AI services APIs are REST-based, so you can consume them by submitting
     
     - The response from the service is a JSON object, which the client application can parse.
 
-1. Right-click on the **rest-client (1)** folder and **Open in Integrated Terminal (2)**. Then enter the following language-specific command to run the program:
+1. Right-click on the **rest-client (1)** folder and then select **Open in Integrated Terminal (2)**. Then enter the following language-specific command to run the program:
 
     ![Visual Studio Code Icon](./images/a-13.png)
 
@@ -180,7 +180,7 @@ You can write code that consumes Azure AI services REST APIs directly, but there
 
 1. View the contents of the **sdk-client** folder, and note that it contains a file for configuration settings:
     
-    - **C#**: **appsettings.json (1)**
+    - **C#**: appsettings.json **(1)**
 
 1. Open the configuration file and update the configuration values it contains to reflect the **endpoint (2)** and an authentication **key (3)** for your Azure AI services resource that you had copied earlier. **Save your changes** by pressing **Ctrl+S**.
 
@@ -210,7 +210,7 @@ You can write code that consumes Azure AI services REST APIs directly, but there
     dotnet run
     ```
 
-1. When prompted, enter some text and review the language that is detected by the service. For example, try entering "**Goodbye**", "**Au revoir**", and "**Hasta la vista**".
+1. When prompted, enter some text and review the language that is detected by the service. For example, try entering "**Goodbye**", and "**Au revoir**".
 
     ![Visual Studio Code Icon](./images/a-19.png)
 

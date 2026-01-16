@@ -27,7 +27,7 @@ Many commonly used Azure AI services APIs are available in container images. For
 
 1. In the Azure portal, on the **Home** page, search for **Container instances (1)**, and select **Container instances (2)** from the services.
 
-    ![Visual Studio Code Icon](./images/a-45(1).png)
+    ![Visual Studio Code Icon](./images/container-t1p1.png)
 
 1. In the **Container instances** blade, click on **+ Create**.
 
