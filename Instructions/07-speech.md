@@ -41,7 +41,7 @@ In this task, you will clone the AI-102-AIEngineer repository to your local envi
 
     ![](./images/Terminal_new_vs_1(1).png)
 
-1. In the Terminal, run a **git clone** command to clone the`https://github.com/MicrosoftLearning/AI-102-AIEngineer` repository to a local folder (it doesn't matter which folder).
+1. In the Terminal, run a **git clone** command to clone the `https://github.com/MicrosoftLearning/AI-102-AIEngineer` repository to a local folder (it doesn't matter which folder).
 
     ![](./images/Terminal_new_vs_1(2).png)
    
@@ -51,11 +51,13 @@ In this task, you will clone the AI-102-AIEngineer repository to your local envi
 
     > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
 
-1.  Open Explorer, select **Explorer (1)** > **Open Folder (3)** and open **C:\Users\azureuser\AI-102-AIEngineer (3)** and then click **Select Folder (4)**.
+1.  Open Explorer, select **Explorer (1)** > **Open Folder (3)** and open `C:\Users\azureuser\AI-102-AIEngineer` **(3)** and then click **Select Folder (4)**.
 
     ![](./images/Terminal_new_vs_1(4).png)
 
     >**Note:** On the **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust the authors**.
+
+    ![](./images/speech-t1p5.png)
 
     >**Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
 
@@ -67,18 +69,18 @@ In this task, you will create an Azure AI Speech resource in the Azure portal. Y
 
     ![Visual Studio Code Icon](./images/azportal(1).png)
 
-1. On the Azure Portal home page, use the top search bar to look for **Azure AI Foundry (1)**, then select **Azure AI Foundry (2)** from the results.
+1. On the Azure Portal home page, use the top search bar to look for **Microsoft Foundry (1)**, then select **Microsoft Foundry (2)** from the results.
 
-    ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
+    ![Visual Studio Code Icon](./images/speech-t2p2.png)
 
-1. On the **AI Foundry** blade, from the left navigation pane click **More services (1)** → select **Speech service (2)** → click **+ Create (3)**.
+1. On the **Microsoft Foundry** blade, from the left navigation pane click **More services (1)** → select **Speech service (2)** → click **+ Create (3)**.
 
-    ![](./images/speechservice.png)    
+    ![](./images/speech-t2p3.png)    
 
-1. Create a resource using the provided settings. Once completed, click **Review + Create (6)** to validate the configuration.
+1. Create a resource using the provided settings. Once completed, click **Review + create (6)** to validate the configuration.
 
     - **Subscription**: **Your Azure subscription (1)**
-    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
     - **Region**: **<inject key="Region" enableCopy="false"/> (3)**
     - **Name**: **aispeech<inject key="DeploymentID" enableCopy="false"/> (4)**.
     - **Pricing tier**: Standard S0 or F0 based on Availability of the Tier **(5)**
@@ -95,13 +97,13 @@ In this task, you will create an Azure AI Speech resource in the Azure portal. Y
 
 1. After the resource is deployed, navigate to it, open **Resource Management (1)** from the left pane, and select **Keys and Endpoint (2)**. From this page, copy the value of **KEY 1 (3)** and the **Location/Region (4)** where the service is provisioned, as you will use these values in the next task.
 
-    ![](./images/azureaiservice2(4).png)
+    ![](./images/speech-t2p4.png)
 
 ## Task 3: Prepare to use the Azure AI Speech service
 
 In this task, you'll complete a partially implemented client application that uses the Azure AI Speech SDK to recognize and synthesize speech.
 
-1. In Visual Studio Code, in the **Explorer** pane, browse to the **07-speech (1)** folder and expand the **C-Sharp (2)** folder. Right-click the **speaking-clock (3)** folder and **Open in Integrated Terminal (4)**.
+1. In Visual Studio Code, in the **Explorer** pane, browse to the **07-speech (1)** folder and expand the **C-Sharp (2)** folder. Right-click on the **speaking-clock (3)** folder and then select **Open in Integrated Terminal (4)**.
 
     ![](./images/07-speechvsc(1).png)
 
@@ -117,7 +119,7 @@ In this task, you'll complete a partially implemented client application that us
     
      - **C#**: appsettings.json
 
-1. Open the configuration file and update the configuration values it contains to include an authentication **key** for the Azure AI Speech resource, and the **location** where it is deployed. Save your changes.
+1. Open the configuration file and update the configuration values it contains to include an authentication **key** for the Azure AI Speech resource, and the **location** where it is deployed. **Save** the changes.
 
     ![](./images/07-speechvsc(2).png)
 
@@ -149,6 +151,9 @@ In this task, you'll complete a partially implemented client application that us
     // Configure voice
     speechConfig.SpeechSynthesisVoiceName = "en-US-AriaNeural";
     ```
+
+    ![](./images/speech-t3p1.png)
+
 6. **Save your changes** and return to the integrated terminal for the **speaking-clock** folder, and enter the following command to run the program:
 
     **C#**
@@ -178,6 +183,8 @@ In this task, you will implement speech recognition using Azure AI Speech. You c
     using SpeechRecognizer speechRecognizer = new SpeechRecognizer(speechConfig, audioConfig);
     Console.WriteLine("Speak now...");
     ```
+
+    ![](./images/speech-t4p1.png)
 
 1. Now skip ahead to the **Add code to process the transcribed command** section below.
 
@@ -274,6 +281,9 @@ In this task, you will configure **speech synthesis** to generate spoken output 
     speechConfig.SpeechSynthesisVoiceName = "en-GB-RyanNeural";
     using SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer(speechConfig);
     ```
+
+    ![](./images/speech-t5p1.png)
+
     >**Note:** The default audio configuration uses the default system audio device for output, so you don't need to explicitly provide an **AudioConfig**. If you need to     redirect     audio output to a file, you can use an **AudioConfig** with a filepath to do so.
 
 1. In the **TellTime** function, under the comment **Synthesize spoken output**, add the following code to generate spoken output, being careful not to replace the code at the end of the function that prints the response:

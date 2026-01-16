@@ -16,19 +16,19 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![](./images/envtab(1).png)
+![](./images/gs-envtab.png)
 
 ## Lab Progress
 
 You can use the **Progress** tab to track your progress while working on the lab. A score will be provided after successful validation.
 
-![](./images/progresstab.png)
+![](./images/gs-progtab.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
 
-![](./images/splitwin(1).png)
+![](./images/gs-splittab.png)
 
 ## Utilizing the Zoom In/Out Feature
 
@@ -66,63 +66,18 @@ Feel free to **start, stop, or restart (2)** your virtual machine as needed from
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-        ![](./images/sc900-image-1.png)
+        ![](./images/gs-signinwin1.png)
  
 3. Next, provide your password:
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-        ![](./images/sc900-image-2.png)
+        ![](./images/gs-signinwin2.png)
 
 4. If prompted to **Stay signed in?**, click **No**.
 
     ![](./images/staysignedin(1).png)
- 
-    >**Note:** **Follow the below steps, if MFA prompted:**
 
-    - Click **Next** in **Lets keep your account secure**.
-
-       ![ws name.](./images/gg1.png)       
-
-     - On **Install Microsoft Authenticator**, click **Next**.
-
-       ![ws name.](./images/gg2.png)  
-
-     - Click **Next**.
-
-       ![ws name.](./images/gg3.png)  
-
-     - In **android**, go to the play store and Search for **Microsoft Authenticator** and Tap on **Install**.      
-
-       ![ws name.](./images/gg7.png) 
-
-        >Note: For iOS, open the App Store and repeat the steps.
-
-        >Note: Skip if already installed.       
-
-     - Open the app and tap on **Scan a QR code**.
-
-     - Scan the QR code visible on the screen **(1)** and click on **Next (2)**.
-
-       ![ws name.](./images/gg4.png)
-
-     - Enter the digit displayed on the Screen in the Authenticator app on your mobile and tap on **Yes**.
-
-       ![ws name.](./images/gg5.png)     
-
-     - Once the notification is approved, click on **Next**.
-
-     - Click on **Done**.
-
-       ![ws name.](./images/gg6.png)     
-
-1. Tap on **Finish** in the Mobile Device.
-
-    >**NOTE:** While logging in again, enter the digits displayed on the screen in the **Authenticator app** and click on Yes.
-
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Cancel"** to skip the tour.
-
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab. 
  
 ## Support Contact
 

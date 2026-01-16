@@ -28,18 +28,18 @@ In this task, you will provision an Azure AI Speech resource in the Azure portal
 
     ![Visual Studio Code Icon](./images/azportal(1).png)
 
-1. In the top search bar, search for **Azure AI Foundry (1)**, select **Azure AI Foundry (2)** from the result.
+1. In the top search bar, search for **Microsoft Foundry (1)**, select **Microsoft Foundry (2)** from the result.
 
-    ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
+    ![](./images/speech-t2p3.png) 
 
-1. On the **AI Foundry** blade, from the left navigation pane click **More services (1)** → select **Speech service (2)** → click **+ Create (3)**.
+1. On the **Microsoft Foundry** blade, from the left navigation pane click **More services (1)** → select **Speech service (2)** → click **+ Create (3)**.
 
     ![](./images/speechservice2(1).png)   
 
 1. Create a resource with the following settings:
    
     - **Subscription**: **Your Azure subscription (1)**
-    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Resource group**: **A   i-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
     - **Region**: **<inject key="Region" enableCopy="false"/> (3)**
     - **Name**: **aiseech1<inject key="DeploymentID" enableCopy="false"/> (4)**
     - **Pricing tier**: **Standard S0 (5)**
@@ -55,13 +55,13 @@ In this task, you will provision an Azure AI Speech resource in the Azure portal
 
 1. After the resource is deployed, navigate to it, open **Resource Management (1)** from the left pane, and select **Keys and Endpoint (2)**. From this page, copy the value of **KEY 1 (3)** and the **Location/Region (4)** where the service is provisioned, as you will use these values in the next task.
 
-    ![](./images/azureaiservice2(4)(1).png)
+    ![](./images/speech2-t1p1.png)
 
 ## Task 2: Prepare to use the Azure AI Speech Translation service
 
 In this task, you'll complete a partially implemented client application that uses the Azure AI Speech SDK to recognize, translate, and synthesize speech.
 
-1. In Visual Studio Code, in the **Explorer** pane, browse to the **07-speech (1)** folder and expand the **C-Sharp (2)** folder. Right-click the **speaking-clock (3)** folder and **Open in Integrated Terminal (4)**.
+1. In Visual Studio Code, in the **Explorer** pane, browse to the **07-speech (1)** folder and expand the **C-Sharp (2)** folder. Right-click on the **translator (3)** folder and then select **Open in Integrated Terminal (4)**.
 
     ![](./images/vsctranslator(1).png)
 
@@ -130,6 +130,8 @@ In this task, you'll complete a partially implemented client application that us
     dotnet run
     ```
 1. If you are using C#, you can ignore any warnings about using the **await** operator in asynchronous methods - we'll fix that later. The code should display a message that it is ready to translate from en-US. Press **ENTER** to end the program.
+
+    ![](./images/speech2-t2p1.png)
 
 ## Task 3: Implement speech translation
 
