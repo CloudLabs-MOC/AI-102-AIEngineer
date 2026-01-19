@@ -26,7 +26,7 @@ In this lab, you will complete the following tasks:
 
 1. In the [Azure portal](https://portal.azure.com?azure-portal=true), select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal, if you are not already in the **Cloud Shell**.
 
-    ![Visual Studio Code Icon](./images/mod03-ai-102-image5.png)
+    ![Visual Studio Code Icon](./images/langunder-t7p1.png)
 
 1. Make sure the type of shell indicated on the top left of the Cloud Shell pane is switched to **PowerShell**. If it is **Bash**, switch to **PowerShell** by using the drop-down menu.
 
@@ -67,7 +67,7 @@ In this lab, you will complete the following tasks:
 
 1. In the Azure Portal click the **&#65291;Create a resource** button.
 
-     ![](images/a-23.png)
+     ![](images/translate-t2p1.png)
    
 1. In the Marketplace page, search for **Azure ai Services (1)**, and press Enter. Then click on **Create (2)** drop-down and select **Azure AI services (3)**. 
    
@@ -115,7 +115,7 @@ In this exercise, you'll complete a partially implemented client application tha
 
 1. Save your changes by pressing **CTRL + S**.
 
-1. Now, go to **C-Sharp → text-translation → translate\_text.csproj**, update the `<TargetFramework>` value from `net8.0` to `net9.0`, save the file by pressing **`Ctrl+S`**.
+1. Now, go to **C-Sharp → text-translation → translate\_text.csproj**, update the `<TargetFramework>` value from `net8.0` to `net9.0`, save the file by pressing **Ctrl + S**.
 
     ![](./images/solution2.png)
 

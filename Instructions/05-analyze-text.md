@@ -29,19 +29,19 @@ In this lab, you will complete the following tasks:
 
 If you don't already have one in your subscription, you'll need to provision an **Azure AI Language service** resource in a supported region.
 
-1. On Azure Portal page, in **Search resources, services and docs (G+/)**, enter **Azure AI Foundry (1)**, and then select **Azure AI Foundry (2)** under services.
+1. On Azure Portal page, in **Search resources, services and docs (G+/)**, enter **Microsoft Foundry (1)**, and then select **Microsoft Foundry (2)** under services.
 
-    ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
+    ![Visual Studio Code Icon](./images/speech-t2p2.png)
 
 1. Under **More services** in the the left navigation pane, select **Language Service (1)** from . Then click on **Create (2)**.
 
-    ![Visual Studio Code Icon](./images/mod03-ai-102-image1.png)
+    ![Visual Studio Code Icon](./images/analyt-t1p2.png)
 
 1. Scroll down to the bottom and select **Continue to create your resource**.
 
    ![Visual Studio Code Icon](./images/mod03-ai-102-image2.png)
    
-1. Provision the resource using the following settings and then click on **Review+Create (7)**.
+1. Provision the resource using the following settings and then click on **Review + create (7)**.
 
     - **Subscription**: **Leave the default Azure subscription (1)**.
 
@@ -75,7 +75,7 @@ Open up a new browser tab to work with Cloud Shell. If you haven't cloned this r
 
 1. In the [Azure portal](https://portal.azure.com?azure-portal=true), select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. A Cloud Shell pane will open at the bottom of the portal.
 
-    ![Visual Studio Code Icon](./images/mod03-ai-102-image5.png)
+    ![Visual Studio Code Icon](./images/langunder-t7p1.png)
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **Bash**. If you don't see this option, skip the step.  
 
