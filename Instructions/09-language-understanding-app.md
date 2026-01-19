@@ -37,13 +37,13 @@ In this lab, you will complete the following tasks:
 
 In this task, you will create an **Azure AI Language** resource in the Azure portal and configure its settings. Once deployed, you will review the deployment details.
 
-1. On Azure Portal page, in **Search resources, services and docs (G+/)** box at the top of the portal, search **Azure AI Foundry (1)**, and then select **Azure AI Foundry (2)** under services.
+1. On Azure Portal page, in **Search resources, services and docs (G+/)** box at the top of the portal, search **Microsoft Foundry (1)**, and then select **Microsoft Foundry (2)** under services.
 
-      ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
+      ![Visual Studio Code Icon](./images/speech-t2p2.png)
 
 1. Then, in the **AI Foudnry** tab, from the left navigation pane, click on **More services (1)**, then select **Language Service (2)** and click on **+ Create (3)**.
 
-      ![](./images/langsrv(1).png)
+      ![](./images/langunder-t1p1.png)
 
 1. On the **Select additional features** page, scroll down to the bottom and select **Continue to create your resource**.
 
@@ -112,7 +112,7 @@ In this task, you will create a **Conversational Language Understanding** projec
        
     - Select **Next (5)**
 
-      ![](images/c-7(1).png)    
+      ![](images/langunder-t2p1.png)    
 
 1. On the **Review and finish** page, select **Create**.
 
@@ -204,7 +204,7 @@ In this task, you will train and test the **Clock** model by starting a training
 
     `what's the time now?` **(3)**
 
-      ![](images/c-18(1).png)    
+      ![](images/langunder-t4p1.png)    
 
 1. Review the result that is returned, noting that it includes the predicted intent (which should be **GetTime**) and a confidence score that indicates the probability the model calculated for the predicted intent. The JSON tab shows the comparative confidence for each potential intent (the one with the highest confidence score is the predicted intent)
 
@@ -278,7 +278,7 @@ In some cases, valid values for an entity can be restricted to a list of specifi
     |-------------------|---------|
     | Sunday **(3)** | Sun **(4)** |
 
-      ![](images/c-24(1).png)
+      ![](images/langunder-t5p1.png)
 
       >**Note**: Type the synonyms and press enter.
 
@@ -371,7 +371,7 @@ Now that you've modified the schema, you need to retrain and retest the model.
 
     `what's the time in Edinburgh?` **(3)**
 
-      ![](images/c-31(1).png)    
+      ![](images/langunder-t5p2.png)    
 
 1. Review the result that is returned, which should hopefully predict the **GetTime (1)** intent and a **Location** entity with the text value `Edinburgh` **(2)**.
 
@@ -397,7 +397,7 @@ In this task, you will obtain the prediction URL for your deployed model in Lang
 
       ![](images/c-33.png)
 
-1. In the **Get prediction URL** dialog box, note that the URL for the prediction endpoint is shown along with a sample request, which consists of a **curl** command that submits an HTTP POST request to the endpoint, specifying the key for your Azure AI Language resource in the header and including a query and language in the request data. Paste the sample request in a notepad, we will be needing it in the next task of the lab. **(2)**
+1. In the **Get prediction URL** dialog box, note that the URL **(1)** for the prediction endpoint is shown along with a sample request, which consists of a **curl** command that submits an HTTP POST request to the endpoint, specifying the key for your Azure AI Language resource in the header and including a query and language in the request data. Paste the sample request in a notepad, we will be needing it in the next task of the lab. **(2)**
 
       ![](images/c-34.png)
 
@@ -407,17 +407,17 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
 
 1. In the [Azure portal](https://portal.azure.com?azure-portal=true), select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. A Cloud Shell pane will open at the bottom of the portal.
 
-      ![](images/mod-5-59.png)
+      ![](images/langunder-t7p1.png)
 
 1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **Bash**. If you don't see this option, skip the step.  
 
       ![](./images/csazure(1).png)
 
-1. If you're prompted to create storage for your Cloud Shell, select **Mount storage account** and select your default **Subscription**, and then click on **Apply**.
+1. If you're prompted to create storage for your Cloud Shell, select **Mount storage account (1)** and select your default **Subscription (2)**, and then click on **Apply (3)**.
 
       ![](./images/csazure(2).png)
    
-1. Select **I want to create a storage account**, click on **Apply**.
+1. Select **I want to create a storage account (1)**, click on **Next (2)**.
 
       ![](./images/csazure(3).png)
 
@@ -470,7 +470,7 @@ In this task, you will use Azure Cloud Shell to call the prediction API. You wil
 
       ![](images/csazure(6).png)    
 
-1. Press **CTRL + Save** to save your changes.
+1. Press **CTRL + S** to save your changes.
 
 1. Make a call by running `sh send-call.sh`.
 1. View the resulting JSON, which should include the predicted intent and entities, like this:

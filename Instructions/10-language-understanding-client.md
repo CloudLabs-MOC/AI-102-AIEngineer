@@ -45,7 +45,7 @@ In this task, you will create an **Azure AI Language service** resource in the A
 
 1. Select the **&#65291;Create a resource** button.
 
-      ![](images/a-23.png)
+      ![](images/langunderc-t2p1.png)
 
 1. Search for **language service (1)**,press enter and select **language service (2)** from the services.
 
@@ -57,7 +57,7 @@ In this task, you will create an **Azure AI Language service** resource in the A
 
 1. Scroll down and select **Continue to create your resource** 
 
-1. Create a resource with the following settings and then click on **Review + Create (7)**.
+1. Create a resource with the following settings and then click on **Review + create (7)**.
 
     - **Subscription**: **Keep it as default (1)**
     - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false" /></inject> (2)**.
@@ -76,7 +76,7 @@ In this task, you will create an **Azure AI Language service** resource in the A
 
 1. Navigate to the **Keys and Enpoint (1)** under **Resource Management**. Make a copy of **KEY 1 (2)** and **Endpoint (3)** and then paste it into Notepad. You will be using it in the upcoming tasks.
 
-      ![](images/c-50.png)
+      ![](images/langunderc-t2p2.png)
 
 ## Task 3: Import, train, and publish a Conversational language understanding model
 
