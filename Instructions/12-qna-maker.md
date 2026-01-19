@@ -160,16 +160,24 @@ In this task, you will learn how to **add sources to the knowledge base** in you
 
 You can create a knowledge base from scratch, but it's common to start by importing questions and answers from an existing FAQ page or document. In this case, you'll import data from an existing FAQ web page for Microsoft learn, and you'll also import some pre-defined "chit chat" questions and answers to support common conversational exchanges.
 
-1. On the **Manage sources** page for your question answering project, in the **&#9547; Add source** list, select **URLs**.
+1. On the **Manage sources** page for your question answering project, in the **&#9547; Add source (1)** list, select **Files**.
 
-   ![](./images/language6.png)
+   ![](./images/qna-t4p3.png)
 
-1. Then in the **Add URLs** dialog box, select **&#9547; Add url** and set the following name and URL and then click **Add all (3)** to add it to the knowledge base:
+1. Then in the **Add files** dialog box, select **&#9547; Add file** and set the following name and URL and then click  to add it to the knowledge base:
 
-    - **Name**: `Learn FAQ Page` **(1)**
-    - **URL**: `https://docs.microsoft.com/en-us/learn/support/faq` **(2)**
+    - **Name**: `Learn FAQ Page` **(2)**
+    - Select **Choose File (3)**
 
-        ![](./images/language7(1).png)
+        ![](./images/qna-t4p4.png)
+
+1. In the Open window, navigate to `C:\AllFiles\AI-102-AIEngineer-stage` **(1)** and then scroll down and select **training-support.pdf (2)** file and then click on **Open (3)**.
+
+    ![](./images/qna-t4p4(1).png)
+
+1. Then click on **Add all**.
+
+    ![](./images/qna-t4p5.png)
 
 1. On the **Manage sources** page for your question answering project, in the **&#9547; Add source** list, select **Chitchat**.
 
@@ -185,21 +193,21 @@ In this task, you will learn how to **edit the knowledge base** in your Question
 
 Your knowledge base has been populated with question and answer pairs from the Microsoft Learn FAQ, supplemented with a set of conversational *chit-chat* question  and answer pairs. You can extend the knowledge base by adding additional questions and answer pairs.
 
-1. In your **LearnFAQ** project in Language Studio, click on Project **LearnFAQ** navigate and click on to the **source type URL** in manage sources.
+1. In your **LearnFAQ** project in Language Studio, click on Project **LearnFAQ** navigate and click on to the **training-support.pdf** in manage sources.
 
-    ![](./images/language10.png)
+    ![](./images/qna-t5p1.png)
 
 1. Select the **Edit knowledge base** page to see the existing question and answer pairs (if some tips are displayed, read them and choose **Got it** to dismiss them, or select **Skip all**)
 
-    ![](./images/language11(1).png)
+    ![](./images/qna-t5p2.png)
 
 1. In the knowledge base, on the **Question answer pairs** tab, select **&#65291;** **(1)**, and create a new question answer pair with the following settings, then select **Done (5)** and then click on **Save (6)** icon.
 
-    - **Source**: `https://docs.microsoft.com/en-us/learn/support/faq` **(2)**
+    - **Source**: `training-support.pdf` **(2)**
     - **Question**: `What is Microsoft certification?` **(3)**
     - **Answer**: `The Microsoft Certified Professional program enables you to validate and prove your skills with Microsoft technologies.` **(4)**
 
-        ![](./images/language12(1).png)
+        ![](./images/qna-t5p3.png)
 
 1. On the **Question answer pairs** tab, search for the **What is Microsoft certification? (1)** question that is created, on the right-hand side, expand **Alternate questions (2)**. Now click **+ Add alternate question (3)** and add `How can I demonstrate my Microsoft technology skills?` **(4)**, and press enter.
 
@@ -251,9 +259,9 @@ In this task, you will learn how to **deploy and test the knowledge base** to ma
 
 The knowledge base provides a back-end service that client applications can use to answer questions. Now you are ready to publish your knowledge base and access its REST interface from a client.
 
-1. In the **LearnFAQ** project in Language Studio, expand the hamburger and select the **Deploy knowledge base** page.
+1. In the **LearnFAQ** project in Language Studio, expand the **>>** and select the **Deploy knowledge base** page.
 
-     ![](./images/language18.png)
+     ![](./images/qna-t7p1.png)
 
 2. At the top of the page, click **Deploy (1)**. Then again, click **Deploy (2)** on the **Deploy this project?** dialogue.
 
@@ -307,6 +315,10 @@ Most commonly, the client applications used to retrieve answers from a knowledge
 1. Return to Language Studio in the browser, and in the **Deploy knowledge base** page, select **Create Bot**. This opens the Azure portal in a new browser tab so you can create a bot in your Azure subscription (if prompted, sign in).
 
    ![](./images/language22(1).png)
+
+1. On the **Do you trust the authors code?** window, click on **Yes, I trust the authors**.
+
+    ![](./images/qna-t8p1.png)
 
 1. In the Azure portal, create a bot with the following settings (most of these will be pre-populated for you):
 
