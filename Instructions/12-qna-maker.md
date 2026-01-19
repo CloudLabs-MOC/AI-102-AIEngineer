@@ -40,7 +40,6 @@ In this task, you will learn how to **open the cloned folder in Visual Studio Co
 
     ![](./images/vscqna(1).png)
 
-    >**Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
     >**Note:** In the Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
 
 ## Task 2: Create a Language resource
@@ -51,7 +50,7 @@ To create and host a knowledge base for question answering, you need a **Languag
 
 1. In the Azure Portal, select the **＋ Create a resource** button. 
 
-   ![](./images/language1.png)
+   ![](./images/qna-t2p1.png)
 
 1. Search for **language service (1)**,press enter and select **language service (2)** from the services.
 
@@ -83,15 +82,15 @@ To create and host a knowledge base for question answering, you need a **Languag
 
 1. Wait for the deployment to complete, and then view the deployment details.
 
-1. In the top search bar, search for **Azure AI Foundry (1)**, select **Azure AI Foundry (2)** from the result.
+1. In the top search bar, search for **Microsoft Foundry (1)**, select **Microsoft Foundry (2)** from the result.
 
-    ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
+    ![Visual Studio Code Icon](./images/speech-t2p2.png)
    
-1. From the left navigation pane, under **Use with AI Foundry**, click on **AI Search (1)**, and then click **+ Create (2)**.
+1. From the left navigation pane, under **Use with Foundry**, click on **AI Search (1)**, and then click **+ Create (2)**.
 
-    ![](./images/aisearch(1).png)
+    ![](./images/qna-t2p2.png)
 
-1. Provision the resource using the following settings, then click on **Review + Create (6)**:
+1. Provision the resource using the following settings, then click on **Review + create (6)**:
 
     - **Subscription**:  Select Your Azure subscription **(1)**
     - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
