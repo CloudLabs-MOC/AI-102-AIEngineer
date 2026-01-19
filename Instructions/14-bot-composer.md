@@ -63,6 +63,20 @@ In this task, you're going to use the Bot Framework Composer to create your bot.
 
 > **Note:** Updates may include changes to the user interface that affect the instructions in this exercise.
 
+1. On the Lab-VM, in the **Type here to search** bar, search for **Command Prompt (1)**, then right-click on it **(2)** , and select **Run as administrator (3)**.
+
+    ![](./images/botcomp(6).png)
+
+1. Run the following commands to add the path:
+
+    ```
+    setx PATH "%PATH%;C:\Program Files\nodejs;"
+    ```
+
+    ![](./images/botcomp(7).png)
+
+1. Close the **Command Prompt**.
+
 1. Open a new tab, copy and paste this link, `https://github.com/microsoft/BotFramework-Composer/releases/download/v2.1.2/BotFramework-Composer-2.1.2-windows-setup.exe`, and download the **Bot Framework Composer**.
 
 1. From the downloads, click on **Open file**.
@@ -84,20 +98,6 @@ In this task, you're going to use the Bot Framework Composer to create your bot.
     >**Note:** If **Help us improve?** pop-ups, select **Not now**.
 
 1. Ensure that the version of Bot Framework Composer is **2.0.0** or later.
-
-1. On the Lab-VM, in the **Type here to search** bar, search for **Command Prompt (1)**, then right-click on it **(2)** , and select **Run as administrator (3)**.
-
-    ![](./images/botcomp(6).png)
-
-1. Run the following commands to add the path:
-
-    ```
-    setx PATH "%PATH%;C:\Program Files\nodejs;"
-    ```
-
-    ![](./images/botcomp(7).png)
-
-1. Close the **Command Prompt**.
 
 ## Task 3: Create a bot
 
