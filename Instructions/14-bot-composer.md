@@ -92,7 +92,7 @@ In this task, you're going to use the Bot Framework Composer to create your bot.
 1. Run the following commands to add the path:
 
     ```
-    setx path1 "%PATH%;C:\Program Files\nodejs;"
+    setx PATH "%PATH%;C:\Program Files\nodejs;"
     ```
 
     ![](./images/botcomp(7).png)
