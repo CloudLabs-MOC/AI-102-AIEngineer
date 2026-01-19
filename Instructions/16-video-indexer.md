@@ -46,7 +46,7 @@ First, you'll need to sign into the Video Analyzer portal and upload a video.
 
 >**Tip:** If the Video Analyzer page is slow to load in the hosted lab environment, use your locally installed browser. strictly go ahead and do for customers who have been granted [limited access
 
-1. In your browser, open the Video Analyzer portal at `https://www.videoindexer.ai`.
+1. In your browser, open the Video Analyzer portal at `https://www.videoindexer.ai`
 
 2. When Choose an account to continue prompted, select **Microsoft Entra ID (formerly Azure AD)** and sign in with the following credentials.
 
@@ -54,7 +54,7 @@ First, you'll need to sign into the Video Analyzer portal and upload a video.
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-4. Download the video by browsing the URL in a new tab **https://aka.ms/responsible-ai-video**.
+4. Download the video by browsing the URL in a new tab **https://aka.ms/responsible-ai-video**
 
     ![](./images/vidana(1).png)
    

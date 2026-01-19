@@ -50,15 +50,15 @@
  
      ![Visual Studio Code Icon](./images/azportal(1).png)
  
- 1. In the top search bar, search for **Azure AI Foundry (1)**, select **Azure AI Foundry (2)** from the result.
+ 1. In the top search bar, search for **Microsoft Foundry (1)**, select **Microsoft Foundry (2)** from the result.
  
-     ![Visual Studio Code Icon](./images/aifoundrysearch(1).png)
+     ![Visual Studio Code Icon](./images/speech-t2p2.png)
  
- 1. On the **AI Foundry** home page, from the left navigation menu, under **Classic AI services (1)**, select **Azure AI services multi-service account (classic) (2)**, and then click **+ Create (3)**.
+ 1. On the **Microsoft Foundry** home page, from the left navigation menu, under **Classic AI services (1)**, select **Azure AI services multi-service account (classic) (2)**, and then click **+ Create (3)**.
  
-     ![Visual Studio Code Icon](./images/a-3(1).png)
+     ![Visual Studio Code Icon](./images/compvision-t1p1.png)
  
- 1. Create the resource with the following settings, then click on **Review + Create (6)**.
+ 1. Create the resource with the following settings, then click on **Review + create (6)**.
  
      - **Subscription**: *Your Azure subscription*
      

@@ -37,13 +37,17 @@ In this task, you will create a bot that uses the OpenWeather service to retriev
 
 1. On **Create New Account** page enter the below details and click on **Create Account**
 
-    - Username: odl_user<inject key="DeploymentID" enableCopy="false"/>
-    - Email : <inject key="AzureAdUserEmail"></inject>
-    - Password: <inject key="AzureAdUserPassword"></inject>
+    - Username: **odl_user<inject key="DeploymentID" enableCopy="false"/> (1)**
+    - Email : **<inject key="AzureAdUserEmail"></inject> (2)**
+    - Password: **<inject key="AzureAdUserPassword"></inject> (3)**
 
-    - Click on all the **checkboxes** as shown in the image below.
+    - Click on all the **checkboxes (4)** as shown in the image below.
 
-        ![Visual Studio Code Icon](./images/create1.png)
+    - Solve the puzzle to verify the you are not a robot **(5)**.
+
+    - Click on **Create Account (6)**.
+
+        ![Visual Studio Code Icon](./images/botcomp-t1p1.png)
 
 1. In the **How and where will you use our API?** pop-up, you can provide your **company name (1)** and select **Education/Science (2)** as the purpose and click on **Save (3)**.
 
@@ -51,7 +55,7 @@ In this task, you will create a bot that uses the OpenWeather service to retriev
 
 1. Select **API Keys (1)** tab and copy the **Key (2)** to the notepad.
 
-    ![api-option](./images/botcomp(3).png)
+    ![api-option](./images/botcomp-t1p2.png)
 
 ## Task 2: Update Bot Framework Composer
 
@@ -264,7 +268,7 @@ First, you need to define a dialog flow that will be used to handle questions ab
    | dialog.temp    | =round(dialog.api_response.content.main.temp)       |
    | dialog.icon    | =dialog.api_response.content.weather[0].icon      |
 
-   ![api-option](./images/14.10.png)
+   ![api-option](./images/botcomp-t4p1.png)
 
     ![](./images/botcomp(27).png)
 
@@ -290,9 +294,9 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
     ![Selected WeatherBot workflow](./images/select-workflow.png)
 
-1. In the properties pane for the selected **WeatherBot** dialog, in the **Language Understanding** section, set the **Recognizer type** to **Regular expression recognizer**.
+1. In the properties pane for the selected **WeatherBot** dialog, in the **Language Understanding** section, set the **Recognizer type** to **Regular expression**.
 
-   ![api-option](./images/14.9.png)
+   ![api-option](./images/botcomp-t5p1.png)
 
     >**Note:** The default recognizer type uses the Language Understanding service to produce the user's intent using a natural language understanding model. We're using a regular expression recognizer to simplify this exercise. In a real application, you should consider using Language Understanding to allow for more sophisticated intent recognition.
 
@@ -312,7 +316,7 @@ Now you need some way for the new dialog to be initiated from the existing welco
 
       ![api-option](./images/14.7.png)
 
-    > **Note:** The text entered in the regex pattern text box is a simple regular expression pattern that will cause the bot to look for the word *weather* in any incoming message.  If "weather" is present, the message becomes a **recognized intent** and the trigger is initiated.
+        > **Note:** The text entered in the regex pattern text box is a simple regular expression pattern that will cause the bot to look for the word *weather* in any incoming message.  If "weather" is present, the message becomes a **recognized intent** and the trigger is initiated.
 
 1. Now that the trigger is created, you need to configure an action for it. In the authoring canvas for the trigger, select the **+ (1)** symbol under your new **WeatherRequested** trigger node. Then, in the list of actions, select **Dialog Management (2)** and select **Begin a new dialog (3)**.
 
@@ -343,7 +347,7 @@ A well-designed bot should allow users to change the flow of the conversation, f
 
       ![api-option](./images/14.5.png)
 
-    > The text entered in the regex pattern text box is a simple regular expression pattern that will cause the bot to look for the word *cancel* in any incoming message.
+        > The text entered in the regex pattern text box is a simple regular expression pattern that will cause the bot to look for the word *cancel* in any incoming message.
 
 1. In the authoring canvas for the trigger, add a **Send a response** action, and set its text response to `OK. Whenever you're ready, you can ask me about the weather.`
 

@@ -48,7 +48,7 @@ In this task, you will learn how to create a bot.
 You can use the Bot Framework SDK to create a bot based on a template, and then customize the code to meet your specific requirements.
 
 1. In Visual Studio Code, in the **Explorer** pane, browse to the **13-bot-framework (1)** folder and expand the **C-Sharp (2)** folder.
-Right-click the folder for your **C-Sharp** language and **Open in Integrated Terminal (3)**.
+Right-click the folder for your **C-Sharp** language and select **Open in Integrated Terminal (3)**.
 
     ![](./images/botframe1(7).png)
 
@@ -66,7 +66,7 @@ Right-click the folder for your **C-Sharp** language and **Open in Integrated Te
     dotnet new echobot -n TimeBot
     ```
 
-    ![](./images/botframe1(8).png)
+    ![](./images/botframe-t2p1.png)
 
 1. In the terminal pane, enter the following commands to change the current directory to the **TimeBot** folder list the code files that have been generated for your bot:
 
@@ -76,6 +76,10 @@ Right-click the folder for your **C-Sharp** language and **Open in Integrated Te
     ```
 
     ![](./images/botframe1(9).png)
+
+1. In the **13-bot-framework (1)** folder go to **C-Sharp (2)** and then select **TimeBot (3)** folder. In the TimeBot folder, select **EchoBot.csproj (4)** file to open it. Then change the `<TargetFramework>net6.0</TargetFramework>` to `<TargetFramework>net8.0</TargetFramework>` and press **Ctrl + S** to save the file.
+
+    ![](./images/botframe-t2p2.png)
 
 ## Task 3: Test the bot in the Bot Framework Emulator
 
@@ -117,8 +121,7 @@ You've created a bot based on the *EchoBot* template. Now you can run it locally
 
 1. Select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
 
-     ![Visual Studio Code Icon](./images/botframe1(11).png)
-    
+     ![Visual Studio Code Icon](./images/botframe-t3p1.png)
 
 1. After the conversation is opened in a **Live chat** pane, wait for the message *Hello and welcome!*.
 
@@ -198,7 +201,7 @@ You've created a bot that echoes the user's input back to them. It's not particu
 
 1. Start the Bot Framework Emulator, and select **Open bot (1)** by specifying the endpoint with the **`http://localhost:3978/api/messages` (2)** path appended, and select **Connect (3)**:
 
-     ![Visual Studio Code Icon](./images/botframe1(11).png)
+     ![Visual Studio Code Icon](./images/botframe-t3p1.png)
 
 1. After the conversation is opened in a **Live chat** pane, enter a message such as **`Hello`** and view the response from the bot, which should be **Ask me what the time is**.
 
