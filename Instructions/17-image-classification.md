@@ -47,13 +47,13 @@ In this task, you will learn how to create Custom Vision resources in Azure for 
 
 1. In the Azure portal, from the top search bar, search for **Custom vision (1)**, select **Custom vision (2)** from the results.
 
-   ![Upload apple with apple tag](./images/custvision(1).png)
+   ![Upload apple with apple tag](./images/imgclass-t2p1.png)
 
-1. From the **AI Foundry | Custom vision** blade, click on **+ Create**.
+1. From the **Microsoft Foundry | Custom vision** blade, click on **+ Create**.
 
-    ![](./images/custvision(2).png)
+    ![](./images/imgclass-t2p2.png)
 
-1. Create a **Custom Vision** resource with the following settings and then click on **Review + Create**.
+1. Create a **Custom Vision** resource with the following settings and then click on **Review + create**.
 
     - **Create options**: Both **(1)**
     - **Subscription**: Your Azure subscription **(2)**
@@ -85,7 +85,7 @@ To train an image classification model, you need to create a Custom Vision proje
 
     ![](./images/custvision(5).png)
 
-1. In a new browser tab, open the Custom Vision portal at `https://customvision.ai`. 
+1. In a new browser tab, open the Custom Vision portal at `https://customvision.ai` 
 
 1. If prompted, click on **Sign in** using the Microsoft account associated with your Azure subscription. 
 
@@ -99,7 +99,7 @@ To train an image classification model, you need to create a Custom Vision proje
 
     ![](./images/custvision(8).png)
 
-1. Create a new project with the following settings, then click on **Create Project**:
+1. Create a new project with the following settings, then click on **Create Project (7)**:
 
     - **Name**: Classify Fruit **(1)**
     - **Description**: Image classification for fruit **(2)**
@@ -108,7 +108,7 @@ To train an image classification model, you need to create a Custom Vision proje
     - **Classification Types**: Multiclass (Single tag per image) **(5)**
     - **Domains**: Food **(6)**
 
-      ![Upload apple with apple tag](./images/l7e1-6.png)
+      ![Upload apple with apple tag](./images/imgclass-t3p1.png)
       
 5. In the new project, click **\[+] Add images (1)**, then navigate to the **`C:\AllFiles\AI-102-AIEngineer-stage\17-image-classification\training-images\apple` (2)** folder you viewed earlier. Press **Ctrl+A (3)** to select all images, and click **Open (4)**.
 

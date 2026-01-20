@@ -35,7 +35,7 @@ To train an object detection model, you need to create a Custom Vision project b
     - **Resource**: Select **Vision-<inject key="DeploymentID" enableCopy="false"/> (3)**
     - **Project Types**: Object Detection **(4)**
     - **Domains**: General **(5)**
-    - Click on **Create Project (6)**
+    - Click on **Create project (6)**
 
       ![Upload apple with apple tag](./images/l7e1-1.png)
 
@@ -51,11 +51,11 @@ To train an object detection model, you need to upload images that contain the c
 
     ![](./images/objdet(1).png)
 
-2. Download and extract the training images from https://aka.ms/fruit-objects. The extracted folder contains a collection of images of fruit.
+2. Download and extract the training images from https://aka.ms/fruit-objects. The extracted folder contains a collection of images of fruit. Click on **Open file**.
 
     ![](./images/objdet(2).png)
 
-1. In the window, click **Extract (1)**, then select **Extract all (2)**. In the **Extract Compressed (Zipped) Folders** window, confirm the location is **`C:\Users\azureuser\Downloads\object\_training` (3)**, and click **Extract (4)**.
+1. In the window, click **Extract (1)**, then select **Extract all (2)**. In the **Extract Compressed (Zipped) Folders** window, confirm the location is **`C:\Users\azureuser\Downloads\object_training` (3)**, and click **Extract (4)**.
     
     ![](./images/objdet(3).png)
 
@@ -192,7 +192,7 @@ Now you're ready to publish your trained model so that it can be used from a cli
 
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish (1)** to publish the trained model with the following settings:
 
-    - **Model name**: fruit-detector **(3)**
+    - **Model name**: fruit-detector **(2)**
     - **Prediction Resource**: *The **prediction** resource you created previously (<u>not</u> the training resource)*. **(3)**
     - Click **Publish (4)**
 

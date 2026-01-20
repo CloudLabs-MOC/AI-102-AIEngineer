@@ -32,7 +32,7 @@ In this task, you will learn how to open the cloned folder in **Visual Studio Co
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click **Select folder (5)**.
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and then click on **Select folder (5)**.
 
     ![](./images/botframe1(6).png)
 
@@ -66,7 +66,7 @@ First, you'll need to sign into the Video Analyzer portal and upload a video.
 
     ![](./images/vidana(3).png)
 
-1. Select the **checkbox (1)** to verify compliance with Microsoft's policies for facial recognition, and click on **Upload + Index (2)**.
+1. Select the **checkbox (1)** to verify compliance with Microsoft's policies for facial recognition, and click on **Upload + index (2)**.
        
     ![](./images/vidana(4).png)
 
@@ -158,7 +158,7 @@ The Video Analyzer portal is a useful interface to manage video indexing project
 
     ![](./images/vidana(15).png)
 
-7. Save the file. Then in the **Explorer** pane, right-click **analyze-video.html (1)** and select **Reveal in File Explorer**.
+7. Save the file. Then in the **Explorer** pane, right-click **analyze-video.html (1)** and select **Reveal in File Explorer (2)**.
 
     ![](./images/vidana(16).png)
 
@@ -227,7 +227,7 @@ All interactions with the Video Analyzer REST API follow the same pattern:
 
 4. Review the code in the script, noting that it invokes two REST methods: one to get an access token, and another to list the videos in your account.
 
-5. Save your changes, and then right-click on **16-video-indexer**, click on **open in integrated terminal**, and run the script using **.\get-videos.ps1**.
+5. Save your changes, and then right-click on **16-video-indexer (1)**, click on **Open in Integrated Terminal (2)**, and run the script using **.\get-videos.ps1**.
 
     ![](./images/vidana(27).png)
 
