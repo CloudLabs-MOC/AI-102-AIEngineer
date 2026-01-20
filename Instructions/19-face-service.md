@@ -46,7 +46,7 @@ In this task, you will provision an Azure AI Services resource in the Azure port
 
 2. Select the **&#65291;Create a resource** button.
 
-    ![](./images/detana(1).png)
+    ![](./images/face-t2p1.png)
 
 1. Search for **Azure AI Services (1)** and press **Enter**, then select **Azure AI services (2)** from the results. 
 
