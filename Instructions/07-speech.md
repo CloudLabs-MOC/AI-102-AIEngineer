@@ -17,7 +17,7 @@ In this exercise, you'll use both of these APIs to implement a speaking clock ap
 
 In this lab, you will complete the following tasks:
 
-+ **Task 1:** Clone the repository for this course
++ **Task 1:** Open the folder in Visual Studio Code
 + **Task 2:** Provision an Azure AI Speech resource
 + **Task 3:** Prepare to use Azure AI speech
 + **Task 4:** Recognize speech
@@ -29,14 +29,13 @@ In this lab, you will complete the following tasks:
 
 ![](./images/a(7).JPG)
 
-## Task 1: Clone the repository for this course
+## Task 1: Open the folder in Visual Studio Code
 
-In this task, you will clone the AI-102-AIEngineer repository to your local environment using Git. You will then open the cloned folder in Visual Studio Code to access the necessary lab files.
+In this task, you will open the folder in Visual Studio Code.
 
 1. Double-click the **Visual Studio Code** shortcut on the desktop.
 
     ![Visual Studio Code Icon](./images/vscode(1).png)
-
 
 1.  Open Explorer, select **Explorer (1)** > **Open Folder (2)** and in the Open Folder window go to `C:\AllFiles` **(3)** and select **AI-102-AIEngineer-stage (4)** folder and then click on **Select Folder (5)**.
 
@@ -368,7 +367,7 @@ In this task, you will modify the speech synthesis configuration to use Speech S
 ## Summary
 In this lab, you have completed:
 
-+ Cloned the repo into your Azure Cloud Shell
++ Open the folder in Visual Studio Code
 + Provisioned an Azure AI Speech resource
 + Prepared to use the Azure AI Speech service
 + Recognized speech
