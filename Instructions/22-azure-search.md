@@ -13,7 +13,7 @@ To address this challenge, Margie's Travel can use Azure AI Search to implement 
 
 In this lab, you will complete the following tasks:
 
-+ **Task 1:** Clone the repository for this course
++ **Task 1:** Open the folder in Visual Studio Code.
 + **Task 2:** Create Azure resources
 + **Task 3:** Upload Documents to Azure Storage
 + **Task 4:** Index the documents
@@ -25,39 +25,19 @@ In this lab, you will complete the following tasks:
 
    ![](./images/arch22.png)
 
-## Task 1: Clone the repository for this course
+## Task 1: Open the folder in Visual Studio Code.
 
-In this task, you will learn how to clone the repository for this course.
-
-If you have not already cloned the **AI-102-AIEngineer** code repository to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the cloned folder in Visual Studio Code.
+In this task, you will open the folder in Visual Studio Code.
 
 1. In the Lab-VM desktop, double-click on the **Visual Studio Code**.
- 
-     ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. From the top menu bar, click on the **ellipsis (...) (1)**, and select **Terminal (2)**. Then click on **New Terminal (2)**.
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-    ![Visual Studio Code Icon](./images/azsearch(1).png)
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click **Select folder (5)**.
 
-1. Run the following command to clone the repository to a local folder.
-   
-    ```
-    git clone https://github.com/CloudLabs-MOC/AI-102-AIEngineer
-    ```
+    ![](./images/botframe1(6).png)
 
-    ![](./images/d-81.png)
-
-1. When the repository has been cloned, open the folder in Visual Studio Code. Wait while additional files are installed to support the C# code projects in the repo.
-
-    > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
-
-1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **`C:\Users\azureuser\AI-102-AIEngineer` (3)**, and click **Select Folder (4)**.
-
-    ![](./images/azsearch(2).png)
-
-    >**Note:** On the **Do you trust the authors of the files in this folder?** pop-up, select **Yes, I trust the authors**.
-
-    >**Note:** You may be prompted to complete a 2-minute survey. Go ahead and select **No, thanks**. You may need to do this more than once.
+    >**Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
 
 ## Task 2: Create Azure resources
 
@@ -81,9 +61,9 @@ In this task, you will learn how to create an Azure AI Search resource to manage
 
     ![](./images/azsearch(3).png)
 
-1. In the **AI Foundry | AI Search** blade, click on **+ Create** to create new resource.
+1. In the **Microsoft Foundry | AI Search** blade, click on **+ Create** to create new resource.
 
-    ![](./images/azsearch(4).png)
+    ![](./images/azsearch-t2p1.png)
 
 1. Create an **Azure AI Search** resource with the following settings and then click on **Review + Create (6)**.
     
@@ -97,7 +77,7 @@ In this task, you will learn how to create an Azure AI Search resource to manage
     
     - **Pricing tier**: **Basic (5)**
 
-      ![Visual Studio Code Icon](./images/d-7.png)    
+      ![Visual Studio Code Icon](./images/azsearch-t2p2.png)    
 
 1. On the **Review + create** tab, click **Create**.
 
@@ -121,17 +101,17 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 1. Click on **+ Create a resource** on the azure portal home page.
 
-    ![](./images/azsearch(8)(1).png)
+    ![](./images/azsearch-t2p3.png)
 
 1. On the **Create a resource** page, search for **Azure ai services (1)** and press **Enter**. From the results, select **Azure AI services**, click the **Create (2)** dropdown, and then choose **Azure AI services (3)**.
 
     ![](./images/azsearch(8).png)
  
-1. Create an **Azure AI Services** resource with the following settings and then click on **Review+Create (7)**.
+1. Create an **Azure AI Services** resource with the following settings and then click on **Review+ create (7)**.
 
     - **Subscription**: Leave default Azure subscription **(1)**
 
-    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
 
     - **Region**: **<inject key="Region" enableCopy="false" /></inject> (3)** - **The same location as your Azure AI Search resource**
 
@@ -171,7 +151,7 @@ In this task, you will learn how to create a storage account in Azure to store y
 
     - **Subscription**: Leave default Azure subscription **(1)**
 
-    - **Resource group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Resource group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
 
     - **Storage account name**: **blob<inject key="DeploymentID" enableCopy="false"/> (3)**
 
@@ -183,7 +163,7 @@ In this task, you will learn how to create a storage account in Azure to store y
 
       ![Visual Studio Code Icon](./images/d-12.png) 
      
-    - On the **Advanced** tab, check the box next to **Allow enabling anonymous access on individual containers (1)** then select **Review+create (2)**.
+    - On the **Advanced** tab, check the box next to **Allow enabling anonymous access on individual containers (1)** then select **Review + create (2)**.
 
       ![](./images/azsearch(12).png)
      
@@ -217,7 +197,7 @@ Now that you have the required resources, you can upload some documents to your 
 
      ![](./images/azsearch(17).png)
  
-1. Then right-click on the **22-create-a-search-solution (1)** folder and select **Open in Integrated Terminal (2)**.
+1. Then right-click on the **22-Create-a-search-solution (1)** folder and select **Open in Integrated Terminal (2)**.
 
     ![](./images/azsearch(18).png)
 
@@ -237,9 +217,9 @@ Now that you have the required resources, you can upload some documents to your 
 
     - Enter the Email address and Password provided in the **Environment** tab.
 
-    - In the **Automatically sign in to all desktop apps and websites on this device?** prompt, select **No, this app only**. 
+    - In the **Sign in to all apps, websites, and services on this device?** prompt, select **No, this app only**. 
 
-        ![](./images/formrecog(11).png)
+        ![](./images/azsearch-t3p1.png)
 
 1. Navigate back to the VS Code. If prompted, **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.     
 
@@ -267,7 +247,7 @@ Now that you have the documents in place, you can create a search solution by in
 
 1. In the Azure portal, browse to your Azure AI Search resource. 
 
-    ![](./images/azsearch(19).png)
+    ![](./images/azsearch-t4p1.png)
  
 1. Then, on its **Overview** page, select **Import data**.
 
@@ -385,7 +365,7 @@ Now that you have an index, you can search it.
 
 1. At the top of the **Overview** page for your Azure AI Search resource, select **Search explorer**.
 
-    ![](./images/azsearch(27).png) 
+    ![](./images/azsearch-t5p1.png) 
  
 1. In Search explorer, in the **Query string** box, enter `*` (a single asterisk) **(1)**, and then select **Search (2)**.
 
@@ -469,7 +449,7 @@ In this task, you will learn how to get the endpoint and key for your Azure AI S
 
 1. In the Azure portal, return to the **Overview** page for your Azure AI Search resource, and in the top section of the page, find the **Url** for your resource (which looks like **https://resource_name.search.windows.net**) and copy it to the clipboard.
 
-    ![Visual Studio Code Icon](./images/d-33.png) 
+    ![Visual Studio Code Icon](./images/azsearch-t6p1.png) 
  
 1. In Visual Studio Code, in the Explorer pane, expand the **22-create-a-search-solution** folder and its **modify-search** subfolder, and select **modify-search.cmd** to open it. You will use this script file to run *CURL* commands that submit JSON to the Azure AI Service REST interface.
 
@@ -625,7 +605,7 @@ In this task, you will learn how to query the modified index in Azure AI Search 
 
 1. In the **Overview** tab of your Azure AI Search resource, click **Search explorer**.
 
-    ![](./images/azsearch(35).png)
+    ![](./images/azsearch-t5p1.png)
 
 1. In Search Explorer, in the **Query string** box, submit the following JSON query:
 
@@ -655,7 +635,7 @@ In this task, you will learn how to get the endpoint and keys for your Azure AI 
 
 1. In the Azure portal, on the **Overview** page for your Azure AI Search resource, note the **Url** value, which should be similar to **https://*your_resource_name*.search.windows.net**. This is the endpoint for your search resource.
 
-    ![](./images/azsearch(37).png)
+    ![](./images/azsearch-t6p1.png)
 
 1. On the **Keys (1)** page under the Settings dropdown, you’ll see two admin keys and one **query (2)** key. Admin keys are used to create and manage search resources, while the query key is for client applications that only need to perform search queries.
 
@@ -781,7 +761,7 @@ In this task, you will learn how to run the web app that interacts with your Azu
 ## Summary
 In this lab, you have completed:
 
-+ Cloned the repository for this course
++ Opened the folder in Visual Studio Code.
 + Created Azure resources
 + Uploaded Documents to Azure Storage
 + Indexed the documents

@@ -16,7 +16,7 @@ In this exercise, you'll implement a knowledge store for *Margie's Travel*, a fi
 
 In this lab, you will complete the following tasks:
 
-+ **Task 1:** Clone the repository for this course
++ **Task 1:** Open the folder in Visual Studio Code
 + **Task 2:** Create Azure resources
 + **Task 3:** Create a search solution
 + **Task 4:** View the knowledge store
@@ -25,27 +25,19 @@ In this lab, you will complete the following tasks:
 
 ![](./images/mod12-ex2-dia.png)
 
-## Task 1: Clone the repository for this course (Skip if already done)
+## Task 1: Open the folder in Visual Studio Code (Skip if already done)
 
-In this task, you will learn how to clone the repository for this course.
+In this task, you will open the folder in Visual Studio Code.
 
-If you have already cloned the **AI-102-AIEngineer** code repository to the environment where you're working on this lab, open it in Visual Studio Code; otherwise, follow these steps to clone it now.
+1. In the Lab-VM desktop, double-click on the **Visual Studio Code**.
 
-1. Start Visual Studio Code.
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open the New Terminal and run a **Git: Clone** command to clone the `https://github.com/CloudLabs-MOC/AI-102-AIEngineer` repository to a local folder (it doesn't matter which folder).
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click **Select folder (5)**.
 
-1. Run the following command to clone the repository to a local folder.
-   
-   `git clone https://github.com/CloudLabs-MOC/AI-102-AIEngineer`.
+    ![](./images/botframe1(6).png)
 
-   ![](./images/d-81.png)
-
-1. When the repository has been cloned, open the folder in Visual Studio Code.
-
-1. Wait while additional files are installed to support the C# code projects in the repo.
-
-    > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
+    >**Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
 
 ## Task 2: Create Azure resources
 
@@ -79,15 +71,15 @@ In this task, you will learn how to create the necessary Azure resources.
 
     >**Note:** If the **sign-in pop-up** doesn’t appear immediately, wait for **1-2 minutes**. Then, **minimize all tabs**, and you should find the pop-up on the desktop for signing in.
 
-    - If prompted, select **Work or school account (1)**, then click on **Continue (2)**.
+    - If prompted, select **Work or school account (1)** then click on **Continue (2)**.
 
       ![](./images/formrecog(10).png)  
 
     - Enter the Email address and Password provided in the **Environment** tab.
 
-    - In the **Automatically sign in to all desktop apps and websites on this device?** prompt, select **No, this app only**. 
+    - In the **Sign in to all apps, websites, and services on this device?** prompt, select **No, this app only**. 
 
-        ![](./images/formrecog(11).png)
+        ![](./images/azsearch-t3p1.png)
 
 1. Navigate back to the VS Code, if prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.       
 
@@ -354,7 +346,7 @@ The ability to create *table* projections enables you to build analytical and re
 ## Summary
 In this lab, you have completed:
 
-+ Cloned the repository for this course
++ Opened the folder in Visual Studio Code
 + Created Azure resources
 + Created a search solution
 + Viewed the knowledge store

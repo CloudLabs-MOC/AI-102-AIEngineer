@@ -12,7 +12,7 @@ In this exercise, you'll create a custom skill that tabulates the frequency of i
 
 In this lab, you will complete the following tasks:
 
-+ **Task 1:** Clone the repository for this course
++ **Task 1:** Open the folder in Visual Studio Code
 + **Task 2:** Create Azure resources
 + **Task 3:** Create a search solution
 + **Task 4:** Search the index
@@ -24,27 +24,19 @@ In this lab, you will complete the following tasks:
 
    ![](./images/arch23.png)
 
-## Task 1: Clone the repository for this course (Skip if already done)
+## Task 1: Open the folder in Visual Studio Code (Skip if already done)
 
-In this task, you will learn how to clone the repository for this course.
+In this task, you will open the folder in Visual Studio Code.
 
-If you have already cloned the **AI-102-AIEngineer** code repository to the environment where you're working on this lab, open it in Visual Studio Code; otherwise, follow these steps to clone it now.
+1. In the Lab-VM desktop, double-click on the **Visual Studio Code**.
 
-1. Start Visual Studio Code.
+    ![Visual Studio Code Icon](./images/vscode(1).png)
 
-1. Open the New Terminal and run a **Git: Clone** command to clone the `https://github.com/CloudLabs-MOC/AI-102-AIEngineer` repository to a local folder (it doesn't matter which folder).
+1. Open a file, from the top-left options, click on **Explorer (1)-> Open Folder (2)** and navigate to **C:\AllFiles (3)**, choose **AI-102-AIEngineer-stage (4)** folder and click **Select folder (5)**.
 
-1. Run the following command to clone the repository to a local folder.
-   
-   `git clone https://github.com/CloudLabs-MOC/AI-102-AIEngineer`.
+    ![](./images/botframe1(6).png)
 
-   ![](./images/d-81.png)
-   
-1. When the repository has been cloned, open the folder in Visual Studio Code.
-
-1. Wait while additional files are installed to support the C# code projects in the repo.
-
-    > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
+    >**Note:** Do you trust the authors of the files in this folder? prompt, select **Yes, I trust the authors**.
 
 ## Task 2: Create Azure resources
 
@@ -80,9 +72,9 @@ In this task, you will learn how to create the necessary Azure resources.
 
     - Enter the Email address and Password provided in the **Environment** tab.
 
-    - In the **Automatically sign in to all desktop apps and websites on this device?** prompt, select **No, this app only**. 
+    - In the **Sign in to all apps, websites, and services on this device?** prompt, select **No, this app only**. 
 
-        ![](./images/formrecog(11).png)
+        ![](./images/azsearch-t3p1.png)
 
 1. Navigate back to the VS Code, if prompted **Select a subscription and tenant (Type a number or Enter for no changes):** press **Enter**.     
 
@@ -206,7 +198,7 @@ Now that you have an index, you can search it.
 
 1. At the top of the Overview section for your Azure AI Search resource, click **Search explorer**.
 
-    ![](./images/searchskill(7).png)
+    ![](./images/sskill-t4p1.png)
 
 1. In Search Explorer, in the **Query string** box, enter the following query string, and then select **Search**.
 
@@ -238,15 +230,17 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     ![](./images/searchskill(10).png) 
 
-1. From the Hosting plans, select **Consumption (1)** and then click on **Select (2)**.
+1. From the Hosting plans, select **Consumption (1)** and then click on **Confirm (2)**.
 
-    ![](./images/searchskill(11).png) 
+    ![](./images/sskill-t5p1.png) 
+
+    ![](./images/sskill-t5p2.png) 
 
 1. Create a new **Function App** resource with the following settings:
 
     - **Subscription**: Leave your default subscription **(1)**
 
-    - **Resource Group**: **ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
+    - **Resource Group**: **Ai-102-<inject key="DeploymentID" enableCopy="false"/> (2)**
 
     - **Function App name**: **aifunc<inject key="DeploymentID" enableCopy="false"/> (3)**
 
@@ -256,11 +250,11 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     - **Region**: **<inject key="Region" enableCopy="false" /></inject> (6)** -*The same region as your Azure AI Search resource*
 
-    - Click **Review + Create (7)**
+    - Click **Review + create (7)**
 
         ![](./images/searchskill(12).png)     
 
-1. In the **Review + Create** tab, click **Create**.
+1. In the **Review + create** tab, click **Create**.
 
     ![](./images/searchskill(13).png)
 
@@ -268,9 +262,9 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     ![](./images/searchskill(14).png)
 
-1. In the blade for your Function App, in the pane on the overview, select the **Functions** tab in the middle of the page and then click **Create function**.
+1. In the blade for your Function App, in the pane on the overview, select the **Functions** tab in the middle of the page and then click **Create in Azure portal**.
 
-    ![Visual Studio Code Icon](./images/d-56.png) 
+    ![Visual Studio Code Icon](./images/sskill-t5p3.png) 
 
 1. Then create a new function with the following settings:
 
@@ -551,7 +545,7 @@ Now that you have an index, you can search it.
 ## Summary
 In this lab, you have completed:
 
-+ Cloned the repository for this course
++ Opened the folder in Visual Studio Code
 + Created Azure resources
 + Created a search solution
 + Searched the index
