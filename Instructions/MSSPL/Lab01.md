@@ -18,9 +18,9 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
 
 1. On the **Azure portal**, search for **Computer Vision (1)** then select **Computer Vision (2)** from the results.
 
-    ![](../AI-102/Images/cv.png)
+    ![](../AI-102/Images/cvup.png)
 
-1. Select **+ Create**.
+1. On the **Microsoft Foundry | Computer vision** page select **+ Create**.
 
     ![](../MSSPL/images/Lab01/L1T1S2.png)
 
@@ -34,7 +34,7 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
     - Select the required checkboxes **(6)**
     - Select **Review + create (7)**
 
-      ![](../AI-102/Images/cvrc.png)            
+      ![](../AI-102/Images/cvrcup.png)            
     
 1. Then select **Create** to provision the resource.
 
@@ -50,7 +50,7 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
 
 1. Expand **Resource Management (1)** from the left navigation menu and click **Keys and Endpoint (2)**. Copy and paste the **KEY 1 (3)** and **Endpoint (4)** values in notepad. You will need this information later in the lab.
 
-   ![](../AI-102/Images/kend.png)
+   ![](../AI-102/Images/kepup.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -80,15 +80,15 @@ In this task, you will set up your development environment in Azure Cloud Shell 
 
 1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
-      ![](../AI-102/Images/ai11l6.png) 
+      ![](../AI-102/Images/nsar.png) 
 
 1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
 
-    ![](../AI-102/Images/gtcv.png)
+    ![](../AI-102/Images/gtcv2.png)
 
-     >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+     >**Note:** The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
-     >**Note**: Ensure you've switched to the classic version of the cloud shell before continuing.
+     >**Note:** Ensure you've switched to the classic version of the cloud shell before continuing.
 
 1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text):
 
@@ -132,7 +132,7 @@ In this task, you will set up your development environment in Azure Cloud Shell 
 
 1. In the code file, update the configuration values it contains to reflect the **endpoint (1)** and an authentication **key (2)** for your Computer Vision resource (copied from its **Keys and Endpoint** page in the `Task 1`).
 
-    ![](../MSSPL/images/Lab01/L1T2.1S9.png)   
+    ![](../AI-102/Images/envsv.png)   
 
 1. After you've replaced the placeholders, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
@@ -326,7 +326,7 @@ In this task, you will extend the application to detect and locate objects withi
 
     - The download command creates a **popup link (2)** at the bottom right of your browser, which you can select to download. 
     
-      ![](../AI-102/Images/dwn.png)    
+      ![](../AI-102/Images/dwnfile.png)    
     
 1. Open the file.
 
@@ -378,7 +378,7 @@ In this task, you will update the application to detect and locate people in ima
 
     - The download command creates a **popup link (2)** at the bottom right of your browser, which you can select to download.
 
-      ![](../AI-102/Images/dp.png)     
+      ![](../AI-102/Images/ppldwn.png)     
     
 1. Open the file.
 
@@ -399,5 +399,5 @@ In this lab, you provisioned an Azure AI Vision resource and configured it in Az
 
 ## Click on **Next >>** from the lower right corner to move on to the next exercise.
 
-![](../MSSPL/images/next.png)
+![](../AI-102/Images/2nct.png)
 

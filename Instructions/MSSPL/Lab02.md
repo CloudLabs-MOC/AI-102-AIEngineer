@@ -30,23 +30,23 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
 
 1. Open the **Azure portal**, search for **Custom Vision (1)** and select **Custom Vision (2)** from the services.
 
-    ![](../AI-102/Images/customv.png)
+    ![](../AI-102/Images/csvisn.png)
 
 1. On **Microsoft Foundry | Custom vision** blade, select **Custom vision (1)** and click on **+ Create (2)**.
 
-    ![](../AI-102/Images/mfcvcr.png)
+    ![](../AI-102/Images/crcvis.png)
 
 1. In the Basics tab of **Create Custom Vision**, follow these instructions to fill out the properties, then select **Review + create (8)**:
 
     - **Create options**: Opt for **Both (1)**
     - **Subscription**: Select **Default Subscription (2)**
-     - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (2)**
+     - **Resource group**: Select **ai-service-<inject key="DeploymentID" enableCopy="false"/> (3)**
     - **Region**: Select **<inject key="Region"></inject> (4)**
     - **Name**: **customvision<inject key="DeploymentID" enableCopy="false"/> (5)**
     - **Training pricing tier**: **Free (F0) (6)**
     - **Prediction pricing tier**: **Free (F0) (7)**
 
-         ![](../AI-102/Images/csvrc.png)
+         ![](../AI-102/Images/ccvrc2.png)
 
 1. On the **Review + create** tab, click **Create** to provision the resource.
 
@@ -58,7 +58,7 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
 
      ![](../AI-102/Images/csvdon.png)
 
-    > **Note**: Each resource has its own **endpoint** and **keys**, which are used to manage access from your code. To train an image classification model, your code must use the **training** resource (with its endpoint and key); and to use the trained model to predict image classes, your code must use the **prediction** resource (with its endpoint and key).
+    > **Note:** Each resource has its own **endpoint** and **keys**, which are used to manage access from your code. To train an image classification model, your code must use the **training** resource (with its endpoint and key); and to use the trained model to predict image classes, your code must use the **prediction** resource (with its endpoint and key).
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -76,7 +76,7 @@ In this task, you’ll set up a new Object Detection project in the Custom Visio
 
 1. Open a new browser tab (keeping the Azure portal tab open - you'll return to it later).
 
-1. In the new browser tab, open the [Custom Vision portal](https://customvision.ai) at `https://customvision.ai`. Click **Sign in**.
+1. In the new browser tab, open the [Custom Vision portal](https://customvision.ai) at `https://customvision.ai` and click on **Sign in**.
 
     ![](../AI-102/Images/AI-l28-9.png)
 
@@ -101,7 +101,7 @@ In this task, you’ll set up a new Object Detection project in the Custom Visio
     - **Project Types**: Object Detection **(4)**
     - **Domains**: General **(5)**
 
-      ![](../AI-102/Images/AI-l28-12.png)
+      ![](../AI-102/Images/dfcp.png)
 
 1. Wait for the project to be created.
 
@@ -117,11 +117,11 @@ In this task, you’ll upload sample fruit images and draw bounding boxes around
 
 1. Click the **Downloads (1)** icon in the browser and then click the **Folder (2)** icon to open the downloaded file location.  
     
-    ![](../AI-102/Images/AI-l28-12.1.png)
+    ![](../AI-102/Images/folopn.png)
 
 1. In the **Downloads** folder, right-click the **training-images (1)** file and select **Extract All... (2)**.  
 
-    ![](../AI-102/Images/ext.png)
+    ![](../AI-102/Images/tiext.png)
 
 1. On the **Extract Compressed (Zipped) Folders** window, click **Extract** to unzip the files.  
 
@@ -133,7 +133,7 @@ In this task, you’ll upload sample fruit images and draw bounding boxes around
 
 1. In the **Open** window, navigate to **Downloads\training-images**, press **CTRL+A** to select all the images **(1)** and click **Open (2)**.  
 
-    ![](../AI-102/Images/AI-l28-14.png)
+    ![](../AI-102/Images/slallopn.png)
 
 1. On the **Image upload** preview screen, review the selected images and click **Upload 10 files**.  
 
@@ -177,11 +177,11 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
  
 1. On the right, under **Resources**, copy the **Key (2)** and **Endpoint (3)** values to a Notepad file for later use. These are the details for the **training** resource.  
 
-    ![](../AI-102/Images/df.png)
+    ![](../AI-102/Images/pidke.png)
 
       >**Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)** section of your **customvision<inject key="DeploymentID" enableCopy="false"/>** resource, where you will find **Key 1 (2)**, and the **Endpoint (3)**.  
 
-    ![](../AI-102/Images/AI-l28-8-key1.png)
+    ![](../AI-102/Images/cviske.png)
 
 1. Return to the browser tab containing the Azure portal (keeping the Custom Vision portal tab open you'll return to it later).
 
@@ -199,13 +199,13 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
 1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
-    ![](../AI-102/Images/AI-l16-71.png)
+    ![](../AI-102/Images/nsar.png)
 
 1. In the Cloud Shell toolbar, open the **Settings (1)** menu and choose **Go to Classic version (2)** from the drop-down.
 
-    ![](../AI-102/Images/AI-l16-72.png)
+    ![](../AI-102/Images/gtcv2.png)
 
-    >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+    >**Note:** The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
     >**Note:** **<font color="black">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
 
@@ -218,7 +218,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
     ![](../AI-102/Images/AI-l28-23.png)
 
-    > **Tip**: As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Tip:** As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, use the following command to navigate to the application code files:
 
@@ -262,7 +262,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
     JSON defines a list of images, each containing one or more tagged regions. Each tagged region includes a tag name, and the top and left coordinates and width and height dimensions of the bounding box containing the tagged object.
 
-    > **Note**: The coordinates and dimensions in this file indicate relative points on the image. For example, a **height** value of 0.7 indicates a box that is 70% of the height of the image. Some tagging tools generate other formats of file in which the coordinate and dimension values represent pixels, inches, or other units of measurements.
+    > **Note:** The coordinates and dimensions in this file indicate relative points on the image. For example, a **height** value of 0.7 indicates a box that is 70% of the height of the image. Some tagging tools generate other formats of file in which the coordinate and dimension values represent pixels, inches, or other units of measurements.
 
 1. Close the JSON file without saving any changes (**CTRL_Q**).
 
@@ -303,9 +303,9 @@ In this task, you’ll run a Quick Training to create a new iteration of your ob
 
      ![](../AI-102/Images/AI-l28-31.png)
 
-     ![](../AI-102/Images/AI-l28-32.png)
+     ![](../AI-102/Images/ttq.png)
 
-     > **Tip**: The Azure cloud shell has a 20-minute inactivity timeout, after which the session is abandoned. While you wait for training to finish, occasionally return to the cloud shell and enter a command like `ls` to keep the session active.
+     > **Tip:** The Azure cloud shell has a 20-minute inactivity timeout, after which the session is abandoned. While you wait for training to finish, occasionally return to the cloud shell and enter a command like `ls` to keep the session active.
 
 1. In the Custom Vision portal, when training has finished, review the *Precision*, *Recall*, and *mAP* performance metrics - these measure the prediction accuracy of the object detection model, and should all be high.
 
@@ -336,7 +336,7 @@ In this task, you’ll publish the best-trained iteration (e.g., fruit-detector)
     - **Prediction Resource**: Select **customvision<inject key="DeploymentID" enableCopy="false"/>-Prediction (2)**
     - Click **Publish (3)**
 
-       ![](../AI-102/Images/AI-l28-38.png)
+       ![](../AI-102/Images/predpub.png)
 
 1. At the top left of the **Project Settings** page, click the **Projects Gallery** (&#128065;) icon to return to the Custom Vision portal home page, where your project is now listed.
 
@@ -348,11 +348,11 @@ In this task, you’ll publish the best-trained iteration (e.g., fruit-detector)
 
 1. Under **Resources**, click on **customvision<inject key="DeploymentID" enableCopy="false"/>-Prediction (1)**, then copy the **Key (2)** and **Endpoint (3)** values to a Notepad file for later use.  
 
-     ![](../AI-102/Images/pred.png)
+     ![](../AI-102/Images/prkeep.png)
 
      > **Note:** You can also obtain this information in the Azure portal by navigating to **Keys and Endpoint (1)** section of your **customvision<inject key="DeploymentID" enableCopy="false"/>-Prediction** resource, where you will find **Key 1 (2)**, and the **Endpoint (3)**.
 
-    ![](../MSSPL/images/Lab02/L2T6S5i.png) 
+    ![](../AI-102/Images/porpre.png) 
 
 ## Task 7: Use the image classifier from a client application
 
@@ -424,7 +424,7 @@ In this task, you’ll configure a lightweight Python client to call the predict
     ```
 1. The download command creates a popup link at the bottom right of your browser, click **Click here to download your file (2)** to download and open it. 
 
-    ![](../AI-102/Images/AI-l28-47.png)
+    ![](../AI-102/Images/dwnot.png)
 
 1. The downloaded image should display the detected objects, similar to the example shown below: 
 
@@ -436,4 +436,4 @@ In this lab, you built an end-to-end object detection workflow with Azure AI Cus
 
 ## Click on **Next >>** from the lower right corner to move on to the next exercise.
 
-![](../MSSPL/images/next.png)
+![](../AI-102/Images/3nct.png)

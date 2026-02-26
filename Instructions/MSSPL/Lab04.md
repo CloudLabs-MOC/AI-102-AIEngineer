@@ -22,9 +22,9 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
 
 1. On the Azure portal, search for **Translators (1)** then select **Translators (2)** from the results.
 
-   ![](../AI-102/Images/trn.png)  
+   ![](../AI-102/Images/trnl.png)  
 
-1. On **Microsoft Foundry | Translator** page, Select **+ Create (2)**.
+1. On **Microsoft Foundry | Translator** page, Select **+ Create**.
 
    ![](../MSSPL/images/Lab04/tcr.png) 
 
@@ -37,9 +37,9 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
     - **Pricing tier**: Select **F0 (5)** (*free*), or **S** (*standard*) if F is not available.
     - Select **Review + create (6)**
 
-      ![](../MSSPL/images/Lab04/trc.png)      
+      ![](../AI-102/Images/crtrnlt.png)      
     
-1. Then select **Create** to provision the resource.
+1. Select **Create** to provision the resource.
 
     ![](../AI-102/Images/trcc.png) 
 
@@ -51,9 +51,9 @@ In this task, you will create an Azure AI Translator resource in the Azure porta
 
    ![](../MSSPL/images/Lab04/tdon.png)   
 
-1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Location (3)**. You will need the information on this page later in the lab.
+1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Location/Region (3)**. You will need the information on this page later in the lab.
 
-   ![](../AI-102/Images/tke.png) 
+   ![](../AI-102/Images/loctrn.png) 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -84,15 +84,15 @@ In this task, you will set up Azure Cloud Shell, configure the environment, and 
 
 1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
-      ![](../AI-102/Images/ai11l6.png) 
+      ![](../AI-102/Images/nsar.png) 
 
 1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
 
-    ![](../AI-102/Images/AI-l16-72.png)
+    ![](../AI-102/Images/gtcv2.png)
 
-     >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+     >**Note:** The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
-     >**Note**: Ensure you've switched to the classic version of the cloud shell before continuing.
+     >**Note:** Ensure you've switched to the classic version of the cloud shell before continuing.
 
 1. In the PowerShell pane, enter the following commands to clone the GitHub repo for this exercise:
 
@@ -103,7 +103,7 @@ In this task, you will set up Azure Cloud Shell, configure the environment, and 
 
      ![](../AI-102/Images/ai19l7.png)
 
-      >**Tip**: As you enter commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+      >**Tip:** As you enter commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, navigate to the folder containing the application code files:  
 
@@ -144,9 +144,9 @@ In this task, you will set up a Python virtual environment, install the required
 
 1. Update the configuration values to include the **key (1)** and a **region (2)** from the Azure AI Translator resource you created (available on the **Keys and Endpoint** page for your Azure AI Translator resource in the Azure portal that you have copied in **Task 1**).
 
-     ![](../MSSPL/images/Lab04/L4T3S4.png) 
+     ![](../AI-102/Images/rgadd.png) 
 
-      > **NOTE**: Be sure to add the *region* for your resource, <u>not</u> the endpoint!
+      > **Note:** Be sure to add the *region* for your resource, <u>not</u> the endpoint!
 
 1. After you've replaced the placeholders, within the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
@@ -164,7 +164,7 @@ In this task, you will update the Python application to use the Azure AI Transla
 
     ![](../AI-102/Images/ai1911.png)
 
-     >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.
+     >**Tip:** As you add code to the code file, be sure to maintain the correct indentation.
 
 1. At the top of the code file, under the existing namespace references, find the comment **Import namespaces** and add the following code to import the namespaces you will need to use the Translation SDK:
 
@@ -177,7 +177,7 @@ In this task, you will update the Python application to use the Azure AI Transla
 
      ![](../AI-102/Images/ai1912.png)  
 
-      >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.       
+      >**Tip:** As you add code to the code file, be sure to maintain the correct indentation.       
 
 1. In the **main** function, note that the existing code reads the configuration settings.
 1. Find the comment **Create client using endpoint and key** and add the following code:
@@ -190,7 +190,7 @@ In this task, you will update the Python application to use the Azure AI Transla
 
      ![](../AI-102/Images/ai1913.png)    
 
-      >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.        
+      >**Tip:** As you add code to the code file, be sure to maintain the correct indentation.        
 
 1. Find the comment **Choose target language** and add the following code, which uses the Text Translator service to return list of supported languages for translation, and prompts the user to select a language code for the target language:
 
@@ -212,7 +212,7 @@ In this task, you will update the Python application to use the Azure AI Transla
 
      ![](../AI-102/Images/ai1914.png) 
 
-      >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.       
+      >**Tip:** As you add code to the code file, be sure to maintain the correct indentation.       
 
 1. Find the comment **Translate text** and add the following code, which repeatedly prompts the user for text to be translated, uses the Azure AI Translator service to translate it to the target language (detecting the source language automatically), and displays the results until the user enters *quit*:
 
@@ -233,7 +233,7 @@ In this task, you will update the Python application to use the Azure AI Transla
 
      ![](../AI-102/Images/ai1915.png) 
 
-      >**Tip**: As you add code to the code file, be sure to maintain the correct indentation. 
+      >**Tip:** As you add code to the code file, be sure to maintain the correct indentation. 
 
 1. Save your changes using **CTRL+S**.
 
@@ -251,7 +251,7 @@ In this task, you will update the Python application to use the Azure AI Transla
     - Enter `C'est un test` as a phrase to be translated **(2)**
     - View the results, which should detect the source language and translate the text to the target language **(3)**
 
-      ![](../AI-102/Images/ai1917.png) 
+      ![](../AI-102/Images/fren.png) 
 
       **Here source language is French and it translated the text to the target language English**.
 
@@ -267,7 +267,7 @@ In this task, you will update the Python application to use the Azure AI Transla
     - Enter `This is a test` as a phrase to be translated **(3)**
     - View the results, which should detect the source language and translate the text to the target language **(4)**
 
-      ![](../AI-102/Images/ai1918.png) 
+      ![](../AI-102/Images/enfr.png)
 
       **Here source language is English and it translated the text to the target language French**.
     

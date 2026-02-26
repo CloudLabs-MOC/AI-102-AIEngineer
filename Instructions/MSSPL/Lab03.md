@@ -26,7 +26,7 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 
 1. Locate **Face (2)** resource from the Marketplace, click on **Create (3)** and select on **Face (4)**
 
-    ![](../AI-102/Images/faceee.png)
+    ![](../AI-102/Images/face4.png)
 
 1. Create the resource with the following settings:
 
@@ -37,9 +37,9 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
     - **Pricing tier**: Select **F0 (5)** 
     - Select **Review + create (6)**
 
-      ![](../MSSPL/images/Lab03/frc.png)  
+      ![](../AI-102/Images/fcr2.png)  
 
-1. Then select **Create** to provision the resource.
+1. Select **Create** to provision the resource.
 
     ![](../MSSPL/images/Lab03/frcc.png)
 
@@ -53,7 +53,7 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 
 1. Navigate to the **Keys and Endpoint (1)** page. Copy and paste the **KEY 1 (2)** and **Endpoint(3)**. You will need the information on this page later in the lab.
 
-   ![](../MSSPL/images/Lab03/fkey.png)    
+   ![](../AI-102/Images/fkeyep.png)    
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -87,19 +87,19 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
 
 1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
-      ![](../AI-102/Images/ai11l6.png) 
+      ![](../AI-102/Images/nsar.png) 
 
 1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
 
-    ![](../AI-102/Images/AI-l16-72.png)
+    ![](../AI-102/Images/gtcv2.png)
 
-     >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+     >**Note:** The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
 
-     >**Note**: Ensure you've switched to the classic version of the cloud shell before continuing.
+     >**Note:** Ensure you've switched to the classic version of the cloud shell before continuing.
 
 1. Resize the cloud shell pane so you can still see the **Keys and Endpoint** page for your Face resource.
 
-    > **Tip**: You can resize the pane by dragging the top border. You can also use the minimize and maximize buttons to switch between the cloud shell and the main portal interface.
+    > **Tip:** You can resize the pane by dragging the top border. You can also use the minimize and maximize buttons to switch between the cloud shell and the main portal interface.
 
 1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text):
 
@@ -110,7 +110,7 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
 
      ![](../AI-102/Images/ai26l9.png) 
 
-      >**Tip**: As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+      >**Tip:** As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, use the following command to navigate to the application code files:
 
@@ -143,7 +143,7 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
 
 1. In the code file, update the configuration values it contains to reflect the **endpoint (1)** and an authentication **key (2)** for your Face resource (copied from its **Keys and Endpoint** page in **Task 1**).
 
-    ![](../MSSPL/images/Lab03/L3T2.1S10.png)  
+    ![](../AI-102/Images/fval.png)  
 
 1. After you've replaced the placeholders, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
 
@@ -182,7 +182,8 @@ In this task, you’ll import the required namespaces and instantiate FaceClient
     ```
 
      ![](../AI-102/Images/ai26l15.png)
-     >**Tip**: As you add code to the code file, be sure to maintain the correct indentation.
+
+     >**Tip:** As you add code to the code file, be sure to maintain the correct indentation.
 
 ### Task 2.3: Add code to detect and analyze faces
 
@@ -266,7 +267,7 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
 
     - The download command creates a popup link at the bottom right of your browser, which you can select to download and open the file **(2)**
 
-        ![](../MSSPL/images/Lab03/L3T2.3S8.png)    
+        ![](../AI-102/Images/ddfd.png)    
 
 1. Open the file.
 
@@ -290,7 +291,7 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
 
     ![](../AI-102/Images/ai26l23.png) 
 
-1. Download and view the resulting **detected_faces.jpg** file:
+1. Download and view the resulting **detected_faces.jpg** file **(1)**:
 
     ```
    download detected_faces.jpg
@@ -298,7 +299,7 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
 
     - The download command creates a popup link at the bottom right of your browser, which you can select to download and open the file **(2)**
 
-        ![](../MSSPL/images/Lab03/L3T2.3S13.png)
+        ![](../AI-102/Images/ddfd.png)
 
 1. The resulting image should look like this:
 
@@ -331,4 +332,4 @@ In this lab, you built a face detection and analysis solution with Azure AI Face
 
 ## Click on **Next >>** from the lower right corner to move on to the next exercise.
 
-![](../MSSPL/images/next.png)
+![](../AI-102/Images/4nct.png)
