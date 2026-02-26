@@ -59,7 +59,7 @@ Once you're ready to dive in, your virtual machine and **Guide** will be right a
 
 To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the upper-right corner of the lab environment.
 
-![Create storage by clicking confirm.](../MSSPL/images/zoom.png)
+![Create storage by clicking confirm.](../MSSPL/images/zum.png)
 
 ## Virtual Machine & Lab Guide
  
@@ -81,7 +81,7 @@ For convenience, you can open the guide in a separate window by selecting the **
  
 Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
-![](../AI-102/Images/vmrun.png)
+![](../MSSPL/images/vmssr.png)
 
 ## Lab Validation
 
@@ -102,19 +102,17 @@ Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-      ![](../AI-102/Images/signfix.png)
+      ![](../MSSPL/images/odlusr.png)
  
 3. Next, provide your password and click on **Sign in**.
  
    - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
  
-      ![](../MSSPL/images/tap.png)
+      ![](../MSSPL/images/odltap.png)
 
 1. If the pop-up **Stay signed in?** appears, click on **No**.
 
    ![](../MSSPL/images/staysign.png)
-
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
 1. If a **Welcome to Microsoft Azure** pop-up window appears, click **Maybe later** to skip the tour.
 
