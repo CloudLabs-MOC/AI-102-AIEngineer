@@ -4,25 +4,27 @@
 
 ## Overview
 
-In this hands-on lab, you’ll work with **Azure AI Foundry** to create and explore a generative AI project. You’ll start by creating a new project and deploying the **gpt-4.1** model. Then, you’ll review the project’s endpoints and keys that client applications use to connect with deployed models and AI services. Finally, you’ll test your deployed model in the chat playground by configuring system instructions and sending queries to see the model’s responses.
+In this lab, you will create and configure an AI development environment using the Microsoft Foundry portal. You will set up a project, deploy a gpt-4.1 model, and test its capabilities using the playground. Additionally, you will explore project and resource endpoints and integrate the environment with Visual Studio Code. By the end, you will understand how to manage and interact with AI models in a development workflow.
 
 ## Lab Objectives
 
-- **Task 1:** Create an Azure AI Foundry Project and deploy a model
+- **Task 1:** Create a Microsoft Foundry project
 
-- **Task 2:** Review project endpoints
+- **Task 2:** Deploy and test a model
 
-- **Task 3:** Test a generative AI model
+- **Task 3:** View Foundry Azure resource and project endpoints
 
-## Task 1: Create an Azure AI Foundry Project and deploy a model
+- **Task 4:** Install the Visual Studio Code extension for Microsoft Foundry
 
-In this task, you’ll create a new Azure AI Foundry project, deploy the **gpt-4.1** model into it, and explore the management settings at both the project and resource levels. You’ll also verify the Azure resources created to support the deployment in the Azure portal.
+## Task 1: Create a Microsoft Foundry project
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+In this task, you will sign in to the Microsoft Foundry portal and create a new project with the required Azure resources.
+
+1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
 1. Click on **Sign in**.
 
-   ![](../Images/aii1.png) 
+   ![](../Images/lab1-03-0.png) 
 
 1. If prompted, provide the credentials below:
 
@@ -30,63 +32,59 @@ In this task, you’ll create a new Azure AI Foundry project, deploy the **gpt-4
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. In the home page, in the **Explore models and capabilities** section, search for the `gpt-4.1` **(1)** model  and select `gpt-4.1` **(2)**  which we'll use in our project.    
+      >**Note:** Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the **Foundry** logo at the top left to navigate to the home page.
 
-   ![](../Images/aii2.png) 
 
-1. Select **Use this model**.
+1. At the top of the **Microsoft Foundry** portal, enable the **New Foundry toggle (1)** to switch to the latest Foundry user interface.   
 
-   ![](../Images/aii3.png) 
+   ![](../Images/lab1-03-03.png) 
 
-1. When prompted to create a project, enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** and expand **Advanced options (2)**.
+1. From the **Select a project to continue** dialog, click the drop-down under **Select or search for a project**, and then select **Create a new project (2)**.
 
-   ![](../Images/aii4.png) 
+    ![](../Images/lab1-03-04.png) 
 
-1. Under **Advanced options**, provide the details below and leave the rest to default:
+1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (6)**:
 
-    - Resource group: Select **AI-102-RG01 (1)**
-    - Region: **<inject key="Region" enableCopy="false" /> (2)**
-    - Select **Create (3)**
+    * Subscription: **Choose Default Subscription (3)**
+    * Resource group: **AI-102-RG01 (4)**
+    * Microsoft Foundry resource: **Keep as Default**
+    * Region: **<inject key="Region"></inject> (5)**
 
-      ![](../Images/aii5.png) 
+      ![](../Images/lab1-03-1.png) 
 
-       >**Note**: If prompted, deploy the gpt-4.1 model using the **Global standard** deployment type and customize the deployment details to set a Tokens per minute rate limit of **50K** (or the maximum available if less than 50K).   
+1. Wait for your project to be created. It may take around 1-2 minutes.          
 
-1. Wait for your project to be created. It may take around 3-5 minutes.          
+## Task 2: Deploy and test a model
 
-1. When your project is created, the **Chat playground** will be opened automatically so you can test your model.
+In this task, you will deploy the gpt-4.1 model and test it in the playground by sending prompts and reviewing responses.
 
-   ![](../Images/aii6.png)
+1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Browse models (2)** from the drop-down menu.
 
-1. In the navigation pane on the left, select **Overview** to see the main page for your project, which looks like this:
+   ![](../Images/lab1-03-04.png) 
 
-   ![](../Images/aii7.png)
+1. On the **Models** page, search for **gpt-4.1 (1)** in the search bar, and then select the **gpt-4.1 (2)** model from the search results.
 
-1. At the bottom of the navigation pane on the left, select **Management center**. 
+   ![](../Images/lab1-03-05.png) 
 
-   ![](../Images/aii8.png)
+1. On the **gpt-4.1** model details page, click **Deploy (1)**, and then select **Default settings (2)** to deploy the model using the standard configuration.
 
-1. The management center is where you can configure settings at both the **resource** and **project** levels, which are both shown in the navigation pane.     
+   ![](../Images/lab1-03-07.png) 
 
-   ![](../Images/aii9.png)
+1. Once the model has been deployed, the model playground will open automatically so you can test your model:   
 
-   - The **resource level** relates to the Azure AI Foundry resource that was created to support your project. This resource includes connections to Azure AI Services and Azure AI Foundry models, and provides a central place to manage user access to AI development projects.
+   ![](../Images/lab1-03-08.png) 
 
-   - The **project level** relates to your individual project, where you can add and manage project-specific resources.
+1. In the **Instructions (1)** box, enter the provided text, then in the chat pane enter the query  `Decribe three key considerations for working with Large Language Models for AI application development.` **(2)** and select **Send (3)**.
 
-1. In the navigation pane, in the section for your Azure AI Foundry resource, select the **Overview (1)** page to view its details. Select the link to the Resource group **AI-102-RG01 (2)** associated with the resource to open a new browser tab and navigate to the Azure portal.  
+   ```text
+   You are an AI assistant that can provide information and advice about AI software development.
+   ```
 
-   ![](../Images/aii10.png)
+   ![](../Images/lab1-03-09.png) 
 
-1. Sign in with your Azure credentials if prompted.
+1. In the chat pane, review the response.
 
-1. View the resource group in the Azure portal to see the Azure resources that have been created to support your **Azure AI Foundry resource** and your **project**.
-
-   ![](../Images/aii11.png)
-
-    >**Note**: Note that the resources have been created in the region you selected when creating the project.
-
-1. Close the Azure portal tab and return to the **Azure AI Foundry portal**. 
+   ![](../Images/lab1-03-10.png) 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -98,56 +96,98 @@ In this task, you’ll create a new Azure AI Foundry project, deploy the **gpt-4
  
 ---
 
-## Task 2: Review project endpoints
+## Task 3: View Foundry Azure resource and project endpoints
 
-In this task, you’ll review the endpoints and authorization keys available in your Azure AI Foundry project. These endpoints are what client applications use to connect to the project, deployed models, and integrated Azure AI services.
+In this task, you will explore the resource and project endpoints, along with keys used to connect applications to your deployed models.
 
-1. In the Management center page, in the navigation pane, under your project, select **Go to project**.
+1. In the Foundry portal, in the top menu bar, select **Operate**. The operation center is where you can monitor your projects, view alerts, monitor agent performance and quotas, and manage resources.
 
-    ![](../Images/aii12.png)
+    ![](../Images/lab1-03-11.png)
 
-1. In the project **Overview (1)** page, view the Endpoints and keys section, which contains endpoints and authorization keys that you can use in your application code to access **(2)**:
+1. In the left navigation pane, select the **Admin (1)** page to view details.
 
-    - The **Azure AI Foundry project** and any models deployed in it.
-    - **Azure OpenAI** in Azure AI Foundry models.
-    - **Azure AI Services**   
+    - The *resource* level relates to the **Foundry** resource that was created in Azure to support your project. This resource includes connections to Foundry Services and models; and provides a central place to manage user access to AI development projects.
+    - The *project* level relates to your individual project, where you can add and manage project-specific resources. A resource can support multiple projects (the first one created is the resource's *default* project).
 
-      ![](../Images/aii13.png)    
+1. Select the link to the **Parent resource (2)** associated with the project.
 
+   ![](../Images/lab1-03-12.png)
 
-## Task 3: Test a generative AI model      
+1. The resource configuration details should be displayed. 
 
-In this task, you’ll use the chat playground in Azure AI Foundry to test your deployed **gpt-4.1** model. You’ll configure the system message to provide context, send queries, and review the model’s generative responses.
+   ![](../Images/lab1-03-13.png)
 
-1. In the navigation pane on the left for your project, select **Playgrounds (1)**.
+   >**Note:** Note that the Foundry resource has an *endpoint*, through which client applications can access resource-level funtionality (such as Foundry Tools that are shared across all projects in the resource).
 
-    - On the Chat playground, ensure that your `gpt-4.1` **(2)** model deployment is selected in the Deployment section.
+1. In the top menu bar, select **Home** to return to the project home page.
 
-      ![](../Images/aii14.png)    
+1. View the project endpoint, key, and OpenAI endpoint. This information is used to connect to your project-level resouces from client applications.
 
-1. In the Setup pane, in the **Give the model instructions and context** box, delete the existing content and then enter the following instructions **(1)** and then **Apply changes (2)**:      
+    - The **key** is used for key-based authentication to models and tools (though in most production scenarios you should consider using Microsoft Entra ID authentication based on authenticated user and application identities).
+    - The **project endpoint** is used to access models provided directly in Foundry (including OpenAI models) using the OpenAI **Resources** API, and to access Foundry-specific APIs (such as the Foundry Agent service).
+    - The **OpenAI endpoint** is used to access models that are compatible with the OpenAI APIs, including the **Chat Completions** API and other specialized functions.
 
-    ```
-    You are a history teacher who can answer questions about past events all around the world.
-    ```
+      ![](../Images/lab1-03-13.png)
 
-     ![](../Images/aii15.png)  
+## Task 4: Install the Visual Studio Code extension for Microsoft Foundry  
 
-1. In the **Update system message?**, click **Continue**.
+In this task, you will install the Microsoft Foundry extension in Visual Studio Code and connect it to your project to access and test the deployed model.
 
-    ![](../Images/aii16.png)
+1. Open the **Visual Studio Code** from the desktop.
 
-1. In the chat window, enter a query such as `What are the key events in the history of Scotland?` **(1)** and then send **(2)**.    
+1. In Visual Studio Code, select **Extensions (1)** from the left pane, search for **Microsoft Foundry (2)**, choose the **Microsoft Foundry (3)** extension by Microsoft, and then click **Install (4)**.
 
-    ![](../Images/aii17(1).png)
+   ![](../Images/lab1-03-15.png)
 
-1. View the response:   
+1. After installation is complete, verify the extension appears in the primary navigation bar on the left side of Visual Studio Code.
 
-    ![](../Images/aii18.png)
+1. In the VS Code sidebar, select the **Microsoft Foundry (1)** extension icon.
+
+1. In the Resources view, choose **Set default project (2)**, and when prompted, select **Sign in to Azure (3)** to authenticate.
+
+   ![](../Images/lab1-03-17.png)
+
+1. In the **Azure Resources wants to sign in using Microsoft** dialog, select **Allow**.
+
+   ![](../Images/lab1-03-18.png)
+
+1. On the **Sign in** page, provide the credentials below:
+ 
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    
+     ![](../Images/lab1-03-19.png)
+
+   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    
+     ![](../Images/lab1-03-20.png)
+
+1. On the **Sign in to all apps, websites, and services on this device?** page, select **Yes**.
+
+   ![](../Images/lab1-03-21.png)
+
+1. On the **Account added to this device** page, select **Done**.
+
+   ![](../Images/lab1-03-22.png)
+
+1. In the **Pick a project** prompt, select **Myproject<inject key="DeploymentID" enableCopy="false"/>**.
+
+   ![](../Images/lab1-03-23.png)
+
+1. In the **Foundry** extension pane, expand **Models (1)** and select **gpt-4.1 (2)** to view the deployment details.
+
+   ![](../Images/lab1-03-24.png)
+
+1. In the Foundry extension pane, in the **Tools** section, select **Model playground (1)** and when prompted, select the **gpt-4.1 (2)** model.
+
+   ![](../Images/lab1-03-25.png)
+
+1. An interactive playground in which you can test the model is opened in Visual Studio Code.
+
+   ![](../Images/lab1-03-26.png)
 
 ### Summary
 
-In this lab, you created an Azure AI Foundry project and deployed the gpt-4.1 model. You explored the project’s endpoints and keys to understand how applications connect to deployed models and Azure AI services. Finally, you tested the generative AI model in the chat playground by configuring system instructions, sending queries, and reviewing the model’s responses, gaining hands-on experience in managing and using generative AI in Azure.
+In this lab, you created a new project in the Microsoft Foundry portal and deployed the gpt-4.1 model. You tested the model in the playground by sending prompts and reviewing its responses. You also explored the project and resource endpoints required for integration. Finally, you connected the project to Visual Studio Code using the Microsoft Foundry extension to access and interact with the model.
 
 ### You have successfully completed the Hands-on Lab!
 
