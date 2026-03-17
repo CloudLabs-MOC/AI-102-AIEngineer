@@ -34,7 +34,6 @@ In this task, you will sign in to the Microsoft Foundry portal and create a new 
 
       >**Note:** Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the **Foundry** logo at the top left to navigate to the home page.
 
-
 1. At the top of the **Microsoft Foundry** portal, enable the **New Foundry toggle (1)** to switch to the latest Foundry user interface.   
 
    ![](../Images/lab1-03-03.png) 
@@ -93,8 +92,7 @@ In this task, you will deploy the gpt-4.1 model and test it in the playground by
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
  
 <validation step="de166ee0-49cd-4599-b2a5-9cb602ef5230" />
- 
----
+
 
 ## Task 3: View Foundry Azure resource and project endpoints
 
@@ -111,7 +109,7 @@ In this task, you will explore the resource and project endpoints, along with ke
 
 1. Select the link to the **Parent resource (2)** associated with the project.
 
-   ![](../Images/lab1-03-12.png)
+    ![](../Images/lab1-03-12.png)
 
 1. The resource configuration details should be displayed. 
 
@@ -127,7 +125,7 @@ In this task, you will explore the resource and project endpoints, along with ke
     - The **project endpoint** is used to access models provided directly in Foundry (including OpenAI models) using the OpenAI **Resources** API, and to access Foundry-specific APIs (such as the Foundry Agent service).
     - The **OpenAI endpoint** is used to access models that are compatible with the OpenAI APIs, including the **Chat Completions** API and other specialized functions.
 
-      ![](../Images/lab1-03-13.png)
+       ![](../Images/lab1-03-13.png)
 
 ## Task 4: Install the Visual Studio Code extension for Microsoft Foundry  
 
@@ -159,31 +157,31 @@ In this task, you will install the Microsoft Foundry extension in Visual Studio 
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-     ![](../Images/lab1-03-20.png)
+      ![](../Images/lab1-03-20.png)
 
 1. On the **Sign in to all apps, websites, and services on this device?** page, select **Yes**.
 
-   ![](../Images/lab1-03-21.png)
+    ![](../Images/lab1-03-21.png)
 
 1. On the **Account added to this device** page, select **Done**.
 
-   ![](../Images/lab1-03-22.png)
+    ![](../Images/lab1-03-22.png)
 
 1. In the **Pick a project** prompt, select **Myproject<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../Images/lab1-03-23.png)
+    ![](../Images/lab1-03-23.png)
 
 1. In the **Foundry** extension pane, expand **Models (1)** and select **gpt-4.1 (2)** to view the deployment details.
 
-   ![](../Images/lab1-03-24.png)
+    ![](../Images/lab1-03-24.png)
 
 1. In the Foundry extension pane, in the **Tools** section, select **Model playground (1)** and when prompted, select the **gpt-4.1 (2)** model.
 
-   ![](../Images/lab1-03-25.png)
+    ![](../Images/lab1-03-25.png)
 
 1. An interactive playground in which you can test the model is opened in Visual Studio Code.
 
-   ![](../Images/lab1-03-26.png)
+    ![](../Images/lab1-03-26.png)
 
 ### Summary
 
