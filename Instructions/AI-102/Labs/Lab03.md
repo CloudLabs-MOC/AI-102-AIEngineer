@@ -4,11 +4,11 @@
 
 ## Overview
 
-In this lab, you will use **Azure AI Foundry** to create and deploy a prompt flow solution. You’ll start by setting up a project, building and configuring a flow with system instructions, and connecting it to a model. You will then test the flow in the chat pane with sample queries to validate its performance. Finally, you’ll deploy the flow as an endpoint, test it through the Azure AI Foundry portal, and review connection details for application integration. This lab provides hands-on experience in designing, testing, and deploying prompt flows to enable generative AI solutions.
+In this lab, you will use **Microsoft Foundry** to create and deploy a prompt flow solution. You’ll start by setting up a project, building and configuring a flow with system instructions, and connecting it to a model. You will then test the flow in the chat pane with sample queries to validate its performance. Finally, you’ll deploy the flow as an endpoint, test it through the Microsoft Foundry portal, and review connection details for application integration. This lab provides hands-on experience in designing, testing, and deploying prompt flows to enable generative AI solutions.
 
 ## Lab Objectives
 
-- **Task 1:** Create an Azure AI Foundry hub and project
+- **Task 1:** Create an Microsoft Foundry hub and project
 
 - **Task 2:** Configure resource authorization
 
@@ -20,15 +20,15 @@ In this lab, you will use **Azure AI Foundry** to create and deploy a prompt flo
 
 - **Task 6:** Deploy the flow
 
-## Task 1: Create an Azure AI Foundry hub and project
+## Task 1: Create an Microsoft Foundry hub and project
 
-In this task, you’ll create an **Azure AI Foundry hub and project**. You’ll sign in to the Azure AI Foundry portal, set up a new project with a hub, configure its name and region, and finalize the creation. This setup provides the workspace where you’ll manage AI resources and build solutions in later tasks.
+In this task, you’ll create an **Microsoft Foundry hub and project**. You’ll sign in to the Microsoft Foundry portal, set up a new project with a hub, configure its name and region, and finalize the creation. This setup provides the workspace where you’ll manage AI resources and build solutions in later tasks.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
 1. Click on **Sign in**.
 
-   ![](../Images/aii1.png) 
+    ![](../Images/lab1-03-0.png) 
 
 1. If prompted, provide the credentials below:
 
@@ -38,23 +38,24 @@ In this task, you’ll create an **Azure AI Foundry hub and project**. You’ll 
 
 1. In the LabVM browser tab, copy and paste the following link  https://ai.azure.com/managementCenter/allResources and select **Create new**.  
 
-   ![](../Images/aii60.png) 
+   ![](../Images/lab3-03-1.png) 
 
 1. In the **Create project** wizard, select **AI hub resource (1)** and then click **Next (2)**.
 
-   ![](../Images/aii61(1).png)
+   ![](../Images/lab3-03-2.png)
 
 1. Enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)**, then select **Rename hub (2)**. Then rename the hub as  **Myhub<inject key="DeploymentID" enableCopy="false"/> (3)** and then **Next (4)**.
 
-   ![](../Images/aii62.png)
+   ![](../Images/lab3-03-3.png)
 
 1. Expand **Advanced options (1)**, and specify the following settings for your project and leave the rest as their defaults:
 
-    - Resuorce group: Select **AI-102-RG03 (2)**
-    - Region: Select **<inject key="Region" enableCopy="false" /> (3)**
-    - Select **Create (4)**
+    - Subscription: **Choose Default Subscription (2)**
+    - Resuorce group: Select **AI-102-RG03 (3)**
+    - Region: Select **<inject key="Region" enableCopy="false" /> (4)**
+    - Select **Create (5)**
 
-      ![](../Images/aii63.png)    
+      ![](../Images/lab3-03-4.png)    
 
 1. Wait for your project to be created. It may take around 3-5 minutes.
 
@@ -70,21 +71,21 @@ In this task, you’ll create an **Azure AI Foundry hub and project**. You’ll 
 
 ## Task 2: Configure resource authorization
 
-In this task, you’ll configure resource authorization so that your Azure AI Foundry hub can securely access the associated storage account. You’ll enable the system-assigned managed identity for the AI Foundry resource and assign it the **Storage Blob Data Reader** role, ensuring the hub has permission to read prompt flow assets stored in blob storage.
+In this task, you’ll configure resource authorization so that your Microsoft Foundry hub can securely access the associated storage account. You’ll enable the system-assigned managed identity for the AI Foundry resource and assign it the **Storage Blob Data Reader** role, ensuring the hub has permission to read prompt flow assets stored in blob storage.
 
 1. In a new browser tab, open the [Azure portal](https://portal.azure.com), signing in with your Azure credentials if prompted.
 
-1. On the search bar, search for **Azure AI Foundry (1)** and select **Azure AI Foundry (2)**.
+1. On the search bar, search for **Microsoft Foundry (1)** and select **Microsoft Foundry (2)**.
 
-    ![](../Images/aii64.png)
+    ![](../Images/lab3-03-5.png)
 
 1. Select the **AI Foundry (1)** resource for your hub to open it and then select the AI service that starts with **ai-myhubxxxxxx (2)**.
 
-    ![](../Images/aii65.png)
+    ![](../Images/lab3-03-6.png)
 
 1. Expand the **Resource Management (1)** section, select **Identity (2)**, and if the system-assigned identity is set to Off, switch it to **On (3)**. Finally, click **Save (4)** to apply the change.
 
-    ![](../Images/aii66.png)
+    ![](../Images/lab3-03-7.png)
 
 1. Select **Yes** to confirm.
 
@@ -94,9 +95,9 @@ In this task, you’ll configure resource authorization so that your Azure AI Fo
 
     ![](../Images/aii95.png)
 
-1. Then select the Storage account resource for your hubthat  starts with **sthubxxxxxxxx**.   
+1. Then select the Storage account resource for your hub that starts with **sthubxxxxxxxx**.   
 
-    ![](../Images/aii96.png)
+    ![](../Images/lab3-03-8.png)
 
 1. Navigate to **Access Control (IAM) (1)**, then select **Add (2)** drop down. Then select **Add role assignment (3)**.   
 
@@ -106,9 +107,9 @@ In this task, you’ll configure resource authorization so that your Azure AI Fo
 
     ![](../Images/aii71.png)
 
-1. Select **Managed identity (1)**, click on **+ Select Members (2)**. Then choose **Azure AI Foundry (3)**, then select the **ai-myhubxxxx (4)**, and then **Select (5)**.
+1. Select **Managed identity (1)**, click on **+ Select Members (2)**. Then choose **Foundry (3)**, then select the **ai-myhubxxxx (4)**, and then **Select (5)**.
 
-    ![](../Images/aii72.png)
+    ![](../Images/lab3-03-9.png)
 
 1. Select **Next**.   
 
@@ -120,25 +121,25 @@ In this task, you’ll configure resource authorization so that your Azure AI Fo
 
     ![](../Images/aii74.png)
 
-1. When you've reviewed and assigned the role access to allow the Azure AI Foundry managed identity to read blobs in the storage account, close the Azure portal tab and return to the Azure AI Foundry portal.
+1. When you've reviewed and assigned the role access to allow the Microsoft Foundry managed identity to read blobs in the storage account, close the Azure portal tab and return to the Microsoft Foundry portal.
 
 ## Task 3: Deploy a generative AI model
 
-In this task, you’ll deploy a generative AI base model to your Azure AI Foundry project. Specifically, you’ll select and configure the **gpt-4.1** model with the required deployment settings, connect it to your Azure OpenAI resource, and enable it for use in building and testing prompt flows.
+In this task, you’ll deploy a generative AI base model to your Microsoft Foundry project. Specifically, you’ll select and configure the **gpt-4.1** model with the required deployment settings, connect it to your Azure OpenAI resource, and enable it for use in building and testing prompt flows.
 
 1. In the pane on the left for your project, in the My assets section, select the **Models + endpoints (1)** page.
 
     - In the Models + endpoints page, in the Model deployments tab, in the **+ Deploy model (2)** menu, select **Deploy base model (3)**.
  
-      ![](../Images/aii75.png)   
+      ![](../Images/lab3-03-10.png)   
 
 1. Search for the **gpt-4.1 (1)** model in the list, and then select it **(2)** and click **Confirm** **(3)**.
 
-    ![](../Images/aii76.png)
+    ![](../Images/lab3-03-11.png)
 
 1. On the Deploy `gpt-4.1` page, select **Customize**.
 
-    ![](../Images/aii97.png)
+    ![](../Images/lab3-03-12.png)
 
 1. Deploy the model with the following settings by selecting Customize in the deployment details:
 
@@ -146,11 +147,11 @@ In this task, you’ll deploy a generative AI base model to your Azure AI Foundr
     - Deployment type: **Global Standard**
     - Model version: Select **2025-04-14(Default) (1)**
     - Connected AI resource: Select your Azure OpenAI resource connection that starts with **ai-myhubxxxxxxx** **(2)**
-    - Tokens per Minute Rate Limit (thousands): `60K` **(3)** (or the maximum available in your subscription if less than 50K)
+    - Tokens per Minute Rate Limit (thousands): `50K` **(3)** (or the maximum available in your subscription if less than 50K)
     - Content filter: **DefaultV2 (4)**   
     - Then select **Deploy (5)**
 
-        ![](../Images/aii98.png)
+        ![](../Images/lab3-03-13.png)
 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
@@ -167,9 +168,9 @@ In this task, you’ll deploy a generative AI base model to your Azure AI Foundr
 
 In this task, you’ll create a basic AI assistant for a travel agency using a prompt flow. The assistant will handle travel-related queries, give personalized recommendations, share tips, and help with itinerary planning while keeping responses professional, safe, and relevant.
 
-1. In the Azure AI Foundry portal navigation bar, in the **Build and customize** section, select **Prompt flow (1)**. Then select **+ Create (2)**.
+1. In the Microsoft Foundry portal navigation bar, in the **Build and customize** section, select **Prompt flow (1)**. Then select **+ Create (2)**.
 
-    ![](../Images/aii77.png)
+    ![](../Images/lab3-03-14.png)
 
 1. Create a new flow based on the Chat flow template, select **Create** under Chat flow.
 
@@ -189,7 +190,7 @@ In this task, you’ll create a basic AI assistant for a travel agency using a p
 
 1. To be able to test your flow, you need compute, and it can take a while to start; so select **Start compute session** to get it started while you explore and modify the default flow.
 
-    ![](../Images/aii82.png)
+    ![](../Images/lab3-03-15.png)
 
 1. View the prompt flow, which consists of a series of inputs, outputs, and tools. You can expand and edit the properties of these objects in the editing panes on the left, and view the overall flow as a graph on the right.
 
@@ -205,11 +206,11 @@ In this task, you’ll create a basic AI assistant for a travel agency using a p
 
 1. In the **Chat** LLM tool pane, for Connection, **select the connection for the Azure OpenAI service resource (1)** in your AI hub. Then configure the following connection properties:
 
-    - Api: chat **(2)**
+    - Api: `chat` **(2)**
     - deployment_name: The `gpt-4.1` model you deployed **(3)**
     - response_format: `{"type":"text"}` **(4)**
 
-      ![](../Images/aii-85(1).png)   
+      ![](../Images/lab3-03-16.png)   
 
 1. Delete the existing prompt. Copy and paste the following **Prompt**.
 
@@ -244,7 +245,7 @@ In this task, you’ll create a basic AI assistant for a travel agency using a p
 
      ![](../Images/aii86.png)    
 
-      >**Note**: Read the prompt you added so you are familiar with it. It consists of a system message (which includes an objective, a definition of its capabilities, and some instructions), and the chat history (ordered to show each user question input and each previous assistant's answer output)
+      >**Note:** Read the prompt you added so you are familiar with it. It consists of a system message (which includes an objective, a definition of its capabilities, and some instructions), and the chat history (ordered to show each user question input and each previous assistant's answer output)
 
 1. In the **Inputs** section for the Chat LLM tool (under the prompt), ensure the following variables are set **(1)**:
 
@@ -253,7 +254,7 @@ In this task, you’ll create a basic AI assistant for a travel agency using a p
 
 1. Save the changes to the flow **(2)**.   
 
-    ![](../Images/aii87.png)
+    ![](../Images/lab3-03-20.png)
 
 
 ## Task 5: Test the flow
@@ -264,11 +265,11 @@ In this task, you’ll test the deployed flow by running a compute session, send
 
     - On the toolbar, select **Chat (2)** to open the Chat pane, and wait for the chat to initialize.
 
-      ![](../Images/aii88.png)   
+      ![](../Images/lab3-03--19.png)   
 
 1. Enter the query: `I have one day in London, what should I do?` and review the output. The Chat pane should look similar to this:     
 
-    ![](../Images/aii89.png)
+    ![](../Images/lab3-03-21.png)
 
 ## Task 6: Deploy the flow
 
@@ -294,32 +295,32 @@ In this task, you’ll deploy your flow as an endpoint, verify it is running suc
 
     ![](../Images/aii92.png)
 
-1. Deployment may take around 12-15 minutes. Please wait until it completes. You can track the progress in the Notifications panel.
+1. Deployment may take around **12-15 minutes**. Please wait until it completes. You can track the progress in the Notifications panel.
 
-    ![](../Images/aii93.png)
+    ![](../Images/lab4-03-15.png)
 
-1. Once the deployment is completed, in the Azure AI Foundry portal, in the navigation pane, in the My assets section, click on the **Models + endpoints (1)** twice. Refresh the page. Make sure the **myendpointxxxxx** endpoint is listed and in the **Succeeded (2)** state. Then select it **(3)**.
+1. Once the deployment is completed, in the Microsoft Foundry portal, in the navigation pane, in the My assets section, click on the **Models + endpoints (1)** twice. Refresh the page. Make sure the **myendpointxxxxx** endpoint is listed and in the **Succeeded (2)** state. Then select it **(3)**.
 
-    ![](../Images/aii94.png)
+    ![](../Images/lab3-03-22.png)
 
 1. Navigate to the **Test** page.
 
-    ![](../Images/aii99.png)
+    ![](../Images/lab3-03-23.png)
 
 1. Enter the prompt `What is there to do in San Francisco?` and review the response.
 
-    ![](../Images/aii100.png)
+    ![](../Images/lab3-03-24.png)
 
 1. Enter the prompt `Tell me something about the history of the city.` and review the response.
 
-    ![](../Images/aii101.png)
+    ![](../Images/lab3-03-25.png)
 
 1. View the **Consume** page for the endpoint, and note that it contains connection information and sample code that you can use to build a client application for your endpoint - enabling you to integrate the prompt flow solution into an application as a generative AI application.
 
-    ![](../Images/aii102.png)
+    ![](../Images/lab3-03-26.png)
 
 ## Summary
 
-In this lab, you created a project in **Azure AI Foundry** and explored prompt flow capabilities. You built a flow, configured system instructions, and connected it to a model to generate responses. You then tested the flow in the chat pane, refining it with prompts to validate its behavior. Finally, you deployed the flow as an endpoint, confirmed it was running, and tested it with sample queries. You also reviewed the endpoint’s connection details to see how it could be integrated into applications.
+In this lab, you created a project in **Microsoft Foundry** and explored prompt flow capabilities. You built a flow, configured system instructions, and connected it to a model to generate responses. You then tested the flow in the chat pane, refining it with prompts to validate its behavior. Finally, you deployed the flow as an endpoint, confirmed it was running, and tested it with sample queries. You also reviewed the endpoint’s connection details to see how it could be integrated into applications.
 
 ### You have successfully completed the Hands-on Lab!

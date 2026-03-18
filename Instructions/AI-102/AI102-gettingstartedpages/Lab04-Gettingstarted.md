@@ -1,6 +1,6 @@
 # AI-102: Azure AI Engineer Associate Workshop
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
 # Lab 04: Create a generative AI app that uses your own data
 
@@ -8,16 +8,20 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will build a generative AI application using the Retrieval Augmented Generation (RAG) pattern in Azure AI Foundry. You’ll set up a hub and project, deploy embedding and generative models, and upload custom PDF data. Then you’ll create a vector index with Azure AI Search, test it in the Chat Playground, and configure a Python client app to query your indexed data. This lab provides hands-on experience in creating grounded AI solutions with your own data.
+In this lab, you will build a generative AI application using the Retrieval Augmented Generation (RAG) pattern in Microsoft Foundry. You’ll set up a hub and project, deploy embedding and generative models, and upload custom PDF data. Then you’ll create a vector index with Azure AI Search, test it in the Chat Playground, and configure a Python client app to query your indexed data. This lab provides hands-on experience in creating grounded AI solutions with your own data.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create and organize resources in Azure AI Foundry:** Set up a hub and project to manage models, data, and indexes.
+1. **Create and organize resources in Microsoft Foundry:** Set up a hub and project to manage models, data, and indexes.
+
 2. **Deploy models for RAG:** Deploy an embedding model for vectorization and a generative model for grounded responses.
+
 3. **Add and index custom data:** Upload PDF files, create a vector index in Azure AI Search, and connect it to your project.
+
 4. **Test responses with data grounding:** Use the Chat Playground to compare outputs with and without the index.
+
 5. **Build and run a client application:** Configure a Python-based RAG app that integrates the Azure OpenAI SDK and Azure AI Search.
 
 
@@ -27,15 +31,15 @@ By the end of this lab, you will be able to:
 
 - Familiarity with concepts of generative AI and vector search.
 
-- An active Azure subscription with access to Azure AI Foundry.
+- An active Azure subscription with access to Microsoft Foundry.
 
 - Basic knowledge of Python programming.
 
 ## Architecture
 
-1. **Azure AI Foundry Resource**: The core service in Azure that provides access to model catalog, deployment capabilities, and integration with Azure AI Search.
+1. **Microsoft Foundry Resource:** The core service in Azure that provides access to model catalog, deployment capabilities, and integration with Azure AI Search.
 
-2. **Azure AI Foundry Project**: A workspace within the resource where you deploy models, upload custom data, and manage indexes.
+2. **Microsoft Foundry Project:** A workspace within the resource where you deploy models, upload custom data, and manage indexes.
 
 3. **Azure AI Search:** A service that hosts the vector index created from your custom data, enabling semantic and keyword-based retrieval.
 
@@ -43,13 +47,13 @@ By the end of this lab, you will be able to:
 
 ## Architecture Diagram
 
-![](../Images/AI-102-l4-arch.png)
+![](../Images/lab4-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Resource**: The core Azure service that provides access to model deployment, data integration, and connections with Azure AI Search. It serves as the foundation for building and managing your RAG solution.
+1. **Microsoft Foundry Resource:** The core Azure service that provides access to model deployment, data integration, and connections with Azure AI Search. It serves as the foundation for building and managing your RAG solution.
 
-2. **Azure AI Foundry Project**: A workspace where you deploy the gpt-4.1 generative model and the text-embedding-ada-002 embedding model, upload PDF brochures, and manage indexes. The project acts as the central hub for all assets.
+2. **Microsoft Foundry Project:** A workspace where you deploy the gpt-4.1 generative model and the text-embedding-ada-002 embedding model, upload PDF brochures, and manage indexes. The project acts as the central hub for all assets.
 
 3. **Azure AI Search (Vector Index):** A connected resource that hosts the brochures-index, enabling both vector and keyword search. It retrieves the most relevant passages from the uploaded PDFs to ground responses.
 
@@ -59,7 +63,7 @@ By the end of this lab, you will be able to:
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Microsoft Foundry, Document Intelligence, Custom Vision, Language Service etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  
@@ -99,7 +103,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
-![](../Images/zoominai102.png)
+![](../Images/lab1-z.png)
 
 ## Let's Get Started with Azure Portal
  
@@ -115,15 +119,15 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/lab1-p.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 
     ![](../Images/AIl16-2.png)
 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-    ![](../Images/AIl16-3.png)
+    ![](../Images/lab1-w.png)
 
 
 ## Support Contact

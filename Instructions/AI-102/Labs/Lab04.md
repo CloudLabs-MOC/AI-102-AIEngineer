@@ -4,13 +4,13 @@
 
 ## Overview
 
-In this lab, you will use Azure AI Foundry to build a Retrieval Augmented Generation (RAG) solution that integrates your own data with a generative AI model. You’ll set up a hub and project, deploy embedding and generative models, upload PDF data, and create a vector index in Azure AI Search for semantic retrieval. You will then test the index in the Chat Playground and run a Python-based client app that uses the Azure OpenAI SDK and Azure AI Search to generate grounded responses from your dataset.
+In this lab, you will use Microsoft Foundry to build a Retrieval Augmented Generation (RAG) solution that integrates your own data with a generative AI model. You’ll set up a hub and project, deploy embedding and generative models, upload PDF data, and create a vector index in Azure AI Search for semantic retrieval. You will then test the index in the Chat Playground and run a Python-based client app that uses the Azure OpenAI SDK and Azure AI Search to generate grounded responses from your dataset.
 
 > **Note:** The code in this exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages, which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
 
 ## Lab Objectives
 
-- **Task 1:** Create an Azure AI Foundry hub and project
+- **Task 1:** Create an Microsoft Foundry hub and project
 
 - **Task 2:** Deploy models
 
@@ -22,73 +22,75 @@ In this lab, you will use Azure AI Foundry to build a Retrieval Augmented Genera
 
 - **Task 6:** Create a RAG client app
 
-## Task 1: Create an Azure AI Foundry hub and project
+## Task 1: Create an Microsoft Foundry hub and project
 
-In this task, you'll set up the Azure AI Foundry workspace by creating a hub and project. This will be the foundation for managing your models, data, and indexes.
+In this task, you'll set up the Microsoft Foundry workspace by creating a hub and project. This will be the foundation for managing your models, data, and indexes.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
 1. Click on **Sign in**.
  
-    ![](../Images/l8t1p1.png)
+    ![](../Images/lab1-03-0.png) 
 
 1. If prompted, provide the credentials below:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-        ![](../Images/aifoundrysignin1.png)
+        ![](../Images/lab2a-03-11.png)
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
         ![](../Images/aifoundrysignin2.png)
 
-1. When the **Stay signed in?** window appears, select **No**.
-
-    ![](../Images/aifoundrysignin3.png)
-
-1. Click on **X** to close the **Chat with Foundry Agent** popup window.
-
-    ![](../Images/l8t1p2.png)
-
-    >**Note:** Close the **Help** pane if it's open
-
 1. In the browser, navigate to `https://ai.azure.com/managementCenter/allResources` and select **Create new**. 
 
-    ![](../Images/l4t1p1.png)
+    ![](../Images/lab3-03-1.png)
 
 1. In the **Create Project** window, select the option to create a new **AI hub resource (1)**, then click **Next (2)**.
 
-    ![](../Images/l4t1p2.png)
+    ![](../Images/lab3-03-2.png)
 
-1. In the **Create a project** wizard, enter **Myproject<inject key="DeploymentID"></inject> (1)** in the Project name field. Under the Hub field, click **Rename hub (2)** and specify **Myhub<inject key="DeploymentID"></inject> (3)** as the hub name. Then, expand the **Advanced options (4)** drop-down.
+1. In the **Create a project** wizard, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** in the Project name field. Under the Hub field, click **Rename hub (2)** and specify **Myhub<inject key="DeploymentID" enableCopy="false"/> (3)** as the hub name. Then, and then click **Next (4)**.
 
-    ![](../Images/l4t1p3.png)
+    ![](../Images/lab3-03-3.png)
 
-1. In the Advanced options, specify the following settings for your project and click **Create (9)**.
+1. Expand the **Advanced options (1)** drop-down, specify the following settings for your project and click **Create (5)**.
 
-    * Subscription: **Choose Default Subscription (5)**
-    * Resource group: **AI-102-RG04 (6)**
-    * Region: **<inject key="Region"></inject> (7)**
-    * Azure AI Foundry resource: **Keep as Default (8)**
+    * Subscription: **Choose Default Subscription (2)**
+    * Resource group: **AI-102-RG04 (3)**
+    * Region: **<inject key="Region"></inject> (4)**
 
-        ![](../Images/l4t1p4.png)
+        ![](../Images/lab4-03-1.png)
 
 1. Wait for your project to be created, and then navigate to your project.
 
-    ![](../Images/l4t1p5.png)
+    ![](../Images/lab4-03-2.png)
 
 ## Task 2: Deploy models
 
 In this task, you'll deploy two models: an embedding model to convert text into vector format for searching, and a generative model to produce responses based on retrieved data.
 
 You need two models to implement your solution:
-
+    
 - An **embedding** model to vectorize text data for efficient indexing and processing.
+    
 - A model that can generate natural language responses to questions based on your data.
 
-1. In your Azure AI Foundry project, go to the navigation pane on the left, under **My assets**, open the **Models + endpoints (1)** page. Click **+ Deploy model (2)**, then choose **Deploy base model (3)**.
+1. In the **Foundry** portal, select **Model catalog (1)**, then open **Collections (2)**, enter **OpenAI (3)**, and select **Azure OpenAI (4)**.
 
-    ![](../Images/l4t2p1.png)
+    ![](../Images/lab4-03-3.png)
+
+1. In the search box, enter **text-embedding-ada-002 (1)**, and then select **text-embedding-ada-002 (2)** from the results.
+
+    ![](../Images/lab4-03-4.png)
+
+1. On the **text-embedding-ada-002** model page, select **Use this model**.
+
+    ![](../Images/lab4-03-5.png)
+
+1. In the **Purchase options** pane, select **Direct from Azure models**.
+
+    ![](../Images/lab4-03-6.png)
 
 1. In the **Deploy text-embedding-ada-002** window, enter the following details, then select **Customize (3)**.
 
@@ -108,17 +110,17 @@ You need two models to implement your solution:
 
         > **Note:** If your current AI resource location doesn't have quota available for the model you want to deploy, you will be asked to choose a different location where a new AI resource will be created and connected to your project.
 
-1. From the navigation pane on the left, under **My assets**, open the **Models + endpoints (1)** page, click **+ Deploy model (2)**, and select **Deploy base model (3)**.
+1. Return to the **Model catalog (1)**, search for **gpt-4.1 (2)** and select **gpt-4.1 (3)** from the results.
 
-    ![](../Images/l4t2p1(1).png) 
+    ![](../Images/lab4-03-9.png)
 
-1. In the **Select a model** window, use the search bar to find **gpt-4.1 (1)**, select **gpt-4.1 (2)** from the results, and click **Confirm (3)**.
+1. On the **gpt-4.1** model page, select **Use this model**.
 
-    ![](../Images/l4t2p5.png)
+    ![](../Images/lab4-03-10.png)
 
 1. In the **Deploy gpt-4.1** window, type **gpt-4.1 (1)** in the **Deployment name** field, select **Global Standard (2)** under **Deployment type**, and click **Customize (3)** to modify the deployment settings.
 
-    ![](../Images/l4t2p6.png)
+    ![](../Images/lab4-03-11.png)
 
 1. Enter the following details, then click **Create (9):**
 
@@ -144,7 +146,7 @@ You need two models to implement your solution:
 
 ## Task 3: Add data to your project
 
-In this task, you'll upload a set of travel brochures in PDF format to your Azure AI Foundry project so they can be used as a knowledge source.
+In this task, you'll upload a set of travel brochures in PDF format to your Microsoft Foundry project so they can be used as a knowledge source.
 
 The data for your app consists of a set of travel brochures in PDF format from the fictitious travel agency **Margie's Travel**. Let's add them to the project.
 
@@ -166,9 +168,9 @@ The data for your app consists of a set of travel brochures in PDF format from t
 
     >**Note:** Make sure the folder name is  **brochures**.
 
-1. In your Azure AI Foundry project, go to the navigation pane on the left, under **My assets**, open the **Data + indexes (1)** page, and click **+ New data (2)**.
+1. In your Microsoft Foundry project, go to the navigation pane on the left, under **My assets**, open the **Data + indexes (1)** page, and click **+ New data (2)**.
 
-    ![](../Images/l4t3p5.png)
+    ![](../Images/lab4-03-12.png)
 
 1. In the **Add your data** wizard, open the **drop-down (1)** menu under Data source and choose **Upload files/folders (2)**.
 
@@ -196,17 +198,17 @@ The data for your app consists of a set of travel brochures in PDF format from t
 
 1. Wait for the folder to be uploaded and note that it contains several .pdf files.
 
-    ![](../Images/l4t3p12.png)
+    ![](../Images/lab4-03-13.png)
 
 ## Task 4: Create an index for your data
 
 In this task, you'll create a vector index in Azure AI Search from the uploaded brochures. This index will enable efficient retrieval of relevant content during a query.
 
-1. In the Azure AI Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Data + indexes (1)** page and in the **Indexes (2)** tab, click on **+ New index (3)**.
+1. In the Microsoft Foundry portal, in your project, in the navigation pane on the left, under **My assets**, select the **Data + indexes (1)** page and in the **Indexes (2)** tab, click on **+ New index (3)**.
 
-    ![](../Images/l4t4p1.png)
+    ![](../Images/lab4-03-14.png)
 
-1. In the **Create a vector index** window, under the **Source location** section, open the Data source dropdown, select **Data in Azure AI Foundry (1)**, choose the **brochures (2)** data source, and click **Next (3)**.
+1. In the **Create a vector index** window, under the **Source location** section, open the Data source dropdown, select **Data in Microsoft Foundry (1)**, choose the **brochures (2)** data source, and click **Next (3)**.
 
     ![](../Images/l4t4p2.png)
 
@@ -230,7 +232,7 @@ In this task, you'll create a vector index in Azure AI Search from the uploaded 
 
     ![](../Images/l4t4p5.png)
 
-1. Wait for the AI Search resource to be created, then go back to Azure AI Foundry. To finish configuring the index, open the **dropdown (1)** and select **Connect other Azure AI Search resource (2)**.
+1. Wait for the AI Search resource to be created, then go back to Microsoft Foundry. To finish configuring the index, open the **dropdown (1)** and select **Connect other Azure AI Search resource (2)**.
 
     ![](../Images/l4t4p6.png)
 
@@ -255,9 +257,9 @@ In this task, you'll create a vector index in Azure AI Search from the uploaded 
 
 1. Create the vector index and wait for the indexing process to be completed, which can take a while depending on available compute resources in your subscription.
 
-    ![](../Images/l4t4p11.png)
+    ![](../Images/lab4-03-16.png)
 
-    > **Note:** The indexing process may take 4-5 minutes to complete. The actual time can vary depending on the compute resources available in your subscription.
+    > **Note:** The indexing process may take 4-5 minutes to complete.
 
 ## Task 5: Test the index in the playground
 
@@ -265,11 +267,11 @@ In this task, you'll verify that your index is working by running queries in the
 
 1. In the navigation pane on the left, select the **Playgrounds (1)** page and click **Try the Chat playground (2)**.
 
-    ![](../Images/l4t5p1.png)
+    ![](../Images/lab4-03-17.png)
 
 1. On the Chat playground page, in the **Setup** pane, make sure your **gpt-4.1 (1)** model deployment is selected. In the main chat panel, enter the prompt **`Where can I stay in New York?` (2)**, then press **Enter** or click the **> icon (3)** to send it.
 
-    ![](../Images/l4t5p2.png)
+    ![](../Images/lab4-03-18.png)
 
 1. Review the response, which should be a generic answer from the model without any data from the index.
 
@@ -289,7 +291,7 @@ In this task, you'll verify that your index is working by running queries in the
 
 1. Review the response, which should be based on data in the index.
 
-    ![](../Images/l4t5p5.png)
+    ![](../Images/lab4-03-19.png)
 
 ## Task 6: Create a RAG client app
 
@@ -297,17 +299,13 @@ In this task, you'll configure and run a Python-based client application that us
 
 ### Prepare the application configuration
 
-1. Open a new browser tab (keeping the Azure AI Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+1. Open a new browser tab (keeping the Microsoft Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
 1. If prompted, provide the credentials below:
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject> 
-
-        >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
-
-        ![](../Images/l2at2p2.png)
+    - **Password:** <inject key="AzureAdUserPassword"></inject> 
 
 1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
@@ -327,7 +325,7 @@ In this task, you'll configure and run a Python-based client application that us
 
 1. In the cloud shell pane, enter the following commands to clone the GitHub repo containing the code files for this exercise (type the command, or copy it to the clipboard and then right-click in the command line and paste as plain text):
 
-    ![](../Images/l4t6p1.png)
+    ![](../Images/lab4-03-20.png)
 
     ```
     rm -r mslearn-ai-foundry -f
@@ -364,39 +362,37 @@ In this task, you'll configure and run a Python-based client application that us
 
 1. In the configuration file, replace the following placeholders: 
 
-    - **your_openai_endpoint::** From your project's **Overview** page in the Azure AI Foundry portal, open the **Azure OpenAI (1)** capability tab and click the **Copy Azure OpenAI endpoint (2)** icon.
+    - **your_openai_endpoint:** From your project's **Overview (1)** page in the Microsoft Foundry portal, open the **Azure OpenAI (2)** capability tab and click the **Copy Azure OpenAI endpoint (3)** icon.
 
-        ![](../Images/l4t6p4.png)
+    - **your_openai_api_key:** From your project's **Overview** page in the Microsoft Foundry portal, go to the **Azure OpenAI** capability tab and click the **Copy API Key (4)** icon.
 
-    - **your_openai_api_key:** From your project's **Overview** page in the Azure AI Foundry portal, go to the **Azure OpenAI (1)** capability tab and click the **Copy API Key (2)** icon.
+        ![](../Images/lab4-03-21.png)
 
-        ![](../Images/l4t6p5.png)
+    - **your_chat_model:** From the **Models + endpoints (1)** page in the Microsoft Foundry portal, copy the name **`gpt-4.1` (2)** of your **gpt-4.1** model deployment.
 
-    - **your_chat_model:** From the **Models + endpoints (1)** page in the Azure AI Foundry portal, copy the name **`gpt-4.1` (2)** of your **gpt-4.1** model deployment.
+    - **your_embedding_model:** From the **Models + endpoints** page in the Microsoft Foundry portal, copy the name **`text-embedding-ada-002` (3)** of your **text-embedding-ada-002** model deployment.
 
-        ![](../Images/l4t6p6.png)
+        ![](../Images/lab4-03-22.png)
 
-    - **your_embedding_model:** From the **Models + endpoints (1)** page in the Azure AI Foundry portal, copy the name **`text-embedding-ada-002` (2)** of your **text-embedding-ada-002** model deployment.
-
-        ![](../Images/l4t6p7.png)
-
-    - **your_search_endpoint:** To get the URL for your Azure AI Search resource, go to the **Management center**, select **Connected resources (1)** under Project, and copy the **Azure AI Service endpoint (2)**.
+    - **your_search_endpoint:** To get the URL for your Azure AI Search resource, go to the **Management center**, select **Connected resources (1)** click on the service name (for example, **mysearchservice (2)**) to open its details pane, copy the **Target** URL..
 
         ![](../Images/l4t6p8.png)
 
-        ![](../Images/l4t6p8(1).png)
+        ![](../Images/lab4-03-23.png)
+
+        ![](../Images/lab4-03-24.png)
 
         > **Note:** If the endpoint URL is not visible in the list of connected resources, click on the service name (for example, **mysearchservice**) to open its details pane. From there, copy the **Target** URL.
 
-    - **your_search_api_key:** To get the API key for your Azure AI Search resource, go to the **Management center**, select **Connected resources (1)** under Project, and click **Copy API keys (2)** for the **Azure AI Service**.
+    - **your_search_api_key:** To get the API key for your Azure AI Search resource, go to the **Management center**, select **Connected resources (1)** under Project, and click **Copy API keys (2)** for the **Azure AI Search**.
     
         ![](../Images/l4t6p8.png)
 
-        ![](../Images/l4t6p9.png)
+        ![](../Images/lab4-03-25.png)
 
     - **your_index:** Replace with your index name from **Data + indexes (1)**, and copy **`brochures-index` (2)** from the **Names** column.
 
-        ![](../Images/l4t6p10.png)
+        ![](../Images/lab4-03-26.png)
 
 1. After entering all these values, your `.env` file should look like this.
 
@@ -437,13 +433,13 @@ In this task, you'll configure and run a Python-based client application that us
 
 1. When prompted, enter a question, such as `Where should I go on vacation to see architecture?` and review the response from your generative AI model.
 
-    ![](../Images/l4t6p13.png)
+    ![](../Images/lab4-03-27.png)
 
     >**Note:** The response includes source references to indicate the indexed data in which the answer was found.
 
 1. Try a follow-up question, for example, `Where can I stay there?`
 
-    ![](../Images/l4t6p14.png)
+    ![](../Images/lab4-03-28.png)
 
 1. When you're finished, enter `quit` to exit the program. Then close the cloud shell pane.
 
@@ -451,8 +447,8 @@ In this task, you'll configure and run a Python-based client application that us
 
 By completing this lab, you learned how to:
 
-* Create an Azure AI Foundry hub and project to organize AI resources.
-* Deploy an embedding model and a generative model in Azure AI Foundry.
+* Create an Microsoft Foundry hub and project to organize AI resources.
+* Deploy an embedding model and a generative model in Microsoft Foundry.
 * Upload custom PDF data to your project for use in AI applications.
 * Create a vector index in Azure AI Search to enable semantic and keyword-based retrieval.
 * Test the index in the Chat Playground to compare responses with and without data grounding.
