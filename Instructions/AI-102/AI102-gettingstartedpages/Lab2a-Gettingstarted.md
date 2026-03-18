@@ -1,6 +1,6 @@
 # AI-102: Azure AI Engineer Associate Workshop
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
 # Lab 2a: Create a generative AI chat app
 
@@ -8,13 +8,13 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will build a generative AI chat application using Azure AI Foundry and a deployed GPT-4.1 model. You’ll begin by deploying the model in a new AI project, then connect it to a Python client application through Azure Cloud Shell. Finally, you’ll modify and run the chat app to interact with the model, maintaining conversation history and testing real-time responses.
+In this lab, you will build a generative AI chat application using Microsoft Foundry and a deployed GPT-4.1 model. You’ll begin by deploying the model in a new AI project, then connect it to a Python client application through Azure Cloud Shell. Finally, you’ll modify and run the chat app to interact with the model, maintaining conversation history and testing real-time responses.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create and deploy a project in Azure AI Foundry**: Set up a new project, deploy models such as gpt-4.1 for use in a chat application.
+1. **Create and deploy a project in Microsoft Foundry:** Set up a new project, deploy models such as gpt-4.1 for use in a chat application.
 
 2. **Create a client application:** Clone and configure a Python-based chat app to connect with your deployed model.
 
@@ -28,11 +28,11 @@ By the end of this lab, you will be able to:
 
 ## Architecture
 
-The lab architecture demonstrates how Azure AI Foundry supports generative AI model exploration, deployment, and testing:
+The lab architecture demonstrates how Microsoft Foundry supports generative AI model exploration, deployment, and testing:
 
-1. **Azure AI Foundry Resource**: Provisioned in Azure, this resource hosts the deployed gpt-4.1 model and provides connectivity through project endpoints and keys.
+1. **Microsoft Foundry Resource:** Provisioned in Azure, this resource hosts the deployed gpt-4.1 model and provides connectivity through project endpoints and keys.
 
-2. **Azure AI Foundry Project**: A workspace where models are deployed and managed, project settings are configured, and endpoints and authorization keys are accessed for application integration.
+2. **Microsoft Foundry Project:** A workspace where models are deployed and managed, project settings are configured, and endpoints and authorization keys are accessed for application integration.
 
 3. **Azure Cloud Shell:** A browser-based command-line tool for cloning code, setting up environment variables, and running the Python chat app with the deployed model.
 
@@ -42,9 +42,9 @@ The lab architecture demonstrates how Azure AI Foundry supports generative AI mo
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Resource**: A cloud-based resource created in the Azure portal that connects to Azure AI services and hosts deployed models such as gpt-4.1, providing the foundation for AI project development.
+1. **Microsoft Foundry Resource:** A cloud-based resource created in the Azure portal that connects to Azure AI services and hosts deployed models such as gpt-4.1, providing the foundation for AI project development.
 
-2. **Azure AI Foundry Project**: A workspace within the Foundry resource where you deploy and manage models, configure project-level settings, and access endpoints and authorization keys for integrating AI capabilities into applications.
+2. **Microsoft Foundry Project:** A workspace within the Foundry resource where you deploy and manage models, configure project-level settings, and access endpoints and authorization keys for integrating AI capabilities into applications.
 
 3. **Azure Cloud Shell:** A command-line environment used to clone the sample code, configure environment variables, and run the Python chat application against the deployed model.
 
@@ -52,7 +52,7 @@ The lab architecture demonstrates how Azure AI Foundry supports generative AI mo
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Microsoft Foundry, Document Intelligence, Custom Vision, Language Service etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  

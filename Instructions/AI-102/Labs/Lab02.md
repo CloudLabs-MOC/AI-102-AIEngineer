@@ -4,7 +4,7 @@
 
 ## Overview
 
-In this lab, you will work with Azure AI Foundry to explore, compare, and deploy generative AI models. You’ll review model details and benchmarks, create a project, deploy models like gpt-4.1 and Phi-4-reasoning, and test them in the chat playground. The lab provides hands-on experience in evaluating model performance, configuring system prompts, and understanding how to integrate AI models into applications effectively.
+In this lab, you will work with Microsoft Foundry to explore, compare, and deploy generative AI models. You’ll review model details and benchmarks, create a project, deploy models like gpt-4.1 and Phi-4-reasoning, and test them in the chat playground. The lab provides hands-on experience in evaluating model performance, configuring system prompts, and understanding how to integrate AI models into applications effectively.
 
 ## Lab Objectives
 
@@ -12,7 +12,7 @@ In this lab, you will work with Azure AI Foundry to explore, compare, and deploy
 
 - **Task 2:** Compare models
 
-- **Task 3:** Create an Azure AI Foundry project and deploy a model
+- **Task 3:** Create an Microsoft Foundry project and deploy a model
 
 - **Task 4:** Chat with the gpt-4.1 model
 
@@ -22,9 +22,9 @@ In this lab, you will work with Azure AI Foundry to explore, compare, and deploy
 
 ## Task 1: Explore models
 
-In this task, you’ll explore the model catalog in Azure AI Foundry. You will locate and review the **gpt-4.1** and **Phi-4-reasoning** models, examine their details and capabilities, and compare their performance using benchmark data. This will help you understand the characteristics of different models before using them in your projects.
+In this task, you’ll explore the model catalog in Microsoft Foundry. You will locate and review the **gpt-4.1** and **Phi-4-reasoning** models, examine their details and capabilities, and compare their performance using benchmark data. This will help you understand the characteristics of different models before using them in your projects.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
 1. Click on **Sign in**.
 
@@ -66,7 +66,7 @@ In this task, you’ll explore the model catalog in Azure AI Foundry. You will l
 
 ## Task 2: Compare models
 
-In this task, you’ll compare different AI models in Azure AI Foundry. You will add models like **gpt-4.1** and **Phi-4-reasoning** to a comparison chart, analyze them based on metrics such as quality, accuracy, and cost, and interpret the benchmark results to determine which model best suits specific tasks.
+In this task, you’ll compare different AI models in Microsoft Foundry. You will add models like **gpt-4.1** and **Phi-4-reasoning** to a comparison chart, analyze them based on metrics such as quality, accuracy, and cost, and interpret the benchmark results to determine which model best suits specific tasks.
 
 1. Use the back arrow **(←)** to return to the model catalog.
 
@@ -122,11 +122,11 @@ In this task, you’ll compare different AI models in Azure AI Foundry. You will
 
    ![](../Images/lab2-03-19.png)
 
-## Task 3: Create an Azure AI Foundry project and deploy a model
+## Task 3: Create an Microsoft Foundry project and deploy a model
 
-In this task, you’ll create a new Azure AI Foundry project and deploy the **gpt-4.1** model. You will configure project settings such as the resource group and region, set deployment options, and then access the chat playground to test and interact with the deployed model.
+In this task, you’ll create a new Foundry project and deploy the **gpt-4.1** model. You will configure project settings such as the resource group and region, set deployment options, and then access the chat playground to test and interact with the deployed model.
 
-To use a model, you need to create an Azure AI Foundry project.
+To use a model, you need to create an Microsoft Foundry project.
 
 1. At the top of the `gpt-4.1` model overview page, select **Use this model**.
 
@@ -151,7 +151,7 @@ To use a model, you need to create an Azure AI Foundry project.
 
        1. If `gpt-4.1` model overview page displayed, select **Use this model**. In the **Select your project** dialog, select **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Use this project (2)** to continue.
 
-         ![](../Images/lab2-03-23.png)
+          ![](../Images/lab2-03-23.png)
 
 1. When your project is created, the chat playground will be opened automatically so you can test your model.
 
@@ -201,7 +201,7 @@ In this task, you’ll interact with the deployed **gpt-4.1** model using the ch
 
 ## Task 5: Deploy another model
 
-In this task, you’ll deploy an additional model, **Phi-4-reasoning**, to your existing Azure AI Foundry project. You will configure deployment settings, accept the model license, and complete the deployment to make the model available for testing and integration alongside the previously deployed gpt-4.1 model.
+In this task, you’ll deploy an additional model, **Phi-4-reasoning**, to your existing Foundry project. You will configure deployment settings, accept the model license, and complete the deployment to make the model available for testing and integration alongside the previously deployed gpt-4.1 model.
 
 1. In the navigation bar on the left, in the **My assets** section, select **Models + endpoints (1)**.
 
@@ -307,7 +307,7 @@ The details and benchmarks provided in the model catalog, along with the ability
 
 ## Summary 
 
-In this lab, you explored the Azure AI Foundry model catalog, reviewing details and benchmarks for models such as **gpt-4.1** and **Phi-4-reasoning**. You compared models based on quality, accuracy, and cost, then created an Azure AI Foundry project and deployed the gpt-4.1 model. You tested the model in the chat playground, providing system instructions and queries, and later deployed the Phi-4-reasoning model to compare its performance. By the end, you gained hands-on experience in managing AI projects, deploying models, testing their responses, and evaluating models to select the most suitable one for a given task.
+In this lab, you explored the Microsoft Foundry model catalog, reviewing details and benchmarks for models such as **gpt-4.1** and **Phi-4-reasoning**. You compared models based on quality, accuracy, and cost, then created an Microsoft Foundry project and deployed the gpt-4.1 model. You tested the model in the chat playground, providing system instructions and queries, and later deployed the Phi-4-reasoning model to compare its performance. By the end, you gained hands-on experience in managing AI projects, deploying models, testing their responses, and evaluating models to select the most suitable one for a given task.
 
 ### You have successfully completed the Hands-on Lab!
 
