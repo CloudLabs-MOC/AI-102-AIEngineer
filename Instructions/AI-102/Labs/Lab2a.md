@@ -159,7 +159,7 @@ In this task, you’ll connect your deployed Azure OpenAI model to a Python-base
     * your\_project\_endpoint: **Azure OpenAI endpoint (1)**
     * your\_model\_deployment: **gpt-4.1 (2)**
 
-        ![](../Images/l2at2p9.png)
+        ![](../Images/lab2a-03-07.png)
 
         > **Note:** Paste the Azure OpenAI endpoint you copied in the previous task.
 
