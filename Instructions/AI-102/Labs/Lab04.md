@@ -96,8 +96,8 @@ You need two models to implement your solution:
 
     - Deployment name: **text-embedding-ada-002 (1)**
     - Deployment type: **Global Standard (2)**
-    
-        ![](../Images/l4t2p3.png)
+
+      ![](../Images/l4t2p3.png)
 
 1. In the **Deployment details** section, fill in the following information, then click **Deploy (8)**.
 
