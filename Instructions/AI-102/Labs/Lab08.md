@@ -50,12 +50,12 @@ In this task, you will sign in to the Microsoft Foundry portal, create a new Fou
 
      ![](../Images/lab1-03-03.png) 
 
-1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID"></inject> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (7)**:
+1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (7)**:
 
     * Subscription: **Choose Default Subscription (3)**
     * Resource group: **AI-102-RG08 (4)**
     * Microsoft Foundry resource: **Keep as Default (5)**
-    * Region: **<inject key="Region"></inject> (6)**
+    * Region: **<inject key="Region" enableCopy="false" /> (6)**
 
       ![](../Images/lab1-s7.png)
 
@@ -133,10 +133,6 @@ In this task, you will configure your agent by adding instructions, uploading an
 1. In the **Tools** section, select **Add (2)** drop down, select **Code interpreter (2)**, and enable it.
 
     ![](../Images/lab8-03-6.png)
-
-1. In the **Select a tool** dialog box, select **Code interpreter (1)** and then select **Add tool (2)** (you do not need to upload any files for the code interpreter).
-
-    ![](../Images/lab1-s15.png)
 
     - Your agent will use the document you uploaded as its knowledge source to *ground* its responses (in other words, it will answer questions based on the contents of this document). It will use the code interpreter tool as required to perform actions by generating and running its own Python code.
 

@@ -41,7 +41,7 @@ The lab architecture demonstrates how a Microsoft Foundry project enables AI age
 
 ## Architecture Diagram
 
-![](../Images/lab08archdiagram.png)
+![](../Images/lab8-arch.png)
 
 ## Explanation of Components
 
@@ -61,7 +61,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab08labvm.png)
+![Access Your VM and Lab Guide](../Images/lab8-labvm.png)
 
 ### Virtual Machine & Lab Guide
  
