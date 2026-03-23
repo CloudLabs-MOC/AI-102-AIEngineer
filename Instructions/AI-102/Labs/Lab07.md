@@ -259,7 +259,7 @@ In this task, you’ll configure automated evaluators to assess your model outpu
 
       ![](../Images/ai7l28.png)       
 
-1. On the **Configure evaluators** page, use the **+ Add (1)** button, select  **Likert-scale evaluator**:
+1. On the **Configure evaluators** page, use the **+ Add (1)** button, select  **Likert-scale evaluator (2)**:
 
     ![](../Images/ai7l29.png)   
 

@@ -4,98 +4,74 @@
 
 ## Overview
 
-In this lab, you will create an AI agent in **Azure AI Foundry** that helps employees with expense claims. You’ll start by creating a new project and deploying the **gpt-4.1** model. Then you’ll build and configure your agent with system instructions and upload an expenses policy document as grounding data. You’ll also enable the code interpreter as an action. Finally, you’ll interact with the agent in the playground, asking policy questions and guiding it through generating an expense claim file that you can download and review.
+In this lab, you will create and configure an AI agent using the Microsoft Foundry portal to assist employees with expense claims. You will build a project, define agent instructions, and ground responses using an expense policy document. Finally, you will test the agent in the playground by asking policy questions and generating an expense claim file that you can download and review.
+
+> **Note:** Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
 
 ## Lab Objectives
 
 In this lab, you'll perform the following tasks:
 
-- **Task 1:** Create an Azure AI Foundry project and agent
+- **Task 1:** Create a Foundry project and agent
 
-- **Task 2:** Create your agent
+- **Task 2:** Configure your agent
 
 - **Task 3:** Test your agent
 
-## Task 1: Create an Azure AI Foundry project and agent
+## Task 1: Create a Foundry project and agent
 
-In this task, you’ll sign in to the Azure AI Foundry portal, create a new project, and deploy the **gpt-4.1** model with the given settings. By completing it, you’ll have a ready-to-use project and model deployment in the Agents playground.
+In this task, you will sign in to the Microsoft Foundry portal, create a new Foundry project, and create an AI agent in the playground. By completing this task, you will have a ready-to-use project and agent with a deployed model available for configuration.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com)[https://ai.azure.com/], then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
 1. Click on **Sign in**.
  
-    ![](../Images/l8t1p1.png)
+    ![](../Images/lab1-03-0.png) 
 
 1. If prompted, provide the credentials below:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-        ![](../Images/aifoundrysignin1.png)
+     ![](../Images/lab2a-03-11.png)
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-        ![](../Images/aifoundrysignin2.png)
+     ![](../Images/aifoundrysignin2.png)
 
 1. When the **Stay signed in?** window appears, select **No**.
 
     ![](../Images/aifoundrysignin3.png)
 
-1. Click on **X** to close the **Chat with Foundry Agent** popup window.
+    >**Note:** Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the **Foundry** logo at the top left to navigate to the home page, which looks similar to the following image (close the **Help** pane if it's open):
 
-    ![](../Images/l8t1p2.png)
+1. At the top of the **Microsoft Foundry** portal, enable the **New Foundry toggle (1)** to switch to the latest Foundry user interface.
 
-    >**Note:** Close the **Help** pane if it's open
+1. From the **Select a project to continue** dialog, click the drop-down under **Select or search for a project**, and then select **Create a new project (2)**.
 
-1. In the home page, click **Create an agent**.
+     ![](../Images/lab1-03-03.png) 
 
-    ![](../Images/l8t1p3.png)
-
-1. In the **Create a new project** window, enter **Myproject<inject key="DeploymentID"></inject> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (7)**:
+1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID"></inject> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (7)**:
 
     * Subscription: **Choose Default Subscription (3)**
     * Resource group: **AI-102-RG08 (4)**
-    * Azure AI Foundry resource: **Keep as Default (5)**
+    * Microsoft Foundry resource: **Keep as Default (5)**
     * Region: **<inject key="Region"></inject> (6)**
 
-        ![](../Images/l8t1p4.png)
-        
-        >**Note:** Some Azure AI resources are constrained by regional model quotas. In the event of a quota limit being exceeded later in the exercise, there's a possibility you may need to create another resource in a different region.
-        
-        >**Note:** The creation of the project can take a few minutes to complete.
+      ![](../Images/lab1-s7.png)
 
-        >**Note:** In some cases, Azure AI Foundry will automatically deploy a default model (usually gpt-4o). If this happens, you can skip directly to the next step.
+      >**Note:** Some Azure AI resources are constrained by regional model quotas. In the event of a quota limit being exceeded later in the exercise, there's a possibility you may need to create another resource in a different region.
 
-1. If the **Select or deploy a model** window appears, open the **Model deployments (1)** drop-down, choose **Deploy a model (2)**, and then click **Next (3)**.
+      > **Note:** If a Welcome to new Microsoft Foundry pop-up appears, select **Cancel (X)** to close it.
 
-    ![](../Images/l8t1p5.png)
+1. When your project is created, select **Start building (1)**, and select **Create agent (2)** from the drop-down menu.
 
-1. In the **Deploy a model** window, use the search bar to find **gpt-4.1 (1)**, select **gpt-4.1 (2)** from the results, and click **Confirm (3)**.
+    ![](../Images/lab8-03-1.png)
 
-    ![](../Images/l8t1p6.png)
+1. On the **Create an agent** page, enter **expense-agent (1)** in the **Agent name** field, and then select **Create (2)**.
 
-1. In the **Deploy gpt-4.1** window, type **gpt-4.1 (1)** in the **Deployment name** field, select **Global Standard (2)** under **Deployment type**, and click **Customize (3)** to modify the deployment settings.
+     ![](../Images/lab1-s9.png)
 
-    ![](../Images/l8t1p7.png)
-
-1. Enter the following details, then click **Create (9)**:
-
-    | Parameters                   | Values                                                     |
-    | ---------------------------- | ---------------------------------------------------------- |
-    | Model version upgrade policy | **Upgrade once new default version becomes available (4)** |
-    | Model version                | **2025-04-14 (Default) (5)**                               |
-    | Connected AI resource        | **Keep as Default (6)**               |
-    | Tokens per Minute Rate Limit | **50K (7)**                                                |
-    | Content filter               | **DefaultV2 (8)**                                          |
-
-    ![](../Images/l8t1p8.png)
-
-     > **Note**: Reducing the TPM helps avoid overusing the quota available in the subscription you are using. 50,000 TPM should be sufficient for the data used in this exercise. If your available quota is lower than this, you will be able to complete the exercise, but you may experience errors if the rate limit is exceeded.
-
-1. When your project is created, the **Agents playground** will be opened automatically.
-
-    ![](../Images/l8t1p9(1).png)
-
-You'll see that an agent with a default name has been created for you, along with your base model deployment.
+    - The playground will open for your newly created agent. You'll see that an available deployed model is already selected for you.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -105,95 +81,124 @@ You'll see that an agent with a default name has been created for you, along wit
  
 <validation step="74c732c7-ce7d-4057-aa11-9eb0f6b77ac8" />
 
-## Task 2: Create your agent
 
-In this exercise, you'll build a simple agent that answers questions based on a corporate expenses policy. You'll download the expenses policy document and use it as the grounding data for the agent.
+## Task 2: Configure your agent
 
-1. Open a new browser tab and navigate to `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx` to download the **Expenses\_Policy.docx** file and save it locally. This document contains the expenses policy for the fictional Contoso corporation. If a dialog box appears, click **Download** to save the file for later use.
-   
-    ![](../Images/l8t2p1.png)
+In this task, you will configure your agent by adding instructions, uploading an expense policy document for grounding, and enabling the required tools.
 
-1. Return to the browser tab with the **Foundry Agents playground** and open the **Setup (1)** pane. Set the **Agent name** to **`ExpensesAgent` (2)**, make sure the **gpt-4.1 (3)** model deployment you created earlier is selected in the **Deployment** section, paste the content below into the **Instructions (4)** box, and then click **+ Add (5)** in the **Knowledge** section.
+1. Open another browser tab, and download [Expenses_policy.docx](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx) from `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx` and save it locally. This document contains details of the expenses policy for the fictional Contoso corporation.
 
-    ![](../Images/l8t2p2.png)
+1. Return to the browser tab where you have the playground open for your expense agent.
 
+1. In **Instructions (1)**, enter the provided prompt text
+
+    ```prompt
+   You are an AI assistant for corporate expenses.
+   You answer questions about expenses based on the expenses policy data.
+   If a user wants to submit an expense claim, you get their email address, a description of the claim, and the amount to be claimed and write the claim details to a text file that the user can download.
     ```
-    You are an AI assistant for corporate expenses.
-    You answer questions about expenses based on the expenses policy data.
-    If a user wants to submit an expense claim, you get their email address, a description of the claim, and the amount to be claimed, and write the claim details to a text file that the user can download.
-    ```
 
-1. From the **Add knowledge** window, click on **Files**.
+1. Below the **Instructions**, expand the **Tools** section. Select **Upload files (2)**
 
-    ![](../Images/l8t2p3.png)
+    ![](../Images/lab8-03-2.png)
 
-1. In the **Adding files** window, set the vector store name to **`Expenses_Vector_Store` (1)**. Under the **Add files** section, click **Select local files (2)**, then in the file picker, navigate to the **Download (3)** folder from the left pane, choose the **Expenses\_Policy.docx (4)** file you downloaded earlier, and click **Open (5)**.
+1. Keep the default values for the **Index option** and **Vector index name**.
 
-    ![](../Images/l8t2p4.png)
+1. Select the **browse for files** option to upload the **Expenses_policy.docx** local file that you downloaded previously.
 
-1. Confirm that **Expenses\_Policy.docx** has been uploaded, then click **Upload and save**.
+      ![](../Images/lab1-s11.png)
 
-    ![](../Images/l8t2p5.png)
+1. In the **Open dialog** box, select **Downloads (1)**, choose the **expenses_policy file (2)**, and then select **Open (3)** to upload the file.
 
-1. In the **Setup** pane, under the **Knowledge** section, ensure that **Expenses\_Vector\_Store (1 file) (1)** is listed and shows 1 file. Then, in the **Actions** section, click **+ Add (2)**.
+    ![](../Images/lab1-s12.png)
 
-    ![](../Images/l8t2p6.png)
+1. When your file is successfully uploaded, select **Attach**.
 
-1. In the **Add action** window, select **Code interpreter**.
+    ![](../Images/lab1-s13.png)
 
-    ![](../Images/l8t2p7.png)
+1. In the **Tools** section, verify that a new **File search** is listed and shown as containing 1 file.
 
-1. In the **Add code interpreter action** window, click on **Save**. 
+    ![](../Images/lab8-03-5.png)
 
-    ![](../Images/l8t2p8.png)
+    > **Note:** If **File search** is not listed in the Tools section, follow these steps:
 
-    >**Note:** You do not need to upload any files for the code interpreter.
+    1. In the **Tools** section, click on **+ Files**.
 
-Your agent will use the document you uploaded as its knowledge source to ground its responses (in other words, it will answer questions based on the contents of this document). It will use the code interpreter tool as required to perform actions by generating and running its own Python code.
+       ![](../Images/lab8-03-3.png)
+
+    1. In the **Attach files** window, ensure the default **Index option** is selected, verify that the **Expenses_Policy** file is uploaded (if not, upload it) and click **Attach**.
+
+        ![](../Images/lab8-03-4.png)
+
+1. In the **Tools** section, select **Add (2)** drop down, select **Code interpreter (2)**, and enable it.
+
+    ![](../Images/lab8-03-6.png)
+
+1. In the **Select a tool** dialog box, select **Code interpreter (1)** and then select **Add tool (2)** (you do not need to upload any files for the code interpreter).
+
+    ![](../Images/lab1-s15.png)
+
+    - Your agent will use the document you uploaded as its knowledge source to *ground* its responses (in other words, it will answer questions based on the contents of this document). It will use the code interpreter tool as required to perform actions by generating and running its own Python code.
+
+1. On the **expense-agent** page, select **Save**.
+
+    ![](../Images/lab8-03-7.png)
 
 ## Task 3: Test your agent
 
-In this task, you’ll interact with the agent in the Foundry playground to query information from its knowledge base and guide it through creating an expense claim. You’ll provide step-by-step details, including a description, amount, and date, and then download and review the generated expense claim file.
+In this task, you will test your configured agent in the playground by asking policy-related questions and submitting an expense claim to verify its responses and actions.
 
-1. In the playground chat box, type the prompt **`What's the maximum I can claim for meals?`(1)** and click on the **Add and run (2)** icon.
+1. In the **Playground** chat box, enter `What's the maximum I can claim for meals?` **(1)**, and then select **Send (2)**.
 
-    ![](../Images/l8t3p1(1).png)
+    ![](../Images/lab8-03-8.png)
 
-    >**Note:** If the **Thread details** pop-up window appears. Click on **X** to close.
+1. Review the agent’s response and confirm it is based on the uploaded **Expenses_Policy.docx** knowledge source.
 
-1. Review the agent’s response, which should be based on the information from the expenses policy document you added to the agent’s knowledge.
+    ![](../Images/lab1-s17.1.png)
 
-    ![](../Images/l8t3p1.png)
+    > **Note:** If the agent fails to respond because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond. If the problem persists, try to increase the quota for your model on the **Models** page.
 
-    > **Note**: If the agent fails to respond because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond. If the problem persists, try to increase the quota for your model on the **Models + endpoints** page.
+1. Try the following follow-up prompt: `I'd like to submit a claim for a meal.` and review the response. The agent should ask you for the required information to submit a claim.
 
-1. Enter the follow-up prompt **`I'd like to submit a claim for a meal.`** and review the agent’s response. It should prompt you for the necessary details to submit the claim.
+    ![](../Images/lab1-s18.png)
 
-    ![](../Images/l8t3p3.png)
+1. Provide the agent with an email address; for example, `fred@contoso.com`. The agent should acknowledge the response and request the remaining information required for the expense claim (description and amount)
 
-1. Give the agent an email address, for example, **`fred@contoso.com`**. It should confirm receipt and then ask for the remaining details needed for the expense claim, such as the description and amount.
+    ![](../Images/lab8-03-9.png)
 
-    ![](../Images/l8t3p4.png)
+1. Submit a prompt that describes the claim and the amount; for example, `Breakfast cost me $20`.
 
-1. Enter a prompt with the claim description and amount, for example, **`Breakfast cost me $20`**.
+1. The agent should use the code interpreter to prepare the expense claim text file, and provide a link so you can download it.
 
-    ![](../Images/l8t3p5.png)
+    ![](../Images/lab8-03-10.png)
 
-1. Enter a prompt with the claim date, for example, **`12/12/2025`**. The agent should use the code interpreter to generate the expense claim text file and provide a download link. Click **Download your expense claim** to save the file and open it.
+1. Download and open the text document to see the expense claim details.
 
-    ![](../Images/l8t3p6(1).png)
+## Optional: Explore the code
 
-    > **Note:** You can use any date for this step; it doesn’t have to be the one shown in the example. The agent will generate the expense claim file based on whatever date you provide.
+After experimenting with your agent in the playground, you may want to integrate it into your own client application. The **Code** tab provides sample code that shows how to interact with your agent programmatically.
 
-1. A Notepad window will open, displaying the expense claim details.
+1. In the agent playground, select the **Code** tab to view the sample code.
 
-    ![](../Images/l8t3p6.png)
+    ![](../Images/lab8-03-11.png)
+
+1. Review the Python code. This code demonstrates how to:
+    - Connect to your agent using the Azure AI Projects SDK
+    - Send messages to the agent
+    - Retrieve and process responses
+    
+1. Select **.env variables** to view the environment variables you need to run this code.
+
+    ![](../Images/lab1-s22.png)
+
+1. You can use this code as a starting point for building your own client application that interacts with the agent you created.
+
+1. Optionally, select **Open in VS Code for the Web** to launch a preconfigured workspace with the sample code ready to run.
+
+    > **Note:** It may take a few minutes for the workspace to be prepared. Follow the instructions provided in the workspace to successfully run the code.
 
 ## Summary
 
-In this lab, you created a new project in **Azure AI Foundry** and deployed the **gpt-4.1** model. You then built an AI agent, provided it with system instructions, and added an expenses policy document as a knowledge source. You configured the code interpreter tool so the agent could perform actions. Finally, you tested the agent in the playground by asking questions about the policy and walking through the steps of submitting an expense claim. The agent generated a text file with the claim details, which you downloaded and reviewed.
+In this lab, you created a new project in the Microsoft Foundry portal and built an AI agent to assist with expense claims. You configured the agent with system instructions and added an expense policy document as grounding data. You also enabled the code interpreter tool so the agent could perform actions. Finally, you tested the agent in the playground by asking policy questions and generating an expense claim file to download and review.
 
 ### You have successfully completed the Hands-on Lab!
-
-
-
