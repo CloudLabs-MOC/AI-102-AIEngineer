@@ -4,7 +4,7 @@
 
 ## Overview
 
-In this lab, you will work with Azure AI Foundry to explore how content filters protect generative AI applications from harmful inputs and outputs. You’ll deploy the gpt-4.1 model, test the default content filters in the Chat Playground, create a custom content filter with stricter thresholds, and apply it to your model deployment. The lab provides hands-on experience in configuring and validating responsible AI safeguards for generative AI scenarios.
+In this lab, you will work with Microsoft Foundry to explore how content filters protect generative AI applications from harmful inputs and outputs. You’ll deploy the gpt-4.1 model, test the default content filters in the Chat Playground, create a custom content filter with stricter thresholds, and apply it to your model deployment. The lab provides hands-on experience in configuring and validating responsible AI safeguards for generative AI scenarios.
 
 ## Lab Objectives
 
@@ -17,7 +17,7 @@ In this lab, you will work with Azure AI Foundry to explore how content filters 
 
 ### Task 1: Deploy a model in an Foundry project
 
-In this task, you’ll sign in to Azure AI Foundry, create a new project, and deploy the **gpt-4.1** model. This will set up the workspace and model needed to explore content filtering.
+In this task, you’ll sign in to Microsoft Foundry, create a new project, and deploy the **gpt-4.1** model. This will set up the workspace and model needed to explore content filtering.
 
 1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
@@ -42,8 +42,6 @@ In this task, you’ll sign in to Azure AI Foundry, create a new project, and de
      >**Note:** Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the **Foundry** logo at the top left to navigate to the home page.
 
 1. At the top of the **Microsoft Foundry** portal, enable the **New Foundry toggle (1)** to switch to the latest Foundry user interface.   
-
-   ![](../Images/lab1-03-03.png) 
 
 1. From the **Select a project to continue** dialog, click the drop-down under **Select or search for a project**, and then select **Create a new project (2)**.
 
@@ -202,6 +200,6 @@ In this task, you’ll define and apply a custom content filter. You’ll config
 
 ## Summary
 
-In this lab, you deployed the Phi-4 model in Azure AI Foundry and explored how content filters enforce responsible AI practices. You tested the default content filters in the Chat Playground to see how harmful prompts are blocked, then created and applied a custom content filter with stricter thresholds. Finally, you validated the custom filter by submitting prompts and observing how responses were managed. By the end, you gained hands-on experience in configuring, applying, and testing content filters to safeguard generative AI applications.
+In this lab, you deployed the Phi-4 model in Microsoft Foundry and explored how content filters enforce responsible AI practices. You tested the default content filters in the Chat Playground to see how harmful prompts are blocked, then created and applied a custom content filter with stricter thresholds. Finally, you validated the custom filter by submitting prompts and observing how responses were managed. By the end, you gained hands-on experience in configuring, applying, and testing content filters to safeguard generative AI applications.
 
 ### You have successfully completed the Hands-on Lab!
