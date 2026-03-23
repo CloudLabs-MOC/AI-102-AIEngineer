@@ -40,7 +40,7 @@ In this task, you will sign in to the Microsoft Foundry portal and create a new 
 
 1. From the **Select a project to continue** dialog, click the drop-down under **Select or search for a project**, and then select **Create a new project (2)**.
 
-    ![](../Images/lab1-03-04.png) 
+    ![](../Images/lab1-03-03.png) 
 
 1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (6)**:
 

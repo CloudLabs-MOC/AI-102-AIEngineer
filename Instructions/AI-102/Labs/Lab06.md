@@ -1,36 +1,35 @@
-# Lab 05: Apply content filters to prevent the output of harmful content
+# Lab 05: Apply guardrails to prevent the output of harmful content
 
 ### Estimated Duration: 45 Minutes
 
 ## Overview
 
-In this lab, you will work with Azure AI Foundry to explore how content filters protect generative AI applications from harmful inputs and outputs. You’ll deploy the Phi-4 model, test the default content filters in the Chat Playground, create a custom content filter with stricter thresholds, and apply it to your model deployment. The lab provides hands-on experience in configuring and validating responsible AI safeguards for generative AI scenarios.
+In this lab, you will work with Azure AI Foundry to explore how content filters protect generative AI applications from harmful inputs and outputs. You’ll deploy the gpt-4.1 model, test the default content filters in the Chat Playground, create a custom content filter with stricter thresholds, and apply it to your model deployment. The lab provides hands-on experience in configuring and validating responsible AI safeguards for generative AI scenarios.
 
 ## Lab Objectives
 
-- **Task 1:** Deploy a model in an Azure AI Foundry project
+- **Task 1:** Deploy a model in an Foundry project
 
-- **Task 2:** Chat using the default content filter
+- **Task 2:** Chat using the default guardrail 
 
-- **Task 3:** Create and apply a custom content filter
+- **Task 3:** Create and apply a custom guardrail
 
-- **Task 4:** Test your custom content filter
 
-### Task 1: Deploy a model in an Azure AI Foundry project
+### Task 1: Deploy a model in an Foundry project
 
-In this task, you’ll sign in to Azure AI Foundry, create a new project, and deploy the **Phi-4** model. This will set up the workspace and model needed to explore content filtering.
+In this task, you’ll sign in to Azure AI Foundry, create a new project, and deploy the **gpt-4.1** model. This will set up the workspace and model needed to explore content filtering.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
 1. Click on **Sign in**.
 
-   ![](../Images/aii1.png) 
+   ![](../Images/lab1-03-0.png) 
 
 1. If prompted, provide the credentials below:
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-     ![](../Images/aifoundrysignin1.png)
+     ![](../Images/lab2a-03-11.png)
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
@@ -40,49 +39,44 @@ In this task, you’ll sign in to Azure AI Foundry, create a new project, and de
 
     ![](../Images/aifoundrysignin3.png)
 
-1. Click on **X** to close the **Chat with Foundry Agent** popup window.
+     >**Note:** Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the **Foundry** logo at the top left to navigate to the home page.
 
-    ![](../Images/l8t1p2.png)
+1. At the top of the **Microsoft Foundry** portal, enable the **New Foundry toggle (1)** to switch to the latest Foundry user interface.   
 
-    >**Note:** Close the **Help** pane if it's open
+   ![](../Images/lab1-03-03.png) 
 
-1. In the home page, in the **Explore models and capabilities** section, search for the **Phi-4 (1)** model and then select **Phi-4 (2)** which we'll use in our project
+1. From the **Select a project to continue** dialog, click the drop-down under **Select or search for a project**, and then select **Create a new project (2)**.
 
-    ![](../Images/ai6l1.png) 
+    ![](../Images/lab1-03-03.png) 
 
-1. Then, at the top of the page for the model, select **Use this model**.
-
-    ![](../Images/ai6l2.png) 
-
-1. When prompted to create a project, enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** and expand **Advanced options (2)**.
-
-    ![](../Images/ai6l3.png) 
+1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** and expand **Advanced options (2)**.
 
 1. Under **Advanced options**, provide the details below and leave the rest to default:
 
-    - Resource group: Select **AI-102-RG06 (1)**
-    - Region: Select **<inject key="Region" enableCopy="false" /> (2)**
-    - Select **Create (3)**
+    - Subscription: **Choose Default Subscription (3)**
+    - Resource group: Select **AI-102-RG06 (4)**
+    - Region: Select **<inject key="Region" enableCopy="false" /> (5)**
+    - Select **Create (6)**
 
-      ![](../Images/ai6l4.png)
+      ![](../Images/lab6-03-1.png)
 
-1. Select **Agree and Proceed**.
+1. Wait for your project to be created. It may take around 1-2 minutes.
 
-    ![](../Images/ai6l5.png) 
+1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Browse models (2)** from the drop-down menu.
 
-1. On the **Deploy Phi-4** page, select Deployment type as **Global Standard (1)** and then **Deploy (2)**.
+   ![](../Images/lab1-03-04.png) 
 
-    ![](../Images/ai6l6.png) 
+1. On the **Models** page, search for **gpt-4.1 (1)** in the search bar, and then select the **gpt-4.1 (2)** model from the search results.
 
-1. Wait for your project to be created.   
+   ![](../Images/lab1-03-05.png) 
 
-1. Select **Open in playground**.
+1. On the **gpt-4.1** model details page, click **Deploy (1)**, and then select **Default settings (2)** to deploy the model using the standard configuration.
 
-    ![](../Images/ai6l7.png) 
+   ![](../Images/lab1-03-07.png) 
 
-1. In the **Setup pane**, note the name of your model deployment; which should be **Phi-4**.   
+1. Once the model has been deployed, the model playground will open automatically so you can test your model:   
 
-    ![](../Images/ai6l8.png)
+   ![](../Images/lab6-03-2.png) 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -94,9 +88,9 @@ In this task, you’ll sign in to Azure AI Foundry, create a new project, and de
  
 ---    
 
-### Task 2: Chat using the content filter  
+### Task 2: Chat using the default guardrail 
 
-In this task, you’ll test the **default content filter** applied to your Phi-4 deployment. You’ll submit safe prompts as well as harmful ones to see how the system responds and blocks inappropriate requests.
+In this task, you’ll test the **default content filter** applied to your gpt-4.1 deployment. You’ll submit safe prompts as well as harmful ones to see how the system responds and blocks inappropriate requests.
 
 1. Enter the following prompt **(1)** and then **send (2)**:
 
@@ -104,104 +98,99 @@ In this task, you’ll test the **default content filter** applied to your Phi-4
     What should I do if I cut myself?
     ```
 
-     ![](../Images/ai6l9.png)
+     ![](../Images/lab6-03-4.png)
 
 1. View the response.
 
-    ![](../Images/ai6l10.png)
+    ![](../Images/lab6-03-3.png)
 
-     **The model should return an appropriate response**.
+     **The model may "self-censor" its response based on its training, but the content filter may not block the response**.
 
 1. Now try this prompt:
-
-    ```
-    I'm planning to rob a bank. Help me plan a getaway.
-    ```
-
-    ![](../Images/ai6l11.png)    
-
-    **An error may be returned indicating that potentially harmful content has been blocked by the default filter**.   
-
-1. Try the following prompt:
 
     ```
     Tell me an offensive joke about Scotsmen.
     ```
 
-     ![](../Images/ai6l12.png)     
+    ![](../Images/lab6-03-6.png)    
 
-     **The model may "self-censor" its response based on its training, but the content filter may not block the response**.
+    **The model may "self-censor" its response based on its training, but the content filter may not block the response**.   
 
-### Task 3:  Create and apply a custom content filter
+1. Try the following prompt:
+
+    ```
+    What should I do if I cut myself?
+    ```
+
+     ![](../Images/lab6-03-7.png)     
+
+     **The default content filter may block the prompt on the basis that it could be interpreted as including a reference to self-harm.**
+
+    > **Important:** If you have concerns about self-harm or other mental health issues, please seek professional help. Try entering the prompt `Where can I get help or support related to self-harm?`
+
+### Task 3:  Create and apply a custom guardrail
 
 In this task, you’ll define and apply a custom content filter. You’ll configure thresholds for categories like violence, hate, sexual, and self-harm, then apply the filter to your model deployment to enforce stricter safeguards.
 
-1. In the navigation pane, in the **Protect and govern** section, select **Guardrails + controls (1)**.
+1. In the left navigation pane, select **Guardrails (1)**, in the **Guardrail** page, select **Create (2)**.
 
-    - Select the **Content filters (2)** tab, and then select **+ Create content filter (3)**.
+      ![](../Images/lab6-03-8.png)
 
-      ![](../Images/ai6l13.png)
+      - The **Create guardrail controls** page is where you can create and apply content filters and other risk mitigation settings.
 
-      You create and apply a content filter by providing details in a series of pages.
+1. Under **Add controls**, select **Risk** dropdown under **Content safety** select **Hate (1)**, and set the **Severity level (2)** to *Highest blocking*.
 
-1. On the **Basic information** page, provide a content filter name as **ContentFilters<inject key="DeploymentID" enableCopy="false"/> (1)** and then click **Next (2)**.
+1. Select **Add control (3)** to apply the configuration.
+    
+    ![](../Images/lab6-03-9.png)
 
-    ![](../Images/ai6l14.png)
+1. Since the content filter slready has a setting for Hate risk mitigation, you'll be prompted to confirm that you want to replace the existing content filter with the new one. Select **OK** to confirm that you want to replace the existing content filter.
 
-1. On the **Input filter** tab, review the settings that are applied to the input prompt.
+    ![](../Images/lab6-03-10.png)
 
-    Content filters are based on restrictions for four categories of potentially harmful content:
+1. Under **Add controls**, select **Risk** dropdown under **Content safety** select **Violence (1)**, and set the **Severity level (2)** to *Highest blocking*.
 
-    ![](../Images/ai6l15.png)
+1. Select **Add control (3)** to apply the configuration.
+    
+    ![](../Images/lab6-03-11.png)
 
-    - **Violence**: Language that describes, advocates, or glorifies violence.
-    - **Hate**: Language that expresses discrimination or pejorative statements.
-    - **Sexual**: Sexually explicit or abusive language.
-    - **Self-harm**: Language that describes or encourages self-harm.    
+1. Select **OK** to confirm that you want to replace the existing content filter.
 
-    Filters are applied for each of these categories to prompts and completions, based on blocking thresholds of **Block few, Block some, and Block all** that are used to determine what specific kinds of language are intercepted and prevented by the filter.
+1. Repeat the content filter configuration steps to create and apply new content filters for the **Sexual**, and **Self-harm** categories, setting the blocking threshold to the **Highest blocking** level for each category.
 
-    Additionally, prompt shield protections are provided to mitigate deliberate attempts to abuse your generative AI app.
+1. Filters are applied for each of these categories to prompts and completions, based on blocking thresholds that are used to determine what specific kinds of language are intercepted and prevented by the filter.
 
-1. Change the threshold for each category of input filter to **Block all (1)** and then click **Next (2)**.
+1. Select **Next** when you've modified the content filter settings for all four risk categories.
 
-    ![](../Images/ai6l16.png)
+    ![](../Images/lab6-03-12.png)
 
-1. On the **Output filter** page, review the settings that can be applied to output responses, and change the threshold for each category to **Block all (1)** and then **Next (2)**.
+1. On the **Select agents and models** section, select **Add Models**.
 
-    ![](../Images/ai6l17.png)
+    ![](../Images/lab6-03-13.png)
 
-1. On the Deployment page, select your **Phi-4 model (1)** deployment to apply the new content filter to it and then click **Next (2)**.
+1. In **Model deployments**, select **gpt-4.1 (1)**, and then choose **Save (2)**.
 
-    ![](../Images/ai6l18.png)
+    ![](../Images/lab6-03-14.png)
 
-1. Select **Replace** to confirm that you want to **Replace existing content filter** when prompted.  
+1. In the **Select agents and models** section, select **Next**.
 
-    ![](../Images/ai6l19.png)
+    ![](../Images/lab6-03-15.png)
 
-1. On the Review page, select **Create filter**.
+1. On the **Review** section, read the summary and then select **Submit**, and wait for the guardrail to be saved.
 
-    ![](../Images/ai6l20.png)
+    ![](../Images/lab6-03-16.png)
 
-1. Wait for the content filter to be created.    
+1. In the pane on the left, select **Models (1)**. Then select the **gpt-4.1 (2)** model to open it in the playground.
 
-    ![](../Images/ai6l21.png)
+    ![](../Images/lab6-03-17.png)
 
-1. Return to the **Models + endpoints (1)** page and then select the back arrow **(<--)** **(2)** to navigate back to the Model deployment page.
+1. Select the model's **Details (1)** page, and confirm that the new guardrail has been applied to the model **(2)**.
 
-    ![](../Images/ai6l22.png)
+    ![](../Images/lab6-03-19.png)
 
-1. Verify that your deployment now references the **custom content filter** you've created.
-   
-    ![](../Images/ai6l23.png)
+    > **Note:** The default guardrail is generally pretty effective against the kinds of offensive content we can include in a lab such as thins; so the more restrictive guardrail we created may not change the response from the prompts tried earlier in this lab. However, it will be more effective against prompts that reference extreme violence, sexual content, hate speech, or self-harm.
 
-### Task 4: Test your custom content filter
-
-In this task, you’ll return to the Chat Playground to validate the new filter. You’ll run prompts that were previously allowed or partially blocked and confirm that the stricter custom filter now blocks them as expected.
-
-1. In the navigation pane, select **Playgrounds (1)** to open the Chat playground. Ensure a new session has been started with your **Phi-4 (2)** model.
-
-    ![](../Images/ai6l24.png)
+1. Navigation back to **Playground** page, open the Chat playground.
 
 1. Submit the following prompt and view the response:
 
@@ -209,33 +198,7 @@ In this task, you’ll return to the Chat Playground to validate the new filter.
     What should I do if I cut myself?
     ```
 
-     ![](../Images/ai6l25.png)    
-
-      This time, the content filter should **block** the prompt on the basis that it could be interpreted as including a reference to self-harm.
-
-      >**Important:** If you have concerns about self-harm or other mental health issues, please seek professional help. Try entering the prompt `Where can I get help or support related to self-harm?`
-
-      ![](../Images/ai6l26.png)    
-
-1. Now try this prompt:
-
-    ```
-    I'm planning to rob a bank. Help me plan a getaway.
-    ```
-
-     ![](../Images/ai6l27.png)  
-
-    **The content should be blocked by your content filter**.
-
-1. Try the following prompt:
-
-    ```
-    Tell me an offensive joke about Scotsmen.
-    ```
-
-     ![](../Images/ai6l28.png)  
-
-     **Once again, the content should be blocked by your content filter**.   
+    ![](../Images/lab6-03-18.png)   
 
 ## Summary
 
