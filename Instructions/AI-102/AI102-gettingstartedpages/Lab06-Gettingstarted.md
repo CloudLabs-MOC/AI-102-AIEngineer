@@ -8,16 +8,15 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will explore how Azure AI Foundry uses content filters to detect and block potentially harmful prompts and responses. You’ll deploy a model, test the effect of default filters, and then create and apply a custom content filter tailored to stricter requirements. Finally, you’ll validate how these filters influence model outputs in the Chat Playground. This lab provides practical experience in applying responsible AI principles to generative AI solutions.
+In this lab, you will learn how to apply guardrails (content filters) to control and prevent harmful outputs in generative AI applications using Microsoft Foundry. You will begin by creating a project and deploying the gpt-4.1 model, then test the default guardrails in the Chat Playground using various prompts. Next, you will create and apply custom guardrails with stricter filtering thresholds for categories such as hate, violence, sexual content, and self-harm, and validate how these safeguards manage unsafe content.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create and deploy a project in Azure AI Foundry:** Create a new project, deploy the Phi-4 model, and prepare it for testing in the Chat Playground.
-2. **Test the default content filters:** Interact with your deployed model to see how harmful inputs and outputs are identified and blocked.
-3. **Create and apply a custom content filter:** Define stricter thresholds for categories such as violence, hate, sexual, and self-harm, and apply them to your deployment.
-4. **Validate the custom filter in the Chat Playground:** Submit prompts to compare model behavior before and after applying the custom content filter.
+1. **Create a Microsoft Foundry project and deploy a model:** Create a new project, deploy the gpt-4.1 model, and prepare it for testing in the Chat Playground.
+2. **Test default guardrails:** Interact with your deployed model to see how harmful inputs and outputs are identified and blocked.
+3. **Create and apply custom guardrails:** Configure stricter filtering thresholds for categories like hate, violence, sexual content, and self-harm, and apply them to the model.
 
 
 ## Pre-requisites
@@ -31,34 +30,34 @@ By the end of this lab, you will be able to:
 
 ## Architecture
 
-1. **Azure AI Foundry Resource**: The core service in Azure that provides access to model catalog, deployment capabilities, and responsible AI tools such as content filters.
+The lab architecture demonstrates how Microsoft Foundry enables safe and responsible generative AI usage through guardrails:
 
-2. **Azure AI Foundry Project**: A workspace where you manage the Phi-4 model deployment, configure settings, and apply content filters.
+1. **Microsoft Foundry Project:** A workspace where you create and manage your project, deploy the **gpt-4.1** model, and configure guardrails for content filtering.
 
-3. **Content Filters:** Default or custom filters that analyze both input prompts and output completions to block harmful content categories such as violence, hate, sexual, and self-harm.
+2. **Model Deployment (gpt-4.1):** The deployed model used to generate responses in the Chat Playground, with default and custom guardrails applied to control outputs.
 
-4. **Chat Playground Interface:** An interactive environment for testing the model with different prompts to validate the effect of default and custom content filters.
+3. **Guardrails (Content Filters):** Configurable safety controls that filter harmful content across categories like hate, violence, sexual content, and self-harm, ensuring responsible AI behavior.
+
+4. **Chat Playground:** An interactive environment to test prompts, observe how guardrails affect responses, and validate the effectiveness of default and custom filters.
 
 ## Architecture Diagram
 
-![](../Images/AI-102-lab6-arch.png)
+![](../Images/lab6-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Resource**: The core service in Azure that provides access to generative AI models, deployment options, and responsible AI features such as content filters. It is the foundation for creating projects and managing model deployments.
+1. **Microsoft Foundry Project:** The central workspace where you create and manage your project, deploy the **gpt-4.1** model, and configure guardrails for content filtering.
 
-2. **Azure AI Foundry Project**: The workspace you create within the resource to organize and manage assets. In this lab, the project hosts the Phi-4 model deployment and is the location where you configure and apply content filters.
+2. **Deployed Model (gpt-4.1):** The generative AI model that processes user prompts and generates responses, which are then evaluated against applied guardrails.
 
-3. **Model Deployment (Phi-4)**: The generative AI model deployed in the project. It is accessed through a secure endpoint and used in the Chat Playground to demonstrate how harmful prompts and completions are handled by filters.
+3. **Guardrails (Content Filters):** Safety mechanisms that detect and restrict harmful content across categories such as hate, violence, sexual content, and self-harm based on defined thresholds.
 
-4. **Content Filters:** Default or custom filters applied to model deployments. They evaluate both input prompts and output responses across categories such as violence, hate, sexual, and self-harm to block unsafe content.
-
-5. **Chat Playground**: An interactive interface for testing deployed models. It allows users to input queries, review responses, and validate how both default and custom filters affect the model’s output.
+4. **Chat Playground:** An interactive environment used to test prompts, observe model behavior, and validate how default and custom guardrails handle safe and unsafe inputs.
 
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Microsoft Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  
@@ -98,7 +97,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
-![](../Images/zoominai102.png)
+![](../Images/lab1-z.png)
 
 ## Let's Get Started with Azure Portal
  
@@ -114,15 +113,15 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/lab1-p.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 
     ![](../Images/AIl16-2.png)
 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-    ![](../Images/AIl16-3.png)
+    ![](../Images/lab1-w.png)
 
 
 ## Support Contact
