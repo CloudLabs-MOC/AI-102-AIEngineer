@@ -1,11 +1,11 @@
 # Lab 06: Evaluate generative AI model performance
 
 ## Overview
-In this lab, you will use manual and automated evaluations to assess the performance of a generative AI model in Azure AI Foundry. You will begin by creating a hub and project, then deploy gpt-4.1 and gpt-4.1-mini models. After deployment, you will perform manual evaluations by comparing model outputs against expected responses, and then configure automated evaluations using semantic similarity, relevance, F1 score, and fairness metrics. These exercises will give you practical experience in applying evaluation techniques to validate generative AI models.
+In this lab, you will use manual and automated evaluations to assess the performance of a generative AI model in Microsoft Foundry. You will begin by creating a hub and project, then deploy gpt-4.1 and gpt-4.1-mini models. After deployment, you will perform manual evaluations by comparing model outputs against expected responses, and then configure automated evaluations using semantic similarity, relevance, F1 score, and fairness metrics. These exercises will give you practical experience in applying evaluation techniques to validate generative AI models.
 
 ## Lab Objectives
 
-- **Task 1:** Create an Azure AI Foundry hub and project
+- **Task 1:** Create an Microsoft Foundry hub and project
 
 - **Task 2:** Deploy models
 
@@ -13,21 +13,21 @@ In this lab, you will use manual and automated evaluations to assess the perform
 
 - **Task 4:** Use automated evaluation
 
-### Task 1: Create an Azure AI Foundry hub and project
+### Task 1: Create an Microsoft Foundry hub and project
 
-In this task, you’ll sign in to Azure AI Foundry, create a new hub, and set up a project. This will provide the workspace you’ll use to deploy and evaluate models.
+In this task, you’ll sign in to Microsoft Foundry, create a new hub, and set up a project. This will provide the workspace you’ll use to deploy and evaluate models.
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
 1. Click on **Sign in**.
 
-   ![](../Images/aii1.png) 
+   ![](../Images/lab1-03-0.png) 
 
 1. If prompted, provide the credentials below:
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-     ![](../Images/aifoundrysignin1.png)
+     ![](../Images/lab2a-03-11.png)
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
@@ -37,31 +37,26 @@ In this task, you’ll sign in to Azure AI Foundry, create a new hub, and set up
 
     ![](../Images/aifoundrysignin3.png)
 
-1. Click on **X** to close the **Chat with Foundry Agent** popup window.
-
-    ![](../Images/l8t1p2.png)
-
-    >**Note:** Close the **Help** pane if it's open
-
 1. In the LabVM browser tab, copy and paste the following link  https://ai.azure.com/managementCenter/allResources and select **Create new**.  
 
-   ![](../Images/aii60.png) 
+    ![](../Images/lab3-03-1.png)
 
-1. In the **Create project** wizard, select **AI hub resource (1)** and click **Next (2)**.
+1. In the **Create Project** window, select the option to create a new **AI hub resource (1)**, then click **Next (2)**.
 
-    ![](../Images/aii61(1).png)
+    ![](../Images/lab3-03-2.png)
 
 1. Enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)**, then select **Rename hub (2)**. Then rename the hub as  **Myhub<inject key="DeploymentID" enableCopy="false"/> (3)** and then **Next (4)**.
 
-   ![](../Images/aii62.png)
+   ![](../Images/lab3-03-3.png)
 
 1. Expand **Advanced options (1)**, and specify the following settings for your project and leave the rest as their defaults:
 
-    - Resuorce group: Select **AI-102-RG07 (2)**
-    - Region: Select **<inject key="Region" enableCopy="false" /> (3)**
-    - Select **Create (4)**
+    - Subscription: **Choose Default Subscription (2)**
+    - Resuorce group: Select **AI-102-RG07 (3)**
+    - Region: Select **<inject key="Region" enableCopy="false" /> (4)**
+    - Select **Create (5)**
 
-      ![](../Images/ai7l3.png)    
+      ![](../Images/lab7-03-1.png)    
 
 1. Wait for your project to be created. It may take around 3-5 minutes.
 
@@ -78,21 +73,21 @@ In this task, you’ll sign in to Azure AI Foundry, create a new hub, and set up
 
 ### Task 2: Deploy models
 
-In this task, you’ll deploy two models in your Azure AI Foundry project: gpt-4.1 and gpt-4.1-mini. The gpt-4.1 model will be used to generate AI-assisted evaluation metrics, while the gpt-4.1-mini model will be the one you evaluate for performance.
+In this task, you’ll deploy two models in your Microsoft Foundry project: gpt-4.1 and gpt-4.1-mini. The gpt-4.1 model will be used to generate AI-assisted evaluation metrics, while the gpt-4.1-mini model will be the one you evaluate for performance.
 
 1. In the pane on the left for your project, in the My assets section, select the **Models + endpoints (1)** page.
 
     - On the **Manage deployments of your models and services**, under **Model deployments** tab, select **+ Deploy model (2)** and then select **Deploy base model (3)** from the dropdown.
  
-      ![](../Images/aii75.png)   
+      ![](../Images/lab3-03-10.png)  
 
 1. On the **Select a model** page, search for the **gpt-4.1 (1)** model in the list, and then select **(2)** and confirm it **(3)**.
 
-    ![](../Images/aii76.png)
+    ![](../Images/lab3-03-11.png)
 
 1. On the Deploy `gpt-4.1` page, select **Customize**.
 
-    ![](../Images/aii97.png)
+    ![](../Images/lab3-03-12.png)
 
 1. Deploy the model with the following settings in the deployment details:
 
@@ -100,36 +95,36 @@ In this task, you’ll deploy two models in your Azure AI Foundry project: gpt-4
     - Deployment type: **Global Standard**
     - Model version: Select **2025-04-14(Default) (1)**
     - Connected AI resource: Select your Azure OpenAI resource connection that starts with **ai-myhubxxxxxxx** **(2)**
-    - Tokens per Minute Rate Limit (thousands): `60K` **(3)** (or the maximum available in your subscription if less than 50K)
+    - Tokens per Minute Rate Limit (thousands): `50K` **(3)** (or the maximum available in your subscription if less than 50K)
     - Content filter: **DefaultV2 (4)**   
     - Then select **Deploy (5)**
 
-      ![](../Images/aii98.png)
+      ![](../Images/lab3-03-13.png)
 
 1. Return to the **Models + endpoints (1)** page, then use the back arrow (←) next to the **gpt-4.1** page title to return to the Model deployment page **(2)**.
 
-    ![](../Images/ai7l2.png)
+    ![](../Images/lab7-03-2.png)
 
 1. From the left navigation menu, under **My assets**, select **Model + endpoints (1)**.
 
 1. On the **Manage deployments of your models and services**, under **Model deployments** tab, select **+ Deploy model (2)** and then select **Deploy base model (3)** from the dropdown.
 
-    ![](../Images/ai7l4.png)
+    ![](../Images/lab7-03-3.png)
 
 1. On the **Select a model** page, search for the **gpt-4.1-mini (1)** model in the list, and then select **(2)** and confirm it **(3)**.
 
-    ![](../Images/ai7l5.png)
+    ![](../Images/lab7-03-4.png)
 
 1. On the Deploy `gpt-4.1-mini` page, select **Customize**.
 
-    ![](../Images/ai7l6.png)
+    ![](../Images/lab7-03-5.png)
 
 1. Deploy the model with the following settings in the deployment details and leave the other settings to their defaults:
 
-    - Tokens per Minute Rate Limit (thousands): `56K` **(1)** (or the maximum available in your subscription if less than 50K)
+    - Tokens per Minute Rate Limit (thousands): `50K` **(1)** (or the maximum available in your subscription if less than 50K)
     - Then select **Deploy (2)**
 
-      ![](../Images/ai7l7.png)
+      ![](../Images/lab7-03-6.png)
      
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -154,11 +149,11 @@ In this task, you’ll perform a manual evaluation by uploading a dataset of tra
 
     ![](../Images/ai7l8.png)
 
-1. Back on the Azure AI Foundry portal tab, in the navigation pane, in the **Protect and govern** section, select **Evaluation (1)**. In the Evaluation page, navigate to the **Manual evaluations (2)** tab and select **+ New manual evaluation (3)**.
+1. Back on the Microsoft Foundry portal tab, in the navigation pane, in the **Protect and govern** section, select **Evaluation (1)**. In the Evaluation page, navigate to the **Manual evaluations (2)** tab and select **+ New manual evaluation (3)**.
 
-    ![](../Images/ai7l9.png)
+    ![](../Images/lab7-03-7.png)
 
-     >**Note**: If the **Create a new evaluation** pane opens automatically, select **Cancel** to close it.
+     >**Note:** If the **Create a new evaluation** pane opens automatically, select **Cancel** to close it.
 
 1. In the Configurations section, in the Model list, select your `gpt-4.1` model deployment.    
 
@@ -199,13 +194,13 @@ In this task, you’ll perform a manual evaluation by uploading a dataset of tra
 
 1. Select **Run** from the top bar to generate outputs for all questions you added as inputs. After a few minutes, the responses from the model should be shown in a new **Output** column, like this:
 
-    ![](../Images/ai7l17.png)
+    ![](../Images/lab7-03-8.png)
 
 1. Review the outputs for each question, comparing the output from the model to the expected answer and "scoring" the results by selecting the thumbs up or down icon at the bottom right of each response.
 
 1. After you've scored the responses, review the summary tiles above the list. Then in the toolbar, select **Save results**.
 
-    ![](../Images/ai7l18.png)
+    ![](../Images/lab7-03-9.png)
 
 1. Assign a suitable name as **Manualevaluation<inject key="DeploymentID" enableCopy="false"/> (1)** and then **Save (2)**. Saving results enables you to retrieve them later for further evaluation or comparison with a different model.   
 
@@ -217,11 +212,11 @@ In this task, you’ll configure automated evaluators to assess your model outpu
 
 1. Use the back arrow **(←)** next to the Manual evaluation page title to return to the Evaluation page.
 
-    ![](../Images/ai7l21.png)
+    ![](../Images/lab7-03-10.png)
 
 1. Navigate to the **Automated evaluations (1)** tab. Select **Create a new evaluation (2)**.
 
-    ![](../Images/ai7l22.png)
+    ![](../Images/lab7-03-11.png)
 
 1. When prompted, select the option to **evaluate a Evaluate a model (1)** and select **Next (2)**.
 
@@ -229,7 +224,7 @@ In this task, you’ll configure automated evaluators to assess your model outpu
 
 1. On the Select data source page, select **Use your dataset (1)** and select the **travel_evaluation_data_jsonl_xxxx... (2)** dataset based on the file you uploaded previously, and select **Next (3)**.   
 
-    ![](../Images/ai7l24.png)
+    ![](../Images/lab7-03-12.png)
 
 1. On the **Test your model** page,
 
@@ -251,15 +246,15 @@ In this task, you’ll configure automated evaluators to assess your model outpu
 
       ![](../Images/ai7l26.png)
 
-    - **Criteria name**: Select the **Semantic_similarity (1)** preset
-    - **Grade with**: Select your **gpt-4.1 (2)** model
+    - **Criteria name:** Select the **Semantic_similarity (1)** preset
+    - **Grade with:** Select your **gpt-4.1 (2)** model
 
-      ![](../Images/ai7l27.png)   
+      ![](../Images/lab7-03-13.png)   
 
     - **User** settings (at the bottom): Delete the existing setting and the following **(1)** and the **Add (2)**:
 
-      Output: \{\{sample.output_text\}\}<br>
-      Ground Truth: \{\{item.ExpectedResponse\}\}<br>
+      **Output:** \{\{sample.output_text\}\}<br>
+      **Ground Truth:** \{\{item.ExpectedResponse\}\}<br>
       <br>
 
       ![](../Images/ai7l28.png)       
@@ -270,9 +265,9 @@ In this task, you’ll configure automated evaluators to assess your model outpu
 
 1. On the **Likert-scale evaluator** page,  provide the following details and then **Add (4)**:
 
-    - **Criteria name**: Select the **Relevance (1)** preset
-    - **Grade with**: Select your **gpt-4.1 (2)** model
-    - **Query**: \{\{item.question\}\} **(3)**
+    - **Criteria name:** Select the **Relevance (1)** preset
+    - **Grade with:** Select your **gpt-4.1 (2)** model
+    - **Query:** \{\{item.question\}\} **(3)**
 
       ![](../Images/ai7l30.png)
 
@@ -282,8 +277,8 @@ In this task, you’ll configure automated evaluators to assess your model outpu
 
 1. On the **Text similarity** page, provide the following details and then **Add (3)**
 
-    - **Criteria name**: Select the **F1_Score (1)** preset
-    - **Ground truth**: \{\{item.ExpectedResponse\}\} **(2)**
+    - **Criteria name:** Select the **F1_Score (1)** preset
+    - **Ground truth:** \{\{item.ExpectedResponse\}\} **(2)**
 
       ![](../Images/ai7l32.png) 
 
@@ -293,8 +288,8 @@ In this task, you’ll configure automated evaluators to assess your model outpu
 
 1. On the **Hateful and unfair content** page, provide the following details and then **Add (3)**
 
-    - **Criteria name**: Hate_and_unfairness **(1)**
-    - **Query**: \{\{item.question\}\} **(2)**
+    - **Criteria name:** Hate_and_unfairness **(1)**
+    - **Query:** \{\{item.question\}\} **(2)**
 
       ![](../Images/ai7l34.png) 
 
@@ -310,7 +305,7 @@ In this task, you’ll configure automated evaluators to assess your model outpu
 
 1. When the evaluation has completed, scroll down if necessary to review the results.
 
-    ![](../Images/ai7l37.png)  
+    ![](../Images/lab7-03-14.png)   
 
 1. At the top of the page, select the **Data** tab to see the raw data from the evaluation. The data includes the metrics for each input as well as explanations of the reasoning the gpt-4.1 model applied when assessing the responses.
 
@@ -318,6 +313,6 @@ In this task, you’ll configure automated evaluators to assess your model outpu
       
 ## Summary
 
-In this lab, you created a hub and project in Azure AI Foundry and deployed the gpt-4.1 and gpt-4.1-mini models. You performed a manual evaluation by importing test data, running the models, and comparing outputs against expected responses. You then configured automated evaluations with metrics such as semantic similarity, relevance, F1 score, and fairness to generate standardized insights. By the end, you gained hands-on experience in deploying models and applying both manual and automated techniques to evaluate generative AI performance.
+In this lab, you created a hub and project in Microsoft Foundry and deployed the gpt-4.1 and gpt-4.1-mini models. You performed a manual evaluation by importing test data, running the models, and comparing outputs against expected responses. You then configured automated evaluations with metrics such as semantic similarity, relevance, F1 score, and fairness to generate standardized insights. By the end, you gained hands-on experience in deploying models and applying both manual and automated techniques to evaluate generative AI performance.
 
 ### You have successfully completed the Hands-on Lab!

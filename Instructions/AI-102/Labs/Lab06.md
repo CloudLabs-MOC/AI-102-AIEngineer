@@ -4,7 +4,7 @@
 
 ## Overview
 
-In this lab, you will work with Microsoft Foundry to explore how content filters protect generative AI applications from harmful inputs and outputs. You’ll deploy the gpt-4.1 model, test the default content filters in the Chat Playground, create a custom content filter with stricter thresholds, and apply it to your model deployment. The lab provides hands-on experience in configuring and validating responsible AI safeguards for generative AI scenarios.
+In this lab, you will work with Microsoft Foundry to explore how guardrails (content filters) help protect generative AI applications from harmful inputs and outputs. You will deploy the gpt-4.1 model, test the default guardrails in the Chat Playground using various prompts, and observe how the model responds to potentially unsafe content. You will then create a custom guardrail by configuring stricter filtering thresholds for categories such as hate, violence, sexual content, and self-harm, and apply it to your model deployment. This lab provides hands-on experience in implementing and validating responsible AI safeguards in generative AI solutions.
 
 ## Lab Objectives
 
@@ -13,7 +13,6 @@ In this lab, you will work with Microsoft Foundry to explore how content filters
 - **Task 2:** Chat using the default guardrail 
 
 - **Task 3:** Create and apply a custom guardrail
-
 
 ### Task 1: Deploy a model in an Foundry project
 
@@ -88,12 +87,12 @@ In this task, you’ll sign in to Microsoft Foundry, create a new project, and d
 
 ### Task 2: Chat using the default guardrail 
 
-In this task, you’ll test the **default content filter** applied to your gpt-4.1 deployment. You’ll submit safe prompts as well as harmful ones to see how the system responds and blocks inappropriate requests.
+In this task, you will test the default guardrail (content filter) applied to your gpt-4.1 model deployment. You’ll submit safe prompts as well as harmful ones to see how the system responds and blocks inappropriate requests.
 
 1. Enter the following prompt **(1)** and then **send (2)**:
 
     ```
-    What should I do if I cut myself?
+    I'm planning to rob a bank. Help me plan a getaway.
     ```
 
      ![](../Images/lab6-03-4.png)
@@ -128,7 +127,7 @@ In this task, you’ll test the **default content filter** applied to your gpt-4
 
 ### Task 3:  Create and apply a custom guardrail
 
-In this task, you’ll define and apply a custom content filter. You’ll configure thresholds for categories like violence, hate, sexual, and self-harm, then apply the filter to your model deployment to enforce stricter safeguards.
+In this task, you’ll define and apply a custom guardrail (content filter). You’ll configure thresholds for categories like violence, hate, sexual, and self-harm, then apply the filter to your model deployment to enforce stricter safeguards.
 
 1. In the left navigation pane, select **Guardrails (1)**, in the **Guardrail** page, select **Create (2)**.
 
@@ -136,7 +135,8 @@ In this task, you’ll define and apply a custom content filter. You’ll config
 
       - The **Create guardrail controls** page is where you can create and apply content filters and other risk mitigation settings.
 
-1. Under **Add controls**, select **Risk** dropdown under **Content safety** select **Hate (1)**, and set the **Severity level (2)** to *Highest blocking*.
+1. Under **Add controls**, select **Hate** in the **Risk** dropdown, set the **Severity level** to **Highest blocking**, and then click **Add control**.
+
 
 1. Select **Add control (3)** to apply the configuration.
     
@@ -146,7 +146,7 @@ In this task, you’ll define and apply a custom content filter. You’ll config
 
     ![](../Images/lab6-03-10.png)
 
-1. Under **Add controls**, select **Risk** dropdown under **Content safety** select **Violence (1)**, and set the **Severity level (2)** to *Highest blocking*.
+1. Under **Add controls**, select **Violence** in the **Risk** dropdown, set the **Severity level** to **Highest blocking**, and then click **Add control**.
 
 1. Select **Add control (3)** to apply the configuration.
     
@@ -200,6 +200,6 @@ In this task, you’ll define and apply a custom content filter. You’ll config
 
 ## Summary
 
-In this lab, you deployed the Phi-4 model in Microsoft Foundry and explored how content filters enforce responsible AI practices. You tested the default content filters in the Chat Playground to see how harmful prompts are blocked, then created and applied a custom content filter with stricter thresholds. Finally, you validated the custom filter by submitting prompts and observing how responses were managed. By the end, you gained hands-on experience in configuring, applying, and testing content filters to safeguard generative AI applications.
+In this lab, you deployed the gpt-4.1 model in Microsoft Foundry and explored how guardrails (content filters) support responsible AI practices. You tested the default guardrails in the Chat Playground to observe how the model handles safe and potentially harmful prompts. You then created and applied a custom guardrail with stricter blocking thresholds for categories such as hate, violence, sexual content, and self-harm. Finally, you validated the guardrail by testing prompts and observing how harmful content is controlled or blocked.
 
 ### You have successfully completed the Hands-on Lab!
