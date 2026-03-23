@@ -32,11 +32,9 @@ In this task, you will sign in to the Microsoft Foundry portal and create a new 
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-      >**Note:** Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the **Foundry** logo at the top left to navigate to the home page.
+      >**Note:** Close any tips or quick start panes that are opened the first time you sign in, and if necessary, use the **Foundry** logo at the top left to navigate to the home page.
 
 1. At the top of the **Microsoft Foundry** portal, enable the **New Foundry toggle (1)** to switch to the latest Foundry user interface.   
-
-   ![](../Images/lab1-03-03.png) 
 
 1. From the **Select a project to continue** dialog, click the drop-down under **Select or search for a project**, and then select **Create a new project (2)**.
 
