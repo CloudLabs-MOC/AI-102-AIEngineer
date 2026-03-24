@@ -240,10 +240,9 @@ In this task, you will complete the application code to connect to your Microsof
    code_interpreter = CodeInterpreterTool(
        container=CodeInterpreterToolAuto(file_ids=[file.id])
    )
-
     ```
 
-    ![](../Images/lab2-s19.png)
+     ![](../Images/lab2-s19.png)
     
 1. Find the comment **Define an agent that uses the CodeInterpreterTool** and add the following code to define an AI agent that analyzes data and can use the code interpreter tool you defined previously:
 
@@ -260,7 +259,7 @@ In this task, you will complete the application code to connect to your Microsof
    print(f"Using agent: {agent.name}")
     ```
 
-    ![](../Images/lab2-s20.png)
+     ![](../Images/lab2-s20.png)
 
 1. Find the comment **Create a conversation for the chat session** and add the following code to start a thread on which the chat session with the agent will run:
 
@@ -289,7 +288,7 @@ In this task, you will complete the application code to connect to your Microsof
    )
     ```
 
-    ![](../Images/lab2-s23.png)
+     ![](../Images/lab2-s23.png)
 
 1. Find the comment **Check the response status for failures** and add the following code to check for any errors.
 
@@ -338,6 +337,7 @@ In this task, you will complete the application code to connect to your Microsof
     ![](../Images/lab2-s26.png)
 
 1. Review the code, using the comments to understand how it:
+    
     - Connects to the AI Foundry project.
     - Uploads the data file and creates a code interpreter tool that can access it.
     - Creates a new agent that uses the code interpreter tool and has explicit instructions to use Python as necessary for statistical analysis.
@@ -359,29 +359,29 @@ In this task, you will authenticate to Azure using the Azure CLI and run the cli
     az login
     ```
 
-    ![](../Images/lab2-s32.png)
+     ![](../Images/lab2-s32.png)
 
-    > **Note:** In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
+     > **Note:** In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
 
 1. In the new browser tab, when the **Enter code to allow access** window appears, paste the copied code and select **Next**.
 
-    ![](../Images/lab2-s33.png)
+     ![](../Images/lab2-s33.png)
 
 1. In the **Pick an account** dialog box, choose **ODL_User<inject key="DeploymentID"></inject>**. 
 
-    ![](../Images/lab2-s34.png)
+     ![](../Images/lab2-s34.png)
 
 1. In the **Are you trying to sign in to Microsoft Azure CLI?** dialog box, click **Continue**.
 
-    ![](../Images/lab2-s35.png)
+     ![](../Images/lab2-s35.png)
 
 1. When the **Microsoft Azure Cross-platform Command Line Interface** window pops up, return to the browser tab with Cloud Shell open. 
 
-    ![](../Images/lab2-s36.png)
+     ![](../Images/lab2-s36.png)
 
 1. In the Cloud Shell console, press **Enter** to select the only available subscription.
 
-    ![](../Images/lab2-s37.png)
+     ![](../Images/lab2-s37.png)
 
 1. After you have signed in, enter the following command to run the application:
 
@@ -389,9 +389,9 @@ In this task, you will authenticate to Azure using the Azure CLI and run the cli
     python agent.py
     ```
 
-    ![](../Images/lab2-s38.png)
+     ![](../Images/lab2-s38.png)
     
-    - The application runs using the credentials for your authenticated Azure session to connect to your project and create and run the agent.
+     - The application runs using the credentials for your authenticated Azure session to connect to your project and create and run the agent.
 
 1. When prompted, view the data that the app has loaded from the *data.txt* text file. Then enter a prompt such as:
 
@@ -399,9 +399,9 @@ In this task, you will authenticate to Azure using the Azure CLI and run the cli
    What's the category with the highest cost?
     ```
 
-    ![](../Images/lab2-s28.png)
+     ![](../Images/lab2-s28.png)
 
-    > **Tip:** If the app fails because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond.
+     > **Tip:** If the app fails because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond.
 
 1. View the response. Then enter another prompt, this time requesting a visualization:
 
@@ -409,7 +409,7 @@ In this task, you will authenticate to Azure using the Azure CLI and run the cli
    Create a text-based bar chart showing cost by category
     ```
 
-    ![](../Images/lab2-s30.png)
+     ![](../Images/lab2-s30.png)
 
 1. View the response. Then enter another prompt, this time requesting a statistical metric:
 
@@ -417,7 +417,7 @@ In this task, you will authenticate to Azure using the Azure CLI and run the cli
    What's the standard deviation of cost?
     ```
 
-    ![](../Images/lab2-s39.png)
+     ![](../Images/lab2-s39.png)
 
 1. You can continue the conversation if you like. The thread is *stateful*, so it retains the conversation history - meaning that the agent has the full context for each response. Enter `quit` when you're done.
 
