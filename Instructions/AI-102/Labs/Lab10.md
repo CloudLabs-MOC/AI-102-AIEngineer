@@ -1,6 +1,6 @@
 # Lab 10: Use a custom function in an AI agent
 
-### Estimated Duration : 30 Minutes
+### Estimated Duration: 1 Hour
 
 ## Lab Overview
 
@@ -40,7 +40,7 @@ In this task, you'll install and verify the Microsoft Foundry extension in Visua
 
    ![](../Images/lab9-p2t1p2.png)
 
-   > **Tip:** If you already have the extension installed, make sure the version is at least **v0.16.0** to follow along with the instructions in this exercise.
+   > **Note:** If you already have the extension installed, make sure the version is at least **v0.16.0** to follow along with the instructions in this exercise.
 
 ## Task 2: Sign in to Azure and create a project
 
@@ -114,15 +114,7 @@ In this task, you'll deploy the gpt-4.1 model (or an equivalent) in your Foundry
 
 1. Wait for the deployment to complete. Your deployed model will appear under the **Models** section in the Resources view.
 
-   ![](../Images/lab9-p2t3p3.png)
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
->
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
- 
-<validation step="b046143b-76f6-49ca-ad60-fef1518f2bf9" />
+    ![](../Images/lab9-p2t3p3.png)
 
 ## Task 4: Clone the starter code repository
 
@@ -230,7 +222,7 @@ In this task, you'll connect your application to the Azure AI Foundry project, d
 
     ![](../Images/lab9-p2t6p1.png)
 
-   > **Note:** As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
+    > **Note:** As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
 
 1. Find the comment **Add references** and add the following code to import the classes you'll need to build an Azure AI agent that uses a function tool and press **Ctrl+S** to save the changes:
 
@@ -261,7 +253,7 @@ In this task, you'll connect your application to the Azure AI Foundry project, d
 
     ![](../Images/lab9-p2t6p3.png)
 
-#### Define the function tools
+#### **Define the function tools**
 
 In this task, you'll define each of the function tools that the agent can use. The parameters for each function tool are defined using a JSON schema, which specifies the name, type, description, and other attributes for each parameter of the function.
 
@@ -365,7 +357,7 @@ In this task, you'll define each of the function tools that the agent can use. T
 
     ![](../Images/lab9-p2t7p3.png)
 
-#### Create the agent that uses the function tools
+#### **Create the agent that uses the function tools**
 
 Now that you've defined the function tools, you can create an agent that can use those tools to complete tasks.
 
@@ -388,7 +380,7 @@ Now that you've defined the function tools, you can create an agent that can use
 
     ![](../Images/lab9-p2t8p1.png)
 
-#### Send a message to the agent and process the response
+#### **Send a message to the agent and process the response**
 
 Now that you've created the agent with the function tools, you can send messages to the agent and process its responses.
 
@@ -408,9 +400,9 @@ Now that you've created the agent with the function tools, you can send messages
     ```python
     # Create a list to hold function call outputs that will be sent back as input to the agent
     input_list: ResponseInputParam = []
-   ```
+    ```
 
-   ![](../Images/lab9-p2t8p3.png)
+    ![](../Images/lab9-p2t8p3.png)
 
 1. Find the comment **Send a prompt to the agent** and add the following code and press **Ctrl+S** to save the changes:
 
@@ -443,7 +435,7 @@ Now that you've created the agent with the function tools, you can send messages
 
     In this code, you send a user prompt to the agent and retrieve the response. You also check if the response indicates a failure and print the error if so.
 
-#### Process function calls and display the agent's response
+#### **Process function calls and display the agent's response**
 
 1. Find the comment **Process function calls** and add the following code to handle any function calls made by the agent and press **Ctrl+S** to save the changes:
 
@@ -504,7 +496,8 @@ Now that you've created the agent with the function tools, you can send messages
     ![](../Images/lab9-p2t8p8.png)
 
 1. Review the complete code you've added to the file. It should now include sections that:
-   - Import necessary libraries
+
+    - Import necessary libraries
     - Connect to the Foundry project and OpenAI client
     - Define function tools for the agent to use
     - Create an agent with those function tools
@@ -553,11 +546,6 @@ In this task, you'll authenticate with Azure, execute the agent application, int
 
 1. You should see some output similar to the folloiwng:
 
-    ```output
-    AGENT: The next astronomical event you can observe from South America is the Jupiter-Venus Conjunction, taking place on May 1st.
-    The cost for 5 hours of premium telescope time at normal priority for this observation will be $1,875. 
-    ```
-
     ![](../Images/lab9-p2t9p5.png)
     
 1. Enter a follow-up prompt to generate an observation report, such as:
@@ -568,21 +556,6 @@ In this task, you'll authenticate with Azure, execute the agent application, int
 
 1. You should see a response similar to the following:
 
-    ```output
-    AGENT: Here is your report for Bellows College:
-
-    - Next visible astronomical event: Jupiter-Venus Conjunction
-    - Date: May 1st
-    - Visible from: South America
-    - Observation details:
-        - Telescope tier: Premium
-        - Duration: 5 hours
-        - Priority: Normal
-    - Observation cost: $1,875
-
-    A formal report has been generated for Bellows College.
-    ```
-
     ![](../Images/lab9-p2t9p6.png)
 
 1. In the file explorer, you can see that a new file named `report-<event-type>.txt` has been created, which contains the generated report. You can open this file to view the contents of the report.
@@ -592,6 +565,14 @@ In this task, you'll authenticate with Azure, execute the agent application, int
 1. Enter `quit` to exit the application.
 
     >**Note:** You can also use `deactivate` to exit the Python virtual environment in the terminal.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="b046143b-76f6-49ca-ad60-fef1518f2bf9" />
 
 ## Summary
 
