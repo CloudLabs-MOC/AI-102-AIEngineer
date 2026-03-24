@@ -50,7 +50,7 @@ The lab architecture demonstrates how multiple AI agents collaborate to triage s
 
 ## Architecture Diagram
 
-![](../Images/lab1-arch.png)
+![](../Images/lab11new-arch.png)
 
 ## Explanation of Components
 
@@ -76,7 +76,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab1-vm.png)
+![Access Your VM and Lab Guide](../Images/lab11new-vm.png)
 
 ### Virtual Machine & Lab Guide
  
