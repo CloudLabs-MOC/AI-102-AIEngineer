@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will learn how to evaluate the performance of generative AI models using both manual and automated evaluation techniques in Microsoft Foundry. You will start by creating a hub and project, then deploy base models such as `gpt-4.1` and `gpt-4.1-mini`. Next, you will conduct manual evaluations by testing model responses against expected outputs, and finally configure automated evaluations using prebuilt evaluators for metrics like semantic similarity, relevance, and F1 score. By the end of this lab, you will gain hands-on experience with assessing model accuracy, reliability, and fairness using standardized evaluation workflows in Microsoft Foundry.
+In this hands-on lab, you will learn how to evaluate the performance of generative AI models using both manual and automated evaluation techniques in Microsoft Foundry. You will start by creating a hub and project, then deploy base models such as `gpt-4.1` and `gpt-4.1-mini`. Next, you will conduct manual evaluations by testing model responses against expected outputs, and finally configure automated evaluations using prebuilt evaluators for metrics like semantic similarity, relevance, and F1 score. By the end of this lab, you will gain hands-on experience with assessing model accuracy, reliability, and fairness using standardized evaluation workflows in Microsoft Foundry.
 
 ## Objectives
 

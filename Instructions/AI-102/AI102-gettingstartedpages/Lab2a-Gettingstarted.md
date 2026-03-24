@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will build a generative AI chat application using Microsoft Foundry and a deployed GPT-4.1 model. You’ll begin by deploying the model in a new AI project, then connect it to a Python client application through Azure Cloud Shell. Finally, you’ll modify and run the chat app to interact with the model, maintaining conversation history and testing real-time responses.
+In this hands-on lab, you will build a generative AI chat application using Microsoft Foundry and a deployed GPT-4.1 model. You’ll begin by deploying the model in a new AI project, then connect it to a Python client application through Azure Cloud Shell. Finally, you’ll modify and run the chat app to interact with the model, maintaining conversation history and testing real-time responses.
 
 ## Objectives
 

@@ -14,15 +14,15 @@ In this hands-on lab, you will develop and deploy an AI agent using the VS Code 
 
 By the end of this lab, you will be able to:
 
-1. **Deploy and configure a model in Microsoft Foundry**: Create a project using the *gpt-4.1* model in the VS Code extension and deploy it for agent integration.
+1. **Deploy and configure a model in Microsoft Foundry:** Create a project using the *gpt-4.1* model in the VS Code extension and deploy it for agent integration.
 
-2. **Set up the Microsoft Foundry VS Code environment**: Install and configure the *Microsoft Foundry* extension, sign in to Azure, and connect to your project resources.
+2. **Set up the Microsoft Foundry VS Code environment:** Install and configure the *Microsoft Foundry* extension, sign in to Azure, and connect to your project resources.
 
-3. **Create and configure an AI agent**: Build the *data-research-agent* using the designer view, define its system instructions, and associate it with the deployed model.
+3. **Create and configure an AI agent:** Build the *data-research-agent* using the designer view, define its system instructions, and associate it with the deployed model.
 
-4. **Integrate MCP Server tools**: Add an *MCP Server* tool to enable the agent to access external APIs and real-time documentation sources.
+4. **Integrate MCP Server tools:** Add an *MCP Server* tool to enable the agent to access external APIs and real-time documentation sources.
 
-5. **Deploy and validate the agent workflow**: Deploy the agent to Microsoft Foundry, test it in the *Agent Playground*, and verify tool usage, responses, and conversation threads.
+5. **Deploy and validate the agent workflow:** Deploy the agent to Microsoft Foundry, test it in the *Agent Playground*, and verify tool usage, responses, and conversation threads.
 
 ## Pre-requisites
 
@@ -46,7 +46,7 @@ The lab architecture demonstrates how the Microsoft Foundry VS Code extension en
 
 ## Architecture Diagram
 
-![](../Images/lab1-arch.png)
+![](../Images/lab9new-arch.png)
 
 ## Explanation of Components
 

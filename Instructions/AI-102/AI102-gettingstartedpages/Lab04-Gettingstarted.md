@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this lab, you will build a generative AI application using the Retrieval Augmented Generation (RAG) pattern in Microsoft Foundry. You’ll set up a hub and project, deploy embedding and generative models, and upload custom PDF data. Then you’ll create a vector index with Azure AI Search, test it in the Chat Playground, and configure a Python client app to query your indexed data. This lab provides hands-on experience in creating grounded AI solutions with your own data.
+In this hands-on lab, you will build a generative AI application using the Retrieval Augmented Generation (RAG) pattern in Microsoft Foundry. You’ll set up a hub and project, deploy embedding and generative models, and upload custom PDF data. Then you’ll create a vector index with Azure AI Search, test it in the Chat Playground, and configure a Python client app to query your indexed data. This lab provides hands-on experience in creating grounded AI solutions with your own data.
 
 ## Objectives
 

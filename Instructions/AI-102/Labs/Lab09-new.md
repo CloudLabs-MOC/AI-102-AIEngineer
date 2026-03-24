@@ -8,6 +8,18 @@ In this lab, you'll use the Microsoft Foundry VS Code extension to create an age
 
 > **Note:** Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
 
+## Lab Objectives
+
+- **Task 1:** Install the Microsoft Foundry VS Code extension
+
+- **Task 2:** Sign in to Azure and create a project
+
+- **Task 3:** Deploy a model
+
+- **Task 4:** Create an AI agent with the designer view
+
+- **Task 5:** Test your agent in the playground
+
 ## Task 1: Install the Microsoft Foundry VS Code extension
 
 In this task, you’ll install and verify the Microsoft Foundry VS Code extension to enable creating and managing AI agents directly within Visual Studio Code.
@@ -133,7 +145,7 @@ Now you'll create an AI agent using the visual designer interface. Rather than w
 
    ![](../Images/lab7-s19.png)
 
-### Task 4.3: Add an MCP Server tool to your agent
+### Task 4.2: Add an MCP Server tool to your agent
 
 You'll now add a Model Context Protocol (MCP) server tool that allows your agent to access external APIs and data sources.
 
@@ -153,7 +165,7 @@ You'll now add a Model Context Protocol (MCP) server tool that allows your agent
 
    ![](../Images/lab7-s21.png)
 
-### Task 4.4: Deploy your agent to Microsoft Foundry
+### Task 4.3: Deploy your agent to Microsoft Foundry
 
 1. In the agent designer view, select the **Create Agent on Microsoft Foundry** button in the bottom-left corner.
 
