@@ -135,8 +135,7 @@ In this task, you’ll define and apply a custom guardrail (content filter). You
 
       - The **Create guardrail controls** page is where you can create and apply content filters and other risk mitigation settings.
 
-1. Under **Add controls**, select **Hate** in the **Risk** dropdown, set the **Severity level** to **Highest blocking**, and then click **Add control**.
-
+1. Under **Add controls**, select **Hate (1)** in the **Risk** dropdown, set the **Severity level** to **Highest blocking (2)**, and then click **Add control**.
 
 1. Select **Add control (3)** to apply the configuration.
     
@@ -146,7 +145,7 @@ In this task, you’ll define and apply a custom guardrail (content filter). You
 
     ![](../Images/lab6-03-10.png)
 
-1. Under **Add controls**, select **Violence** in the **Risk** dropdown, set the **Severity level** to **Highest blocking**, and then click **Add control**.
+1. Under **Add controls**, select **Violence (1)** in the **Risk** dropdown, set the **Severity level** to **Highest blocking (2)**, and then click **Add control**.
 
 1. Select **Add control (3)** to apply the configuration.
     
@@ -158,7 +157,7 @@ In this task, you’ll define and apply a custom guardrail (content filter). You
 
 1. Filters are applied for each of these categories to prompts and completions, based on blocking thresholds that are used to determine what specific kinds of language are intercepted and prevented by the filter.
 
-1. Select **Next** when you've modified the content filter settings for all four risk categories.
+1. Select **Next** when you've modified the content filter settings for all **four** risk categories.
 
     ![](../Images/lab6-03-12.png)
 
