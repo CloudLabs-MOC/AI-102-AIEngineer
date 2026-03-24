@@ -130,7 +130,7 @@ In this task, you will configure your agent by adding instructions, uploading an
 
         ![](../Images/lab8-03-4.png)
 
-1. In the **Tools** section, select **Add (2)** drop down, select **Code interpreter (2)**, and enable it.
+1. In the **Tools** section, select **Add (1)** drop down, select **Code interpreter (2)**, and enable it.
 
     ![](../Images/lab8-03-6.png)
 
