@@ -228,165 +228,165 @@ In this task, you will modify the Python application to create multiple AI agent
 1. Find the comment **Create an agent to prioritize support tickets**, and enter the following code (being careful to retain the right level of indentation):
 
     ```python
-   # Create an agent to prioritize support tickets
-   priority_agent_name = "priority_agent"
-   priority_agent_instructions = """
-   Assess how urgent a ticket is based on its description.
+    # Create an agent to prioritize support tickets
+    priority_agent_name = "priority_agent"
+    priority_agent_instructions = """
+    Assess how urgent a ticket is based on its description.
 
-   Respond with one of the following levels:
-   - High: User-facing or blocking issues
-   - Medium: Time-sensitive but not breaking anything
-   - Low: Cosmetic or non-urgent tasks
+    Respond with one of the following levels:
+    - High: User-facing or blocking issues
+    - Medium: Time-sensitive but not breaking anything
+    - Low: Cosmetic or non-urgent tasks
 
-   Only output the urgency level and a very brief explanation.
-   """
+    Only output the urgency level and a very brief explanation.
+    """
 
-   priority_agent = agents_client.create_agent(
-        model=model_deployment,
-        name=priority_agent_name,
-        instructions=priority_agent_instructions
-   )
+    priority_agent = agents_client.create_agent(
+            model=model_deployment,
+            name=priority_agent_name,
+            instructions=priority_agent_instructions
+    )
     ```
 
-    ![](../Images/lab3b-s12.png)
+     ![](../Images/lab3b-s12.png)
 
 1. Find the comment **Create an agent to assign tickets to the appropriate team**, and enter the following code:
 
     ```python
-   # Create an agent to assign tickets to the appropriate team
-   team_agent_name = "team_agent"
-   team_agent_instructions = """
-   Decide which team should own each ticket.
+    # Create an agent to assign tickets to the appropriate team
+    team_agent_name = "team_agent"
+    team_agent_instructions = """
+    Decide which team should own each ticket.
 
-   Choose from the following teams:
-   - Frontend
-   - Backend
-   - Infrastructure
-   - Marketing
+    Choose from the following teams:
+    - Frontend
+    - Backend
+    - Infrastructure
+    - Marketing
 
-   Base your answer on the content of the ticket. Respond with the team name and a very brief explanation.
-   """
+    Base your answer on the content of the ticket. Respond with the team name and a very brief explanation.
+    """
 
-   team_agent = agents_client.create_agent(
-        model=model_deployment,
-        name=team_agent_name,
-        instructions=team_agent_instructions
-   )
+    team_agent = agents_client.create_agent(
+            model=model_deployment,
+            name=team_agent_name,
+            instructions=team_agent_instructions
+    )
     ```
 
-    ![](../Images/lab3b-s13.png)
+     ![](../Images/lab3b-s13.png)
 
 1. Find the comment **Create an agent to estimate effort for a support ticket**, and enter the following code:
 
     ```python
-   # Create an agent to estimate effort for a support ticket
-   effort_agent_name = "effort_agent"
-   effort_agent_instructions = """
-   Estimate how much work each ticket will require.
+    # Create an agent to estimate effort for a support ticket
+    effort_agent_name = "effort_agent"
+    effort_agent_instructions = """
+    Estimate how much work each ticket will require.
 
-   Use the following scale:
-   - Small: Can be completed in a day
-   - Medium: 2-3 days of work
-   - Large: Multi-day or cross-team effort
+    Use the following scale:
+    - Small: Can be completed in a day
+    - Medium: 2-3 days of work
+    - Large: Multi-day or cross-team effort
 
-   Base your estimate on the complexity implied by the ticket. Respond with the effort level and a brief justification.
-   """
+    Base your estimate on the complexity implied by the ticket. Respond with the effort level and a brief justification.
+    """
 
-   effort_agent = agents_client.create_agent(
-        model=model_deployment,
-        name=effort_agent_name,
-        instructions=effort_agent_instructions
-   )
+    effort_agent = agents_client.create_agent(
+            model=model_deployment,
+            name=effort_agent_name,
+            instructions=effort_agent_instructions
+    )
     ```
 
-    ![](../Images/lab3b-s14.png)
+     ![](../Images/lab3b-s14.png)
 
-    - So far, you've created three agents; each of which has a specific role in triaging a support ticket. Now let's create ConnectedAgentTool objects for each of these agents so they can be used by other agents.
+     - So far, you've created three agents; each of which has a specific role in triaging a support ticket. Now let's create ConnectedAgentTool objects for each of these agents so they can be used by other agents.
 
 1. Find the comment **Create connected agent tools for the support agents**, and enter the following code:
 
     ```python
-   # Create connected agent tools for the support agents
-   priority_agent_tool = ConnectedAgentTool(
-        id=priority_agent.id, 
-        name=priority_agent_name, 
-        description="Assess the priority of a ticket"
-   )
-    
-   team_agent_tool = ConnectedAgentTool(
-        id=team_agent.id, 
-        name=team_agent_name, 
-        description="Determines which team should take the ticket"
-   )
-    
-   effort_agent_tool = ConnectedAgentTool(
-        id=effort_agent.id, 
-        name=effort_agent_name, 
-        description="Determines the effort required to complete the ticket"
-   )
+    # Create connected agent tools for the support agents
+    priority_agent_tool = ConnectedAgentTool(
+            id=priority_agent.id, 
+            name=priority_agent_name, 
+            description="Assess the priority of a ticket"
+    )
+        
+    team_agent_tool = ConnectedAgentTool(
+            id=team_agent.id, 
+            name=team_agent_name, 
+            description="Determines which team should take the ticket"
+    )
+        
+    effort_agent_tool = ConnectedAgentTool(
+            id=effort_agent.id, 
+            name=effort_agent_name, 
+            description="Determines the effort required to complete the ticket"
+    )
     ```
 
-    ![](../Images/lab3b-s15.png)
+     ![](../Images/lab3b-s15.png)
 
-    - Now you're ready to create a primary agent that will coordinate the ticket triage process, using the connected agents as required.
+     - Now you're ready to create a primary agent that will coordinate the ticket triage process, using the connected agents as required.
 
 1. Find the comment **Create an agent to triage support ticket processing by using connected agents**, and enter the following code:
 
     ```python
-   # Create an agent to triage support ticket processing by using connected agents
-   triage_agent_name = "triage-agent"
-   triage_agent_instructions = """
-   Triage the given ticket. Use the connected tools to determine the ticket's priority, 
-   which team it should be assigned to, and how much effort it may take.
-   """
+    # Create an agent to triage support ticket processing by using connected agents
+    triage_agent_name = "triage-agent"
+    triage_agent_instructions = """
+    Triage the given ticket. Use the connected tools to determine the ticket's priority, 
+    which team it should be assigned to, and how much effort it may take.
+    """
 
-   triage_agent = agents_client.create_agent(
-        model=model_deployment,
-        name=triage_agent_name,
-        instructions=triage_agent_instructions,
-        tools=[
-            priority_agent_tool.definitions[0],
-            team_agent_tool.definitions[0],
-            effort_agent_tool.definitions[0]
-        ]
-   )
+    triage_agent = agents_client.create_agent(
+            model=model_deployment,
+            name=triage_agent_name,
+            instructions=triage_agent_instructions,
+            tools=[
+                priority_agent_tool.definitions[0],
+                team_agent_tool.definitions[0],
+                effort_agent_tool.definitions[0]
+            ]
+    )
     ```
 
-    ![](../Images/lab3b-s16.png)
+     ![](../Images/lab3b-s16.png)
 
-    - Now that you have defined a primary agent, you can submit a prompt to it and have it use the other agents to triage a support issue.
+     - Now that you have defined a primary agent, you can submit a prompt to it and have it use the other agents to triage a support issue.
 
 1. Find the comment **Use the agents to triage a support issue**, and enter the following code:
 
     ```python
-   # Use the agents to triage a support issue
-   print("Creating agent thread.")
-   thread = agents_client.threads.create()  
+    # Use the agents to triage a support issue
+    print("Creating agent thread.")
+    thread = agents_client.threads.create()  
 
-   # Create the ticket prompt
-   prompt = input("\nWhat's the support problem you need to resolve?: ")
-    
-   # Send a prompt to the agent
-   message = agents_client.messages.create(
-        thread_id=thread.id,
-        role=MessageRole.USER,
-        content=prompt,
-   )   
-    
-   # Run the thread usng the primary agent
-   print("\nProcessing agent thread. Please wait.")
-   run = agents_client.runs.create_and_process(thread_id=thread.id, agent_id=triage_agent.id)
+    # Create the ticket prompt
+    prompt = input("\nWhat's the support problem you need to resolve?: ")
         
-   if run.status == "failed":
-        print(f"Run failed: {run.last_error}")
+    # Send a prompt to the agent
+    message = agents_client.messages.create(
+            thread_id=thread.id,
+            role=MessageRole.USER,
+            content=prompt,
+    )   
+        
+    # Run the thread usng the primary agent
+    print("\nProcessing agent thread. Please wait.")
+    run = agents_client.runs.create_and_process(thread_id=thread.id, agent_id=triage_agent.id)
+            
+    if run.status == "failed":
+            print(f"Run failed: {run.last_error}")
 
-   # Fetch and display messages
-   messages = agents_client.messages.list(thread_id=thread.id, order=ListSortOrder.ASCENDING)
-   for message in messages:
-        if message.text_messages:
-            last_msg = message.text_messages[-1]
-            print(f"{message.role}:\n{last_msg.text.value}\n")
-   
+    # Fetch and display messages
+    messages = agents_client.messages.list(thread_id=thread.id, order=ListSortOrder.ASCENDING)
+    for message in messages:
+            if message.text_messages:
+                last_msg = message.text_messages[-1]
+                print(f"{message.role}:\n{last_msg.text.value}\n")
+    
     ```
 
     ![](../Images/lab6-s17.1.png)
@@ -427,7 +427,7 @@ In this task, you will sign in to Microsoft Azure using Azure CLI and run the Py
 
     ![](../Images/lab3b-s20.png)
 
-1. In the **Pick an account** dialog box, choose **ODL_User<inject key="DeploymentID"></inject>**. 
+1. In the **Pick an account** dialog box, choose **ODL_User<inject key="DeploymentID" enableCopy="false"/>**. 
 
     ![](../Images/lab2-s34.png)
 
