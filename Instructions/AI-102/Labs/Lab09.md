@@ -231,15 +231,15 @@ In this task, you will complete the application code to connect to your Microsof
 1. Find the comment **Upload the data file and create a CodeInterpreterTool**, within the *with agent_client* block, and add the following code to upload the data file to the project and create a CodeInterpreterTool that can access the data in it:
 
     ```python
-   # Upload the data file and create a CodeInterpreterTool
-   file = openai_client.files.create(
-       file=open(file_path, "rb"), purpose="assistants"
-   )
-   print(f"Uploaded {file.filename}")
+    # Upload the data file and create a CodeInterpreterTool
+    file = openai_client.files.create(
+        file=open(file_path, "rb"), purpose="assistants"
+    )
+    print(f"Uploaded {file.filename}")
 
-   code_interpreter = CodeInterpreterTool(
-       container=CodeInterpreterToolAuto(file_ids=[file.id])
-   )
+    code_interpreter = CodeInterpreterTool(
+        container=CodeInterpreterToolAuto(file_ids=[file.id])
+    )
     ```
 
      ![](../Images/lab2-s19.png)
@@ -247,16 +247,16 @@ In this task, you will complete the application code to connect to your Microsof
 1. Find the comment **Define an agent that uses the CodeInterpreterTool** and add the following code to define an AI agent that analyzes data and can use the code interpreter tool you defined previously:
 
     ```python
-   # Define an agent that uses the CodeInterpreterTool
-   agent = project_client.agents.create_version(
-       agent_name="data-agent",
-       definition=PromptAgentDefinition(
-           model=model_deployment,
-           instructions="You are an AI agent that analyzes the data in the file that has been uploaded. Use Python to calculate statistical metrics as necessary.",
-           tools=[code_interpreter],
-       ),
-   )
-   print(f"Using agent: {agent.name}")
+    # Define an agent that uses the CodeInterpreterTool
+    agent = project_client.agents.create_version(
+        agent_name="data-agent",
+        definition=PromptAgentDefinition(
+            model=model_deployment,
+            instructions="You are an AI agent that analyzes the data in the file that has been uploaded. Use Python to calculate statistical metrics as necessary.",
+            tools=[code_interpreter],
+        ),
+    )
+    print(f"Using agent: {agent.name}")
     ```
 
      ![](../Images/lab2-s20.png)
@@ -275,17 +275,17 @@ In this task, you will complete the application code to connect to your Microsof
 1. Find the comment **Send a prompt to the agent** and add the following code to add a user message to the prompt (along with the data from the file that was loaded previously), and then run thread with the agent.
 
     ```python
-   # Send a prompt to the agent
-   openai_client.conversations.items.create(
-       conversation_id=conversation.id,
-       items=[{"type": "message", "role": "user", "content": user_prompt}],
-   )
+    # Send a prompt to the agent
+    openai_client.conversations.items.create(
+        conversation_id=conversation.id,
+        items=[{"type": "message", "role": "user", "content": user_prompt}],
+    )
 
-   response = openai_client.responses.create(
-       conversation=conversation.id,
-       extra_body={"agent": {"name": agent.name, "type": "agent_reference"}},
-       input="",
-   )
+    response = openai_client.responses.create(
+        conversation=conversation.id,
+        extra_body={"agent": {"name": agent.name, "type": "agent_reference"}},
+        input="",
+    )
     ```
 
      ![](../Images/lab2-s23.png)
@@ -293,16 +293,16 @@ In this task, you will complete the application code to connect to your Microsof
 1. Find the comment **Check the response status for failures** and add the following code to check for any errors.
 
     ```python
-   # Check the response status for failures
-   if response.status == "failed":
-       print(f"Response failed: {response.error}")
+    # Check the response status for failures
+    if response.status == "failed":
+        print(f"Response failed: {response.error}")
     ```
 
 1. Find the comment **Show the latest response from the agent** and add the following code to retrieve the messages from the completed thread and display the last one that was sent by the agent.
 
     ```python
-   # Show the latest response from the agent
-   print(f"Agent: {response.output_text}")
+    # Show the latest response from the agent
+    print(f"Agent: {response.output_text}")
     ```
 
     ![](../Images/lab2-s24.png)
@@ -326,12 +326,12 @@ In this task, you will complete the application code to connect to your Microsof
 1. Find the comment **Clean up** and add the following code to delete the agent and thread when no longer needed.
 
     ```python
-   # Clean up
-   openai_client.conversations.delete(conversation_id=conversation.id)
-   print("Conversation deleted")
+    # Clean up
+    openai_client.conversations.delete(conversation_id=conversation.id)
+    print("Conversation deleted")
 
-   project_client.agents.delete_version(agent_name=agent.name, agent_version=agent.version)
-   print("Agent deleted")
+    project_client.agents.delete_version(agent_name=agent.name, agent_version=agent.version)
+    print("Agent deleted")
     ```
 
     ![](../Images/lab2-s26.png)
