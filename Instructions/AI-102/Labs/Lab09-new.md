@@ -8,8 +8,6 @@ In this lab, you'll use the Microsoft Foundry VS Code extension to create an age
 
 > **Note:** Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
 
-> **Note:** Due to an ongoing global model deployment outage and quota limitations affecting GPT deployments, this lab is currently designated as *read-only* and should be reviewed conceptually rather than executed.
-
 ## Task 1: Install the Microsoft Foundry VS Code extension
 
 In this task, you’ll install and verify the Microsoft Foundry VS Code extension to enable creating and managing AI agents directly within Visual Studio Code.
@@ -76,7 +74,7 @@ You'll need a deployed model to use with your agent.
 
 1. In the **RESOURCES** pane, expand **Models**, and then select the **+** icon to add a new model deployment.
 
-   ![](../Images/lab7-s12.png)
+   ![](../Images/lab9-ai-01.png)
 
    > **Tip:** You can also access the Model Catalog pressing **F1** and running the command **Microsoft Foundry: Open Model Catalog**.
 
@@ -99,7 +97,7 @@ You'll need a deployed model to use with your agent.
 
 1. Wait for the deployment to complete. Your deployed model will appear under the **Models** section in the Resources view.
 
-   ![](../Images/lab7-s15.png)
+   ![](../Images/lab9-ai-02.png)
 
 ## Task 4: Create an AI agent with the designer view
 
@@ -111,7 +109,7 @@ Now you'll create an AI agent using the visual designer interface. Rather than w
 
 1. Select the **+** (plus) **(2)** icon next to the **Classic Agents** subsection to create a new AI Agent.
 
-    ![](../Images/lab7-s16.png)
+    ![](../Images/lab9-ai-03.png)
 
 1. Choose a location to save your agent files if prompted.
 
@@ -165,7 +163,7 @@ You'll now add a Model Context Protocol (MCP) server tool that allows your agent
 
 1. In the VS Code navbar, refresh **(1)** the **Resources** view.  **data-research-agent (2)** should now appear under the **Classic Agents** subsection.
 
-   ![](../Images/lab7-s23.png)
+   ![](../Images/lab9-ai-04.png)
 
 ## Task 5: Test your agent in the playground
 
@@ -173,7 +171,7 @@ You'll now add a Model Context Protocol (MCP) server tool that allows your agent
 
 1. Select **Open Playground (2)** from the context menu.
 
-   ![](../Images/lab7-s24.png)
+   ![](../Images/lab9-ai-05.png)
 
 1. The Agents Playground will open in a new tab within VS Code.
 
@@ -183,7 +181,7 @@ You'll now add a Model Context Protocol (MCP) server tool that allows your agent
    Can you help me find documentation about Azure Container Apps and provide an example of how to create one?
    ```
 
-   ![](../Images/lab7-s25.png)
+   ![](../Images/lab9-ai-06.png)
 
 1. Send the message and observe the authentication and approval prompts for the MCP Server tool:
     
