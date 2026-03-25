@@ -2,13 +2,13 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 10: Develop an Azure AI agent with the Semantic Kernel SDK
+# Lab 13: Develop an Azure AI chat agent with the Microsoft Agent Framework SDK
 
 ### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 
-In this lab, you will prepare your environment to build and run an Azure AI agent with the Semantic Kernel SDK. You will create an Azure AI Foundry project, deploy the gpt-4.1 model, and record the project endpoint and deployment name for use in code. You will then set up Azure Cloud Shell, clone the sample repository, and configure application settings. By the end, your workspace, model deployment, and tools will be ready so you can implement and test the agent.
+In this hands-on lab, you will develop an AI chat agent using the Microsoft Agent Framework SDK within Visual Studio Code. You will create a Microsoft Foundry project, deploy a model, and configure a Python-based application to connect with your Azure resources. Finally, you will implement a custom tool to process expense data, run the agent, and validate its ability to generate and simulate expense claim submissions.
 
 ## Objectives
 
@@ -65,7 +65,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/AI-102-l10-g1.png)
+![Access Your VM and Lab Guide](../Images/lab13new-vm.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -99,7 +99,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
-![](../Images/zoominai102.png)
+![](../Images/lab1-z.png)
 
 ## Let's Get Started with Azure Portal
  
@@ -115,15 +115,15 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/lab1-p.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 
     ![](../Images/AIl16-2.png)
 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-    ![](../Images/AIl16-3.png)
+    ![](../Images/lab1-p.png)
 
 
 ## Support Contact

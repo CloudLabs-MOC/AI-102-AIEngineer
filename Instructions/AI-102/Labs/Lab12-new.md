@@ -4,7 +4,7 @@
 
 ## Lab Overview
 
-In this lab, you will create and configure an AI agent using the Microsoft Foundry extension in Visual Studio Code and deploy a foundation model in an Azure AI Foundry project. You will connect the agent to a remote Model Context Protocol (MCP) server to retrieve real-time information and implement custom MCP server tools for inventory and sales operations. You will set up a client application, configure the environment, and enable the agent to invoke tools dynamically. Finally, you will run and validate the application to ensure the agent can retrieve data and generate context-aware responses.
+In this lab, you will create and configure an AI agent using the Microsoft Foundry extension in Visual Studio Code and deploy a foundation model in an Foundry project. You will connect the agent to a remote Model Context Protocol (MCP) server to retrieve real-time information and implement custom MCP server tools for inventory and sales operations. You will set up a client application, configure the environment, and enable the agent to invoke tools dynamically. Finally, you will run and validate the application to ensure the agent can retrieve data and generate context-aware responses.
 
 ## Lab Objectives
 
@@ -26,7 +26,7 @@ In this lab, you'll perform the following tasks:
 
 ## Task 1: Install the Microsoft Foundry VS Code extension
 
-In this task, you'll install and verify the Microsoft Foundry extension in Visual Studio Code, enabling you to create, manage, and interact with Azure AI projects and agents directly within the VS Code environment.
+In this task, you'll install and verify the Microsoft Foundry extension in Visual Studio Code, enabling you to create, manage, and interact with Foundry projects and agents directly within the VS Code environment.
 
 1. Open the **Visual Studio Code** from the desktop.
 
@@ -44,7 +44,7 @@ In this task, you'll install and verify the Microsoft Foundry extension in Visua
 
 ## Task 2: Sign in to Azure and create a project
 
-In this task, you'll authenticate with your Azure account and create a new Azure AI Foundry project, which will serve as the workspace for deploying models and building AI-powered agent solutions.
+In this task, you'll authenticate with your Azure account and create a new Foundry project, which will serve as the workspace for deploying models and building AI-powered agent solutions.
 
 1. In the VS Code sidebar, select the **Microsoft Foundry (1)** extension icon.
 

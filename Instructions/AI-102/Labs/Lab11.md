@@ -1,90 +1,124 @@
-# Lab 10: Develop an Azure AI agent with the Semantic Kernel SDK
+# Lab 13: Develop an Azure AI chat agent with the Microsoft Agent Framework SDK
 
-## Overview
+### Estimated Duration: 30 Minutes
 
-In this lab, you will develop an Azure AI agent with the Semantic Kernel SDK to process expense claims end to end. You will deploy gpt-4.1 in an Azure AI Foundry project, configure the app to use the project endpoint and deployment name, and define the agent’s instructions and tools (including a simulated email plugin). You will run the agent against sample expenses and observe it generate a structured response and invoke the plugin to “send” an expense claim. Finally, you will validate the output to understand how Semantic Kernel orchestrates model calls and tool execution.
+## Lab Overview
+
+In this lab, you will create and configure an AI chat agent using the Microsoft Agent Framework SDK in Visual Studio Code and deploy a model in an Foundry project. You will set up the development environment, implement a custom tool to process expense data, and integrate it with the agent. Finally, you will run and validate the application to ensure the agent can generate responses and simulate expense claim submissions.
 
 ## Lab Objectives
 
-- **Task 1:** Deploy a model in an Azure AI Foundry project
+In this lab, you'll perform the following tasks:
 
-- **Task 2:** Create an agent client app
+- **Task 1:** Install the Microsoft Foundry VS Code extension
 
-- **Task 3:** Configure the application settings
+- **Task 2:** Sign in to Azure and create a project
 
-- **Task 4:** Write code for an agent app
+- **Task 3:** Deploy a model
 
-- **Task 5:** Sign into Azure and run the app
+- **Task 4:** Clone the starter code repository
 
-### Task 1: Deploy a model in an Azure AI Foundry project
+- **Task 5:** Write code for an agent app
 
-In this task, you’ll create a new Azure AI Foundry project and deploy the **gpt-4.1** model. By the end, you’ll have the **project endpoint** and **deployment name** ready for use in your application code.
+- **Task 6:** Run the app
 
-1. Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+## Task 1: Install the Microsoft Foundry VS Code extension
 
-1. Click on **Sign in**.
+In this task, you'll install and verify the Microsoft Foundry extension in Visual Studio Code, enabling you to create, manage, and interact with Azure AI projects and agents directly within the VS Code environment.
 
-   ![](../Images/aii1.png) 
+1. Open the **Visual Studio Code** from the desktop.
 
-1. If prompted, provide the credentials below:
+    ![](../Images/lab9-p2t1p1.png)
 
+1. In Visual Studio Code, select **Extensions (1)** from the left pane, search for **Microsoft Foundry (2)**, choose the **Microsoft Foundry (3)** extension by Microsoft, and then click **Install (4)**.
+
+   ![](../Images/lab7-s1.png)
+
+1. After installation is complete, verify the extension appears in the primary navigation bar on the left side of Visual Studio Code.
+
+   ![](../Images/lab9-p2t1p2.png)
+
+   > **Note:** If you already have the extension installed, make sure the version is at least **v0.16.0** to follow along with the instructions in this exercise.
+
+## Task 2: Sign in to Azure and create a project
+
+In this task, you'll authenticate with your Azure account and create a new Microsoft Foundry project, which will serve as the workspace for deploying models and building AI-powered agent solutions.
+
+1. In the VS Code sidebar, select the **Microsoft Foundry (1)** extension icon.
+
+1. In the Resources view, choose **Create Project (2)**, and when prompted, select **Sign in to Azure (3)** to authenticate.
+
+   ![](../Images/lab7-s4.png)
+
+1. In the **Azure Resources wants to sign in using Microsoft** dialog, select **Allow**.
+
+   ![](../Images/lab7-s5.png)
+
+1. On the **Sign in** page, provide the credentials below:
+ 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-
-     ![](../Images/aifoundrysignin1.png)
+    
+     ![](../Images/lab7-s6.png)
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
+    
+     ![](../Images/lab7-s7.png)
 
-     ![](../Images/aifoundrysignin1.png)
+1. On the **Sign in to all apps, websites, and services on this device?** page, select **Yes**.
 
-1. When the **Stay signed in?** window appears, select **No**.
+   ![](../Images/lab7-s8.png)
 
-    ![](../Images/aifoundrysignin3.png)
+1. On the **Account added to this device** page, select **Done**.
 
-1. Click on **X** to close the **Chat with Foundry Agent** popup window.
+   ![](../Images/lab7-s9.png)
 
-    ![](../Images/l8t1p2.png)
+1. In the **Choose a resource group** dialog, select **AI-102-RG11** from the list.
 
-    >**Note:** Close the **Help** pane if it's open
+   ![](../Images/lab13-03-1.png)
 
-1. In the home page, in the **Explore models and capabilities** section, search for the **gpt-4.1 (1)** model and then select **gpt-4.1 (2)** which we'll use in our project
+1. In the **Enter project name** dialog, enter **Myproject<inject key="DeploymentID" enableCopy="false"/>**, and then press **Enter** to confirm.
 
-    ![](../Images/aii2.png) 
+   ![](../Images/lab7-s11.png)
 
-1. Then at the top of the page for the model, select **Use this model**.
+1. Wait for the project deployment to complete. A popup will appear with the message "Project deployed successfully."
 
-    ![](../Images/ai11l1.png) 
+    ![](../Images/lab09-ai-1.png)
 
-1. When prompted to create a project, enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/>**.
+## Task 3: Deploy a model
 
-    ![](../Images/ai11l-2.png) 
+In this task, you'll deploy the gpt-4.1 model (or an equivalent) in your Foundry project, making it available for your agent to process prompts and generate intelligent responses.
 
-1. Exapand **Advanced options (1)**, provide the below details and leave the rest to deafult:
+1. In the **RESOURCES** pane, select **Models**, and then select the **+** icon to add a new model deployment.
 
-    - Resource group: Select **AI-102-RG11 (2)**
-    - Region: Select **Region**: Select **<inject key="Region" enableCopy="false" /> (3)**
-    - Select **Create (4)**
+   ![](../Images/lab9-p2t3p1.png)
 
-      ![](../Images/ai11l3.png) 
+   > **Tip:** You can also access the Model Catalog pressing **F1** and running the command **Microsoft Foundry: Open Model Catalog**.
 
-1. Wait for your project to be created.  
+1. In the Model Catalog, scroll down, search for **gpt-4.1 (1)** in the search bar, and then select **Deploy (2)** under **OpenAI GPT-4.1**.
 
-1. On the **Deploy gpt-4.1** page, select **Customize**.
+   ![](../Images/lab7-s13.png)
 
-    ![](../Images/ai11l8.png) 
+1. Configure the deployment settings:
+   
+    - **Deployment name:** Enter a name like **gpt-4.1 (1)**
+    - **Deployment type:** Select **Global Standard** (or **Standard** if Global Standard is not available) **(2)**
+    - **Model version:** Leave as default
+    - **Tokens per minute:** `50K` **(3)**
+    - Select **Deploy in Microsoft Foundry (4)** in the bottom-left corner.
 
-1. On the **Deploy gpt-4.1** page, make the following changes and then **Deploy (2)**
+        ![](../Images/lab12-03-2.png)
 
-   - Tokens per Minute Rate Limit (thousands): `50K` **(1)** (or the maximum available in your subscription if less than 50K)
+1. If the confirmation dialog appears, select **Deploy** to deploy the model.
 
-     ![](../Images/ai11l9.png) 
+1. Wait for the deployment to complete. Your deployed model will appear under the **Models** section in the Resources view.
 
-1. In the Setup pane, Copy and paste the name of your model deployment in a notepad, which should be **gpt-4.1**.
+    ![](../Images/lab9-p2t3p3.png)
 
-    ![](../Images/ai11l10.png) 
+1. In the VS Code Activity Bar, under the **Resources** section expand and right-click your project **Myproject (2)**, and choose **Copy Project Endpoint (3)** to copy the endpoint.
 
-1. In the navigation pane on the left, select **Overview (1)** to see the main page for your project. Then copy and paste the Project endpoint **(2)** in a notepad for later use.
+    ![](../Images/lab12-03-3.png)
 
-    ![](../Images/ai11l11.png) 
+    > **Note:** Copy and save the **Project endpoint** in a notepad, as it will be required in upcoming task.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -93,285 +127,177 @@ In this task, you’ll create a new Azure AI Foundry project and deploy the **gp
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
  
 <validation step="412da72d-9077-4bed-899e-d2e2c021cd43" />
- 
----  
 
-### Task 2: Create an agent client app
+## Task 4: Clone the starter code repository
 
-In this task, you’ll open **Azure Cloud Shell**, clone the provided repository, and review the starter files for the agent sample. By the end, your workspace will contain the code scaffold you’ll extend with Semantic Kernel.
+In this task, you'll clone the provided GitHub repository, set up a Python virtual environment, install required dependencies, and configure environment variables to prepare your local development setup.
 
-1. Navigate to [Azure portal](https://portal.azure.com/).
+1. Navigate to the **Welcome** page in VS Code by selecting the ellipsis **(...) (1)** from the top bar, then **Help (2)**, and finally **Welcome (3)**.
 
-1. If prompted, provide the credentials below:
+    ![](../Images/lab9-p2t4p1.png)
 
-    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+1. On the **Get Started** page, select **Mark Done (1)** to complete this step and proceed.
 
-    - **Password:** <inject key="AzureAdUserPassword"></inject>
+    ![](../Images/lab9-p2t4p2.png)
 
-1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+1. Select **Clone Git Repository... (1)**, paste the repository URL **(2)** `https://github.com/MicrosoftLearning/mslearn-ai-agents.git`, and then choose **Clone from URL (3)** to proceed.
 
-    ![](../Images/ai11l4.png) 
+    ![](../Images/lab9-p2t4p3.png)
 
-1. Selecting a **PowerShell** environment.
+1. Select the destination folder **C:\LabFiles (1)** and click **Select as Repository Destination (2)** to proceed.
 
-    ![](../Images/ai11l5.png) 
+    ![](../Images/lab9-p2t4p4.png)
 
-1. On the **Getting started** page,
+1. When prompted, select **Open (1)** to open the cloned repository.
 
-    - Select **No storage account required (1)** 
-    - Select your subscription **(2)**
-    - Click on **Apply (3)**
+    ![](../Images/lab9-p2t4p5.png)
 
-      ![](../Images/ai11l6.png) 
+1. In the trust prompt, select **Yes, I trust the authors (1)** to continue.
 
-1. In the cloud shell toolbar, in the **Settings (1)** menu, select **Go to Classic version (2)** (this is required to use the code editor).
+    ![](../Images/lab9-p2t4p6.png)
 
-    ![](../Images/ai11l7.png)
+1. In the Explorer view, navigate to the **Labfiles (1)** and then select **07-agent-framework/Python (2)** folder to find the starter code for this exercise.
 
-     >**Note**: The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+    ![](../Images/lab13-03-2.png)
 
-     >**Note**: Ensure you've switched to the classic version of the cloud shell before continuing.
+1. Right-click on the **requirements.txt (1)** file and select **Open in Integrated Terminal (2)**.
 
-1. In the cloud shell pane, copy and paste the following commands to clone the GitHub repo containing the code files for this exercise.
+    ![](../Images/lab13-03-3.png)
 
-    ```
-    rm -r ai-agents -f
-    git clone https://github.com/MicrosoftLearning/mslearn-ai-agents ai-agents
-    ```
-
-     ![](../Images/ai11l12.png)    
-
-     >**Tip**: As you enter commands into the cloudshell, the output may take up a large amount of the screen buffer and the cursor on the current line may be obscured. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
-
-1. When the repo has been cloned, enter the following command to change the working directory to the folder containing the code files and list them all.
-
-    ```
-    cd ai-agents/Labfiles/04-semantic-kernel/python
-    ls -a -l
-    ```
-
-     ![](../Images/ai11l13.png)       
-
-     The provided files include application code a file for configuration settings, and a file containing expenses data.
-
-
-### Task 3: Configure the application settings
-
-In this task, you’ll set up a Python virtual environment, install dependencies, and update the `.env` file with your **project endpoint** and **gpt-4.1** deployment name. By the end, your app will be correctly wired to call your Azure AI Foundry project.
-
-1. In the cloud shell command-line pane, enter the following command to install the libraries you'll use:
+1. In the terminal, enter the following command to install the required Python packages in a virtual environment:
 
     ```
     python -m venv labenv
-    ./labenv/bin/Activate.ps1
-    pip install python-dotenv azure-identity semantic-kernel --upgrade 
+    .\labenv\Scripts\Activate.ps1
+    pip install -r requirements.txt
     ```
 
-    > **Note**: Installing **semantic-kernel** autmatically installs a semantic kernel-compatible version of **azure-ai-projects**.
+1. From the left navigation menu, under **07-agent-framework/Python** folder, open the **.env (1)** file. Paste the copied project endpoint into the **PROJECT_ENDPOINT (2)** field, and verify that the **MODEL_DEPLOYMENT_NAME (3)** is set to `gpt-4.1` (or the name of your deployed model). Once done, press **Ctrl+S** to save the changes.
 
-1. Enter the following command to edit the configuration file that has been provided:
+    ![](../Images/lab13-03-4.png)
 
-    ```
-    code .env
-    ```
+    - Now you're ready to create an AI agent that uses a custom tool to process expenses data.
 
-     ![](../Images/ai11l14.png)     
+## Task 5: Write code for an agent app
 
-     The file is opened in a code editor.     
+In this task, you'll create and configure an AI agent using the Microsoft Agent Framework SDK and define a custom tool for processing expense claims. You will integrate the tool with the agent to handle user prompts and perform actions.
 
+> **Tip:** As you add code, be sure to maintain the correct indentation. Use the existing comments as a guide, entering the new code at the same level of indentation.
 
-1. In the code file, replace the **your_project_endpoint** placeholder with the endpoint for your project (copied from the project **Overview** page in the Azure AI Foundry portal in **Task 1**), and the **your_model_deployment** placeholder with  `gpt-4.1` model deployment.
+1. Open the **agent-framework.py** file in the code editor.
 
-    ![](../Images/ai11l15.png)
-
-1. After you've replaced the placeholders, use the **CTRL+S** command to save your changes and then use the **CTRL+Q** command to close the code editor while keeping the cloud shell command line open.
-
-### Task 4: Write code for an agent app
-
-In this task, you’ll add imports, define a Semantic Kernel plugin (simulated email sender), create the agent definition and client, and implement the call flow to process expense data. By the end, the app will construct and run an agent that can invoke your custom function.
-
->**Note**: As you add code, be sure to maintain the correct indentation. Use the existing comments as a guide, entering the new code at the same level of indentation.
-
-1. Enter the following command to edit the agent code file that has been provided:
-
-    ```
-    code semantic-kernel.py
-    ```
+    ![](../Images/lab13-03-5.png)
 
 1. Review the code in the file. It contains:
-
-    - Some **import** statements to add references to commonly used namespaces
-    - A **main** function that loads a file containing expenses data, asks the user for instructions, and and then calls...
-    - A **process_expenses_data** function in which the code to create and use your agent must be added
-    - An **EmailPlugin** class that includes a kernel function named **send_email**; which will be used by your agent to simulate the functionality used to send an email.
     
+    - Some **import** statements to add references to commonly used namespaces
+    
+    - A *main* function that loads a file containing expenses data, asks the user for instructions, and and then calls...
+    
+    - A **process_expenses_data** function in which the code to create and use your agent must be added
+
 1. At the top of the file, after the existing **import** statement, find the comment **Add references**, and add the following code to reference the namespaces in the libraries you'll need to implement your agent:
 
     ```python
-    # Add references
-    from dotenv import load_dotenv
-    from azure.identity.aio import DefaultAzureCredential
-    from semantic_kernel.agents import AzureAIAgent, AzureAIAgentSettings, AzureAIAgentThread
-    from semantic_kernel.functions import kernel_function
-    from typing import Annotated
+   # Add references
+   from agent_framework import tool, Agent
+   from agent_framework.azure import AzureOpenAIResponsesClient
+   from azure.identity import AzureCliCredential
+   from pydantic import Field
+   from typing import Annotated
     ```
 
-     ![](../Images/ai11l16.png)    
+    ![](../Images/lab13-03-6.png)
 
-1. Near the bottom of the file, find the comment **Create a Plugin for the email functionality**, and add the following code to define a class for a plugin containing a function that your agent will use to send email (plug-ins are a way to add custom functionality to Semantic Kernel agents)
+1. Near the bottom of the file, find the comment **Create a tool function for the email functionality**, and add the following code to define a function that your agent will use to send email (tools are a way to add custom functionality to agents)
 
     ```python
-   # Create a Plugin for the email functionality
-   class EmailPlugin:
-       """A Plugin to simulate email functionality."""
-    
-       @kernel_function(description="Sends an email.")
-       def send_email(self,
-                      to: Annotated[str, "Who to send the email to"],
-                      subject: Annotated[str, "The subject of the email."],
-                      body: Annotated[str, "The text body of the email."]):
+   # Create a tool function for the email functionality
+   @tool(approval_mode="never_require")
+   def submit_claim(
+       to: Annotated[str, Field(description="Who to send the email to")],
+       subject: Annotated[str, Field(description="The subject of the email.")],
+       body: Annotated[str, Field(description="The text body of the email.")]):
            print("\nTo:", to)
            print("Subject:", subject)
            print(body, "\n")
     ```
 
-     ![](../Images/ai11l17.png)     
+    ![](../Images/lab13-03-7.png)
 
-      >**Note**: The function **simulates** sending an email by printing it to the console. In a real application, you'd use an SMTP service or similar to actually send the email!
+    > **Note:** The function *simulates* sending an email by printing it to the console. In a real application, you'd use an SMTP service or similar to actually send the email!
 
-1. Find the comment **Get configuration settings**, and add the following code to load the configuration file and create an **AzureAIAgentSettings** object (which will automatically include the Azure AI Agent settings from the configuration).
+1. Back up above the **send_email** code, in the **process_expenses_data** function, find the comment **Create a client and initialize an agent with the tool and instructions**, and add the following code:
 
-    ```python
-   # Get configuration settings
-   load_dotenv()
-   ai_agent_settings = AzureAIAgentSettings()
-    ```
-
-     ![](../Images/ai11l18.png) 
-
-      >**Note**:Be sure to maintain the indentation level.
-
-1. Find the comment **Connect to the Azure AI Foundry project**, and add the following code to connect to your Azure AI Foundry project using the Azure credentials you're currently signed in with.
+    (Be sure to maintain the indentation level)
 
     ```python
-   # Connect to the Azure AI Foundry project
+   # Create a client and initialize an agent with the tool and instructions
+   credential = AzureCliCredential()
    async with (
-        DefaultAzureCredential(
-            exclude_environment_credential=True,
-            exclude_managed_identity_credential=True) as creds,
-        AzureAIAgent.create_client(
-            credential=creds
-        ) as project_client,
-   ):
-    ```
-        
-     ![](../Images/ai11l19.png) 
-
-      >**Note**:Be sure to maintain the indentation level.
-
-1. Find the comment **Define an Azure AI agent that sends an expense claim email**, and add the following code to create an Azure AI Agent definition for your agent.
-
-    ```python
-   # Define an Azure AI agent that sends an expense claim email
-   expenses_agent_def = await project_client.agents.create_agent(
-        model= ai_agent_settings.model_deployment_name,
-        name="expenses_agent",
-        instructions="""You are an AI assistant for expense claim submission.
-                        When a user submits expenses data and requests an expense claim, use the plug-in function to send an email to expenses@contoso.com with the subject 'Expense Claim`and a body that contains itemized expenses with a total.
-                        Then confirm to the user that you've done so."""
-   )
+        Agent(
+            client=AzureOpenAIResponsesClient(
+                credential=credential,
+                deployment_name=os.getenv("MODEL_DEPLOYMENT_NAME"),
+                project_endpoint=os.getenv("PROJECT_ENDPOINT"),
+            ),
+            instructions="""You are an AI assistant for expense claim submission.
+                        At the user's request, create an expense claim and use the plug-in function to send an email to expenses@contoso.com with the subject 'Expense Claim`and a body that contains itemized expenses with a total.
+                        Then confirm to the user that you've done so. Don't ask for any more information from the user, just use the data provided to create the email.""",
+            tools=[submit_claim],
+        ) as agent,
+    ):
     ```
 
-     ![](../Images/ai11l20.png) 
+    ![](../Images/lab13-03-8.png)
 
-      >**Note**:Be sure to maintain the indentation level.
-
-1. Find the comment **Create a semantic kernel agent**, and add the following code to create a semantic kernel agent object for your Azure AI agent, and includes a reference to the **EmailPlugin** plugin.
-
-    ```python
-   # Create a semantic kernel agent
-   expenses_agent = AzureAIAgent(
-        client=project_client,
-        definition=expenses_agent_def,
-        plugins=[EmailPlugin()]
-   )
-    ```
-
-     ![](../Images/ai11l21.png) 
-
-      >**Note**:Be sure to maintain the indentation level.    
+    - Note that the **AzureCliCredential** object will allow your code to authenticate to your Azure account. The **AzureOpenAIResponsesClient** object includes the Foundry project settings from the .env configuration. The **Agent** object is initialized with the client, instructions for the agent, and the tool function you defined to send emails.
 
 1. Find the comment **Use the agent to process the expenses data**, and add the following code to create a thread for your agent to run on, and then invoke it with a chat message.
 
     ```python
    # Use the agent to process the expenses data
-   # If no thread is provided, a new thread will be
-   # created and returned with the initial response
-   thread: AzureAIAgentThread | None = None
    try:
-        # Add the input prompt to a list of messages to be submitted
-        prompt_messages = [f"{prompt}: {expenses_data}"]
-        # Invoke the agent for the specified thread with the messages
-        response = await expenses_agent.get_response(prompt_messages, thread=thread)
-        # Display the response
-        print(f"\n# {response.name}:\n{response}")
+       # Add the input prompt to a list of messages to be submitted
+       prompt_messages = [f"{prompt}: {expenses_data}"]
+       # Invoke the agent for the specified thread with the messages
+       response = await agent.run(prompt_messages)
+       # Display the response
+       print(f"\n# Agent:\n{response}")
    except Exception as e:
-        # Something went wrong
-        print (e)
-   finally:
-        # Cleanup: Delete the thread and agent
-        await thread.delete() if thread else None
-        await project_client.agents.delete_agent(expenses_agent.id)
-    ```
-     
-     ![](../Images/ai11l22.png) 
-
-      >**Note**:Be sure to maintain the indentation level.      
-
-1. Review that the completed code for your agent, using the comments to help you understand what each block of code does, and then save your code changes (**CTRL+S**).
-
-1. Keep the code editor open in case you need to correct any typo's in the code, but resize the panes so you can see more of the command line console.
-
-
-### Task 5: Sign into Azure and run the app
-
-In this task, you’ll authenticate with `az login` and execute the Python app to submit expense data to the agent. By the end, you’ll verify the agent’s response and observe it “sending” an expense-claim email via the plugin output.
-
-1. In the cloud shell command-line pane beneath the code editor, enter the following command to sign into Azure **(1)**. Copy and paste the Sign in URL in the web browser **(2)**. Copy the device code as well to authenticate **(3)**.
-
-    ```
-    az login
+       # Something went wrong
+       print (e)
     ```
 
-     ![](../Images/ai11l23.png)     
+    > **Note:** While adding code under **Use the agent to process the expenses data**, make sure the `try` block and all its statements are properly indented inside the `async with` block created in the previous step.
 
-    >**Note**: You must sign into Azure - even though the cloud shell session is already authenticated
+    ![](../Images/lab13-03-10.png)
 
-    > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
-    
-1. Paste the copied device code **(1)** and then select **Next (2)**.
+1. Review that the completed code for your agent, using the comments to help you understand what each block of code does, and then save your code changes **CTRL+S**.
 
-    ![](../Images/ai11l25.png) 
+## Task 6: Run the app
 
-1. Select your account **<inject key="AzureAdUserEmail"></inject>** to sign in.
+In this task, you'll run the Python application and interact with the agent using prompts. You will verify that the agent processes expense data and generates the expected output.
 
-     ![](../Images/ai11l26.png) 
+1. In the terminal, run `az login` to initiate the Azure sign-in process.
 
-1. Click on **Continue** to sign in to Azure CLI.
+    ![](../Images/lab13-03-11.png)
 
-     ![](../Images/ai11l27.png) 
+    >**Note:** If you have closed the terminal, right-click on the **07-agent-framework \ Python** folder and select **Open in Integrated Terminal**. Then run the command `.\labenv\Scripts\Activate.ps1` to activate the virtual environment before proceeding.
 
-1. Press **Enter** to accept the default the subscription.
+1. In the sign-in window, select your account **<inject key="AzureAdUserEmail"></inject> (1)** and click **Continue (2)** to proceed with authentication.
 
-     ![](../Images/ai11l28.png)
+    ![](../Images/lab9-p2t9p2.png)
 
-1. After you have signed in, enter the following command to run the application:
+1. After successful sign-in, wait for the subscriptions to load and press **Enter** to select the only available subscription.
+
+    ![](../Images/lab13-03-12.png)
+
+1. In the integrated terminal, enter the following command to run the application:
 
     ```
-   python semantic-kernel.py
+   python agent-framework.py
     ```
-    
-    The application runs using the credentials for your authenticated Azure session to connect to your project and create and run the agent.
 
 1. When asked what to do with the expenses data, enter the following prompt:
 
@@ -379,21 +305,16 @@ In this task, you’ll authenticate with `az login` and execute the Python app t
    Submit an expense claim
     ```
 
-     ![](../Images/ai11l29.png)    
+    ![](../Images/lab13-03-13.png)
 
 1. When the application has finished, review the output. The agent should have composed an email for an expenses claim based on the data that was provided.
 
-     ![](../Images/ai11l30.png)  
+    ![](../Images/lab13-03-14.png)
 
-     >**Tip**: If the app fails because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond.
+    > **Tip:** If the app fails because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond.
+
+1. When you're finished, enter `deactivate` in the terminal to exit the Python virtual environment.
 
 ## Summary
 
-In this lab, you created an Azure AI Foundry project and deployed gpt-4.1, capturing the project endpoint and deployment name. You set up Azure Cloud Shell, cloned the repo, configured the app, and used the Semantic Kernel SDK to define an agent with instructions and a simulated email plugin. You authenticated and ran the app against sample expense data, reviewed the agent’s response, and confirmed it generated a structured claim and invoked the plugin.
-
-### You have successfully completed the Hands-on Lab!
-
-
-
-
-
+In this lab, you used the Microsoft Agent Framework SDK to build and configure an AI chat agent in an Microsoft Foundry project. You implemented a custom tool to process expense data and integrated it with the agent to handle user requests. Finally, you ran and tested the application to validate the agent’s ability to generate responses and simulate expense claim submissions.
