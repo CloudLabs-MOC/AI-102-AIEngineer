@@ -189,59 +189,59 @@ In this task, you'll configure and initialize multiple AI agents with specific r
 1. At the top of the file under the comment **Add references**, and add the following code to reference the namespaces in the libraries you'll need to implement your agent:
 
     ```python
-   # Add references
-   import asyncio
-   from typing import cast
-   from dotenv import load_dotenv
-   from agent_framework import Message
-   from agent_framework.azure import AzureAIAgentClient
-   from agent_framework.orchestrations import SequentialBuilder
-   from azure.identity import AzureCliCredential
+    # Add references
+    import asyncio
+    from typing import cast
+    from dotenv import load_dotenv
+    from agent_framework import Message
+    from agent_framework.azure import AzureAIAgentClient
+    from agent_framework.orchestrations import SequentialBuilder
+    from azure.identity import AzureCliCredential
 
-   load_dotenv()
+    load_dotenv()
     ```
 
-    ![](../Images/lab14-03-7.png)
+     ![](../Images/lab14-03-7.png)
 
 1. In the **main** function, take a moment to review the agent instructions. These instructions define the behavior of each agent in the orchestration.
 
 1. Add the following code under the comment **Create the chat client**:
 
     ```python
-   # Create the chat client
-   credential = AzureCliCredential()
-   async with (
-       AzureAIAgentClient(credential=credential) as chat_client,
-   ):
+    # Create the chat client
+    credential = AzureCliCredential()
+    async with (
+        AzureAIAgentClient(credential=credential) as chat_client,
+    ):
     ```
 
-    ![](../Images/lab14-03-8.png)
+     ![](../Images/lab14-03-8.png)
 
-    Note that the **AzureCliCredential** object will allow your code to authenticate to your Azure account. The **AzureAIAgentClient** object will automatically include the Foundry project settings from the .env configuration.
+     Note that the **AzureCliCredential** object will allow your code to authenticate to your Azure account. The **AzureAIAgentClient** object will automatically include the Foundry project settings from the .env configuration.
 
 1. Add the following code under the comment **Create agents**:
 
     (Be sure to maintain the indentation level)
 
     ```python
-   # Create agents
-   summarizer = chat_client.as_agent(
-       instructions=summarizer_instructions,
-       name="summarizer",
-   )
+    # Create agents
+    summarizer = chat_client.as_agent(
+        instructions=summarizer_instructions,
+        name="summarizer",
+    )
 
-   classifier = chat_client.as_agent(
-       instructions=classifier_instructions,
-       name="classifier",
-   )
+    classifier = chat_client.as_agent(
+        instructions=classifier_instructions,
+        name="classifier",
+    )
 
-   action = chat_client.as_agent(
-       instructions=action_instructions,
-       name="action",
-   )
+    action = chat_client.as_agent(
+        instructions=action_instructions,
+        name="action",
+    )
     ```
 
-    ![](../Images/lab14-03-9.png)
+     ![](../Images/lab14-03-9.png)
 
 ## Task 6: Create a sequential orchestration
 
@@ -252,15 +252,15 @@ In this task, you'll build a sequential orchestration by combining multiple agen
     (Be sure to maintain the indentation level)
 
     ```python
-   # Initialize the current feedback
-   feedback="""
-   I use the dashboard every day to monitor metrics, and it works well overall. 
-   But when I'm working late at night, the bright screen is really harsh on my eyes. 
-   If you added a dark mode option, it would make the experience much more comfortable.
-   """
+    # Initialize the current feedback
+    feedback="""
+    I use the dashboard every day to monitor metrics, and it works well overall. 
+    But when I'm working late at night, the bright screen is really harsh on my eyes. 
+    If you added a dark mode option, it would make the experience much more comfortable.
+    """
     ```
 
-    ![](../Images/lab14-03-10.png)
+     ![](../Images/lab14-03-10.png)
 
 1. Under the comment **Build a sequential orchestration**, add the following code to define a sequential orchestration with the agents you defined:
 
@@ -307,6 +307,20 @@ In this task, you'll build a sequential orchestration by combining multiple agen
 
 In this task, you'll execute the Python application and provide input to the multi-agent system. You will validate how the agents collaborate and generate structured responses.
 
+1. In the terminal, run `az login` to initiate the Azure sign-in process.
+
+    ![](../Images/lab14-03-14.png)
+
+    >**Note:** If you have closed the terminal, right-click on the **05-agent-orchestration\Python** folder and select **Open in Integrated Terminal**. Then run the command `.\labenv\Scripts\Activate.ps1` to activate the virtual environment before proceeding.
+
+1. In the sign-in window, select your account **<inject key="AzureAdUserEmail"></inject> (1)** and click **Continue (2)** to proceed with authentication.
+
+    ![](../Images/lab9-p2t9p2.png)
+
+1. After successful sign-in, wait for the subscriptions to load and press **Enter** to select the only available subscription.
+
+    ![](../Images/lab13-03-12.png)
+
 1. In the integrated terminal, enter the following command to run the application:
 
     ```
@@ -334,7 +348,7 @@ In this task, you'll execute the Python application and provide input to the mul
     Log as enhancement request for product backlog.
     ```
 
-    ![](../Images/lab14-03-14.png)
+    ![](../Images/lab14-03-15.png)
 
 1. Optionally, you can try running the code using different feedback inputs, such as:
 
@@ -342,9 +356,9 @@ In this task, you'll execute the Python application and provide input to the mul
     I use the dashboard every day to monitor metrics, and it works well overall. But when I'm working late at night, the bright screen is really harsh on my eyes. If you added a dark mode option, it would make the experience much more comfortable.
     ```
 
-    ![](../Images/lab14-03-15.png)
-
     ![](../Images/lab14-03-16.png)
+
+    ![](../Images/lab14-03-17.png)
 
     ```output
     I reached out to your customer support yesterday because I couldn't access my account. The representative responded almost immediately, was polite and professional, and fixed the issue within minutes. Honestly, it was one of the best support experiences I've ever had.
