@@ -174,7 +174,7 @@ In this task, you'll clone the provided GitHub repository, set up a Python virtu
     pip install -r requirements.txt
     ```
 
-1. From the left navigation menu, under **03-mcp-integration/Python (2)** folder, open the **.env (3)** file. Paste the copied project endpoint into the **PROJECT_ENDPOINT (4)** field, and verify that the **MODEL_DEPLOYMENT_NAME (5)** is set to `gpt-4.1` (or the name of your deployed model). Once done, press **Ctrl+S** to save the changes.
+1. From the left navigation menu, under **03-mcp-integration/Python** folder, open the **.env (1)** file. Paste the copied project endpoint into the **PROJECT_ENDPOINT (2)** field, and verify that the **MODEL_DEPLOYMENT_NAME (3)** is set to `gpt-4.1` (or the name of your deployed model). Once done, press **Ctrl+S** to save the changes.
 
     ![](../Images/lab12-03-6.png)
 
@@ -184,11 +184,11 @@ In this task, you'll clone the provided GitHub repository, set up a Python virtu
 
 In this task, you'll connect to a remote MCP server, prepare the AI agent, and run a user prompt.
 
+> **Tip:** As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
+
 1. Open the **agent.py** file in the code editor.
 
-   > **Tip:** As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
-
-   ![](../Images/lab12-03-7.png)
+     ![](../Images/lab12-03-7.png)
 
 1. Find the comment **Add references** and add the following code to import the classes:
 
@@ -275,42 +275,42 @@ In this task, you'll connect to a remote MCP server, prepare the AI agent, and r
 1. Find the comment **Process any MCP approval requests that were generated** and add the following code:
 
     ```python
-   # Process any MCP approval requests that were generated
-   input_list: ResponseInputParam = []
-   for item in response.output:
-       if item.type == "mcp_approval_request":
-           if item.server_label == "api-specs" and item.id:
-               # Automatically approve the MCP request to allow the agent to proceed
-               input_list.append(
-                   McpApprovalResponse(
-                       type="mcp_approval_response",
-                       approve=True,
-                       approval_request_id=item.id,
-                   )
-               )
+    # Process any MCP approval requests that were generated
+    input_list: ResponseInputParam = []
+    for item in response.output:
+        if item.type == "mcp_approval_request":
+            if item.server_label == "api-specs" and item.id:
+                # Automatically approve the MCP request to allow the agent to proceed
+                input_list.append(
+                    McpApprovalResponse(
+                        type="mcp_approval_response",
+                        approve=True,
+                        approval_request_id=item.id,
+                    )
+                )
 
-   print("Final input:")
-   print(input_list)
+    print("Final input:")
+    print(input_list)
     ```
 
-    ![](../Images/lab12-03-14.png)
+     ![](../Images/lab12-03-14.png)
 
-    This code listens for any MCP approval requests in the agent's response and automatically approves them.
+     - This code listens for any MCP approval requests in the agent's response and automatically approves them.
 
 1. Find the comment **Send the approval response back and retrieve a response** and add the following code:
 
     ```python
-   # Send the approval response back and retrieve a response
-   response = openai_client.responses.create(
-       input=input_list,
-       previous_response_id=response.id,
-       extra_body={"agent": {"name": agent.name, "type": "agent_reference"}},
-   )
+    # Send the approval response back and retrieve a response
+    response = openai_client.responses.create(
+        input=input_list,
+        previous_response_id=response.id,
+        extra_body={"agent": {"name": agent.name, "type": "agent_reference"}},
+    )
 
-   print(f"\nAgent response: {response.output_text}")
+    print(f"\nAgent response: {response.output_text}")
     ```
 
-    ![](../Images/lab12-03-15.png)
+     ![](../Images/lab12-03-15.png)
 
 1. Find the comment **Clean up resources by deleting the agent version** and add the following code:
 
@@ -558,9 +558,9 @@ In this task, you'll connect the MCP server tools to your agent so that it can c
    )
     ```
 
-    ![](../Images/lab12-03-34.png)
+     ![](../Images/lab12-03-34.png)
 
-   With these instructions and tools, the agent is able to invoke the tools to retrieve inventory and sales data, and then use that information to provide helpful responses to the user.
+     - With these instructions and tools, the agent is able to invoke the tools to retrieve inventory and sales data, and then use that information to provide helpful responses to the user.
 
 1. Locate the comment **Process function calls** and add the following code:
 
@@ -629,16 +629,16 @@ In this task, you'll connect the MCP server tools to your agent so that it can c
 
     ![](../Images/lab12-03-38.png)
 
-    ```
+    ```output
     MessageRole.AGENT:
     Agent response: Here are the current inventory levels for all items:
 
-   - Moisturizer: 6
-   - Shampoo: 8
-   - Body Spray: 28
-   [continued ...]
+    - Moisturizer: 6
+    - Shampoo: 8
+    - Body Spray: 28
+    [continued ...]
 
-   Would you like recommendations for restocking or clearance? If so, I can check the weekly sales to advise accordingly.
+    Would you like recommendations for restocking or clearance? If so, I can check the weekly sales to advise accordingly.
     ```
 
     Notice that the agent was able to call the MCP tools to retrieve inventory and sales data, and then use that information to provide a helpful response to the user.
