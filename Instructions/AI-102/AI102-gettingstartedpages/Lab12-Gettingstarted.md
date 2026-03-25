@@ -12,51 +12,48 @@ In this hands-on lab, you will build a multi-agent AI solution using the Microso
 
 ## Objectives
 
-1. **Deploy and configure a model in Azure AI Foundry**: Set up a project using the *gpt-4.1* model and capture its endpoint and key for client integration.
-2. **Create AI agents with the Semantic Kernel SDK**: Implement a *Summarizer Agent*, *Classifier Agent*, and *Action Agent* to process customer feedback.
-3. **Build a sequential orchestration**: Configure the agents to work in order so that summaries, classifications, and actions flow together logically.
-4. **Run and test the multi-agent workflow**: Execute the solution in Cloud Shell with different feedback inputs and observe how the agents collaborate.
-5. **Validate outputs**: Confirm that the agents accurately summarize, classify, and recommend actions based on customer feedback.
+1. **Set up the Microsoft Foundry development environment:** Install the Microsoft Foundry extension in Visual Studio Code and connect to Azure resources.
+
+2. **Deploy and configure a model:** Create a project and deploy the *gpt-4.1* model to enable AI-powered agent interactions.
+
+3. **Create multiple specialized AI agents:** Build agents with distinct roles such as summarization, classification, and action handling using the Microsoft Agent Framework SDK.
+
+4. **Implement sequential agent orchestration:** Design a workflow where multiple agents process input in sequence and collaborate to generate structured outputs.
+
+5. **Run and validate the multi-agent solution:** Execute the Python application, test the orchestration workflow, and analyze how agents collaborate to process user input.
 
 ## Pre-requisites
 
 * Basic understanding of AI agents and their roles in collaborative problem-solving.
-* Familiarity with the **Semantic Kernel SDK** concepts, including agents, orchestrations, and connectors.
-* Experience with the **Azure portal** and navigating **Azure AI Foundry**.
-* An active Azure subscription with access to **Azure AI Foundry**.
-* Permissions to create and manage resources within the assigned resource group (for example, Azure AI User role).
-* Basic knowledge of Python and working in **Cloud Shell** or similar terminal environments.
+* Familiarity with AI agent concepts such as prompts, roles, and multi-agent workflows.
+* Understanding of Python programming.
 
 ## Architecture
 
-The lab architecture demonstrates how three AI agents collaborate using the **Semantic Kernel SDK** inside an Azure AI Foundry project:
+The lab architecture demonstrates how the Microsoft Agent Framework SDK enables multi-agent collaboration through sequential orchestration:
 
-1. **Azure AI Foundry Project**: The central workspace that hosts the deployed *gpt-4.1* model and provides endpoints and API keys for the Semantic Kernel–based agents.
-2. **Summarizer Agent**: Condenses customer feedback into a concise summary, extracting the key points while keeping the tone neutral.
-3. **Classifier Agent**: Categorizes the summarized feedback as **Positive**, **Negative**, or **Feature Request**, providing context for decision-making.
-4. **Action Agent**: Suggests the next step or recommended action based on the summary and classification, such as logging feedback or escalating an issue.
-5. **Sequential Orchestration**: Coordinates the workflow, ensuring that each agent runs in order and passes its output to the next agent.
-6. **Final Output**: Displays the summarized feedback, classification, and recommended action, showing how the agents collaboratively analyze and act on customer input.
+1. **Microsoft Foundry Resource:** The central workspace in Microsoft Foundry that hosts the project, deployed model, and agent configurations required for building the multi-agent solution.
 
+2. **Model Deployment (gpt-4.1):** A generative AI model deployed within the project that processes input prompts and enables all agents to generate intelligent and context-aware responses.
+
+3. **Multi-Agent Configuration:** Multiple specialized AI agents are created using the Microsoft Agent Framework SDK, where each agent is assigned a specific role such as summarization, classification, or action handling.
+
+4. **Sequential Orchestration Workflow:** The orchestration layer that connects all agents in a defined sequence, ensuring inputs are processed step-by-step and results are passed between agents to produce a final structured output.
+
+5. **Application Execution and Interaction:** A Python-based client application runs the workflow, sends user input to the agents, and displays the combined output generated through agent collaboration.
 ## Architecture Diagram
 
-![](../Images/AI-102-l11-arch.png)
+![](../Images/lab14new-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project**: Provides the environment to deploy the *gpt-4.1* model, configure Semantic Kernel agents, and manage API endpoints for the multi-agent workflow.
+1. **Microsoft Foundry Project:** The workspace created in Microsoft Foundry where you manage resources, configure agents, and connect to the deployed model for processing requests.
 
-2. **Semantic Kernel SDK**: A framework used to build, orchestrate, and manage AI agents. It provides APIs for creating agents, defining sequential orchestrations, handling agent outputs, and connecting to Azure OpenAI services.
+2. **Model Deployment (gpt-4.1):** The AI model that processes input prompts and generates responses used by all agents in the multi-agent workflow.
 
-3. **Summarizer Agent**: Processes raw customer feedback and condenses it into a short, clear summary that captures the key points without bias.
+3. **Specialized AI Agents:** Multiple agents created using the Microsoft Agent Framework SDK, where each agent performs a specific task such as summarizing input, classifying feedback, or determining an action.
 
-4. **Classifier Agent**: Categorizes the summarized feedback into one of three classes — **Positive**, **Negative**, or **Feature Request** — to provide context for actionable decisions.
-
-5. **Action Agent**: Suggests the next step based on the summary and classification, such as escalating an issue, logging positive feedback, or adding a feature request to the backlog.
-
-6. **Sequential Orchestration**: Manages the execution order of agents, ensuring that each agent runs in sequence and passes its output to the next agent for processing.
-
-7. **Task Input and Final Output**: The input is customer feedback text, and the output shows the summarized feedback, classification, and recommended action, demonstrating the collaboration and workflow of the multi-agent system.
+4. **Sequential Orchestration and Client Application:** A workflow that connects agents in sequence and a Python application (`agents.py`) that runs the orchestration, sends input, and displays the final structured output.
 
 # Getting Started with lab
 

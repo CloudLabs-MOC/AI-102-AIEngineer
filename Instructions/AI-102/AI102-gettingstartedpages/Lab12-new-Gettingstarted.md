@@ -15,58 +15,51 @@ In this hands-on lab, you will set up an AI agent using the Microsoft Foundry ex
 
 By the end of this lab, you will be able to:
 
-1. **Create a Foundry project and deploy a model:** Set up a Microsoft Foundry project and deploy the gpt-4.1 model for agent use.
+1. **Install and configure the Microsoft Foundry environment:** Set up the Microsoft Foundry extension in Visual Studio Code, sign in to Azure, and create a project for building AI agents.
 
-2. **Set up a Python client application:** Configure the client app in Azure Cloud Shell with your project endpoint and model deployment details.
+2. **Deploy a foundation model:** Deploy the *gpt-4.1* model (or equivalent) in your Foundry project and configure it for agent-based interactions.
 
-3. **Build AI agents for support ticket triage:** Create specialized agents to evaluate ticket priority, assign tickets to the appropriate team, and estimate effort required.
+3. **Create and configure an AI agent with MCP tools:** Build an AI agent using the Foundry SDK, define instructions, and integrate it with Model Context Protocol (MCP) tools.
 
-4. **Implement agent orchestration:** Use a primary triage agent to coordinate communication between the individual support agents for collaborative processing.
+4. **Connect to a remote MCP server:** Enable the agent to retrieve real-time information by integrating with a remote MCP server hosted on Microsoft Learn.
 
-5. **Test and validate multi-agent collaboration:** Run the Python application, submit support tickets, and observe how the agents work together to generate structured ticket assessments.
+5. **Develop and integrate custom MCP server tools:** Create a local MCP server with custom tools for inventory and sales operations, and connect it to the agent.
+
+6. **Run and validate the AI agent application:** Execute the client application, test agent interactions, and verify dynamic tool invocation and context-aware responses.
 
 ## Pre-requisites
 
 * Basic knowledge of the Azure portal.
-* Familiarity with AI agent concepts, including agent roles and multi-agent collaboration.
-* An active Azure subscription with access to **Microsoft Foundry portal**.
-* Basic knowledge of **Python** programming.
+* Understanding of AI agent concepts such as prompts, models, and agent workflows.
+* Basic knowledge of Python programming.
 
 ## Architecture
 
-The lab architecture demonstrates how multiple AI agents collaborate to triage support tickets in a Microsoft Foundry project:
+The lab architecture demonstrates how an AI agent built using Microsoft Foundry integrates with Model Context Protocol (MCP) servers to access external data sources and custom tools:
 
-1. **Microsoft Foundry Project:** The workspace where you deploy the gpt-4.1 model and manage project endpoints. All agents and the client application connect to this project.
+1. **Microsoft Foundry Project and Deployed Model:** A project created using the Microsoft Foundry extension in Visual Studio Code, where the *gpt-4.1* model is deployed to process prompts and generate intelligent responses.
 
-2. **Priority Agent:** Evaluates the urgency of a support ticket and assigns a priority level (High, Medium, Low).
+2. **AI Agent with MCP Integration:** An AI agent is configured with instructions and connected to MCP tools, enabling it to retrieve external information and perform tasks dynamically.
 
-3. **Team Agent:** Determines the appropriate team to handle the ticket (Frontend, Backend, Infrastructure, Marketing).
+3. **Remote and Custom MCP Servers** The agent interacts with both a remote MCP server (for documentation access) and a custom MCP server (for inventory and sales tools).
 
-4. **Effort Agent:** Estimates the effort required to resolve the ticket (Small, Medium, Large).
-
-5. **Triage Agent:** Orchestrates the workflow by connecting to the other three agents using connected tools. It routes prompts and aggregates their responses into a final ticket assessment.
-
-6. **Client Application:** A Python app (`agent_triage.py`) that interacts with the triage agent, sends support ticket prompts, and displays the consolidated results.
+4. **Client Application and Execution Flow:** A Python-based client manages communication between the agent and MCP servers, processes tool calls, and generates context-aware responses during execution.
 
 ## Architecture Diagram
 
-![](../Images/lab11new-arch.png)
+![](../Images/lab12new-arch.png)
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project:** The workspace where you create and manage your AI project. It hosts the deployed **gpt-4.1** model and provides the project endpoint that the client app and agents use for communication.
+1. **Microsoft Foundry Project:** The workspace created in Microsoft Foundry where you manage resources, deploy models, and obtain the project endpoint used by agents and client applications.
 
-2. **Model Deployment (gpt-4.1):** The language model deployed in your Foundry project. It powers the Priority, Team, and Effort Agents, enabling them to analyze support tickets and generate responses.
+2. **Model Deployment (gpt-4.1):** The language model deployed within the project that processes prompts, generates responses, and enables intelligent agent interactions.
 
-3. **Priority Agent:** An AI agent that evaluates the urgency of a support ticket and outputs a priority level—High, Medium, or Low—along with a brief explanation.
+3. **AI Agent with MCP Tools:** An AI agent configured with instructions and connected to MCP tools, allowing it to process prompts and dynamically interact with external data sources.
 
-4. **Team Agent:** An AI agent that decides which team should handle the ticket, choosing from Frontend, Backend, Infrastructure, or Marketing, based on the ticket content.
+4. **Remote and Custom MCP Servers:** MCP servers that provide capabilities to the agent—remote servers for accessing real-time documentation and custom servers for executing domain-specific tools like inventory and sales operations.
 
-5. **Effort Agent:** An AI agent that estimates how much work a ticket will require—Small, Medium, or Large—and provides a brief justification.
-
-6. **Triage Agent:** The orchestrator agent that coordinates the other three agents using connected tools. It routes user prompts, collects responses, and produces a final structured ticket assessment.
-
-7. **Client Application (`agent_triage.py`):** A Python app that launches the agents, sends support ticket prompts to the triage agent, and displays the consolidated responses from all agents to the user.
+5. **Client Application (agent.py / client.py):** A Python-based application that connects the agent with MCP servers, handles tool invocation, and manages the end-to-end interaction flow to generate context-aware responses.
 
 # Getting Started with lab
 

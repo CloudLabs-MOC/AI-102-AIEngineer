@@ -14,48 +14,47 @@ In this hands-on lab, you will develop an AI chat agent using the Microsoft Agen
 
 By the end of this lab, you will be able to:
 
-1. **Deploy an Azure AI model:** Create a project in Azure AI Foundry and deploy the gpt-4.1 model with customized settings.
+1. **Set up the Microsoft Foundry development environment:** Install and configure the Microsoft Foundry extension in Visual Studio Code and sign in to Azure.
 
-2. **Build an agent application:** Set up a Python client app using the Semantic Kernel SDK to process expense claims.
+2. **Deploy a foundation model:** Deploy the *gpt-4.1* model in your Foundry project and configure it for use with an AI agent.
 
-3. **Configure and extend the app:** Connect the application to your project endpoint and model deployment using environment variables, and implement a Semantic Kernel plugin to simulate sending expense-claim emails.
+3. **Build an AI agent using the Microsoft Agent Framework SDK:** Create and configure an AI chat agent with custom instructions to process expense data.
 
-4. **Run and validate the agent:** Authenticate with Azure, execute the agent against expense data, and confirm the structured response and simulated email output.
+4. **Implement and integrate a custom tool:** Develop a tool function to simulate expense claim submission and connect it to the agent for task execution.
+
+5. **Run and validate the agent application:** Execute the Python application, interact with the agent, and verify its ability to generate responses and process expense claims.
 
 ## Pre-requisites
 
 * Basic knowledge of the Azure portal.
-* Familiarity with the Semantic Kernel SDK concepts such as plugins and orchestration.
-* An active Azure subscription with access to **Azure AI Foundry**.
+* Understanding of AI agent concepts such as prompts, models, and tool-based interactions.
 * Basic knowledge of Python programming.
 
 ## Architecture
 
 The lab architecture demonstrates how a Semantic Kernel based agent is deployed and executed inside an Azure AI Foundry project:
 
-1. **Azure AI Foundry Project**: Provides the environment to deploy the gpt-4.1 model, host the project endpoint, and manage agent experiments.
+1. **Microsoft Foundry Project and Model Deployment:** A project is created using Microsoft Foundry in Visual Studio Code, where the *gpt-4.1* model is deployed to power the AI agent’s responses.
 
-2. **Model Deployment (gpt-4.1):** The large language model endpoint used by the agent to interpret expense data, generate structured claims, and provide responses.
+2. **AI Agent Configuration using Agent Framework SDK:** An AI chat agent is configured in code using the Microsoft Agent Framework SDK, where system instructions define how the agent processes expense data and interacts with users.
 
-3. **Semantic Kernel Agent with Plugin:** An agent created in Python using the Semantic Kernel SDK, extended with a custom EmailPlugin that simulates sending expense-claim emails.
+3. **Custom Tool Integration:** A custom tool function is implemented and attached to the agent, enabling it to simulate expense claim submission by processing input data and performing actions.
 
-4. **Client Application (Python in Cloud Shell):** A script that connects to the Foundry project, loads expense data, and runs the agent, producing structured output and simulated email results.
+4. **Agent Execution and Interaction Flow:** A Python application runs the agent, accepts user prompts, invokes the custom tool when required, and displays the generated responses in the terminal.
 
 ## Architecture Diagram
 
-![](../Images/AI-102-l11-arch.png)
+![](../Images/lab13new-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project**: Central workspace that hosts the gpt-4.1 deployment, exposes the Project Endpoint, and tracks deployments and experiments your client app connects.
+1. **Microsoft Foundry Project:** The workspace created in Microsoft Foundry where you manage your AI resources, deploy the *gpt-4.1* model, and obtain the project endpoint used by the agent application.
 
-2. **Model Deployment (gpt-4.1)**:The language model endpoint used by the agent to analyze expense data and generate structured claims.
+2. **Model Deployment (gpt-4.1):** The language model deployed within the project that processes prompts, understands expense data, and generates intelligent responses for the agent.
 
-3. **Semantic Kernel Agent with Plugin:** The Python agent defined with Semantic Kernel SDK, extended with a custom EmailPlugin to simulate sending expense-claim emails.
+3. **AI Agent with Custom Tool:** An AI chat agent built using the Microsoft Agent Framework SDK, configured with instructions and integrated with a custom tool to process expense claims and simulate email submission.
 
-4. **Azure Identity & Client App:** A Python script running in Cloud Shell, authenticated with DefaultAzureCredential, that loads expense data, calls the agent, and displays results.
-
-5. **Expense Data Input:** Sample file containing expenses, used by the agent to build and output the structured claim for validation.
+4. **Client Application (`agent-framework.py`):** A Python-based application that runs the agent, sends user prompts along with expense data, invokes the custom tool when required, and displays the generated responses.
 
 # Getting Started with lab
 

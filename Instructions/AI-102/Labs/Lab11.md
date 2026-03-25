@@ -318,3 +318,5 @@ In this task, you'll run the Python application and interact with the agent usin
 ## Summary
 
 In this lab, you used the Microsoft Agent Framework SDK to build and configure an AI chat agent in an Microsoft Foundry project. You implemented a custom tool to process expense data and integrated it with the agent to handle user requests. Finally, you ran and tested the application to validate the agent’s ability to generate responses and simulate expense claim submissions.
+
+### You have successfully completed the Hands-on Lab!

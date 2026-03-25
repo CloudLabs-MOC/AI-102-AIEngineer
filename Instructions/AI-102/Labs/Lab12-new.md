@@ -326,6 +326,8 @@ In this task, you'll connect to a remote MCP server, prepare the AI agent, and r
 
 ### Task 5.1: Run the application
 
+In this task, you'll authenticate to Azure and run the Python application to test the agent connected to the remote MCP server. You will verify that the agent can invoke MCP tools and retrieve relevant information.
+
 1. In the terminal, run `Connect-AzAccount` to initiate the Azure sign-in process.
 
     ![](../Images/lab12-03-17.png)
@@ -380,6 +382,8 @@ In this task, you'll connect to a remote MCP server, prepare the AI agent, and r
 In addition to connecting to remote MCP servers, you can also create your own custom MCP server tools and connect them to your agent. A Model Context Protocol (MCP) Server is a component that hosts callable tools. These tools are Python functions that can be exposed to AI agents. When tools are annotated with `@mcp.tool()`, they become discoverable to the client, allowing an AI agent to call them autonomously during a conversation or task. In this task, you'll add tools that will allow an agent to perform inventory inquiries and recommendations.
 
 ### Task 6.1: Create an MCP server with custom tools
+
+In this task, you'll create a custom MCP server and define tool functions using decorators. These tools will simulate backend operations such as inventory checks and sales data retrieval.
 
 1. Open the **server.py** file in the code editor.
 
@@ -440,7 +444,7 @@ In addition to connecting to remote MCP servers, you can also create your own cu
 
 ### Task 6.2: Implement an MCP Client
 
-An MCP client is the component that connects to the MCP server to discover and call tools. You can think of it as the bridge between the agent and the server-hosted functions, enabling dynamic tool use in response to user prompts.
+In this task, you'll implement an MCP client to connect to the server and initialize a session. You will verify the connection by listing available tools exposed by the MCP server.
 
 1. Navigate to the **client.py** file.
 
@@ -497,7 +501,7 @@ An MCP client is the component that connects to the MCP server to discover and c
 
 In this task, you'll connect the MCP server tools to your agent so that it can call them in response to user prompts.
 
-> **Tip**: As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
+> **Tip:** As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
 
 1. In the **chat_loop** method, find the comment **Build a function for each tool** and add the following code:
 
@@ -609,6 +613,8 @@ In this task, you'll connect the MCP server tools to your agent so that it can c
 
 ## Task 7: Run the application
 
+In this task, you'll execute the client application and interact with the agent using different prompts. You will validate that the agent uses MCP tools to retrieve data and generate meaningful responses.
+
 1. In the integrated terminal, enter the following command to run the application:
 
     ```
@@ -672,3 +678,5 @@ In this task, you'll connect the MCP server tools to your agent so that it can c
 ## Summary
 
 In this lab, you created AI agents that can use Model Context Protocol (MCP) server tools to access external data sources and APIs. You connected your agents to a remote MCP server hosted by Microsoft Learn Docs and a custom MCP server that you implemented. By integrating these tools, the agent was able to retrieve up-to-date information and provide informed responses to user prompts. This demonstrates how MCP tools can significantly enhance the capabilities of AI agents, enabling them to perform a wide range of tasks by leveraging external services and data. Great work!
+
+### You have successfully completed the Hands-on Lab!
