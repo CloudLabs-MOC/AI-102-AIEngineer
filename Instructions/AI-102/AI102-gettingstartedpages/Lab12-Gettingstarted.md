@@ -1,14 +1,14 @@
 # AI-102: Azure AI Engineer Associate Workshop
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 11: Develop a multi-agent solution with Semantic Kernel
+# Lab 14: Develop a multi-agent solution with Microsoft Agent Framework
 
-### Overall Estimated Duration: 60 Minutes
+### Overall Estimated Duration: 30 Minutes
 
 ## Overview
 
-In this hands-on lab, you’ll gain practical experience in building a multi-agent workflow using **Azure AI Foundry** and the **Semantic Kernel SDK**. You’ll start by deploying the **gpt-4.1** model and configuring a Python client application with your project’s endpoint and key. Next, you’ll create three agents: a **Summarizer Agent** to condense customer feedback, a **Classifier Agent** to evaluate sentiment, and an **Action Agent** to recommend next steps. You’ll then define a sequential orchestration so each agent’s output flows into the next, and run the workflow in **Azure Cloud Shell**. By the end of this lab, you’ll be confident in designing and testing a multi-agent system where specialized agents collaborate to analyze, classify, and generate actionable insights from customer feedback.
+In this hands-on lab, you will build a multi-agent AI solution using the Microsoft Agent Framework SDK in Visual Studio Code. You will create a Foundry project, deploy a model, and set up a Python application to define and orchestrate multiple specialized agents. Finally, you will run the application and observe how the agents collaborate in a sequential workflow to process input and generate structured outputs.
 
 ## Objectives
 
@@ -60,11 +60,11 @@ The lab architecture demonstrates how three AI agents collaborate using the **Se
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Microsoft Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  
-Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
+Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
 ![Access Your VM and Lab Guide](../Images/lab12labvm.png)
 
@@ -100,7 +100,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
-![](../Images/zoominai102.png)
+![](../Images/lab1-z.png)
 
 ## Let's Get Started with Azure Portal
  
@@ -116,16 +116,15 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/lab1-p.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 
     ![](../Images/AIl16-2.png)
 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-    ![](../Images/AIl16-3.png)
-
+    ![](../Images/lab1-w.png)
 
 ## Support Contact
  
