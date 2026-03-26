@@ -15,17 +15,15 @@ In this hands-on lab, you will build a customer support triage workflow using Mi
 
 By the end of this lab, you will be able to:
 
-1. **Install and configure the Microsoft Foundry environment:** Set up the Microsoft Foundry extension in Visual Studio Code, sign in to Azure, and create a project for building AI agents.
+1. **Create and configure a workflow in Microsoft Foundry:** Set up a project and design a workflow to process customer support tickets.
 
-2. **Deploy a foundation model:** Deploy the *gpt-4.1* model (or equivalent) in your Foundry project and configure it for agent-based interactions.
+2. **Integrate AI-based classification:** Use an AI model to classify tickets and generate responses.
 
-3. **Create and configure an AI agent with MCP tools:** Build an AI agent using the Foundry SDK, define instructions, and integrate it with Model Context Protocol (MCP) tools.
+3. **Implement conditional logic:** Apply decision-making based on confidence scores and ticket categories.
 
-4. **Connect to a remote MCP server:** Enable the agent to retrieve real-time information by integrating with a remote MCP server hosted on Microsoft Learn.
+4. **Automate ticket handling:** Route billing issues for escalation and generate responses for other cases.
 
-5. **Develop and integrate custom MCP server tools:** Create a local MCP server with custom tools for inventory and sales operations, and connect it to the agent.
-
-6. **Run and validate the AI agent application:** Execute the client application, test agent interactions, and verify dynamic tool invocation and context-aware responses.
+5. **Execute and validate the workflow:** Connect to the workflow using a Python application and verify end-to-end processing.
 
 ## Pre-requisites
   
@@ -35,15 +33,19 @@ By the end of this lab, you will be able to:
 
 ## Architecture
 
-The lab architecture demonstrates how an AI agent built using Microsoft Foundry integrates with Model Context Protocol (MCP) servers to access external data sources and custom tools:
+The lab architecture demonstrateshow a Microsoft Foundry project enables AI-powered customer support automation through SDK-based agent orchestration, intelligent ticket classification, confidence-based routing, and automated response generation:
 
-1. **Microsoft Foundry Project and Deployed Model:** A project created using the Microsoft Foundry extension in Visual Studio Code, where the *gpt-4.1* model is deployed to process prompts and generate intelligent responses.
+1. **Microsoft Foundry Project:** A workspace created in the Microsoft Foundry portal where you deploy foundation models and manage AI agent configurations for customer support automation.
 
-2. **AI Agent with MCP Integration:** An AI agent is configured with instructions and connected to MCP tools, enabling it to retrieve external information and perform tasks dynamically.
+2. **Deployment Model (gpt- 4.1):** A model deployed within the project that processes support ticket prompts, performs classification, evaluates confidence levels, and generates conversational responses.
 
-3. **Remote and Custom MCP Servers** The agent interacts with both a remote MCP server (for documentation access) and a custom MCP server (for inventory and sales tools).
+3. **Triage Agent (SDK-Defined):** An agent defined programmatically using the Azure AI SDK, configured with instructions to analyze incoming tickets, classify issues, and determine routing decisions.
 
-4. **Client Application and Execution Flow:** A Python-based client manages communication between the agent and MCP servers, processes tool calls, and generates context-aware responses during execution.
+4. **Resolution Agent:** An AI agent responsible for generating automated responses for high-confidence tickets using the deployed GPT-4.1 model.
+
+5. **Confidence-Based Decision Logic:** A routing mechanism that evaluates the model’s confidence score and determines whether to automate the response or escalate the ticket.
+
+6. **Human Support Escalation:** A fallback process that routes low-confidence tickets to human agents to ensure accuracy and quality control.
 
 ## Architecture Diagram
 
@@ -51,15 +53,19 @@ The lab architecture demonstrates how an AI agent built using Microsoft Foundry 
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project:** The workspace created in Microsoft Foundry where you manage resources, deploy models, and obtain the project endpoint used by agents and client applications.
+1. **Microsoft Foundry Project:** The central cloud workspace where foundation models are deployed, AI agents are configured, and workflows for customer support automation are managed.
 
-2. **Model Deployment (gpt-4.1):** The language model deployed within the project that processes prompts, generates responses, and enables intelligent agent interactions.
+2. **Visual Studio Code Integration:** The IDE used to connect to the Foundry project, create and deploy agents, and configure workflows using the Microsoft Foundry SDK.
 
-3. **AI Agent with MCP Tools:** An AI agent configured with instructions and connected to MCP tools, allowing it to process prompts and dynamically interact with external data sources.
+3. **Deployment Model (gpt-4.1):** The core language model that interprets ticket content, performs reasoning, assigns classifications, and generates contextual responses.
 
-4. **Remote and Custom MCP Servers:** MCP servers that provide capabilities to the agent—remote servers for accessing real-time documentation and custom servers for executing domain-specific tools like inventory and sales operations.
+4. **Triage Agent (SDK-Defined):** A programmatically created agent that reviews each incoming ticket, categorizes the issue type, and evaluates confidence scores to determine routing.
 
-5. **Client Application (agent.py / client.py):** A Python-based application that connects the agent with MCP servers, handles tool invocation, and manages the end-to-end interaction flow to generate context-aware responses.
+5. **Resolution Agent:** An AI agent that generates automated responses for tickets meeting the confidence threshold.
+
+6. **Confidence-Based Decision Logic:** A control mechanism that determines whether a ticket should be automatically resolved or escalated for human review.
+
+7. **Human Support Escalation:** A safeguard process that routes uncertain or complex tickets to human representatives for manual handling.
 
 # Getting Started with lab
 
