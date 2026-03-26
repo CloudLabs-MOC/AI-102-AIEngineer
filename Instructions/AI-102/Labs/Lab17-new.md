@@ -526,8 +526,6 @@ In this task, you will connect the client application to your agent, implement m
             },
             input=""
         )
-
-    
     ```
 
     ![](../Images/lab9-s60.png)
