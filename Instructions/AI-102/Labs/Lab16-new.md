@@ -203,11 +203,11 @@ In this task, you will invoke the Triage Agent to classify each support ticket i
 
 1. In the **Create an agent** pane, enter the **following (1)** as the agent name, then select **Create (2)**.
 
-   ```
-   Triage-Agent
-   ```
+    ```
+    Triage-Agent
+    ```
 
-    ![](../Images/lab1-02-20.png)
+     ![](../Images/lab1-02-20.png)
 
 1. In the **Details (1)** tab, select the **Parameters (2)** icon next to the model name.
 
@@ -282,19 +282,19 @@ In this task, you will invoke the Triage Agent to classify each support ticket i
 
 1. Under **Save agent output message as**, create a new variable by entering the **following (1)**, then select **Create new variable (2)** from the drop-down.
 
-   ```
-   TriageOutputText
-   ```
+    ```
+    TriageOutputText
+    ```
 
-    ![](../Images/lab8--s20.png)
+     ![](../Images/lab8--s20.png)
 
 1. Under **Save the output json_object as**, create a new variable by entering the **following (1)**, then select **Create new variable (2)** from the drop-down.
 
-   ```
-   TriageOutputJson
-   ```
+    ```
+    TriageOutputJson
+    ```
 
-    ![](../Images/lab8--s21.png)
+     ![](../Images/lab8--s21.png)
 
 1. Select **Done** to save the node.
 
@@ -310,7 +310,7 @@ In this task, you will add conditional logic to evaluate the confidence score an
 
 1. In the **If/Else** node editor, select **+ Add a path (1**), then click the **Edit (2)** (pencil) icon.
 
-   ![](../Images/lab16-03-6.png)
+    ![](../Images/lab16-03-6.png)
 
 1. Clear the current value in the condition field, then enter the **following expression in Condition (1)** field to check if the confidence score is above 0.6. After that, select **Done (2)** to save the node:
 
@@ -348,7 +348,7 @@ In this task, you will add routing logic to identify billing issues and escalate
 
     ![](../Images/lab8-n5.png)
 
-1.  In the **If/Else** node editor, select **+ Add a path (1**), then click the **Edit (2)** (pencil) icon.
+1. In the **If/Else** node editor, select **+ Add a path (1**), then click the **Edit (2)** (pencil) icon.
 
     ![](../Images/lab16-03-6.png)
 
@@ -432,9 +432,9 @@ In this task, you will invoke the Resolution Agent to automatically generate a p
 
 1. Under **Save agent output message as**, create a new variable by entering **following (1)** and select **Create new variable (2)** from the drop-down.
 
-   ```
-   ResolutionOutputText
-   ```
+    ```
+    ResolutionOutputText
+    ```
 
 1. Select **Done (3)** to save the node.
 
@@ -482,13 +482,13 @@ In this task, you'll install and verify the Microsoft Foundry extension in Visua
 
 1. In Visual Studio Code, select **Extensions (1)** from the left pane, search for **Microsoft Foundry (2)**, choose the **Microsoft Foundry (3)** extension by Microsoft, and then click **Install (4)**.
 
-   ![](../Images/lab7-s1.png)
+    ![](../Images/lab7-s1.png)
 
 1. After installation is complete, verify the extension appears in the primary navigation bar on the left side of Visual Studio Code.
 
-   ![](../Images/lab9-p2t1p2.png)
+    ![](../Images/lab9-p2t1p2.png)
 
-   > **Note:** If you already have the extension installed, make sure the version is at least **v0.16.0** to follow along with the instructions in this exercise.
+    > **Note:** If you already have the extension installed, make sure the version is at least **v0.16.0** to follow along with the instructions in this exercise.
 
 ## Task 4: Sign in to Azure and set the Foundry project
 
@@ -498,33 +498,33 @@ In this task, you will sign in to Azure using the Microsoft Foundry extension in
 
 1. In the Resources view, choose **Set Default Project (2)**, and when prompted, select **Sign in to Azure (3)** to authenticate.
 
-   ![](../Images/lab16-03-11.1.png)
+    ![](../Images/lab16-03-11.1.png)
 
 1. In the **Azure Resources wants to sign in using Microsoft** dialog, select **Allow**.
 
-   ![](../Images/lab7-s5.png)
+    ![](../Images/lab7-s5.png)
 
 1. On the **Sign in** page, provide the credentials below:
  
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-     ![](../Images/lab7-s6.png)
+      ![](../Images/lab7-s6.png)
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-     ![](../Images/lab7-s7.png)
+      ![](../Images/lab7-s7.png)
 
 1. On the **Sign in to all apps, websites, and services on this device?** page, select **Yes**.
 
-   ![](../Images/lab7-s8.png)
+    ![](../Images/lab7-s8.png)
 
 1. On the **Account added to this device** page, select **Done**.
 
-   ![](../Images/lab7-s9.png)
+    ![](../Images/lab7-s9.png)
 
 1. In the **Pick a project** dialog, select **Myproject<inject key="DeploymentID" enableCopy="false"/>**.
 
-   ![](../Images/lab7-s11.png)
+    ![](../Images/lab7-s11.png)
 
 1. In the VS Code Activity Bar, under the **Resources** section expand and right-click your project **Myproject (2)**, and choose **Copy Project Endpoint (3)** to copy the endpoint.
 
