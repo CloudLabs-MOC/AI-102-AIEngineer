@@ -18,11 +18,11 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
 
 1. On the Azure portal, search for **Computer Vision (1)** then select **Computer Vision (2)** from the results.
 
-   ![](../Images/ai24l1.png)
+   ![](../Images/lab23-03-1.png)
 
 1. Select **+ Create**.
 
-   ![](../Images/ai24l2.png)
+   ![](../Images/lab23-03-2.png)
 
 1. Create a resource with the following settings:
 
