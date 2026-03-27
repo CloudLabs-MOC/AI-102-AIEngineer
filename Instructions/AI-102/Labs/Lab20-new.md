@@ -8,11 +8,11 @@
 
 - **Task 1:** Create a Microsoft Foundry project
 
-- **Task 2:** Get the application files from GitHub
+- **Task 2:** Deploy models
 
-- **Task 3:** Configure your application
+- **Task 3:** Get the application files from GitHub
 
-- **Task 4:** Add code to connect to your Azure AI Language resource
+- **Task 4:** Create a speech-generation app
 
 > **Note**: Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
 
