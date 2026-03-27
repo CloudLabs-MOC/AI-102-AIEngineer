@@ -14,7 +14,7 @@
 
 - **Task 4:** Create a speech-generation app
 
-> **Note**: Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
+> **Note:** Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
 
 ## Task 1: Create a Microsoft Foundry project
 
@@ -102,11 +102,11 @@ To develop speech-enables apps, we're going to need speech-enabled models. Speci
 
 1. Once the model has been deployed, the model playground will open automatically so you can test your model:   
 
-    ![](../Images/lab20-03-9.png)
 
 ## Task 3: Get the application files from GitHub
 
 The initial application files you'll need to develop speech applications are provided in a GitHub repo.
+
 1. Open the **Visual Studio Code** from the desktop.
 
     ![](../Images/lab9-p2t1p1.png)
@@ -141,16 +141,17 @@ The initial application files you'll need to develop speech applications are pro
 
 ## Task 4: Create a speech-generation app
 
-1. After the repo has been cloned, in the Explorer pane, navigate to the folder containing the application code files at **/Labfiles/03-gen-ai-speech/Python/generate-speech**. The application files include:
+1. After the repo has been cloned, in the Explorer pane, expand the folder **Labfiles (1)** → **03-gen-ai-speech\Python (2)** select **generate-speech (3)**. The application files include: 
+
     - **.env** (the application configuration file)
     - **requirements.txt** (the Python package dependencies that need to be installed)
     - **generate-speech.py** (the code file for the application)
 
-    ![](../Images/lab18-03-10.png)
+       ![](../Images/lab20-03-10.png)
 
-### Configure your application
+### Task 4.1 Configure your application
 
-1. Right-click on the **requirements.txt (1)** file and select **Open in Integrated Terminal (2)**.
+1. Right-click on the **requirements.txt (1)** file under **generate-speech** folder and select **Open in Integrated Terminal (2)**.
 
     ![](../Images/lab20-03-11.png)
 
@@ -162,20 +163,21 @@ The initial application files you'll need to develop speech applications are pro
     pip install -r requirements.txt
     ```
 
-1. In the **Explorer** pane, in the **generate-speech** folder, select the **.env** file to open it. Then update the configuration values to include the **Target URI** (endpoint) for your **gpt-4o-mini-tts** model.
+1. In the **Explorer** pane, in the **generate-speech** folder, select the **.env (1)** file to open it. Then update the configuration values to include the **Target URI** (endpoint) for your **gpt-4o-mini-tts** model which copied in previous task.
 
     ![](../Images/lab20-03-12.png)
 
-    > **Tip**: Copy the Target URI from the model details page in the Foundry portal.
+1. Once done, press **Ctrl+S** to save the changes.
 
-    Save the modified configuration file.
-
-### Write code to use the model for speech-generation
+### Task 4.2 Write code to use the model for speech-generation
 
 1. In the **Explorer** pane, in the **generate-speech** folder, select the **generate-speech.py** file to open it.
+
+    ![](../Images/lab20-03-13.png)
+
 1. Review the existing code. You will add code to use the OpenAI SDK to access your model.
 
-    > **Tip**: As you add code to the code file, be sure to maintain the correct indentation.
+    > **Tip:** As you add code to the code file, be sure to maintain the correct indentation.
 
 1. At the top of the code file, under the existing namespace references, find the comment **Import namespaces** and add the following code to import the namespace you will need to use the OpenAI SDK:
 
@@ -184,6 +186,8 @@ The initial application files you'll need to develop speech applications are pro
    from openai import AzureOpenAI
    from azure.identity import DefaultAzureCredential, get_bearer_token_provider
     ```
+
+    ![](../Images/lab20-03-14.png)
 
 1. In the **main** function, note that code to load the endpoint and key from the configuration file has already been provided. Then find the comment **Create the Azure OpenAI client**, and add the following code to create a client for the OpenAI API:
 
@@ -199,6 +203,8 @@ The initial application files you'll need to develop speech applications are pro
         api_version="2025-03-01-preview"
    )
     ```
+
+    ![](../Images/lab20-03-15.png)
 
 1. Find the comment **Generate speech and save to file**, and add the following code to submit a prompt to the speech-generation model save the response as a file.
 
@@ -213,61 +219,95 @@ The initial application files you'll need to develop speech applications are pro
         response.stream_to_file(speech_file_path)
     ```
 
-1. Save the changes to the code file.
+    ![](../Images/lab20-03-16.png)
 
-### Run the application
+1. Save the changes to the code file by pressing **Ctrl+S**. 
 
-1. In the terminal pane, use the following command to sign into Azure.
+### Task 4.3 Run the application
 
-    ```powershell
+1. In the Visual Studio Code terminal, enter the following command to sign into Azure
+
+   ```powershell
     az login
     ```
 
-    > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
+    ![](../Images/lab20-03-17.png)
 
-1. When prompted, follow the instructions to sign into Azure. Then complete the sign in process in the command line, viewing (and confirming if necessary) the details of the subscription containing your Foundry resource.
+    > **Note:** Minimize the VS Code to see the **Sign in** window.
+
+1. In the **Sign in** window, select **Work or school account** **(1)**, and then select **Continue** **(2)**.
+
+    ![](../Images/lab19dev-p2t6p17.png)
+
+1. On the **Sign in** page, provide the credentials below:
+ 
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    
+     ![](../Images/lab7-s6.png)
+
+   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    
+     ![](../Images/lab7-s7.png)
+
+1. When prompted, select **Yes** to sign in to all apps and websites on this device.
+
+    ![](../Images/lab19dev-p2t6p18.png)
+
+1. On the **Account added to this device** window, select **Done** to complete the sign-in process.
+
+    ![](../Images/lab19dev-p2t6p19.png)
+
+1. In the Visual Studio Code terminal, press **Enter** to select the default subscription.
+
 1. After you have signed in, enter the following command to run the application:
 
     ```
    python generate-speech.py
     ```
 
-1. Observe the output as the code generates the requested speech and saves it in a file. The code should also play the generated audio file.
+1. Observe the output as the code generates the requested speech and saves it in a file. You can select the **speech.mp3** file that is generated in the voice-mail folder to play it in Visual Studio Code.
 
-## Create a speech-transcription app
+    ![](../Images/lab20-03-18.png)
 
-1. In the Explorer pane, navigate to the folder containing the application code files at **/Labfiles/03-gen-ai-speech/Python/transcribe-speech**. The application files include:
+## Task 5: Create a speech-transcription app
+
+1. In the Explorer pane, navigate to the folder containing the application code files at **/Labfiles/03-gen-ai-speech/Python/** → select **transcribe-speech (3)**. The application files include:
+    
     - **.env** (the application configuration file)
     - **requirements.txt** (the Python package dependencies that need to be installed)
     - **transcribe-speech.py** (the code file for the application)
 
-### Configure your application
+        ![](../Images/lab20-03-29.png)
 
-1. In the **Explorer** pane, right-click the **transcribe-speech** folder containing the application files, and select **Open in integrated terminal** (or in the existing terminal, navigate to the */Labfiles/03-gen-ai-speech/Python/transcribe-speech* folder.)
+### Task 5.1 Configure your application
 
-    > **Note**: Opening the terminal in Visual Studio Code will automatically activate the Python environment. You may need to enable running scripts on your system.
+1. Right-click on the **requirements.txt (1)** file under **transcribe-speech** folder and select **Open in Integrated Terminal (2)**.
 
-1. Ensure that the terminal is open in the **transcribe-speech** folder with the prefix **(.venv)** to indicate that the Python environment you created previously is active.
-1. Install the OpenAI SDK package and other required packages by running the following command:
+    ![](../Images/lab20-03-19.png)
+
+1. In the terminal, enter the following command to install the required Python packages in a virtual environment:
 
     ```
+    python -m venv labenv
+    .\labenv\Scripts\Activate.ps1
     pip install -r requirements.txt
     ```
 
-    > **Note**: This step isn't actually necessary if you completed the previous part of this exercise, as botg apps use the same environment and have the same dependencies - but it won't do any harm!
+1. In the **Explorer** pane, in the **transcribe-speech** folder, select the **.env (1)** file to open it. Then update the configuration values to include the **Target URI (2)** (endpoint) for your **gpt-4o-mini-transcribe** model.
 
-1. In the **Explorer** pane, in the **transcribe-speech** folder, select the **.env** file to open it. Then update the configuration values to include the **Target URI** (endpoint) for your **gpt-4o-mini-transcribe** model.
+    ![](../Images/lab20-03-20.png)
 
-    > **Tip**: Copy the Target URI from the model details page in the Foundry portal.
+1. Once done, press **Ctrl+S** to save the changes.
 
-    Save the modified configuration file.
-
-### Write code to use the model for speech-transcription
+### Task 5.2 Write code to use the model for speech-transcription
 
 1. In the **Explorer** pane, in the **transcribe-speech** folder, select the **transcribe-speech.py** file to open it.
+
+    ![](../Images/lab20-03-21.png)
+
 1. Review the existing code. You will add code to use the OpenAI SDK to access your model.
 
-    > **Tip**: As you add code to the code file, be sure to maintain the correct indentation.
+    > **Tip:** As you add code to the code file, be sure to maintain the correct indentation.
 
 1. At the top of the code file, under the existing namespace references, find the comment **Import namespaces** and add the following code to import the namespace you will need to use the OpenAI SDK:
 
@@ -276,6 +316,16 @@ The initial application files you'll need to develop speech applications are pro
    from openai import AzureOpenAI
    from azure.identity import DefaultAzureCredential, get_bearer_token_provider
     ```
+
+    ![](../Images/lab20-03-22.png)
+
+1. In the **main** function, locate the line that plays the audio file and comment it out to prevent playback issues in environments without audio support.
+
+    ```python
+    #playsound(file_path)
+    ```
+
+    ![](../Images/lab20-03-30.png)
 
 1. In the **main** function, note that code to load the endpoint and key from the configuration file has already been provided. Then find the comment **Create the Azure OpenAI client**, and add the following code to create a client for the OpenAI API:
 
@@ -291,6 +341,8 @@ The initial application files you'll need to develop speech applications are pro
         api_version="2025-03-01-preview"
    )
     ```
+
+    ![](../Images/lab20-03-28.png)
 
 1. Find the comment **Call model to transcribe audio file**, and add the following code to submit an audio file to the speech-transcription model generate a transcript.
 
@@ -307,19 +359,28 @@ The initial application files you'll need to develop speech applications are pro
         
     ```
 
-1. Save the changes to the code file.
+    ![](../Images/lab20-03-25.png)
 
-### Run the application
+1. Save the changes to the code file by pressing **Ctrl+S**. 
 
-1. In the terminal pane, use the following command to sign into Azure.
+### Task 5.3 Run the application
 
-    ```powershell
+1. In the Visual Studio Code terminal, enter the following command to sign into Azure
+
+   ```powershell
     az login
     ```
 
-    > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
+    ![](../Images/lab20-03-27.png)
 
-1. When prompted, follow the instructions to sign into Azure. Then complete the sign in process in the command line, viewing (and confirming if necessary) the details of the subscription containing your Foundry resource.
+    > **Note:** Minimize the VS Code to see the **Sign in** window.
+
+1. In the sign-in window, select your account **<inject key="AzureAdUserEmail"></inject> (1)** and click **Continue (2)** to proceed with authentication.
+
+    ![](../Images/lab9-p2t9p2.png)
+
+1. After successful sign-in, wait for the subscriptions to load and verify that your subscription is listed in the terminal.
+
 1. After you have signed in, enter the following command to run the application:
 
     ```
@@ -328,10 +389,4 @@ The initial application files you'll need to develop speech applications are pro
 
 1. Observe the output as the code submits the audio file to the model for transcription and displays the results. The code should also play the audio file.
 
-## Clean up
-
-If you've finished exploring speech-enabled models in Foundry Tools, you should delete the resources you have created in this exercise to avoid incurring unnecessary Azure costs.
-
-1. Open the [Azure portal](https://portal.azure.com) and view the contents of the resource group where you deployed the resources used in this exercise.
-1. On the toolbar, select **Delete resource group**.
-1. Enter the resource group name and confirm that you want to delete it.
+    ![](../Images/lab20-03-26.png)
