@@ -14,6 +14,8 @@
 
 - **Task 4:** Create a speech-generation app
 
+- **Task 5:** Create a speech-transcription app
+
 > **Note:** Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
 
 ## Task 1: Create a Microsoft Foundry project
