@@ -4,6 +4,8 @@
 
 ## Overview
 
+In this lab, you will build and configure speech-enabled applications using Azure AI in the Microsoft Foundry environment. You will create a project, deploy speech-capable generative AI models, and set up Python-based applications from a GitHub repository. Using these applications, you will generate speech from text and transcribe spoken audio into text by integrating with deployed models. Finally, you will run and test both applications to understand how speech generation and transcription can be implemented using generative AI.
+
 ## Lab Objectives
 
 - **Task 1:** Create a Microsoft Foundry project
@@ -65,13 +67,15 @@ In this task, you will create a new project in the Microsoft Foundry portal and 
 
 ## Task 2: Deploy models
 
-To develop speech-enables apps, we're going to need speech-enabled models. Specifically, we need a model that can perform speech-generation, and a model that can process speech input.
+In this task, you will deploy speech-capable generative AI models. You will deploy a text-to-speech model for generating audio and a speech-to-text model for transcribing audio input.
 
 ### Task 2.1 Deploy a speech-generation model
 
-1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Browse models (2)** from the drop-down menu.
+In this task, you will deploy a text-to-speech model in Microsoft Foundry to generate audio from text input.
 
-   ![](../Images/lab1-03-04.png) 
+1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Find models (2)** from the drop-down menu.
+
+     ![](../Images/lab17-03-1.png)
 
 1. On the **Models** page, search for **gpt-4o-mini-tts (1)** in the search bar, and then select the **gpt-4o-mini-tts (2)** model from the search results.
 
@@ -79,7 +83,7 @@ To develop speech-enables apps, we're going to need speech-enabled models. Speci
 
 1. On the **gpt-4o-mini-tts** model details page, click **Deploy (1)**, and then select **Default settings (2)** to deploy the model using the standard configuration.
 
-   ![](../Images/lab20-03-2.png)
+   ![](../Images/lab20-03-3.png)
 
 1. Once the model has been deployed, the model playground will open automatically so you can test your model:   
 
@@ -87,12 +91,15 @@ To develop speech-enables apps, we're going to need speech-enabled models. Speci
 
     ![](../Images/lab20-03-4.png)
 
+    >**Note:** Copy and save the Target URI in a notepad,
+
 1. On the model details page, select the **Back (1)** arrow to return to the previous screen.
 
     ![](../Images/lab20-03-5.png)
 
 ### Task 2.2: Deploy a speech-recognition model
 
+In this task, you will deploy a speech-to-text model in Microsoft Foundry to transcribe audio into text.
 
 1. On the **Models** page, search for **gpt-4o-mini-transcribe (1)** in the search bar, and then select the **gpt-4o-mini-transcribe (2)** model from the search results.
 
@@ -102,12 +109,11 @@ To develop speech-enables apps, we're going to need speech-enabled models. Speci
 
     ![](../Images/lab20-03-8.png)
 
-1. Once the model has been deployed, the model playground will open automatically so you can test your model:   
-
+1. Once the model has been deployed, the model playground will open automatically.
 
 ## Task 3: Get the application files from GitHub
 
-The initial application files you'll need to develop speech applications are provided in a GitHub repo.
+In this task, you will clone the GitHub repository and set up the development environment in Visual Studio Code.
 
 1. Open the **Visual Studio Code** from the desktop.
 
@@ -143,6 +149,8 @@ The initial application files you'll need to develop speech applications are pro
 
 ## Task 4: Create a speech-generation app
 
+In this task, you will configure and run a Python application to generate speech from text using a deployed model.
+
 1. After the repo has been cloned, in the Explorer pane, expand the folder **Labfiles (1)** → **03-gen-ai-speech\Python (2)** select **generate-speech (3)**. The application files include: 
 
     - **.env** (the application configuration file)
@@ -152,6 +160,8 @@ The initial application files you'll need to develop speech applications are pro
        ![](../Images/lab20-03-10.png)
 
 ### Task 4.1 Configure your application
+
+In this task, you will set up the Python environment, install dependencies, and update configuration settings with the model endpoint.
 
 1. Right-click on the **requirements.txt (1)** file under **generate-speech** folder and select **Open in Integrated Terminal (2)**.
 
@@ -165,13 +175,15 @@ The initial application files you'll need to develop speech applications are pro
     pip install -r requirements.txt
     ```
 
-1. In the **Explorer** pane, in the **generate-speech** folder, select the **.env (1)** file to open it. Then update the configuration values to include the **Target URI** (endpoint) for your **gpt-4o-mini-tts** model which copied in previous task.
+1. In the **Explorer** pane, in the **generate-speech** folder, select the **.env (1)** file to open it. Then update the configuration values to include the **Target URI (2)** (endpoint) for your **gpt-4o-mini-tts** model which copied in previous task.
 
     ![](../Images/lab20-03-12.png)
 
 1. Once done, press **Ctrl+S** to save the changes.
 
 ### Task 4.2 Write code to use the model for speech-generation
+
+In this task, you will add code to integrate the speech-generation model and generate audio from text input.
 
 1. In the **Explorer** pane, in the **generate-speech** folder, select the **generate-speech.py** file to open it.
 
@@ -227,6 +239,8 @@ The initial application files you'll need to develop speech applications are pro
 
 ### Task 4.3 Run the application
 
+In this task, you will authenticate with Azure and run the application to generate and save speech output.
+
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
    ```powershell
@@ -273,6 +287,8 @@ The initial application files you'll need to develop speech applications are pro
 
 ## Task 5: Create a speech-transcription app
 
+In this task, you will configure and develop a Python application that uses a deployed speech-to-text model to transcribe audio into text and display the results.
+
 1. In the Explorer pane, navigate to the folder containing the application code files at **/Labfiles/03-gen-ai-speech/Python/** → select **transcribe-speech (3)**. The application files include:
     
     - **.env** (the application configuration file)
@@ -283,16 +299,16 @@ The initial application files you'll need to develop speech applications are pro
 
 ### Task 5.1 Configure your application
 
+In this task, you will set up the Python environment and configure the application with the speech-transcription model endpoint.
+
 1. Right-click on the **requirements.txt (1)** file under **transcribe-speech** folder and select **Open in Integrated Terminal (2)**.
 
     ![](../Images/lab20-03-19.png)
 
-1. In the terminal, enter the following command to install the required Python packages in a virtual environment:
+1. In the terminal, enter the following command to activate virtual environment:
 
     ```
-    python -m venv labenv
-    .\labenv\Scripts\Activate.ps1
-    pip install -r requirements.txt
+    ..\generate-speech\labenv\Scripts\Activate
     ```
 
 1. In the **Explorer** pane, in the **transcribe-speech** folder, select the **.env (1)** file to open it. Then update the configuration values to include the **Target URI (2)** (endpoint) for your **gpt-4o-mini-transcribe** model.
@@ -302,6 +318,8 @@ The initial application files you'll need to develop speech applications are pro
 1. Once done, press **Ctrl+S** to save the changes.
 
 ### Task 5.2 Write code to use the model for speech-transcription
+
+In this task, you will add code to integrate the speech-transcription model and convert audio input into text.
 
 1. In the **Explorer** pane, in the **transcribe-speech** folder, select the **transcribe-speech.py** file to open it.
 
@@ -367,6 +385,8 @@ The initial application files you'll need to develop speech applications are pro
 
 ### Task 5.3 Run the application
 
+In this task, you will authenticate with Azure and run the application to transcribe audio and view the output.
+
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
    ```powershell
@@ -381,7 +401,7 @@ The initial application files you'll need to develop speech applications are pro
 
     ![](../Images/lab9-p2t9p2.png)
 
-1. After successful sign-in, wait for the subscriptions to load and verify that your subscription is listed in the terminal.
+1. In the Visual Studio Code terminal, press **Enter** to select the default subscription.
 
 1. After you have signed in, enter the following command to run the application:
 
@@ -392,3 +412,9 @@ The initial application files you'll need to develop speech applications are pro
 1. Observe the output as the code submits the audio file to the model for transcription and displays the results. The code should also play the audio file.
 
     ![](../Images/lab20-03-26.png)
+
+## Summary
+
+In this lab, you created a Microsoft Foundry project and deployed speech-capable generative AI models. You set up Python-based applications, configured the environment, and authenticated using Azure credentials. You then developed applications to generate speech from text and transcribe audio into text by integrating with the deployed models. Finally, you executed and tested both applications to understand how speech generation and transcription can be implemented using generative AI.
+
+### You have successfully completed the Hands-on Lab!

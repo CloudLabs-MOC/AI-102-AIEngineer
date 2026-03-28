@@ -14,52 +14,52 @@ In this hands-on lab, you will build speech-enabled applications using Microsoft
 
 By the end of this lab, you will be able to:
 
-1. **Create and configure a Foundry project:** Set up a new project in Microsoft Foundry and deploy the *gpt-4.1* model as an intelligent agent.
+1. **Create and configure a Foundry project:** Set up a new project in Microsoft Foundry and prepare the environment for building speech-enabled applications.
 
-2. **Integrate Foundry IQ with enterprise data:** Connect the agent to Azure AI Search and ground it using product documents stored in Azure Blob Storage.
+2. **Deploy speech-capable generative AI models:** Deploy text-to-speech and speech-to-text models to enable audio generation and transcription capabilities.
 
-3. **Create and manage a knowledge base:** Configure a knowledge source, enable embeddings, and associate the knowledge base with the deployed agent.
+3. **Set up a Python development environment:** Clone the required GitHub repository, install dependencies, and configure application settings.
 
-4. **Test and validate the agent in the playground:** Verify that the agent retrieves accurate, cited information from enterprise documents while maintaining conversation context.
+4. **Develop a speech-generation application:** Build and run a Python application that converts text into speech using a deployed model.
 
-5. **Connect to the agent programmatically using Python:** Clone a GitHub repository, configure environment settings, implement agent client logic, handle MCP approval workflows, and execute the solution from Azure Cloud Shell.
+5. **Develop a speech-transcription application:** Build and run a Python application that converts audio into text using a deployed model.
+
+6. **Test and validate speech applications:** Execute both applications to verify speech generation and transcription outputs.
 
 ## Pre-requisites
-  
-* Basic knowledge of the Azure portal and Azure Cloud Shell.  
+    
 * Familiarity with Microsoft Foundry concepts such as projects, agents, and model deployments.  
-* Basic understanding of Azure AI Search and Azure Blob Storage.  
 * Basic knowledge of Python and running scripts from a command-line environment.   
 
 ## Architecture
 
-The lab architecture demonstrates how a Microsoft Foundry project integrates GPT-4.1 with Foundry IQ and Azure Blob Storage to enable intelligent document retrieval and AI-powered search using SDK-based interaction:
+The lab architecture demonstrates how a Microsoft Foundry project integrates speech-capable generative AI models with Python applications to enable speech generation and transcription:
 
-1. **Microsoft Foundry Project:** A workspace created in the Microsoft Foundry portal where models, agents, and AI Search configurations are deployed and managed.
+1. **Microsoft Foundry Project:** A workspace created in the Microsoft Foundry portal where AI models are deployed and managed for building applications.
 
-2. **Deployment Model (gpt- 4.1):** A model deployed within the project that processes user queries and generates intelligent responses based on retrieved knowledge.
+2. **Speech Generation Model (gpt-4o-mini-tts):** A deployed model that converts text input into natural-sounding speech output.
 
-3. **Foundry IQ:** A knowledge integration layer that connects the AI agent with indexed content stored in Azure Blob Storage for retrieval-based responses.
+3. **Speech Transcription Model (gpt-4o-mini-transcribe):** A deployed model that processes audio input and converts it into text.
 
-4. **Azure Blob Storage:** A cloud storage service used to store documents and data that are indexed and accessed by Foundry IQ for AI search.
+4. **Python Applications:** Client applications that connect to the Foundry project endpoint, authenticate using Azure credentials, and interact with the deployed models for speech generation and transcription.
 
-5. **Python Client Application:** A client application that connects to the Foundry project endpoint, authenticates using Azure credentials, sends user queries, and retrieves AI-generated responses.
+5. **Audio Input/Output:** The system handles text input to generate audio files and processes audio files to produce text output.
 
 ## Architecture Diagram
 
-![](../Images/lab17new-arch.png)
+![](../Images/lab20new-arch.png)
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project:** The central cloud workspace where foundation models are deployed, and AI agents are configured to handle the customer support workflow.
+1. **Microsoft Foundry Project:** The central workspace where speech-capable AI models are deployed and managed for building and testing applications.
 
-2. **Deployment Model (gpt- 4.1):** The core AI agent that processes queries and uses AI Search capabilities to generate informed responses.
+2. **Speech Generation Model (gpt-4o-mini-tts):** The model responsible for converting text input into natural-sounding speech output.
 
-3. **Foundry IQ:** A retrieval mechanism that indexes and fetches relevant content from connected storage to support grounded responses..
+3. **Speech Transcription Model (gpt-4o-mini-transcribe):** The model that processes audio input and converts spoken content into text.
 
-4. **Azure Blob Storage:** The data repository that stores documents and structured files used for knowledge retrieval.
+4. **Python Applications:** The client applications that connect to the Foundry endpoint, authenticate using Azure credentials, and interact with the deployed models.
 
-5. **Python Client Application:** A Cloud Shell–based application that programmatically sends queries to the agent and receives generated outputs.
+5. **Audio Files:** Input and output files used by the applications, where text is converted into audio and audio is transcribed back into text.
 
 # Getting Started with lab
 
@@ -69,7 +69,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab17new-vm.png)
+![Access Your VM and Lab Guide](../Images/lab20new-vm.png)
 
 ### Virtual Machine & Lab Guide
  

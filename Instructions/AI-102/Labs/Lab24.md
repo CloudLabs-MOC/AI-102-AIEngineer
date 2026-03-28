@@ -9,6 +9,7 @@ In this lab, you will provision an Azure AI Vision resource and configure it for
 ## Lab Objectives
 
 - Task 1: Provision an Azure AI Vision resource
+
 - Task 2: Develop an image analysis app with the Azure AI Vision SDK
 
 
@@ -129,7 +130,7 @@ In this task, you will set up your development environment in Azure Cloud Shell 
    code .env
     ```
 
-     ![](../Images/ai24l12.png)      
+     ![](../Images/lab23-03-3.png)      
 
     The file is opened in a code editor.
 
@@ -226,7 +227,7 @@ In this task, you will update the Python application to use the Azure AI Vision 
 
      ![](../Images/i1.png) 
 
-     ![](../Images/ai24l19.png)      
+     ![](../Images/lab23-03-4.png)      
 
 1. Run the program again, this time with the argument **images/building.jpg** to see the caption that gets generated for the **building.jpg** image, which looks like this:
 
@@ -234,7 +235,7 @@ In this task, you will update the Python application to use the Azure AI Vision 
    python image-analysis.py images/building.jpg
     ```
 
-     ![](../Images/ai24l20.png) 
+     ![](../Images/lab23-03-5.png) 
 
 1. Observe the output, which should include a suggested caption for the **building.jpg** image, which looks like this:
 
