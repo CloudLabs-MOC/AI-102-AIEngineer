@@ -1,4 +1,4 @@
-# Recognize and synthesize speech
+# Lab 21: Recognize and synthesize speech
 
 ### Estimated Duration: 30 Minutes
 
