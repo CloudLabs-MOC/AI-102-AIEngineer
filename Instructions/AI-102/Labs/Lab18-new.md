@@ -59,13 +59,15 @@ In this task, you will create a new project in the Microsoft Foundry portal and 
 
       >**Note:** Some Azure AI resources are constrained by regional model quotas. In the event of a quota limit being exceeded later in the exercise, there's a possibility you may need to create another resource in a different region.
 
-1. Wait for your project created. It may take a few minutes.
+1. Wait for your project to be created. It may take around 1-2 minutes.
 
-1. On the home page for your project, Copy the **Project endpoint** value to a notepad.
+1. If you see the **“Welcome to the new Microsoft Foundry”** window, you can either explore the information using **Next**, or close it by selecting the **X** in the top-right corner to continue.
 
-     ![](../Images/lab17-03-8.png)
+    ![](../Images/lab19dev-p2t1p2.png)
 
-     > **TIP:** You're going to need the project endpoint later!
+1. On the home page for your project, copy the **Project API key (1)** and **Project endpoint (2)** values, and save them in a notepad for later use.
+
+     ![](../Images/lab18-03-29.png)
 
 ## Task 2: Get the application files from GitHub
 
@@ -128,9 +130,17 @@ In this task, you will set up the Python environment, install dependencies, and 
     pip install -r requirements.txt
     ```
 
-1. In the **Explorer** pane, in the **text-analysis** folder, select the **.env (1)** file to open it. Paste the copied project endpoint into the **Foundry_ENDPOINT (2)** field Make sure to **remove `/api/projects/<project-name>` from the endpoint** and keep only the base URL up to `.com`. Once done, press **Ctrl+S** to save the changes.
+1. In the **Explorer** pane, in the **text-analysis** folder, select the **.env (1)** file to open it. Paste the copied project endpoint into the **Foundry_ENDPOINT (2)** field Make sure to **remove `/api/projects/<project-name>` from the endpoint** and keep only the base URL up to `.com`.
 
     > **Important:** Modify the pasted endpoint to remove the "/api/projects/{project_name}" suffix - the endpoint should be *https://{your-foundry-resource-name}.services.ai.azure.com*.
+
+1. Copy the following line and paste it into the **.env** file, then replace the placeholder with your API key **(3)**. Press **Ctrl+S** to save the changes:
+
+    ```
+    FOUNDRY_KEY=your_api_key_here
+    ```
+
+    Replace `your_api_key_here` with the API key you copied in Task 1.
 
     ![](../Images/lab18-03-19.png)
 
@@ -186,6 +196,8 @@ In this task, you connect the application to Azure AI Language services by addin
     ![](../Images/lab18-03-12.png)
 
     >**Note:** If you have closed the terminal, right-click on the **01-analyze-text\Python** folder and select **Open in Integrated Terminal**. Then run the command `.\labenv\Scripts\Activate.ps1` to activate the virtual environment before proceeding.
+
+     > **Note:** Minimize the VS Code to see the **Sign in** window.
 
 1. In the sign-in window, select **Work or school account (1)** and click **Continue (2)** to proceed with authentication.
 
@@ -271,7 +283,7 @@ In this task, you will add code to detect the language of each review using the 
 
 ### Task 4.3: Add code to identify key phrases
 
-It can be useful to identify key phrases in a body of text to help determine the main topics that it discusses.
+In this task, you extract key phrases from the text to identify important topics in each review.
 
 1. In the code editor, find the comment **Get key phrases**. Then add the code necessary to detect the key phrases in each review document:
 
@@ -297,7 +309,7 @@ It can be useful to identify key phrases in a body of text to help determine the
 
 ### Task 4.4: Add code to extract entities
 
-Often, documents or other bodies of text mention people, places, time periods, or other entities. The text Analytics API can detect multiple categories (and subcategories) of entity in your text.
+In this task, you identify and extract named entities such as people, places, and organizations from the text.
 
 1. In the code editor, find the comment **Get entities**. Then, add the code necessary to identify entities that are mentioned in each review:
 
@@ -323,7 +335,7 @@ Often, documents or other bodies of text mention people, places, time periods, o
 
 ### Task 4.5: Add code to extract linked entities
 
-In addition to categorized entities, the Text Analytics API can detect entities for which there are known links to data sources, such as Wikipedia.
+In this task, you extract linked entities with external references, such as Wikipedia links, for deeper insights.
 
 1. In the code editor, find the comment **Get linked entities**. Then, add the code necessary to identify linked entities that are mentioned in each review:
 
@@ -346,3 +358,9 @@ In addition to categorized entities, the Text Analytics API can detect entities 
 1. Observe the output, noting the linked entities that are identified.
 
     ![](../Images/lab18-03-28.png)
+
+## Summary
+
+In this lab, you created a Microsoft Foundry project and developed a Python application integrated with Azure AI Language services. You configured the application environment, authenticated using Azure credentials, and connected to the Text Analytics API. You then enhanced the application to perform language detection, sentiment analysis, key phrase extraction, and entity recognition, including linked entities. Finally, you executed the application to analyze real-world text data and gain meaningful insights from unstructured content.
+
+### You have successfully completed the Hands-on Lab!

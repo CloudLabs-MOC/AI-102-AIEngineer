@@ -1,5 +1,3 @@
-
-
 # AI-102: Azure AI Engineer Associate Workshop
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
@@ -10,58 +8,59 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this hands-on lab, you will use Microsoft Foundry to build an intelligent agent integrated with Foundry IQ for enterprise knowledge retrieval. You will create and deploy a GPT–4.1–based agent, connect it to an Azure AI Search–powered knowledge base, and ground it with product documents stored in Azure Blob Storage. You will then test the agent in the Foundry playground and connect to it programmatically using the Python SDK from Azure Cloud Shell. This lab demonstrates how to build conversational AI solutions that can search and retrieve enterprise knowledge while maintaining context.
+In this hands-on lab, you will set up a text analysis solution using Microsoft Foundry and Azure AI Language services. You will create a project, configure a Python-based application, and connect it to the Text Analytics API. You will enhance the application to analyze text by detecting language, evaluating sentiment, extracting key phrases, and identifying entities. By the end of the lab, you will be able to run and validate an application that derives insights from unstructured text data.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create and configure a Foundry project:** Set up a new project in Microsoft Foundry and deploy the *gpt-4.1* model as an intelligent agent.
+1. **Set up the Microsoft Foundry project:** Create and configure a project in the Microsoft Foundry portal for text analysis.
 
-2. **Integrate Foundry IQ with enterprise data:** Connect the agent to Azure AI Search and ground it using product documents stored in Azure Blob Storage.
+2. **Configure a Python application environment:** Clone the repository, install dependencies, and set up the application configuration.
 
-3. **Create and manage a knowledge base:** Configure a knowledge source, enable embeddings, and associate the knowledge base with the deployed agent.
+3. **Connect to Azure AI Language services:** Authenticate and integrate the Text Analytics client using the Azure SDK.
 
-4. **Test and validate the agent in the playground:** Verify that the agent retrieves accurate, cited information from enterprise documents while maintaining conversation context.
+4. **Analyze text using AI capabilities:** Implement language detection, sentiment analysis, and key phrase extraction.
 
-5. **Connect to the agent programmatically using Python:** Clone a GitHub repository, configure environment settings, implement agent client logic, handle MCP approval workflows, and execute the solution from Azure Cloud Shell.
+5. **Extract entities and insights from text:** Identify named entities and linked entities to gain deeper understanding of unstructured data.
+
+6. **Run and validate the application:** Execute the solution and verify the analysis results from review text files.
 
 ## Pre-requisites
   
-* Basic knowledge of the Azure portal and Azure Cloud Shell.  
 * Familiarity with Microsoft Foundry concepts such as projects, agents, and model deployments.  
-* Basic understanding of Azure AI Search and Azure Blob Storage.  
+* Basic understanding of Azure AI Language (Text Analytics) capabilities.
 * Basic knowledge of Python and running scripts from a command-line environment.   
 
 ## Architecture
 
-The lab architecture demonstrates how a Microsoft Foundry project integrates GPT-4.1 with Foundry IQ and Azure Blob Storage to enable intelligent document retrieval and AI-powered search using SDK-based interaction:
+The lab architecture demonstrates how a Microsoft Foundry project integrates with Azure AI Language services to analyze and extract insights from text using a Python-based application:
 
-1. **Microsoft Foundry Project:** A workspace created in the Microsoft Foundry portal where models, agents, and AI Search configurations are deployed and managed.
+1. **Microsoft Foundry Project:** A workspace created in the Microsoft Foundry portal where AI resources and configurations are managed.
 
-2. **Deployment Model (gpt- 4.1):** A model deployed within the project that processes user queries and generates intelligent responses based on retrieved knowledge.
+2. **Azure AI Language Service:** A cloud-based service that provides natural language processing capabilities such as language detection, sentiment analysis, and entity recognition.
 
-3. **Foundry IQ:** A knowledge integration layer that connects the AI agent with indexed content stored in Azure Blob Storage for retrieval-based responses.
+3. **Text Analytics Client (SDK):** A Python SDK component used to connect to the Azure AI Language service and perform text analysis operations.
 
-4. **Azure Blob Storage:** A cloud storage service used to store documents and data that are indexed and accessed by Foundry IQ for AI search.
+4. **Python Application:** A client application that reads text data, sends it to the AI service for analysis, and processes the returned insights.
 
-5. **Python Client Application:** A client application that connects to the Foundry project endpoint, authenticates using Azure credentials, sends user queries, and retrieves AI-generated responses.
+5. **Review Data (Input Files):** A collection of text files containing sample reviews that are analyzed to extract meaningful information.
 
 ## Architecture Diagram
 
-![](../Images/lab17new-arch.png)
+![](../Images/lab18new-arch.png)
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project:** The central cloud workspace where foundation models are deployed, and AI agents are configured to handle the customer support workflow.
+1. **Microsoft Foundry Project:** The central workspace where the AI solution is created and configured, including access to Azure AI services.
 
-2. **Deployment Model (gpt- 4.1):** The core AI agent that processes queries and uses AI Search capabilities to generate informed responses.
+2. **Azure AI Language Service:** The core service that processes text and provides capabilities like language detection, sentiment analysis, and entity recognition.
 
-3. **Foundry IQ:** A retrieval mechanism that indexes and fetches relevant content from connected storage to support grounded responses..
+3. **Text Analytics Client (SDK):** The Python SDK component used to interact with the Azure AI Language service and send text for analysis.
 
-4. **Azure Blob Storage:** The data repository that stores documents and structured files used for knowledge retrieval.
+4. **Python Client Application:** A local application that reads review text files, sends them to the AI service, and displays the analysis results.
 
-5. **Python Client Application:** A Cloud Shell–based application that programmatically sends queries to the agent and receives generated outputs.
+5. **Review Data (Input Files):** A set of sample text documents used as input for performing text analysis and extracting insights.
 
 # Getting Started with lab
 

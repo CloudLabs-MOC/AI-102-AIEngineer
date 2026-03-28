@@ -8,7 +8,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this hands-on lab, you will use Microsoft Foundry to build an intelligent agent integrated with Foundry IQ for enterprise knowledge retrieval. You will create and deploy a GPT–4.1–based agent, connect it to an Azure AI Search–powered knowledge base, and ground it with product documents stored in Azure Blob Storage. You will then test the agent in the Foundry playground and connect to it programmatically using the Python SDK from Azure Cloud Shell. This lab demonstrates how to build conversational AI solutions that can search and retrieve enterprise knowledge while maintaining context.
+In this hands-on lab, you will build speech-enabled applications using Microsoft Foundry and Azure OpenAI models. You will create a project, deploy speech-generation and speech-recognition models, and configure Python-based applications. You will implement solutions to generate speech from text and transcribe speech into text using SDK integration. By the end of the lab, you will be able to run and validate applications that process both audio input and output using generative AI models.
 
 ## Objectives
 
