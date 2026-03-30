@@ -2,7 +2,7 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 09: Use a custom function in an AI agent
+# Lab 10: Use a custom function in an AI agent
 
 ### Overall Estimated Duration: 1 Hour
 

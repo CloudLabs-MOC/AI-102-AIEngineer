@@ -2,64 +2,69 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 05: Fine-tune a language model
+# Lab 05: Apply guardrails to prevent the output of harmful content
 
-### Overall Estimated Duration: 60 Minutes
+### Overall Estimated Timing: 60 Minutes
 
 ## Overview
 
-In this lab, you fine-tuned a **GPT-4.1 model** in Azure AI Foundry to customize its conversational style for a travel chat application. You started by deploying a base model, interacting with it in the playground, and refining its behavior using system messages. You then prepared and uploaded a training dataset, initiated a fine-tuning job, and deployed the fine-tuned model. Finally, you tested the model against the base version to compare response style, tone, and consistency, ensuring it aligned with the desired role of a friendly and inspiring travel assistant.
+In this hands-on lab, you will learn how to apply guardrails (content filters) to control and prevent harmful outputs in generative AI applications using Microsoft Foundry. You will begin by creating a project and deploying the gpt-4.1 model, then test the default guardrails in the Chat Playground using various prompts. Next, you will create and apply custom guardrails with stricter filtering thresholds for categories such as hate, violence, sexual content, and self-harm, and validate how these safeguards manage unsafe content.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Deploy a base model in Azure AI Foundry**: Set up a project and deploy the GPT-4.1 model for use in a custom chat application.
-2. **Fine-tune the model with training data**: Upload a JSONL dataset, configure fine-tuning parameters, and initiate the fine-tuning process.
-3. **Compare base and fine-tuned models**: Interact with both models in the playground, adjust system messages, and evaluate their responses.
-4. **Deploy and test the fine-tuned model**: Verify the deployment, interact with the model, and assess its consistency, tone, and alignment with the travel assistant use case.
+1. **Create a Microsoft Foundry project and deploy a model:** Create a new project, deploy the gpt-4.1 model, and prepare it for testing in the Chat Playground.
+
+2. **Test default guardrails:** Interact with your deployed model to see how harmful inputs and outputs are identified and blocked.
+
+3. **Create and apply custom guardrails:** Configure stricter filtering thresholds for categories like hate, violence, sexual content, and self-harm, and apply them to the model.
 
 ## Pre-requisites
 
-* Basic understanding of **language models** and how fine-tuning differs from prompt engineering.
-* Familiarity with **JSONL file format** for training data preparation.
-* Experience using the **Azure portal** and navigating within **Azure AI Foundry**.
-* An active **Azure subscription** with access to **Azure AI Foundry** services.
-* Permissions to create and manage projects, deploy models, and run fine-tuning jobs (for example, **Cognitive Services OpenAI Contributor** or equivalent role).
+- Basic knowledge of navigating the Azure portal.
+
+- Familiarity with responsible AI concepts such as harmful content filtering.
+
+- An active Azure subscription with access to Azure AI Foundry.
+
 
 ## Architecture
 
-The lab architecture demonstrates how a base model is fine-tuned and deployed in **Azure AI Foundry** to act as a customized travel assistant:
+The lab architecture demonstrates how Microsoft Foundry enables safe and responsible generative AI usage through guardrails:
 
-1. **Azure AI Foundry Project**: The workspace where the GPT-4.1 model is deployed, fine-tuned, and managed.
-2. **Base Model (GPT-4.1)**: The starting point for experimentation, tested in the chat playground with system messages and prompts.
-3. **Training Dataset (JSONL file)**: A collection of curated travel-related conversations uploaded to guide the model’s desired behavior.
-4. **Fine-Tuning Job**: A process that applies supervised learning on the base model using the training dataset to adapt its conversational style.
-5. **Fine-Tuned Model Deployment**: The customized GPT-4.1 variant deployed as an endpoint for testing and integration.
-6. **Chat Playground**: An interactive environment used to compare the base and fine-tuned models and validate improvements in tone, style, and consistency.
+1. **Microsoft Foundry Project:** A workspace where you create and manage your project, deploy the **gpt-4.1** model, and configure guardrails for content filtering.
+
+2. **Model Deployment (gpt-4.1):** The deployed model used to generate responses in the Chat Playground, with default and custom guardrails applied to control outputs.
+
+3. **Guardrails (Content Filters):** Configurable safety controls that filter harmful content across categories like hate, violence, sexual content, and self-harm, ensuring responsible AI behavior.
+
+4. **Chat Playground:** An interactive environment to test prompts, observe how guardrails affect responses, and validate the effectiveness of default and custom filters.
 
 ## Architecture Diagram
 
-![](../Images/lab05archdiagram.png)
+![](../Images/lab6-arch.png)
 
 ## Explanation of Components
 
-1. **Azure AI Foundry Project**: Acts as the central workspace to deploy the GPT-4.1 model, manage fine-tuning jobs, and organize related resources.
-2. **Base Model (GPT-4.1)**: The original, unmodified model used as a benchmark for comparison before fine-tuning.
-3. **Training Dataset (JSONL file)**: A structured set of example travel-related conversations that guide the fine-tuned model toward the desired tone and behavior.
-4. **Fine-Tuning Job**: The supervised learning process that adapts the base GPT-4.1 model using the uploaded dataset, creating a specialized version of the model.
-5. **Fine-Tuned Model Deployment**: The customized GPT-4.1 endpoint, deployed in Azure AI Foundry for testing and integration into applications.
-6. **Chat Playground**: An interactive tool within Azure AI Foundry where both the base and fine-tuned models can be tested and evaluated for response style, consistency, and accuracy.
+1. **Microsoft Foundry Project:** The central workspace where you create and manage your project, deploy the **gpt-4.1** model, and configure guardrails for content filtering.
+
+2. **Deployed Model (gpt-4.1):** The generative AI model that processes user prompts and generates responses, which are then evaluated against applied guardrails.
+
+3. **Guardrails (Content Filters):** Safety mechanisms that detect and restrict harmful content across categories such as hate, violence, sexual content, and self-harm based on defined thresholds.
+
+4. **Chat Playground:** An interactive environment used to test prompts, observe model behavior, and validate how default and custom guardrails handle safe and unsafe inputs.
+
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Microsoft Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  
-Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
+Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab05labvm.png)
+![Access Your VM and Lab Guide](../Images/lab5-vm.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -93,7 +98,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
-![](../Images/zoominai102.png)
+![](../Images/lab1-z.png)
 
 ## Let's Get Started with Azure Portal
  
@@ -101,7 +106,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
    ![Launch Azure Portal](../Images/azureportalicon.png)
 
-1. In the sign-in window, kindly sign in using the provided Azure credentials
+1. In sign-in window, kindly sign in using the provided Azure credentials
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -109,15 +114,15 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/lab1-p.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 
     ![](../Images/AIl16-2.png)
 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-    ![](../Images/AIl16-3.png)
+    ![](../Images/lab1-w.png)
 
 
 ## Support Contact
@@ -134,5 +139,3 @@ Click on **Next** from the lower right corner to move on to the next page.
    ![Start Your Azure Journey](../Images/nextpage.png)
 
 ## Happy Learning !!
-
-

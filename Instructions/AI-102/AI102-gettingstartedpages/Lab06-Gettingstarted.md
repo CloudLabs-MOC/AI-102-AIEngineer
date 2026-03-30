@@ -1,60 +1,53 @@
 # AI-102: Azure AI Engineer Associate Workshop
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 05: Apply guardrails to prevent the output of harmful content
+# Lab 06: Evaluate generative AI model performance
 
 ### Overall Estimated Timing: 60 Minutes
 
 ## Overview
 
-In this hands-on lab, you will learn how to apply guardrails (content filters) to control and prevent harmful outputs in generative AI applications using Microsoft Foundry. You will begin by creating a project and deploying the gpt-4.1 model, then test the default guardrails in the Chat Playground using various prompts. Next, you will create and apply custom guardrails with stricter filtering thresholds for categories such as hate, violence, sexual content, and self-harm, and validate how these safeguards manage unsafe content.
+In this hands-on lab, you will learn how to evaluate the performance of generative AI models using both manual and automated evaluation techniques in Microsoft Foundry. You will start by creating a hub and project, then deploy base models such as `gpt-4.1` and `gpt-4.1-mini`. Next, you will conduct manual evaluations by testing model responses against expected outputs, and finally configure automated evaluations using prebuilt evaluators for metrics like semantic similarity, relevance, and F1 score. By the end of this lab, you will gain hands-on experience with assessing model accuracy, reliability, and fairness using standardized evaluation workflows in Microsoft Foundry.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create a Microsoft Foundry project and deploy a model:** Create a new project, deploy the gpt-4.1 model, and prepare it for testing in the Chat Playground.
-
-2. **Test default guardrails:** Interact with your deployed model to see how harmful inputs and outputs are identified and blocked.
-
-3. **Create and apply custom guardrails:** Configure stricter filtering thresholds for categories like hate, violence, sexual content, and self-harm, and apply them to the model.
+1. **Create an Microsoft Foundry project:** Set up a new project environment to build and manage prompt flows.
+2. **Deploy models:** Deploy the gpt-4.1 and gpt-4.1-mini models within the project for evaluation.
+3. **Perform manual evaluation:** Use a dataset of travel-related queries to test model accuracy and score outputs against expected responses.
+4. **Run automated evaluations:** Apply evaluators to measure semantic similarity, relevance, F1 score, and fairness for standardized model assessment.
 
 ## Pre-requisites
 
-- Basic knowledge of navigating the Azure portal.
+- Familiarity with AI concepts such as model evaluation and performance metrics.
 
-- Familiarity with responsible AI concepts such as harmful content filtering.
-
-- An active Azure subscription with access to Azure AI Foundry.
-
+- An active Azure subscription with access to Microsoft Foundry.
 
 ## Architecture
 
-The lab architecture demonstrates how Microsoft Foundry enables safe and responsible generative AI usage through guardrails:
+1. **Microsoft Foundry Resource:** Provisioned via the Azure portal, this resource connects to Azure AI services, manages access via system-assigned identities, and hosts deployed models such as **gpt-4.1** and **gpt-4.1-mini**.
 
-1. **Microsoft Foundry Project:** A workspace where you create and manage your project, deploy the **gpt-4.1** model, and configure guardrails for content filtering.
+2. **Microsoft Foundry Project:** A workspace for deploying and managing models, configuring project settings, creating prompt flows, and accessing endpoints and authorization keys for applications.
 
-2. **Model Deployment (gpt-4.1):** The deployed model used to generate responses in the Chat Playground, with default and custom guardrails applied to control outputs.
+3. **Evaluation Dataset:** A JSONL file with travel-related questions and expected answers, used to validate model outputs.
 
-3. **Guardrails (Content Filters):** Configurable safety controls that filter harmful content across categories like hate, violence, sexual content, and self-harm, ensuring responsible AI behavior.
-
-4. **Chat Playground:** An interactive environment to test prompts, observe how guardrails affect responses, and validate the effectiveness of default and custom filters.
+4. **Evaluation Workflows:** Manual evaluations capture human scoring, while automated evaluations apply semantic similarity, relevance, F1 score, and fairness checks.
 
 ## Architecture Diagram
 
-![](../Images/lab6-arch.png)
+![](../Images/lab7-arch.png)
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project:** The central workspace where you create and manage your project, deploy the **gpt-4.1** model, and configure guardrails for content filtering.
+1. **Microsoft Foundry Project:** You create a hub and project that act as the workspace to deploy models, upload datasets, and run evaluations.
 
-2. **Deployed Model (gpt-4.1):** The generative AI model that processes user prompts and generates responses, which are then evaluated against applied guardrails.
+2. **Deployed Models (gpt-4.1 and gpt-4.1-mini):** You deploy the gpt-4.1 model to generate AI-assisted evaluation metrics, and the gpt-4.1-mini model to test performance against sample queries.
 
-3. **Guardrails (Content Filters):** Safety mechanisms that detect and restrict harmful content across categories such as hate, violence, sexual content, and self-harm based on defined thresholds.
+3. **Manual Evaluation Module:** You run test queries against the gpt-4.1-mini model, compare its responses with the expected answers, and score results manually using thumbs up/down.
 
-4. **Chat Playground:** An interactive environment used to test prompts, observe model behavior, and validate how default and custom guardrails handle safe and unsafe inputs.
-
+4. **Automated Evaluation:** Built-in evaluators (semantic similarity, relevance, F1 score, fairness) automatically score the model outputs, enabling scalable and standardized assessment.
 
 # Getting Started with lab
 
@@ -64,7 +57,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab5-vm.png)
+![Access Your VM and Lab Guide](../Images/AI-102-l7-g1.png)
 
 ### Virtual Machine & Lab Guide
  

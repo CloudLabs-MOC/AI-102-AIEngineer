@@ -1,6 +1,6 @@
 # Lab 16: Build a workflow in Microsoft Foundry
 
-### Estimated Duration: 60 Minutes
+### Estimated Duration: 90 Minutes
 
 ## Overview
 

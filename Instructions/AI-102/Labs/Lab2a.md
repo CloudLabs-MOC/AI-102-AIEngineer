@@ -1,6 +1,6 @@
 # Lab 2a: Create a generative AI chat app
 
-### Estimated Duration : 40 Minutes
+### Estimated Duration : 45 Minutes
 
 ## Overview
 

@@ -1,32 +1,36 @@
-# Lab 07: Explore AI Agent development
+# Lab 08: Develop an AI agent
 
-### Estimated Duration: 30 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
-In this lab, you will create and configure an AI agent using the Microsoft Foundry portal to assist employees with expense claims. You will build a project, define agent instructions, and ground responses using an expense policy document. Finally, you will test the agent in the playground by asking policy questions and generating an expense claim file that you can download and review.
+In this lab, you will create and configure a project in the **Microsoft Foundry portal**, deploy a foundation model, and build an AI agent using the Microsoft Foundry SDK for Python. You will set up a client application in Azure Cloud Shell, configure project settings, and write code to connect to your Foundry project. The agent will upload and analyze data using the built-in Code Interpreter tool, enabling interactive, stateful conversations. Finally, you will authenticate to Azure, run the application, and validate the agent’s ability to perform statistical analysis and generate responses based on the uploaded dataset.
+
+> **Tip:** The code used in this exercise is based on the for Microsoft Foundry SDK for Python. You can develop similar solutions using the SDKs for Microsoft .NET, JavaScript, and Java. Refer to [Microsoft Foundry SDK client libraries](https://learn.microsoft.com/azure/ai-foundry/how-to/develop/sdk-overview) for details.
 
 > **Note:** Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
 
 ## Lab Objectives
 
-In this lab, you'll perform the following tasks:
+- **Task 1:** Create a Foundry project
 
-- **Task 1:** Create a Foundry project and agent
+- **Task 2:** Create an agent client app
 
-- **Task 2:** Configure your agent
+- **Task 3:** Configure the application settings
 
-- **Task 3:** Test your agent
+- **Task 4:** Write code for an agent app
 
-## Task 1: Create a Foundry project and agent
+- **Task 5:** Sign into Azure and run the app
 
-In this task, you will sign in to the Microsoft Foundry portal, create a new Foundry project, and create an AI agent in the playground. By completing this task, you will have a ready-to-use project and agent with a deployed model available for configuration.
+## Task 1: Create a Foundry project
+
+In this task, you will create a new project in the Microsoft Foundry portal, set up its configuration, and deploy the gpt-4.1 model. By the end of this task, you will have a project endpoint and model deployment ready to be used by a client application.
 
 1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
 1. Click on **Sign in**.
  
-    ![](../Images/lab1-03-0.png) 
+    ![](../Images/lab1-s2.png)
 
 1. If prompted, provide the credentials below:
  
@@ -36,42 +40,52 @@ In this task, you will sign in to the Microsoft Foundry portal, create a new Fou
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-     ![](../Images/aifoundrysignin2.png)
+     ![](../Images/lab1-s4.png)
 
 1. When the **Stay signed in?** window appears, select **No**.
 
-    ![](../Images/aifoundrysignin3.png)
-
+    ![](../Images/lab1-s5.png)
+    
     >**Note:** Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the **Foundry** logo at the top left to navigate to the home page, which looks similar to the following image (close the **Help** pane if it's open):
 
 1. At the top of the **Microsoft Foundry** portal, enable the **New Foundry toggle (1)** to switch to the latest Foundry user interface.
 
 1. From the **Select a project to continue** dialog, click the drop-down under **Select or search for a project**, and then select **Create a new project (2)**.
 
-     ![](../Images/lab1-03-03.png) 
+     ![](../Images/lab1-s6.png)
 
 1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (7)**:
 
     * Subscription: **Choose Default Subscription (3)**
-    * Resource group: **AI-102-RG08 (4)**
+    * Resource group: **AI-102-RG09 (4)**
     * Microsoft Foundry resource: **Keep as Default (5)**
     * Region: **<inject key="Region" enableCopy="false" /> (6)**
 
-      ![](../Images/lab1-s7.png)
+      ![](../Images/lab9-03-0.png)
 
       >**Note:** Some Azure AI resources are constrained by regional model quotas. In the event of a quota limit being exceeded later in the exercise, there's a possibility you may need to create another resource in a different region.
 
-      > **Note:** If a Welcome to new Microsoft Foundry pop-up appears, select **Cancel (X)** to close it.
+1. Wait for your project created. It may take a few minutes.
 
-1. When your project is created, select **Start building (1)**, and select **Create agent (2)** from the drop-down menu.
+1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Find models (2)** from the drop-down menu.
 
-    ![](../Images/lab8-03-1.png)
+     ![](../Images/lab9-03-1.png)
 
-1. On the **Create an agent** page, enter **expense-agent (1)** in the **Agent name** field, and then select **Create (2)**.
+1. On the **Models** page, search for **gpt-4.1 (1)** in the search bar, and then select the **gpt-4.1 (2)** model from the search results.
 
-     ![](../Images/lab1-s9.png)
+     ![](../Images/lab9-03-5.png)
 
-    - The playground will open for your newly created agent. You'll see that an available deployed model is already selected for you.
+1. On the **gpt-4.1** model details page, click **Deploy (1)**, and then select **Default settings (2)** to deploy the model using the standard configuration.
+
+    ![](../Images/lab9-03-2.png)
+
+1. In the navigation bar on the left, select **Microsoft Foundry** to return to the Foundry home page.
+
+     ![](../Images/lab9-03-3.png)
+
+1. Copy the **Project endpoint** value to a notepad, as you'll use them to connect to your project in a client application.
+
+     ![](../Images/lab9-03-4.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
@@ -79,122 +93,338 @@ In this task, you will sign in to the Microsoft Foundry portal, create a new Fou
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
  
-<validation step="74c732c7-ce7d-4057-aa11-9eb0f6b77ac8" />
+<validation step="a5b3a25b-5fde-4fec-9e3e-487d2c4e5803" />
 
+## Task 2: Create an agent client app
 
-## Task 2: Configure your agent
+In this task, you will prepare a client application environment in Azure Cloud Shell by cloning the provided GitHub repository and reviewing the project files. By the end of this task, you will have the application code and supporting files ready for configuration.
 
-In this task, you will configure your agent by adding instructions, uploading an expense policy document for grounding, and enabling the required tools.
+1. Open a new browser tab (keeping the Microsoft Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
-1. Open another browser tab, and download [Expenses_policy.docx](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx) from `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/01-agent-fundamentals/Expenses_Policy.docx` and save it locally. This document contains details of the expenses policy for the fictional Contoso corporation.
+1. If prompted, provide the credentials below:
 
-1. Return to the browser tab where you have the playground open for your expense agent.
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-1. In **Instructions (1)**, enter the provided prompt text
+    - **Password:** <inject key="AzureAdUserPassword"></inject> 
 
-    ```prompt
-   You are an AI assistant for corporate expenses.
-   You answer questions about expenses based on the expenses policy data.
-   If a user wants to submit an expense claim, you get their email address, a description of the claim, and the amount to be claimed and write the claim details to a text file that the user can download.
+      >**Note:** Close any welcome notifications to see the Azure portal home page.
+
+1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
+
+    ![](../Images/lab2-s7.png)
+
+    >**Note:** The cloud shell provides a command-line interface in a pane at the bottom of the Azure portal. You can resize or maximize this pane to make it easier to work in.
+
+    > **Note:** If you have previously created a cloud shell that uses a **Bash** environment, switch it to **PowerShell**.
+
+1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
+
+    ![](../Images/lab2-s8.png)
+
+1. In the Cloud Shell toolbar, open the **Settings (1)** menu and choose **Go to Classic version (2)** from the drop-down.
+
+    ![](../Images/lab2-s9.png)
+
+    >**Note:** **<font color="red">Ensure you've switched to the classic version of the cloud shell before continuing.</font>**
+
+1. In the Cloud Shell pane, run the following commands to clone the GitHub repository with the code files for this exercise. You can type the command directly, or copy it to the clipboard, then right-click in the command line and paste it as plain text.
+
+    ```
+   rm -r ai-agents -f
+   git clone https://github.com/MicrosoftLearning/mslearn-ai-agents ai-agents
     ```
 
-1. Below the **Instructions**, expand the **Tools** section. Select **Upload files (2)**
+    ![](../Images/lab2-s10.png)
 
-    ![](../Images/lab8-03-2.png)
+    > **Tip:** As you enter commands into the cloudshell, the output may take up a large amount of the screen buffer and the cursor on the current line may be obscured. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
-1. Keep the default values for the **Index option** and **Vector index name**.
+1. Once the repository is cloned, go to the folder with the chat application code files and open them to view their contents.
 
-1. Select the **browse for files** option to upload the **Expenses_policy.docx** local file that you downloaded previously.
-
-      ![](../Images/lab1-s11.png)
-
-1. In the **Open dialog** box, select **Downloads (1)**, choose the **expenses_policy file (2)**, and then select **Open (3)** to upload the file.
-
-    ![](../Images/lab1-s12.png)
-
-1. When your file is successfully uploaded, select **Attach**.
-
-    ![](../Images/lab1-s13.png)
-
-1. In the **Tools** section, verify that a new **File search** is listed and shown as containing 1 file.
-
-    ![](../Images/lab8-03-5.png)
-
-    > **Note:** If **File search** is not listed in the Tools section, follow these steps:
-
-    1. In the **Tools** section, click on **+ Files**.
-
-       ![](../Images/lab8-03-3.png)
-
-    1. In the **Attach files** window, ensure the default **Index option** is selected, verify that the **Expenses_Policy** file is uploaded (if not, upload it) and click **Attach**.
-
-        ![](../Images/lab8-03-4.png)
-
-1. In the **Tools** section, select **Add (1)** drop down, select **Code interpreter (2)**, and enable it.
-
-    ![](../Images/lab8-03-6.png)
-
-    - Your agent will use the document you uploaded as its knowledge source to *ground* its responses (in other words, it will answer questions based on the contents of this document). It will use the code interpreter tool as required to perform actions by generating and running its own Python code.
-
-1. On the **expense-agent** page, select **Save**.
-
-    ![](../Images/lab8-03-7.png)
-
-## Task 3: Test your agent
-
-In this task, you will test your configured agent in the playground by asking policy-related questions and submitting an expense claim to verify its responses and actions.
-
-1. In the **Playground** chat box, enter `What's the maximum I can claim for meals?` **(1)**, and then select **Send (2)**.
-
-    ![](../Images/lab8-03-8.png)
-
-1. Review the agent’s response and confirm it is based on the uploaded **Expenses_Policy.docx** knowledge source.
-
-    ![](../Images/lab1-s17.1.png)
-
-    > **Note:** If the agent fails to respond because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond. If the problem persists, try to increase the quota for your model on the **Models** page.
-
-1. Try the following follow-up prompt: `I'd like to submit a claim for a meal.` and review the response. The agent should ask you for the required information to submit a claim.
-
-    ![](../Images/lab1-s18.png)
-
-1. Provide the agent with an email address; for example, `fred@contoso.com`. The agent should acknowledge the response and request the remaining information required for the expense claim (description and amount)
-
-    ![](../Images/lab8-03-9.png)
-
-1. Submit a prompt that describes the claim and the amount; for example, `Breakfast cost me $20`.
-
-1. The agent should use the code interpreter to prepare the expense claim text file, and provide a link so you can download it.
-
-    ![](../Images/lab8-03-10.png)
-
-1. Download and open the text document to see the expense claim details.
-
-## Optional: Explore the code
-
-After experimenting with your agent in the playground, you may want to integrate it into your own client application. The **Code** tab provides sample code that shows how to interact with your agent programmatically.
-
-1. In the agent playground, select the **Code** tab to view the sample code.
-
-    ![](../Images/lab8-03-11.png)
-
-1. Review the Python code. This code demonstrates how to:
-    - Connect to your agent using the Azure AI Projects SDK
-    - Send messages to the agent
-    - Retrieve and process responses
+    ```
+   cd ai-agents/Labfiles/02-build-ai-agent/Python
+   ls -a -l
+    ```
     
-1. Select **.env variables** to view the environment variables you need to run this code.
+    ![](../Images/lab2-s11.png)
 
-    ![](../Images/lab1-s22.png)
+1. The folder contains application code, configuration settings, and data.
 
-1. You can use this code as a starting point for building your own client application that interacts with the agent you created.
 
-1. Optionally, select **Open in VS Code for the Web** to launch a preconfigured workspace with the sample code ready to run.
+## Task 3: Configure the application settings
 
-    > **Note:** It may take a few minutes for the workspace to be prepared. Follow the instructions provided in the workspace to successfully run the code.
+In this task, you will install the required Python dependencies, update the configuration file with your Foundry project endpoint and model deployment name, and save the changes. By the end of this task, your application will be properly configured to connect to your Foundry project.
+
+1. In the cloud shell command-line pane, enter the following command to install the libraries you'll use:
+
+    ```
+   python -m venv labenv
+   ./labenv/bin/Activate.ps1
+   pip install -r requirements.txt
+    ```
+
+    ![](../Images/lab2-s12.png)
+
+1. Enter the following command to edit the configuration file that has been provided:
+
+    ```
+   code .env
+    ```
+
+1. In the code file, replace the placeholder values with the correct details for your project:
+
+    * PROJECT\_ENDPOINT: **Foundry project endpoint**
+    * MODEL\_DEPLOYMENT\_NAME: **gpt-4.1**
+
+        ![](../Images/lab2-s13.png)
+
+        > **Note:** Paste the project endpoint you copied in the previous task.
+
+1. After replacing the placeholders, save your changes in the code editor using **CTRL+S** or **Right-click > Save**. Then close the editor with **CTRL+Q** or **Right-click > Quit**, leaving the Cloud Shell command line open.
+
+## Task 4: Write code for an agent app
+
+In this task, you will complete the application code to connect to your Microsoft Foundry project, upload a data file, create a Code Interpreter tool, and define an AI agent. By the end of this task, the application will be capable of running a stateful conversation with the agent and performing data analysis.
+
+> **Tip:** As you add code, be sure to maintain the correct indentation. Use the comment indentation levels as a guide.
+
+1. Enter the following command to edit the code file that has been provided:
+
+    ```
+   code agent.py
+    ```
+
+    ![](../Images/lab2-s14.png)
+
+1. Review the existing code, which retrieves the application configuration settings and loads data from *data.txt* to be analyzed. The rest of the file includes comments where you'll add the necessary code to implement your data analysis agent.
+
+1. Find the comment **Add references** and add the following code to import the classes you'll need to build an Azure AI agent that uses the built-in code interpreter tool:
+
+    ```python
+   # Add references
+   from azure.identity import DefaultAzureCredential
+   from azure.ai.projects import AIProjectClient
+   from azure.ai.projects.models import PromptAgentDefinition, CodeInterpreterTool, CodeInterpreterToolAuto
+
+    ```
+
+    ![](../Images/lab2-s15.png)
+
+1. Find the comment **Connect to the AI Project and OpenAI clients** and add the following code to connect to the Azure AI project.
+
+    > **Tip:** Be careful to maintain the correct indentation level.
+
+    ```python
+   # Connect to the AI Project and OpenAI clients
+   with (
+       DefaultAzureCredential(
+           exclude_environment_credential=True,
+           exclude_managed_identity_credential=True) as credential,
+        AIProjectClient(endpoint=project_endpoint, credential=credential) as project_client,
+        project_client.get_openai_client() as openai_client
+   ):
+    ```
+    
+    ![](../Images/lab2-s18.png)
+
+    - The code connects to the Foundry project using the current Azure credentials. The final *with agent_client* statement starts a code block that defines the scope of the client, ensuring it's cleaned up when the code within the block is finished.
+
+1. Find the comment **Upload the data file and create a CodeInterpreterTool**, within the *with agent_client* block, and add the following code to upload the data file to the project and create a CodeInterpreterTool that can access the data in it:
+
+    ```python
+    # Upload the data file and create a CodeInterpreterTool
+    file = openai_client.files.create(
+        file=open(file_path, "rb"), purpose="assistants"
+    )
+    print(f"Uploaded {file.filename}")
+
+    code_interpreter = CodeInterpreterTool(
+        container=CodeInterpreterToolAuto(file_ids=[file.id])
+    )
+    ```
+
+     ![](../Images/lab2-s19.png)
+    
+1. Find the comment **Define an agent that uses the CodeInterpreterTool** and add the following code to define an AI agent that analyzes data and can use the code interpreter tool you defined previously:
+
+    ```python
+    # Define an agent that uses the CodeInterpreterTool
+    agent = project_client.agents.create_version(
+        agent_name="data-agent",
+        definition=PromptAgentDefinition(
+            model=model_deployment,
+            instructions="You are an AI agent that analyzes the data in the file that has been uploaded. Use Python to calculate statistical metrics as necessary.",
+            tools=[code_interpreter],
+        ),
+    )
+    print(f"Using agent: {agent.name}")
+    ```
+
+     ![](../Images/lab2-s20.png)
+
+1. Find the comment **Create a conversation for the chat session** and add the following code to start a thread on which the chat session with the agent will run:
+
+    ```python
+   # Create a conversation for the chat session
+   conversation = openai_client.conversations.create()
+    ```
+
+    ![](../Images/lab2-s22.png)
+    
+1. Note that the next section of code sets up a loop for a user to enter a prompt, ending when the user enters "quit".
+
+1. Find the comment **Send a prompt to the agent** and add the following code to add a user message to the prompt (along with the data from the file that was loaded previously), and then run thread with the agent.
+
+    ```python
+    # Send a prompt to the agent
+    openai_client.conversations.items.create(
+        conversation_id=conversation.id,
+        items=[{"type": "message", "role": "user", "content": user_prompt}],
+    )
+
+    response = openai_client.responses.create(
+        conversation=conversation.id,
+        extra_body={"agent": {"name": agent.name, "type": "agent_reference"}},
+        input="",
+    )
+    ```
+
+     ![](../Images/lab2-s23.png)
+
+1. Find the comment **Check the response status for failures** and add the following code to check for any errors.
+
+    ```python
+    # Check the response status for failures
+    if response.status == "failed":
+        print(f"Response failed: {response.error}")
+    ```
+
+1. Find the comment **Show the latest response from the agent** and add the following code to retrieve the messages from the completed thread and display the last one that was sent by the agent.
+
+    ```python
+    # Show the latest response from the agent
+    print(f"Agent: {response.output_text}")
+    ```
+
+    ![](../Images/lab2-s24.png)
+
+1. Find the comment **Get the conversation history**, which is after the loop ends, and add the following code to print out the messages from the conversation thread; reversing the order to show them in chronological sequence
+
+    ```python
+    # Get the conversation history
+    print("\nConversation Log:\n")
+    items = openai_client.conversations.items.list(conversation_id=conversation.id)
+    for item in items:
+        if item.type == "message":
+            print(f"item.content[0].type = {item.content[0].type}")
+            role = item.role.upper()
+            content = item.content[0].text
+            print(f"{role}: {content}\n")
+    ```
+
+    ![](../Images/lab2-s25.png)
+
+1. Find the comment **Clean up** and add the following code to delete the agent and thread when no longer needed.
+
+    ```python
+    # Clean up
+    openai_client.conversations.delete(conversation_id=conversation.id)
+    print("Conversation deleted")
+
+    project_client.agents.delete_version(agent_name=agent.name, agent_version=agent.version)
+    print("Agent deleted")
+    ```
+
+    ![](../Images/lab2-s26.png)
+
+1. Review the code, using the comments to understand how it:
+    
+    - Connects to the AI Foundry project.
+    - Uploads the data file and creates a code interpreter tool that can access it.
+    - Creates a new agent that uses the code interpreter tool and has explicit instructions to use Python as necessary for statistical analysis.
+    - Runs a thread with a prompt message from the user along with the data to be analyzed.
+    - Checks the status of the run in case there's a failure
+    - Retrieves the messages from the completed thread and displays the last one sent by the agent.
+    - Displays the conversation history
+    - Deletes the agent and thread when they're no longer required.
+
+1. Save the code file **CTRL+S** when you have finished. You can also close the code editor **CTRL+Q** though you may want to keep it open in case you need to make any edits to the code you added. In either case, keep the cloud shell command-line pane open.
+
+## Task 5: Sign into Azure and run the app
+
+In this task, you will authenticate to Azure using the Azure CLI and run the client application. You will interact with the agent by submitting prompts, reviewing responses, and validating its ability to analyze data and generate results dynamically.
+
+1. In the cloud shell command-line pane, enter the following command to sign into Azure. Click on the **Link (1)** and copy the **code (2)** provided.
+
+    ```
+    az login
+    ```
+
+     ![](../Images/lab2-s32.png)
+
+     > **Note:** In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
+
+1. In the new browser tab, when the **Enter code to allow access** window appears, paste the copied code and select **Next**.
+
+     ![](../Images/lab2-s33.png)
+
+1. In the **Pick an account** dialog box, choose **ODL_User<inject key="DeploymentID"></inject>**. 
+
+     ![](../Images/lab2-s34.png)
+
+1. In the **Are you trying to sign in to Microsoft Azure CLI?** dialog box, click **Continue**.
+
+     ![](../Images/lab2-s35.png)
+
+1. When the **Microsoft Azure Cross-platform Command Line Interface** window pops up, return to the browser tab with Cloud Shell open. 
+
+     ![](../Images/lab2-s36.png)
+
+1. In the Cloud Shell console, press **Enter** to select the only available subscription.
+
+     ![](../Images/lab2-s37.png)
+
+1. After you have signed in, enter the following command to run the application:
+
+    ```
+    python agent.py
+    ```
+
+     ![](../Images/lab2-s38.png)
+    
+     - The application runs using the credentials for your authenticated Azure session to connect to your project and create and run the agent.
+
+1. When prompted, view the data that the app has loaded from the *data.txt* text file. Then enter a prompt such as:
+
+    ```
+   What's the category with the highest cost?
+    ```
+
+     ![](../Images/lab2-s28.png)
+
+     > **Tip:** If the app fails because the rate limit is exceeded. Wait a few seconds and try again. If there is insufficient quota available in your subscription, the model may not be able to respond.
+
+1. View the response. Then enter another prompt, this time requesting a visualization:
+
+    ```
+   Create a text-based bar chart showing cost by category
+    ```
+
+     ![](../Images/lab2-s30.png)
+
+1. View the response. Then enter another prompt, this time requesting a statistical metric:
+
+    ```
+   What's the standard deviation of cost?
+    ```
+
+     ![](../Images/lab2-s39.png)
+
+1. You can continue the conversation if you like. The thread is *stateful*, so it retains the conversation history - meaning that the agent has the full context for each response. Enter `quit` when you're done.
+
+1. Review the conversation messages that were retrieved from the thread - which may include messages the agent generated to explain its steps when using the code interpreter tool.
 
 ## Summary
 
-In this lab, you created a new project in the Microsoft Foundry portal and built an AI agent to assist with expense claims. You configured the agent with system instructions and added an expense policy document as grounding data. You also enabled the code interpreter tool so the agent could perform actions. Finally, you tested the agent in the playground by asking policy questions and generating an expense claim file to download and review.
+In this lab, you created a new project in the Microsoft Foundry portal and deployed a foundation model for an AI agent solution. You configured a Python client application in Azure Cloud Shell, updated the project settings, and implemented code to connect to your Foundry project and enable the built-in Code Interpreter tool. Finally, you authenticated to Azure, ran the application, and interacted with the agent through a stateful conversation to validate its analytical capabilities.
 
 ### You have successfully completed the Hands-on Lab!

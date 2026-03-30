@@ -2,52 +2,56 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 06: Evaluate generative AI model performance
+# Lab 07: Explore AI Agent development
 
-### Overall Estimated Timing: 60 Minutes
+### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 
-In this hands-on lab, you will learn how to evaluate the performance of generative AI models using both manual and automated evaluation techniques in Microsoft Foundry. You will start by creating a hub and project, then deploy base models such as `gpt-4.1` and `gpt-4.1-mini`. Next, you will conduct manual evaluations by testing model responses against expected outputs, and finally configure automated evaluations using prebuilt evaluators for metrics like semantic similarity, relevance, and F1 score. By the end of this lab, you will gain hands-on experience with assessing model accuracy, reliability, and fairness using standardized evaluation workflows in Microsoft Foundry.
+In this hands-on lab, you will gain practical experience with the Microsoft Foundry portal by creating a project and building an AI agent. You will configure the agent with system instructions and upload a corporate expenses policy document as a knowledge source. Next, you’ll enable the code interpreter tool and test the agent in the playground by asking questions and submitting an expense claim. Finally, you’ll download and review the generated claim file to see how AI agents can support real business processes.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create an Microsoft Foundry project:** Set up a new project environment to build and manage prompt flows.
-2. **Deploy models:** Deploy the gpt-4.1 and gpt-4.1-mini models within the project for evaluation.
-3. **Perform manual evaluation:** Use a dataset of travel-related queries to test model accuracy and score outputs against expected responses.
-4. **Run automated evaluations:** Apply evaluators to measure semantic similarity, relevance, F1 score, and fairness for standardized model assessment.
+1. **Create a project and agent in Microsoft Foundry:** Set up a new Foundry project and create an AI agent with a deployed model ready for configuration.
+
+2. **Configure an AI agent with knowledge and tools:** Define system instructions, upload an expense policy document for grounding, and enable tools such as file search and code interpreter.
+
+3. **Test and validate the agent in the playground:** Interact with the agent by asking policy-related questions, submit an expense claim, and download and review the generated claim file.
 
 ## Pre-requisites
 
-- Familiarity with AI concepts such as model evaluation and performance metrics.
-
-- An active Azure subscription with access to Microsoft Foundry.
+* Basic knowledge of the Azure portal.
+* Familiarity with AI concepts such as agents, grounding data, and actions.
+* An active Azure subscription with access to **Microsoft Foundry**.
+* Permission to create and manage resources in the assigned resource group (for example, Azure AI User role).
 
 ## Architecture
 
-1. **Microsoft Foundry Resource:** Provisioned via the Azure portal, this resource connects to Azure AI services, manages access via system-assigned identities, and hosts deployed models such as **gpt-4.1** and **gpt-4.1-mini**.
+The lab architecture demonstrates how a Microsoft Foundry project enables AI agent development for expense management:
 
-2. **Microsoft Foundry Project:** A workspace for deploying and managing models, configuring project settings, creating prompt flows, and accessing endpoints and authorization keys for applications.
+1. **Microsoft Foundry Project and Deployed Model:** A workspace created in the Microsoft Foundry portal where a foundation model is deployed to power the AI agent’s conversational and task-based responses.
 
-3. **Evaluation Dataset:** A JSONL file with travel-related questions and expected answers, used to validate model outputs.
+2. **AI Agent Configuration:** An agent created in the playground with defined system instructions that control its behavior and response logic.
 
-4. **Evaluation Workflows:** Manual evaluations capture human scoring, while automated evaluations apply semantic similarity, relevance, F1 score, and fairness checks.
+3. **Grounding Data and Tools:** An uploaded expense policy document attached using File Search for contextual grounding, along with the Code Interpreter tool to enable dynamic actions such as generating downloadable expense claim files.
+
+4. **Agents Playground Interface:** An interactive testing environment where users send prompts, validate grounded responses, trigger tool-based actions, and review generated outputs before integrating the agent into applications.
 
 ## Architecture Diagram
 
-![](../Images/lab7-arch.png)
+![](../Images/lab8-arch.png)
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project:** You create a hub and project that act as the workspace to deploy models, upload datasets, and run evaluations.
+1. **Microsoft Foundry Project and Deployed Model:** The project serves as the central workspace in the Microsoft Foundry portal where AI resources are managed. Within this project, a foundation model is deployed to process user prompts and generate responses that power the AI agent.
 
-2. **Deployed Models (gpt-4.1 and gpt-4.1-mini):** You deploy the gpt-4.1 model to generate AI-assisted evaluation metrics, and the gpt-4.1-mini model to test performance against sample queries.
+2. **AI Agent Configuration:** The agent encapsulates the deployed model along with system instructions that define its purpose assisting employees with expense-related queries. These instructions control tone, scope, and task-handling logic during interactions.
 
-3. **Manual Evaluation Module:** You run test queries against the gpt-4.1-mini model, compare its responses with the expected answers, and score results manually using thumbs up/down.
+3. **Knowledge Source (Expense Policy Document):** The uploaded expense policy document acts as the agent’s knowledge base. Using File Search, the agent retrieves relevant policy information to provide accurate, context-aware responses grounded in company guidelines.
 
-4. **Automated Evaluation:** Built-in evaluators (semantic similarity, relevance, F1 score, fairness) automatically score the model outputs, enabling scalable and standardized assessment.
+4. **Code Interpreter and Playground Interaction:** The Code Interpreter tool enables the agent to generate and execute Python code for performing actions such as creating downloadable expense claim files. The Agents Playground provides the interactive interface where users test prompts, trigger actions, and validate outputs in real time.
 
 # Getting Started with lab
 
@@ -57,7 +61,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/AI-102-l7-g1.png)
+![Access Your VM and Lab Guide](../Images/lab8-labvm.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -99,7 +103,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
    ![Launch Azure Portal](../Images/azureportalicon.png)
 
-1. In sign-in window, kindly sign in using the provided Azure credentials
+1. In the sign-in window, kindly sign in using the provided Azure credentials
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -132,3 +136,5 @@ Click on **Next** from the lower right corner to move on to the next page.
    ![Start Your Azure Journey](../Images/nextpage.png)
 
 ## Happy Learning !!
+
+

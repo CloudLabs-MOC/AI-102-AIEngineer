@@ -1,6 +1,6 @@
 # Lab 01: Prepare for an AI development project
 
-### Estimated Duration : 30 Minutes
+### Estimated Duration : 45 Minutes
 
 ## Overview
 

@@ -2,56 +2,62 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 07: Explore AI Agent development
+# Lab 08: Develop an AI agent
 
 ### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 
-In this hands-on lab, you will gain practical experience with the Microsoft Foundry portal by creating a project and building an AI agent. You will configure the agent with system instructions and upload a corporate expenses policy document as a knowledge source. Next, you’ll enable the code interpreter tool and test the agent in the playground by asking questions and submitting an expense claim. Finally, you’ll download and review the generated claim file to see how AI agents can support real business processes.
+In this hands-on lab, you will gain practical experience with the **Microsoft Foundry portal** by creating a project and deploying the **gpt-4.1** model. You will set up a Python client application in **Azure Cloud Shell**, configure it with your project endpoint and deployment details, and implement code to connect to your Foundry project. Next, you will build an AI agent that leverages the built-in **Code Interpreter** tool to perform dynamic analysis and run stateful conversation threads. Finally, you will authenticate to Azure, execute the application, and interact with the agent to explore how AI agents can be integrated into custom applications for real-time analytical scenarios.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create a project and agent in Microsoft Foundry:** Set up a new Foundry project and create an AI agent with a deployed model ready for configuration.
+1. **Create a project and deploy a model in the Microsoft Foundry portal:** Set up a new project, deploy the gpt-4.1 model, and prepare it for agent development.
 
-2. **Configure an AI agent with knowledge and tools:** Define system instructions, upload an expense policy document for grounding, and enable tools such as file search and code interpreter.
+2. **Set up and configure a Python client application:** Prepare the Azure Cloud Shell environment, install dependencies, and update application settings with project details.
 
-3. **Test and validate the agent in the playground:** Interact with the agent by asking policy-related questions, submit an expense claim, and download and review the generated claim file.
+3. **Build and configure an AI agent using the SDK:** Implement code to connect to the Foundry project, define agent instructions, and enable the built-in Code Interpreter tool.
+
+4. **Authenticate and test the agent:** Sign in to Azure, run the application, interact with the agent through prompts, and validate its analytical and conversational capabilities.
 
 ## Pre-requisites
 
 * Basic knowledge of the Azure portal.
-* Familiarity with AI concepts such as agents, grounding data, and actions.
-* An active Azure subscription with access to **Microsoft Foundry**.
+* Familiarity with AI concepts such as agents, grounding data, and code interpreter actions.
+* An active Azure subscription with access to **Microsoft Foundry portal**.
 * Permission to create and manage resources in the assigned resource group (for example, Azure AI User role).
 
 ## Architecture
 
-The lab architecture demonstrates how a Microsoft Foundry project enables AI agent development for expense management:
+This lab demonstrates how a Microsoft Foundry project enables AI agent development through SDK-based integration and tool-enabled execution.
 
-1. **Microsoft Foundry Project and Deployed Model:** A workspace created in the Microsoft Foundry portal where a foundation model is deployed to power the AI agent’s conversational and task-based responses.
+1. **Microsoft Foundry Project:** A workspace created in the Microsoft Foundry portal where you deploy models and manage agent configurations.
 
-2. **AI Agent Configuration:** An agent created in the playground with defined system instructions that control its behavior and response logic.
+2. **Deployed Foundation Model (gpt-4.1):** A model deployed within the project that processes prompts and powers the AI agent’s analytical and conversational responses.
 
-3. **Grounding Data and Tools:** An uploaded expense policy document attached using File Search for contextual grounding, along with the Code Interpreter tool to enable dynamic actions such as generating downloadable expense claim files.
+3. **AI Agent with Code Interpreter Tool:** An agent defined programmatically using the Microsoft Foundry SDK, configured with instructions and the built-in Code Interpreter tool to execute dynamic Python code.
 
-4. **Agents Playground Interface:** An interactive testing environment where users send prompts, validate grounded responses, trigger tool-based actions, and review generated outputs before integrating the agent into applications.
+4. **Python Client Application (Azure Cloud Shell):** A client application that connects to the project endpoint, authenticates using Azure credentials, sends prompts, manages stateful conversations, and retrieves responses.
+
+5. **Azure CLI Authentication:** Provides secure access to the Foundry project and allows the application to interact with deployed models and agents programmatically.
 
 ## Architecture Diagram
 
-![](../Images/lab8-arch.png)
+![](../Images/lab9-arch.png)
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project and Deployed Model:** The project serves as the central workspace in the Microsoft Foundry portal where AI resources are managed. Within this project, a foundation model is deployed to process user prompts and generate responses that power the AI agent.
+1. **Microsoft Foundry Project:** The central workspace created in the Microsoft Foundry portal where you deploy models and manage agent configurations for SDK-based integration.
 
-2. **AI Agent Configuration:** The agent encapsulates the deployed model along with system instructions that define its purpose assisting employees with expense-related queries. These instructions control tone, scope, and task-handling logic during interactions.
+2. **Deployed Model (gpt-4.1):** The foundation model deployed within the project that processes prompts and generates analytical and conversational responses.
 
-3. **Knowledge Source (Expense Policy Document):** The uploaded expense policy document acts as the agent’s knowledge base. Using File Search, the agent retrieves relevant policy information to provide accurate, context-aware responses grounded in company guidelines.
+3. **AI Agent (SDK-defined):** An agent created programmatically using the Microsoft Foundry SDK, configured with instructions and linked to the deployed model for task-specific behavior.
 
-4. **Code Interpreter and Playground Interaction:** The Code Interpreter tool enables the agent to generate and execute Python code for performing actions such as creating downloadable expense claim files. The Agents Playground provides the interactive interface where users test prompts, trigger actions, and validate outputs in real time.
+4. **Code Interpreter Tool:** A built-in tool enabled for the agent that allows execution of dynamic Python code to perform calculations, statistical analysis, and generate structured outputs.
+
+5. **Python Client Application with Azure Authentication:** A Cloud Shell–based application that authenticates using Azure CLI, connects to the project endpoint, manages stateful conversations, and interacts with the agent programmatically.
 
 # Getting Started with lab
 
@@ -61,7 +67,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared a
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Images/lab8-labvm.png)
+![Access Your VM and Lab Guide](../Images/lab9-labvm.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -120,7 +126,6 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
     ![](../Images/lab1-w.png)
-
 
 ## Support Contact
  

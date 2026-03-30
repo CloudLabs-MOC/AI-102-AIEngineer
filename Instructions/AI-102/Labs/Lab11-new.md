@@ -1,6 +1,6 @@
 # Lab 11: Develop a multi-agent solution with Microsoft Foundry
     
-### Estimated Duration: 30 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
