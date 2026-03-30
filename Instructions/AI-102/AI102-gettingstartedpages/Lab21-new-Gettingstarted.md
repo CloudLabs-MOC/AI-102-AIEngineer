@@ -61,7 +61,7 @@ The lab architecture demonstrates how a **speech-enabled application** is built 
 
 ## Architecture Diagram
 
-![](../Images/ai21g1.png)
+![](../Images/lab21-archdiagram.png)
 
 ## Explanation of Components
 
@@ -140,7 +140,7 @@ Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/lab1-p.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 

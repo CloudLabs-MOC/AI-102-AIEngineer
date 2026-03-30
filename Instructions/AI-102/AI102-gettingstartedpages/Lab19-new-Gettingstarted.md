@@ -57,7 +57,7 @@ The lab architecture demonstrates how an **AI-powered text analysis solution** i
 
 ## Architecture Diagram
 
-![](../Images/lab15archdiagram.png)
+![](../Images/lab19-archdiagram.png)
 
 ## Explanation of Components
 
@@ -134,7 +134,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/lab1-p.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 

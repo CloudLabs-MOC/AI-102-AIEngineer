@@ -1,6 +1,6 @@
 # Lab 19: Develop a text analysis agent
 
-### Estimated Duration: Minutes
+### Estimated Duration: 60 Minutes
 
 ## Lab Overview
 
@@ -68,6 +68,14 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
     ![](../Images/lab19dev-p2t1p3.png)
 
     > **Note:** <span style="color:red"> Copy and save the project endpoint and API key, as you will need them later in the lab.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="91ddc639-898e-4b31-813a-5a3e930bcab0" />
 
 ## Task 2: Create an agent
 
