@@ -226,11 +226,11 @@ In this task, you'll implement functionality to convert text into speech and sav
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
-   ```powershell
-    az login
-    ```
+     ```powershell
+     az login
+     ```
 
-    > **Note:** Minimize the VS Code to see the **Sign in** window.
+     > **Note:** Minimize the VS Code to see the **Sign in** window.
 
 1. In the **Sign in** window, select **Work or school account** **(1)**, and then select **Continue** **(2)**.
 
@@ -238,13 +238,13 @@ In this task, you'll implement functionality to convert text into speech and sav
 
 1. On the **Sign in** page, provide the credentials below:
  
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-     ![](../Images/lab7-s6.png)
+      ![](../Images/lab7-s6.png)
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-     ![](../Images/lab7-s7.png)
+      ![](../Images/lab7-s7.png)
 
 1. When prompted, select **Yes** to sign in to all apps and websites on this device.
 
@@ -283,16 +283,6 @@ In this task, you'll implement functionality to transcribe audio files into text
 1. In the **voice-mail.py** code file, find the **transcribe_messages** function; which you will implement to transcribe each of the voice messages in the **messages** subfolder.
 
     The functional already contains code to loop through the files in the **messages** folder.
-
-1. In the **transcribe_messages** function, locate the line that plays the audio file and comment it out to prevent playback issues in environments without audio support.
-
-    ```python
-    #playsound(file_path)
-    ```
-
-    ![](../Images/lab21rec-p2t5p2(1).png)
-
-    > **Note:** In some lab environments (such as virtual machines), audio playback may not be supported. Commenting out this line ensures the program runs without interruption.
 
 1. In the **transcribe_messages** function, find the comment **Transcribe the audio file**, and add the following code to transcribe the audio.
 

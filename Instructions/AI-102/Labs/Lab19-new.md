@@ -248,6 +248,8 @@ In this task, you'll set up your development environment, clone the repository, 
     * **requirements.txt:** the Python package dependencies
     * **text-agent.py:** the main application code file
 
+        ![](../Images/lab19dev-p2t6p7.png)
+
 ### Configure the application
 
 1. In Visual Studio Code, open the **Extensions** pane **(1)**, search for **Python** **(2)**, select the **Python** extension by Microsoft **(3)**, and then click **Install** **(4)** if it is not already installed.
