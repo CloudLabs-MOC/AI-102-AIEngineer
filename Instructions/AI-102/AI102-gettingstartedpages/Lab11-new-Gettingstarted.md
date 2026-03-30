@@ -5,7 +5,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 11: Develop a multi-agent solution with Microsoft Foundry
 
-### Overall Estimated Timing: 60 Minutes
+### Overall Estimated Timing: 45 Minutes
 
 ## Overview
 

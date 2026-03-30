@@ -4,7 +4,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 05: Apply guardrails to prevent the output of harmful content
 
-### Overall Estimated Timing: 60 Minutes
+### Overall Estimated Timing: 45 Minutes
 
 ## Overview
 

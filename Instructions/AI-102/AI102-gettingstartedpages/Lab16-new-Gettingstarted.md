@@ -5,7 +5,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 16: Build a workflow in Microsoft Foundry
 
-### Overall Estimated Timing: 60 Minutes
+### Overall Estimated Timing: 90 Minutes
 
 ## Overview
 

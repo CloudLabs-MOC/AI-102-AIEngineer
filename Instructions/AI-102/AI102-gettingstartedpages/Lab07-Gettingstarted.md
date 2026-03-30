@@ -4,7 +4,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 07: Explore AI Agent development
 
-### Overall Estimated Duration: 60 Minutes
+### Overall Estimated Duration: 30 Minutes
 
 ## Overview
 

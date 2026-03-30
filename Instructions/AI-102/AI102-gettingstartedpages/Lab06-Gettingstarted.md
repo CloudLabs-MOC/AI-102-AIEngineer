@@ -4,7 +4,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 06: Evaluate generative AI model performance
 
-### Overall Estimated Timing: 60 Minutes
+### Overall Estimated Timing: 45 Minutes
 
 ## Overview
 

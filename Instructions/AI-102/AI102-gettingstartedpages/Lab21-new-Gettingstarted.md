@@ -4,7 +4,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 21: Recognize and synthesize speech
 
-### Overall Estimated Timing: 30 Minutes
+### Overall Estimated Timing: 45 Minutes
 
 ## Overview
 
