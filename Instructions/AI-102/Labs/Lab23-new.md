@@ -17,8 +17,6 @@ In this lab, you'll perform the following tasks:
 * Task 5: Create a client application
 * Task 6: Run the application
 
-
-
 ## Task 1: Create a Microsoft Foundry project
 
 In this task, you'll sign in to the Microsoft Foundry portal and create a new project with the required Azure resources.
