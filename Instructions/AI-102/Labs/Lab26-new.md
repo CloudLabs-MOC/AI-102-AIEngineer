@@ -1,4 +1,4 @@
-# Lab 24: Read text in images
+# Lab 26: Read text in images
 
 ### Estimated Duration: 30 Minutes
 
@@ -20,7 +20,7 @@ In this hands-on lab, you will learn how to build an OCR-enabled application usi
 
 In this task, you’ll provision an Azure AI Vision resource in the Azure portal. You’ll create a Computer Vision resource, configure its settings, and then copy the endpoint and key values into a Notepad file for later use.
 
-> **Note**: In this exercise, you'll use a standalone **Computer Vision** resource. You can also use Azure AI Vision services in an *Azure AI Services* multi-service resource, either directly or in an *Azure AI Foundry* project.
+> **Note**: In this exercise, you'll use a standalone **Computer Vision** resource. You can also use Azure AI Vision services in an *Azure AI Services* multi-service resource, either directly or in an *Microsoft Foundry* project.
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account.
 
@@ -32,23 +32,19 @@ In this task, you’ll provision an Azure AI Vision resource in the Azure portal
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/l14t1p2.png)
+        ![](../Images/aifoundrysignin2.png)
 
 1. When the **Stay signed in?** window appears, select **No**.
 
     ![](../Images/aifoundrysignin3.png)
 
-    >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
-
-    ![](../Images/l2at2p2.png)
-
 1. Open the **Azure portal**, search for **Computer vision (1)** and select **Computer vision (2)** from the services.
 
-    ![](../Images/l25t1p1.png)
+    ![](../Images/lab26-03-01.png)
 
-1. On **AI Foundry | Computer Vision** blade, click on **+ Create**.
+1. On **Microsoft Foundry | Computer Vision** blade, click on **+ Create**.
 
-    ![](../Images/l25t1p2.png)
+    ![](../Images/lab26-03-02.png)
 
 1. Provision the resource using the following settings and then click on **Review + create**:
 
@@ -218,7 +214,7 @@ In this task, you’ll extend the client application by adding code that uses th
 
     ![](../Images/l25t3p5.png)
 
-1. Save your changes (*CTRL+S*) but keep the code editor open in case you need to fix any typo's.
+1. Save your changes **CTRL+S** but keep the code editor open in case you need to fix any typo's.
 
 1. Resize the panes so you can see more of the console, then enter the following command to run the program:
 
@@ -298,7 +294,7 @@ In this task, you’ll enhance the application further to detect and return the 
 
     ![](../Images/l25t4p1.png)
 
-1. Save your changes (*CTRL+S*). Then, in the command line pane, rerun the program to extract text from *images/Lincoln.jpg*.
+1. Save your changes *CTRL+S**. Then, in the command line pane, rerun the program to extract text from *images/Lincoln.jpg*.
 
     ```
     python read-text.py images/Lincoln.jpg
@@ -317,6 +313,14 @@ In this task, you’ll enhance the application further to detect and return the 
     ![](../Images/lincolntext2.png)
 
 1. Rerun the program for *images/Business-card.jpg* and *images/Note.jpg*; viewing the **words.jpg** file generated for each image.
+
+    ```
+    python read-text.py images/Business-card.jpg
+    ```
+
+    ```
+    python read-text.py images/Note.jpg
+    ```
 
 ## Summary
 
