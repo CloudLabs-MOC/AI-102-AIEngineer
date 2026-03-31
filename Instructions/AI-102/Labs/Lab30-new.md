@@ -1,4 +1,4 @@
-# Lab 28: Analyze video
+# Lab 30: Analyze video
 
 ### Estimated Duration: 45 Minutes
 
@@ -8,19 +8,19 @@ In this hands-on lab, you will learn how to analyze videos using **Azure Video I
 
 ## Lab Objectives
 
-- **Task 1:** Upload a video to Video Indexer
+- Task 1: Upload a video to Video Indexer
 
-- **Task 2:** Review video insights
+- Task 2: Review video insights
 
-- **Task 3:** Search for insights
+- Task 3: Search for insights
 
-- **Task 4:** Use the Video Indexer REST API
+- Task 4: Use the Video Indexer REST API
 
-- **Task 5:** Get your API details
+- Task 5: Get your API details
 
-- **Task 6:** Use the REST API
+- Task 6: Use the REST API
 
-- **Task 7:** Use Video Indexer widgets
+- Task 7: Use Video Indexer widgets
 
 ## Task 1: Upload a video to Video Indexer
 
