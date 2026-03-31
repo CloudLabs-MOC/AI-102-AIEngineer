@@ -1,12 +1,23 @@
-# Develop a Voice Live agent
+# Lab 23: Develop a Voice Live agent
+### Estimated Duration: 30 Minutes
 
-Speech-capable AI agents enable users to interact conversationally - using spoken command and questions that generate vocal responses.
+## Lab Overview
+In this lab, you’ll build an end-to-end solution using **Microsoft Foundry** by creating a project and developing a real-time voice-enabled AI agent. You’ll configure the agent with Azure Speech Voice Live capabilities to enable conversational interactions using speech input and audio responses.
 
-In this exercise, you'll the Voice Live capability of Azure Speech in Microsoft Foundry Tools to create a real-time voice-based agent.
+You’ll then set up your development environment in **Visual Studio Code**, clone a sample application, and configure it using environment variables. Using Python and the Voice Live SDK, you’ll implement code to connect to your agent, manage a live voice session, and process audio input and output. Finally, you’ll authenticate with Azure, run the application, and test the agent through real-time voice conversations.
 
-This exercise takes approximately **30** minutes.
+## Lab Objectives
 
-> **Note**: Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
+In this lab, you'll perform the following tasks:
+
+* Task 1: Create a Microsoft Foundry project
+* Task 2: Create an agent
+* Task 3: Configure Azure Speech Voice Live
+* Task 4: Use speech to interact with the agent (Read Only)
+* Task 5: Create a client application
+* Task 6: Run the application
+
+
 
 ## Task 1: Create a Microsoft Foundry project
 
@@ -99,7 +110,7 @@ In this task, you'll create and configure an AI agent with a selected model and 
 
 ## Task 3: Configure Azure Speech Voice Live
 
-Enabling speech mode for a Foundry agent integrates Azure Speech Voice Live - adding speech capabilities to the agent.
+In this task, you'll enable and configure Voice Live capabilities to add speech input and output functionality to your agent.
 
 1. In the pane on the left, under the model selection list, enable **Voice mode (1)**.
 
@@ -115,7 +126,7 @@ Enabling speech mode for a Foundry agent integrates Azure Speech Voice Live - ad
 
 ## Task 4: Use speech to interact with the agent (Read Only)
 
-Now you're ready to chat with the agent.
+In this task, you'll observe how to interact with the agent using voice input and listen to the generated speech responses.
 
 1. In the Chat pane, use the **Start** button to start a conversation with the agent. If prompted, allow access to the system microphone.
 
@@ -141,7 +152,7 @@ Now you're ready to chat with the agent.
 
 ## Task 5: Create a client application
 
-To use your agent in a custom application, you need to write code that uses the Azure Speech Voice Live SDK to initiate and manage a conversation session.
+In this task, you'll set up your development environment, clone the repository, and configure the application to connect to your agent.
 
 ### Get the application files from GitHub
 
@@ -362,9 +373,10 @@ To use your agent in a custom application, you need to write code that uses the 
 
 ## Task 6: Run the application
 
-Now you're ready to run your application, and have a conversation with your agent.
+In this task, you'll authenticate with Azure, run the client application, and interact with the agent using real-time voice conversations.
 
-> **TIP**: The application works best when using a headset. When using speakers, there's a risk that the agent can "hear" its own responses and process them as new user input.
+> **Note:** <span style="color:red"> In the current lab environment, audio input (microphone) is not supported due to platform limitations; therefore, while you can perform the steps in this task, you will not be able to provide prompts using voice.
+
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
@@ -415,3 +427,7 @@ Now you're ready to run your application, and have a conversation with your agen
     ![](../Images/lab23-p2t5p12.png)
 
 ## Summary
+
+In this exercise, you created a voice-enabled AI agent using Microsoft Foundry and integrated it with Azure Speech Voice Live to enable real-time conversational interactions. You configured the agent, enabled voice capabilities, and explored speech-based interactions in the playground. You then built a Python-based client application, authenticated with Azure, and interacted with the agent using live audio input and output. Great work!
+
+### You have successfully completed the Hands-on Lab!
