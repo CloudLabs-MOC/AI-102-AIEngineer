@@ -1,4 +1,4 @@
-# Lab 25: Detect and analyze faces
+# Lab 27: Detect and analyze faces
 
 ### Estimated Duration: 30 Minutes
 
@@ -26,19 +26,15 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/aifoundrysignin2.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 
     ![](../Images/AIl16-2.png)
 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
-
-    ![](../Images/AIl16-3.png)
-
 1. On the **Azure portal**, select **+ Create a resource**.
 
-   ![](../Images/ai26l1.png)
+   ![](../Images/lab27-03-01.png)
 
 1. In the search bar, search for `Face` **(1)**, select **face (2)**.
 
@@ -46,7 +42,7 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 
 1. Select **Face** resource from the Marketplace.
 
-   ![](../Images/ai26l3.png)
+   ![](../Images/lab27-03-02.png)
 
 1. Select **Create**.
 
@@ -69,7 +65,7 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 
 1. Wait for deployment to complete, and select **Go to resource** to go to the resource group.
 
-   ![](../Images/ai26l6.png)
+   ![](../Images/lab27-03-03.png)
 
 1. Select the Face resource **face<inject key="DeploymentID" enableCopy="false"/>**.
 
@@ -103,11 +99,7 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
 
     ![](../Images/AI-l16-70.png)
 
-1. On the **Getting started** page,
-
-    - Select **No storage account required (1)** 
-    - Select your subscription **(2)**
-    - Click on **Apply (3)**
+1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
       ![](../Images/ai11l6.png) 
 
@@ -141,7 +133,7 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
    ls -a -l
     ```
 
-     ![](../Images/ai26l10.png)     
+     ![](../Images/lab27-03-04.png)     
 
       The folder contains application configuration and code files for your app. It also contains an **/images** subfolder, which contains some image files for your app to analyze.
 
@@ -159,7 +151,7 @@ In this task, you’ll open Azure Cloud Shell, set up a Python environment, inst
    code .env
     ```
 
-     ![](../Images/ai26l11.png)     
+     ![](../Images/lab27-03-05.png)     
 
      The file is opened in a code editor.
 
@@ -180,7 +172,7 @@ In this task, you’ll import the required namespaces and instantiate FaceClient
    code analyze-faces.py
     ```
 
-     ![](../Images/ai26l13.png)   
+     ![](../Images/lab27-03-06.png)   
 
       >**Tip**: You might want to maximize the cloud shell pane and move the split-bar between the command line cosole and the code editor so you can see the code more easily.
 
@@ -213,12 +205,10 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
 1. In the code file for your application, in the **Main** function, find the comment **Specify facial features to be retrieved** and add the following code:
 
     ```python
-    # Specify facial features to be retrieved
-    features = [
-        FaceAttributeTypeDetection01.HEAD_POSE,
-        FaceAttributeTypeDetection01.OCCLUSION,
-        FaceAttributeTypeDetection01.ACCESSORIES
-    ]
+   # Specify facial features to be retrieved
+   features = [FaceAttributeTypeDetection01.HEAD_POSE,
+                FaceAttributeTypeDetection01.OCCLUSION,
+                FaceAttributeTypeDetection01.ACCESSORIES]
     ```
 
     ![](../Images/ai26l16.png)    
@@ -258,7 +248,7 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
         annotate_faces(image_file, detected_faces)
     ```
 
-    ![](../Images/ai26l17.png)       
+    ![](../Images/lab27-03-07.png)       
 
 3. Examine the code you added to the **Main** function. It analyzes an image file and detects any faces it contains, including attributes for head pose, occlusion, and the presence of accessories such as glasses. Additionally, a function is called to annotate the original image with a bounding box for each detected face.
 
