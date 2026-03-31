@@ -1,4 +1,4 @@
-# Lab 27: Detect objects in images
+# Lab 29: Detect objects in images
 
 ### Estimated Duration : 45 Minutes
 
@@ -36,23 +36,19 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/lab7-s7.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 
     ![](../Images/AIl16-2.png)
 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
-
-    ![](../Images/AIl16-3.png)
-
 1. Open the **Azure portal**, search for **Custom Vision (1)** and select **Custom Vision (2)** from the services.
 
-    ![](../Images/AI-l28-1.png)
+    ![](../Images/lab29-p2t1p1.png)
 
-1. On **AI Foundry | Custom Vision** blade, select **Custom Vision (1)** and click on **+ Create (2)**.
+1. On **Microsoft Foundry | Custom Vision** blade, select **Custom Vision (1)** and click on **+ Create (2)**.
 
-    ![](../Images/AI-l28-2.png)
+    ![](../Images/lab29-p2t1p2.png)
 
 1. In the Basics tab of **Create Custom Vision**, follow these instructions to fill out the properties, then select **Review + create (8)**:
 
@@ -116,10 +112,10 @@ In this task, you’ll set up a new Object Detection project in the Custom Visio
 
      ![](../Images/AI-l28-11.png)
 
-1. On **Create a new project** enter the following settings and click on **Create project (6)**
+1. On **Create a new project** enter the following settings and click on **Create project (6)**:
     - **Name**: `Detect Fruit` **(1)**
     - **Description**: `Object detection for fruit.` **(2)**
-    - **Resource**: Select customvision<inject key="DeploymentID"></inject> **(3)**
+    - **Resource**: Select **customvision<inject key="DeploymentID"></inject>** **(3)**
     - **Project Types**: Object Detection **(4)**
     - **Domains**: General **(5)**
 
@@ -214,7 +210,7 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
 1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
-    ![](../Images/AI-l16-69.png)
+    ![](../Images/lab29-p2t1p3.png)
 
     ![](../Images/AI-l16-70.png)
 
@@ -314,13 +310,13 @@ In this task, you’ll switch to Azure Cloud Shell and use the Custom Vision Tra
 
     ![](../Images/AI-l28-30.png)
 
-    > **Note:** Make sure You are in **Training Images** page
+    > **Note:** Make sure you are in **Training Images** page.
 
 ## Task 5: Train and test a model
 
 In this task, you’ll run a Quick Training to create a new iteration of your object detection model and then review performance metrics (Precision, Recall, mAP). You’ll validate the model with Quick Test to see predicted boxes and labels on a sample image.
 
-1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. Select the **Quick Training** option and then wait for the training iteration to complete (this may take a minute or so).
+1. In the Custom Vision project, click **Train** (&#9881;<sub>&#9881;</sub>) to train an object detection model using the tagged images. Select the **Quick Training (1)** option and click on **Train (2)**, then wait for the training iteration to complete (this may take a minute or so).
 
      ![](../Images/AI-l28-31.png)
 
