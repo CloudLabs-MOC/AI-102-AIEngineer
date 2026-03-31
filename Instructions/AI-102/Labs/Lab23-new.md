@@ -34,8 +34,6 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 
 1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (6)**:
 
-    >**Note:** <span style="color:red"> Make a note of the Microsoft Foundry resource name, as it will be required later in the lab.
-
     * Subscription: **Choose Default Subscription (3)**
     * Resource group: **AI-102-RG023 (4)**
     * Microsoft Foundry resource: **Keep as Default**
@@ -53,7 +51,7 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 
     ![](../Images/lab19dev-p2t1p3.png)
 
-    > **Note:** <span style="color:red"> Copy and save the project endpoint and API key, as you will need them later in the lab.
+    > **Note:** <span style="color:red"> Copy and save the project endpoint, as you will need them later in the lab.
 
 ## Task 2: Create an agent
 
