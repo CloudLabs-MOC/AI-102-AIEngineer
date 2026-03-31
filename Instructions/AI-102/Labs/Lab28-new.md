@@ -1,4 +1,4 @@
-# Lab 26: Classify images
+# Lab 28: Classify images
 
 ### Estimated Duration: 45 Minutes
 
@@ -42,25 +42,21 @@ In this task, you’ll create the required Custom Vision resources in Azure to s
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/l14t1p2.png)
+        ![](../Images/aifoundrysignin2.png)
 
 1. When the **Stay signed in?** window appears, select **No**.
 
     ![](../Images/aifoundrysignin3.png)
 
-    >**Note:** If the **Welcome to Microsoft Azure** window appears, select **Cancel**.
-
-    ![](../Images/l2at2p2.png)
-
 1. In the Azure Portal, using the search bar, search for **`Custom vision` (1)**, select **Custom vision (2)** from the result.
 
-    ![](../Images/l27t1p1.png)
+    ![](../Images/lab28-03-1.png)
 
-1. On **AI Foundry | Custom vision** blade, click on **+ Create**.
+1. On **Microsoft Foundry | Custom vision** blade, click on **+ Create**.
 
-    ![](../Images/l27t1p2.png)
+    ![](../Images/lab28-03-2.png)
 
-1. Provision the resource using the following settings and then click on **Review + create**:
+1. Provision the resource using the following settings and then click on **Review + create (8)**:
 
     - Create options: **Both (1)**
     - Subscription: **Choose Default Subscription (2)**
@@ -70,7 +66,7 @@ In this task, you’ll create the required Custom Vision resources in Azure to s
     - Training pricing tier: **F0 (6)**
     - Prediction pricing tier: **F0 (7)**
 
-        ![](../Images/l27t1p3.png)
+        ![](../Images/lab28-03-3.png)
 
 1. On the **Review + create** tab, click **Create** to provision the resource.
 
@@ -181,6 +177,8 @@ In this task, you’ll upload training images of apples, bananas, and oranges in
 
     ![](../Images/l27t3p8.png)
 
+    ![](../Images/lab28-03-4.png)
+
 1. Explore the images you have uploaded in the Custom Vision project - there should be 15 images of each class, like this:
 
     ![](../Images/l27t3p9.png)
@@ -193,7 +191,7 @@ In this task, you’ll train a classification model using your tagged images, th
 
     ![](../Images/l27t4p1.png)
 
-1. Select the **Quick Training (1)** option, and click **Train (2)**. Then wait for the training iteration to complete (this may take a minute or so).
+1. Select the **Quick Training (1)** option, and click **Train (2)**. Then wait for the training iteration to complete (this may take a  2-5 minutes or so).
 
     ![](../Images/l27t4p2.png)
 
@@ -292,8 +290,6 @@ In this task, you’ll use the Custom Vision training API to automate model trai
 
 1. The folder contains application configuration and code files for your app. It also contains an **/more-training-images** subfolder, which contains some image files you'll use to perform additional training of your model.
 
-    ![](../Images/l27t7p3.png)
-
 1. Install the Azure AI Custom Vision SDK package for training and any other required packages by running the following commands:
 
     ```
@@ -310,7 +306,7 @@ In this task, you’ll use the Custom Vision training API to automate model trai
 
     ![](../Images/l27t7p4.png)
 
-1. In the code file, update the configuration values it contains to reflect the  and an authentication  for your Custom Vision **training** resource, and the  for the custom vision project you created previously.
+1. In the code file, update the configuration values it contains to reflect the Endpoint and an authentication Key for your Custom Vision **training** resource, and the Project ID for the custom vision project you created previously.
 
     - YOUR_TRAINING_ENDPOINT: **Endpoint (1)**
     - YOUR_TRAINING_KEY: **Key (2)**
@@ -339,7 +335,7 @@ In this task, you’ll write and run Python code to train your Custom Vision mod
     - The **Upload_Images** function retrieves the tags that are defined in the Custom Vision project and then uploads image files from correspondingly named folders to the project, assigning the appropriate tag ID.
     - The **Train_Model** function creates a new training iteration for the project and waits for training to complete.
 
-1. Close the code editor (*CTRL+Q*) and enter the following command to run the program:
+1. Close the code editor **CTRL+Q** and enter the following command to run the program:
 
     ```
     python train-classifier.py
@@ -351,7 +347,7 @@ In this task, you’ll write and run Python code to train your Custom Vision mod
 
     ![](../Images/l27t8p3.png)
 
-1. Then view the **Performance** page and verify that a new iteration has been created.
+1. Then view the **Performance** page and verify that a new iteration has been created(this may take a minute or so).
 
     ![](../Images/l27t8p4.png)
 
@@ -413,7 +409,7 @@ In this task, you’ll use the trained image classification model from a client 
 
     ![](../Images/l27t10p3.png)
 
-1. Update the configuration values to reflect the  and  for your Custom Vision *<u>prediction</u>* resource, the  for the classification project, and the name of your published model (which should be *fruit-classifier*). 
+1. Update the configuration values to reflect the Endpoint and an authentication Key for your Custom Vision *<u>prediction</u>* resource, the Project ID for the classification project, and the name of your published model (which should be *fruit-classifier*). 
 
     - YOUR_PREDICTION_ENDPOINT: **Endpoint (1)**
     - YOUR_PREDICTION_KEY: **Key (2)**
@@ -421,7 +417,7 @@ In this task, you’ll use the trained image classification model from a client 
 
         ![](../Images/l27t10p4.png)
 
-1. Save your changes (*CTRL+S*) and close the code editor (*CTRL+Q*).
+1. Save your changes **CTRL+S** and close the code editor **CTRL+Q**.
 
 1. In the cloud shell command line, enter the following command to open the code file for the client application:
 
