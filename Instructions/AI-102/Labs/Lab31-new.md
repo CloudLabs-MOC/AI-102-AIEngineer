@@ -304,25 +304,25 @@ The initial application files you'll need to develop the translation application
 1. In the code editor for your app code, in the loop section, find the code you added previously under the comment **Get a response to image input**. Then modify the code as follows, to upload this local image file:
 
     ```python
-   # Get a response to image input
-   image_path = Path("mystery-fruit.jpeg")
-   image_format = "jpeg"
-   with open(image_path, "rb") as image_file:
-        image_data = base64.b64encode(image_file.read()).decode("utf-8")
+    # Get a response to image input
+    image_path = Path("mystery-fruit.jpeg")
+    image_format = "jpeg"
+    with open(image_path, "rb") as image_file:
+            image_data = base64.b64encode(image_file.read()).decode("utf-8")
 
-   data_url = f"data:image/{image_format};base64,{image_data}"
+    data_url = f"data:image/{image_format};base64,{image_data}"
 
-   response = client.responses.create(
-        model=model_deployment,
-        input=[
-            {"role": "developer", "content": system_message},
-            { "role": "user", "content": [  
-                { "type": "input_text", "text": prompt},
-                { "type": "input_image", "image_url": data_url}
-            ]} 
-        ]
-   )
-    print(response.output_text)
+    response = client.responses.create(
+            model=model_deployment,
+            input=[
+                {"role": "developer", "content": system_message},
+                { "role": "user", "content": [  
+                    { "type": "input_text", "text": prompt},
+                    { "type": "input_image", "image_url": data_url}
+                ]} 
+            ]
+    )
+        print(response.output_text)
     ```
     ![](../Images/lab30-03-19.png)
 
