@@ -324,27 +324,28 @@ The initial application files you'll need to develop the translation application
     )
         print(response.output_text)
     ```
-    ![](../Images/lab30-03-19.png)
+     
+     ![](../Images/lab30-03-19.png)
 
 1. Use the **CTRL+S** command to save your changes to the code file.
 
 1. In the terminal, enter the following command to run the app:
 
     ```
-   python image-chat-app.py
+    python image-chat-app.py
     ```
 
 1. When prompted, enter the following prompt:
 
     ```
-   What is this fruit? What recipes could I use it in?
+    What is this fruit? What recipes could I use it in?
     ```
 
 1. Review the response. Then enter `quit` to exit the program.
 
-    ![](../Images/lab30-03-20.png)
+     ![](../Images/lab30-03-20.png)
 
-    > **Note**: In this simple app, we haven't implemented logic to retain conversation history; so the model will treat each prompt as a new request with no context of the previous prompt.
+     > **Note**: In this simple app, we haven't implemented logic to retain conversation history; so the model will treat each prompt as a new request with no context of the previous prompt.
 
 ## Summary
 
