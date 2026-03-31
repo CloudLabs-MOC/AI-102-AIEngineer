@@ -4,7 +4,7 @@
 
 ## Lab Overview
 
-In this exercise, you'll configure the Azure Speech in Foundry Tools MCP server, and connect it to an agent.
+In this lab, you will create and configure an AI agent in Microsoft Foundry integrated with Azure Speech capabilities. You will enable the agent to generate speech from text and transcribe audio using the Azure Speech MCP tool. Finally, you will build and test a Python client application to interact with the agent and perform speech-based tasks.
 
 ## Lab Objectives
 
@@ -26,7 +26,7 @@ In this exercise, you'll configure the Azure Speech in Foundry Tools MCP server,
 
 ## Task 1: Create an Azure storage account
 
-The Azure Speech MCP server uses an Azure storage account to save generated audio files.
+In this task, you will create an Azure Storage account and configure a blob container to store generated audio files. You will also generate a SAS token and URL for secure access.
 
 1. Open the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`, and sign in using your Azure credentials.
 
@@ -75,6 +75,7 @@ The Azure Speech MCP server uses an Azure storage account to save generated audi
     - **Signing method:** Account key **(1)**
     - **Signing key:** Key1 **(2)**
     - **Stored access policy**: None **(3)**
+    
     - **Permissions (4)**:
         - Read
         - Add
@@ -84,20 +85,21 @@ The Azure Speech MCP server uses an Azure storage account to save generated audi
     - **Start and expiry date/time**:
         - **Start**: The current date and time
         - **Expiry**: 11:59pm tomorrow **(5)**
+    
     - **Allowed IP addresses**: Leave blank
     - **Allowed protocols**: HTTPS only **(6)**
 
-    ![](../Images/lab22-03-08.png)
+      ![](../Images/lab22-03-08.png)
 
-1. In the **Generate SAS** pane, copy the **Blob SAS token (1)** and **Blob SAS URL (2)**, and store them in a notepad for later use.
+1. In the **Generate SAS** pane, copy the **Blob SAS URL**, and store them in a notepad for later use.
 
-    ![](../Images/lab22-03-09.png)
+    ![](../Images/lab22-03-new.png)
 
     > **IMPORTANT:** Copy the generated SAS token and URL, and store them in a text file for now - you'll need them later!
 
 ## Task 2: Create a Microsoft Foundry project
 
-Microsoft Foundry uses projects to organize models, resources, data, and other assets used to develop an AI solution.
+In this task, you will create a new project in the Microsoft Foundry portal and configure its basic settings for AI development.
 
 1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
@@ -127,12 +129,12 @@ Microsoft Foundry uses projects to organize models, resources, data, and other a
 
      ![](../Images/lab1-s6.png)
 
-1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (7)**:
+1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (6)**:
 
     * Subscription: **Choose Default Subscription (3)**
     * Resource group: **AI-102-RG22 (4)**
-    * Microsoft Foundry resource: **Keep as Default (5)**
-    * Region: **<inject key="Region" enableCopy="false" /> (6)**
+    * Microsoft Foundry resource: **Keep as Default**
+    * Region: **<inject key="Region" enableCopy="false" /> (5)**
 
       ![](../Images/lab22-03-10.png)
 
@@ -140,15 +142,15 @@ Microsoft Foundry uses projects to organize models, resources, data, and other a
 
 1. Wait for your project created. It may take a few minutes.
 
-1. On the home page for your project, note that the API key, project endpoint, and OpenAI endpoint are displayed here.
+1. On the home page for your project, note that the **API key** and **project endpoint**, are displayed here.
 
     ![](../Images/lab19dev-p2t1p3.png)
 
-    > **TIP**: Copy the project key to the clipboard - you're going to need it later!
+    > **TIP:** Copy the project key to the clipboard - you're going to need it later!
 
 ## Task 3: Create an agent
 
-Now that you have a Foundry project, you can create an agent.
+In this task, you will create and configure an AI agent in Foundry, define its instructions, and test its basic functionality.
 
 1. In the **Start building (1)** menu, select **Create agents (2)**.
 
@@ -184,13 +186,13 @@ Now that you have a Foundry project, you can create an agent.
 
 ## Task 4: Create an Azure Speech in Foundry Tools connection
 
-Foundry includes an MCP server for Azure Speech in Foundry Tools, which you can connect to your project and use in your agent.
+In this task, you will connect the Azure Speech MCP server tool to your Foundry project and associate it with your agent.
 
 1. In the left navigation pane, select **Tools (1)**, and then click **Connect a tool (2)**.
 
     ![](../Images/lab22-03-14.png)
 
-1. In the **Select a tool** pane, search for **Azure Speech (1)**, select **Azure Speech MCP Server (2)**, and then click **Create (3)**.
+1. In the **Select a tool** pane, search for **Azure Speech (1)**, scroll down and select **Azure Speech MCP Server (2)**, and then click **Create (3)**.
 
     ![](../Images/lab22-03-31.png)
 
@@ -215,7 +217,7 @@ Foundry includes an MCP server for Azure Speech in Foundry Tools, which you can 
 
 ## Task 5: Test the Azure Speech tool in the playground
 
-Now let's test the agent's ability to use the tool you connected.
+In this task, you will test the agent’s ability to generate speech from text and transcribe audio using the Azure Speech tool.
 
 1. In the agent playground for the **speech-agent** agent, enter the following prompt:
 
@@ -253,6 +255,8 @@ Now that you have a working agent, you can create a client application that uses
 
 ### Task 6.1 Get the application files from GitHub
 
+In this task, you will clone the required repository and access the application files in Visual Studio Code.
+
 1. Open the **Visual Studio Code** from the desktop.
 
     ![](../Images/lab9-p2t1p1.png)
@@ -285,7 +289,7 @@ Now that you have a working agent, you can create a client application that uses
 
    ![](../Images/lab18-03-5.png)
 
-1. After the repo has been cloned, in the Explorer pane, expand the folder **Labfiles (1)** → **05-speech-tool/Python (2)** select **speech-client (3)**. The application files include: 
+1. After the repo has been cloned, in the Explorer pane, expand the folder **Labfiles** → **05-speech-tool/Python** select **speech-client**. The application files include: 
 
     - **.env** (the application configuration file)
     - **requirements.txt** (the Python package dependencies that need to be installed)
@@ -294,6 +298,8 @@ Now that you have a working agent, you can create a client application that uses
         ![](../Images/lab22-03-22.png)
 
 ### Task 6.2: Configure the application
+
+In this task, you will set up the Python environment, install dependencies, and update configuration settings.
 
 1. Right-click on the **requirements.txt (1)** file under **speech-client** folder and select **Open in Integrated Terminal (2)**.
 
@@ -314,6 +320,8 @@ Now that you have a working agent, you can create a client application that uses
 1. Once done, press **Ctrl+S** to save the changes.
 
 ### Task 6.3: Implement application code
+
+In this task, you will add the required code to connect to your Foundry agent and handle user prompts.
 
 1. In the **Explorer** pane, in the **speech-client** folder,  open the **speech-client.py** file.
 
@@ -372,7 +380,7 @@ Now that you have a working agent, you can create a client application that uses
 
 ## Task 7: Test the client application
 
-Now let's test the application by running it in a Python environment and authenticating the connection to your project.
+In this task, you will run the Python application, authenticate with Azure, and test speech generation and transcription through the agent.
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
@@ -441,5 +449,7 @@ Now let's test the application by running it in a Python environment and authent
     ![](../Images/lab22-03-39.png)
 
 ## Summary
+
+In this lab, you created an Azure Storage account and a Microsoft Foundry project to support speech-enabled AI scenarios. You built and configured an agent, and connected it to the Azure Speech MCP tool to enable speech synthesis and transcription. You tested these capabilities in the Foundry playground. Finally, you developed and ran a Python client application to interact with the agent and perform speech-based tasks.
 
 ### You have successfully completed the Hands-on Lab!

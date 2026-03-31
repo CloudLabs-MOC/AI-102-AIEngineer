@@ -9,21 +9,21 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this hands-on lab, you will develop and deploy an AI agent using the VS Code extension. You will sign in to Azure, create a project, and deploy a GPT-4.1 model to power the agent. Using the designer view, you will configure the agent’s instructions and integrate an MCP server tool to access external APIs. Finally, you will test the agent in the Playground and generate sample SDK code for programmatic integration.
+In this hands-on lab, you will create an AI agent in Microsoft Foundry and integrate it with Azure Speech capabilities using the MCP tool. You will configure Azure resources, enable speech synthesis and transcription, and test the agent in the Foundry playground. Finally, you will build and run a Python client application to interact with the agent and perform speech-based tasks.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Deploy and configure a model in Microsoft Foundry:** Create a project using the *gpt-4.1* model in the VS Code extension and deploy it for agent integration.
+1. **Create and configure Azure resources:** Set up an Azure Storage account and create a Microsoft Foundry project to support speech-enabled scenarios.
 
-2. **Set up the Microsoft Foundry VS Code environment:** Install and configure the *Microsoft Foundry* extension, sign in to Azure, and connect to your project resources.
+2. **Build and configure an AI agent:** Create an agent in Microsoft Foundry, define its instructions, and prepare it for speech-based interactions.
 
-3. **Create and configure an AI agent:** Build the *data-research-agent* using the designer view, define its system instructions, and associate it with the deployed model.
+3. **Integrate Azure Speech MCP tool:** Connect the Azure Speech MCP server to your project and enable the agent to perform speech synthesis and transcription.
 
-4. **Integrate MCP Server tools:** Add an *MCP Server* tool to enable the agent to access external APIs and real-time documentation sources.
+4. **Test speech capabilities in the playground:** Use the Foundry playground to generate speech from text and transcribe audio using the connected tool.
 
-5. **Deploy and validate the agent workflow:** Deploy the agent to Microsoft Foundry, test it in the *Agent Playground*, and verify tool usage, responses, and conversation threads.
+5. **Develop and run a client application:** Configure and execute a Python application to interact with the agent and validate end-to-end speech functionality.
 
 ## Pre-requisites
 
@@ -33,17 +33,17 @@ By the end of this lab, you will be able to:
 
 ## Architecture
 
-The lab architecture demonstrates how the Microsoft Foundry VS Code extension enables AI agent development with external tool integration:
+The lab architecture demonstrates how an AI agent in Microsoft Foundry integrates with Azure Speech services to enable speech-based interactions:
 
-1. **Microsoft Foundry Project and Deployed Model:** A project created through the Microsoft Foundry VS Code extension where the gpt-4.1 model is deployed to power the AI agent’s responses.
+1. **Microsoft Foundry Project and Agent:** A project created in Microsoft Foundry where an AI agent is configured using a *gpt-4.1* model to handle user prompts and coordinate speech-related tasks.
 
-2. **AI Agent Configuration:** An agent configured locally in VS Code using the visual designer, where system instructions define its research-focused behavior and response strategy.
+2. **Azure Storage Account:** A storage account with a blob container is used to store generated audio files and provide secure access through SAS tokens.
 
-3. **MCP Server Tool Integration:** A Model Context Protocol (MCP) server connected to the agent, enabling access to external APIs and Azure documentation repositories for real-time information retrieval.
+3. **Azure Speech MCP Server Integration:** The Azure Speech MCP tool is connected to the Foundry project, enabling the agent to perform speech synthesis (text-to-speech) and transcription (speech-to-text).
 
-4. **Agent Deployment to Microsoft Foundry:** The configured agent is deployed to Microsoft Foundry, making it accessible as a managed cloud resource.
+4. **Agent Playground in Foundry:** An interactive environment where users test the agent, approve tool usage, and validate speech generation and transcription outputs.
 
-5. **Agents Playground Interface:** An interactive testing environment inside VS Code where users submit prompts, approve tool usage, observe MCP server calls, and review agent responses along with annotations and execution details.
+5. **Python Client Application:** A client application built using the Azure AI Projects SDK that connects to the agent, sends prompts, and processes speech-based responses programmatically.
 
 ## Architecture Diagram
 
@@ -51,15 +51,15 @@ The lab architecture demonstrates how the Microsoft Foundry VS Code extension en
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project and Deployed Model:** The project acts as the central workspace created via the Microsoft Foundry extension in VS Code. Within this project, the *gpt-4.1* model is deployed and serves as the reasoning engine that processes user prompts and generates intelligent responses.
+1. **Microsoft Foundry Project and Agent:** The project serves as the central workspace where the AI agent is created and managed. The *gpt-4.1* model powers the agent, enabling it to process user prompts and coordinate speech-related tasks.
 
-2. **AI Agent Configuration:** The agent is created using the designer interface in VS Code. It includes system instructions that define its purpose — researching information using external tools. The agent links directly to the deployed model.
+2. **Azure Storage Account:** The storage account provides a blob container to store generated audio files. It uses SAS tokens to securely allow the Azure Speech tool to read and write audio data.
 
-3. **MCP Server Tool:** The MCP Server enables the agent to access external data sources such as Azure REST API specifications. Instead of relying only on pre-trained knowledge, the agent dynamically retrieves up-to-date documentation and API information.
+3. **Azure Speech MCP Server Tool:** This tool enables the agent to perform speech synthesis (text-to-speech) and transcription (speech-to-text). It connects the agent to Azure Speech services and uses the storage container for handling audio files.
 
-4. **Agent Deployment:** After configuration, the agent is deployed to Microsoft Foundry. This makes it a managed cloud resource that can be tested in the Playground or accessed programmatically via generated SDK code.
+4. **Agent Playground in Foundry:** The Playground allows you to interactively test the agent by submitting prompts, approving tool usage, and reviewing generated speech links or transcription outputs.
 
-5. **Agents Playground and Thread Monitoring:** The Playground allows interactive testing of the agent. Users can submit queries, approve MCP tool usage, and view annotations showing external data sources used. The Threads section provides execution logs and detailed run information for monitoring and validation.
+5. **Python Client Application:** The client application connects to the Foundry agent using the Azure AI Projects SDK. It allows you to send prompts programmatically and receive speech-based responses, enabling end-to-end testing outside the portal.
 
 # Getting Started with lab
 
