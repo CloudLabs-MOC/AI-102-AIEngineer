@@ -72,16 +72,6 @@ First, you'll need to sign into the Video Indexer portal and upload a video.
 
     >**Note**: In this lab, we're using this video to explore Video Indexer functionality; but you should take the time to watch it in full when you've finished the lab as it contains useful information and guidance for developing AI-enabled applications responsibly! 
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
->
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
- 
-<validation step="aff1dc2b-575b-4abd-b1a1-e5e92fc6c59f" />
- 
----    
-
 ## Task 2: Review video insights
 
 The indexing process extracts insights from the video, which you can view in the portal.
@@ -150,9 +140,9 @@ You can use Video Indexer to search the video for insights.
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. Use the **[>_]** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
+1. Use the **[>_] (1)** button to the right of the search bar at the top of the page to create a new **Cloud Shell** in the Azure portal.
 
-    ![](../Images/ai11l4.png) 
+    ![](../Images/lab29-p2t1p3.png) 
 
 1. Selecting a **PowerShell** environment.
 
@@ -199,7 +189,7 @@ To use the Video Indexer API, you need some information to authenticate requests
 
     ![](../Images/ai29l18.png) 
 
-1. Open a new browser tab and go to the [Video Indexer developer portal](https://api-portal.videoindexer.ai) at `https://api-portal.videoindexer.ai.
+1. Open a new browser tab and go to the [Video Indexer developer portal](https://api-portal.videoindexer.ai) at `https://api-portal.videoindexer.ai`.
 
 1. Sign in  with your Azure credentials.
 
@@ -330,7 +320,17 @@ The Video Indexer portal is a useful interface to manage video indexing projects
     ![](../Images/ai29l39.png)
 
 1. Experiment with the widgets, using the **Insights** widget to search for insights and jump to them in the video.     
-   
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="aff1dc2b-575b-4abd-b1a1-e5e92fc6c59f" />
+ 
+---    
+
 ## Summary
 
 In this lab, you explored how to analyze videos using **Azure Video Indexer**. You uploaded a sample video to the portal, reviewed extracted insights such as transcripts, OCR text, speakers, topics, keywords, and sentiments, and searched the video for specific insights. You then worked with the **Video Indexer REST API** in Cloud Shell by retrieving your account ID and API key, updating a PowerShell script, and running it to interact with your video programmatically. Finally, you embedded **Video Indexer widgets**, including the Player and Insights, into an HTML page to make video content and insights accessible outside the portal.
