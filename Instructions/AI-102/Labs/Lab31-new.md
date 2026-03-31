@@ -16,7 +16,7 @@
 
 - **Task 5:** Sign into Azure and run the app
 
-## Task 1: Choose a model to start a project
+## Task 1: Create a Microsoft Foundry project
 
 In this task, you'll sign in to the Microsoft Foundry portal and create a new project with the required Azure resources.
 
@@ -41,8 +41,6 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
     ![](../Images/lab1-03-03.png) 
 
 1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (6)**:
-
-    >**Note:** <span style="color:red"> Make a note of the Microsoft Foundry resource name, as it will be required later in the lab.
 
     * Subscription: **Choose Default Subscription (3)**
     * Resource group: **AI-102-RG030 (4)**
@@ -326,7 +324,6 @@ The initial application files you'll need to develop the translation application
    )
     print(response.output_text)
     ```
-
     ![](../Images/lab30-03-19.png)
 
 1. Use the **CTRL+S** command to save your changes to the code file.
