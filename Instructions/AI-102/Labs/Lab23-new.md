@@ -188,7 +188,7 @@ In this task, you'll set up your development environment, clone the repository, 
     * **requirements.txt:** the Python package dependencies
     * **chat-client.py:** the main application code file
 
-        ![](../Images/lab19dev-p2t5p1.png)
+        ![](../Images/lab23-p2t5p1.png)
 
 ### Configure the application
 
