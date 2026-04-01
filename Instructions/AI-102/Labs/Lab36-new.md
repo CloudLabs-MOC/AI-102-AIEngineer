@@ -235,7 +235,7 @@ This is the sample invoice that your code will analyze:
             print(f"Invoice Total: {amount.get('currencySymbol', '$')}{amount.get('amount')}, with confidence {invoice_total.get('confidence')}.")
     ```
 
-    ![](../Images/lab36-p2t3p12.png)
+    ![](../Images/lab36-p2t4p25(1).png)
 
 1. Review the code you added, which:
     - Creates a `DocumentIntelligenceClient` with your endpoint and credentials.
