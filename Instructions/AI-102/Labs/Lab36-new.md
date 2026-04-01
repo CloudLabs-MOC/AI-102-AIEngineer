@@ -12,6 +12,23 @@ This exercise takes approximately **45** minutes.
 
 ## Lab Objectives
 
+In this lab, you'll perform the following tasks:
+
+* Task 1: Create a Document Intelligence resource
+
+* Task 2: Use the Read model in the portal
+
+* Task 3: Analyze an invoice with a prebuilt model using the Python SDK
+
+  * Task 3.1: Prepare the development environment
+  * Task 3.2: Add code to analyze an invoice
+
+* Task 4: Train and test a custom model**
+
+  * Task 4.1: Prepare training data
+  * Task 4.2: Train the model in Document Intelligence Studio
+  * Task 4.3: Test the custom model with the Python SDK
+
 ## Task 1:  Create a Document Intelligence resource
 
 Azure Document Intelligence is included in Azure AI Services. You'll create a Document Intelligence resource directly from the Document Intelligence Studio.
@@ -98,7 +115,7 @@ Now let's use the Read model in the Studio to analyze a multilingual document:
 
 Now let's use the Document Intelligence Python SDK to analyze an invoice programmatically.
 
-### Prepare the development environment
+### Task 3.1: Prepare the development environment
 
 1. Go to the **Azure portal** `https://portal.azure.com`, search for **Document Intelligence (1)** in the top search bar, and then select **Document intelligences (2)** from the results to locate the resource you created earlier.
 
@@ -168,7 +185,7 @@ Now let's use the Document Intelligence Python SDK to analyze an invoice program
 
 1. Save the file by using **CTRL+S**.
 
-### Add code to analyze an invoice
+### Task 3.2: Add code to analyze an invoice
 
 This is the sample invoice that your code will analyze:
 
