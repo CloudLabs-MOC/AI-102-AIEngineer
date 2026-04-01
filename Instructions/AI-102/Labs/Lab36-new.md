@@ -292,7 +292,7 @@ This is the sample invoice that your code will analyze:
 
 The prebuilt models are useful for common document types, but often you need to extract specific data from your own forms. You can train a custom Document Intelligence model to extract the specific fields you need.
 
-### Prepare training data
+### Task 4.1: Prepare training data
 
 A setup script has been provided to create a storage account and upload sample forms for training.
 
@@ -377,7 +377,7 @@ A setup script has been provided to create a storage account and upload sample f
 
     ![](../Images/lab36-p2t4p10.png)
 
-### Train the model in Document Intelligence Studio
+### Task 4.2 Train the model in Document Intelligence Studio
 
 Now you'll use the training forms to build a custom extraction model.
 
@@ -406,7 +406,7 @@ Now you'll use the training forms to build a custom extraction model.
 1. Provide the following configuration:
 
     - **Enter project details**:
-        - **Project name**: Myproject<inject key="DeploymentID" enableCopy="false"/> **(1)**
+        - **Project name**: myproject<inject key="DeploymentID" enableCopy="false"/> **(1)**
         - Click **Continue (2)**
 
             ![](../Images/lab36-p2t4p13.png)
@@ -455,7 +455,7 @@ Now you'll use the training forms to build a custom extraction model.
 
     ![](../Images/lab36-p2t4p20.png)
 
-### Test the custom model with the Python SDK
+### Task 4.3 Test the custom model with the Python SDK
 
 1. In the VS Code, open a new terminal using **Ctrl+Shift+`**. 
 
