@@ -1,9 +1,9 @@
-# Lab 33: Analyze forms with prebuilt Azure AI Document Intelligence models
+# Lab 35: Analyze forms with prebuilt Azure AI Document Intelligence models
 
-### Estimated Duration : 30 Minutes
+### Estimated Duration : 45 Minutes
 ## Overview
 
-In this exercise, you'll set up an Azure AI Foundry project with all the necessary resources for document analysis. You'll use both the Azure AI Foundry portal and the Python SDK to submit forms to that resource for analysis.
+In this exercise, you'll set up an Microsoft Foundry project with all the necessary resources for document analysis. You'll use both the Microsoft Foundry portal and the Python SDK to submit forms to that resource for analysis.
 
 While this exercise is based on Python, you can develop similar applications using multiple language-specific SDKs; including:
 
@@ -15,7 +15,7 @@ While this exercise is based on Python, you can develop similar applications usi
 
 In this lab, you'll perform the following tasks:
 
-- **Task 1:** Create an Azure AI Foundry project
+- **Task 1:** Create an Microsoft Foundry project
 
 - **Task 2:**  Use the Read model
   
@@ -23,52 +23,46 @@ In this lab, you'll perform the following tasks:
 
 - **Task 4:** Add code to use the Azure Document Intelligence service
 
-## Task 1: Create an Azure AI Foundry project
+## Task 1: Create an Microsoft Foundry project
 
-Let's start by creating an Azure AI Foundry project.
+Let's start by creating an Microsoft Foundry project.
 
-1.  Open a new tab in the browser, right-click on the following link [Azure AI Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Azure AI Foundry portal**.
+1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
 1. Click on **Sign in**.
+ 
+    ![](../Images/lab1-03-0.png) 
 
-   ![](../Images/AI-l31-1.png) 
-
-1. If prompted to sign in, enter your credentials:
-
+1. If prompted, provide the credentials below:
+ 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-
-        ![](../Images/AI-l16-0.png)
+    
+        ![](../Images/lab2a-03-11.png)
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
-
-        ![](../Images/AIl16-1.png)
-
-1. If prompted to **Stay signed in**, you can click **No**.
-
-     ![](../Images/AIl16-2.png)
-
-1. Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the Azure AI Foundry logo at the top left to navigate to the home page, which looks similar to the following image (close the Help pane if it's open)
+    
+        ![](../Images/aifoundrysignin2.png)
 
 1. In the browser, navigate to `https://ai.azure.com/managementCenter/allResources` and select **Create new**. 
 
-    ![](../Images/AI-l34-1.png) 
+    ![](../Images/lab3-03-1.png)
 
-1. In the Create a project wizard, select **AI hub resource** and click **Next**.
+1. In the **Create Project** window, select the option to create a new **AI hub resource (1)**, then click **Next (2)**.
 
-    ![](../Images/AI-l34-2.png) 
+    ![](../Images/lab3-03-2.png)
 
-1. Enter the project name as **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)**, then select **Rename hub (2)**. Then rename the hub as  **Myhub<inject key="DeploymentID" enableCopy="false"/> (3)** and then **Next (4)**.
+1. In the **Create a project** wizard, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** in the Project name field. Under the Hub field, click **Rename hub (2)** and specify **Myhub<inject key="DeploymentID" enableCopy="false"/> (3)** as the hub name. Then, and then click **Next (4)**.
 
-    ![](../Images/AI-l34-3.png) 
+    ![](../Images/lab3-03-3.png)
 
 1. Expand **Advanced options (1)**, and specify the following settings for your project and leave the rest as their defaults:
 
     - **Subscription**: **Default subscription (2)**
-    - **Resource group**: **AI-102-RG34 (3)**
+    - **Resource group**: **AI-102-RG35 (3)**
     - Region: Select **<inject key="Region" enableCopy="false" /> (4)**
     - Select **Create (5)**
 
-      ![](../Images/AI-l34-4.png) 
+      ![](../Images/lab35-03-1.png) 
 
         > **Note**: If you're working in an Azure subscription in which policies are used to restrict allowable resource names, you may need to use the link at the bottom of the **Create a new project** dialog box to create the hub using the Azure portal.
 
@@ -87,17 +81,17 @@ Let's start by creating an Azure AI Foundry project.
 ---      
 ## Task 2: Use the Read model
 
-Let's start by using the **Azure AI Foundry** portal and the Read model to analyze a document with multiple languages:
+Let's start by using the **Microsoft Foundry** portal and the Read model to analyze a document with multiple languages:
 
 1. In the navigation panel on the left, select **AI Services (1)**, on **Azure AI Services** page, select the **Vision + Document (2)** tile.
 
-    ![](../Images/AI-l34-5.png) 
+    ![](../Images/lab35-03-2.png) 
 
 1. On the **Vision + Document** page, verify the **Document (1)** tab is selected, then scroll down and select the **OCR/Read (2)** tile under **General document analysis models**.  
 
-    ![](../Images/AI-l34-6.png)
+    ![](../Images/lab35-03-3.png)
 
-    ![](../Images/AI-l34-7.png)
+    ![](../Images/lab35-03-4.png)
 
 1. In the list of documents on the left, select **read-german.pdf (1)** and on the top toolbar, click **Analyze options (2)**.
 
@@ -129,15 +123,15 @@ This is the invoice that your code will analyze.
 
 ![](../Images/AI-l34-Invoice.png)
 
-1. In the Azure AI Foundry portal, select **Overview (1)** for your project.
+1. In the Microsoft Foundry portal, select **Overview (1)** for your project.
 
 1. In the **Endpoints and keys** section, select the **Azure AI Services (2)** tab, then copy the **Azure AI Services endpoint (3)** and **API Key (4)**.  
 
-    ![](../Images/AI-l34-13.png)
+    ![](../Images/lab35-03-5.png)
 
     > **Note:** Save these values in a Notepad file. You will use them later in the exercise.
 
-1. Open a new browser tab (keeping the Azure AI Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`; signing in with your Azure credentials if prompted.
+1. Open a new browser tab (keeping the Microsoft Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`; signing in with your Azure credentials if prompted.
 
 1. On the **Azure portal** homepage, click the **\[>\_] Cloud Shell (1)** button located to the right of the **Copilot** tab at the top. This opens a new Cloud Shell session. In the **Welcome to Azure Cloud Shell** window, choose **PowerShell (2)**.
 
@@ -145,7 +139,7 @@ This is the invoice that your code will analyze.
 
     ![](../Images/AI-l16-70.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a **Bash** environment, switch it to **PowerShell**.
+    > **Note:** If you have previously created a cloud shell that uses a **Bash** environment, switch it to **PowerShell**.
 
 1. In the **Getting started** window, ensure **No storage account required (1)** is selected. From the **Subscription** drop-down, choose **Default subscription (2)**, then click **Apply (3)**.
 
@@ -194,7 +188,7 @@ This is the invoice that your code will analyze.
 
     ![](../Images/AI-l34-16.png)
 
-1. In the code file, replace the **YOUR_ENDPOINT** and **YOUR_KEY** placeholders with your Azure AI services endpoint and its API key (copied from the Azure AI Foundry portal).
+1. In the code file, replace the **YOUR_ENDPOINT** and **YOUR_KEY** placeholders with your Azure AI services endpoint and its API key (copied from the Microsoft Foundry portal).
 
     ![](../Images/AI-l34-17.png)
 
@@ -247,7 +241,7 @@ Now you're ready to use the SDK to evaluate the pdf file.
 1. Find the comment **Display invoice information to the user**and add the following code:
 
     ```python
-   # Display invoice information to the user
+    # Display invoice information to the user
    receipts = poller.result()
     
    for idx, receipt in enumerate(receipts.documents):
@@ -259,6 +253,7 @@ Now you're ready to use the SDK to evaluate the pdf file.
         customer_name = receipt.fields.get("CustomerName")
         if customer_name:
             print(f"Customer Name: '{customer_name.value}, with confidence {customer_name.confidence}.")
+
 
         invoice_total = receipt.fields.get("InvoiceTotal")
         if invoice_total:
