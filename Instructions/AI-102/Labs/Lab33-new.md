@@ -173,10 +173,6 @@ Azure Content Understanding includes prebuilt Read and Layout analyzers that can
 
     ![](../Images/lab33-03-13.png)
 
-1. Navigate to `C:\LabFiles` **(1)** then select the **invoice-1235.pdf (2)** from the folder where you extracted the content files and then **Open (3)**.
-
-    ![](../Images/ai32l23.png)
-
 
 ### Task 5: Extract information from invoice documents
 
