@@ -4,6 +4,8 @@
 
 ## Overview
 
+In this lab, you will create a Microsoft Foundry project and deploy a vision-enabled generative AI model. You will test the model using image-based prompts in the playground. Finally, you will build and run a Python application to interact with the model using both URL and local images
+
 ## Lab Objectives
 
 - **Task 1:** Create a Microsoft Foundry project
@@ -63,6 +65,8 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 
 ## Task 2: Deploy a model
 
+In this task, you will deploy a vision-enabled generative AI model that can process both text and image inputs.
+
 1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Find models (2)** from the drop-down menu.
 
      ![](../Images/lab17-03-1.png)
@@ -88,6 +92,8 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 <validation step="4f6932c2-0e42-401c-a086-f9a534a63f9c" />
 
 ## Task 3: Test the model in the playground
+
+In this task, you will upload an image and test the model’s ability to generate responses based on image and text prompts.
 
 1. In a new browser tab, open [mango.jpeg](https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg) from `https://github.com/MicrosoftLearning/mslearn-ai-vision/raw/refs/heads/main/Labfiles/gen-ai-vision/mango.jpeg`. Right click on the image and select **Save image as**, to save the image to a folder on your local file system.
 
@@ -119,11 +125,11 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 
 ## Task 4: Create a client application
 
-Now that you've deployed the model, you can use the deployment in a client application.
+In this task, you will set up a Python-based application, configure it, and write code to interact with the deployed model using image inputs.
 
 ### Task 4.1 Get application files from GitHub
 
-The initial application files you'll need to develop the translation application are provided in a GitHub repo.
+In this task, you will clone a GitHub repository and open it in Visual Studio Code to access the starter application files.
 
 1. Open the **Visual Studio Code** from the desktop.
 
@@ -155,6 +161,8 @@ The initial application files you'll need to develop the translation application
 
 ### Task 4.2 Prepare the application configuration
 
+In this task, you will set up the development environment, install required dependencies, and configure the application with your Azure OpenAI endpoint and model details.
+
 1. After cloning the repository, in the **Explorer** pane, expand the **Labfiles** folder **(1)**, and then navigate to **gen-ai-vision (2) > python(3)**.
 
     ![](../Images/lab30-03-9.png)
@@ -185,6 +193,8 @@ The initial application files you'll need to develop the translation application
     ![](../Images/lab30-03-12.png)
 
 ### Task 4.3 Write code to get an OpenAI chat client for your model
+
+In this task, you will add code to authenticate and create a client connection to your deployed model using Azure credentials.
 
 > **Tip**: As you add code, be sure to maintain the correct indentation.
 
@@ -222,6 +232,8 @@ The initial application files you'll need to develop the translation application
 
 ### Task 4.4 Write code to submit a URL-based image prompt
 
+In this task, you will add code to send image-based prompts (using a URL) along with text input to the model and display the response.
+
 1. Note that the code includes a loop to allow a user to input a prompt until they enter "quit". Then in the loop section, find the comment **Get a response to image input**, add the following code to submit a prompt that includes the following image:
 
     ```python
@@ -245,6 +257,8 @@ The initial application files you'll need to develop the translation application
 1. Save the changes to the code file by pressing **Ctrl+S**.
 
 ## Task 5: Sign into Azure and run the app
+
+In this task, you will authenticate to Azure and run the application to test image-based interactions using both URL and local images.
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
@@ -301,6 +315,8 @@ The initial application files you'll need to develop the translation application
 
 ### Task 5.1 Modify the code to upload a local image file
 
+In this task, you will update the application code to send a local image file instead of a URL, enabling the model to process and respond to locally stored images.
+
 1. In the code editor for your app code, in the loop section, find the code you added previously under the comment **Get a response to image input**. Then modify the code as follows, to upload this local image file:
 
     ```python
@@ -345,8 +361,10 @@ The initial application files you'll need to develop the translation application
 
      ![](../Images/lab30-03-20.png)
 
-     > **Note**: In this simple app, we haven't implemented logic to retain conversation history; so the model will treat each prompt as a new request with no context of the previous prompt.
+     > **Note:** In this simple app, we haven't implemented logic to retain conversation history; so the model will treat each prompt as a new request with no context of the previous prompt.
 
 ## Summary
+
+In this lab, you created a Microsoft Foundry project and deployed a vision-enabled generative AI model. You tested the model using image-based prompts in the playground and set up a Python-based application by cloning a GitHub repository and configuring the environment. You then developed and modified the application to process both URL-based and local images along with text prompts. Finally, you ran and tested the application to understand how vision-enabled generative AI can be integrated into real-world applications.
 
 ### You have successfully completed the Hands-on Lab!

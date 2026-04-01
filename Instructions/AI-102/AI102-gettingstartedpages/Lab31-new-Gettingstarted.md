@@ -1,7 +1,7 @@
 
 # AI-102: Azure AI Engineer Associate Workshop
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
 # Lab 31: Develop a vision-enabled chat app
 
@@ -9,72 +9,72 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 ## Overview
 
-In this hands-on lab, you’ll gain practical experience in building a vision-enabled chat application using Foundry. You’ll learn how to create an AI project, deploy the **gpt-4.1** model, and test it in the playground with both text and image inputs. Next, you’ll configure a Python client app, connect it to your deployed model, and extend it to handle image prompts from both URLs and local files. By the end, you’ll know how to create, deploy, and consume a multimodal AI model, and integrate it into a custom Python application. 
+In this hands-on lab, you will gain practical experience in building a vision-enabled chat application using Azure AI in the Microsoft Foundry environment. You will learn how to create a Foundry project, deploy a multimodal generative AI model, and test its capabilities using image-based prompts in the playground. You will then set up and configure a Python application, authenticate using Azure credentials, and integrate it with the deployed model. By the end of this lab, you will be able to develop an application that processes both images and text to generate intelligent responses using vision-enabled generative AI.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create an AI project in Azure AI Foundry:** Set up a new project and deploy the **Phi-4-multimodal-instruct** model.
+1. **Create a Microsoft Foundry project:** Set up a new project and configure the required Azure resources.
 
-2. **Test the model in the playground:** Combine text and image inputs to review the model’s multimodal reasoning.
+2. **Deploy a vision-enabled generative AI model:** Deploy the **gpt-4.1** model to handle both text and image inputs.
 
-3. **Set up a Python client application:** Clone a GitHub repository in **Azure Cloud Shell**, install dependencies, and configure project details.
+3. **Test the model in the playground:** Use image and text prompts to evaluate the model’s ability to generate relevant responses.
 
-4. **Connect the client app to your project:** Use the SDK to initialize a project client and create a chat client for your deployed model.
+4. **Set up a Python client application:** Clone a GitHub repository, install dependencies, and configure the application environment.
 
-5. **Submit URL-based image prompts:** Extend the app to send both text and image inputs from a web URL.
+5. **Connect the application to the deployed model:** Authenticate using Azure credentials and create a client to interact with the model.
 
-6. **Upload local image files:** Modify the app to encode and process images stored locally.
-
-7. **Run and interact with the app:** Authenticate with Azure, execute the client app, and review multimodal responses from the model.
+6. **Submit image-based prompts:** Extend the application to send both URL-based and local image inputs along with text prompts.
 
 ## Pre-requisites
 
-* Basic understanding of **custom text analytics concepts**, including sentiment analysis, key phrase extraction, and named entity recognition.
-* Familiarity with the **Azure portal**, including creating and managing Cognitive Services resources.
-* Experience using **Azure Cloud Shell** or a local CLI for running commands and managing deployments.
-* An active Azure subscription with permissions to create and use **Azure AI Language** resources.
-* Basic knowledge of **JSON** for handling training data and API responses.
-* Comfort with **REST APIs** or SDKs (such as Python or C#) to interact with Azure AI Language services.
+- Basic understanding of generative AI concepts and how models can process text and images.
+
+- Familiarity with the Microsoft Foundry portal, including creating and managing projects.
+
+- Experience using Visual Studio Code for editing and running Python applications.
+An active Azure subscription with permissions to create and access required resources.
+
+- Basic knowledge of Python programming, working with virtual environments, and running commands in a terminal.
 
 ## Architecture
 
-The lab architecture demonstrates how **Azure AI Language** enables custom text analytics by combining resource creation, training workflows, and API integration:
+The lab architecture demonstrates how a vision-enabled chat application is built using Azure AI Foundry by combining model deployment, SDK integration, and client application development:
 
-1. **Language Studio:** A browser-based interface to create projects, define entity categories, label text samples, train models, and evaluate results.
+1. **Microsoft Foundry Project:** Create a project that provides access to Azure AI resources, including the endpoint and deployed models required for the application.
 
-2. **Azure Portal:** Manages the underlying **Azure AI Language resource** that powers training and prediction requests.
+2. **Generative AI Model (gpt-4.1):** Deploy a multimodal model capable of processing both text and image inputs to generate intelligent responses.
 
-3. **Azure Cloud Shell:** Provides a ready-to-use environment for configuring resources, managing data, and running scripts without local setup.
+3. **Python Development Environment:** Configure a local development environment using Visual Studio Code to install dependencies and run the application.
 
-4. **Azure AI Language REST API:** Offers secure endpoints to submit text for analysis, retrieve model predictions, and manage resources programmatically.
+4. **Azure OpenAI SDK Integration:** Use the Python SDK to authenticate with Azure, connect to the deployed model, and send text and image-based prompts.
 
-5. **Client Application (Python or C#):** Calls the REST API or SDK to integrate custom text analysis into real-world apps, using JSON responses for insights.
+5. **Python Client Application:** Build and modify a Python application that submits URL-based and local image inputs along with text prompts to receive and display responses from the model.
 
 ## Architecture Diagram
 
-![](../Images/lab22archdiagram.png)
+![](../Images/lab31new-arch.png)
 
 ## Explanation of Components
 
-1. **Language Studio:** Provides a web-based interface to create custom projects, define entity categories, label sample text, train models, and evaluate performance metrics.
+1. **Microsoft Foundry Project:** Provides a centralized environment to manage Azure AI resources, including project configuration, endpoints, and access to deployed models.
 
-2. **Azure Portal:** Manages the **Azure AI Language resource**, including configuration, access permissions, and monitoring of usage and costs.
+2. **Generative AI Model (gpt-4.1):** A multimodal model that processes both text and image inputs to generate context-aware and intelligent responses.
 
-3. **Azure Cloud Shell:** A browser-based terminal used to configure dependencies, run setup scripts, and interact with the Azure AI Language REST API.
+3. **Visual Studio Code Environment:** A local development environment used to clone the repository, install dependencies, edit code, and run the Python application.
 
-4. **Azure AI Language REST API:** Exposes secure endpoints for submitting text, retrieving model predictions, and programmatically managing resources using authentication keys.
+4. **Azure OpenAI SDK:** A Python SDK that enables authentication with Azure, connects to the deployed model, and sends requests with text and image inputs.
 
-5. **Client Application (Python or C#):** Demonstrates how to consume the REST API or SDK, process JSON responses, and integrate custom text analytics into real-world applications.
+5. **Python Client Application:** A sample application that interacts with the deployed model by submitting prompts with URL-based or local images and displaying the generated responses.
 
 # Getting Started with lab
 
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
+Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Microsoft Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
 
 ## Accessing Your Lab Environment
  
-Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
+Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
 ![Access Your VM and Lab Guide](../Images/lab30labvm.png)
 
@@ -86,7 +86,7 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
-![](../Images/zoominai102.png)
+![](../Images/lab1-z.png)
 
 ## Exploring Your Lab Resources
  
@@ -126,16 +126,15 @@ Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from
 
     - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-        ![](../Images/AIl16-1.png)
+        ![](../Images/lab1-p.png)
 
 1. If prompted to **Stay signed in?**, you can click **No**.
 
     ![](../Images/AIl16-2.png)
 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-    ![](../Images/AIl16-3.png)
-
+    ![](../Images/lab1-w.png)
 
 ## Support Contact
  

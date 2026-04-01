@@ -47,7 +47,7 @@ The lab architecture demonstrates how an AI agent in Microsoft Foundry integrate
 
 ## Architecture Diagram
 
-![](../Images/lab9new-arch.png)
+![](../Images/lab22new-arch.png)
 
 ## Explanation of Components
 
