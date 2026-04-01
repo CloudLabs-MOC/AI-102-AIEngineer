@@ -133,7 +133,7 @@ In this task, you'll set up the Python environment, install dependencies, and co
 
     >**Note:** This will create a virtual environment and install the Azure AI Speech SDK package and other required packages.
 
-1. Ensure that the terminal is open in the **voice-mail** folder with the prefix **(.venv)** to indicate that the Python environment you created is active.
+1. Ensure that the terminal is open in the **voice-mail** folder and verify that the prompt shows **(.labenv)**, indicating that the Python virtual environment is active.
 
     ![](../Images/lab21rec-p2t3p2.png)
 

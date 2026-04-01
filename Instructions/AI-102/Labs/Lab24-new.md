@@ -161,7 +161,7 @@ In this task, you'll configure and implement a Python application to translate t
 
     > **Note:** The endpoint should be *https://{YOUR_FOUNDRY_RESOURCE}.cognitiveservices.azure.com/*. The Foundry Resource name usually takes the form *{project_name}-resource*.
 
-1. Ensure that the terminal is open in the **translators** folder with the prefix **(.venv)** to indicate that the Python environment you created is active.
+1. Ensure that the terminal is open in the **translators** folder and verify that the prompt shows **(.labenv)**, indicating that the Python virtual environment is active.
 
 ### Add code to translate text
 

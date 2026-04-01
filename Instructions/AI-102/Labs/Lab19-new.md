@@ -270,7 +270,7 @@ In this task, you'll set up your development environment, clone the repository, 
 
     >**Note:** This will create a virtual environment and install the Foundry SDK package, the Azure Identity package, and other required packages.
 
-1. Ensure that the terminal is open in the **text-agent** folder with the prefix **(.venv)** to indicate that the Python environment you created is active.
+1. Ensure that the terminal is open in the **text-agent** folder and verify that the prompt shows **(.labenv)**, indicating that the Python virtual environment is active.
 
     ![](../Images/lab19dev-p2t6p10.png)
 

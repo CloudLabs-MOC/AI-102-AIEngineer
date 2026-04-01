@@ -207,7 +207,7 @@ In this task, you'll set up your development environment, clone the repository, 
 
     >**Note:** This will create a virtual environment.
 
-1. Ensure that the terminal is open in the **chat-client** folder with the prefix **(.venv)** to indicate that the Python environment you created is active.
+1. Ensure that the terminal is open in the **chat-client** folder and verify that the prompt shows **(.labenv)**, indicating that the Python virtual environment is active.
 
     ![](../Images/lab23-p2t5p3.png)
 
