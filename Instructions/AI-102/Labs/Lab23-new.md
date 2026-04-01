@@ -15,7 +15,7 @@ In this lab, you'll perform the following tasks:
 * Task 3: Configure Azure Speech Voice Live
 * Task 4: Use speech to interact with the agent (Read Only)
 * Task 5: Create a client application
-* Task 6: Run the application
+* Task 6: Run the application (Read Only)
 
 ## Task 1: Create a Microsoft Foundry project
 
@@ -369,7 +369,7 @@ In this task, you'll set up your development environment, clone the repository, 
                     self.audio_processor.shutdown()
     ```
 
-## Task 6: Run the application
+## Task 6: Run the application (Read Only)
 
 In this task, you'll authenticate with Azure, run the client application, and interact with the agent using real-time voice conversations.
 

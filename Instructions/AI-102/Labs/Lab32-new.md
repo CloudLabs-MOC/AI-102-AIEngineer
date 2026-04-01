@@ -44,7 +44,7 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (6)**:
 
     * Subscription: **Choose Default Subscription (3)**
-    * Resource group: **AI-102-RG032 (4)**
+    * Resource group: **AI-102-RG031 (4)**
     * Microsoft Foundry resource: **Keep as Default**
     * Region: **<inject key="Region"></inject> (5)**
 
@@ -124,7 +124,7 @@ The initial application files you'll need to develop the translation application
 
 1. In the Command Palette, enter the repository URL `https://github.com/microsoftlearning/mslearn-ai-vision` **(1)**, and then select **Clone from URL** **(2)** to clone the repository to a local folder.
 
-    ![](../Images/lab19dev-p2t4p1.png)
+    ![](../Images/lab32-p2t4p1.png)
  
 1. In the folder selection window, choose the **Downloads** folder **(1)**, and then select **Select as Repository Destination** **(2)**.
 
@@ -136,7 +136,7 @@ The initial application files you'll need to develop the translation application
 
 1. When prompted, select **Yes, I trust the authors** to trust the folder and enable all features.
 
-    ![](../Images/lab19dev-p2t6p6.png).
+    ![](../Images/lab19dev-p2t6p6.png)
 
 1. In Visual Studio Code, open the **Extensions** pane **(1)**, search for **Python** **(2)**, select the **Python** extension by Microsoft **(3)**, and then click **Install** **(4)** if it is not already installed.
 
