@@ -45,7 +45,7 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
     >**Note:** <span style="color:red"> Make a note of the Microsoft Foundry resource name, as it will be required later in the lab.
 
     * Subscription: **Choose Default Subscription (3)**
-    * Resource group: **AI-102-RG021 (4)**
+    * Resource group: **AI-102-RG21 (4)**
     * Microsoft Foundry resource: **Keep as Default**
     * Region: **<inject key="Region"></inject> (5)**
 

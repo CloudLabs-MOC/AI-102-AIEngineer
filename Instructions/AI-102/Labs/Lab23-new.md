@@ -44,7 +44,7 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (6)**:
 
     * Subscription: **Choose Default Subscription (3)**
-    * Resource group: **AI-102-RG023 (4)**
+    * Resource group: **AI-102-RG23 (4)**
     * Microsoft Foundry resource: **Keep as Default**
     * Region: **<inject key="Region"></inject> (5)**
 
