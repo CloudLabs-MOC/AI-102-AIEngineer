@@ -242,22 +242,21 @@ Now you're ready to use the SDK to evaluate the pdf file.
 
     ```python
     # Display invoice information to the user
-   receipts = poller.result()
-    
-   for idx, receipt in enumerate(receipts.documents):
-    
-        vendor_name = receipt.fields.get("VendorName")
-        if vendor_name:
-            print(f"\nVendor Name: {vendor_name.value}, with confidence {vendor_name.confidence}.")
+    receipts = poller.result()
+        
+    for idx, receipt in enumerate(receipts.documents):
+        
+            vendor_name = receipt.fields.get("VendorName")
+            if vendor_name:
+                print(f"\nVendor Name: {vendor_name.value}, with confidence {vendor_name.confidence}.")
 
-        customer_name = receipt.fields.get("CustomerName")
-        if customer_name:
-            print(f"Customer Name: '{customer_name.value}, with confidence {customer_name.confidence}.")
+            customer_name = receipt.fields.get("CustomerName")
+            if customer_name:
+                print(f"Customer Name: '{customer_name.value}, with confidence {customer_name.confidence}.")
 
-
-        invoice_total = receipt.fields.get("InvoiceTotal")
-        if invoice_total:
-            print(f"Invoice Total: '{invoice_total.value.symbol}{invoice_total.value.amount}, with confidence {invoice_total.confidence}.")
+            invoice_total = receipt.fields.get("InvoiceTotal")
+            if invoice_total:
+                print(f"Invoice Total: '{invoice_total.value.symbol}{invoice_total.value.amount}, with confidence {invoice_total.confidence}.")
     ```
 
     ![](../Images/AI-l34-22.png)
