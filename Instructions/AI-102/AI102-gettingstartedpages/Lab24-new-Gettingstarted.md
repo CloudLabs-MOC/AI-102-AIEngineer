@@ -52,7 +52,7 @@ The lab architecture demonstrates how a **multilingual translation solution** is
 
 ## Architecture Diagram
 
-![](../Images/lab23-archdiagram.png)
+![](../Images/lab24-archdiagram.png)
 
 ## Explanation of Components
 
