@@ -228,7 +228,7 @@ In this task, you will create a custom schema for invoice documents by selecting
 
     ![](../Images/lab33-03-16.png)
 
-### Task 5.1: Define a schema for invoice analysis
+### Task 5.2: Define a schema for invoice analysis
 
 In this task, you will build a reusable analyzer based on the defined schema and test it on a new invoice document to verify accurate data extraction.
 
