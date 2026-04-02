@@ -4,24 +4,31 @@
 
 ## Overview
 
-In this lab, you use Azure Content Understanding to extract information from a variety of content types; including an invoice, an image of a slide containing charts, an audio recording of a voice message, and a video recording of a conference call.
+In this lab, you will use Azure Content Understanding to extract meaningful information from different types of multimodal content, including documents, images, audio recordings, and videos. You will start by setting up a Microsoft Foundry project and exploring prebuilt analyzers. Then, you will create custom analyzers by defining schemas tailored to specific content types such as invoices, slide images, voicemail recordings, and video conference calls. By the end of this lab, you will understand how to build and use AI-powered analyzers to process and extract structured data from diverse content sources.
 
 ## Lab Objectives
 
 In this lab, you'll perform the following tasks:
 
 * Task 1: Create a Microsoft Foundry project
+
 * Task 2: Download content
+
 * Task 3: Try prebuilt analyzers in Microsoft Foundry
+
 * Task 4: Set up Content Understanding Studio for custom analyzers
+
 * Task 5: Extract information from invoice documents
+
 * Task 6: Extract information from a slide image
+
 * Task 7: Extract information from a voicemail audio recording
+
 * Task 8: Extract information from a video conference recording
 
 ## Task 1: Create a Microsoft Foundry project
 
-In this task, you will create a new project in the Microsoft Foundry portal and set up its configuration.
+In this task, you will sign in to the Microsoft Foundry portal and create a new project with the required Azure resources.
 
 1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
@@ -66,7 +73,7 @@ In this task, you will create a new project in the Microsoft Foundry portal and 
 
 ### Task 2: Download content
 
-The content you're going to analyze is in a .zip archive. Download it and extract it in a local folder.
+In this task, you will download and extract the sample content files that will be used throughout the lab for analysis.
 
 1. In a new browser tab, copy and paste the [content.zip](https://github.com/microsoftlearning/mslearn-ai-information-extraction/raw/main/Labfiles/content/content.zip) from `https://github.com/microsoftlearning/mslearn-ai-information-extraction/raw/main/Labfiles/content/content.zip`.
 
@@ -86,9 +93,11 @@ The content you're going to analyze is in a .zip archive. Download it and extrac
 
 ### Task 3: Try prebuilt analyzers in Microsoft Foundry
 
-Azure Content Understanding includes prebuilt Read and Layout analyzers that can extract text and structural elements from documents without requiring any custom configuration. These prebuilt analyzers are available directly in the Foundry (new) portal as AI Services models.
+In this task, you will explore and test prebuilt analyzers such as Read and Layout to understand how they extract text and structure from documents.
 
 ### Task 3.1: Use the Layout analyzer in the playground
+
+In this task, you will use the prebuilt Layout analyzer in the playground to upload a document and analyze its structure, including text, tables, and sections.
 
 1. From the homepage, select the **Build** tab.
 
@@ -146,6 +155,8 @@ Azure Content Understanding includes prebuilt Read and Layout analyzers that can
 
 ## Task 4: Set up Content Understanding Studio for custom analyzers
 
+In this task, you will configure Content Understanding Studio and connect it to your Foundry project to enable the creation of custom analyzers.
+
 1. In a new browser tab, open [Content Understanding Studio](https://contentunderstanding.ai.azure.com) at `https://contentunderstanding.ai.azure.com`.
 
 1. If prompted, sign in with the same Azure credentials you used for the Foundry portal.
@@ -176,9 +187,11 @@ Azure Content Understanding includes prebuilt Read and Layout analyzers that can
 
 ### Task 5: Extract information from invoice documents
 
-You are going to build a custom Azure Content Understanding analyzer that can extract specific fields from invoices. You'll create a project in Content Understanding Studio, define a schema based on a sample invoice, and then build a reusable analyzer.
+In this task, you will create a custom analyzer to extract structured data from invoice documents by defining a schema and testing it on sample files.
 
 ### Task 5.1: Create a storage account
+
+In this task, you will create a custom schema for invoice documents by selecting relevant fields, modifying suggested fields, and adding new fields for extraction.
 
 1. Open the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`, and sign in using your Azure credentials.
 
@@ -207,6 +220,8 @@ You are going to build a custom Azure Content Understanding analyzer that can ex
 
 ### Task 5.1: Define a schema for invoice analysis
 
+In this task, you will build a reusable analyzer based on the defined schema and test it on a new invoice document to verify accurate data extraction.
+
 1. On the **Manage projects and analyzers** page, select **Create**.
 
     ![](../Images/lab33-03-17.png)
@@ -225,7 +240,7 @@ You are going to build a custom Azure Content Understanding analyzer that can ex
         - **Blob container:** click **Create a new container (3)** and enter the container name `content-understanding`, and click **Ok**.
         - Click **Create (5)**
 
-            ![](../Images/lab33-03-19.png)
+            ![](../Images/lab33-03-19n.png)
 
 1. Wait for the project to be created.
 
@@ -279,6 +294,8 @@ You are going to build a custom Azure Content Understanding analyzer that can ex
 
 ### Task 5.2: Build and test an analyzer for invoices
 
+In this task, you will build a reusable analyzer based on the defined schema and test it on a new invoice document to verify accurate data extraction.
+
 1. Select the **Build analyzer (1)** button at the top, build a new analyzer with the following properties and click on **Build (4)**
     - **Name**: `invoiceanalyzer` **(2)**
     - **Description**: `Invoice analyzer` **(3)**
@@ -317,9 +334,11 @@ You are going to build a custom Azure Content Understanding analyzer that can ex
 
 ## Task 6: Extract information from a slide image
 
-You are going to build a custom Azure Content Understanding analyzer that can extract information from a slide containing charts.
+In this task, you will build a custom analyzer to extract insights such as titles, summaries, and chart data from slide images.
 
 ### Task 6.1 Define a schema for image analysis
+
+In this task, you will create a schema to extract key details such as title, summary, and chart data from slide images.
 
 1. On the **Manage projects and analyzers** page, select **Project list (1)**, and then click **Create (2)**.
 
@@ -407,7 +426,7 @@ You are going to build a custom Azure Content Understanding analyzer that can ex
 
 ### Task 6.2 Build and test an analyzer
 
-Now that you have defined a schema to extract fields from slides, you can build an analyzer to use with similar slide images.
+In this task, you will build an analyzer for slide images and test it using a different image to validate the extracted information.
 
 1. Select the **Build analyzer (1)** button at the top, build a new analyzer with the following properties and click **Build (4)**
     - **Name**: `slideanalyzer` **(2)**
@@ -445,9 +464,11 @@ Now that you have defined a schema to extract fields from slides, you can build 
 
 ## Task 7: Extract information from a voicemail audio recording
 
-You are going to build a custom Azure Content Understanding analyzer that can extract information from an audio recording of a voicemail message.
+In this task, you will create a custom analyzer to process audio recordings and extract key details such as caller information, summaries, and requested actions.
 
 ### Task 7.1 Define a schema for audio analysis
+
+In this task, you will define a schema to extract important details such as caller information, summary, and actions from a voicemail recording.
 
 1. On the **Manage projects and analyzers** page, select **Project list (1)**, and then click **Create (2)**.
 
@@ -503,7 +524,7 @@ You are going to build a custom Azure Content Understanding analyzer that can ex
 
 ### Task 7.2 Build and test an analyzer
 
-Now that you have defined a schema to extract fields from voice messages, you can build an analyzer to use with similar audio recordings.
+In this task, you will build an analyzer for audio recordings and test it with another voicemail file to ensure accurate extraction of information.
 
 1. Select the **Build analyzer (1)** button at the top, build a new analyzer with the following properties and click **Build (4)**
     
@@ -542,9 +563,11 @@ Now that you have defined a schema to extract fields from voice messages, you ca
 
 ## Task 8: Extract information from a video conference recording
 
-You are going to build a custom Azure Content Understanding analyzer that can extract information from a video recording of a conference call.
+In this task, you will build a custom analyzer to extract insights from video recordings, including participants, summaries, and assigned tasks.
 
 ### Task 8.1 Define a schema for video analysis
+
+In this task, you will create a schema to extract insights such as meeting summaries, participants, and assigned tasks from a video recording.
 
 1. On the **Manage projects and analyzers** page, select **Project list (1)**, and then click **Create (2)**.
 
@@ -609,7 +632,7 @@ You are going to build a custom Azure Content Understanding analyzer that can ex
 
     ![](../Images/lab33-03-73.png)
 
-    **Note**: This video was generated using AI.
+    **Note:** This video was generated using AI.
 
 1. When analysis is complete, review the results.
 
@@ -619,7 +642,7 @@ You are going to build a custom Azure Content Understanding analyzer that can ex
 
 ### Task 8.2 Build and test an analyzer
 
-Now that you have defined a schema to extract fields from conference call recordings, you can build an analyzer to use with similar videos.
+In this task, you will build an analyzer for video content and test it using another recording to verify the extracted results.
 
 1. Select the **Build analyzer (1)** button at the top, build a new analyzer with the following properties and click **Build (4)**
     
@@ -656,5 +679,6 @@ Now that you have defined a schema to extract fields from conference call record
 
 ## Summary
 
+In this lab, you created and configured a Microsoft Foundry project and explored Azure Content Understanding capabilities. You tested prebuilt analyzers such as Read and Layout to extract text and document structure. You then built custom analyzers by defining schemas for different content types, including invoices, slide images, audio recordings, and video files. Finally, you tested these analyzers to extract structured information, enabling you to understand how to process and analyze multimodal content using AI.
 
 ### You have successfully completed the Hands-on Lab!

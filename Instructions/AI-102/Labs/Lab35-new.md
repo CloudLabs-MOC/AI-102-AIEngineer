@@ -1,15 +1,10 @@
 # Lab 35: Analyze forms with prebuilt Azure AI Document Intelligence models
 
 ### Estimated Duration : 45 Minutes
+
 ## Overview
 
-In this exercise, you'll set up an Microsoft Foundry project with all the necessary resources for document analysis. You'll use both the Microsoft Foundry portal and the Python SDK to submit forms to that resource for analysis.
-
-While this exercise is based on Python, you can develop similar applications using multiple language-specific SDKs; including:
-
-- [Azure AI Document Intelligence client library for Python](https://pypi.org/project/azure-ai-formrecognizer/)
-- [Azure AI Document Intelligence client library for Microsoft .NET](https://www.nuget.org/packages/Azure.AI.FormRecognizer)
-- [Azure AI Document Intelligence client library for JavaScript](https://www.npmjs.com/package/@azure/ai-form-recognizer)
+In this lab, you will create and configure a Microsoft Foundry project to analyze documents using Azure AI Document Intelligence. You will use the prebuilt Read model to extract text from documents and explore the results in the portal. Finally, you will build and run a Python application to process invoices and retrieve key information using the SDK.
 
 ## Lab Objectives
 
@@ -25,7 +20,7 @@ In this lab, you'll perform the following tasks:
 
 ## Task 1: Create an Microsoft Foundry project
 
-Let's start by creating an Microsoft Foundry project.
+In this task, you will sign in to the Microsoft Foundry portal and create a new project with the required Azure resources.
 
 1. Open a new tab in the browser, right-click on the following link [Foundry portal](https://ai.azure.com), then **Copy link** and paste it in a browser tab to log in to **Microsoft Foundry portal**.
 
@@ -81,7 +76,7 @@ Let's start by creating an Microsoft Foundry project.
 ---      
 ## Task 2: Use the Read model
 
-Let's start by using the **Microsoft Foundry** portal and the Read model to analyze a document with multiple languages:
+In this task, you will use the Read model in the Microsoft Foundry portal to analyze a document and extract text.
 
 1. In the navigation panel on the left, select **AI Services (1)**, on **Azure AI Services** page, select the **Vision + Document (2)** tile.
 
@@ -117,7 +112,7 @@ Let's start by using the **Microsoft Foundry** portal and the Read model to anal
 
 ## Task 3: Prepare to develop an app in Cloud Shell
 
-Now let's explore the app that uses the Azure Document Intelligence service SDK. You'll develop your app using Cloud Shell. The code files for your app have been provided in a GitHub repo.
+In this task, you will prepare the development environment in Azure Cloud Shell and configure the project files.
 
 This is the invoice that your code will analyze.
 
@@ -196,7 +191,7 @@ This is the invoice that your code will analyze.
 
 ## Task 4: Add code to use the Azure Document Intelligence service
 
-Now you're ready to use the SDK to evaluate the pdf file.
+In this task, you will add and run Python code to analyze an invoice using the Azure Document Intelligence service and extract key details.
 
 1. Enter the following command to edit the app file that has been provided. The file is opened in a code editor.
 
@@ -275,3 +270,8 @@ Now you're ready to use the SDK to evaluate the pdf file.
 
     ![](../Images/AI-l34-24.png)
 
+### Summary
+
+In this lab, you created a Microsoft Foundry project and configured the required Azure AI resources for document analysis. You used the Read model in the portal to extract and review text from a document. Finally, you developed and executed a Python application to analyze an invoice and retrieve key information using the Azure Document Intelligence service.
+
+### You have successfully completed the Hands-on Lab!

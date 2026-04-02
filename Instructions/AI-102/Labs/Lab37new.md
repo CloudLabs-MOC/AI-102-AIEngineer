@@ -1,7 +1,28 @@
-# Lab 35: Create an knowledge mining solution
-In this lab, you use AI Search to index a set of documents maintained by Margie's Travel, a fictional travel agency. The indexing process involves using AI skills to extract key information to make them searchable, and generating a knowledge store containing data assets for further analysis.
+# Lab 37: Create an knowledge mining solution
+
+### Estimated Duration : 45 Minutes
+
+## Overview
+
+In this lab, you will build a knowledge mining solution using Azure AI Search by indexing documents stored in Azure Blob Storage. You will enrich the data using built-in AI capabilities to extract key information such as phrases, entities, and locations. By the end, you will query the indexed data and integrate it into a client application using the Azure AI Search SDK.
+
+## Lab Objectives
+
+- **Task 1:** Create an Azure AI Search resource
+
+- **Task 2:** Create a storage account
+
+- **Task 3:** Upload documents to Azure Storage
+
+- **Task 4:** Create and run an indexer
+
+- **Task 5:** Search the index
+
+- **Task 6:** Create a search client application
 
 ### Task 1: Create an Azure AI Search resource
+
+In this task, you will create an Azure AI Search resource to enable indexing and querying of data.
 
 1. On the Azure portal, search for `Azure AI Search` **(1)**, and select **Azure AI Search (2)** from the services.
 
@@ -39,6 +60,8 @@ In this lab, you use AI Search to index a set of documents maintained by Margie'
 
 ### Task 2: Create a storage account
 
+In this task, you will create an Azure Storage account to store the documents for your knowledge mining solution.
+
 1. In the Azure Portal tab, in the top search bar, search for **Storage accounts (1)** and select **Storage accounts (2)** from the services section.
 
     ![](../Images/lab9-s29.png)
@@ -48,6 +71,7 @@ In this lab, you use AI Search to index a set of documents maintained by Margie'
     ![](../Images/lab9-s13.png)
 
 1. Then create a **Storage account** resource with the following settings:
+    
     - Subscription: *Your Azure subscription* **(1)**
     - Resource group: Select **AI-102-RG37 (2)**
     - Storage account name: Enter **storage<inject key="DeploymentID" enableCopy="false"/> (3)**
@@ -66,7 +90,7 @@ In this lab, you use AI Search to index a set of documents maintained by Margie'
 
 ### Task 3: Upload documents to Azure Storage
 
-Your knowledge mining solution will extract information from travel brochure documents in an Azure Storage blob container.
+In this task, you will upload sample documents to a Blob container in the storage account.
 
 1. Right click on the following link [documents.zip](https://github.com/microsoftlearning/mslearn-ai-information-extraction/raw/main/Labfiles/knowledge/documents.zip), select **Copy link** and then paste it on the JumpVM's browser tab to download the zip folder.
 
@@ -82,7 +106,7 @@ Your knowledge mining solution will extract information from travel brochure doc
 
     ![](../Images/ai36l11.png)
 
-1. On the Azure portal, search for `Storage account` **(1)**, and select **Storage account (2)** from the services.
+1. On the Azure portal, search for **Storage account (1)**, and select **Storage accounts (2)** from the services.
 
     ![](../Images/ai36l7.png)
 
@@ -123,7 +147,7 @@ Your knowledge mining solution will extract information from travel brochure doc
 
 ### Task 4: Create and run an indexer
 
-Now that you have the documents in place, you can create an indexer to extract information from them.
+In this task, you will create and run an indexer to extract, enrich, and index data from the uploaded documents.
 
 1. In the Azure portal, search for `Azure AI Search` **(1)**, and select **Azure AI Search (2)** from the services.
 
@@ -155,8 +179,8 @@ Now that you have the documents in place, you can create an indexer to extract i
        ![](../Images/lab37-03-14.png) 
 
 1. On **Apply AI enrichments** set the following:
-    - Select **Extract phrases**.
-    - Select **Extract entities**, select the settings icon. 
+    - Select **Extract phrases (1)**.
+    - Select **Extract entities**, select the settings icon **(2)**. 
     
       ![](../Images/lab37-03-15.png) 
 
@@ -164,7 +188,7 @@ Now that you have the documents in place, you can create an indexer to extract i
 
     ![](../Images/lab37-03-16.png) 
 
-1. Select **Extract text from images**, select the settings icon. 
+1. Select **Extract text from images** and select the settings icon. 
 
     ![](../Images/lab37-03-17.png) 
 
@@ -172,7 +196,7 @@ Now that you have the documents in place, you can create an indexer to extract i
 
     ![](../Images/lab37-03-18.png) 
 
-1. In the **Apply AI enrichments** step, ensure **Extract phrases (1)**, **Extract entities (1)**, and **Extract text from images (1)** are selected, select **Use a free Foundry Tools resource (2)**, and then click **Next (3)**.
+1. In the **Apply AI enrichments** step, ensure **Extract phrases**, **Extract entities**, and **Extract text from images** are selected **(1)**, select **Use a free Foundry Tools resource (2)**, and then click **Next (3)**.
 
     ![](../Images/lab37-03-19.png) 
 
@@ -193,7 +217,7 @@ Now that you have the documents in place, you can create an indexer to extract i
     | Target index field name | Retrievable | Filterable | Sortable | Facetable | Searchable |
     | ---------- | ----------- | ---------- | -------- | --------- | ---------- |
     | metadata_storage_last_modified | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | |
-    | title | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+    | title | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
     | locations | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
     | persons | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
     | keyPhrases | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
@@ -214,13 +238,13 @@ Now that you have the documents in place, you can create an indexer to extract i
 
 1. You may close the success notification.
      
-1. In the navigation pane on the left, under **Search management** view the **Indexers (1)** page, which should show the newly created **margies-indexer**. Wait a few minutes, and click **&orarr; Refresh** until the **Status** indicates **Success (2)**.
+1. In the navigation pane on the left, under **Search management (1)** view the **Indexers (2)** page, which should show the newly created **margies-indexer**. Wait a few minutes, and click **&orarr; Refresh** until the **Status** indicates **Success (2)**.
 
     ![](../Images/lab37-03-24.png)
 
 ### Task 5: Search the index
 
-Now that you have an index, you can search it.
+In this task, you will query and explore the indexed data using the Search explorer.
 
 1. Return to the **Overview** page for your Azure AI Search resource, and on the toolbar, select **Search explorer**.
 
@@ -297,9 +321,7 @@ Now that you have an index, you can search it.
 
 ### Task 6: Create a search client application
 
-Now that you have a useful index, you can use it from a client application. You can do this by consuming the REST interface, submitting requests and receiving responses in JSON format over HTTP; or you can use the software development kit (SDK) for your preferred programming language. In this exercise, we'll use the SDK.
-
-> **Note**: You can choose to use the SDK for either **C#** or **Python**. In the steps below, perform the actions appropriate for your preferred language.
+In this task, you will build and run a client application to interact with the search index using the Azure AI Search SDK.
 
 ### Task 6.1: Get the endpoint and keys for your search resource
 
@@ -415,19 +437,19 @@ Now that you have a useful index, you can use it from a client application. You 
         - keyphrases
     - Parses the search results that are returned to display the fields returned for each document in the result set.
 
-1. Close the code editor pane (*CTRL+Q*), keeping the cloud shell command line console pane open.
+1. Close the code editor pane **CTRL+Q**, keeping the cloud shell command line console pane open.
 
 1. Enter the following command to run the app:
 
     ```
    python search-app.py
     ```
-
-     ![](../Images/ai36l51.png)     
-
+     
 1. When prompted, enter a query such as `London` and view the results.
 
-    ![](../Images/lab37-03-33.png)  
+    ![](../Images/lab37-03-35.png)  
+
+    ![](../Images/ai36l51.png)
 
 1. Try another query, such as `flights`.
 
@@ -437,104 +459,8 @@ Now that you have a useful index, you can use it from a client application. You 
 
 1. When you're finished testing the app, enter `quit` to close it.
 
-1. Close the Cloud shell, returning to the **Azure portal**.
+### Summary
 
-### Task 7: View the knowledge store
+In this lab, you created an Azure AI Search resource and a storage account to build a knowledge mining solution. You uploaded documents, applied AI enrichments, and indexed the data to extract meaningful insights. Finally, you queried the index and developed a client application using the Azure AI Search SDK to interact with the data.
 
-After you have run an indexer that uses a skillset to create a knowledge store, the enriched data extracted by the indexing process is persisted in the knowledge store projections.
-
-### Task 7.1: View object projections
-
-The *object* projections defined in the Margie's Travel skillset consist of a JSON file for each indexed document. These files are stored in a blob container in the Azure Storage account specified in the skillset definition.
-
-1. In the Azure portal, view the **Azure Storage** account you created previously.
-
-1. Select the **Storage browser (1)** tab (in the pane on the left) to view the storage account in the storage explorer interface in the Azure portal.
-
-   - Expand **Blob containers (2)** to view the containers in the storage account.
-   - In addition to the **documents** container where the source data is stored, there should be two new containers: **knowledge-store** and **margies-skillset-image-projection**. These were created by the indexing process **(3)**.
-
-     ![](../Images/ai36l54.png) 
-
-1. Select the **knowledge-store** container. It should contain a folder for each indexed document.
-
-1. Open any of the folders, and then select the **objectprojection.json** file it contains.
-
-     ![](../Images/ai36l55.png) 
-
-1. Use the **Download** button on the toolbar to download and open it.
-
-     ![](../Images/ai36l56.png) 
-
-1. Each JSON file contains a representation of an indexed document, including the enriched data extracted by the skillset as shown here (formatted to make it easier to read).
-
-    ```json
-    {
-        "metadata_storage_content_type": "application/pdf",
-        "metadata_storage_size": 388622,
-        "<more_metadata_fields>": "...",
-        "key_phrases":[
-            "Margie’s Travel",
-            "Margie's Travel",
-            "best travel experts",
-            "world-leading travel agency",
-            "international reach"
-            ],
-        "locations":[
-            "Dubai",
-            "Las Vegas",
-            "London",
-            "New York",
-            "San Francisco"
-            ],
-        "image_tags":[
-            "outdoor",
-            "tree",
-            "plant",
-            "palm"
-            ],
-        "more fields": "..."
-    }
-    ```
-
-     ![](../Images/ai36l57.png)     
-
-     The ability to create *object* projections like this enables you to generate enriched data objects that can be incorporated into an enterprise data analysis solution.
-
-### Task 7.2: View file projections
-
-The *file* projections defined in the skillset create JPEG files for each image that was extracted from the documents during the indexing process.
-
-1. In the *Storage browser* interface in the Azure portal, select the **margies-skillset-image-projection** blob container. This container contains a folder for each document that contained images.
-
-     ![](../Images/ai36l58.png) 
-
-1. Open any of the **folders** and view its contents - each folder contains at least one \*.jpg file.
-
-1. Open any of the image files.
-
-     ![](../Images/ai36l59.png) 
-
-1. Download the image and view it to see the image. 
-
-     ![](../Images/ai36l60.png) 
-
-The ability to generate *file* projections like this makes indexing an efficient way to extract embedded images from a large volume of documents.
-
-### 7.3: Task View table projections
-
-The *table* projections defined in the skillset form a relational schema of enriched data.
-
-1. In the *Storage browser* interface in the Azure portal, expand **Tables (1)**.
-  - Select the **margiesSkillsetDocument (2)** table to view data. This table contains a row for each document that was indexed:
-
-    ![](../Images/ai36l63.png)   
-
-  - View the **margiesSkillsetKeyPhrases (3)** table, which contains a row for each key phrase extracted from the documents.
-
-    ![](../Images/ai36l62.png)  
-
-The ability to create *table* projections enables you to build analytical and reporting solutions that query a relational schema. The automatically generated key columns can be used to join the tables in queries - for example to return all of the key phrases extracted from a specific document.
-
-
-     
+### You have successfully completed the Hands-on Lab!

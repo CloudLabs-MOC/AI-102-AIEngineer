@@ -1,69 +1,64 @@
-
 # AI-102: Azure AI Engineer Associate Workshop
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 33: Extract information from multimodal content
+# Lab 37: Create a knowledge mining solution
 
-### Overall Estimated Timing: 60 Minutes
+### Overall Estimated Timing: 45 Minutes
 
 ## Overview
 
-In this hands-on lab, you will use Azure Content Understanding in Microsoft Foundry to extract information from multimodal content, including documents, images, audio, and video. You will explore prebuilt analyzers and build custom analyzers by defining schemas tailored to different content types. This lab demonstrates how to process and convert unstructured data into structured insights using AI.
+In this hands-on lab, you will build a knowledge mining solution using Azure AI Search to extract and explore information from unstructured documents. You will store files in Azure Blob Storage, enrich them using built-in AI capabilities, and create a searchable index. You will then query the indexed data and integrate it into a Python-based client application using the Azure AI Search SDK.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create and configure a Foundry project:** Set up a new project in Microsoft Foundry to work with Azure Content Understanding services.
+1. **Create and configure Azure AI Search:** Set up an Azure AI Search resource to enable indexing and querying of unstructured data.
 
-2. **Explore prebuilt analyzers:** Use Read and Layout analyzers to extract text and structural information from documents.
+2. **Prepare and manage data storage:** Create an Azure Storage account and upload documents to a Blob container for processing.
 
-3. **Build custom analyzers for documents and images:** Define schemas and extract structured data from invoices and slide images.
+3. **Build a knowledge mining pipeline:** Configure and run an indexer with AI enrichments to extract key information such as phrases, entities, and locations.
 
-4. **Process audio and video content:** Create analyzers to extract key insights such as summaries, participants, and actions from voicemail recordings and video files.
+4. **Query and explore indexed data:** Use the Search explorer to perform queries and analyze enriched search results.
 
-5. **Test and validate analyzers:** Run and verify analyzers on different content types to ensure accurate information extraction.
+5. **Develop a search client application:** Configure and run a Python application using the Azure AI Search SDK to retrieve and display search results 
 
 ## Pre-requisites
   
-* Familiarity with Microsoft Foundry concepts such as projects and AI services.
-* Basic understanding of Azure Content Understanding or document analysis concepts.
+* Basic knowledge of the Azure portal and Azure Cloud Shell.  
+* Basic understanding of Azure AI Search and Azure Blob Storage.  
+* Basic knowledge of Python and running scripts from a command-line environment.   
 
 ## Architecture
 
-The lab architecture demonstrates how a Microsoft Foundry project integrates Azure Content Understanding services to analyze and extract structured information from multimodal content such as documents, images, audio, and video:
+The lab architecture demonstrates how Azure AI Search integrates with Azure Blob Storage and AI enrichment capabilities to enable intelligent knowledge mining and search-driven applications:
 
-1. **Microsoft Foundry Project:** A centralized workspace in the Microsoft Foundry portal where AI services and Content Understanding capabilities are configured and managed.
+1. **Azure AI Search Resource:** A managed search service used to create indexes, indexers, and skillsets for extracting, enriching, and querying data from documents.
 
-2. **Prebuilt Analyzers (Read & Layout):** Built-in models that extract text, document structure, tables, and layout information from files without requiring custom configuration.
+2. **Azure Blob Storage:** A cloud storage service that stores unstructured documents (PDFs) which serve as the data source for indexing and knowledge extraction.
 
-3. **Content Understanding Studio:** A platform used to create, manage, and test custom analyzers by defining schemas for specific content types.
+3. **Indexer and Skillset:** The indexer connects to the storage account and processes documents, while the skillset applies AI enrichments such as key phrase extraction, entity recognition, and image text analysis.
 
-4. **Custom Analyzers:** User-defined analyzers that extract structured fields from invoices, images, audio recordings, and video files based on defined schemas.
+4. **Search Index:** A structured representation of the extracted and enriched data, enabling efficient full-text search and filtering capabilities.
 
-5. **Azure Blob Storage:** A storage service used to upload and manage content files that are analyzed and processed by Content Understanding services.
-
-6. **Multimodal Input Files:** Various content types (PDFs, images, audio, and video) that are processed to extract meaningful insights and structured data.
+5. **Python Client Application:** A client application that connects to the Azure AI Search endpoint using the SDK, submits search queries, and retrieves relevant results programmatically.
 
 ## Architecture Diagram
 
-![](../Images/lab33new-arch.png)
+![](../Images/lab37new-arch.png)
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project:** The central workspace where Azure Content Understanding services are configured and managed for analyzing multimodal content.
+1. **Azure AI Search Resource:** The core service that enables indexing, enrichment, and querying of unstructured data through a scalable search solution.
 
-2. **Prebuilt Analyzers (Read & Layout):** Built-in models that extract text, layout, tables, and structural elements from documents without requiring custom setup.
+2. **Azure Blob Storage:** The storage layer that holds the source documents (PDF files) which are processed and indexed for knowledge mining.
 
-3. **Content Understanding Studio:** A platform used to create, manage, and test custom analyzers by defining schemas for specific content types.
+3. **Indexer and Skillset:** The processing components that extract content from documents and apply AI enrichments such as key phrase extraction, entity recognition, and image text analysis.
 
-4. **Custom Analyzers:** AI-powered analyzers created by defining schemas to extract structured information from invoices, images, audio recordings, and video files.
+4. **Search Index:** The structured data store created from extracted and enriched content, enabling efficient search, filtering, and retrieval operations.
 
-5. **Azure Blob Storage:** The storage service used to upload and manage content files that are processed by the analyzers.
-
-6. **Multimodal Content Inputs:** Various file types such as PDFs, images, audio, and video that are analyzed to extract meaningful insights and structured data.
-
+5. **Python Client Application:** A Cloud Shell–based application that connects to the search service using the SDK, sends search queries, and displays relevant results programmatically.
 
 # Getting Started with lab
 

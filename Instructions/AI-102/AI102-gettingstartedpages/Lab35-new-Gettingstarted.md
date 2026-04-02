@@ -2,64 +2,63 @@
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 17: Analyze forms with prebuilt Azure AI Document Intelligence models
+# Lab 35: Analyze forms with prebuilt Azure AI Document Intelligence models
 
 ### Overall Estimated Timing: 45 Minutes
 
 ## Overview
 
-In this hands-on lab, you will use Microsoft Foundry to build an intelligent agent integrated with Foundry IQ for enterprise knowledge retrieval. You will create and deploy a GPT–4.1–based agent, connect it to an Azure AI Search–powered knowledge base, and ground it with product documents stored in Azure Blob Storage. You will then test the agent in the Foundry playground and connect to it programmatically using the Python SDK from Azure Cloud Shell. This lab demonstrates how to build conversational AI solutions that can search and retrieve enterprise knowledge while maintaining context.
+In this hands-on lab, you will use Microsoft Foundry to set up an environment for document analysis using Azure AI Document Intelligence. You will analyze documents using the prebuilt Read model to extract text and review structured results in the portal. You will then connect to the service programmatically using the Python SDK from Azure Cloud Shell to process invoices and retrieve key information.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create and configure a Foundry project:** Set up a new project in Microsoft Foundry and deploy the *gpt-4.1* model as an intelligent agent.
+1. **Create and configure a Microsoft Foundry project:** Set up a new project with the required Azure AI resources for document analysis.
 
-2. **Integrate Foundry IQ with enterprise data:** Connect the agent to Azure AI Search and ground it using product documents stored in Azure Blob Storage.
+2. **Analyze documents using the Read model:** Use the prebuilt Read model in the portal to extract and review text from documents.
 
-3. **Create and manage a knowledge base:** Configure a knowledge source, enable embeddings, and associate the knowledge base with the deployed agent.
+3. **Prepare a development environment in Cloud Shell:** Set up Azure Cloud Shell, clone the repository, and configure environment variables.
 
-4. **Test and validate the agent in the playground:** Verify that the agent retrieves accurate, cited information from enterprise documents while maintaining conversation context.
+4. **Implement document analysis using Python SDK:** Add code to connect to Azure Document Intelligence and analyze documents programmatically.
 
-5. **Connect to the agent programmatically using Python:** Clone a GitHub repository, configure environment settings, implement agent client logic, handle MCP approval workflows, and execute the solution from Azure Cloud Shell.
+5. **Extract and interpret key information from documents:** Retrieve and display important fields such as vendor name, customer name, and invoice total with confidence scores.
 
 ## Pre-requisites
   
-* Basic knowledge of the Azure portal and Azure Cloud Shell.  
-* Familiarity with Microsoft Foundry concepts such as projects, agents, and model deployments.  
-* Basic understanding of Azure AI Search and Azure Blob Storage.  
+* Familiarity with Microsoft Foundry concepts such as projects and resources.  
+* Basic understanding of Azure AI Document Intelligence and its use for document analysis.
 * Basic knowledge of Python and running scripts from a command-line environment.   
 
 ## Architecture
 
-The lab architecture demonstrates how a Microsoft Foundry project integrates GPT-4.1 with Foundry IQ and Azure Blob Storage to enable intelligent document retrieval and AI-powered search using SDK-based interaction:
+The lab architecture demonstrates how a Microsoft Foundry project integrates Azure AI Document Intelligence with a Python application to analyze and extract information from documents:
 
-1. **Microsoft Foundry Project:** A workspace created in the Microsoft Foundry portal where models, agents, and AI Search configurations are deployed and managed.
+1. **Microsoft Foundry Project:** A centralized workspace where Azure AI resources are created, configured, and managed for document analysis.
 
-2. **Deployment Model (gpt- 4.1):** A model deployed within the project that processes user queries and generates intelligent responses based on retrieved knowledge.
+2. **Azure AI Document Intelligence Service:** The core service that processes documents using prebuilt models like the Read model to extract text and structured data.
 
-3. **Foundry IQ:** A knowledge integration layer that connects the AI agent with indexed content stored in Azure Blob Storage for retrieval-based responses.
+3. **Read (OCR) Model:** A prebuilt model used to analyze documents and extract printed or handwritten text in multiple languages.
 
-4. **Azure Blob Storage:** A cloud storage service used to store documents and data that are indexed and accessed by Foundry IQ for AI search.
+4. **Azure Cloud Shell:** A browser-based development environment used to configure the project, install dependencies, and run Python code.
 
-5. **Python Client Application:** A client application that connects to the Foundry project endpoint, authenticates using Azure credentials, sends user queries, and retrieves AI-generated responses.
+5. **Python Client Application:** A script that connects to the Document Intelligence service using endpoint and API key, submits documents for analysis, and retrieves key information such as invoice details.
 
 ## Architecture Diagram
 
-![](../Images/lab17new-arch.png)
+![](../Images/lab35new-arch.png)
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Project:** The central cloud workspace where foundation models are deployed, and AI agents are configured to handle the customer support workflow.
+1. **Microsoft Foundry Project:** The central workspace where Azure AI resources are created and managed for document analysis tasks.
 
-2. **Deployment Model (gpt- 4.1):** The core AI agent that processes queries and uses AI Search capabilities to generate informed responses.
+2. **Azure AI Document Intelligence Service:** The core service that processes documents and extracts text and structured data using prebuilt models.
 
-3. **Foundry IQ:** A retrieval mechanism that indexes and fetches relevant content from connected storage to support grounded responses..
+3. **Read (OCR) Model:** A prebuilt model used to analyze documents and extract multilingual text content with high accuracy.
 
-4. **Azure Blob Storage:** The data repository that stores documents and structured files used for knowledge retrieval.
+4. **Azure Cloud Shell:** A browser-based environment used to configure the project, install required libraries, and run Python scripts.
 
-5. **Python Client Application:** A Cloud Shell–based application that programmatically sends queries to the agent and receives generated outputs.
+5. **Python Client Application:** A script that connects to the Document Intelligence service, submits documents for analysis, and retrieves key details such as vendor name, customer name, and invoice total.
 
 # Getting Started with lab
 
