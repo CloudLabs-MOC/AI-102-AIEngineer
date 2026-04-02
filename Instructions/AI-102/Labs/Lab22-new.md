@@ -97,6 +97,14 @@ In this task, you will create an Azure Storage account and configure a blob cont
 
     > **IMPORTANT:** Copy the generated SAS token and URL, and store them in a text file for now - you'll need them later!
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="a3baa332-f98b-419d-8e04-a73f92beb805" />
+
 ## Task 2: Create a Microsoft Foundry project
 
 In this task, you will create a new project in the Microsoft Foundry portal and configure its basic settings for AI development.
@@ -148,6 +156,14 @@ In this task, you will create a new project in the Microsoft Foundry portal and 
 
     > **TIP:** Copy the project key to the clipboard - you're going to need it later!
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="9ff1f50a-1fb6-4172-b300-894e2d3bae77" />
+
 ## Task 3: Create an agent
 
 In this task, you will create and configure an AI agent in Foundry, define its instructions, and test its basic functionality.
@@ -183,6 +199,14 @@ In this task, you will create and configure an AI agent in Foundry, define its i
     ![](../Images/lab22-03-13.png)
 
 1. The agent should respond with an appropriate answer based on its instructions.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="e9f2981c-8264-4b9d-a334-574ef989e384" />
 
 ## Task 4: Create an Azure Speech in Foundry Tools connection
 
