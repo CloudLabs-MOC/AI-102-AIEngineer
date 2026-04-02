@@ -44,7 +44,7 @@ The lab architecture demonstrates how Azure AI Foundry enables the creation and 
 
 ## Architecture Diagram
 
-![](../Images/ai23g1.png)
+![](../Images/lab23-archdiagram.png)
 
 ## Explanation of Components
 

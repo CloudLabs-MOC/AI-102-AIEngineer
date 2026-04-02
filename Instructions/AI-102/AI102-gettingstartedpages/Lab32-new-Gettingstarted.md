@@ -62,7 +62,7 @@ The lab architecture demonstrates how **Microsoft Foundry** enables AI-based ima
 
 ## Architecture Diagram
 
-![](../Images/lab32-archdiagram(1).png)
+![](../Images/lab32-archdiagram.png)
 
 ## Explanation of Components
 

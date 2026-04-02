@@ -4,83 +4,87 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 36: Extract data with Azure Document Intelligence
 
-### Overall Estimated Duration: 30 Minutes
+### Overall Estimated Duration: 1 Hour
 
 ## Overview
 
-In this hands-on lab, you’ll gain practical experience in building a Content Understanding solution using **Microsoft Foundry**. You will learn how to sign in to the Foundry portal, create a project, and configure resources required for content analysis. You’ll also connect your project to **Content Understanding Studio** to deploy the necessary models used for extracting information from documents and images.
+In this hands-on lab, you’ll gain practical experience in building a document processing solution using **Azure Document Intelligence**. You will learn how to create and configure a Document Intelligence resource and use **Document Intelligence Studio** to explore and analyze documents using prebuilt models like the Read (OCR) model for multilingual text extraction.
 
-Next, you’ll set up your development environment in **Visual Studio Code**, clone a sample repository, and configure your application using environment variables. Using Python and the **Azure Content Understanding SDK**, you’ll create an analyzer based on a predefined schema and use it to process business card images. Finally, you’ll authenticate with Azure, run the application, and extract structured data such as names, titles, emails, and phone numbers. By the end of this lab, you’ll be proficient in analyzing content using both the Foundry tools and programmatically through code.
+Next, you’ll set up your development environment in **Visual Studio Code**, clone a sample repository, and configure your application using environment variables. Using Python and the **Azure Document Intelligence SDK**, you’ll analyze invoices with a prebuilt model to extract key details such as vendor name, customer name, and totals.
+
+Finally, you’ll create and train a **custom extraction model** using your own dataset in Document Intelligence Studio, and test it programmatically using Python to extract specific fields from documents. By the end of this lab, you’ll be proficient in using both the studio interface and code to build document intelligence solutions.
 
 ## Objectives
 
 By the end of this lab, you will be able to:
 
-1. **Create a Microsoft Foundry resource and project:** Sign in to the Foundry portal and provision a project with the required Azure resources.
+1. **Create a Document Intelligence resource:** Provision and configure an Azure Document Intelligence resource using Document Intelligence Studio.
 
-2. **Configure Content Understanding models and connection:** Connect your Foundry resource to Content Understanding Studio and deploy the required models for analysis.
+2. **Analyze documents using the Read model:** Use the Read (OCR) model in the Studio to extract multilingual text and detect language from documents.
 
 3. **Set up a development environment:** Clone a GitHub repository, configure environment variables, and prepare a Python environment in Visual Studio Code.
 
-4. **Create an analyzer using the Python SDK:** Define and implement an analyzer schema to extract structured data from business card images.
+4. **Analyze invoices using a prebuilt model:** Use the Azure Document Intelligence Python SDK to extract key fields such as vendor name, customer name, and totals from invoices.
 
-5. **Analyze content using the Python SDK:** Use the analyzer to process images, extract key information, and retrieve structured results programmatically.
+5. **Prepare training data for custom models:** Create and configure a storage account and upload sample forms for model training.
 
-6. **Process and store analysis results:** Save the extracted data in JSON format and interpret the returned fields.
+6. **Train a custom extraction model:** Use Document Intelligence Studio to train a model tailored to extract specific fields from your documents.
 
-7. **Run and test the application:** Authenticate with Azure, execute the application, and validate the extracted outputs from different input images.
+7. **Test the custom model programmatically:** Run a Python application to analyze documents using the custom model and retrieve structured data.
+
 
 ## Pre-requisites
 
-* Basic understanding of **content understanding concepts**, including extracting structured data from documents and images.
-* Familiarity with the **Microsoft Foundry portal**, including creating and managing projects and resources.
+* Basic understanding of **document processing concepts**, including extracting text and structured data from forms and images.
+* Familiarity with the **Azure portal**, including creating and managing resources.
 * Experience using **Visual Studio Code** for editing code and managing extensions.
-* An active Azure subscription with permissions to create and access **Microsoft Foundry** and related AI services.
+* An active Azure subscription with permissions to create and access **Azure AI services**, including Document Intelligence.
 * Basic knowledge of **Python programming** and working with virtual environments.
 * Understanding of **SDK usage**, particularly for interacting with Azure AI services.
 * General familiarity with **command-line tools** for running scripts, installing dependencies, and authenticating with Azure.
 
+
 ## Architecture
 
-The lab architecture demonstrates how **Microsoft Foundry** enables content understanding by combining model deployment, SDK integration, and client application development:
+The lab architecture demonstrates how **Azure Document Intelligence** enables document processing by combining resource configuration, model usage, SDK integration, and client application development:
 
-1. **Microsoft Foundry Portal:** A web-based interface to create projects, manage resources, and access endpoints required for content understanding solutions.
+1. **Azure Portal / Document Intelligence Studio:** Web-based interfaces used to create resources, manage configurations, and analyze documents using prebuilt and custom models.
 
-2. **Content Understanding Studio:** A specialized interface used to configure connections, deploy required models, and manage analyzers for extracting structured data.
+2. **Document Intelligence Models:** Prebuilt models (such as Read and Invoice) and custom-trained models that extract text, key/value pairs, and structured data from documents.
 
-3. **Content Understanding Models:** AI models that process documents and images (such as business cards) to extract structured information based on defined schemas.
+3. **Azure Storage Account:** Stores training data (sample forms) used for building custom Document Intelligence models.
 
-4. **Visual Studio Code Environment:** Provides a development workspace to clone the lab repository, configure files, and write Python code for the application.
+4. **Visual Studio Code Environment:** Provides a development workspace to clone the lab repository, configure files, and write Python code.
 
-5. **Azure Content Understanding SDK (Python):** Enables programmatic interaction with the service by creating analyzers and submitting content for analysis.
+5. **Azure Document Intelligence SDK (Python):** Enables programmatic interaction with the service to analyze documents and retrieve structured data.
 
-6. **Azure Identity & Authentication:** Uses Azure credentials to securely authenticate and access the Foundry resource and Content Understanding services.
+6. **Azure Identity & Authentication:** Uses Azure credentials to securely authenticate and access Document Intelligence resources.
 
-7. **Python Client Application:** A custom script that creates analyzers, processes input images, and retrieves structured outputs such as names, emails, and phone numbers.
+7. **Python Client Application:** Custom scripts that submit documents for analysis and extract key information such as vendor details, totals, and custom fields.
 
-8. **Local File System (Results Output):** Stores the generated results (such as JSON files), allowing users to review and validate extracted information.
+8. **Output (Console/JSON Results):** Displays or stores extracted data, allowing users to review and validate the results.
 
 ## Architecture Diagram
 
-![](../Images/lab34-archdiagram.png)
+![](../Images/lab36-archdiagram.png)
 
 ## Explanation of Components
 
-1. **Microsoft Foundry Portal:** Provides a web-based environment to create projects, manage resources, and access endpoints required for building content understanding solutions.
+1. **Azure Portal / Document Intelligence Studio:** Provides web-based interfaces to create resources, manage configurations, and analyze documents using prebuilt and custom models.
 
-2. **Content Understanding Studio:** A dedicated interface used to connect resources, deploy required models, and configure analyzers for extracting structured data from documents and images.
+2. **Document Intelligence Models:** AI models (such as Read and Invoice) that process documents to extract text, key/value pairs, and structured data based on document type or custom training.
 
-3. **Content Understanding Models:** AI models that analyze input content (such as business cards) and extract structured information based on predefined schemas.
+3. **Azure Storage Account:** Hosts training data (sample forms) used for building and training custom Document Intelligence models.
 
-4. **Visual Studio Code:** A development environment used to clone the lab repository, edit configuration files, and write and run the Python application.
+4. **Visual Studio Code:** A development environment used to clone the lab repository, edit configuration files, and write and run Python code.
 
-5. **Azure Content Understanding SDK (Python):** Enables communication with the service by creating analyzers, submitting content for analysis, and retrieving structured results programmatically.
+5. **Azure Document Intelligence SDK (Python):** Enables communication with the service by submitting documents for analysis and retrieving structured results programmatically.
 
-6. **Azure Identity & Authentication:** Uses Azure credentials to securely authenticate and authorize access to the Foundry resource and Content Understanding services.
+6. **Azure Identity & Authentication:** Uses Azure credentials to securely authenticate and authorize access to Document Intelligence resources.
 
-7. **Python Client Application:** A script that creates analyzers, processes input images, and extracts structured data such as names, titles, emails, and phone numbers.
+7. **Python Client Application:** A script that analyzes documents using prebuilt or custom models and extracts key information such as vendor details, totals, and other fields.
 
-8. **Local Output Files (JSON):** Stores the analysis results in `.json` format, allowing users to review and validate the extracted information.
+8. **Output (Console/JSON Results):** Displays or stores the extracted data, allowing users to review and validate the analysis results.
 
 # Getting Started with lab
 

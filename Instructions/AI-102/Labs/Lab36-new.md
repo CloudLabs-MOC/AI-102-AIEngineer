@@ -1,14 +1,10 @@
 # Lab 36: Extract data with Azure Document Intelligence
 
-### Estimated Duration: 45 Minutes
+### Estimated Duration: 1 Hour
 
 ## Lab Overview
 
-**Azure Document Intelligence** is an Azure AI service that enables you to build automated data processing software. This software can extract text, key/value pairs, and tables from form documents using optical character recognition (OCR). Azure Document Intelligence has pre-built models for recognizing invoices, receipts, business cards, and other common document types. The service also provides the capability to train custom models that can extract specific data fields from your own forms.
-
-In this exercise you'll use both prebuilt and custom Document Intelligence models to extract information from documents.
-
-This exercise takes approximately **45** minutes.
+In this lab, you’ll build an end-to-end solution using **Azure Document Intelligence** to extract data from documents. You’ll start by creating and configuring a resource in **Document Intelligence Studio**, and then use the **Read (OCR) model** to analyze and extract multilingual text. Next, you’ll set up your development environment in **Visual Studio Code** and use Python with the **Document Intelligence SDK** to analyze invoices and extract key details such as vendor name, customer name, and totals. Finally, you’ll create and train a **custom model**, and test it using Python to extract specific fields tailored to your own document formats.
 
 ## Lab Objectives
 
@@ -23,7 +19,7 @@ In this lab, you'll perform the following tasks:
   * Task 3.1: Prepare the development environment
   * Task 3.2: Add code to analyze an invoice
 
-* Task 4: Train and test a custom model**
+* Task 4: Train and test a custom model
 
   * Task 4.1: Prepare training data
   * Task 4.2: Train the model in Document Intelligence Studio
@@ -31,7 +27,7 @@ In this lab, you'll perform the following tasks:
 
 ## Task 1:  Create a Document Intelligence resource
 
-Azure Document Intelligence is included in Azure AI Services. You'll create a Document Intelligence resource directly from the Document Intelligence Studio.
+In this task, you'll create and configure an Azure Document Intelligence resource using Document Intelligence Studio.
 
 1. In a web browser, navigate to the **Document Intelligence Studio** at `https://contentunderstanding.ai.azure.com/documentintelligence/studio`
 
@@ -75,7 +71,7 @@ Azure Document Intelligence is included in Azure AI Services. You'll create a Do
 
 ## Task 2: Use the Read model in the portal
 
-Now let's use the Read model in the Studio to analyze a multilingual document:
+In this task, you'll use the Read (OCR) model in Document Intelligence Studio to analyze a multilingual document and extract text.
 
 1. At the top of the page, above **Settings**, select **Document Intelligence Studio** to navigate back to the homepage.
 
@@ -113,7 +109,7 @@ Now let's use the Read model in the Studio to analyze a multilingual document:
 
 ## Task 3: Analyze an invoice with a prebuilt model using the Python SDK
 
-Now let's use the Document Intelligence Python SDK to analyze an invoice programmatically.
+In this task, you'll use the Azure Document Intelligence Python SDK to analyze an invoice using a prebuilt model.
 
 ### Task 3.1: Prepare the development environment
 
@@ -307,7 +303,7 @@ This is the sample invoice that your code will analyze:
 
 ## Task 4: Train and test a custom model
 
-The prebuilt models are useful for common document types, but often you need to extract specific data from your own forms. You can train a custom Document Intelligence model to extract the specific fields you need.
+In this task, you'll create, train, and test a custom Document Intelligence model to extract data from your own document formats.
 
 ### Task 4.1: Prepare training data
 
@@ -522,6 +518,6 @@ Now you'll use the training forms to build a custom extraction model.
 
 ## Summary
 
-
+In this exercise, you built a document processing solution using **Azure Document Intelligence** by creating and configuring the required resources in Document Intelligence Studio. You explored the Read (OCR) model to extract multilingual text, and used the Python SDK to analyze invoices and retrieve key information such as vendor details and totals. You then created and trained a custom model using your own dataset, and tested it programmatically to extract specific fields from documents. Great work!
 
 ### You have successfully completed the Hands-on Lab!
