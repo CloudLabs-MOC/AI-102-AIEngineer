@@ -309,7 +309,7 @@ In this task, you will build a reusable analyzer based on the defined schema and
 
 1. View the details of the fields that were identified in the **Fields** pane.
 
-### Task 5.2: Build and test an analyzer for invoices
+### Task 5.3: Build and test an analyzer for invoices
 
 In this task, you will build a reusable analyzer based on the defined schema and test it on a new invoice document to verify accurate data extraction.
 
@@ -449,7 +449,7 @@ In this task, you will build an analyzer for slide images and test it using a di
     - **Name**: `slideanalyzer` **(2)**
     - **Description**: `Slide image analyzer` **(3)**
 
-     ![](../Images/lab33-03-51.png)
+      ![](../Images/lab33-03-51.png)
 
 1. When the analyzer has been built, select **Jump to analyzer list** to view all built analyzers. 
 
