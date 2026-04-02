@@ -62,6 +62,14 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 
     > **Note:** <span style="color:red"> Copy and save the project endpoint, as you will need them later in the lab.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="1d277a2a-b3c8-4cb3-9ba7-c0cc779bb921" />
+
 ## Task 2: Create an agent
 
 In this task, you'll create and configure an AI agent with a selected model and define its instructions.
@@ -105,6 +113,14 @@ In this task, you'll create and configure an AI agent with a selected model and 
 1. The agent should respond with an appropriate answer based on its instructions.
 
     ![](../Images/lab23-p2t2p7.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="a4ec8e11-5de3-4bf3-97b5-52293d9ae2e0" />
 
 ## Task 3: Configure Azure Speech Voice Live
 

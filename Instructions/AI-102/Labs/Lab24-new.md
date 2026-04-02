@@ -59,6 +59,14 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 
     ![](../Images/lab24-p2t1p2.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="437ed274-985b-48e2-b1b8-d0685b80696a" />
+
 ## Task 2: Explore Azure Translator in Foundry Tools in the portal
 
 In this task, you'll use the Azure Translator playground in the Foundry portal to explore text translation capabilities across multiple languages.

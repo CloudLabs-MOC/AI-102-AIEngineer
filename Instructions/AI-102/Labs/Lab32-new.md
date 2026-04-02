@@ -62,6 +62,14 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 
     > **Note:** <span style="color:red"> You're going to need the Azure OpenAI endpoint later!
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="45811d69-91ca-4c7d-8c01-61977ae4422f" />
+
 ## Task 2: Deploy a model
 
 In this task, you'll explore the model catalog, select an image generation model, and deploy it using default settings.
@@ -83,6 +91,14 @@ In this task, you'll explore the model catalog, select an image generation model
     ![](../Images/lab32-p2t2p4.png)
 
     > **Note:** <span style="color:red"> Note the model deployment name (which by default should be *FLUX.1-Kontext-pro*) - you'll need this later!
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="8cce1325-a58f-4750-a788-c13679f57fff" />
 
 ## Task 3: Test the model in the playground
 
