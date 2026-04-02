@@ -194,6 +194,9 @@ In this task, you will configure Content Understanding Studio and connect it to 
 
     ![](../Images/lab33-03-13.png)
 
+1. After your resource is connected, you're ready to create custom analyzers. Select **Content Understanding** in the top navigation to go to the home page.
+
+    ![](../Images/lab33-03-n1.png)
 
 ### Task 5: Extract information from invoice documents
 
@@ -224,13 +227,17 @@ In this task, you will create a custom schema for invoice documents by selecting
 
       ![](../Images/lab33-03-15.png)
 
-1. On the **Review + create** tab, select **Create**.
+1. On the **Review + create** tab, select **Create**. Wait for deployment to complete.
 
     ![](../Images/lab33-03-16.png)
 
 ### Task 5.2: Define a schema for invoice analysis
 
 In this task, you will build a reusable analyzer based on the defined schema and test it on a new invoice document to verify accurate data extraction.
+
+1. Navigate back **Content Understanding Studio**, select the **Get started** button in the custom projects section.
+
+    ![](../Images/lab33-03-11.png)
 
 1. On the **Manage projects and analyzers** page, select **Create**.
 
@@ -242,7 +249,7 @@ In this task, you will build a reusable analyzer based on the defined schema and
     - choose the type of project that is best for your case: select **Extract content and field with custom schema (3)**
     - expand **Advanced settings (4)**
 
-      ![](../Images/lab33-03-18.png)
+      ![](../Images/lab33-03-19n.png)
 
     - **Advanced settings**
         - **Connected resource:** Confirm your Foundry resource is selected
@@ -250,7 +257,7 @@ In this task, you will build a reusable analyzer based on the defined schema and
         - **Blob container:** click **Create a new container (3)** and enter the container name `content-understanding`, and click **Ok**.
         - Click **Create (5)**
 
-            ![](../Images/lab33-03-19n.png)
+            ![](../Images/lab33-03-19.png)
 
 1. Wait for the project to be created.
 
