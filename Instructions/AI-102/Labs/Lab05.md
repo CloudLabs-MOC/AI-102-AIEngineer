@@ -59,9 +59,9 @@ In this task, you’ll sign in to Microsoft Foundry, create a new project, and d
 
 1. Wait for your project to be created. It may take around 1-2 minutes.
 
-1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Browse models (2)** from the drop-down menu.
+1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Find models (2)** from the drop-down menu.
 
-   ![](../Images/lab1-03-04.png) 
+   ![](../Images/labai-102-f.png) 
 
 1. On the **Models** page, search for **gpt-4.1 (1)** in the search bar, and then select the **gpt-4.1 (2)** model from the search results.
 

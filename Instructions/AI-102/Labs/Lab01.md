@@ -55,9 +55,9 @@ In this task, you will sign in to the Microsoft Foundry portal and create a new 
 
 In this task, you will deploy the gpt-4.1 model and test it in the playground by sending prompts and reviewing responses.
 
-1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Browse models (2)** from the drop-down menu.
+1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Find models (2)** from the drop-down menu.
 
-   ![](../Images/lab1-03-04.png) 
+   ![](../Images/labai-102-f.png) 
 
 1. On the **Models** page, search for **gpt-4.1 (1)** in the search bar, and then select the **gpt-4.1 (2)** model from the search results.
 

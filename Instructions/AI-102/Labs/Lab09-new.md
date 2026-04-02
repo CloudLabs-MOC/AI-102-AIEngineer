@@ -135,23 +135,24 @@ Now you'll create an AI agent using the visual designer interface. Rather than w
 
 1. A **New Agent** tab will open to an "Agent Preferences" editor, along with a `.yaml` configuration file.
 
-   ![](../Images/lab7-s17.png)
+    ![](../Images/lab7-s17.png)
 
 ### Task 4.1 Configure your agent in the designer
 
 1. In the agent preferences, configure the following fields:
-   - **Name:** Enter a descriptive name for your agent **data-research-agent (1)**
-   - **Model:** Select your GPT-4.1-deployment **(2)** from the dropdown
-   - **Instructions:** Enter system instructions such as **(3)**:
-     ```
-     You are an AI agent that helps users research information from various sources. Use the available tools to access up-to-date information and provide comprehensive responses based on external data sources.
-     ```
+    - **Name:** Enter a descriptive name for your agent **data-research-agent (1)**
+   
+    - **Model:** Select your GPT-4.1-deployment **(2)** from the dropdown
+    - **Instructions:** Enter system instructions such as **(3)**:
+      ```
+      You are an AI agent that helps users research information from various sources. Use the available tools to access up-to-date information and provide comprehensive responses based on external data sources.
+      ```
 
-     ![](../Images/lab7-s18.png)
+       ![](../Images/lab7-s18.png)
 
 1. Save the configuration by selecting **File > Save** from the VS Code menu bar.
 
-   ![](../Images/lab7-s19.png)
+    ![](../Images/lab7-s19.png)
 
 ### Task 4.2: Add an MCP Server tool to your agent
 
@@ -161,29 +162,31 @@ You'll now add a Model Context Protocol (MCP) server tool that allows your agent
 
 1. From the dropdown menu, choose **MCP Server (2)**.
 
-   ![](../Images/lab7-s20.png)
+    ![](../Images/lab7-s20.png)
 
 1. Configure the MCP Server tool with the following information:
-   - **Server URL:** Enter the URL of an MCP server `https://gitmcp.io/Azure/azure-rest-api-specs` **(1)**
-   - **Server Label:** Enter a unique identifier **github_docs_server (2)**
+    
+    - **Server URL:** Enter the URL of an MCP server `https://gitmcp.io/Azure/azure-rest-api-specs` **(1)**
+    
+    - **Server Label:** Enter a unique identifier **github_docs_server (2)**
 
 1. Leave the **Allowed tools** dropdown empty to allow all tools from the MCP server.
 
 1. Select the **Create tool (3)** button to add the tool to your agent.
 
-   ![](../Images/lab7-s21.png)
+    ![](../Images/lab7-s21.png)
 
 ### Task 4.3: Deploy your agent to Microsoft Foundry
 
 1. In the agent designer view, select the **Create Agent on Microsoft Foundry** button in the bottom-left corner.
 
-   ![](../Images/lab7-s22.png)
+    ![](../Images/lab7-s22.png)
 
 1. Wait for the deployment to complete.
 
 1. In the VS Code navbar, refresh **(1)** the **Resources** view.  **data-research-agent (2)** should now appear under the **Classic Agents** subsection.
 
-   ![](../Images/lab9-ai-04.png)
+    ![](../Images/lab9-ai-04.png)
 
 ## Task 5: Test your agent in the playground
 
@@ -191,17 +194,17 @@ You'll now add a Model Context Protocol (MCP) server tool that allows your agent
 
 1. Select **Open Playground (2)** from the context menu.
 
-   ![](../Images/lab9-ai-05.png)
+    ![](../Images/lab9-ai-05.png)
 
 1. The Agents Playground will open in a new tab within VS Code.
 
 1. In the **Agent Playground**, enter the following prompt in the chat box **(1)**, and then select **Send (2)**:
 
-   ```output
-   Can you help me find documentation about Azure Container Apps and provide an example of how to create one?
-   ```
+      ```output
+      Can you help me find documentation about Azure Container Apps and provide an example of how to create one?
+      ```
 
-   ![](../Images/lab9-ai-06.png)
+      ![](../Images/lab9-ai-06.png)
 
 1. Send the message and observe the authentication and approval prompts for the MCP Server tool:
     
@@ -227,21 +230,21 @@ You'll now add a Model Context Protocol (MCP) server tool that allows your agent
 
 1. In the **Choose your preferred SDK** dropdown, select **Microsoft Foundry Projects client library**.
 
-   ![](../Images/lab09-ai-5.png)
+    ![](../Images/lab09-ai-5.png)
 
 1. Select your preferred programming language (eg. Python).
 
-   ![](../Images/lab09-ai-6.png)
+    ![](../Images/lab09-ai-6.png)
 
 1. In the **Choose an auth method** dropdown, select **EntraID (default)**.
 
-   ![](../Images/lab09-ai-7.png)
+    ![](../Images/lab09-ai-7.png)
 
 1. Review the generated sample code that demonstrates how to interact with your agent programmatically.
 
-   ![](../Images/lab09-ai-8.png)
+    ![](../Images/lab09-ai-8.png)
 
-   - You can use this code as a starting point for building applications that leverage your AI agent.
+    - You can use this code as a starting point for building applications that leverage your AI agent.
 
 ### Task 5.2: View conversation history and threads
 
@@ -249,11 +252,11 @@ You'll now add a Model Context Protocol (MCP) server tool that allows your agent
 
 1. Select a thread to view the **Thread Details (2)** page, which shows:
    
-   - Individual messages in the conversation
-   - Run information and execution details
-   - Agent responses and tool usage
+    - Individual messages in the conversation
+    - Run information and execution details
+    - Agent responses and tool usage
 
-     ![](../Images/lab09-ai-9.png)
+      ![](../Images/lab09-ai-9.png)
 
 1. Select **View run info** to see detailed JSON information about each run.
 

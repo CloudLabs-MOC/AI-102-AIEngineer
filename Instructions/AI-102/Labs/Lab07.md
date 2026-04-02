@@ -65,7 +65,7 @@ In this task, you will sign in to the Microsoft Foundry portal, create a new Fou
 
 1. When your project is created, select **Start building (1)**, and select **Create agent (2)** from the drop-down menu.
 
-    ![](../Images/lab8-03-1.png)
+    ![](../Images/labai-102-c.png)
 
 1. On the **Create an agent** page, enter **expense-agent (1)** in the **Agent name** field, and then select **Create (2)**.
 

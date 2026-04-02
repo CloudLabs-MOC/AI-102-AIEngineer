@@ -69,7 +69,7 @@ In this task, you will create a new project in the Microsoft Foundry portal, set
 
 1. On the **Microsoft Foundry** home page, click **Start building (1)**, and then select **Find models (2)** from the drop-down menu.
 
-     ![](../Images/lab9-03-1.png)
+     ![](../Images/labai-102-f.png)
 
 1. On the **Models** page, search for **gpt-4.1 (1)** in the search bar, and then select the **gpt-4.1 (2)** model from the search results.
 
