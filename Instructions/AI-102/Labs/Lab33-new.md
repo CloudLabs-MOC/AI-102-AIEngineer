@@ -159,15 +159,25 @@ In this task, you will configure Content Understanding Studio and connect it to 
 
 1. In a new browser tab, open [Content Understanding Studio](https://contentunderstanding.ai.azure.com) at `https://contentunderstanding.ai.azure.com`.
 
-1. If prompted, sign in with the same Azure credentials you used for the Foundry portal.
-
 1. On the **Content Understanding Studio** home page, select **Explore Content Understanding**.
 
     ![](../Images/lab33-03-10.png)
 
-1. On the **Content Understanding Studio** page, select **Get started**.
+1. On the homepage of **Content Understanding Studio** click on **Sign in**.
 
-    ![](../Images/lab33-03-11.png)
+    ![](../Images/lab34-p2t2p1.png)
+
+1. If prompted, provide the credentials below:
+
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+   - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+1. Select the **Settings (gear) icon (1)** on the top navigation bar, then click **+ Add resource (2)** to connect a resource.
+
+    ![](../Images/lab34-p2t2p2.png)
+
+    ![](../Images/lab34-p2t2p3.png)
 
 1. In the **Select AI Foundry resource** pane, select the following details, and then click **Next (5)**. 
 
