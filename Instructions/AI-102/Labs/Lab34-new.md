@@ -92,9 +92,9 @@ Content Understanding uses OpenAI models for analysis that are deployed in your 
 
 1. If prompted, provide the credentials below:
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
 1. Select the **Settings (gear) icon (1)** on the top navigation bar, then click **+ Add resource (2)** to connect a resource.
 
@@ -113,9 +113,9 @@ Content Understanding uses OpenAI models for analysis that are deployed in your 
 
         ![](../Images/lab34-p2t2p4.png)
 
-1.  Click on **Save** to create the configuration.
+1. Click on **Save** to create the configuration.
 
-    ![](../Images/lab34-p2t2p5.png)
+     ![](../Images/lab34-p2t2p5.png)
 
 1. Wait while it deploys the required models for Content Understanding.
 

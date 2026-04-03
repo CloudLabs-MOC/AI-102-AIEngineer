@@ -418,9 +418,9 @@ Now you'll use the training forms to build a custom extraction model.
 
 1. If prompted, provide the credentials below:
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
 1. Scroll down to the **Custom models** section and select the **Custom extraction model** tile.
 
