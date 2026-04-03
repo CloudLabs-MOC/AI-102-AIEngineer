@@ -244,24 +244,22 @@ The initial application files you'll need to develop the translation application
 
 1. Note that the code includes a loop to allow a user to input a prompt until they enter "quit". Then in the loop section, under the comment **Generate an image**, add the following code to submit the prompt and retrieve the data for the generated image from your model:
 
-    **Python**
-
     ```python
-   # Generate an image
-   img = client.images.generate(
+    # Generate an image
+    img = client.images.generate(
         model=model_deployment,
         prompt=input_text,
         n=1
     )
 
-   json_response = json.loads(img.model_dump_json())
-   image_data = json_response["data"][0].get("b64_json")
-   image_data_in_bytes = base64.b64decode(image_data)
+    json_response = json.loads(img.model_dump_json())
+    image_data = json_response["data"][0].get("b64_json")
+    image_data_in_bytes = base64.b64decode(image_data)
     ```
 
-    ![](../Images/lab32-p2t4p13.png)
+     ![](../Images/lab32-p2t4p13.png)
 
-    > **Note:** The FLUX model returns the generated image as base64-encoded data in `b64_json`.
+     > **Note:** The FLUX model returns the generated image as base64-encoded data in `b64_json`.
 
 1. Note that the code in the remainder of the **main** function passes the image data and a filename to a provided function, which decodes and saves the generated image as a .png file.
 
