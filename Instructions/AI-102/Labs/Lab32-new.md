@@ -212,12 +212,12 @@ The initial application files you'll need to develop the translation application
 1. In the code file, note the existing statements that have been added at the top of the file to import the necessary SDK namespaces. Then, under the comment **Add references**, add the following code to reference the namespaces in the libraries you installed previously:
 
     ```python
-   # Add references
-   from dotenv import load_dotenv
-   from azure.identity import DefaultAzureCredential, get_bearer_token_provider
-   from openai import OpenAI
-   import requests
-   import base64
+    # Add references
+    from dotenv import load_dotenv
+    from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+    from openai import OpenAI
+    import requests
+    import base64
     ```
 
     ![](../Images/lab32-p2t4p11.png)
@@ -227,20 +227,20 @@ The initial application files you'll need to develop the translation application
 1. Under the comment **Initialize the client**, add the following code to connect to your model using the Azure credentials you are currently signed in with:
 
     ```python
-   # Initialize the client
-   token_provider = get_bearer_token_provider(
-       DefaultAzureCredential(exclude_environment_credential=True,
-           exclude_managed_identity_credential=True), 
-       "https://cognitiveservices.azure.com/.default"
-   )
-    
-   client = OpenAI(
+    # Initialize the client
+    token_provider = get_bearer_token_provider(
+        DefaultAzureCredential(exclude_environment_credential=True,
+            exclude_managed_identity_credential=True), 
+        "https://cognitiveservices.azure.com/.default"
+    )
+
+    client = OpenAI(
         base_url=endpoint,
         api_key=token_provider(),
     )
     ```
 
-    ![](../Images/lab32-p2t4p12.png)
+     ![](../Images/lab32-p2t4p12.png)
 
 1. Note that the code includes a loop to allow a user to input a prompt until they enter "quit". Then in the loop section, under the comment **Generate an image**, add the following code to submit the prompt and retrieve the data for the generated image from your model:
 
