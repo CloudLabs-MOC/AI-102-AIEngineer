@@ -69,6 +69,14 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 
     ![](../Images/lab34-p2t1p4.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="c7087951-1117-4da5-9395-5f1751afb97f" />
+
 
 ## Task 2: Configure Content Understanding models and connection
 
@@ -112,6 +120,14 @@ Content Understanding uses OpenAI models for analysis that are deployed in your 
 1. Wait while it deploys the required models for Content Understanding.
 
     ![](../Images/lab34-p2t2p6.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="4560982a-1b87-4c80-80b4-56c0d19bf284" />
 
 ## Task 3: Prepare the development environment
 

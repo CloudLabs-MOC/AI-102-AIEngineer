@@ -69,6 +69,14 @@ In this task, you'll create and configure an Azure Document Intelligence resourc
 
     ![](../Images/lab36-p2t1p7.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="90800275-a4dc-4f7d-8d53-b307b95fed37" />
+
 ## Task 2: Use the Read model in the portal
 
 In this task, you'll use the Read (OCR) model in Document Intelligence Studio to analyze a multilingual document and extract text.
@@ -390,6 +398,14 @@ A setup script has been provided to create a storage account and upload sample f
 
     ![](../Images/lab36-p2t4p10.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="4d90984d-b472-4083-b24e-579d92749e02" />
+
 ### Task 4.2 Train the model in Document Intelligence Studio
 
 Now you'll use the training forms to build a custom extraction model.
@@ -467,6 +483,14 @@ Now you'll use the training forms to build a custom extraction model.
 1. Training may take some time. Wait until the model status shows **succeeded**.
 
     ![](../Images/lab36-p2t4p20.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="7781c0bf-0d77-43f9-832e-dd09d298d1ad" />
 
 ### Task 4.3 Test the custom model with the Python SDK
 
