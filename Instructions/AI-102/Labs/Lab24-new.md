@@ -324,10 +324,10 @@ In this task, you'll configure and implement a Python application to translate s
 
 1. At the top of the code file, under the existing namespace references, find the comment **Import namespaces** and add the following code to import the namespace you will need to use the Speech SDK:
 
-   ```python
-   # Import namespaces
-   from azure.identity import DefaultAzureCredential
-   import azure.cognitiveservices.speech as speech_sdk
+    ```python
+    # Import namespaces
+    from azure.identity import DefaultAzureCredential
+    import azure.cognitiveservices.speech as speech_sdk
     ```
 
     ![](../Images/lab24-p2t5p3.png)
