@@ -91,8 +91,6 @@ In this task, you will learn how to create an Azure AI Search resource to manage
 
     ![](./images/azsearch(7).png)
 
->**Note:** Perform the Validation after completing, **Task 4**. Otherwise, you may get validation as failed.
-
 ### Task 2.2: Create an Azure AI Services resource
 
 In this task, you will learn how to create an Azure AI Services resource to provide AI capabilities for enriching your data with AI-generated insights.
@@ -330,15 +328,6 @@ Now that you have the documents in place, you can create a search solution by in
 1. You may close the success notification.
 
   > **Note:** `If validation fails, please ignore the error and continue with the lab. This is expected as the validation/internal team is currently updating configurations in the backend.`
-
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
->
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
-
-<validation step="9a5c0568-3ad3-4983-9e42-c9baba1ebb22" />
 
 ## Task 5: Search the index
 
