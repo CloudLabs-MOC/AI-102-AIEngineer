@@ -1,4 +1,4 @@
-# AI-102: Azure AI Engineer Associate Workshop
+# Getting Started with your AI-102: Azure AI Engineer Associate Workshop
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
@@ -57,17 +57,13 @@ The lab architecture demonstrates how multiple AI agents built using Microsoft F
 
 5. **Client Application (run_all.py):** A Python app that launches all agents, manages A2A-based communication, and handles end-to-end interaction. It sends prompts to the Routing Agent, enables agent-to-agent message exchange, and displays the combined output (a generated title and matching outline) to the user.
 
-# Getting Started with lab
-
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
-
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
 ![Access Your VM and Lab Guide](../Images/lab15new-vm.png)
 
-### Virtual Machine & Lab Guide
+## Virtual Machine & Lab Guide
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
 
@@ -105,7 +101,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
 1. On your virtual machine, click on the Azure Portal icon as shown below:
  
-   ![Launch Azure Portal](../Images/azureportalicon.png)
+    ![Launch Azure Portal](../Images/azureportalicon.png)
 
 1. In the sign-in window, kindly sign in using the provided Azure credentials
 

@@ -1,4 +1,4 @@
-# AI-102: Azure AI Engineer Associate Workshop
+# Getting Started with your AI-102: Azure AI Engineer Associate Workshop
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
@@ -67,17 +67,13 @@ The lab architecture demonstrates how **Azure Video Indexer** enables video anal
 
 5. **HTML Client Application with Widgets:** A basic web app that embeds the Video Indexer **Player** and **Insights** widgets, enabling interactive playback and exploration of extracted insights outside the portal.
 
-# Getting Started with lab
-
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Microsoft Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
-
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and **lab guide** will be right at your fingertips within your web browser.
  
 ![Access Your VM and Lab Guide](../Images/lab29labvm.png)
 
-### Virtual Machine & Lab Guide
+## Virtual Machine & Lab Guide
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
 
@@ -115,7 +111,7 @@ Feel free to **Start, Restart, or Stop (2)** your virtual machine as needed from
  
 1. On your virtual machine, click on the Azure Portal icon as shown below:
  
-   ![Launch Azure Portal](../Images/azureportalicon.png)
+    ![Launch Azure Portal](../Images/azureportalicon.png)
 
 1. In the sign-in window, kindly sign in using the provided Azure credentials
 

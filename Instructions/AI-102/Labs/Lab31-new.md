@@ -61,7 +61,7 @@ In this task, you'll sign in to the Microsoft Foundry portal and create a new pr
 
     ![](../Images/lab30-03-11.png)
 
-    > **Note:** <span style="color:red"> Copy and save the Azure OpenAI endpoint, as you will need them later in the lab.
+    > **Note:** Copy and save the Azure OpenAI endpoint, as you will need them later in the lab.
 
 ## Task 2: Deploy a model
 
@@ -293,7 +293,6 @@ In this task, you will authenticate to Azure and run the application to test ima
 1. In the Visual Studio Code terminal, press **Enter** to select the default subscription.
 
     ![](../Images/lab19dev-p2t6p20.png)
-
 
 1. After you have signed in, enter the following command to run the application:
 

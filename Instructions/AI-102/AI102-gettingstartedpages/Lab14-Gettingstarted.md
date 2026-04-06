@@ -1,4 +1,4 @@
-# AI-102: Azure AI Engineer Associate Workshop
+# Getting Started with your AI-102: Azure AI Engineer Associate Workshop
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
@@ -15,8 +15,11 @@ In this lab, you will analyze real customer reviews using Azure AI Language. You
 By the end of this lab, you will be able to:
 
 1. **Provision and configure Azure AI Language:** Create a Language service, capture the endpoint and key.
+
 2. **Set up the Python SDK workflow in Azure Cloud Shell:** Create a lightweight Python environment, install the Azure AI Language SDK, initialize TextAnalyticsClient, and execute end-to-end text analytics (language detection, sentiment, key phrases, named entities, and linked entities) on sample reviews.
+
 3. **Run and test the workflow end to end:** Execute the solution in Cloud Shell with multiple review inputs and observe results for each capability.
+
 4. **Validate outputs:** Verify that the outputs correctly identify language, sentiment, key topics, entities, and linked references, and prepare results for downstream reporting.
 
 ## Pre-requisites
@@ -29,8 +32,11 @@ By the end of this lab, you will be able to:
 he lab architecture demonstrates how a Python-based text analytics application uses **Azure AI Language** to transform unstructured hotel reviews into structured insights:
 
 1. **Azure AI Language Resource:** Managed service that exposes text analytics capabilities via secure endpoints and keys.
+
 2. **Runtime & App (Azure Cloud Shell + Python Console App):** Browser-based, managed shell in the Azure portal where you run a Python console application that loads review documents, invokes the Azure AI Language SDK, and prints structured results.
+
 3. **Azure AI Language SDK (TextAnalyticsClient):** Client library that authenticates with the Language service using the endpoint/key and invokes text analytics APIs. 
+
 4. **Data Flow (Reviews → Insights):** Inputs: sample hotel review text files. Outputs: detected language, sentiment labels/scores, key phrases, named entities, and linked entities.
 
 ## Architecture Diagram
@@ -47,17 +53,13 @@ he lab architecture demonstrates how a Python-based text analytics application u
 6. **Entity Recognition:** A Text Analytics feature that detects and labels entities (for example, people, locations, organizations, amenities) mentioned in the reviews, returning the text span and category.
 7. **Linked Entity Recognition:** A Text Analytics feature that resolves detected entities to authoritative sources (such as Wikipedia), returning a canonical name and a reference URL to provide context.
 
-# Getting Started with lab
-
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Azure AI Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
-
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
 ![Access Your VM and Lab Guide](../Images/AI-102-l14-g1.png)
 
-### Virtual Machine & Lab Guide
+## Virtual Machine & Lab Guide
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
 
@@ -95,7 +97,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
 1. On your virtual machine, click on the Azure Portal icon as shown below:
  
-   ![Launch Azure Portal](../Images/azureportalicon.png)
+    ![Launch Azure Portal](../Images/azureportalicon.png)
 
 1. In the sign-in window, kindly sign in using the provided Azure credentials
 

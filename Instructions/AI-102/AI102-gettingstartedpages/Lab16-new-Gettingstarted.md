@@ -1,5 +1,5 @@
 
-# AI-102: Azure AI Engineer Associate Workshop
+# Getting Started with your AI-102: Azure AI Engineer Associate Workshop
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
@@ -67,17 +67,13 @@ The lab architecture demonstrateshow a Microsoft Foundry project enables AI-powe
 
 7. **Human Support Escalation:** A safeguard process that routes uncertain or complex tickets to human representatives for manual handling.
 
-# Getting Started with lab
-
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Microsoft Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
-
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
 ![Access Your VM and Lab Guide](../Images/lab16new-vm.png)
 
-### Virtual Machine & Lab Guide
+## Virtual Machine & Lab Guide
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
 

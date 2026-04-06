@@ -1,4 +1,4 @@
-# AI-102: Azure AI Engineer Associate Workshop
+# Getting Started with your AI-102: Azure AI Engineer Associate Workshop
 
 Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Azure AI Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
@@ -28,7 +28,6 @@ By the end of this lab, you will be able to:
 
 - An active Azure subscription with access to Azure AI Foundry.
 
-
 ## Architecture
 
 The lab architecture demonstrates how Microsoft Foundry enables safe and responsible generative AI usage through guardrails:
@@ -55,18 +54,13 @@ The lab architecture demonstrates how Microsoft Foundry enables safe and respons
 
 4. **Chat Playground:** An interactive environment used to test prompts, observe model behavior, and validate how default and custom guardrails handle safe and unsafe inputs.
 
-
-# Getting Started with lab
-
-Welcome to your AI-102: Azure AI Engineer Associate workshop! We’ve prepared an interactive environment for you to explore generative AI concepts and work with Microsoft Azure services like Microsoft Foundry, Document Intelligence, Custom Vision, Language Service, etc. Let’s get started and make the most of this hands-on experience.
-
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
 ![Access Your VM and Lab Guide](../Images/lab5-vm.png)
 
-### Virtual Machine & Lab Guide
+## Virtual Machine & Lab Guide
  
 Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
 
