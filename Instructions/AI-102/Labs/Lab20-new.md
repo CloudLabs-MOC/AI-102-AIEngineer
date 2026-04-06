@@ -52,12 +52,12 @@ In this task, you will create a new project in the Microsoft Foundry portal and 
 
      ![](../Images/lab1-s6.png)
 
-1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (7)**:
+1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (6)**:
 
     * Subscription: **Choose Default Subscription (3)**
     * Resource group: **AI-102-RG20 (4)**
-    * Microsoft Foundry resource: **Keep as Default (5)**
-    * Region: **<inject key="Region" enableCopy="false" /> (6)**
+    * Microsoft Foundry resource: **Keep as Default**
+    * Region: **<inject key="Region" enableCopy="false" /> (5)**
 
       ![](../Images/lab20-03-1.png)
 
@@ -109,7 +109,7 @@ In this task, you will deploy a text-to-speech model in Microsoft Foundry to gen
 
 In this task, you will deploy a speech-to-text model in Microsoft Foundry to transcribe audio into text.
 
-1. On the **Models** page, search for **gpt-4o-mini-transcribe (1)** in the search bar, and then select the **gpt-4o-mini-transcribe (2)** model from the search results.
+1. On the **Models** page, select **deploy a base model**, search for **gpt-4o-mini-transcribe (1)** in the search bar, and then select the **gpt-4o-mini-transcribe (2)** model from the search results.
 
     ![](../Images/lab20-03-7.png)
 
@@ -259,9 +259,9 @@ In this task, you will authenticate with Azure and run the application to genera
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
-    ```powershell
-        az login
-        ```
+     ```powershell
+     az login
+     ```
 
      ![](../Images/lab20-03-17.png)
 
