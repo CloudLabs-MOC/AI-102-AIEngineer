@@ -40,19 +40,18 @@ In this task, you will create an Azure Storage account and configure a blob cont
 
 1. Create a storage account with the following settings and click **Review + create (9)**
     - **Subscription:** Select default subscription **(1)**
-    - **Resource group:** Select **AI-3026-RG22 (2)**
+    - **Resource group:** Select **AI-102-RG22 (2)**
     - **Storage account name:** **stg<inject key="DeploymentID" enableCopy="false"/> (3)**
     - **Region:** Select **<inject key="Region" enableCopy="false" /> (4)**
     - **Preferred storage type:** Azure Blob Storage or Azure Data Lake Storage Gen 2 **(5)**
-    - **Primary workload:** Cloud native **(6)**
     - **Performance:** Standard **(7)**
     - **Redundancy:** Locally-redundant storage (LRS) **(8)**
 
-      ![](../Images/lab22-03-02.png) 
+      ![](../Images/lab22-01.png) 
 
 1. On the **Review + create** tab, select **Create**.
 
-    ![](../Images/lab22-03-03.png)
+    ![](../Images/lab22-02.png)
 
 1. When the deployment is complete and the **Your deployment is complete** message appears, select **Go to resource**.
 
@@ -117,13 +116,13 @@ In this task, you will create a new project in the Microsoft Foundry portal and 
 
 1. If prompted, provide the credentials below:
  
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-     ![](../Images/lab2a-03-11.png)
+      ![](../Images/lab2a-03-11.png)
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-     ![](../Images/lab1-s4.png)
+      ![](../Images/lab1-s4.png)
 
 1. When the **Stay signed in?** window appears, select **No**.
 
@@ -287,7 +286,7 @@ In this task, you will clone the required repository and access the application 
 
 1. In Visual Studio Code, select **Extensions (1)** from the left pane, search for **Python (2)**, choose the **Python (3)** extension by Microsoft, and then click **Install (4)**.
 
-   ![](../Images/lab18-03-2.png)
+    ![](../Images/lab18-03-2.png)
 
 1. Navigate to the **Welcome** page in VS Code by selecting the ellipsis **(...) (1)** from the top bar, then **Help (2)**, and finally **Welcome (3)**.
 
@@ -311,7 +310,7 @@ In this task, you will clone the required repository and access the application 
 
 1. In the trust prompt, select **Yes, I trust the authors (1)** to continue.
 
-   ![](../Images/lab18-03-5.png)
+    ![](../Images/lab18-03-5.png)
 
 1. After the repo has been cloned, in the Explorer pane, expand the folder **Labfiles** → **05-speech-tool/Python** select **speech-client**. The application files include: 
 
@@ -389,16 +388,16 @@ In this task, you will add the required code to connect to your Foundry agent an
 1. Find the comment **Use the agent to get a response**, and add the following code to submit a user prompt to your agent, and display the response.
 
     ```python
-   # Use the agent to get a response
-   response = openai_client.responses.create(
-        input=[{"role": "user", "content": prompt}],
-        extra_body={"agent_reference": {"name": agent_name, "type": "agent_reference"}},
-   )
+    # Use the agent to get a response
+    response = openai_client.responses.create(
+         input=[{"role": "user", "content": prompt}],
+         extra_body={"agent_reference": {"name": agent_name, "type": "agent_reference"}},
+    )
 
-   print(f"{agent_name}: {response.output_text}")
+    print(f"{agent_name}: {response.output_text}")
     ```
 
-    ![](../Images/lab22-03-30.png)
+     ![](../Images/lab22-03-30.png)
 
 1. Save the changes to the code file by pressing **Ctrl+S**. 
 
@@ -420,13 +419,13 @@ In this task, you will run the Python application, authenticate with Azure, and 
 
 1. On the **Sign in** page, provide the credentials below:
  
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-     ![](../Images/lab7-s6.png)
+      ![](../Images/lab7-s6.png)
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-     ![](../Images/lab7-s7.png)
+      ![](../Images/lab7-s7.png)
 
 1. When prompted, select **Yes** to sign in to all apps and websites on this device.
 
