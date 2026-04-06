@@ -298,6 +298,8 @@ Now that you have the documents in place, you can create a search solution by in
 
      ![](./images/lab1-04-6.png) 
 
+     ![](./images/labai-102-02.png) 
+
 1. On **Preview mappings** set the following configuration:
 
     | Target index field name | Retrievable | Filterable | Sortable | Facetable | Searchable |
