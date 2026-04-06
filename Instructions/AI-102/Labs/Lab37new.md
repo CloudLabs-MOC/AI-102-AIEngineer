@@ -166,7 +166,7 @@ In this task, you will upload sample documents to a Blob container in the storag
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
  
-<validation step="593b8b7b-2f7c-4102-af2f-c6e455caf0c8" />
+<validation step="a3fcbac0-d134-4e1d-91ed-d80c3f4a290a" />
 
 ### Task 4: Create and run an indexer
 

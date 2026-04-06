@@ -355,7 +355,6 @@ In this task, you will add code to integrate the speech-transcription model and 
 
     ![](../Images/lab20-03-22.png)
 
-
 1. In the **main** function, note that code to load the endpoint and key from the configuration file has already been provided. Then find the comment **Create the Azure OpenAI client**, and add the following code to create a client for the OpenAI API:
 
     ```Python
@@ -376,16 +375,15 @@ In this task, you will add code to integrate the speech-transcription model and 
 1. Find the comment **Call model to transcribe audio file**, and add the following code to submit an audio file to the speech-transcription model generate a transcript.
 
     ```Python
-   # Call model to transcribe audio file
-   audio_file = open(file_path, "rb")
-   transcription = client.audio.transcriptions.create(
-        model=model_deployment,
-        file=audio_file,
-        response_format="text"
-   )
+    # Call model to transcribe audio file
+    audio_file = open(file_path, "rb")
+    transcription = client.audio.transcriptions.create(
+         model=model_deployment,
+         file=audio_file,
+         response_format="text"
+    )
         
-   print(transcription)
-        
+    print(transcription)    
     ```
 
     ![](../Images/lab20-03-25.png)
@@ -398,9 +396,9 @@ In this task, you will authenticate with Azure and run the application to transc
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
-    ```powershell
-        az login
-        ```
+     ```powershell
+     az login
+     ```
 
      ![](../Images/lab20-03-27.png)
 
