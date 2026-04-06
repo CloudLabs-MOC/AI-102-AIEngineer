@@ -131,8 +131,6 @@ If you don't already have one in your subscription, you'll need to provision an 
 
     ![](./images/azsearch(10).png)
 
->**Important:** Perform the Validation after completing, **Task 4**. Otherwise, you may get validation as failed.
-
 ### Task 2.3: Create a storage account
 
 In this task, you will learn how to create a storage account in Azure to store your documents in a blob container.
