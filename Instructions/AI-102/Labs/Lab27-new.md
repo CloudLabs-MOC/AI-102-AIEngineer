@@ -51,7 +51,7 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
 1. Create the resource with the following settings:
 
     - **Subscription**: Leave your default Azure subscription **(1)**
-    - **Resource group**: Select **AI-102-RG24 (2)**
+    - **Resource group**: Select **AI-102-RG26 (2)**
     - Region: Select **<inject key="Region" enableCopy="false" /> (3)**
     - Name: Enter **face<inject key="DeploymentID" enableCopy="false"/> (4)**
     - **Pricing tier**: Select **F0 (5)** 
