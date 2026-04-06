@@ -71,6 +71,14 @@ In this task, you will sign in to the Microsoft Foundry portal and create a new 
 
 1. Wait for your project created. It may take a few minutes.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="ab1b6523-2d38-4962-8514-294eea099a7c" />
+
 ### Task 2: Download content
 
 In this task, you will download and extract the sample content files that will be used throughout the lab for analysis.
@@ -198,6 +206,14 @@ In this task, you will configure Content Understanding Studio and connect it to 
 
     ![](../Images/lab33-03-n1.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="63721d7c-0015-42b7-b853-07ea0f90242b" />
+
 ### Task 5: Extract information from invoice documents
 
 In this task, you will create a custom analyzer to extract structured data from invoice documents by defining a schema and testing it on sample files.
@@ -230,6 +246,14 @@ In this task, you will create a custom schema for invoice documents by selecting
 1. On the **Review + create** tab, select **Create**. Wait for deployment to complete.
 
     ![](../Images/lab33-03-16.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="9d29e94e-d455-4114-b823-d6185128a6f1" />
 
 ### Task 5.2: Define a schema for invoice analysis
 
@@ -308,6 +332,14 @@ In this task, you will build a reusable analyzer based on the defined schema and
     ![](../Images/lab33-03-29.png)
 
 1. View the details of the fields that were identified in the **Fields** pane.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="160a0b89-703c-44dd-80ac-cdffd310e625" />
 
 ### Task 5.3: Build and test an analyzer for invoices
 
@@ -441,6 +473,14 @@ In this task, you will create a schema to extract key details such as title, sum
 
 1. View the details of the fields that were identified in the **Fields** pane, expanding the **QuarterlyRevenue** and **ProductCategories** fields to see the subfield values.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="b5355581-7ab1-4f7a-bada-69dd7b798f38" />
+
 ### Task 6.2 Build and test an analyzer
 
 In this task, you will build an analyzer for slide images and test it using a different image to validate the extracted information.
@@ -538,6 +578,14 @@ In this task, you will define a schema to extract important details such as call
 1. Review the analysis results and view the details of the fields that were identified in the **Fields** pane, expanding the **AlternativeContacts** field to see the listed values.
 
     ![](../Images/lab33-03-61.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="5ee5d3a6-bfbe-45b9-8b9e-60bcd57e7c1c" />
 
 ### Task 7.2 Build and test an analyzer
 
@@ -656,6 +704,14 @@ In this task, you will create a schema to extract insights such as meeting summa
     ![](../Images/lab33-03-74.png)
 
 1. In the **Fields** pane, view the extracted data.
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="02acb281-2d01-4db0-8271-cfbd32f43bc9" />
 
 ### Task 8.2 Build and test an analyzer
 

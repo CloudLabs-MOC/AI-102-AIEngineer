@@ -87,11 +87,11 @@ In this task, you will deploy a text-to-speech model in Microsoft Foundry to gen
 
 1. On the **Models** page, search for **gpt-4o-mini-tts (1)** in the search bar, and then select the **gpt-4o-mini-tts (2)** model from the search results.
 
-   ![](../Images/lab20-03-2.png)
+    ![](../Images/lab20-03-2.png)
 
 1. On the **gpt-4o-mini-tts** model details page, click **Deploy (1)**, and then select **Default settings (2)** to deploy the model using the standard configuration.
 
-   ![](../Images/lab20-03-3.png)
+    ![](../Images/lab20-03-3.png)
 
 1. Once the model has been deployed, the model playground will open automatically so you can test your model:   
 
@@ -111,7 +111,7 @@ In this task, you will deploy a speech-to-text model in Microsoft Foundry to tra
 
 1. On the **Models** page, search for **gpt-4o-mini-transcribe (1)** in the search bar, and then select the **gpt-4o-mini-transcribe (2)** model from the search results.
 
-   ![](../Images/lab20-03-7.png)
+    ![](../Images/lab20-03-7.png)
 
 1. On the **gpt-4o-mini-transcribe** model details page, click **Deploy (1)**, and then select **Default settings (2)** to deploy the model using the standard configuration.
 
@@ -137,7 +137,7 @@ In this task, you will clone the GitHub repository and set up the development en
 
 1. In Visual Studio Code, select **Extensions (1)** from the left pane, search for **Python (2)**, choose the **Python (3)** extension by Microsoft, and then click **Install (4)**.
 
-   ![](../Images/lab18-03-2.png)
+    ![](../Images/lab18-03-2.png)
 
 1. Navigate to the **Welcome** page in VS Code by selecting the ellipsis **(...) (1)** from the top bar, then **Help (2)**, and finally **Welcome (3)**.
 
@@ -161,7 +161,7 @@ In this task, you will clone the GitHub repository and set up the development en
 
 1. In the trust prompt, select **Yes, I trust the authors (1)** to continue.
 
-   ![](../Images/lab18-03-5.png)
+    ![](../Images/lab18-03-5.png)
 
 ## Task 4: Create a speech-generation app
 
@@ -222,19 +222,19 @@ In this task, you will add code to integrate the speech-generation model and gen
 1. In the **main** function, note that code to load the endpoint and key from the configuration file has already been provided. Then find the comment **Create the Azure OpenAI client**, and add the following code to create a client for the OpenAI API:
 
     ```Python
-   # Create the Azure OpenAI client
-   token_provider = get_bearer_token_provider(                    
-        DefaultAzureCredential(), "https://ai.azure.com/.default"
-    )
+    # Create the Azure OpenAI client
+    token_provider = get_bearer_token_provider(                    
+         DefaultAzureCredential(), "https://ai.azure.com/.default"
+     )
 
-   client = AzureOpenAI(
-        azure_endpoint=endpoint,
-        azure_ad_token_provider = token_provider,
-        api_version="2025-03-01-preview"
-   )
+    client = AzureOpenAI(
+         azure_endpoint=endpoint,
+         azure_ad_token_provider = token_provider,
+         api_version="2025-03-01-preview"
+    )
     ```
 
-    ![](../Images/lab20-03-15.png)
+     ![](../Images/lab20-03-15.png)
 
 1. Find the comment **Generate speech and save to file**, and add the following code to submit a prompt to the speech-generation model save the response as a file.
 
@@ -259,13 +259,13 @@ In this task, you will authenticate with Azure and run the application to genera
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
-   ```powershell
-    az login
-    ```
+    ```powershell
+        az login
+        ```
 
-    ![](../Images/lab20-03-17.png)
+     ![](../Images/lab20-03-17.png)
 
-    > **Note:** Minimize the VS Code to see the **Sign in** window.
+     > **Note:** Minimize the VS Code to see the **Sign in** window.
 
 1. In the **Sign in** window, select **Work or school account** **(1)**, and then select **Continue** **(2)**.
 
@@ -273,13 +273,13 @@ In this task, you will authenticate with Azure and run the application to genera
 
 1. On the **Sign in** page, provide the credentials below:
  
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-     ![](../Images/lab7-s6.png)
+      ![](../Images/lab7-s6.png)
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-     ![](../Images/lab7-s7.png)
+      ![](../Images/lab7-s7.png)
 
 1. When prompted, select **Yes** to sign in to all apps and websites on this device.
 
@@ -359,19 +359,19 @@ In this task, you will add code to integrate the speech-transcription model and 
 1. In the **main** function, note that code to load the endpoint and key from the configuration file has already been provided. Then find the comment **Create the Azure OpenAI client**, and add the following code to create a client for the OpenAI API:
 
     ```Python
-   # Create the Azure OpenAI client
-   token_provider = get_bearer_token_provider(                    
-        DefaultAzureCredential(), "https://ai.azure.com/.default"
-    )
+    # Create the Azure OpenAI client
+    token_provider = get_bearer_token_provider(                    
+         DefaultAzureCredential(), "https://ai.azure.com/.default"
+     )
 
-   client = AzureOpenAI(
-        azure_endpoint=endpoint,
-        azure_ad_token_provider = token_provider,
-        api_version="2025-03-01-preview"
-   )
+    client = AzureOpenAI(
+         azure_endpoint=endpoint,
+         azure_ad_token_provider = token_provider,
+         api_version="2025-03-01-preview"
+    )
     ```
 
-    ![](../Images/lab20-03-24.png)
+     ![](../Images/lab20-03-24.png)
 
 1. Find the comment **Call model to transcribe audio file**, and add the following code to submit an audio file to the speech-transcription model generate a transcript.
 
@@ -398,13 +398,13 @@ In this task, you will authenticate with Azure and run the application to transc
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
-   ```powershell
-    az login
-    ```
+    ```powershell
+        az login
+        ```
 
-    ![](../Images/lab20-03-27.png)
+     ![](../Images/lab20-03-27.png)
 
-    > **Note:** Minimize the VS Code to see the **Sign in** window.
+     > **Note:** Minimize the VS Code to see the **Sign in** window.
 
 1. In the sign-in window, select your account **<inject key="AzureAdUserEmail"></inject> (1)** and click **Continue (2)** to proceed with authentication.
 

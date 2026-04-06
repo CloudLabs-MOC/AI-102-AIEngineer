@@ -58,6 +58,14 @@ In this task, you will create an Azure AI Search resource to enable indexing and
 
 1. Review the **Overview** page on the blade for your Azure AI Search resource in the Azure portal. Here, you can use a visual interface to create, test, manage, and monitor the various components of a search solution; including data **sources, indexes, indexers,** and **skillsets**.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="84ca2020-f89f-4d72-92fe-def8f190cbeb" />
+
 ### Task 2: Create a storage account
 
 In this task, you will create an Azure Storage account to store the documents for your knowledge mining solution.
@@ -87,6 +95,13 @@ In this task, you will create an Azure Storage account to store the documents fo
 
     >**Tip:** Keep the storage account portal page open - you will use it in the next procedure.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="593b8b7b-2f7c-4102-af2f-c6e455caf0c8" />
 
 ### Task 3: Upload documents to Azure Storage
 
@@ -144,6 +159,14 @@ In this task, you will upload sample documents to a Blob container in the storag
 1. In the **Upload blob** pane, select **Upload**.
 
     ![](../Images/lab37-03-9.png)  
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="593b8b7b-2f7c-4102-af2f-c6e455caf0c8" />
 
 ### Task 4: Create and run an indexer
 
@@ -241,6 +264,14 @@ In this task, you will create and run an indexer to extract, enrich, and index d
 1. In the navigation pane on the left, under **Search management (1)** view the **Indexers (2)** page, which should show the newly created **margies-indexer**. Wait a few minutes, and click **&orarr; Refresh** until the **Status** indicates **Success (2)**.
 
     ![](../Images/lab37-03-24.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="f751ed87-843e-4b4c-ae55-8cb6d798cbe3" />
 
 ### Task 5: Search the index
 
