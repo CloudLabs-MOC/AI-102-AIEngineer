@@ -148,9 +148,9 @@ In this exercise, you'll use the Azure AI Search REST interface to create these 
 
 1. In the **create-search** folder, open **skillset.json**. This file contains a JSON definition for a skillset named **margies-custom-skillset**.
 
-1. At the top of the skillset definition, in the **cognitiveServices** element, replace the **YOUR_AI_SERVICES_KEY** placeholder with either of the keys for your Azure AI Services resources.
+1. At the top of the skillset definition, in the **cognitiveServices** element, replace the **YOUR_COGNITIVE_SERVICES_KEY** placeholder with either of the keys for your Azure AI Services resources.
 
-    ![](./images/searchskill(4).png) 
+    ![](./images/lab1-04-28.png) 
 
     >**Note:** You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.
 
@@ -230,9 +230,9 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     ![](./images/searchskill(10).png) 
 
-1. From the Hosting plans, select **Consumption (1)** and then click on **Confirm (2)**.
+1. From the Hosting plans, select **Consumption(Windows) (1)** and then click on **Confirm (2)**.
 
-    ![](./images/sskill-t5p1.png) 
+    ![](./images/lab1-04-13.png) 
 
     ![](./images/sskill-t5p2.png) 
 
@@ -246,17 +246,17 @@ To implement the word count functionality as a custom skill, you'll create an Az
 
     - **Runtime stack**: **Node.js (4)**
 
-    - **Version**: **20 LTS (5)**
+    - **Version**: **22 LTS (5)**
 
     - **Region**: **<inject key="Region" enableCopy="false" /></inject> (6)** -*The same region as your Azure AI Search resource*
 
     - Click **Review + create (7)**
 
-        ![](./images/searchskill(12).png)     
+        ![](./images/lab1-04-14.png)  
 
 1. In the **Review + create** tab, click **Create**.
 
-    ![](./images/searchskill(13).png)
+    ![](./images/lab1-04-15.png) 
 
 1. Wait for deployment to complete, click on **Go to resources**, and then go to the deployed Function App resource.
 
@@ -473,9 +473,9 @@ Now you need to include your function as a custom skill in the search solution s
 
 1. Edit the **get-top-words** skill definition to set the **uri** value to the URL for your Azure function (which you copied to the clipboard in the previous procedure), replacing **YOUR-FUNCTION-APP-URL (1)**.
 
-1. At the top of the skillset definition, in the **cognitiveServices** element, replace the **YOUR_AI_SERVICES_KEY (2)** placeholder with either of the keys for your Azure AI Services resources.
+1. At the top of the skillset definition, in the **cognitiveServices** element, replace the **YOUR_COGNITIVE_SERVICES_KEY (2)** placeholder with either of the keys for your Azure AI Services resources.
 
-    ![](./images/searchskill(21).png)
+    ![](./images/lab1-04-16.png)
 
     *You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.*
 
@@ -511,7 +511,7 @@ Now you need to include your function as a custom skill in the search solution s
 
     ![](./images/searchskill(22).png)
 
-    >**Note:** You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.*
+    >**Note:** You can select **Refresh** to track the progress of the indexing operation. It may take a minute or so to complete.
 
 ## Task 7: Search the index
 

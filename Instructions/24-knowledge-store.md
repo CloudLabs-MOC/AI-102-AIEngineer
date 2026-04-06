@@ -159,7 +159,7 @@ You'll use the REST interface to submit JSON definitions for your Azure AI Searc
 
 1. At the top of the skillset definition, in the **cognitiveServices** element, replace the **YOUR_COGNITIVE_SERVICES_KEY** placeholder with either of the keys for your Azure AI Services resources.
 
-    ![Visual Studio Code Icon](./images/d-69.png) 
+    ![Visual Studio Code Icon](./images/lab1-04-17.png) 
 
     >**Note:** You can find the keys on the **Keys and Endpoint** page for your Azure AI Services resource in the Azure portal.
 

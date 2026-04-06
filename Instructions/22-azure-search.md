@@ -143,9 +143,9 @@ In this task, you will learn how to create a storage account in Azure to store y
 
     ![](./images/azsearch(11)(1).png)
 
-1. In the **Storage center | Storage accounts (Blobs)** blade, click on **+ Create**.
+1. In the **Storage center | Blob Storage** blade, click on **+ Create**.
 
-    ![](./images/azsearch(11).png)
+    ![](./images/lab1-04-1.png)
  
  1. Create a **Storage account** resource with the following settings and then click on the **Advanced** tab from the top.
 
@@ -161,7 +161,7 @@ In this task, you will learn how to create a storage account in Azure to store y
 
     - **Replication**: **Locally-redundant storage (LRS) (6)**
 
-      ![Visual Studio Code Icon](./images/d-12.png) 
+      ![Visual Studio Code Icon](./images/lab1-04-2.png) 
      
     - On the **Advanced** tab, check the box next to **Allow enabling anonymous access on individual containers (1)** then select **Review + create (2)**.
 
@@ -253,102 +253,82 @@ Now that you have the documents in place, you can create a search solution by in
 
      ![](./images/azsearch(20).png)
  
-1. On the **Connect to your data** page, in the **Data Source** list, select **Azure Blob Storage**. Then complete the data store details with the following values:
+1. In the **Choose a data source** section, select **Azure Blob Storage**.
 
-    - **Data Source**: **Azure Blob Storage (1)**
+    ![](../Images/lab1-04-3.png)  
 
-    - **Data source name**: **margies-data (2)**
+1. In the **What scenario are you targeting?** section, select **Keyword search**.
 
-    - **Data to extract**: **Content and metadata (3)**
+    ![](../Images/lab1-04-4.png) 
 
-    - **Parsing mode**: **Default (4)**
+1. On **Connect to your data** form set the following:
 
-    - **Subscription:** **Leave default subscrption (5)**
+    - Subscription: *Your Azure subscription* **(1)**
+    - Select your storage account **blob<inject key="DeploymentID" enableCopy="false"/> (2)**.
+    - **Blob container**: Select the **margies (3)** container.
+    - Leave the remaining options as their default values, and then select **Next (4)**.
 
-    - **Connection string**: Select **Choose an existing connection (6)**. 
+       ![](../Images/lab1-04-5.png) 
 
-      ![](./images/azsearch(21).png) 
-         
-    - Then select your storage account **(1)**, and finally select the **margies (2)** container that was created by the UploadDocs.cmd script and click on **Select (3)**.
-
-      ![](./images/azsearch(22).png)
-
-      ![](./images/azsearch(23).png)
-     
-    - **Managed identity authentication**: **None (7)**
-
-    - **Container name**: **margies (8)**
-
-    - **Blob folder**: **Leave this blank (9)**
-
-    - **Description**: **Brochures and reviews in Margie's Travel website (10)**
-
-    - Proceed to the next step **Next: Add cognitive skills (Optional) (11)**
-
-      ![](./images/azsearch(24).png)
-     
-1. In the **Attach Azure AI Services** section, choose your **Azure AI Services** resource from **AI Services Resource Name**.
-
-    ![Visual Studio Code Icon](./images/d-24.png) 
- 
-1. In the **Add enrichments** section:
-
-    - Change the **Skillset name** to **margies-skillset (1)**.
-
-    - Select the option **Enable OCR and merge all text into merged_content field (2)**.
-
-    - Ensure that the **Source data field** is set to **merged_content**.
-
-    - Leave the **Enrichment granularity level** as **Source field**, which sets the entire contents of the document being indexed; but note that you can change this to extract information at more granular levels, like pages or sentences.
-
-    - Select the following enriched fields: **(3)**
-
-        | Cognitive Skill | Parameter | Field name |
-        | --------------- | ---------- | ---------- |
-        | Extract location names | | locations |
-        | Extract key phrases | | keyphrases |
-        | Detect language | | language |
-        | Generate tags from images | | imageTags |
-        | Generate captions from images | | imageCaption |
-
-    - Double-check your selections (it can be difficult to change them later). Then proceed to the next step **Next: Customize target index (4)**.
-
-      ![Visual Studio Code Icon](./images/d-25.png) 
-     
-1. On the **Customize target index** tab.
-
-    - Change the **Index name** to **margies-index (1)**.
-
-    - Ensure that the **Key** is set to **metadata_storage_path (2)** and leave the **Suggester name** blank and **Search mode** at its default.
-
-    - Make the following changes to the index fields, leaving all other fields with their default settings. **(3)**
-
-      ![Visual Studio Code Icon](./images/d-83.png) 
-   
-    - Double-check your selections, paying particular attention to ensure that the correct **Retrievable**, **Filterable**, **Sortable**, **Facetable**, and **Searchable** options are selected for each field  (it can be difficult to change them later). Then proceed to the next step **Create an indexer (4)**.
-
-      ![Visual Studio Code Icon](./images/d-26.png) 
-     
-1. On the **Create an indexer** tab,
-
-    - Change the **Indexer name** to **margies-indexer (1)**.
-
-    - Leave the **Schedule** set to **Once (2)**.
-
-    - Select **Submit (3)** to create the data source, skillset, index, and indexer. 
+1. On **Apply AI enrichments** set the following:
+    - Select **Extract phrases (1)**.
+    - Select **Extract entities**, select the settings icon **(2)**. 
     
-      ![](./images/azsearch(25).png) 
-     
-1. The indexer runs automatically and runs the indexing pipeline, which:
-  
-    - Extracts the document metadata fields and content from the data source
-    - Runs the skillset of cognitive skills to generate additional enriched fields
-    - Maps the extracted fields to the index.
+      ![](../Images/lab1-04-20.png) 
 
-1. In the left navigation pane, go to **Search management** and select **Indexers (1)**. The newly created **margies-indexer (2)** will appear in the list. Wait a few minutes, then click **↻ Refresh** until the **Status** changes to *Success*.
+1. In the **Extract text entities** pane, select **Persons (1)** and **Locations (1)**, and then click **Save (2)**.
 
-    ![](./images/azsearch(26).png) 
- 
+    ![](../Images/lab1-04-21.png) 
+
+1. Select **Extract text from images** and select the settings icon. 
+
+    ![](../Images/lab1-04-22.png) 
+
+1. In the **Extract text from images** pane, select **Generate tags (1)** and **Categorize content (1)**, and then click **Save (2)**.
+
+    ![](../Images/lab1-04-23.png) 
+
+1. In the **Attach a Foundry Tools multi-service account** section, select **Use a free Foundry Tools resource (1)**, choose your multi-service account in **aiservices<inject key="DeploymentID" enableCopy="false"/> (2)**, select the acknowledgment option **(3)**, and then click **Next (4)**.
+
+    ![](../Images/lab1-04-7.png) 
+
+1. In the **Preview mappings** step, scroll down and select **metadata_storage_size (1)**, click **Configure field (2)**, configure as shown in the following table repeat the same configuration for the remaining fields as required.
+
+    - The fields are already mapped based on the options you selected in the previous step.
+
+    | Target index field name | Retrievable | Filterable | Sortable | Facetable | Searchable |
+    | ---------- | ----------- | ---------- | -------- | --------- | ---------- |
+    | metadata_storage_size | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | |
+
+     ![](../Images/lab1-04-6.png) 
+
+1. On **Preview mappings** set the following configuration:
+
+    | Target index field name | Retrievable | Filterable | Sortable | Facetable | Searchable |
+    | ---------- | ----------- | ---------- | -------- | --------- | ---------- |
+    | metadata_storage_last_modified | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | |
+    | title | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+    | locations | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+    | persons | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+    | keyPhrases | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | | | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+    | metadata_author | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10004; |
+
+    - Double-check your selections carefully.
+    - Select **Next**.
+
+1. On **Advanced settings** set the following:
+    - Ensure **Enable semantic ranker (1)** is selected.
+    - If it isn't already selected, set **Schedule** to **Once (2)**.
+    - Select **Next (3)**.
+
+      ![](../Images/lab1-04-24.png) 
+
+1. On **Review and create** set **Objects name prefix** to `margies` **(1)** and then select **Create (2)**.
+
+    ![](../Images/lab1-04-8.png)
+
+1. You may close the success notification.
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 >
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
@@ -381,7 +361,13 @@ Now that you have an index, you can search it.
 
     ```json
     {
-      "search": "*"
+    "search": "*",
+    "count": true,
+    "queryType": "semantic",
+    "semanticConfiguration": "margies-index-semantic-configuration",
+    "captions": "extractive",
+    "answers": "extractive|count-3",
+    "queryLanguage": "en-us"
     }
     ```
 
@@ -398,42 +384,44 @@ Now that you have an index, you can search it.
 
     ![](./images/azsearch(30).png)  
  
-1. Try the following query:
+1. Modify the JSON request to include the **select** parameter as shown here:
 
     ```json
     {
-      "search": "*",
-      "count": true,
-      "select": "metadata_storage_name,metadata_author,locations"
+        "search": "*",
+        "count": true,
+        "select": "title,locations"
     }
     ```
 
-    This time the results include only the file name, author, and any locations mentioned in the document content. The file name and author are in the **metadata_storage_name** and **metadata_author** fields, which were extracted from the source document. The **locations** field was generated by a cognitive skill.
+    ![](../Images/lab37-03-29.png)
 
+    This time the results include only the file name and any locations mentioned in the document content. The file name is in the **title** field. The **locations** field was generated by an AI skill.
+    
 1. Now try the following query string:
 
     ```json
     {
-      "search": "New York",
-      "count": true,
-      "select": "metadata_storage_name,keyphrases"
+        "search": "New York",
+        "count": true,
+        "select": "title,keyPhrases"
     }
     ```
 
     This search finds documents that mention "New York" in any of the searchable fields, and returns the file name and key phrases in the document.
-
+   
 1. Let's try one more query:
 
     ```json
     {
-      "search": "New York",
-      "count": true,
-      "select": "metadata_storage_name",
-      "filter": "metadata_author eq 'Reviewer'"
+        "search": "New York",
+        "count": true,
+        "select": "title,keyPhrases",
+        "filter": "metadata_storage_size lt 380000"
     }
     ```
 
-    This query returns the filename of any documents authored by *Reviewer* that mention "New York".
+    This query returns the filename and key phrases for any documents mentioning "New York" that are smaller than 380,000 bytes in size.
 
 ## Task 6: Explore and modify definitions of search components
 
@@ -477,9 +465,9 @@ In this task, you will learn how to review and modify the skillset in Azure AI S
 
     ![](./images/azsearch(32).png) 
 
-1. In Visual Studio Code, in **skillset.json**, replace the **YOUR_AZURE_AI_SERVICES_KEY** placeholder with the Azure AI Services key you copied to the clipboard.
+1. In Visual Studio Code, in **skillset.json**, replace the **YOUR_COGNITIVE_SERVICES_KEY** placeholder with the Azure AI Services key you copied to the clipboard.
 
-    ![Visual Studio Code Icon](./images/d-36.png) 
+    ![Visual Studio Code Icon](./images/lab1-04-25.png) 
  
 1. Scroll through the JSON file, noting that it includes definitions for the skills you created using the Azure AI Search user interface in the Azure portal. At the bottom of the list of skills, an additional skill has been added with the following definition:
 
@@ -553,6 +541,10 @@ In this task, you will learn how to review and modify the indexer in Azure AI Se
 
 1. In Visual studio Code, in the **modify-search** folder, open **indexer.json**. This shows a JSON definition for **margies-indexer**, which maps fields extracted from document content and metadata (in the **fieldMappings** section), and values extracted by skills in the skillset (in the **outputFieldMappings** section), to fields in the index.
 
+1. In the **indexer.json** file, update the **dataSourceName** value to **margies-datasource**.
+
+    ![](./images/lab1-04-26.png) 
+
 1. In the **fieldMappings** list, note the mapping for the **metadata_storage_path** value to the base-64 encoded key field. This was created when you assigned the **metadata_storage_path** as the key and selected the option to encode the key in the Azure portal. Additionally, a new mapping explicitly maps the same value to the **url** field, but without the Base-64 encoding:
 
     ```
@@ -617,7 +609,7 @@ In this task, you will learn how to query the modified index in Azure AI Search 
     }
     ```
 
-    ![](./images/azsearch(36).png)
+    ![](./images/lab1-04-27.png) 
 
     This query retrieves the **url**, **sentiment**, and **keyphrases** for all documents that mention *London* authored by *Reviewer* that have a positive **sentiment** label (in other words, positive reviews that mention London)
 
@@ -641,7 +633,7 @@ In this task, you will learn how to get the endpoint and keys for your Azure AI 
 
     ![](./images/azsearch(38).png) 
  
-    >**Note:** You will need the **endpoint and query key** for your client application.*
+    >**Note:** You will need the **endpoint and query key** for your client application.
 
 ### Task 7.2: Prepare to use the Azure AI Search SDK
 
@@ -745,7 +737,7 @@ In this task, you will learn how to run the web app that interacts with your Azu
 
 1. Select the **Reviewer (1)** filter and the **Positive to negative (2)** sort option, and then select **Refine Results (3)**.
 
-    ![](./images/azsearch(42).png) 
+    ![](./images/lab1-04-28.png) 
  
 1. Observe that the results are filtered to include only reviews and sorted based on the sentiment label.
 
