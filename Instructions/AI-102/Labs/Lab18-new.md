@@ -48,12 +48,12 @@ In this task, you will create a new project in the Microsoft Foundry portal and 
 
      ![](../Images/lab1-s6.png)
 
-1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (7)**:
+1. In the **Create a project** window, enter **Myproject<inject key="DeploymentID" enableCopy="false"/> (1)** as the project name. Open the **Advanced options (2)** drop-down, fill in the following details, and then click **Create (6)**:
 
     * Subscription: **Choose Default Subscription (3)**
     * Resource group: **AI-102-RG18 (4)**
-    * Microsoft Foundry resource: **Keep as Default (5)**
-    * Region: **<inject key="Region" enableCopy="false" /> (6)**
+    * Microsoft Foundry resource: **Keep as Default**
+    * Region: **<inject key="Region" enableCopy="false" /> (5)**
 
       ![](../Images/lab18-03-1.png)
 
@@ -68,6 +68,14 @@ In this task, you will create a new project in the Microsoft Foundry portal and 
 1. On the home page for your project, copy the **Project API key (1)** and **Project endpoint (2)** values, and save them in a notepad for later use.
 
      ![](../Images/lab18-03-29.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+>
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help.
+ 
+<validation step="ac25e0d3-08ca-4ac9-acde-e4b90b3882a9" />
 
 ## Task 2: Get the application files from GitHub
 
