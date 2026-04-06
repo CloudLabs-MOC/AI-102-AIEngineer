@@ -327,8 +327,6 @@ Now that you have the documents in place, you can create a search solution by in
 
 1. You may close the success notification.
 
-  > **Note:** `If validation fails, please ignore the error and continue with the lab. This is expected as the validation/internal team is currently updating configurations in the backend.`
-
 ## Task 5: Search the index
 
 In this task, you will learn how to search the indexed documents in Azure AI Search to retrieve relevant results based on queries.
