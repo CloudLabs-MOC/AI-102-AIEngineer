@@ -1,6 +1,6 @@
 # Lab 22: Use Azure Speech in an agent
 
-### Estimated Duration: 60 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Lab Overview
 
@@ -407,11 +407,10 @@ In this task, you will run the Python application, authenticate with Azure, and 
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
-   ```powershell
-    az login
-    ```
-
-    > **Note:** Minimize the VS Code to see the **Sign in** window.
+    ```powershell
+     az login
+     ```
+     > **Note:** Minimize the VS Code to see the **Sign in** window.
 
 1. In the **Sign in** window, select **Work or school account** **(1)**, and then select **Continue** **(2)**.
 
