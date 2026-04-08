@@ -4,7 +4,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 24: Translate text and speech
 
-### Overall Estimated Duration: 30 Minutes
+### Overall Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -130,9 +130,10 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
     ![](../Images/AIl16-2.png)
 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Cancel** to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-    ![](../Images/AIl16-3.png)
+    ![](../Images/lab1-w.png)
+
 
 
 ## Support Contact

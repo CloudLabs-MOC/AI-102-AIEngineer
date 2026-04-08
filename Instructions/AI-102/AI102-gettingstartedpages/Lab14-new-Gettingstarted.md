@@ -4,7 +4,7 @@ Welcome to your AI-102: Azure AI Engineer Associate workshop! We’re excited to
 
 # Lab 14: Develop a multi-agent solution with Microsoft Agent Framework
 
-### Overall Estimated Duration: 30 Minutes
+### Overall Estimated Duration: 60 Minutes
 
 ## Overview
 

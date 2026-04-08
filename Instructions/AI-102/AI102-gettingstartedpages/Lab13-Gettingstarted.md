@@ -118,7 +118,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
 1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-    ![](../Images/lab1-p.png)
+    ![](../Images/lab1-w.png)
 
 
 ## Support Contact

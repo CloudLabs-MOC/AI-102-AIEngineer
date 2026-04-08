@@ -408,11 +408,11 @@ In this task, you'll authenticate with Azure, run the client application, and in
 
 1. On the **Sign in** page, provide the credentials below:
  
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
         ![](../Images/lab7-s6.png)
 
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
         ![](../Images/lab7-s7.png)
 
