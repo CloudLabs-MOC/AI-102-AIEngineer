@@ -323,4 +323,4 @@ In this task, you’ll deploy your flow as an endpoint, verify it is running suc
 
 In this lab, you created a project in **Microsoft Foundry** and explored prompt flow capabilities. You built a flow, configured system instructions, and connected it to a model to generate responses. You then tested the flow in the chat pane, refining it with prompts to validate its behavior. Finally, you deployed the flow as an endpoint, confirmed it was running, and tested it with sample queries. You also reviewed the endpoint’s connection details to see how it could be integrated into applications.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

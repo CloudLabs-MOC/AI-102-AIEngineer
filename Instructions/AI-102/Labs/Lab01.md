@@ -185,7 +185,7 @@ In this task, you will install the Microsoft Foundry extension in Visual Studio 
 
 In this lab, you created a new project in the Microsoft Foundry portal and deployed the gpt-4.1 model. You tested the model in the playground by sending prompts and reviewing its responses. You also explored the project and resource endpoints required for integration. Finally, you connected the project to Visual Studio Code using the Microsoft Foundry extension to access and interact with the model.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!
 
 
 

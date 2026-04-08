@@ -253,7 +253,7 @@ In this task, you'll connect your application to the Azure AI Foundry project, d
 
     ![](../Images/lab9-p2t6p3.png)
 
-#### **Define the function tools**
+### Task 6.1: Define the function tools
 
 In this task, you'll define each of the function tools that the agent can use. The parameters for each function tool are defined using a JSON schema, which specifies the name, type, description, and other attributes for each parameter of the function.
 
@@ -357,7 +357,7 @@ In this task, you'll define each of the function tools that the agent can use. T
 
     ![](../Images/lab9-p2t7p3.png)
 
-#### **Create the agent that uses the function tools**
+### Task 6.2: Create the agent that uses the function tools
 
 Now that you've defined the function tools, you can create an agent that can use those tools to complete tasks.
 
@@ -380,7 +380,7 @@ Now that you've defined the function tools, you can create an agent that can use
 
     ![](../Images/lab9-p2t8p1.png)
 
-#### **Send a message to the agent and process the response**
+### Task 6.3: Send a message to the agent and process the response
 
 Now that you've created the agent with the function tools, you can send messages to the agent and process its responses.
 
@@ -435,7 +435,7 @@ Now that you've created the agent with the function tools, you can send messages
 
     In this code, you send a user prompt to the agent and retrieve the response. You also check if the response indicates a failure and print the error if so.
 
-#### **Process function calls and display the agent's response**
+### Task 6.4: Process function calls and display the agent's response
 
 1. Find the comment **Process function calls** and add the following code to handle any function calls made by the agent and press **Ctrl+S** to save the changes:
 
@@ -578,4 +578,4 @@ In this task, you'll authenticate with Azure, execute the agent application, int
 
 In this exercise, you created an AI agent that uses custom function tools to retrieve information and perform calculations based on user prompts. You defined the function tools with JSON schemas to specify their parameters, and implemented the logic to process function calls made by the agent. You then ran the application and interacted with the agent to see how it used the function tools to provide helpful responses. Great work!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

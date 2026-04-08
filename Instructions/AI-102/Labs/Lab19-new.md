@@ -198,7 +198,7 @@ In this task, you'll test the agent’s ability to use the Azure Language tool t
 
 In this task, you'll configure automatic approval settings for the Azure Language tool to streamline agent interactions.
 
-1. In the playground, under **Instructions**, locate the **Tools** section. In the menu (1) for the **Azure Language in Foundry Tools** tool you added, select **Configure** (2).
+1. In the playground, under **Instructions**, locate the **Tools** section. In the menu **(1)** for the **Azure Language in Foundry Tools** tool you added, select **Configure (2)**.
 
     ![](../Images/lab19dev-p2t5p1.png)
 
@@ -214,7 +214,7 @@ In this task, you'll configure automatic approval settings for the Azure Languag
 
 In this task, you'll set up your development environment, clone the repository, and configure the application in Visual Studio Code.
 
-### Get the application files from GitHub
+### Task 6.1: Get the application files from GitHub
 
 1. On the desktop, locate **Visual Studio Code**, and then double-click the icon to open it.
 
@@ -250,7 +250,7 @@ In this task, you'll set up your development environment, clone the repository, 
 
         ![](../Images/lab19dev-p2t6p7.png)
 
-### Configure the application
+### Task 6.2: Configure the application
 
 1. In Visual Studio Code, open the **Extensions** pane **(1)**, search for **Python** **(2)**, select the **Python** extension by Microsoft **(3)**, and then click **Install** **(4)** if it is not already installed.
 
@@ -278,7 +278,7 @@ In this task, you'll set up your development environment, clone the repository, 
 
     ![](../Images/lab19dev-p2t6p11.png)
 
-### Implement application code
+### Task 6.3: Implement application code
 
 1. In the **Explorer** pane, in the **text-agent** folder,  open the **text-agent.py** file.
 
@@ -428,8 +428,7 @@ In this task, you'll examine the detailed response from the agent to understand 
 
 In this exercise, you created an AI-powered text analysis agent using Microsoft Foundry and integrated it with Azure Language tools to perform tasks such as summarization, entity recognition, and sentiment analysis. You configured the agent, connected it to an MCP tool, and tested its capabilities in the playground. You then built a Python-based client application, authenticated with Azure, and interacted with the agent programmatically to analyze text and retrieve insights. Great work!
 
-
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!
 
 
 

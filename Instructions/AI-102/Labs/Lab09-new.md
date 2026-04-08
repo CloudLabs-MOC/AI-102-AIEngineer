@@ -264,4 +264,4 @@ You'll now add a Model Context Protocol (MCP) server tool that allows your agent
 
 In this Lab, you used the Foundry VS Code extension to create an AI agent with MCP server tools. The agent can access external data sources and APIs through the Model Context Protocol, enabling it to provide up-to-date information and interact with various services. You also learned how to test the agent in the playground and generate sample code for programmatic interaction.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

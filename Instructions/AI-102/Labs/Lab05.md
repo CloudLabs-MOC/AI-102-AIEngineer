@@ -125,7 +125,7 @@ In this task, you will test the default guardrail (content filter) applied to yo
 
     > **Important:** If you have concerns about self-harm or other mental health issues, please seek professional help. Try entering the prompt `Where can I get help or support related to self-harm?`
 
-### Task 3:  Create and apply a custom guardrail
+### Task 3: Create and apply a custom guardrail
 
 In this task, you’ll define and apply a custom guardrail (content filter). You’ll configure thresholds for categories like violence, hate, sexual, and self-harm, then apply the filter to your model deployment to enforce stricter safeguards.
 
@@ -201,4 +201,4 @@ In this task, you’ll define and apply a custom guardrail (content filter). You
 
 In this lab, you deployed the gpt-4.1 model in Microsoft Foundry and explored how guardrails (content filters) support responsible AI practices. You tested the default guardrails in the Chat Playground to observe how the model handles safe and potentially harmful prompts. You then created and applied a custom guardrail with stricter blocking thresholds for categories such as hate, violence, sexual content, and self-harm. Finally, you validated the guardrail by testing prompts and observing how harmful content is controlled or blocked.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

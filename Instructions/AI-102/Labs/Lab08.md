@@ -427,4 +427,4 @@ In this task, you will authenticate to Azure using the Azure CLI and run the cli
 
 In this lab, you created a new project in the Microsoft Foundry portal and deployed a foundation model for an AI agent solution. You configured a Python client application in Azure Cloud Shell, updated the project settings, and implemented code to connect to your Foundry project and enable the built-in Code Interpreter tool. Finally, you authenticated to Azure, ran the application, and interacted with the agent through a stateful conversation to validate its analytical capabilities.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

@@ -371,4 +371,4 @@ In this task, you extract linked entities with external references, such as Wiki
 
 In this lab, you created a Microsoft Foundry project and developed a Python application integrated with Azure AI Language services. You configured the application environment, authenticated using Azure credentials, and connected to the Text Analytics API. You then enhanced the application to perform language detection, sentiment analysis, key phrase extraction, and entity recognition, including linked entities. Finally, you executed the application to analyze real-world text data and gain meaningful insights from unstructured content.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

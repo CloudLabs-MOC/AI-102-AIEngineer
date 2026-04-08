@@ -372,4 +372,4 @@ In this task, you'll execute the Python application and provide input to the mul
 
 In this lab, you created and configured a multi-agent solution using the Microsoft Agent Framework SDK in an Microsoft Foundry project. You defined multiple specialized agents and combined them using a sequential orchestration workflow. Finally, you ran and tested the application to observe how the agents collaborate to process input and generate structured outputs.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

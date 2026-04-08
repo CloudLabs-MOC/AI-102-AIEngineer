@@ -273,7 +273,7 @@ In this task, you’ll interact with the **Phi-4-reasoning** model in the chat p
 
      ![](../Images/lab2-03-36.png) 
 
-#### Perform a further comparison    
+### Task 6.1 Perform a further comparison    
 
 1. Use the drop-down list in the **Setup** pane to switch between your models, testing both models with the following puzzle (the correct answer is `40!`):
 
@@ -299,17 +299,11 @@ In this task, you’ll interact with the **Phi-4-reasoning** model in the chat p
 
     ![](../Images/lab2-03-39.png) 
 
-### Reflect on the models
-
-You've compared two models, which may vary in terms of both their ability to generate appropriate responses and their cost. In any generative scenario, you need to find a model with the right balance of suitability for the task you need it to perform and the cost of using the model for the number of requests you expect it to have to handle.
-
-The details and benchmarks provided in the model catalog, along with the ability to visually compare models, provide a useful starting point when identifying candidate models for a generative AI solution. You can then test candidate models with a variety of system and user prompts in the chat playground.
-
 ## Summary 
 
 In this lab, you explored the Microsoft Foundry model catalog, reviewing details and benchmarks for models such as **gpt-4.1** and **Phi-4-reasoning**. You compared models based on quality, accuracy, and cost, then created an Microsoft Foundry project and deployed the gpt-4.1 model. You tested the model in the chat playground, providing system instructions and queries, and later deployed the Phi-4-reasoning model to compare its performance. By the end, you gained hands-on experience in managing AI projects, deploying models, testing their responses, and evaluating models to select the most suitable one for a given task.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!
 
 
 

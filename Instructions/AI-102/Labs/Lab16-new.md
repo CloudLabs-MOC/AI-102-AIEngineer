@@ -739,4 +739,4 @@ In this task, you will authenticate to Azure and run the Python application to e
 
 In this lab, you created a sequential workflow in Microsoft Foundry that processes customer support tickets. You used conditional logic and configured AI agents to produce JSON-formatted outputs. Your workflow classified each ticket using an AI agent, handled low-confidence classifications with conditional logic, and generated recommended responses for non-billing issues. Great job!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

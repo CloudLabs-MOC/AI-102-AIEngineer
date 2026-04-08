@@ -303,7 +303,7 @@ In this task, you test the agent in the Microsoft Foundry playground to verify t
 
 Now you'll create a Python application to interact with your agent programmatically. Starter files have been provided in the GitHub repository to help you get started quickly.
 
-### Task 4.1 Clone the repo containing the application code
+### Task 4.1: Clone the repo containing the application code
 
 In this task, you access Microsoft Azure Portal, open Azure Cloud Shell, and clone the GitHub repository to set up the Python client application for interacting with your agent programmatically.
 
@@ -637,4 +637,4 @@ In this task, you sign in to Azure, run the client application, and test the age
 
 In this lab, you created a project in Microsoft Foundry and deployed a GPT-4.1–based agent. You configured Foundry IQ by connecting the agent to an Azure AI Search knowledge base grounded with product documents stored in Azure Blob Storage. Finally, you tested the agent in the playground and integrated it with a Python client application to programmatically retrieve and use enterprise knowledge.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

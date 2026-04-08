@@ -317,7 +317,8 @@ In this task, you'll implement functionality to transcribe audio files into text
     ![](../Images/lab21rec-p2t5p3.png)
 
 ## Summary
+
 In this exercise, you built a voice message assistant that uses Azure Speech capabilities to both generate and process audio. You configured your application with the Foundry endpoint and API key, implemented speech synthesis to create audio greetings, and added speech recognition to transcribe recorded messages. You then ran the application and interacted with it to see how it converts text to speech and speech to text in a seamless workflow. Great work!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!
 

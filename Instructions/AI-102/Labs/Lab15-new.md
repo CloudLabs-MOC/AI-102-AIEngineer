@@ -537,4 +537,4 @@ In this task, you will run the multi-agent application and authenticate with Azu
 
 In this lab, you used the Azure AI Agent Service SDK and the A2A Python SDK to create a remote multi-agent solution. You created a discoverable A2A-compatible agent and set up a routing agent to access the agent's skills. You also implemented an agent executor to process incoming A2A messages and manage tasks. Great work!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

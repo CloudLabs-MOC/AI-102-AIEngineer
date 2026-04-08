@@ -77,7 +77,7 @@ In this task, you will create a new project in the Microsoft Foundry portal and 
 
 In this task, you will deploy speech-capable generative AI models. You will deploy a text-to-speech model for generating audio and a speech-to-text model for transcribing audio input.
 
-### Task 2.1 Deploy a speech-generation model
+### Task 2.1: Deploy a speech-generation model
 
 In this task, you will deploy a text-to-speech model in Microsoft Foundry to generate audio from text input.
 
@@ -175,7 +175,7 @@ In this task, you will configure and run a Python application to generate speech
 
        ![](../Images/lab20-03-10.png)
 
-### Task 4.1 Configure your application
+### Task 4.1: Configure your application
 
 In this task, you will set up the Python environment, install dependencies, and update configuration settings with the model endpoint.
 
@@ -197,7 +197,7 @@ In this task, you will set up the Python environment, install dependencies, and 
 
 1. Once done, press **Ctrl+S** to save the changes.
 
-### Task 4.2 Write code to use the model for speech-generation
+### Task 4.2: Write code to use the model for speech-generation
 
 In this task, you will add code to integrate the speech-generation model and generate audio from text input.
 
@@ -253,7 +253,7 @@ In this task, you will add code to integrate the speech-generation model and gen
 
 1. Save the changes to the code file by pressing **Ctrl+S**. 
 
-### Task 4.3 Run the application
+### Task 4.3: Run the application
 
 In this task, you will authenticate with Azure and run the application to generate and save speech output.
 
@@ -313,7 +313,7 @@ In this task, you will configure and develop a Python application that uses a de
 
         ![](../Images/lab20-03-29.png)
 
-### Task 5.1 Configure your application
+### Task 5.1: Configure your application
 
 In this task, you will set up the Python environment and configure the application with the speech-transcription model endpoint.
 
@@ -333,7 +333,7 @@ In this task, you will set up the Python environment and configure the applicati
 
 1. Once done, press **Ctrl+S** to save the changes.
 
-### Task 5.2 Write code to use the model for speech-transcription
+### Task 5.2: Write code to use the model for speech-transcription
 
 In this task, you will add code to integrate the speech-transcription model and convert audio input into text.
 
@@ -390,7 +390,7 @@ In this task, you will add code to integrate the speech-transcription model and 
 
 1. Save the changes to the code file by pressing **Ctrl+S**. 
 
-### Task 5.3 Run the application
+### Task 5.3: Run the application
 
 In this task, you will authenticate with Azure and run the application to transcribe audio and view the output.
 
@@ -424,4 +424,4 @@ In this task, you will authenticate with Azure and run the application to transc
 
 In this lab, you created a Microsoft Foundry project and deployed speech-capable generative AI models. You set up Python-based applications, configured the environment, and authenticated using Azure credentials. You then developed applications to generate speech from text and transcribe audio into text by integrating with the deployed models. Finally, you executed and tested both applications to understand how speech generation and transcription can be implemented using generative AI.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

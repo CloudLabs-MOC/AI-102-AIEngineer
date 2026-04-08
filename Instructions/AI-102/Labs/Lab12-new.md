@@ -1,6 +1,6 @@
 # Lab 12: Develop an AI agent with Model Context Protocol (MCP) tools
 
-### Estimated Duration: 1 Hour
+### Estimated Duration: 60 Minutes
 
 ## Lab Overview
 
@@ -679,4 +679,4 @@ In this task, you'll execute the client application and interact with the agent 
 
 In this lab, you created AI agents that can use Model Context Protocol (MCP) server tools to access external data sources and APIs. You connected your agents to a remote MCP server hosted by Microsoft Learn Docs and a custom MCP server that you implemented. By integrating these tools, the agent was able to retrieve up-to-date information and provide informed responses to user prompts. This demonstrates how MCP tools can significantly enhance the capabilities of AI agents, enabling them to perform a wide range of tasks by leveraging external services and data. Great work!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

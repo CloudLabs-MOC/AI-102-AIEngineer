@@ -300,4 +300,4 @@ In this task, you’ll modify the provided Python chat application to connect to
 
 In this lab, you deployed the gpt-4.1 model in Microsoft Foundry and created a project to manage it. You then set up a Python-based chat application in Cloud Shell, configured environment variables, and installed the required SDKs. After updating the code to connect with your project, you tested the app by sending queries and reviewing responses. By the end, you gained hands-on experience in deploying models, integrating them into applications, and building a working generative AI chat solution.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

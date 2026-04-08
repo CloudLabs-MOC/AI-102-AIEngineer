@@ -484,4 +484,4 @@ In this task, you will sign in to Microsoft Azure using Azure CLI and run the Py
 
 In this lab, you used the Microsoft Foundry Agent Service and SDK to build a multi-agent solution for support ticket triage. You created and configured multiple specialized AI agents, connected them through a primary orchestration agent, and integrated the solution with your Foundry project. Finally, you ran and tested the application to observe how the agents collaborated to evaluate ticket priority, assign the appropriate team, and estimate the required effort.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

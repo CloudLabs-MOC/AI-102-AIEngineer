@@ -297,7 +297,7 @@ In this task, you'll verify that your index is working by running queries in the
 
 In this task, you'll configure and run a Python-based client application that uses the Azure OpenAI SDK and Azure AI Search to provide grounded responses from your dataset.
 
-### Prepare the application configuration
+### Task 6.1 Prepare the application configuration
 
 1. Open a new browser tab (keeping the Microsoft Foundry portal open in the existing tab). Then in the new tab, browse to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
@@ -400,7 +400,7 @@ In this task, you'll configure and run a Python-based client application that us
 
 1. After you've replaced the placeholders, in the code editor, use the **CTRL+S** command or **Right-click > Save** to save your changes and then use the **CTRL+Q** command or **Right-click > Quit** to close the code editor while keeping the cloud shell command line open.
 
-### Explore code to implement the RAG pattern
+### Task 6.2 Explore code to implement the RAG pattern
 
 1. Enter the following command to edit the code file that has been provided:
 
@@ -423,7 +423,7 @@ In this task, you'll configure and run a Python-based client application that us
 
 1. Use the **CTRL+Q** command to close the code editor without saving any changes, while keeping the cloud shell command line open.
 
-### Run the chat application
+### Task 6.3 Run the chat application
 
 1. In the cloud shell command-line pane, enter the following command to run the app:
 
@@ -454,6 +454,6 @@ By completing this lab, you learned how to:
 * Test the index in the Chat Playground to compare responses with and without data grounding.
 * Configure and run a Python-based RAG client application using the Azure OpenAI SDK and Azure AI Search.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!
 
 

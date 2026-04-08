@@ -15,7 +15,7 @@ In this lab, you will use manual and automated evaluations to assess the perform
 
 - **Task 4:** Use automated evaluation
 
-### Task 1: Create an Microsoft Foundry hub and project
+## Task 1: Create an Microsoft Foundry hub and project
 
 In this task, you’ll sign in to Microsoft Foundry, create a new hub, and set up a project. This will provide the workspace you’ll use to deploy and evaluate models.
 
@@ -73,7 +73,7 @@ In this task, you’ll sign in to Microsoft Foundry, create a new hub, and set u
 ---    
 
 
-### Task 2: Deploy models
+## Task 2: Deploy models
 
 In this task, you’ll deploy two models in your Microsoft Foundry project: gpt-4.1 and gpt-4.1-mini. The gpt-4.1 model will be used to generate AI-assisted evaluation metrics, while the gpt-4.1-mini model will be the one you evaluate for performance.
 
@@ -139,7 +139,7 @@ In this task, you’ll deploy two models in your Microsoft Foundry project: gpt-
 ---   
 
 
-### Task 3: Manually evaluate a model
+## Task 3: Manually evaluate a model
 
 In this task, you’ll perform a manual evaluation by uploading a dataset of travel related queries and comparing model outputs against expected responses. You’ll score the results to measure the accuracy and quality of the model’s responses.
 
