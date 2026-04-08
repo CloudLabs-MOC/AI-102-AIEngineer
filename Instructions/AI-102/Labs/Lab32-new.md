@@ -1,6 +1,6 @@
 # Lab 32: Generate images with AI
 
-### Estimated Duration : 30 Minutes
+### Estimated Duration: 30 Minutes
 
 ## Lab Overview
 
@@ -126,7 +126,7 @@ In this task, you'll use the playground to generate images from prompts and expe
 
 In this task, you'll set up a development environment, configure the application, and use the OpenAI Python SDK to generate and save images based on user prompts.
 
-### Get application files from GitHub
+### Task 4.1: Get application files from GitHub
 
 The initial application files you'll need to develop the translation application are provided in a GitHub repo.
 
@@ -158,7 +158,7 @@ The initial application files you'll need to develop the translation application
 
     ![](../Images/lab19dev-p2t6p8.png)
 
-### Prepare the application configuration
+### Task 4.2: Prepare the application configuration
 
 1. After cloning the repository, in the **Explorer** pane expand the **Labfiles** folder **(1)**, navigate to **image-client > python (2)**.
 
@@ -201,7 +201,7 @@ The initial application files you'll need to develop the translation application
 
 1. Save the modified configuration file by pressing **Ctrl+S**.
 
-### Write code to connect to your project and chat with your model
+### Task 4.3: Write code to connect to your project and chat with your model
 
 > **Tip**: As you add code, be sure to maintain the correct indentation.
 
@@ -265,7 +265,7 @@ The initial application files you'll need to develop the translation application
 
 1. Save your changes to the code file by using **Ctrl+S**.
 
-### Run the client application
+### Task 4.4: Run the client application
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
@@ -327,4 +327,4 @@ The initial application files you'll need to develop the translation application
 
 In this exercise, you generated images using Microsoft Foundry by deploying and testing an image generation model in the portal. You explored the playground to create images from prompts, built a Python-based client application using the OpenAI SDK, and configured it with your Azure resources. You then authenticated with Azure, ran the application, and generated images that were saved locally. Great work!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

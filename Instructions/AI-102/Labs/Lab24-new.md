@@ -1,5 +1,5 @@
 # Lab 24: Translate text and speech
-### Estimated Duration : 30 Minutes
+### Estimated Duration: 45 Minutes
 ## Lab Overview
 
 In this lab, you’ll build an end-to-end solution using **Microsoft Foundry** by creating a project and developing applications for translating both text and speech. You’ll explore **Azure Translator** to perform multilingual text translation and **Azure Speech** to enable real-time speech translation capabilities.
@@ -161,7 +161,7 @@ In this task, you'll configure and implement a Python application to translate t
     ```
     >**Note:** This will create a virtual environment and install the SDK package and other required packages.
 
-### Configure your text translation application
+### Task 4.1: Configure your text translation application
 
 1. In the **Explorer** pane, in the **translators** folder, select the **.env (1)** file to open it. Then update the configuration values to reflect the Cognitive Services **endpoint (2)** for your Foundry resource. Finally, press **Ctrl+S** to save the changes.
 
@@ -171,7 +171,7 @@ In this task, you'll configure and implement a Python application to translate t
 
 1. Ensure that the terminal is open in the **translators** folder and verify that the prompt shows **(.labenv)**, indicating that the Python virtual environment is active.
 
-### Add code to translate text
+### Task 4.2: Add code to translate text
 
 1. In the **Explorer** pane, in the **translators** folder,  open the **translate-text.py** file.
 
@@ -300,7 +300,7 @@ In this task, you'll configure and implement a Python application to translate s
 
 > **Note:** <span style="color:red"> In the current lab environment, audio input (microphone) is not supported due to platform limitations; therefore, while you can perform the steps in this task, you will not be able to provide prompts using voice.
 
-### Configure your speech translation application
+### Task 5.1: Configure your speech translation application
 
 1. In the **translators** folder, verify that the .env file contains the  **endpoint** for your Foundry resource (Azure Speech can use the same information as Azure Translator to connect to your Foundry resource).
 
@@ -312,7 +312,7 @@ In this task, you'll configure and implement a Python application to translate s
     pip install -r requirements.txt
     ```
 
-### Add code to translate speech
+### Task 5.2: Add code to translate speech
 
 1. In the **Explorer** pane, in the **translators** folder,  open the **translate-speech.py** file.
 
@@ -433,4 +433,4 @@ In this task, you'll configure and implement a Python application to translate s
 
 In this exercise, you created translation applications using Microsoft Foundry by integrating Azure Translator and Azure Speech services. You explored text translation in the Foundry portal, built a Python-based application to translate text across multiple languages, and implemented speech translation capabilities. You then authenticated with Azure, ran the applications, and tested multilingual translation outputs. Great work!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

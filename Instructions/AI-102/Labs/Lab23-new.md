@@ -1,5 +1,5 @@
 # Lab 23: Develop a Voice Live agent
-### Estimated Duration: 30 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Lab Overview
 In this lab, you’ll build an end-to-end solution using **Microsoft Foundry** by creating a project and developing a real-time voice-enabled AI agent. You’ll configure the agent with Azure Speech Voice Live capabilities to enable conversational interactions using speech input and audio responses.
@@ -142,6 +142,8 @@ In this task, you'll enable and configure Voice Live capabilities to add speech 
 
 In this task, you'll observe how to interact with the agent using voice input and listen to the generated speech responses.
 
+> **Note:** <span style="color:red"> In the current lab environment, audio input (microphone) is not supported due to platform limitations; therefore, while you can perform the steps in this task, you will not be able to provide prompts using voice.
+
 1. In the Chat pane, use the **Start** button to start a conversation with the agent. If prompted, allow access to the system microphone.
 
     The agent will start a speech session, and listen for your prompt.
@@ -168,7 +170,7 @@ In this task, you'll observe how to interact with the agent using voice input an
 
 In this task, you'll set up your development environment, clone the repository, and configure the application to connect to your agent.
 
-### Get the application files from GitHub
+### Task 5.1: Get the application files from GitHub
 
 1. On the desktop, locate **Visual Studio Code**, and then double-click the icon to open it.
 
@@ -204,7 +206,7 @@ In this task, you'll set up your development environment, clone the repository, 
 
         ![](../Images/lab23-p2t5p1.png)
 
-### Configure the application
+### Task 5.2: Configure the application
 
 1. In Visual Studio Code, open the **Extensions** pane **(1)**, search for **Python** **(2)**, select the **Python** extension by Microsoft **(3)**, and then click **Install** **(4)** if it is not already installed.
 
@@ -239,7 +241,7 @@ In this task, you'll set up your development environment, clone the repository, 
 
     > **Important:** <span style="color:red"> Modify the pasted endpoint to remove the "/api/projects/{project_name}" suffix - the endpoint should be *https://{your-foundry-resource-name}.services.ai.azure.com*.
 
-### Implement application code
+### Task 5.3: Implement application code
 
 1. In the **Explorer** pane, in the **chat-client** folder,  open the **chat-client.py (1)** file.
 
@@ -320,23 +322,23 @@ In this task, you'll set up your development environment, clone the repository, 
 
 1. Find the comment **STEP 4: Start audio systems**, and add the following code (being careful to maintain the same indentation as the step 3 code above):
 
-    ```python
-   # STEP 4: Start audio systems
-   self.audio_processor.start_playback()
-            
-   print("\n✅ Ready! Start speaking...")
-   print("Press Ctrl+C to exit\n")
+    ```py
+    # STEP 4: Start audio systems
+    self.audio_processor.start_playback()
+                
+    print("\n✅ Ready! Start speaking...")
+    print("Press Ctrl+C to exit\n")
     ```
 
-    ![](../Images/lab23-p2t5p10.png)
+     ![](../Images/lab23-p2t5p10.png)
 
     This code starts the audio processor so that it monitors the microphone for audio input and plays back audio output.
 
 1. Find the comment **STEP 5: Process events**, and add the following code (being careful to maintain the same indentation as the step 4 code above):
 
     ```python
-   # STEP 5: Process events
-   await self.process_events()
+    # STEP 5: Process events
+    await self.process_events()
     ```
 
     ![](../Images/lab23-p2t5p11.png)
@@ -394,9 +396,9 @@ In this task, you'll authenticate with Azure, run the client application, and in
 
 1. In the Visual Studio Code terminal, enter the following command to sign into Azure
 
-   ```powershell
-    az login
-    ```
+     ```powershell
+     az login
+     ```
 
     > **Note:** Minimize the VS Code to see the **Sign in** window.
 
@@ -408,11 +410,11 @@ In this task, you'll authenticate with Azure, run the client application, and in
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
     
-     ![](../Images/lab7-s6.png)
+        ![](../Images/lab7-s6.png)
 
    - **Password:** <inject key="AzureAdUserPassword"></inject>
     
-     ![](../Images/lab7-s7.png)
+        ![](../Images/lab7-s7.png)
 
 1. When prompted, select **Yes** to sign in to all apps and websites on this device.
 
@@ -444,4 +446,4 @@ In this task, you'll authenticate with Azure, run the client application, and in
 
 In this exercise, you created a voice-enabled AI agent using Microsoft Foundry and integrated it with Azure Speech Voice Live to enable real-time conversational interactions. You configured the agent, enabled voice capabilities, and explored speech-based interactions in the playground. You then built a Python-based client application, authenticated with Azure, and interacted with the agent using live audio input and output. Great work!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

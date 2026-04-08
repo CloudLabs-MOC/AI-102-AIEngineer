@@ -474,4 +474,4 @@ In this task, you will run the Python application, authenticate with Azure, and 
 
 In this lab, you created an Azure Storage account and a Microsoft Foundry project to support speech-enabled AI scenarios. You built and configured an agent, and connected it to the Azure Speech MCP tool to enable speech synthesis and transcription. You tested these capabilities in the Foundry playground. Finally, you developed and ran a Python client application to interact with the agent and perform speech-based tasks.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

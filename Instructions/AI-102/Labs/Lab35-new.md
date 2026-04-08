@@ -1,6 +1,6 @@
 # Lab 35: Analyze forms with prebuilt Azure AI Document Intelligence models
 
-### Estimated Duration : 45 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -274,4 +274,4 @@ In this task, you will add and run Python code to analyze an invoice using the A
 
 In this lab, you created a Microsoft Foundry project and configured the required Azure AI resources for document analysis. You used the Read model in the portal to extract and review text from a document. Finally, you developed and executed a Python application to analyze an invoice and retrieve key information using the Azure Document Intelligence service.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

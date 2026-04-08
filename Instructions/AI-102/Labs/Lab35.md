@@ -1,6 +1,6 @@
 # Lab 34: Analyze forms with custom Azure AI Document Intelligence models
 
-### Estimated Duration : 30 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -336,4 +336,4 @@ In this lab, you worked with **Azure AI Document Intelligence** to build and tes
 
 Through these steps, you learned how to provision and configure an Azure AI Document Intelligence resource, train a custom model with labeled documents, and develop a client application to test and validate the model’s output.  
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

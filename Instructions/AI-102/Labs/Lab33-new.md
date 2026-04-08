@@ -1,6 +1,6 @@
 # Lab 33: Extract information from multimodal content
 
-### Estimated Duration : 60 Minutes
+### Estimated Duration: 60 Minutes
 
 ## Overview
 
@@ -79,7 +79,7 @@ In this task, you will sign in to the Microsoft Foundry portal and create a new 
  
 <validation step="ab1b6523-2d38-4962-8514-294eea099a7c" />
 
-### Task 2: Download content
+## Task 2: Download content
 
 In this task, you will download and extract the sample content files that will be used throughout the lab for analysis.
 
@@ -99,7 +99,7 @@ In this task, you will download and extract the sample content files that will b
 
 1. View the files it contains. You'll use these files to build various Content Understanding analyzers in this lab.
 
-### Task 3: Try prebuilt analyzers in Microsoft Foundry
+## Task 3: Try prebuilt analyzers in Microsoft Foundry
 
 In this task, you will explore and test prebuilt analyzers such as Read and Layout to understand how they extract text and structure from documents.
 
@@ -754,4 +754,4 @@ In this task, you will build an analyzer for video content and test it using ano
 
 In this lab, you created and configured a Microsoft Foundry project and explored Azure Content Understanding capabilities. You tested prebuilt analyzers such as Read and Layout to extract text and document structure. You then built custom analyzers by defining schemas for different content types, including invoices, slide images, audio recordings, and video files. Finally, you tested these analyzers to extract structured information, enabling you to understand how to process and analyze multimodal content using AI.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

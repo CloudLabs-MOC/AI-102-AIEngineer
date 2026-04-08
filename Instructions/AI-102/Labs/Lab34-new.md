@@ -1,6 +1,6 @@
 # Lab 34: Develop a Content Understanding client application
 
-### Estimated Duration: 30 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Lab Overview
 
@@ -398,4 +398,4 @@ In this task, you'll use the created analyzer to process business card images an
 
 In this exercise, you developed a Content Understanding application using Microsoft Foundry by configuring resources and deploying the required models. You explored Content Understanding Studio, created an analyzer using the Python SDK, and built a client application to process business card images. You then authenticated with Azure, ran the application, and extracted structured information such as contact details from the images. Great work!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

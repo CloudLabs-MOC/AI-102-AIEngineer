@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 30 Minutes
 
-## Overview
+## Lab Overview
 
 In this hands-on lab, you will learn how to build an OCR-enabled application using **Azure AI Vision**. You’ll begin by provisioning a Vision resource in the Azure portal and retrieving its keys and endpoint. Then, you’ll set up a Python client application in Azure Cloud Shell, install the required SDK packages, and configure the app to authenticate with your resource. Next, you’ll extend the application to analyze sample images, extract full lines of text, and generate annotated images. Finally, you’ll enhance the solution to detect individual words, display their confidence scores, and produce word-level annotations on the images.
 
@@ -326,4 +326,4 @@ In this task, you’ll enhance the application further to detect and return the 
 
 In this lab, you provisioned an **Azure AI Vision** resource and configured a Python client application to work with it in Azure Cloud Shell. You set up the environment, cloned the required repository, and updated the configuration with your endpoint and key values. You then extended the application code to authenticate with the Vision service, read text from sample images, and display the extracted lines. Finally, you enhanced the app to detect individual words with confidence scores and generated annotated images highlighting both lines and words. Through these tasks, you gained practical experience in provisioning a Vision resource, integrating the Azure AI Vision SDK, and building an OCR-enabled application to analyze and extract text from images.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

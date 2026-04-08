@@ -337,7 +337,7 @@ In this lab, you explored how to analyze videos using **Azure Video Indexer**. Y
 
 Through these steps, you learned how to use the Video Indexer portal, API, and widgets to analyze video content, extract rich metadata, and integrate video insights into custom applications.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!
 
 
 

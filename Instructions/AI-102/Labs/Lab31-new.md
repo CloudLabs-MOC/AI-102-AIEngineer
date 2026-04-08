@@ -1,6 +1,6 @@
 # Lab 31: Develop a vision-enabled chat app
 
-### Estimated Duration: 30 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -127,7 +127,7 @@ In this task, you will upload an image and test the model’s ability to generat
 
 In this task, you will set up a Python-based application, configure it, and write code to interact with the deployed model using image inputs.
 
-### Task 4.1 Get application files from GitHub
+### Task 4.1: Get application files from GitHub
 
 In this task, you will clone a GitHub repository and open it in Visual Studio Code to access the starter application files.
 
@@ -159,7 +159,7 @@ In this task, you will clone a GitHub repository and open it in Visual Studio Co
 
     ![](../Images/lab19dev-p2t6p8.png)
 
-### Task 4.2 Prepare the application configuration
+### Task 4.2: Prepare the application configuration
 
 In this task, you will set up the development environment, install required dependencies, and configure the application with your Azure OpenAI endpoint and model details.
 
@@ -192,7 +192,7 @@ In this task, you will set up the development environment, install required depe
 
     ![](../Images/lab30-03-12.png)
 
-### Task 4.3 Write code to get an OpenAI chat client for your model
+### Task 4.3: Write code to get an OpenAI chat client for your model
 
 In this task, you will add code to authenticate and create a client connection to your deployed model using Azure credentials.
 
@@ -230,7 +230,7 @@ In this task, you will add code to authenticate and create a client connection t
 
     ![](../Images/lab30-03-15.png)
 
-### Task 4.4 Write code to submit a URL-based image prompt
+### Task 4.4: Write code to submit a URL-based image prompt
 
 In this task, you will add code to send image-based prompts (using a URL) along with text input to the model and display the response.
 
@@ -312,7 +312,7 @@ In this task, you will authenticate to Azure and run the application to test ima
 
     ![](../Images/lab30-03-18.png)
 
-### Task 5.1 Modify the code to upload a local image file
+### Task 5.1: Modify the code to upload a local image file
 
 In this task, you will update the application code to send a local image file instead of a URL, enabling the model to process and respond to locally stored images.
 
@@ -366,4 +366,4 @@ In this task, you will update the application code to send a local image file in
 
 In this lab, you created a Microsoft Foundry project and deployed a vision-enabled generative AI model. You tested the model using image-based prompts in the playground and set up a Python-based application by cloning a GitHub repository and configuring the environment. You then developed and modified the application to process both URL-based and local images along with text prompts. Finally, you ran and tested the application to understand how vision-enabled generative AI can be integrated into real-world applications.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

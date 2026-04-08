@@ -1,6 +1,6 @@
 # Lab 37: Create an knowledge mining solution
 
-### Estimated Duration : 45 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Overview
 
@@ -20,7 +20,7 @@ In this lab, you will build a knowledge mining solution using Azure AI Search by
 
 - **Task 6:** Create a search client application
 
-### Task 1: Create an Azure AI Search resource
+## Task 1: Create an Azure AI Search resource
 
 In this task, you will create an Azure AI Search resource to enable indexing and querying of data.
 
@@ -66,7 +66,7 @@ In this task, you will create an Azure AI Search resource to enable indexing and
  
 <validation step="84ca2020-f89f-4d72-92fe-def8f190cbeb" />
 
-### Task 2: Create a storage account
+## Task 2: Create a storage account
 
 In this task, you will create an Azure Storage account to store the documents for your knowledge mining solution.
 
@@ -103,7 +103,7 @@ In this task, you will create an Azure Storage account to store the documents fo
  
 <validation step="593b8b7b-2f7c-4102-af2f-c6e455caf0c8" />
 
-### Task 3: Upload documents to Azure Storage
+## Task 3: Upload documents to Azure Storage
 
 In this task, you will upload sample documents to a Blob container in the storage account.
 
@@ -168,7 +168,7 @@ In this task, you will upload sample documents to a Blob container in the storag
  
 <validation step="a3fcbac0-d134-4e1d-91ed-d80c3f4a290a" />
 
-### Task 4: Create and run an indexer
+## Task 4: Create and run an indexer
 
 In this task, you will create and run an indexer to extract, enrich, and index data from the uploaded documents.
 
@@ -273,7 +273,7 @@ In this task, you will create and run an indexer to extract, enrich, and index d
  
 <validation step="f751ed87-843e-4b4c-ae55-8cb6d798cbe3" />
 
-### Task 5: Search the index
+## Task 5: Search the index
 
 In this task, you will query and explore the indexed data using the Search explorer.
 
@@ -350,7 +350,7 @@ In this task, you will query and explore the indexed data using the Search explo
 
     This query returns the filename and key phrases for any documents mentioning "New York" that are smaller than 380,000 bytes in size.
 
-### Task 6: Create a search client application
+## Task 6: Create a search client application
 
 In this task, you will build and run a client application to interact with the search index using the Azure AI Search SDK.
 
@@ -494,4 +494,4 @@ In this task, you will build and run a client application to interact with the s
 
 In this lab, you created an Azure AI Search resource and a storage account to build a knowledge mining solution. You uploaded documents, applied AI enrichments, and indexed the data to extract meaningful insights. Finally, you queried the index and developed a client application using the Azure AI Search SDK to interact with the data.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

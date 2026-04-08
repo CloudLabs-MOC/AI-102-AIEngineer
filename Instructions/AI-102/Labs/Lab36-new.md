@@ -544,4 +544,4 @@ Now you'll use the training forms to build a custom extraction model.
 
 In this exercise, you built a document processing solution using **Azure Document Intelligence** by creating and configuring the required resources in Document Intelligence Studio. You explored the Read (OCR) model to extract multilingual text, and used the Python SDK to analyze invoices and retrieve key information such as vendor details and totals. You then created and trained a custom model using your own dataset, and tested it programmatically to extract specific fields from documents. Great work!
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

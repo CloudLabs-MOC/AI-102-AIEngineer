@@ -12,7 +12,7 @@ In this hands-on lab, you’ll build a face detection and analysis solution usin
 
 - **Task 2:** Develop a facial analysis app with the Face SDK
 
-### Task 1: Provision an Azure AI Face API resource
+## Task 1: Provision an Azure AI Face API resource
 
 In this task, you’ll create an Azure AI Face resource, then go to Keys and Endpoint to copy the Endpoint and Key. These credentials will be used later to authenticate SDK calls from your app.
 
@@ -85,7 +85,7 @@ In this task, you’ll create an Azure AI Face resource, then go to Keys and End
  
 ---      
 
-### Task 2: Develop a facial analysis app with the Face SDK
+## Task 2: Develop a facial analysis app with the Face SDK
 
 In this task, you'll complete a partially implemented client application that uses the Azure Face SDK to detect and analyze human faces in images.
 
@@ -337,4 +337,4 @@ In this task, you’ll specify the facial attributes to return (head pose, occlu
 
 In this lab, you built a face detection and analysis solution with Azure AI Face. You provisioned a Face resource, captured its Endpoint and Key, and configured the Face SDK in Azure Cloud Shell. You implemented code to authenticate a FaceClient, detect faces in sample images, and retrieve attributes such as head pose, occlusions, and accessories. You generated annotated images with bounding boxes and reviewed outputs in the console and downloaded files for validation.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

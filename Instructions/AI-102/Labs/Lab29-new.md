@@ -1,6 +1,6 @@
 # Lab 29: Detect objects in images
 
-### Estimated Duration : 45 Minutes
+### Estimated Duration: 45 Minutes
 
 ## Lab Overview
 
@@ -84,7 +84,6 @@ In this task, you’ll create Custom Vision resources in Azure to support both t
  
 <validation step="c703c52b-8e9e-4e0a-95b9-07f98b9fb113" />
  
----      
 
 ## Task 2: Create a Custom Vision project in the Custom Vision portal
 
@@ -451,4 +450,4 @@ In this task, you’ll configure a lightweight Python client to call the predict
 
 In this lab, you built an end-to-end object detection workflow with Azure AI Custom Vision. You provisioned dedicated Training and Prediction resources, created an Object Detection project, prepared data by uploading and tagging images, trained/evaluated a model, published the best iteration, and invoked it from a lightweight Python client to draw bounding boxes on a test image.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

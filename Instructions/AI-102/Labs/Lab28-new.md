@@ -463,4 +463,4 @@ In this lab, you created an image classification solution with Azure AI Custom V
 
 Through these steps, you learned how to train, deploy, and consume a Custom Vision model, and integrate it into a client application for real-world image classification tasks.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!

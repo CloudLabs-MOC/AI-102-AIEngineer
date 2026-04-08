@@ -12,8 +12,7 @@ In this lab, you will provision an Azure AI Vision resource and configure it for
 
 - Task 2: Develop an image analysis app with the Azure AI Vision SDK
 
-
-### Task 1: Provision an Azure AI Vision resource
+## Task 1: Provision an Azure AI Vision resource
 
 In this task, you will provision an Azure AI Vision resource in the Azure portal, configure its settings, and retrieve the keys and endpoint required to connect your application to the service.
 
@@ -62,7 +61,7 @@ In this task, you will provision an Azure AI Vision resource in the Azure portal
  
 ---     
 
-### Task 2: Develop an image analysis app with the Azure AI Vision SDK
+## Task 2: Develop an image analysis app with the Azure AI Vision SDK
 
 In this task, you'll complete a partially implemented client application that uses the Azure AI Vision SDK to analyze images.   
 
@@ -393,9 +392,9 @@ In this task, you will update the application to detect and locate people in ima
    >**Tip:** If you see bounding boxes returned from the model that don't make sense, check the JSON confidence score and try increasing the confidence score filtering in your app.
 
 
-### Summary
+## Summary
 
 In this lab, you provisioned an Azure AI Vision resource and configured it in Azure Cloud Shell. You updated a Python application to integrate with the Vision SDK, enabling image analysis capabilities. You implemented features to generate captions, suggest tags, detect and locate objects, and identify people in images, gaining hands-on experience with building and testing a computer vision solution using Azure AI Vision.
 
-### You have successfully completed the Hands-on Lab!
+## You have successfully completed the Hands-on Lab!
 
