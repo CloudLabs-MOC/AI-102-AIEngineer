@@ -1,13 +1,3 @@
----
-lab:
-    title: 'Create a generative AI chat app'
-    description: 'Learn how to use the OpenAI SDK and the Responses API to build a chat app that connects to a model deployed in Microsoft Foundry.'
-    level: 300
-    duration: 45
-    islab: true
-    status: 'released'
----
-
 # Create a generative AI chat app
 
 In this exercise, you use the OpenAI SDK and the Responses API to create a chat app that connects to a model deployed in a Microsoft Foundry project.
@@ -16,40 +6,87 @@ This exercise takes approximately **45** minutes.
 
 > **Note**: Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
 
-## Prerequisites
+## Task 1: Create a Microsoft Foundry project
 
-Before starting this exercise, ensure you have:
+In this task, you'll create a Microsoft Foundry project, configure the required Azure resources, and obtain the project endpoint needed for application development.
 
-- An active [Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account)
-- [Visual Studio Code](https://code.visualstudio.com/) installed
-- [Python version **3.13.xx**](https://www.python.org/downloads/release/python-31312/) installed\*
-- [Git](https://git-scm.com/install/) installed and configured
-- [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) installed
+1. Copy the **Microsoft Foundry** link and paste it into a new browser tab to access the portal: `https://ai.azure.com/`
 
-> \* Python 3.14 is available, but some dependencies are not yet compiled for that release. The lab has been successfully tested with Python 3.13.12.
+1. On the **Microsoft Foundry** home page, click on **Start building**.
 
-## Create a Microsoft Foundry project
+     ![](./media/ai103-lab2-t1p1.png)
 
-Microsoft Foundry uses projects to organize models, resources, data, and other assets used to develop an AI solution.
+1. If prompted to sign in, enter your credentials:
+ 
+   - **Email/Username:** Enter <inject key="AzureAdUserEmail"></inject> **(1)** and click on **Next (2)**.
+ 
+        ![Enter Your Username](./media/ai103-lab2-t1p2.png)
+ 
+   - **Password:** Enter <inject key="AzureAdUserPassword"></inject> **(1)** and click on **Sign in (2)**.
+ 
+      ![Enter Your Password](./media/ai103-lab2-t1p3.png)
 
-1. In a web browser, open the [Microsoft Foundry portal](https://ai.azure.com) at `https://ai.azure.com` to start building; signing in using your Azure credentials. Close any tips or quick start panes that are opened the first time you sign in.
+1. If prompted to **Stay signed in?**, you can click **No**.
 
-1. If it is not already enabled, in the tool bar the top of the page, enable the **New Foundry** option. Then, if prompted, create a new project with a unique name; expanding the **Advanced options** area to specify the following settings for your project:
-    - **Foundry resource**: *Use the default name for your resource (usually {project_name}-resource)*
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create or select a resource group*
-    - **Region**: Select any of the **AI Foundry recommended** regions in **[this list](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}
+    ![](./media/ai103-lab2-t1p4.png)
 
-1. Wait for your project to be created. Then view its home page.
+1. If prompted with, the **Get started with Microsoft Foundry** page, click on **Create project**.
 
+   ![](./media/ai103-lab2-t1p5.png)
+
+1. In the **Create a project** wizard, enter project name **Myproject<inject key="DeploymentID" enableCopy="false" /> (1)**, and **Expand Advanced options (2)** to specify the following settings for your project: 
+
+    - Foundry resource: **Leave default (3)**
+    - Subscription : **Leave default subscription (4)** 
+    - Region : Select **<inject key="location" enableCopy="false"/> (5)**
+    - Resource group : Select **AI-103 (6)** 
+    - Click on **Create** **(7)**
+
+      ![](./media/ai103-lab2-t1p6.png)
+
+      > **Note:** If project creation gives an authorization error related to Application Insights or Log Analytics resources (for example, errors containing `Microsoft.OperationalInsights/workspaces/write` or `Microsoft.Insights/components/write`), **Toggle off** the *Set up recommended resources so I can explore everything Foundry has to offer* option before creating the project.
+
+      ![](./media/ai901-l5-1(2).png)
+
+1. Wait for your project to be created. It may take a few minutes. 
+
+1. In the **All set, Let's build your agents** window, click **Let's go**.
+
+    ![](./media/ai103-lab2-t1p7.png)
+
+1. Once the setup is complete, you are automatically redirected to the **Microsoft Foundry home page** for the newly created project.
+
+   ![](./media/ai103-lab2-t1p8.png)
+
+   > **Note:** The Microsoft Foundry landing page may vary depending on the version of the portal, your account configuration, or recent UI updates. If your home page looks different, continue with the lab by locating the required menu options using the navigation menu. The appearance of the portal may differ, but the functionality and lab steps remain the same.
+
+    ![](./media/ai103-lab2-t1p9.png)
 ## Deploy a model
 
-Next, let's deploy a model that you'll use in your chat application.
 
-1. Now you're ready to explore models. On the **Discover** page, select the **Models** tab to view the Microsoft Foundry model catalog.
-1. In the model catalog, search for `gpt-4.1`.
-1. Review the model card, and then deploy it using the default settings.
-1. When the model has been deployed, it will open in the model playground - you can test it there if you like.
+1. From the **Microsoft Foundry** homepage, select **Discover (1)** from the top menu. Then select the **Models (2)** tab to view the Microsoft Foundry model catalog.
+
+    The model catalog lists all models available in Foundry. Some are provided directly from Azure (and billed through your Azure subscription) while others are provided by partners and the community.
+
+    ![](./media/ai103-lab2-t1p10.png)
+
+    >**Note:** You can search and filter the catalog, based on model names, capabilities, and other factors.
+
+1. Search for `gpt-4.1` **(1)**. Then, in the search results, select the **gpt-4.1** model to view its **model card**.
+
+    ![](./media/ai103-lab2-t1p11.png)
+
+1. On the model page, select **Deploy (1)** drop-down and deploy the model using the ***Default settings (2)**.
+
+    ![](./media/ai103-lab2-t1p26.png)
+
+1. The deployed model will open in the model playground, where it will be selected in the **Model** drop-down list.
+
+    ![](./media/ai103-lab2-t1p27.png)
+
+1. Note the deployment name that is assigned to the **gpt-4.1** model. You'll need to identify this deployment later.
+
+    ![](./media/ai103-lab2-t1p28.png)
 
 ## Get the endpoint
 
@@ -57,9 +94,16 @@ You'll need an endpoint to connect to the model from a client application. In th
 
 > **Note**: As an alternative to Entra ID authentication, you could use the API Key for the project. using Entra ID authentication is preferred whenever possible.
 
-1. On the menu bar, select the **Home** page.
-1. Note the **Azure OpenAI Endpoint** displayed there.
+1. Navigate to the **Home (1)** page of your Azure AI Foundry project.
 
+    ![](./media/ai103l31.png)
+
+1. Locate the **Azure OpenAI Endpoint** field.
+
+1. Select the **Copy (2)** icon next to the **Azure OpenAI Endpoint** value to copy the endpoint URL, and save it in a text editor such as Notepad. You will use this endpoint later when configuring your application and updating the `.env` file.
+
+    ![](./media/ai103l32.png)
+    
     > **Tip**: You'll use the **Azure OpenAI Endpoint** in this exercise, <u>not</u> the project endpoint!
 
 ## Create a client application to chat with the model
@@ -70,17 +114,70 @@ Now that you have deployed a model, you can use the OpenAI SDK and the Responses
 
 The initial application files you'll need to develop your chat application are provided in a GitHub repo.
 
-1. Open Visual Studio Code.
-1. Open the command palette (*Ctrl+Shift+P*) and use the `Git:clone` command to clone the `https://github.com/microsoftlearning/mslearn-ai-studio` repo to a local folder (it doesn't matter which one). Then open it.
+1. In the Lab VM, open Visual Studio Code.
 
-    You may be prompted to confirm you trust the authors.
+1. Open the Command Palette (Ctrl + Shift + P), or go to **View (1)** > **Command Palette (2)**, then search for and select **Git: Clone (3)**
 
+    ![](./media/ai103l32.png)
+
+    ![](./media/ai103l33.png)
+
+1. Use this option to clone the repository:
+   ```
+   https://github.com/microsoftlearning/mslearn-ai-studio
+   ```
+   ![](./media/ai103l34.png)
+   
+1. When prompted to choose a location, create a new local folder named `foundry-sdk` and clone the repository into it.
+
+   ![](./media/ai103l35.png)
+
+   ![](./media/ai103l36.png)
+
+1. Select **Open** to open the repository.
+
+   ![](./media/ai103l37.png)
+
+1. You may be prompted to confirm you trust the authors, select **Yes, I trust...** option
+   
 ### Prepare the application configuration
 
-1. In Visual Studio Code, view the **Extensions** pane; and if it is not already installed, install the **Python** extension.
-1. In the **Command Palette**, use the command `python:select interpreter`. Then create a new **Venv** environment based on your Python 3.13 installation.
+1. In Visual Studio Code, select the **Extensions (1)** icon from the Activity Bar on the left side of the window.
 
-    > **Tip**: If you are prompted to install dependencies, you can install the ones in the *requirements.txt* file in the */labfiles/foundry-chat/python/chat-app* folder; but it's OK if you don't - we'll install them later!
+   ![](./media/ai103l38.png)
+
+1. In the Extensions view, search for Python if it is not already displayed.
+
+1. Locate the Python extension published by Microsoft.
+
+1. Select **Install (2)** to install the Python extension.
+
+1. Wait for the installation to complete. Once installed, the extension will provide Python language support, IntelliSense, debugging capabilities, and other Python development features in Visual Studio Code.
+
+1. Open the Command Palette by selecting **View > Command Palette** or by pressing **Ctrl+Shift+P**.
+
+1. In the Command Palette, type **Python: Select Interpreter (1)**.
+
+   ![](./media/ai103l39.png)
+   
+1. From the list of matching commands, **select (2)** Python: Select Interpreter.
+
+1. In the Select Interpreter window, select **Create Virtual Environment (3)**.
+
+   ![](./media/ai103l310.png)
+   
+1. When prompted to select an environment type, choose **Venv (4)** to create a .venv virtual environment in the current workspace.
+
+   ![](./media/ai103l311.png)
+   
+1. In the Select a Python installation window, choose Python 3.14.2 (Global) located at
+**C:\Program Files\Python314\python.exe (5)** to create the virtual environment.
+
+   ![](./media/ai103l312.png)
+   
+1. If you are prompted to install dependencies, you can install the ones in the *requirements.txt* file in the */labfiles/foundry-chat/python/chat-app* folder
+
+   ![](./media/ai103l313.png)
 
 1. In the Explorer pane, navigate to the folder containing the application code files at **/labfiles/foundry-chat/python/chat-app**. The application files include:
     - **.env** (the application configuration file)
@@ -90,6 +187,8 @@ The initial application files you'll need to develop your chat application are p
 
 1. In the **Explorer** pane, right-click the **chat-app** folder containing the application files, and select **Open in integrated terminal** (or open a terminal in the **Terminal** menu and navigate to the */labfiles/foundry-chat/python/chat-app* folder.)
 
+   ![](./media/ai103l314.png)
+
     > **Note**: Opening the terminal in Visual Studio Code will automatically activate the Python environment. You may need to enable running scripts on your system.
 
 1. Ensure that the terminal is open in the **labfiles/foundry-chat/python/chat-app** folder with the prefix **(.venv)** to indicate that the Python environment you created is active.
@@ -98,12 +197,15 @@ The initial application files you'll need to develop your chat application are p
     ```
     pip install -r requirements.txt
     ```
-
+   ![](./media/ai103l315.png)
+   
 1. In the **Explorer** pane, in the **labfiles/foundry-chat/python/chat-app** folder, select the **.env** file to open it. Then update the configuration values to include the **Azure OpenAI Endpoint** and the name assigned to the deployment for the **gpt-4.1** model.
 
+   ![](./media/ai103l316.png)
+   
     > **Tip**: Copy the **Azure OpenAI Endpoint** (not the project endpoint!) from the project home page in the Foundry portal, and enter the exact deployment name assigned to your deployment in the `MODEL_DEPLOYMENT` setting.
 
-    Save the modified configuration file.
+1. **Save** the modified configuration file.
 
 ### Use the *ChatCompletions* API to chat with the model
 
