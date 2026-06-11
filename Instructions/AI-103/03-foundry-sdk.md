@@ -1,12 +1,27 @@
-# Create a generative AI chat app
+# Create a Generative AI Chat App
 
-In this exercise, you use the OpenAI SDK and the Responses API to create a chat app that connects to a model deployed in a Microsoft Foundry project.
+### Estimated Duration: 45 Minutes
 
-This exercise takes approximately **45** minutes.
+## Lab overview
 
-> **Note**: Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
+In this lab, you will create a generative AI chat application by using the OpenAI SDK and the Responses API with a model deployed in a Microsoft Foundry project. You will create and configure a Microsoft Foundry project, deploy a generative AI model, and retrieve the Azure OpenAI endpoint required for application connectivity. You will then develop a Python-based chat application that interacts with the deployed model by using both the ChatCompletions and Responses APIs. Finally, you will enhance the application by implementing conversation tracking, streaming responses, and asynchronous processing to create a more responsive and context-aware chat experience.
 
-## Task 1: Create a Microsoft Foundry project
+## Lab objectives
+
+In this exercise, you will perform:
+
+* Task 1: Create a Microsoft Foundry project
+* Task 2: Deploy a model
+* Task 3: Get the Azure OpenAI endpoint
+* Task 4: Get the application files from GitHub
+* Task 5: Prepare the application configuration
+* Task 6: Use the ChatCompletions API to chat with the model
+* Task 7: Use the Responses API to chat with the model
+* Task 8: Add conversation tracking
+* Task 9: Implement streaming responses
+* Task 10: Use the asynchronous API
+
+### Task 1: Create a Microsoft Foundry project
 
 In this task, you'll create a Microsoft Foundry project, configure the required Azure resources, and obtain the project endpoint needed for application development.
 
@@ -61,8 +76,10 @@ In this task, you'll create a Microsoft Foundry project, configure the required 
    > **Note:** The Microsoft Foundry landing page may vary depending on the version of the portal, your account configuration, or recent UI updates. If your home page looks different, continue with the lab by locating the required menu options using the navigation menu. The appearance of the portal may differ, but the functionality and lab steps remain the same.
 
     ![](./media/ai103-lab2-t1p9.png)
-## Deploy a model
+    
+### Task 2: Deploy a model
 
+In this task, you'll browse the Microsoft Foundry model catalog, select the GPT-4.1 model, and deploy it using the default deployment settings. You'll also identify the deployment name that will be used later by the client application.
 
 1. From the **Microsoft Foundry** homepage, select **Discover (1)** from the top menu. Then select the **Models (2)** tab to view the Microsoft Foundry model catalog.
 
@@ -88,7 +105,9 @@ In this task, you'll create a Microsoft Foundry project, configure the required 
 
     ![](./media/ai103-lab2-t1p28.png)
 
-## Get the endpoint
+### Task 3: Get the Azure OpenAI endpoint
+
+In this task, you'll locate and copy the Azure OpenAI endpoint from your Microsoft Foundry project. This endpoint will be used to connect the application to the deployed model by using Microsoft Entra ID authentication.
 
 You'll need an endpoint to connect to the model from a client application. In this exercise, we're going to use the OpenAI SDK to chat with the model; and we'll use the Azure OpenAI endpoint with Entra ID authentication to connect to it.
 
@@ -108,9 +127,9 @@ You'll need an endpoint to connect to the model from a client application. In th
 
 ## Create a client application to chat with the model
 
-Now that you have deployed a model, you can use the OpenAI SDK and the Responses API to develop an application that chats with it.
+### Task 4: Get the application files from GitHub
 
-### Get the application files from GitHub
+In this task, you'll clone the application repository from GitHub
 
 The initial application files you'll need to develop your chat application are provided in a GitHub repo.
 
@@ -140,7 +159,9 @@ The initial application files you'll need to develop your chat application are p
 
 1. You may be prompted to confirm you trust the authors, select **Yes, I trust...** option
    
-### Prepare the application configuration
+### Task 5: Prepare the application configuration
+
+In this task, you will install the required Python tools and dependencies, create a virtual environment, and configure the application settings with the Azure OpenAI endpoint and model deployment information.
 
 1. In Visual Studio Code, select the **Extensions (1)** icon from the Activity Bar on the left side of the window.
 
@@ -207,7 +228,9 @@ The initial application files you'll need to develop your chat application are p
 
 1. **Save** the modified configuration file.
 
-### Use the *ChatCompletions* API to chat with the model
+### Task 6: Use the *ChatCompletions* API to chat with the model
+
+In this task, you'll update the application code to use the OpenAI SDK and the ChatCompletions API. You'll authenticate with Microsoft Entra ID, send prompts to the deployed model, and receive responses through a basic conversational interface.
 
 The *ChatCompletions* API is a well-established way to build client applications for large language models, and has been widely adopted.
 
@@ -287,7 +310,9 @@ The *ChatCompletions* API is a well-established way to build client applications
 
 1. Enter the prompt `quit` to end the application.
 
-### Use the *Responses* API to chat with the model
+### Task 7: Use the *Responses* API to chat with the model
+
+In this task, you'll modify the application to use the newer Responses API. You'll simplify the request structure by using instructions and input parameters while continuing to interact with the deployed model.
 
 While the *ChatCompletions* API is widely used, it is increasingly being superseded by the newer *Responses* API. Let's update the code to use it.
 
@@ -324,7 +349,9 @@ While the *ChatCompletions* API is widely used, it is increasingly being superse
 
 1. Enter the prompt `quit` to end the application.
 
-### Add conversation tracking
+### Task 8: Add conversation tracking
+
+In this task, you'll implement conversation state management by tracking response identifiers. This enables the application to maintain conversational context across multiple user prompts and responses.
 
 To maintain the conversational context, we need to include references to previous responses in each new request.
 
@@ -370,7 +397,9 @@ To maintain the conversational context, we need to include references to previou
 
 1. Enter the prompt `quit` to end the application.
 
-### Implement *streaming* responses
+### Task 9: Implement *streaming* responses
+
+In this task, you'll enhance the chat experience by enabling response streaming. Instead of waiting for a complete response, the application will display output incrementally as it is generated by the model.
 
 To handle long responses, you can use *streaming* to start processing partial responses before the full text has been returned.
 
@@ -414,7 +443,9 @@ To handle long responses, you can use *streaming* to start processing partial re
 
 1. Enter the prompt `quit` to end the application.
 
-### Use the asynchronous API
+### Task 10: Use the asynchronous API
+
+In this task, you'll build an asynchronous version of the chat application by using the AsyncOpenAI client. You'll send and process requests asynchronously, manage conversation context, and properly close asynchronous resources when the application exits.
 
 The OpenAI SDK offers an asynchronous option that can increase the responsiveness of applications when using long-running model or agent operations.
 
@@ -493,10 +524,3 @@ The OpenAI SDK offers an asynchronous option that can increase the responsivenes
 
 In this exercise, you used the OpenAI SDK and the *ChatCompletions* and *Responses* APIs to create a client application for a generative AI model that you deployed in a Microsoft Foundry project. You customized the model's behavior by tracking conversational context and implemented streaming to deliver a responsive chat experience.
 
-## Clean up
-
-If you've finished exploring Microsoft Foundry, you should delete the resources you have created in this exercise to avoid incurring unnecessary Azure costs.
-
-1. Open the [Azure portal](https://portal.azure.com) and view the contents of the resource group where you deployed the resources used in this exercise.
-1. On the toolbar, select **Delete resource group**.
-1. Enter the resource group name and confirm that you want to delete it.
