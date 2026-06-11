@@ -1,0 +1,16 @@
+[
+    {
+      "Name": "AI-103-AIEngineer",
+      "Language": "English",
+      "Files": [
+          {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/AI-103/Instructions/AI-102/AI102-gettingstartedpages/Lab02-Gettingstarted.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/AI-103/Instructions/AI-103/02-model-catalog-evaluation.md",
+          "Order": 2
+        }
+      ]
+    }
+  ]
