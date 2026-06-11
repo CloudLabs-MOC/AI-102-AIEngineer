@@ -47,7 +47,7 @@ The lab architecture demonstrates how Microsoft Foundry enables model discovery,
 
 ## Architecture Diagram
 
-![](../../AI-102/Images/lab9new-arch.png)
+![](../media/ai103-lab2-archdiagram.png)
 
 ## Explanation of Components
 
@@ -75,7 +75,7 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
-![](../../AI-102/Images/lab1-z.png)
+![](../media/ai103-lab2-zoomin.png)
 
 ## Exploring Your Lab Resources
  
