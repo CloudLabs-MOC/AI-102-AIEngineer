@@ -10,12 +10,12 @@ In this lab, you will use Microsoft Foundry to explore and compare AI models ava
 
 In this exercise, you will perform:
 
-* Task 1: Create a Microsoft Foundry project.
-* Task 2: Explore models in the Microsoft Foundry model catalog.
-* Task 3: Compare models using the model leaderboard and benchmark data.
-* Task 4: Deploy the gpt-4.1 and gpt-4.1-mini models.
-* Task 5: Compare model responses in the model playground.
-* Task 6: Evaluate a model using a synthetically generated dataset and analyze the results.
+* Task 1: Create a Microsoft Foundry project
+* Task 2: Explore models in the catalog
+* Task 3: Compare models using the model leaderboard
+* Task 4: Deploy models
+* Task 5: Compare models in the model playground
+* Task 6: Evaluate a model with a synthetic dataset
 
 ## Task 1: Create a Microsoft Foundry project
 
@@ -47,10 +47,10 @@ In this task, you'll create a Microsoft Foundry project, configure the required 
 
 1. In the **Create a project** wizard, enter project name **Myproject<inject key="DeploymentID" enableCopy="false" /> (1)**, and **Expand Advanced options (2)** to specify the following settings for your project: 
 
-    - Foundry resource: **MyFoundry<inject key="DeploymentID" enableCopy="false" /> (3)**
+    - Foundry resource: **Leave default (3)**
     - Subscription : **Leave default subscription (4)** 
     - Region : Select **<inject key="location" enableCopy="false"/> (5)**
-    - Resource group : Select **AI-901 (6)** 
+    - Resource group : Select **AI-103 (6)** 
     - Click on **Create** **(7)**
 
       ![](./media/ai103-lab2-t1p6.png)
