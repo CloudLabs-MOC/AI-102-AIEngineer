@@ -524,3 +524,4 @@ The OpenAI SDK offers an asynchronous option that can increase the responsivenes
 
 In this exercise, you used the OpenAI SDK and the *ChatCompletions* and *Responses* APIs to create a client application for a generative AI model that you deployed in a Microsoft Foundry project. You customized the model's behavior by tracking conversational context and implemented streaming to deliver a responsive chat experience.
 
+### Congratulations, you’ve successfully completed the hands-on lab!
