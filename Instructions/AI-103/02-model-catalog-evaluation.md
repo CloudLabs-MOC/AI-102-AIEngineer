@@ -73,6 +73,14 @@ In this task, you'll create a Microsoft Foundry project, configure the required 
 
     ![](./media/ai103-lab2-t1p9.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. You will receive a success message. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+  <validation step="2d2ff740-50c3-4e5f-a999-c945fcedd0c2" />
+
 ## Task 2: Explore models in the catalog
 
 In this task, you'll browse the Microsoft Foundry model catalog, review model details, and examine benchmark information to identify models suitable for different AI scenarios.
@@ -193,6 +201,14 @@ In this task, you'll deploy the gpt-4.1 and gpt-4.1-mini models to your project,
 1. Note the deployment name that is assigned to the **gpt-4.1-mini** model.
 
     ![](./media/ai103-lab2-t1p33.png)
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. You will receive a success message. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+  <validation step="b2880404-fc5d-49e7-bfba-a5b202f5b3aa" />
 
 ## Task 5: Compare models in the model playground
 
