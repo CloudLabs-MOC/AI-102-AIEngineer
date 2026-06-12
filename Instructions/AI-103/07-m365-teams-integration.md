@@ -217,9 +217,13 @@ In this task, you'll publish the configured agent to Microsoft Teams and Microso
 
         ![](./media/ai103-lab7-t1p18.png)
 
-4. In the **Publish options** dialog, select **Just you (1)** to make the agent available only to your account for testing, and then select **Publish (2)**. The agent is published immediately and appears under **Your agents** in the agent store. You can also share the agent with others by sending them the agent link.
+4. In the **Publish options** dialog, select **Just you (1)** to make the agent available only to your account for testing, and then select **Publish (2)**.
 
     ![](./media/ai103-lab7-t1p19.png)
+
+    >**Note:** If you encounter a **Failed to publish agent** error, close the pop-up window. The agent has already been published successfully, and no further action is required.
+
+    ![](./media/lab7-error.png)
 
 ## Task 5: Test your agent in Teams
 
