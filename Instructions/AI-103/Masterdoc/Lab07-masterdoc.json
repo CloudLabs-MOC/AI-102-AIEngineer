@@ -1,0 +1,16 @@
+[
+    {
+      "Name": "AI-103-AIEngineer",
+      "Language": "English",
+      "Files": [
+          {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/AI-103/Instructions/AI-103/Gettingstartedpages/Gettingstarted-lab07.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/AI-103/Instructions/AI-103/07-m365-teams-integration.md",
+          "Order": 2
+        }
+      ]
+    }
+  ]
