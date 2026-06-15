@@ -4,7 +4,6 @@
 
 ## Lab overview
 
-
 In this lab, you will use Azure Content Understanding to build and test a custom image analyzer that generates image descriptions and tags. You will then develop a Python application that submits images to the analyzer and retrieves AI-generated results for content understanding scenarios.
 
 ## Lab objectives
@@ -51,7 +50,7 @@ In this task, you will create a Microsoft Foundry project and configure the Azur
 
     - Foundry resource: **Leave default (3)**
     - Subscription : **Leave default subscription (4)** 
-    - Region : Select **<inject key="location" enableCopy="false"/> (5)**
+    - Region : Select **<inject key="Region" enableCopy="false"/> (5)**
     - Resource group : Select **AI-103 (6)** 
     - Click on **Create** **(7)**
 
@@ -134,8 +133,11 @@ In this task, you will create, configure, test, and publish a custom image analy
 1. In the **Set up your default resource** window, select the required details and proceed:
 
     * Subscription name: **Select your subscription (1)**
+    
     * Resource group name: **AI-103 (2)**
+    
     * Resource name: **Select your Foundry resource (3)**
+    
     * Enable auto-deployment: **Ensure this option is checked (4)**
 
     - Then, click **Next (5)** to continue.
@@ -166,11 +168,11 @@ In this task, you will create, configure, test, and publish a custom image analy
         - **Connected resource:** Confirm your Foundry resource is selected **(1)**
         - **Connect storage account:** Select the storage account **storage<inject key="DeploymentID" enableCopy="false"/>(2)**
         - **Blob container:**  new container **(3)**.
-        - Click **Create (4)**
+        - Click **Create (5)**
 
             ![](./media/ai103-l9-l13.png)  
 
-1. Open a new browser tab for the following link.
+1. Open a new browser tab and copy, paste the following link.
 
     ```
     https://microsoftlearning.github.io/mslearn-ai-vision/Labfiles/content-understanding/lion.jpg
@@ -239,7 +241,7 @@ In this task, you will create, configure, test, and publish a custom image analy
    https://{your_foundry_resource}.services.ai.azure.com/
     ```
 
-    ![](./media/ai103-l9-l25.png) 
+    ![](./media/ai103-l9-l29.png) 
 
     > **Note:** Copy and save the **endpoint URL** displayed on the **Code Example** tab, as it will be required in later steps when sending requests to the Content Understanding analyzer.
 
@@ -309,8 +311,7 @@ In this task, you will clone the sample GitHub repository, install the required 
 
    ![](./media/ai103-lab8-t1p16.png)
 
-1. In the Select a Python installation window, choose Python 3.14.2 (Global) located at
-**C:\Program Files\Python314\python.exe (5)** to create the virtual environment.
+1. In the Select a Python installation window, choose Python 3.14.2 (Global) located at **C:\Program Files\Python314\python.exe (5)** to create the virtual environment.
 
    ![](./media/ai103l312.png)
 

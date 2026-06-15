@@ -26,6 +26,9 @@ By the end of this lab, you will be able to:
 
 ## Pre-requisites
 
+- Familiarity with Azure AI Foundry and Azure AI services.
+- Basic understanding of AI concepts such as image analysis and content extraction.
+- Basic knowledge of Python programming
 
 ## Architecture
 
@@ -45,7 +48,7 @@ The lab architecture demonstrates how Azure Content Understanding processes imag
 
 ## Architecture Diagram
 
-![](../media/ai103-lab7-archdiagram.png)
+![](../media/ai103-l9-arch.png)
 
 ## Explanation of Components
 
@@ -65,7 +68,7 @@ The lab architecture demonstrates how Azure Content Understanding processes imag
  
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../media/ai103-lab7-guidetab.png)
+![Access Your VM and Lab Guide](../media/ai103-l9-vm.png)
 
 ## Virtual Machine & Lab Guide
  
