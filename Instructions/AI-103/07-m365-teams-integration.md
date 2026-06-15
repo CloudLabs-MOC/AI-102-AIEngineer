@@ -49,7 +49,7 @@ In this task, you'll create a Microsoft Foundry project, configure the required 
 
     - Foundry resource: **Leave default (3)**
     - Subscription : **Leave default subscription (4)** 
-    - Region : Select **<inject key="location" enableCopy="false"/> (5)**
+    - Region : Select **<inject key="Region" enableCopy="false" /> (5)**
     - Resource group : Select **AI-103 (6)** 
     - Click on **Create** **(7)**
 
@@ -73,11 +73,11 @@ In this task, you'll create a Microsoft Foundry project, configure the required 
 
     ![](./media/ai103-lab2-t1p9.png)
 
-2. After your project is created, select **Start building** in the **Build an agent** tile on the homepage.
+1. After your project is created, select **Start building** in the **Build an agent** tile on the homepage.
 
     ![](./media/ai103-lab7-t1p1.png)
 
-3. Set the **Agent name** to **enterprise-knowledge-agent-<inject key="DeploymentID" enableCopy="false" /> (2)** and then select **Create (2)**.
+1. Set the **Agent name** to **enterprise-knowledge-agent-<inject key="DeploymentID" enableCopy="false" /> (2)** and then select **Create (2)**.
 
     ![](./media/ai103-lab7-t1p2.png)
 
@@ -105,7 +105,7 @@ In this task, you'll configure an AI agent with custom instructions, upload ente
 
     ![](./media/ai103-lab7-t1p4.png)
 
-3. Open a new browser tab for each of the following URLs. On each page, select all the text (**Ctrl+A**), copy it (**Ctrl+C**), and save the content as a text file on your LabVM.
+1. Open a new browser tab for each of the following URLs. On each page, select all the text (**Ctrl+A**), copy it (**Ctrl+C**), and save the content as a text file on your LabVM.
 
     **IT Security Policy:**
 
@@ -135,11 +135,11 @@ In this task, you'll configure an AI agent with custom instructions, upload ente
     https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-agents/main/Labfiles/05a-m365-teams-integration/Python/sample_documents/remote_work_policy.txt
     ```
 
-4. Return to the agent page, scroll down to the **Tools** section, and select **Upload files**.
+1. Return to the agent page, scroll down to the **Tools** section, and select **Upload files**.
 
     ![](./media/ai103-lab7-t1p9.png)
 
-5. In the **Attach files** dialog, select **browse for files**.
+1. In the **Attach files** dialog, select **browse for files**.
 
     ![](./media/ai103-lab7-t1p10.png)
 
@@ -163,33 +163,33 @@ In this task, you'll test the agent in the Foundry playground to verify that it 
 
     ![](./media/ai103-lab7-t1p13(1).png)
 
-2. The agent should provide specific information from the IT security policy (minimum 12 characters, uppercase, lowercase, numbers, special characters, etc.)
+1. The agent should provide specific information from the IT security policy (minimum 12 characters, uppercase, lowercase, numbers, special characters, etc.)
 
     ![](./media/ai103-lab7-t1p13.png)
 
-3. Try a question about remote work:
+1. Try a question about remote work:
 
     ```
     What are the core hours for remote employees?
     ```
 
-4. The agent should respond with information from the remote work policy (9 AM - 3 PM).
+1. The agent should respond with information from the remote work policy (9 AM - 3 PM).
 
     ![](./media/ai103-lab7-t1p14.png)
 
-5. Try another query:
+1. Try another query:
 
     ```
     What encryption is required on company laptops?
     ```
 
-6. Notice how the agent finds the right document and provides accurate answers about BitLocker requirements.
+1. Notice how the agent finds the right document and provides accurate answers about BitLocker requirements.
 
     ![](./media/ai103-lab7-t1p15.png)
 
     Your agent now has knowledge grounding and can answer questions based on your company documents.
 
-7. From the top right corner select **Save**.
+1. From the top right corner select **Save**.
 
     ![](./media/ai103-lab7-t1p16.png)
 
@@ -199,7 +199,7 @@ In this task, you'll publish the configured agent to Microsoft Teams and Microso
 
 1. In the Foundry portal, open your agent **enterprise-knowledge-agent-<inject key="DeploymentID" enableCopy="false" />** if not already opened.
 
-2. Select the **Publish (1)** button at the top of the page and then select **Publish to Teams and Microsoft 365 Copilot (2)**.
+1. Select the **Publish (1)** button at the top of the page and then select **Publish to Teams and Microsoft 365 Copilot (2)**.
 
     ![](./media/ai103-lab7-t1p17.png)
 
@@ -217,7 +217,7 @@ In this task, you'll publish the configured agent to Microsoft Teams and Microso
 
         ![](./media/ai103-lab7-t1p18.png)
 
-4. In the **Publish options** dialog, select **Just you (1)** to make the agent available only to your account for testing, and then select **Publish (2)**.
+1. In the **Publish options** dialog, select **Just you (1)** to make the agent available only to your account for testing, and then select **Publish (2)**.
 
     ![](./media/ai103-lab7-t1p19.png)
 
@@ -235,13 +235,15 @@ In this task, you'll access the published agent in Microsoft Teams and validate 
 
    ![](./media/ai103-lab7-t1p20.png)
 
-2. A new browser tab opens and loads Microsoft Teams.
+1. A new browser tab opens and loads Microsoft Teams.
 
-3. In Teams, select **Apps** from the left navigation pane.
+1. On Microsoft Teams window, select **Use the web instead**.
+
+1. In Teams, select **Apps** from the left navigation pane.
 
    ![](./media/ai103-lab7-t1p21.png)
 
-4. Select **Manage your apps (1)**, locate your agent and click on **ellipsis** **(2)** in the list of available apps, and then select **View details (3)** to open it.
+1. Select **Manage your apps (1)**, locate your agent and click on **ellipsis** **(2)** in the list of available apps, and then select **View details (3)** to open it.
 
    ![](./media/ai103-lab7-t1p22.png)
 
@@ -253,7 +255,7 @@ In this task, you'll access the published agent in Microsoft Teams and validate 
 
     ![](./media/ai103-lab7-t1p24.png)
 
-5. When the chat window opens, send the following greeting to verify that the agent is working correctly:
+1. When the chat window opens, send the following greeting to verify that the agent is working correctly:
 
    ```
    Hello! What can you help me with?
@@ -269,7 +271,7 @@ In this task, you'll access the published agent in Microsoft Teams and validate 
     
     ![](./media/ai103-lab7-t1p27.png)
 
-3. Test a knowledge query:
+1. Test a knowledge query:
 
     ```
     What are the laptop password requirements?
@@ -277,13 +279,13 @@ In this task, you'll access the published agent in Microsoft Teams and validate 
 
     ![](./media/ai103-lab7-t1p28.png)
 
-4. Try another question:
+1. Try another question:
 
     ```
     What MFA methods are supported?
     ```
 
-5. The agent should respond with information from the IT security policy document!
+1. The agent should respond with information from the IT security policy document!
 
     ![](./media/ai103-lab7-t1p29.png)
 
@@ -293,13 +295,13 @@ In this task, you'll access the published agent in Microsoft 365 Copilot and ver
 
 1. Return to the Foundry portal (**[https://ai.azure.com](https://ai.azure.com)**) and navigate to your agent by selecting **Build** → **Agents** → **enterprise-knowledge-agent-<inject key="DeploymentID" enableCopy="false" />**.
 
-2. Select **Publish (1)**, choose **Publish to Teams and Microsoft 365 Copilot (2)**, and then select **Open in Microsoft 365 Copilot (3)** to launch the agent in Microsoft 365 Copilot.
+1. Select **Publish (1)**, choose **Publish to Teams and Microsoft 365 Copilot (2)**, and then select **Open in Microsoft 365 Copilot (3)** to launch the agent in Microsoft 365 Copilot.
 
    ![](./media/ai103-lab7-t1p30.png)
 
-3. A new browser tab opens and loads **Microsoft 365 Copilot**.
+1. A new browser tab opens and loads **Microsoft 365 Copilot**.
 
-4. In the left navigation pane, select **More agents (1)**, and then select **enterprise-knowledge-agent-<inject key="DeploymentID" enableCopy="false" /> (2)** from the **Your agents** section to start interacting with the agent.
+1. In the left navigation pane, select **More agents (1)**, and then select **enterprise-knowledge-agent-<inject key="DeploymentID" enableCopy="false" /> (2)** from the **Your agents** section to start interacting with the agent.
 
     ![](./media/ai103-lab7-t1p32.png)
 
@@ -311,17 +313,17 @@ In this task, you'll access the published agent in Microsoft 365 Copilot and ver
 
    ![](./media/ai103-lab7-t1p33.png)
 
-2. Review the response returned by the agent and confirm that it provides information from the IT Security Policy document.
+1. Review the response returned by the agent and confirm that it provides information from the IT Security Policy document.
 
    ![](./media/ai103-lab7-t1p34.png)
 
-3. Next, submit the following prompt:
+1. Next, submit the following prompt:
 
    ```
    What MFA methods are supported for company systems?
    ```
 
-4. Review the response and observe how Microsoft 365 Copilot routes the request to your agent, which returns information grounded in the uploaded IT Security Policy document.
+1. Review the response and observe how Microsoft 365 Copilot routes the request to your agent, which returns information grounded in the uploaded IT Security Policy document.
 
     ![](./media/ai103-lab7-t1p35.png)
 
@@ -331,4 +333,4 @@ In this task, you'll access the published agent in Microsoft 365 Copilot and ver
 
 In this lab, you created a Microsoft Foundry project and built an AI agent configured with custom instructions and enterprise knowledge documents. You tested the agent in the Foundry playground to verify that it could answer questions using grounded data from uploaded policy files. You then published the agent to Microsoft Teams and Microsoft 365 Copilot, making it available to users through familiar Microsoft 365 experiences. Finally, you validated the deployment by interacting with the agent in both Teams and Microsoft 365 Copilot and confirmed that it could successfully retrieve and present information from the uploaded knowledge sources.
 
-### Congratulations, you’ve successfully completed the hands-on lab!
+# Congratulations, you’ve successfully completed the hands-on lab!
