@@ -2,7 +2,7 @@
 
 Welcome to your AI-103: Azure AI Apps and Agents Developer Associate workshop! We’re excited to guide you through hands-on learning with Azure AI services using Microsoft Foundry, the Azure portal, and tools like Document Intelligence, Custom Vision, the Language Service, etc., to create, deploy, and test intelligent solutions.
 
-# Lab 07: Analyze images with Azure Content Understanding
+# Lab 09: Analyze images with Azure Content Understanding
 
 ### Overall Estimated Timing: 45 Minutes
 
