@@ -185,13 +185,13 @@ The initial application files you'll need to develop the translation application
 
 1. In Visual Studio Code, select the **Extensions (1)** icon from the Activity Bar on the left side of the window.
 
-   ![](./media/ai103l38.png)
-
 1. In the Extensions view, search for Python if it is not already displayed.
 
 1. Locate the Python extension published by Microsoft.
 
 1. Select **Install (2)** to install the Python extension.
+
+   ![](./media/ai103l38.png)
 
 1. Wait for the installation to complete. Once installed, the extension will provide Python language support, IntelliSense, debugging capabilities, and other Python development features in Visual Studio Code.
 
@@ -222,7 +222,7 @@ The initial application files you'll need to develop the translation application
 
 ### Task 4.1: Prepare the application configuration
 
-1. After the repo has been cloned, navigate to the `/Labfiles/video-generation\python` folder.
+1. After the repo has been cloned, navigate to the **Labfiles (1) -> video-generation\python (2)** folder.
 
     ![](./media/ai103-lab8-t1p17.png)
 
@@ -242,28 +242,33 @@ The initial application files you'll need to develop the translation application
 1. Then update the configuration values to include the **Azure OpenAI endpoint** for your Foundry resource, and the model deployment name for your video-generation model.
 Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to save the file.
 
-    ![](./media/ai103-lab8-t1p19.png)
+    ![](./media/ai103-lab8-t1p20.png)
 
-    > **Important**:Be sure to add the `https://{foundry-resource-name}.openai.azure.com/openai/v1/` Azure openAI endpoint, <u>not</u> the project endpoint!
-
-    Save the modified configuration file.
+    > **Important:** Be sure to add the `https://{foundry-resource-name}.openai.azure.com/openai/v1/` Azure openAI endpoint, <u>not</u> the project endpoint!
 
 1. In the **Explorer** pane, right-click the **python** folder containing the application files, and select **Open in integrated terminal** (or open a terminal in the **Terminal** menu and navigate to the */labfiles/video-generation/python* folder.)
 
-    > **Note**: Opening the terminal in Visual Studio Code will automatically activate the Python environment. You may need to enable running scripts on your system.
+    ![](./media/ai103-lab8-t1p21.png)
+
+    > **Note:** Opening the terminal in Visual Studio Code will automatically activate the Python environment. You may need to enable running scripts on your system.
 
 1. Ensure that the terminal is open in the **/labfiles/video-generation/python*** folder with the prefix **(.venv)** to indicate that the Python environment you created is active.
+
+    ![](./media/ai103-lab8-t1p22.png)
+
 1. Install the required Python packages by running the following command:
 
     ```
     pip install -r requirements.txt
     ```
 
-### Write code to generate videos from an image reference
+### Task 4.2: Write code to generate videos from an image reference
 
-> **Tip**: As you add code, be sure to maintain the correct indentation.
+> **Tip:** As you add code, be sure to maintain the correct indentation.
 
 1. In VS Code, open the `video-app.py` file.
+
+    ![](./media/ai103-lab8-t1p23.png)
 
 1. Find the comment **Add references** and add the following code for the necessary imports:
 
@@ -274,6 +279,8 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     from openai import OpenAI
     from azure.identity import DefaultAzureCredential, get_bearer_token_provider
     ```
+
+    ![](./media/ai103-lab8-t1p23.png)
 
 1. Find the comment **Get the token provider for Azure OpenAI authentication** and add the following code:
 
@@ -291,6 +298,8 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     )
     ```
 
+    ![](./media/ai103-lab8-t1p24.png)
+
 1. In the main function, find the comment **Generate a video from a text prompt** and add the following code:
 
     ```python
@@ -303,6 +312,8 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     )
     video = poll_video_status(video.id)
     ```
+
+    ![](./media/ai103-lab8-t1p25.png)
 
 1. In the main function, find the comment **Generate a video from a reference image** and add the following code:
 
@@ -317,6 +328,8 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     if video.status == "completed":
         download_video(video.id, "image_based_video.mp4")
     ```
+
+    ![](./media/ai103-lab8-t1p26.png)
 
 1. Find the comment **Poll video status until completion** and add the following code to complete the `poll_video_status` function:
 
@@ -337,6 +350,8 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     return video
     ```
 
+    ![](./media/ai103-lab8-t1p27.png)
+
 1. Find the comment **Remix an existing video** and add the following code to complete the `remix_video` function:
 
     ```python
@@ -354,6 +369,8 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     return video
     ```
 
+    ![](./media/ai103-lab8-t1p28.png)
+
 1. Find the comment **Download the completed video** and add the following code to complete the `download_video` function:
 
     ```python
@@ -363,6 +380,8 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     content.write_to_file(output_filename)
     print(f"Saved video to {output_filename}")
     ```
+
+    ![](./media/ai103-lab8-t1p29.png)
 
 1. Find the comment **Create the video with an image reference** and add the following code to complete the `generate_video_from_image` function:
 
@@ -377,9 +396,11 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     )
     ```
 
+    ![](./media/ai103-lab8-t1p30.png)
+
 1. Save the file (**Ctrl+S**).
 
-### Sign into Azure and run the app
+### Task 4.3: Sign into Azure and run the app
 
 1. In the terminal pane, use the following command to sign into Azure.
 
@@ -387,14 +408,23 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     az login
     ```
 
+    ![](./media/ai103-lab8-t1p31.png)
+
+    ![](./media/ai103-lab8-t1p32.png)
+
+    ![](./media/ai103-lab8-t1p33.png)
+
     > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
 
 1. When prompted, follow the instructions to sign into Azure. Then complete the sign in process in the command line, viewing (and confirming if necessary) the details of the subscription containing your Foundry resource.
+
 1. After you have signed in, enter the following command to run the application:
 
     ```
     python video-app.py
     ```
+
+    ![](./media/ai103-lab8-t1p34.png)
 
 1. Observe the output as the application:
     - Creates a video from a text prompt
@@ -403,9 +433,11 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     - Remixes the video with a new style
     - Downloads the remixed video
 
-    > **Note**: Video generation typically takes 1-5 minutes per video. Be patient while waiting for the status to change to "completed".
+        > **Note**: Video generation typically takes 1-5 minutes per video. Be patient while waiting for the status to change to "completed".
 
 1. When the application finishes, check your project folder for `original_video.mp4`, `remixed_video.mp4`, and `image_based_video.mp4`.
+
+    ![](./media/ai103-lab8-t1p35.png)
 
 ## Summary
 
