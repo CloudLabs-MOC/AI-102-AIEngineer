@@ -77,6 +77,14 @@ In this task, you'll create a Microsoft Foundry project, configure the required 
 
     ![](./media/ai103-lab8-t1p1.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. You will receive a success message. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+  <validation step="82e90a06-59b5-4957-ba2c-ecde8e0909ab" />
+
 ## Task 2: Deploy a model
 
 In this task, you'll deploy the Sora 2 video generation model to your Microsoft Foundry project and prepare it for use in both the playground and a Python application.
@@ -98,6 +106,14 @@ In this task, you'll deploy the Sora 2 video generation model to your Microsoft 
     ![](./media/ai103-lab8-t1p5.png)
 
     > **Note:** Note the model deployment name (which by default should be *sora-2*) - you'll need this later!
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. You will receive a success message. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+  <validation step="5814646c-9f97-4532-a725-faf57973a5bd" />
 
 ## Task 3: Test the model in the playground
 

@@ -85,6 +85,14 @@ In this task, you'll create a Microsoft Foundry project, configure the required 
 
     ![](./media/ai103-lab7-t1p3.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. You will receive a success message. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+  <validation step="b81870f3-29f7-422e-9b93-59b3268a163c" />
+
 ## Task 2: Configure your agent with instructions and grounding data
 
 In this task, you'll configure an AI agent with custom instructions, upload enterprise policy documents, and establish knowledge grounding to enable accurate, document-based responses.

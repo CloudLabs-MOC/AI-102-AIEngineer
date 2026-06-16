@@ -1,13 +1,3 @@
----
-lab:
-    title: 'Build AI agents with portal and VS Code'
-    description: 'Create an AI agent using both Microsoft Foundry portal and the Foundry Toolkit VS Code extension with built-in tools like file search and code interpreter.'
-    level: 300
-    duration: 45
-    islab: true
-    status: 'released'
----
-
 # Build AI agents with portal and VS Code
 
 In this exercise, you'll build a complete AI agent solution using both the Microsoft Foundry portal and the Foundry Toolkit VS Code extension. You'll start by creating a basic agent in the portal with grounding data and built-in tools, then interact with it programmatically using VS Code to use advanced capabilities like code interpreter for data analysis.
@@ -28,7 +18,7 @@ Before starting this exercise, ensure you have:
 
 > \* Python 3.13 is available, but some dependencies are not yet compiled for that release. The lab has been successfully tested with Python 3.13.12.
 
-## Create a Microsoft Foundry Project
+## Task 1: Create a Microsoft Foundry Project
 
 Microsoft Foundry uses projects to organize models, resources, data, and other assets used to develop an AI solution.
 
@@ -58,7 +48,15 @@ Microsoft Foundry uses projects to organize models, resources, data, and other a
 
 The playground will open for your newly created agent. You'll see that an available deployed model is already selected for you.
 
-## Configure your agent with instructions and grounding data
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. You will receive a success message. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+  <validation step="" />
+
+## Task 2: Configure your agent with instructions and grounding data
 
 Now that you have an agent created, let's configure it with instructions and add grounding data.
 
@@ -105,7 +103,7 @@ Now that you have an agent created, let's configure it with instructions and add
 
 1. Save the agent.
 
-## Test your agent
+## Task 3: Test your agent
 
 Let's test the agent to see how it responds using the grounding data.
 
@@ -143,7 +141,15 @@ Let's test the agent to see how it responds using the grounding data.
 
 Great! You've created an agent with grounding data, file search, and code interpreter capabilities. In the next section, you'll interact with this agent programmatically using VS Code.
 
-## Interact with your agent using VS Code
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. You will receive a success message. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+  <validation step="" />
+
+## Task 4: Interact with your agent using VS Code
 
 As a developer, you may spend some time working in the Foundry portal; but you’re also likely to spend a lot of time in Visual Studio Code. The Foundry Toolkit for VS Code extension provides a convenient way to work with Foundry project resources without leaving the development environment.
 
@@ -187,7 +193,7 @@ Before writing any code, you can interact with your agent directly in the extens
 
     > **Tip**: You can use this built-in playground to quickly test your agent's instructions and knowledge without writing any code.
 
-## Create a client application to interact with your agent
+## Task 5: Create a client application to interact with your agent
 
 Now let's create a client application that interacts with your agent programmatically.
 
@@ -454,7 +460,7 @@ Now let's create a client application that interacts with your agent programmati
     python agent_with_functions.py
     ```
 
-## Test the client application
+## Task 6: Test the client application
 
 When the agent starts, try these prompts to test different capabilities:
 

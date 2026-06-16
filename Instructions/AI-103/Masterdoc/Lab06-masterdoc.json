@@ -1,0 +1,16 @@
+[
+    {
+      "Name": "AI-103-AIEngineer",
+      "Language": "English",
+      "Files": [
+          {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/AI-103/Instructions/AI-103/Gettingstartedpages/Gettingstarted-lab08.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AI-102-AIEngineer/refs/heads/AI-103/Instructions/AI-103/06-build-agent-portal-and-vscode.md",
+          "Order": 2
+        }
+      ]
+    }
+  ]
