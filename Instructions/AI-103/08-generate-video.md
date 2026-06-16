@@ -1,39 +1,23 @@
 # Generate video with Sora in Microsoft Foundry
 
-Sora is an AI model from OpenAI that creates realistic and imaginative video scenes from text instructions. The model can generate a wide range of video content, including realistic scenes, animations, and special effects. It supports several video resolutions and durations, and can also use reference images and remix existing videos.
+### Estimated Duration: 60 Minutes 
 
-In this exercise, you'll explore how to deploy the Sora model and generate video content using the Microsoft Foundry portal. You'll also build an application that generates videos from images, polls for completion status, and remixes existing videos.
+## Lab overview
 
-> **Note**: To complete this exercise, you need an Azure subscription that has access to a video generation model, such as ***Sora 2***. Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors. Video generation can take 1 to 5 minutes to complete depending on your settings.
+In this lab, you will use Microsoft Foundry to deploy the **Sora 2** video generation model and explore its capabilities in the Foundry playground. You will generate videos from text prompts, modify generated videos by updating prompts, and then build a Python application that uses the Azure OpenAI video generation API to create videos programmatically. Finally, you will authenticate with Azure, run the application, and generate, remix, and download AI-generated videos from both text prompts and reference images.
 
-This exercise will take approximately **45** minutes.
+## Lab objectives
 
-## Understand responsible AI considerations
+In this exercise, you will perform:
 
-Azure OpenAI's video generation models include built-in Responsible AI (RAI) protections to help ensure safe and compliant use.
-
-The Sora 2 model enforces several content restrictions:
-
-- Only content suitable for audiences under 18
-- Copyrighted characters and copyrighted music are rejected
-- Real people—including public figures—cannot be generated
-- Input images with faces of humans are currently rejected
-
-Azure provides input and output moderation across all image generation models, along with Azure-specific safeguards such as content filtering and abuse monitoring. These systems help detect and prevent the generation or misuse of harmful, unsafe, or policy-violating content.
-
-## Prerequisites
-
-Before starting this exercise, ensure you have:
-
-- An active [Azure subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account)
-- [Visual Studio Code](https://code.visualstudio.com/) installed
-- [Python version 3.13 or higher](https://www.python.org/downloads/) installed
-- [Git](https://git-scm.com/install/) installed and configured
-- [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) installed
+* Task 1: Create a Microsoft Foundry project
+* Task 2: Deploy a model
+* Task 3: Test the model in the playground
+* Task 4: Create a video generation application
 
 ## Task 1: Create a Microsoft Foundry project
 
-In this task, you'll create a Microsoft Foundry project, configure the required Azure resources, and obtain the project endpoint needed for application development.
+In this task, you'll create a Microsoft Foundry project, configure the required Azure resources, and identify the project and Azure OpenAI endpoints that you'll use throughout the lab.
 
 1. Copy the **Microsoft Foundry** link and paste it into a new browser tab to access the portal: `https://ai.azure.com/`
 
@@ -95,17 +79,17 @@ In this task, you'll create a Microsoft Foundry project, configure the required 
 
 ## Task 2: Deploy a model
 
-You'll need a model that can process image-based input.
+In this task, you'll deploy the Sora 2 video generation model to your Microsoft Foundry project and prepare it for use in both the playground and a Python application.
 
 1. Select **Discover (1)** from the top menu and then on the **Discover** page, select the **Models (2)** tab to view the Microsoft Foundry model catalog.
 
     ![](./media/ai103-lab8-t1p2.png)
 
-1. Search for `Sora-2` **(1)** and select it **(2)** from the result.
+1. Search for `sora-2` **(1)** and select it **(2)** from the result.
 
     ![](./media/ai103-lab8-t1p3.png)
 
-1. Select **Deploy (1)** drop-down and then deploy `Sora-2` model using the **Default settings (2)**. Deployment may take a minute or so.
+1. Select **Deploy (1)** drop-down and then deploy `sora-2` model using the **Default settings (2)**. Deployment may take a minute or so.
 
     ![](./media/ai103-lab8-t1p4.png)
 
@@ -113,25 +97,25 @@ You'll need a model that can process image-based input.
 
     ![](./media/ai103-lab8-t1p5.png)
 
-    > **Note:** Note the model deployment name (which by default should be *Sora-2*) - you'll need this later!
+    > **Note:** Note the model deployment name (which by default should be *sora-2*) - you'll need this later!
 
 ## Task 3: Test the model in the playground
 
-Now you can test your vide-generation model deployment in the chat playground.
+In this task, you'll use the Microsoft Foundry playground to generate a video from a text prompt, modify the generated content by updating the prompt, and review the results.
 
-1. In the playground, enter the following prompt into the text box and press Enter on the keyboard:
+1. In the playground, enter the following prompt into the text box.
 
     ```
     A director giving a presentation in a modern conference room.
     ```
 
-1. Set the video duration to 4 seconds. Then elect **Generate** to start the video generation process.
+1. Set the video duration to 4 seconds. Then press **Enter** to start the video generation process.
 
     ![](./media/ai103-lab8-t1p6.png)
 
     > **Note:** Video generation typically takes 1 to 5 minutes depending on your settings. The content generation APIs include content moderation filters. If Azure OpenAI recognizes your prompt as harmful content, it won't return a generated video.
 
-1. Once the AI-generated video has finished processing, it will appear on the page. Select the generated video to review the output.
+1. Once the AI-generated video has finished processing, it will appear on the page. Double-click on the generated video to review the output.
 
    ![](./media/ai103-lab8-t1p7.png)
 
@@ -151,19 +135,21 @@ Now you can test your vide-generation model deployment in the chat playground.
 
 ## Task 4: Create a video generation application
 
-Now that you've explored the playground, let's build a Python application that programmatically generates videos using the Sora 2 API.
+In this task, you'll build a Python application that uses the Azure OpenAI video generation API to create videos from text prompts and reference images, monitor video generation jobs, download completed videos, and remix existing videos.
 
-### Get application files from GitHub
+### Task 4.1: Get application files from GitHub
 
 The initial application files you'll need to develop the translation application are provided in a GitHub repo.
 
-1. In the Lab VM, open **Visual Studio Code** from the desktop.
+1. In the labvm, open **Visual Studio Code** from the desktop.
 
     ![](./media/ai103-lab8-t1p11.png)
 
-1. Open the Command Palette (Ctrl + Shift + P), or go to **View (1)** > **Command Palette (2)**, then search for and select **Git: Clone (3)**
+1. Open the Command Palette using (Ctrl + Shift + P), or go to **View (1)** > **Command Palette (2)** from the menu.
 
     ![](./media/ai103l32.png)
+
+1. In the Command Palette, type **Git: Clone (1)**, and then select **Git: Clone (2)** from the list of available commands.
 
     ![](./media/ai103l33.png)
 
@@ -207,20 +193,25 @@ The initial application files you'll need to develop the translation application
 
    ![](./media/ai103l310.png)
    
-1. When prompted to select an environment type, choose **Venv (4)** to create a .venv virtual environment in the current workspace.
+1. In the **Select an environment type** dialog, select **Venv** to create a virtual environment in the current workspace.
 
-   ![](./media/ai103-lab8-t1p16.png)
-   
-1. In the Select a Python installation window, choose Python 3.14.2 (Global) located at
-**C:\Program Files\Python314\python.exe (5)** to create the virtual environment.
+   ![](./media/ai103-lab8-t1p16(1).png)
 
-   ![](./media/ai103l312.png)
+2. When prompted to **Select a Python installation to create the virtual environment**, choose **Python 3.12.10**.
+
+   ![](./media/ai103-lab8-t1p16(2).png)
+
+4. Select the **Labfiles\video-generation\python\requirements.txt** checkbox **(1)**, and then select **OK (2)** to create the virtual environment and install the required dependencies.
+
+   ![](./media/ai103-lab8-t1p16(4).png)
 
     > **Tip:** If you are prompted to install dependencies, you can install the ones in the *requirements.txt* file in the */labfiles/video-generation/python* folder; but it's OK if you don't - we'll install them later!
 
     > **Tip**: If you prefer to use the terminal, you can create your **Venv** environment with `python -m venv labenv`, then activate it with `\labenv\Scripts\activate`.
 
-### Task 4.1: Prepare the application configuration
+### Task 4.2: Prepare the application configuration
+
+In this task, you'll configure the application by updating the required settings, creating a Python virtual environment, and installing the necessary dependencies.
 
 1. After the repo has been cloned, navigate to the **Labfiles (1) -> video-generation\python (2)** folder.
 
@@ -246,7 +237,7 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
 
     > **Important:** Be sure to add the `https://{foundry-resource-name}.openai.azure.com/openai/v1/` Azure openAI endpoint, <u>not</u> the project endpoint!
 
-1. In the **Explorer** pane, right-click the **python** folder containing the application files, and select **Open in integrated terminal** (or open a terminal in the **Terminal** menu and navigate to the */labfiles/video-generation/python* folder.)
+1. In the **Explorer** pane, right-click the **python (1)** folder containing the application files, and select **Open in Integrated Terminal (2)** (or open a terminal in the **Terminal** menu and navigate to the */labfiles/video-generation/python* folder.)
 
     ![](./media/ai103-lab8-t1p21.png)
 
@@ -262,13 +253,17 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
     pip install -r requirements.txt
     ```
 
-### Task 4.2: Write code to generate videos from an image reference
+    >**Note:** If the required dependencies were installed automatically when the virtual environment was created, you can skip this step.
+
+### Task 4.3: Write code to generate videos from an image reference
+
+In this task, you'll implement the application logic to authenticate with Azure, generate videos from text prompts and reference images, monitor video generation status, download completed videos, and remix existing videos.
 
 > **Tip:** As you add code, be sure to maintain the correct indentation.
 
 1. In VS Code, open the `video-app.py` file.
 
-    ![](./media/ai103-lab8-t1p23.png)
+    ![](./media/ai103-lab8-t1p23(1).png)
 
 1. Find the comment **Add references** and add the following code for the necessary imports:
 
@@ -398,25 +393,40 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
 
     ![](./media/ai103-lab8-t1p30.png)
 
-1. Save the file (**Ctrl+S**).
+1. Now save the file by using **Ctrl+S**.
 
-### Task 4.3: Sign into Azure and run the app
+### Task 4.4: Sign into Azure and run the app
+
+In this task, you'll authenticate with Azure, run the Python application, and verify that it successfully generates, remixes, and downloads AI-generated videos.
 
 1. In the terminal pane, use the following command to sign into Azure.
 
     ```powershell
     az login
     ```
+1. Minimize **Visual Studio Code** to display the **Sign in** window. In the **Sign in** dialog, select **Work or School account (1)**, and then select **Continue (2)**.
 
-    ![](./media/ai103-lab8-t1p31.png)
+   ![](./media/ai103-lab8-t1p31.png)
 
-    ![](./media/ai103-lab8-t1p32.png)
+1. If prompted to sign in, enter your credentials:
+ 
+   - **Email/Username:** Enter <inject key="AzureAdUserEmail"></inject> **(1)** and click on **Next (2)**.
+ 
+        ![Enter Your Username](./media/ai103-lab2-t1p2.png)
+ 
+   - **Password:** Enter <inject key="AzureAdUserPassword"></inject> **(1)** and click on **Sign in (2)**.
+ 
+      ![Enter Your Password](./media/ai103-lab2-t1p3.png)
 
-    ![](./media/ai103-lab8-t1p33.png)
+1. When prompted with **Sign in to all apps and websites on this device?**, select **No, this app only** to continue signing in without adding the account to Windows.
+
+   ![](./media/ai103-lab8-t1p32.png)
+
+2. Return to the **Visual Studio Code** terminal, and when prompted to select an Azure subscription, press **Enter** to accept the default subscription.
+
+   ![](./media/ai103-lab8-t1p33.png)
 
     > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
-
-1. When prompted, follow the instructions to sign into Azure. Then complete the sign in process in the command line, viewing (and confirming if necessary) the details of the subscription containing your Foundry resource.
 
 1. After you have signed in, enter the following command to run the application:
 
@@ -441,21 +451,6 @@ Paste the OpenAI endpoint that you copied previously and press **Ctrl+S** to sav
 
 ## Summary
 
-In this exercise, you used the Microsoft Foundry portal to explore video generation with the Sora model, and built a Python application that programmatically generates videos. You learned how to:
+In this lab, you created a Microsoft Foundry project and deployed the **Sora 2** video generation model. You explored the model in the Foundry playground by generating videos from text prompts and refining the generated content through prompt updates. You then built a Python application that authenticated with Azure and interacted with the Azure OpenAI video generation API to generate videos from text prompts and reference images. Finally, you monitored video generation jobs, downloaded the completed videos, remixed an existing video with a new prompt, and verified the generated outputs.
 
-- Generate videos from text prompts and reference images
-- Poll for video generation status until completion
-- Download completed videos
-- Remix existing videos with new prompts
-
-The Sora 2 API provides powerful video generation capabilities through a simple asynchronous workflow: create a job, poll for status, and download the result.
-
-## Clean up
-
-When you finish exploring video generation in Foundry, you should delete the resources you've created to avoid unnecessary Azure costs.
-
-- Navigate to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-- In the Azure portal, on the **Home** page, select **Resource groups**.
-- Select the resource group that you created for this exercise.
-- At the top of the **Overview** page for your resource group, select **Delete resource group**.
-- Enter the resource group name to confirm you want to delete it, and select **Delete**.
+### Congratulations, you’ve successfully completed the hands-on lab!
