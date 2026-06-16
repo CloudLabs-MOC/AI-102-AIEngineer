@@ -133,21 +133,21 @@ In this task, you'll use the Microsoft Foundry playground to generate a video fr
 
 1. Once the AI-generated video has finished processing, it will appear on the page. Double-click on the generated video to review the output.
 
-   ![](./media/ai103-lab8-t1p7.png)
+    ![](./media/ai103-lab8-t1p7.png)
 
 2. In the video details pane, select the **Edit** (**pencil**) icon. Append the following instruction to the existing prompt, and then submit the update to regenerate the video with background music:
 
-   ```
-   Use an inviting instrumental as the background music.
-   ```
+    ```
+    Use an inviting instrumental as the background music.
+    ```
 
-   ![](./media/ai103-lab8-t1p8.png)
+    ![](./media/ai103-lab8-t1p8.png)
 
-   ![](./media/ai103-lab8-t1p9.png)
+    ![](./media/ai103-lab8-t1p9.png)
 
 3. After the updated video is generated, review the output and verify that the video now includes inviting instrumental background music.
 
-   ![](./media/ai103-lab8-t1p10.png)
+    ![](./media/ai103-lab8-t1p10.png)
 
 ## Task 4: Create a video generation application
 
@@ -193,7 +193,7 @@ The initial application files you'll need to develop the translation application
 
 1. Select **Install (2)** to install the Python extension.
 
-   ![](./media/ai103l38.png)
+     ![](./media/ai103l38.png)
 
 1. Wait for the installation to complete. Once installed, the extension will provide Python language support, IntelliSense, debugging capabilities, and other Python development features in Visual Studio Code.
 
@@ -201,25 +201,25 @@ The initial application files you'll need to develop the translation application
 
 1. In the Command Palette, type **Python: Select Interpreter (1)**.
 
-   ![](./media/ai103l39.png)
+     ![](./media/ai103l39.png)
    
 1. From the list of matching commands, **select (2)** Python: Select Interpreter.
 
 1. In the Select Interpreter window, select **Create Virtual Environment (3)**.
 
-   ![](./media/ai103l310.png)
+     ![](./media/ai103l310.png)
    
 1. In the **Select an environment type** dialog, select **Venv** to create a virtual environment in the current workspace.
 
-   ![](./media/ai103-lab8-t1p16(1).png)
+    ![](./media/ai103-lab8-t1p16(1).png)
 
 2. When prompted to **Select a Python installation to create the virtual environment**, choose **Python 3.12.10**.
 
-   ![](./media/ai103-lab8-t1p16(2).png)
+    ![](./media/ai103-lab8-t1p16(2).png)
 
 4. Select the **Labfiles\video-generation\python\requirements.txt** checkbox **(1)**, and then select **OK (2)** to create the virtual environment and install the required dependencies.
 
-   ![](./media/ai103-lab8-t1p16(4).png)
+    ![](./media/ai103-lab8-t1p16(4).png)
 
     > **Tip:** If you are prompted to install dependencies, you can install the ones in the *requirements.txt* file in the */labfiles/video-generation/python* folder; but it's OK if you don't - we'll install them later!
 
@@ -422,25 +422,25 @@ In this task, you'll authenticate with Azure, run the Python application, and ve
     ```
 1. Minimize **Visual Studio Code** to display the **Sign in** window. In the **Sign in** dialog, select **Work or School account (1)**, and then select **Continue (2)**.
 
-   ![](./media/ai103-lab8-t1p31.png)
+    ![](./media/ai103-lab8-t1p31.png)
 
 1. If prompted to sign in, enter your credentials:
  
-   - **Email/Username:** Enter <inject key="AzureAdUserEmail"></inject> **(1)** and click on **Next (2)**.
+    - **Email/Username:** Enter <inject key="AzureAdUserEmail"></inject> **(1)** and click on **Next (2)**.
  
         ![Enter Your Username](./media/ai103-lab2-t1p2.png)
  
-   - **Password:** Enter <inject key="AzureAdUserPassword"></inject> **(1)** and click on **Sign in (2)**.
+    - **Password:** Enter <inject key="AzureAdUserPassword"></inject> **(1)** and click on **Sign in (2)**.
  
-      ![Enter Your Password](./media/ai103-lab2-t1p3.png)
+        ![Enter Your Password](./media/ai103-lab2-t1p3.png)
 
 1. When prompted with **Sign in to all apps and websites on this device?**, select **No, this app only** to continue signing in without adding the account to Windows.
 
-   ![](./media/ai103-lab8-t1p32.png)
+    ![](./media/ai103-lab8-t1p32.png)
 
 2. Return to the **Visual Studio Code** terminal, and when prompted to select an Azure subscription, press **Enter** to accept the default subscription.
 
-   ![](./media/ai103-lab8-t1p33.png)
+    ![](./media/ai103-lab8-t1p33.png)
 
     > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
 

@@ -241,7 +241,7 @@ In this task, you'll access the published agent in Microsoft Teams and validate 
 
 1. Select the **Publish (1)** drop-down menu, choose **Teams and Microsoft 365 Copilot (2)**, and then select **Open in Teams (3)** to launch the agent in Microsoft Teams.
 
-   ![](./media/ai103-lab7-t1p20.png)
+    ![](./media/ai103-lab7-t1p20.png)
 
 1. A new browser tab opens and loads Microsoft Teams.
 
@@ -249,11 +249,11 @@ In this task, you'll access the published agent in Microsoft Teams and validate 
 
 1. In Teams, select **Apps** from the left navigation pane.
 
-   ![](./media/ai103-lab7-t1p21.png)
+    ![](./media/ai103-lab7-t1p21.png)
 
 1. Select **Manage your apps (1)**, locate your agent and click on **ellipsis** **(2)** in the list of available apps, and then select **View details (3)** to open it.
 
-   ![](./media/ai103-lab7-t1p22.png)
+    ![](./media/ai103-lab7-t1p22.png)
 
 1. Now click **Open**.
 
@@ -265,9 +265,9 @@ In this task, you'll access the published agent in Microsoft Teams and validate 
 
 1. When the chat window opens, send the following greeting to verify that the agent is working correctly:
 
-   ```
-   Hello! What can you help me with?
-   ```
+    ```
+    Hello! What can you help me with?
+    ```
 
     ![](./media/ai103-lab7-t1p25.png)
 
@@ -305,7 +305,7 @@ In this task, you'll access the published agent in Microsoft 365 Copilot and ver
 
 1. Select **Publish (1)**, choose **Publish to Teams and Microsoft 365 Copilot (2)**, and then select **Open in Microsoft 365 Copilot (3)** to launch the agent in Microsoft 365 Copilot.
 
-   ![](./media/ai103-lab7-t1p30.png)
+    ![](./media/ai103-lab7-t1p30.png)
 
 1. A new browser tab opens and loads **Microsoft 365 Copilot**.
 
@@ -315,21 +315,21 @@ In this task, you'll access the published agent in Microsoft 365 Copilot and ver
 
 1. In the chat window for your agent, enter the following prompt to test the agent's knowledge and verify that it can access the uploaded policy documents:
 
-   ```
-   @Enterprise Knowledge Agent What are the laptop security requirements?
-   ```
+    ```
+    @Enterprise Knowledge Agent What are the laptop security requirements?
+    ```
 
-   ![](./media/ai103-lab7-t1p33.png)
+    ![](./media/ai103-lab7-t1p33.png)
 
 1. Review the response returned by the agent and confirm that it provides information from the IT Security Policy document.
 
-   ![](./media/ai103-lab7-t1p34.png)
+    ![](./media/ai103-lab7-t1p34.png)
 
 1. Next, submit the following prompt:
 
-   ```
-   What MFA methods are supported for company systems?
-   ```
+    ```
+    What MFA methods are supported for company systems?
+    ```
 
 1. Review the response and observe how Microsoft 365 Copilot routes the request to your agent, which returns information grounded in the uploaded IT Security Policy document.
 
