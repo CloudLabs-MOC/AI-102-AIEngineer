@@ -306,7 +306,7 @@ In this task, you will clone the sample GitHub repository, install the required 
 
 1. Select **Install (2)** to install the Python extension.
 
-   ![](./media/ai103l38.png)
+    ![](./media/ai103l38.png)
 
 1. Wait for the installation to complete. Once installed, the extension will provide Python language support, IntelliSense, debugging capabilities, and other Python development features in Visual Studio Code.
 
@@ -314,21 +314,21 @@ In this task, you will clone the sample GitHub repository, install the required 
 
 1. In the Command Palette, type **Python: Select Interpreter (1)**.
 
-   ![](./media/ai103l39.png)
+    ![](./media/ai103l39.png)
    
 1. From the list of matching commands, **select (2)** Python: Select Interpreter.
 
 1. In the Select Interpreter window, select **Create Virtual Environment (3)**.
 
-   ![](./media/ai103l310.png)
+    ![](./media/ai103l310.png)
    
 1. When prompted to select an environment type, choose **Venv (4)** to create a .venv virtual environment in the current workspace.
 
-   ![](./media/ai103-lab8-t1p16.png)
+    ![](./media/ai103-lab8-t1p16.png)
 
 1. In the Select a Python installation window, choose Python 3.14.2 (Global) located at **C:\Program Files\Python314\python.exe (5)** to create the virtual environment.
 
-   ![](./media/ai103l312.png)
+    ![](./media/ai103l312.png)
 
     > **Tip:** If you are prompted to install dependencies, you can install the ones in the *requirements.txt* file in the */labfiles/video-generation/python* folder; but it's OK if you don't - we'll install them later!
 
@@ -415,21 +415,21 @@ In this task, you will add the required Python code to connect to Azure Content 
 1. Find the comment **Analyze the file** and add the following code:
 
     ```python
-   # Analyze the file
-   try:
+    # Analyze the file
+    try:
         poller = client.begin_analyze(
             analyzer_id=analyzer_id,
             inputs=[AnalysisInput(data=file_bytes)],
         )
         result: AnalysisResult = poller.result()
-   except AzureError as err:
+    except AzureError as err:
         print(f"[Azure Error]: {err.message}")
         sys.exit(1)
-   except Exception as ex:
+    except Exception as ex:
         print(f"[Unexpected Error]: {ex}")
         sys.exit(1)
 
-   for field in result.contents[0].fields:
+    for field in result.contents[0].fields:
         if field == "Description":
             print(f"{field}:\n{result.contents[0].fields[field].value_string}\n")
         elif field == "Tags":
@@ -438,7 +438,7 @@ In this task, you will add the required Python code to connect to Azure Content 
                 print("  -", tag.value_string)
     ```
 
-    ![](./media/ai103-l9-l35.png) 
+     ![](./media/ai103-l9-l35.png) 
 
     This code submits the selected file data to your analyuzer, polls for the results, and then displays the *Description* and *Tags* values that are returned.
 
@@ -450,25 +450,25 @@ In this task, you will authenticate to Azure, run the application, and verify th
 
 1. In the terminal pane, use the following command to sign into Azure.
 
-    ```powershell
-    az login
-    ```
+     ```powershell
+     az login
+     ```
 
-    ![](./media/ai103-l9-l36.png) 
+     ![](./media/ai103-l9-l36.png) 
 
-    ![](./media/ai103-lab8-t1p31.png)
+     ![](./media/ai103-lab8-t1p31.png)
 
-    ![](./media/ai103-lab8-t1p32.png)
+     ![](./media/ai103-lab8-t1p32.png)
 
-    > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
+     > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
 
 1. When prompted, follow the instructions to sign into Azure. Then complete the sign in process in the command line, viewing (and confirming if necessary) the details of the subscription containing your Foundry resource.
 
 1. After you have signed in, enter the following command to run the application:
 
-    ```
-    python analyze-image.py
-    ```
+     ```
+     python analyze-image.py
+     ```
 
 1. When prompted, enter a number that corresponds to one of these images:
 
