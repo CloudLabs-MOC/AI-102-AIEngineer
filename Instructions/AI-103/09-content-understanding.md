@@ -115,6 +115,34 @@ In this task, you will create an Azure Storage account that will be used to stor
 
 1. Wait for deployment to complete, and then go to the deployed resource.
 
+1. From the left navigation pane of the **Storage account**, select **Access control (IAM)**.
+
+    ![](./media/ai103-lab9-t1p2.png) 
+
+2. On the **Access control (IAM)** page, select **+ Add (1)**, and then choose **Add role assignment (2)**.
+
+    ![](./media/ai103-lab9-t1p3.png)
+
+3. On the **Role** tab, ensure the **Job function roles (1)** category is selected. Search for **Storage Blob Data Contributor (2)**, select the role from the results **(3)**, and then click **Next (4)**.
+
+    ![](./media/ai103-lab9-t1p4.png)
+
+4. On the **Members** tab, select **Managed identity (1)** as the **Assign access to** option. Then click **+ Select members (2)**.
+
+5. In the **Select managed identities** pane, configure the following settings:
+
+    * **Subscription (3):** Leave the default subscription selected.
+    * **Managed identity (4):** Select **Foundry**.
+    * **Select (5):** Choose the **Foundry resource** that you created in **Task 1**.
+    - After selecting the resource, click **Select (6)**.
+
+        ![](./media/ai103-lab9-t1p6.png)
+
+6. Verify that the selected Foundry resource appears under **Members**, and then click **Review + assign** twice to complete the role assignment.
+
+    ![](./media/ai103-lab9-t1p5.png)
+
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
  
 - Hit the Validate button for the corresponding task. You will receive a success message. 
