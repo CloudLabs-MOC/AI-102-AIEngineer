@@ -74,6 +74,14 @@ In this task, you will create a Microsoft Foundry project and configure the Azur
 
     ![](./media/ai103-lab2-t1p9.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. You will receive a success message. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+  <validation step="36778d74-b294-4397-a6d0-775c536b2979" />
+
 ## Task 2: Create an Azure storage account
 
 In this task, you will create an Azure Storage account that will be used to store content assets for image analysis with Azure Content Understanding.
@@ -107,6 +115,13 @@ In this task, you will create an Azure Storage account that will be used to stor
 
 1. Wait for deployment to complete, and then go to the deployed resource.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+ 
+- Hit the Validate button for the corresponding task. You will receive a success message. 
+- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+  <validation step="7742ddd0-2870-44a3-892b-9744634d49a6" />
 
 ## Task 3: Create an image analyzer in Azure Content Understanding
 
