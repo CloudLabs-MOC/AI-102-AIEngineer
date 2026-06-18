@@ -1,13 +1,22 @@
-# Build AI agents with portal and VS Code
+# Build AI Agents with Portal and VS Code
 
-In this exercise, you'll build a complete AI agent solution using both the Microsoft Foundry portal and the Foundry Toolkit VS Code extension. You'll start by creating a basic agent in the portal with grounding data and built-in tools, then interact with it programmatically using VS Code to use advanced capabilities like code interpreter for data analysis.
+**Estimated Duration:** 45 Minutes
 
-This exercise takes approximately **45** minutes.
+## Lab Overview
 
-> **Note**: Some of the technologies used in this exercise are in preview or in active development. You may experience some unexpected behavior, warnings, or errors.
+In this hands-on lab, you will build an AI agent solution using Microsoft Foundry and the Foundry Toolkit for Visual Studio Code. You will create a Foundry project, configure an AI agent with custom instructions, grounding data, file search, and code interpreter capabilities. You will then test the agent in the Foundry portal and Visual Studio Code before developing a Python client application that interacts with the agent programmatically. Finally, you will configure the application environment and validate the agent's ability to perform policy searches, data analysis, and visualization tasks.
 
-## Prerequisites
+## Lab Objectives
 
+In this exercise, you will perform:
+
+* Task 1: Create a Microsoft Foundry project and AI agent
+* Task 2: Configure the agent with instructions and grounding data
+* Task 3: Test the agent in the Foundry portal
+* Task 4: Interact with the agent using Visual Studio Code
+* Task 5: Create a client application to interact with the agent
+* Task 6: Configure the environment and run the application
+* Task 7: Test the client application
 
 ## Task 1: Create a Microsoft Foundry Project
 
@@ -75,7 +84,7 @@ The playground will open for your newly created agent. You'll see that an availa
 
 ## Task 2: Configure your agent with instructions and grounding data
 
-Now that you have an agent created, let's configure it with instructions and add grounding data.
+In this task, you'll customize the agent's behavior by defining instructions and attaching grounding data. You'll configure file search capabilities using an IT policy document and enable the code interpreter tool to analyze structured datasets.
 
 1. In the agent playground, set the **Instructions** to:
 
@@ -138,7 +147,7 @@ Now that you have an agent created, let's configure it with instructions and add
 
 ## Task 3: Test your agent
 
-Let's test the agent to see how it responds using the grounding data.
+In this task, you'll interact with the agent in the Foundry playground to validate its configuration. You'll test policy-based question answering, verify the use of grounding data, and evaluate the agent's ability to analyze datasets and generate visualizations.
 
 1. In the chat interface on the right side of the playground, enter the following prompt:
 
@@ -187,6 +196,8 @@ Great! You've created an agent with grounding data, file search, and code interp
 ## Task 4: Interact with your agent using VS Code
 
 As a developer, you may spend some time working in the Foundry portal; but you’re also likely to spend a lot of time in Visual Studio Code. The Foundry Toolkit for VS Code extension provides a convenient way to work with Foundry project resources without leaving the development environment.
+
+In this task, you'll install and configure the Foundry Toolkit extension for Visual Studio Code. You'll connect to your Foundry project, access the agent created in the portal, and test its functionality directly from the development environment.
 
 ### Install and configure the VS Code extension
 
@@ -254,7 +265,7 @@ Before writing any code, you can interact with your agent directly in the extens
 
 ## Task 5: Create a client application to interact with your agent
 
-Now let's create a client application that interacts with your agent programmatically.
+In this task, you'll clone a GitHub repository and develop a Python client application that communicates with your AI agent. You'll configure the application to send prompts, process responses, manage conversations, and handle generated files and visual outputs.
 
 1. In VS Code, open the Command Palette (**Ctrl+Shift+P** or **View > Command Palette**).
 
@@ -482,7 +493,9 @@ Now let's create a client application that interacts with your agent programmati
 
 1. Save the `agent_with_functions.py` file (**Ctrl+S** or **File > Save**).
 
-### Configure environment and run the application
+## Task 6: Configure environment and run the application
+
+In this task, you'll configure the application settings by updating environment variables, installing required dependencies, authenticating with Azure, and running the client application to establish communication with the AI agent.
 
 1. In the Explorer pane, you'll see `.env.example` and `requirements.txt` files already present in the folder.
 
@@ -519,7 +532,9 @@ Now let's create a client application that interacts with your agent programmati
     python agent_with_functions.py
     ```
 
-## Task 6: Test the client application
+## Task 7: Test the client application
+
+In this task, you'll validate the capabilities of the client application by performing policy searches, analyzing datasets, generating charts and visualizations, and testing the agent's ability to combine file search and code interpreter tools to deliver intelligent responses.
 
 When the agent starts, try these prompts to test different capabilities:
 
@@ -557,4 +572,8 @@ When the agent starts, try these prompts to test different capabilities:
 
 Observe how the agent uses both file search (for policy questions) and code interpreter (for data analysis) to fulfill your requests. The code interpreter will analyze the CSV data, perform calculations, and can even generate visualizations. Type `exit` when done testing.
 
+## Summary
 
+In this exercise, you created and configured an AI agent using Microsoft Foundry and the Foundry Toolkit for Visual Studio Code. You enhanced the agent with custom instructions, grounding data, file search, and code interpreter capabilities to support intelligent responses and data analysis. You then tested the agent in both the Foundry portal and Visual Studio Code, developed a Python client application to interact with the agent programmatically, and configured the required environment settings. Finally, you validated the solution by performing policy searches, analyzing datasets, and generating visualizations, demonstrating how AI agents can combine multiple tools to deliver rich, context-aware experiences.
+
+## Congratulations, you’ve successfully completed the hands-on lab!
