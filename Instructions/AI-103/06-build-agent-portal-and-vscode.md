@@ -295,11 +295,10 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
     from azure.ai.projects import AIProjectClient
     from azure.identity import DefaultAzureCredential
     from dotenv import load_dotenv
-    
-    
+
     OUTPUT_DIR = Path("agent_outputs")
-    
-    
+
+
     def get_output_path(filename):
         """Create a unique path for generated files."""
         OUTPUT_DIR.mkdir(exist_ok=True)
@@ -357,7 +356,11 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
             if getattr(annotation, "type", "") != "container_file_citation":
                 continue
 
-            output_path = download_container_file(openai_client, annotation, downloaded_files)
+            output_path = download_container_file(
+                openai_client,
+                annotation,
+                downloaded_files,
+            )
             replacement_text = f"{annotation.filename} (saved to {output_path})"
             referenced_files.add(output_path)
 
@@ -371,71 +374,89 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
             if annotated_text:
                 text = text.replace(annotated_text, replacement_text)
 
-        for start_index, end_index, replacement_text in sorted(replacements, reverse=True):
-            text = f"{text[:start_index]}{replacement_text}{text[end_index:]}"
+        for start_index, end_index, replacement_text in sorted(
+            replacements,
+            reverse=True,
+        ):
+            text = (
+                f"{text[:start_index]}"
+                f"{replacement_text}"
+                f"{text[end_index:]}"
+            )
 
         return text, referenced_files
-    
-    
+
+
     def main():
         # Initialize the project client
         load_dotenv()
         project_endpoint = os.environ.get("PROJECT_ENDPOINT")
         agent_name = os.environ.get("AGENT_NAME", "it-support-agent")
-        
+
         if not project_endpoint:
             print("Error: PROJECT_ENDPOINT environment variable not set")
             print("Please set it in your .env file or environment")
             return
-        
+
         print("Connecting to Microsoft Foundry project...")
         credential = DefaultAzureCredential()
         project_client = AIProjectClient(
             credential=credential,
-            endpoint=project_endpoint
+            endpoint=project_endpoint,
         )
-        
+
         # Get the OpenAI client for Responses API
         openai_client = project_client.get_openai_client()
-        
+
         # Get the agent created in the portal
         print(f"Loading agent: {agent_name}")
         agent = project_client.agents.get(agent_name=agent_name)
         print(f"Connected to agent: {agent.name} (id: {agent.id})")
-        
+
         # Create a conversation
         conversation = openai_client.conversations.create(items=[])
         print(f"Conversation created (id: {conversation.id})")
-        
+
         # Chat loop
-        print("\n" + "="*60)
+        print("\n" + "=" * 60)
         print("IT Support Agent Ready!")
         print("Ask questions, request data analysis, or get help.")
         print("Type 'exit' to quit.")
-        print("="*60 + "\n")
-        
+        print("=" * 60 + "\n")
+
         while True:
             user_input = input("You: ").strip()
-            
-            if user_input.lower() in ['exit', 'quit', 'bye']:
+
+            if user_input.lower() in ["exit", "quit", "bye"]:
                 print("Goodbye!")
                 break
-            
+
             if not user_input:
                 continue
-            
+
             # Add user message to conversation
             openai_client.conversations.items.create(
                 conversation_id=conversation.id,
-                items=[{"type": "message", "role": "user", "content": user_input}]
+                items=[
+                    {
+                        "type": "message",
+                        "role": "user",
+                        "content": user_input,
+                    }
+                ],
             )
-            
+
             # Get response from agent
             print("\n[Agent is thinking...]")
             response = openai_client.responses.create(
                 conversation=conversation.id,
-                extra_body={"agent_reference": {"name": agent.name, "type": "agent_reference"}},
-                input=""
+                extra_body={
+                    "agent_reference": {
+                        "name": agent.name,
+                        "type": "agent_reference",
+                    }
+                },
+                input="",
             )
 
             # Display response and save any generated files locally
@@ -474,18 +495,28 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
 
                         if hasattr(item, "image") and hasattr(item.image, "data"):
                             file_path = save_image(item.image.data, filename)
-                            print(f"\n[Agent generated a chart - saved to: {file_path}]")
+                            print(
+                                f"\n[Agent generated a chart - saved to: {file_path}]"
+                            )
                         else:
                             print("\n[Agent generated an image]")
+
                         handled_output = True
 
                 for file_path in downloaded_files.values():
                     if file_path not in referenced_files:
-                        print(f"\n[Agent generated a file - saved to: {file_path}]")
+                        print(
+                            f"\n[Agent generated a file - saved to: {file_path}]"
+                        )
                         handled_output = True
 
-            if not handled_output and hasattr(response, "output_text") and response.output_text:
+            if (
+                not handled_output
+                and hasattr(response, "output_text")
+                and response.output_text
+            ):
                 print(f"\nAgent: {response.output_text}\n")
+
 
     if __name__ == "__main__":
         main()
