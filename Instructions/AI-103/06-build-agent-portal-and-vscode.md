@@ -298,7 +298,6 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
 
     OUTPUT_DIR = Path("agent_outputs")
 
-
     def get_output_path(filename):
         """Create a unique path for generated files."""
         OUTPUT_DIR.mkdir(exist_ok=True)
@@ -314,7 +313,6 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
 
         return output_path
 
-
     def save_bytes(file_bytes, filename):
         """Save binary content to a local file."""
         output_path = get_output_path(filename)
@@ -322,11 +320,9 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
             file_handle.write(file_bytes)
         return output_path
 
-
     def save_image(image_data, filename):
         """Save base64 image data to a file."""
         return save_bytes(base64.b64decode(image_data), filename)
-
 
     def download_container_file(openai_client, annotation, downloaded_files):
         """Download a cited container file once and return its local path."""
@@ -344,7 +340,6 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
         )
         downloaded_files[cache_key] = output_path
         return output_path
-
 
     def format_output_text(content_item, openai_client, downloaded_files):
         """Replace sandbox file citations with local file paths."""
@@ -385,7 +380,6 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
             )
 
         return text, referenced_files
-
 
     def main():
         # Initialize the project client
@@ -516,7 +510,6 @@ In this task, you'll clone a GitHub repository and develop a Python client appli
                 and response.output_text
             ):
                 print(f"\nAgent: {response.output_text}\n")
-
 
     if __name__ == "__main__":
         main()

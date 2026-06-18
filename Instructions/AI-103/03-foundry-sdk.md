@@ -191,16 +191,16 @@ In this task, you will install the required Python tools and dependencies, creat
 
     ![](./media/ai103l311.png)
    
-1. In the Select a Python installation window, choose Python 3.14.2 (Global) located at
-**C:\Program Files\Python314\python.exe (5)** to create the virtual environment.
+1. In the Select a Python installation window, choose Python 3.14.2 (Global) located at **C:\Program Files\Python314\python.exe (5)** to create the virtual environment.
 
-    ![](./media/ai103l312.png)
+     ![](./media/ai103l312.png)
    
 1. If you are prompted to install dependencies, you can install the ones in the *requirements.txt* file in the */labfiles/foundry-chat/python/chat-app* folder
 
-    ![](./media/ai103l313.png)
+     ![](./media/ai103l313.png)
 
 1. In the Explorer pane, navigate to the folder containing the application code files at **/labfiles/foundry-chat/python/chat-app**. The application files include:
+    
     - **.env** (the application configuration file)
     - **requirements.txt** (the Python package dependencies that need to be installed)
     - **chat-app.py** (the code file for the chat application)
