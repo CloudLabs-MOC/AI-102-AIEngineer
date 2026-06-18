@@ -8,43 +8,60 @@ This exercise takes approximately **45** minutes.
 
 ## Prerequisites
 
-Before starting this exercise, ensure you have:
-
-- An [Azure subscription](https://azure.microsoft.com/free/) with sufficient permissions and quota to provision Azure AI resources
-- [Visual Studio Code](https://code.visualstudio.com/) installed on your local machine
-- [Python 3.13](https://www.python.org/downloads/) or later installed
-- [Git](https://git-scm.com/downloads) installed on your local machine
-- Basic familiarity with Azure AI services and Python programming
-
-> \* Python 3.13 is available, but some dependencies are not yet compiled for that release. The lab has been successfully tested with Python 3.13.12.
 
 ## Task 1: Create a Microsoft Foundry Project
 
-Microsoft Foundry uses projects to organize models, resources, data, and other assets used to develop an AI solution.
+In this task, you'll create a Microsoft Foundry project, configure the required Azure resources, and obtain the project endpoint needed for application development.
 
-1. In a web browser, open the [Foundry portal](https://ai.azure.com) at `https://ai.azure.com` and sign in using your Azure credentials. Close any tips or quick start panes that are opened the first time you sign in, and if necessary use the **Foundry** logo at the top left to navigate to the home page.
+1. Copy the **Microsoft Foundry** link and paste it into a new browser tab to access the portal: `https://ai.azure.com/`
 
-    > **Important**: For this lab, you're using the **New** Foundry experience.
+1. On the **Microsoft Foundry** home page, click on **Start building**.
 
-1. In the top banner, select **Start building** to try the new Microsoft Foundry Experience.
+     ![](./media/ai103-lab2-t1p1.png)
 
-1. When prompted, create a **new** project, and enter a valid name for your project (e.g., `it-support-agent-project`).
+1. If prompted to sign in, enter your credentials:
+ 
+   - **Email/Username:** Enter <inject key="AzureAdUserEmail"></inject> **(1)** and click on **Next (2)**.
+ 
+        ![Enter Your Username](./media/ai103-lab2-t1p2.png)
+ 
+   - **Password:** Enter <inject key="AzureAdUserPassword"></inject> **(1)** and click on **Sign in (2)**.
+ 
+      ![Enter Your Password](./media/ai103-lab2-t1p3.png)
 
-1. Expand **Advanced options** and specify the following settings:
-    - **Microsoft Foundry resource**: *A valid name for your Foundry resource*
-    - **Region**: *Select one available near you*\**
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Select your resource group, or create a new one*
+1. If prompted to **Stay signed in?**, you can click **No**.
 
-    > \* Some Azure AI resources are constrained by regional model quotas. In the event of a quota limit being exceeded later in the exercise, there's a possibility you may need to create another resource in a different region.
+    ![](./media/ai103-lab2-t1p4.png)
 
-1. Select **Create** and wait for your project to be created.
+1. If prompted with, the **Get started with Microsoft Foundry** page, click on **Create project**.
 
-1. When your project is created, a welcome dialog may appear. Select **Next** to read through the welcome message, and then select **Create agent**.
+   ![](./media/ai103-lab2-t1p5.png)
+
+1. In the **Create a project** wizard, enter project name **Myproject<inject key="DeploymentID" enableCopy="false" /> (1)**, and **Expand Advanced options (2)** to specify the following settings for your project: 
+
+    - Foundry resource: **Leave default (3)**
+    - Subscription : **Leave default subscription (4)** 
+    - Region : Select **<inject key="location" enableCopy="false"/> (5)**
+    - Resource group : Select **AI-103 (6)** 
+    - Click on **Create** **(7)**
+
+      ![](./media/ai103-lab2-t1p6.png)
+
+      > **Note:** If project creation gives an authorization error related to Application Insights or Log Analytics resources (for example, errors containing `Microsoft.OperationalInsights/workspaces/write` or `Microsoft.Insights/components/write`), **Toggle off** the *Set up recommended resources so I can explore everything Foundry has to offer* option before creating the project.
+
+      ![](./media/ai901-l5-1(2).png)
+
+1. Wait for your project to be created. It may take a few minutes. 
+
+1. When your project is created, a welcome dialog may appear, and then select **Create agent**.
+
+      ![](./media/ai103l61.png)
 
     You can also select **Start building** on the home page, and select **Create agents** from the drop-down menu.
 
-1. Set the **Agent name** to `it-support-agent` and create the agent.
+1. Set the **Agent name** to `it-support-agent-<inject key="DeploymentID" enableCopy="false" />` and create the agent.
+
+      ![](./media/ai103l62.png)
 
 The playground will open for your newly created agent. You'll see that an available deployed model is already selected for you.
 
@@ -73,6 +90,8 @@ Now that you have an agent created, let's configure it with instructions and add
     - When creating tickets, collect all necessary information before proceeding
     ```
 
+      ![](./media/ai103l63.png)
+      
 1. Download the IT policy document from the lab repository. Open a new browser tab and navigate to:
 
     ```
@@ -83,9 +102,17 @@ Now that you have an agent created, let's configure it with instructions and add
 
     > **Note**: This document contains sample IT policies for password resets, software installation requests, and hardware troubleshooting.
 
-1. Return to the agent playground. In the **Tools** section, select **Add**, and then add both **File search** and **</> Code interpreter**.
+1. Return to the agent playground. In the **Tools** section, select **Add (1)**, enable the **</> Code interpreter (2)** toggle and then select **Browse all tools (3)**
 
-1. To the right of **Add**, select **Upload files**. Under **Attach files**, browse to and upload the `IT_Policy.txt` file you just downloaded, and then select **Attach**.
+      ![](./media/ai103l64.png)
+
+1. On **Select a tool** page, under the **Configure** section, select **File search (1)** and click on **Add tool (2)**
+
+      ![](./media/ai103l65.png)
+
+1. Under **Attach files**, browse to and upload the `IT_Policy.txt` file you just downloaded, and then select **Attach**.
+
+      ![](./media/ai103l66.png)
 
 1. Wait for the file to be indexed. You'll see a confirmation when it's ready.
 
@@ -101,7 +128,13 @@ Now that you have an agent created, let's configure it with instructions and add
 
     > **Note**: This CSV file contains simulated system metrics (CPU, memory, disk usage) over time that the agent can analyze.
 
+      ![](./media/ai103l67.png)
+
+      ![](./media/ai103l68.png)
+      
 1. Save the agent.
+
+   ![](./media/ai103l69.png)
 
 ## Task 3: Test your agent
 
@@ -113,6 +146,8 @@ Let's test the agent to see how it responds using the grounding data.
     What's the policy for password resets?
     ```
 
+   ![](./media/ai103l610.png)
+   
 1. Review the response. The agent should reference the IT policy document and provide accurate information about password reset procedures.
 
 1. Try another prompt:
@@ -159,8 +194,10 @@ If you already have installed the Foundry Toolkit extension, you can skip this s
 
 1. Open Visual Studio Code.
 
-2. Select **Extensions** from the left pane (or press **Ctrl+Shift+X**).
+2. Select **Extensions (1)** from the left pane (or press **Ctrl+Shift+X**).
 
+   ![](./media/ai103l611.png)
+   
 3. Search the extensions marketplace for the `Foundry Toolkit for VS Code` extension from Microsoft and select **Install**.
 
     Installing the Foundry Toolkit Extension will add the Foundry Toolkit extension to VS Code.
@@ -175,13 +212,35 @@ If you already have installed the Foundry Toolkit extension, you can skip this s
 
 Before writing any code, you can interact with your agent directly in the extension interface.
 
-1. Under **Microsoft Foundry Resources**, choose **Set Default Project**
+1. Under **Microsoft Foundry Resources**, choose **Set Default Project** and select **Sign in to Azure**
 
-    If a default project is already active, the project name will appear in the resources list. You can select a different project by selecting the same **Select project** icon.
+   ![](./media/ai103l612.png)
+   
+1. When prompted that the Azure Resources extension wants to sign in using your Microsoft account, select **Allow**to continue the authentication process.
 
-2. Expand the project section. Under **Prompt Agents**, you should see the `it-support-agent` you created in the portal. Select the agent name to open the Agent Builder interface.
+   ![](./media/ai103l613.png)
+   
+1. Complete the sign-in process using the account provided for this lab.
 
-    The agent playground will appear in the Agent Builder interface, allowing you to interact with the agent and configure its settings without leaving VS Code.
+    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+
+        ![](../../AI-102/Images/AI-l16-0.png)
+
+    - **Password:** <inject key="AzureAdUserPassword"></inject>
+
+        ![](../../AI-102/Images/lab1-p.png)
+        
+1. Wait for Visual Studio Code to finish connecting to your Azure account before proceeding to the next step.
+  
+1. Select the project that created in previous step.
+
+   ![](./media/ai103l614.png)
+
+1. Expand the project section. Under **Prompt Agents**, you should see the `it-support-agent-<inject key="DeploymentID" enableCopy="false" />` you created in the portal. Select the agent name to open the Agent Builder interface.
+
+   ![](./media/ai103l615.png)
+   
+1. The agent playground will appear in the Agent Builder interface, allowing you to interact with the agent and configure its settings without leaving VS Code.
 
 3. In the playground chat pane, type a question such as:
 
@@ -498,10 +557,4 @@ When the agent starts, try these prompts to test different capabilities:
 
 Observe how the agent uses both file search (for policy questions) and code interpreter (for data analysis) to fulfill your requests. The code interpreter will analyze the CSV data, perform calculations, and can even generate visualizations. Type `exit` when done testing.
 
-## Cleanup
 
-To avoid unnecessary Azure charges, delete the resources you created:
-
-1. In the Foundry portal, navigate to your project
-1. Select **Settings** > **Delete project**
-1. Alternatively, delete the entire resource group from the Azure portal
