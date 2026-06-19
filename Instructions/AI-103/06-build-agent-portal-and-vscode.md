@@ -80,7 +80,7 @@ The playground will open for your newly created agent. You'll see that an availa
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-  <validation step="" />
+  <validation step="a4eab07c-3c48-4dbd-99dd-44fde834ad35" />
 
 ## Task 2: Configure your agent with instructions and grounding data
 
@@ -191,7 +191,7 @@ Great! You've created an agent with grounding data, file search, and code interp
 - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-  <validation step="" />
+  <validation step="149c6289-6658-473d-87d2-0b172d24583e" />
 
 ## Task 4: Interact with your agent using VS Code
 
@@ -235,11 +235,7 @@ Before writing any code, you can interact with your agent directly in the extens
 
     - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-        ![](../../AI-102/Images/AI-l16-0.png)
-
     - **Password:** <inject key="AzureAdUserPassword"></inject>
-
-        ![](../../AI-102/Images/lab1-p.png)
         
 1. Wait for Visual Studio Code to finish connecting to your Azure account before proceeding to the next step.
   
