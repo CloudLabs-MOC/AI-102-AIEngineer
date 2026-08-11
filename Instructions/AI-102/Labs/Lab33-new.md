@@ -1,4 +1,4 @@
-# Lab 33: Extract information from multimodal content
+# Extract information from multimodal content
 
 ### Estimated Duration: 60 Minutes
 

@@ -1,4 +1,4 @@
-# Lab 34: Develop a Content Understanding client application
+# Develop a Content Understanding client application
 
 ### Estimated Duration: 45 Minutes
 

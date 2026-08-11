@@ -1,4 +1,4 @@
-# Lab 19: Develop a text analysis agent
+# Develop a text analysis agent
 
 ### Estimated Duration: 60 Minutes
 

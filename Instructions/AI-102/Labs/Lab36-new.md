@@ -1,4 +1,4 @@
-# Lab 36: Extract data with Azure Document Intelligence
+# Extract data with Azure Document Intelligence
 
 ### Estimated Duration: 1 Hour
 

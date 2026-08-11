@@ -1,4 +1,4 @@
-# Lab 17: Integrate an AI agent with Foundry IQ
+# Integrate an AI agent with Foundry IQ
 
 ### Estimated Duration: 90 Minutes
 

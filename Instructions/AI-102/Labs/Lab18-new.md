@@ -1,4 +1,4 @@
-# Lab 18: Analyze text
+# Analyze text
 
 ### Estimated Duration: 60 Minutes
 

@@ -1,4 +1,4 @@
-# Lab 04: Create a generative AI app that uses your own data
+# Create a generative AI app that uses your own data
 
 ### Estimated Duration: 60 Minutes
 

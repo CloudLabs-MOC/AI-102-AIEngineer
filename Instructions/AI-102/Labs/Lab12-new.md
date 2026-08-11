@@ -1,4 +1,4 @@
-# Lab 12: Develop an AI agent with Model Context Protocol (MCP) tools
+# Develop an AI agent with Model Context Protocol (MCP) tools
 
 ### Estimated Duration: 60 Minutes
 

@@ -1,4 +1,4 @@
-# Lab 10: Use a custom function in an AI agent
+# Use a custom function in an AI agent
 
 ### Estimated Duration: 1 Hour
 

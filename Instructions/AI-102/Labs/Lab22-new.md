@@ -1,4 +1,4 @@
-# Lab 22: Use Azure Speech in an agent
+# Use Azure Speech in an agent
 
 ### Estimated Duration: 45 Minutes
 

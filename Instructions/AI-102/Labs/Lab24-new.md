@@ -1,4 +1,4 @@
-# Lab 24: Translate text and speech
+# Translate text and speech
 ### Estimated Duration: 45 Minutes
 ## Lab Overview
 

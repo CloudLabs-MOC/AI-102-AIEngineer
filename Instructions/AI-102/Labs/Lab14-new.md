@@ -1,4 +1,4 @@
-# Lab 14: Develop a multi-agent solution with Microsoft Agent Framework
+# Develop a multi-agent solution with Microsoft Agent Framework
 
 ### Estimated Duration: 60 Minutes
 

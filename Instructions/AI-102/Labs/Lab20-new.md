@@ -1,4 +1,4 @@
-# Lab 20: Use speech-capable generative AI models
+# Use speech-capable generative AI models
 
 ### Estimated Duration: 60 Minutes
 

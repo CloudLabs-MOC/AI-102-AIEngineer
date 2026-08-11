@@ -1,4 +1,4 @@
-# Lab 05: Apply guardrails to prevent the output of harmful content
+# Apply guardrails to prevent the output of harmful content
 
 ### Estimated Duration: 45 Minutes
 

@@ -1,4 +1,4 @@
-# Lab 13: Develop an Azure AI chat agent with the Microsoft Agent Framework SDK
+# Develop an Azure AI chat agent with the Microsoft Agent Framework SDK
 
 ### Estimated Duration: 45 Minutes
 

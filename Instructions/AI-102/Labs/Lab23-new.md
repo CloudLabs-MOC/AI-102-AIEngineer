@@ -1,4 +1,4 @@
-# Lab 23: Develop a Voice Live agent
+# Develop a Voice Live agent
 ### Estimated Duration: 45 Minutes
 
 ## Lab Overview

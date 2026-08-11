@@ -1,4 +1,4 @@
-# Lab 37: Create an knowledge mining solution
+# Create an knowledge mining solution
 
 ### Estimated Duration: 45 Minutes
 
